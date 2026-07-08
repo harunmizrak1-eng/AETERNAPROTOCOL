@@ -1,0 +1,181 @@
+const TIERS = [
+  {
+    tier: "I",
+    name: "Değerlendirme",
+    positioning: "Başlangıç",
+    line: "Mevcut durumunuzun okunması. Hedeflerin netleşmesi ve doğru yönün belirlenmesi için ilk temas.",
+    includes: [
+      "Gizli ön görüşme",
+      "Hedef ve geçmiş analizi",
+      "Yön önerisi",
+    ],
+    featured: false,
+  },
+  {
+    tier: "II",
+    name: "Kişisel Protokol",
+    positioning: "En çok tercih edilen",
+    line: "Biyolojik verilerinize göre tasarlanmış, aşamalı ve ölçülebilir tam protokol. Süreç boyunca yönlendirme dahil.",
+    includes: [
+      "Kan değeri & biyobelirteç okuması",
+      "Kişiye özel protokol tasarımı",
+      "Ürün erişimi ve tedarik yönlendirmesi",
+      "Süreç boyunca birebir takip",
+    ],
+    featured: true,
+  },
+  {
+    tier: "III",
+    name: "Sürekli Optimizasyon",
+    positioning: "Elit",
+    line: "Uzun vadeli, kapalı çevrimde çalışan danışmanlık. Düzenli yeniden değerlendirme ve ince ayarla protokolün zamanla evrilmesi.",
+    includes: [
+      "Sınırsız protokol revizyonu",
+      "Periyodik biyobelirteç takibi",
+      "Öncelikli erişim",
+      "Uzun vadeli longevity stratejisi",
+    ],
+    featured: false,
+  },
+]
+
+const PACKAGES = [
+  {
+    name: "Metabolik Reset",
+    line: "Yağ kaybı ve iştah kontrolü için yapılandırılmış giriş protokolü.",
+  },
+  {
+    name: "Recovery Stack",
+    line: "Doku onarımı ve toparlanma odaklı, sporcular için hazırlanmış kombinasyon.",
+  },
+  {
+    name: "Longevity Foundation",
+    line: "Hücresel sağlık ve sağlıklı yaşlanma için uzun vadeli temel protokol.",
+  },
+]
+
+export function Offerings() {
+  return (
+    <section id="danismanlik" className="px-6 py-28 sm:py-36 md:px-10">
+      <div className="mx-auto max-w-6xl">
+        {/* Section heading */}
+        <div className="flex items-center gap-4">
+          <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
+          <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
+            Danışmanlık
+          </p>
+        </div>
+
+        <h2 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+          Her seviyede, aynı hassasiyet.
+        </h2>
+        <p className="mt-6 max-w-md text-sm font-light leading-relaxed text-muted-foreground">
+          Çalışma seçici ilerler. Sizin için doğru başlangıç noktasını görüşmede birlikte belirleriz.
+        </p>
+
+        {/* Consulting tiers */}
+        <div className="mt-16 grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {TIERS.map((t) => (
+            <article
+              key={t.name}
+              className={`group relative flex flex-col border bg-surface p-8 transition-colors duration-500 sm:p-10 ${
+                t.featured
+                  ? "border-gold/60"
+                  : "border-hairline hover:border-gold/40"
+              }`}
+            >
+              {t.featured && (
+                <span className="absolute right-0 top-0 bg-gold px-3 py-1 text-[0.6rem] uppercase tracking-eyebrow text-primary-foreground">
+                  {t.positioning}
+                </span>
+              )}
+
+              <div className="flex items-baseline gap-4">
+                <span className="font-serif text-3xl font-light text-gold">
+                  {t.tier}
+                </span>
+                {!t.featured && (
+                  <span className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground/70">
+                    {t.positioning}
+                  </span>
+                )}
+              </div>
+
+              <h3 className="mt-6 font-serif text-2xl font-light tracking-wide text-foreground sm:text-[1.7rem]">
+                {t.name}
+              </h3>
+              <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
+                {t.line}
+              </p>
+
+              <ul className="mt-8 flex flex-col gap-3">
+                {t.includes.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm font-light text-foreground/80"
+                  >
+                    <span aria-hidden="true" className="mt-2 h-px w-3 flex-shrink-0 bg-gold/60" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-auto pt-10">
+                <a
+                  href={`https://wa.me/905359184587?text=Merhaba%2C%20${encodeURIComponent(
+                    t.name,
+                  )}%20seviyesi%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-block border px-7 py-3 text-[0.65rem] uppercase tracking-eyebrow transition-colors duration-300 hover:bg-gold hover:text-primary-foreground ${
+                    t.featured
+                      ? "border-gold/60 text-gold"
+                      : "border-hairline text-foreground/80 hover:border-gold/60"
+                  }`}
+                >
+                  Başvuru Yap
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Protocol packages */}
+        <div className="mt-24 flex items-center gap-4">
+          <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
+          <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
+            Hazır Protokoller
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {PACKAGES.map((p) => (
+            <article
+              key={p.name}
+              className="group flex flex-col border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
+            >
+              <h3 className="font-serif text-xl font-light tracking-wide text-foreground">
+                {p.name}
+              </h3>
+              <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
+                {p.line}
+              </p>
+              <div className="mt-8">
+                <a
+                  href={`https://wa.me/905359184587?text=Merhaba%2C%20${encodeURIComponent(
+                    p.name,
+                  )}%20protokol%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[0.65rem] uppercase tracking-eyebrow text-gold transition-opacity duration-300 hover:opacity-70"
+                >
+                  Bilgi Al →
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

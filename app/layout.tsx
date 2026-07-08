@@ -90,7 +90,7 @@ export default function RootLayout({
           İçeriğe geç
         </a>
         <AssessmentProvider>{children}</AssessmentProvider>
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <Analytics />
       </body>
     </html>
   )

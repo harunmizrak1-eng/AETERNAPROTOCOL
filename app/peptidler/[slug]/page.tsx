@@ -13,6 +13,7 @@ import {
   categoryGoalMap,
 } from "@/lib/peptides"
 import { getArticle } from "@/lib/articles"
+import { citations } from "@/lib/citations"
 import { lastContentReview } from "@/lib/site"
 
 export function generateStaticParams() {
@@ -54,6 +55,7 @@ export default async function PeptideDetailPage({
     ? getArticle(peptide.relatedArticleSlug)
     : undefined
   const goal = categoryGoalMap[peptide.category]
+  const citation = citations[peptide.slug]
 
   return (
     <>
@@ -122,6 +124,87 @@ export default async function PeptideDetailPage({
                 ))}
               </ul>
             </div>
+
+            {peptide.evidenceMatrix && peptide.evidenceMatrix.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Kanıt Matrisi
+                </h2>
+                <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground/70">
+                  Aşağıdaki her sonuç, kaynak bölümündeki çalışmada doğrudan
+                  raporlanmıştır — genel kanıt kademesinden bağımsız olarak.
+                </p>
+                <div className="mt-4 overflow-x-auto">
+                  <table className="w-full min-w-[380px] border-collapse font-mono text-xs">
+                    <caption className="sr-only">
+                      {peptide.name} sonuç bazlı kanıt matrisi
+                    </caption>
+                    <tbody>
+                      {peptide.evidenceMatrix.map((row) => (
+                        <tr key={row.outcome} className="border-b border-hairline last:border-b-0">
+                          <th scope="row" className="py-3 pr-4 text-left font-normal text-foreground">
+                            {row.outcome}
+                          </th>
+                          <td className={`py-3 text-right ${tierColorVar[row.tier]}`}>
+                            {tierDots[row.tier]}{" "}
+                            <span className="uppercase tracking-eyebrow">
+                              {tierLabel[row.tier]}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {citation && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Kaynak
+                </h2>
+                <div className="mt-4 rounded-sm border border-hairline bg-surface p-6">
+                  <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground/70">
+                    {citation.label}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/90">
+                    {citation.authors} — <em className="font-serif italic">{citation.journal}</em>, {citation.year}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {citation.note}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs">
+                    <a
+                      href={`https://pubmed.ncbi.nlm.nih.gov/${citation.pmid}/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gold transition-opacity hover:opacity-70"
+                    >
+                      PubMed PMID: {citation.pmid} →
+                    </a>
+                    <a
+                      href={`https://doi.org/${citation.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gold transition-opacity hover:opacity-70"
+                    >
+                      DOI: {citation.doi} →
+                    </a>
+                    {citation.nct && (
+                      <a
+                        href={`https://clinicaltrials.gov/study/${citation.nct}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gold transition-opacity hover:opacity-70"
+                      >
+                        ClinicalTrials: {citation.nct} →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
 
             {relatedArticle && (
               <div className="mt-10 border-t border-hairline pt-10">

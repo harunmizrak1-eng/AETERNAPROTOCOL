@@ -1,5 +1,10 @@
 export type EvidenceTier = "proven" | "theoretical" | "preclinical"
 
+export interface EvidenceMatrixRow {
+  outcome: string
+  tier: EvidenceTier
+}
+
 export interface Peptide {
   slug: string
   name: string
@@ -10,6 +15,9 @@ export interface Peptide {
   primaryOutcomes: string[]
   clinicalStatus: string
   relatedArticleSlug?: string
+  /** Per-outcome evidence, populated only where a specific trial/review
+   * verifiably reports that outcome — never inferred beyond the source. */
+  evidenceMatrix?: EvidenceMatrixRow[]
 }
 
 export const tierLabel: Record<EvidenceTier, string> = {
@@ -54,6 +62,7 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Faz 3 çalışmaları tamamlandı",
     relatedArticleSlug: "retatrutide-nedir",
+    evidenceMatrix: [{ outcome: "Vücut Ağırlığı", tier: "proven" }],
   },
   {
     slug: "cagrilintide",
@@ -69,6 +78,9 @@ export const peptides: Peptide[] = [
       "Semaglutide ile kombinasyonda güçlenmiş kilo kaybı",
     ],
     clinicalStatus: "Faz 3 çalışmaları sürüyor",
+    evidenceMatrix: [
+      { outcome: "Vücut Ağırlığı (semaglutid ile kombinasyonda)", tier: "proven" },
+    ],
   },
   {
     slug: "semaglutide",
@@ -85,6 +97,9 @@ export const peptides: Peptide[] = [
       "Yüksek kardiyovasküler risk taşıyan popülasyonda risk azalması",
     ],
     clinicalStatus: "Onaylı, geniş klinik kullanım",
+    evidenceMatrix: [
+      { outcome: "Kardiyovasküler Olaylar (MACE)", tier: "proven" },
+    ],
   },
   {
     slug: "tirzepatide",
@@ -100,23 +115,28 @@ export const peptides: Peptide[] = [
       "İnsülin duyarlılığında iyileşme",
     ],
     clinicalStatus: "Onaylı, geniş klinik kullanım",
+    evidenceMatrix: [
+      { outcome: "Vücut Ağırlığı", tier: "proven" },
+      { outcome: "Kardiyometabolik Göstergeler", tier: "proven" },
+    ],
   },
   {
     slug: "ghk-cu",
     name: "GHK-Cu",
     category: "Estetik / Onarım",
-    tier: "proven",
+    tier: "theoretical",
     short:
-      "Bakır tripeptid. Kollajen sentezini artırır, cilt yenilenmesini ve yara iyileşmesini destekler. RCT'lerle desteklenmiş kırışıklık ve elastikiyet etkileri.",
+      "Bakır iyonu taşıyan tripeptid. Kolajen ve elastaz aktivitesi üzerindeki etkileri hücre ve hayvan modellerinde iyi tanımlı; bağımsız insan RCT verisi sınırlı.",
     mechanism:
-      "Bakır iyonu taşıyan tripeptid; kolajen ve elastin sentezini uyarır, antioksidan ve anti-inflamatuar yollarla doku yenilenmesini destekler.",
+      "Bakır iyonu taşıyan tripeptid; kolajen ve elastin sentezini uyardığı, antioksidan ve anti-inflamatuar yollarla doku yenilenmesini desteklediği hücre kültürü ve hayvan modellerinde gösterilmiştir.",
     primaryOutcomes: [
-      "Cilt elastikiyetinde artış",
-      "İnce çizgilerde azalma",
-      "Yara iyileşme hızında artış",
+      "Hücre kültüründe elastaz inhibisyonu ve kolajen sentezinde artış",
+      "Hayvan modellerinde yara iyileşme hızında artış",
+      "Bağımsız, büyük ölçekli insan RCT verisi sınırlı",
     ],
     clinicalStatus:
-      "RCT'lerle desteklenmiş, topikal ve enjekte edilebilir formlarda kullanımda",
+      "Mekanizma hücre/hayvan modellerinde iyi tanımlı, insan RCT verisi sınırlı",
+    relatedArticleSlug: "kaynak-politikamiz-neden-onemli",
   },
   {
     slug: "ss-31-elamipretide",
@@ -317,6 +337,10 @@ export const peptides: Peptide[] = [
       "Erkeklerde kullanım klinik dışı, sınırlı kontrollü veri",
     ],
     clinicalStatus: "FDA onaylı (Vyleesi, kadın endikasyonu)",
+    evidenceMatrix: [
+      { outcome: "Cinsel İstek (FSFI-desire)", tier: "proven" },
+      { outcome: "İlişkili Sıkıntı (FSDS-DAO)", tier: "proven" },
+    ],
   },
   {
     slug: "ghrp-2",
@@ -362,6 +386,12 @@ export const peptides: Peptide[] = [
       "IGF-1 düzeylerinde artış",
     ],
     clinicalStatus: "FDA onaylı (Egrifta, lipodistrofi endikasyonu)",
+    evidenceMatrix: [
+      { outcome: "Visseral Yağ Dokusu", tier: "proven" },
+      { outcome: "Karaciğer Yağ Oranı", tier: "proven" },
+      { outcome: "Yağsız Vücut Kütlesi", tier: "proven" },
+    ],
+    relatedArticleSlug: "tesamorelin-viseral-yag-meta-analiz",
   },
   {
     slug: "thymalin",

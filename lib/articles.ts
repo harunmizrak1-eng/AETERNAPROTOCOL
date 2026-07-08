@@ -7,6 +7,7 @@ export interface Article {
   date: string
   /** paragraphs — kept simple, no CMS yet */
   body: string[]
+  relatedLinks?: { href: string; label: string }[]
 }
 
 export const articles: Article[] = [
@@ -141,6 +142,62 @@ export const articles: Article[] = [
       "SS-31 gibi mitokondri koruyucu moleküller klinik olarak test edilirken, NAD+ öncülleri ve MOTS-c gibi bileşikler hâlâ insan verisinin olgunlaştığı bir aşamada. Kanıt seviyesi bu yüzden molekülden moleküle büyük farklılık gösteriyor.",
       "Bu alanda en büyük risk, sabırsızlık. Preklinik bir bileşiği klinik kanıtlıymış gibi sunmak, longevity pazarlamasının en yaygın hatası — biz bu ayrımı hiç bulandırmıyoruz.",
       "Uzun vadeli bir stratejide, bugünün küçük ve doğrulanabilir kazanımları, yarının büyük iddialarından daha değerlidir.",
+    ],
+  },
+  {
+    slug: "kaynak-politikamiz-neden-onemli",
+    title: "Neden bazı bileşiklerin kaynağı var, bazılarının yok?",
+    category: "Yaklaşım",
+    excerpt:
+      "Kütüphanemizdeki her PMID gerçek ve doğrulanabilir. Bir bileşiğin kaynağı yoksa, bu aramadığımız değil — bulamadığımız anlamına gelir.",
+    readMinutes: 3,
+    date: "2026-07-08",
+    body: [
+      "Kısa süre önce GHK-Cu'yu kütüphanemizde 'Klinik Kanıt' kademesinden 'Mekanistik / Teorik' kademesine indirdik. Neden? Çünkü bağımsız bir insan RCT'si aradık ve bulamadık — mekanizma hücre kültürü ve hayvan modellerinde iyi tanımlı, ama bu, klinik kanıtla aynı şey değil.",
+      "Kaynak eklerken PMID ve DOI numaralarını gerçek veritabanlarından çekiyoruz. Bir bileşik için doğrulanabilir bir kaynak yoksa, sayfasında kaynak bölümü hiç görünmez — uydurma bir referans eklenmez.",
+      "Bu bazı okuyucular için garip görünebilir: neden Retatrutide'nin sayfasında PMID ve DOI var da BPC-157'de yok? Cevap basit — biri randomize kontrollü bir insan çalışmasıyla test edildi, diğeri henüz edilmedi. İkisi de değerli olabilir; ama ikisi aynı cümleyle anlatılamaz.",
+      "Bu sürecin tamamını metodoloji sayfamızda açıkladık. Amacımız güven telkin etmek değil, güvenin nereden geldiğini göstermek.",
+    ],
+    relatedLinks: [
+      { href: "/metodoloji", label: "Metodoloji: Kanıtı nasıl değerlendiriyoruz" },
+      { href: "/peptidler/ghk-cu", label: "GHK-Cu bileşik sayfası" },
+    ],
+  },
+  {
+    slug: "apob-ldl-den-neden-daha-iyi",
+    title: "ApoB, LDL-kolesterolden neden daha iyi bir gösterge?",
+    category: "Biyobelirteç",
+    excerpt:
+      "Standart lipit paneli aterojenik parçacık sayısını kaçırabilir. ApoB'nin metabolik protokollerde neden ayrı bir belirteç olarak izlendiği.",
+    readMinutes: 3,
+    date: "2026-07-01",
+    body: [
+      "LDL-kolesterol, aslında kandaki LDL parçacıklarının içindeki kolesterol miktarını ölçer — parçacık sayısını değil. Bazı bireylerde LDL-kolesterol normal görünürken parçacık sayısı yüksek olabilir; bu duruma bazen 'gizli risk' deniyor.",
+      "ApoB, her aterojenik parçacığın yüzeyinde tam olarak bir kopya bulunan bir protein olduğu için, parçacık sayısını doğrudan verir. Bu yüzden kardiyovasküler risk değerlendirmesinde LDL-kolesterole göre daha isabetli kabul ediliyor.",
+      "Metabolik protokollerimizde ApoB'yi bu yüzden ayrı bir belirteç olarak izliyoruz — özellikle Retatrutide, Semaglutide ve Tirzepatide gibi molekülleri kullanan danışanlarda, kilo kaybının ötesinde kardiyometabolik riskin nasıl değiştiğini görmek için.",
+      "Biyobelirteç sözlüğümüzde ApoB'yi bu bağlamda detaylandırdık.",
+    ],
+    relatedLinks: [
+      { href: "/biyobelirtecler/apob", label: "Biyobelirteç: ApoB" },
+      { href: "/peptidler/retatrutide", label: "Retatrutide bileşik sayfası" },
+    ],
+  },
+  {
+    slug: "tesamorelin-viseral-yag-meta-analiz",
+    title: "Tesamorelin: viseral yağ için en çok kanıtlanan büyüme hormonu analoğu",
+    category: "Büyüme / GH",
+    excerpt:
+      "Beş randomize kontrollü çalışmanın meta-analizi, tesamorelinin vücut kompozisyonu üzerindeki etkilerini net şekilde ortaya koyuyor.",
+    readMinutes: 3,
+    date: "2026-06-15",
+    body: [
+      "HIV ilişkili lipodistrofi endikasyonunda FDA onaylı olan tesamorelin, büyüme hormonu ekseni içindeki en sağlam insan verisine sahip moleküllerden biri.",
+      "Yakın zamanda yayınlanan bir meta-analiz, beş randomize kontrollü çalışmayı bir araya getirerek viseral yağ dokusu, karaciğer yağ oranı ve yağsız vücut kütlesi üzerindeki etkileri özetliyor.",
+      "Sonuçlar tutarlı: viseral yağ dokusunda ve karaciğer yağ oranında anlamlı azalma, yağsız kütlede artış — glikoz metabolizmasını bozmadan.",
+      "Bu, kütüphanemizde tesamorelini 'Klinik Kanıt' kademesine yerleştirmemizin nedeni. Sonuç bazlı kanıt matrisini bileşik sayfasında görebilirsiniz.",
+    ],
+    relatedLinks: [
+      { href: "/peptidler/tesamorelin", label: "Tesamorelin bileşik sayfası" },
     ],
   },
 ]

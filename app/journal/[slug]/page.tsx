@@ -104,7 +104,26 @@ export default async function ArticlePage({
               ))}
             </div>
 
-            <div className="mt-16 border-t border-hairline pt-8">
+            {article.relatedLinks && article.relatedLinks.length > 0 && (
+              <div className="mt-16 border-t border-hairline pt-8">
+                <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  İlgili
+                </p>
+                <div className="mt-4 flex flex-col gap-2">
+                  {article.relatedLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-sm text-muted-foreground transition-colors hover:text-gold"
+                    >
+                      {link.label} →
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="mt-10 border-t border-hairline pt-8">
               <p className="text-[0.7rem] leading-relaxed text-muted-foreground">
                 Bu yazı bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez.
                 Herhangi bir protokole başlamadan önce bir hekime danışın.

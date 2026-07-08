@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next"
 import { siteUrl } from "@/lib/site"
 import { articles } from "@/lib/articles"
+import { peptides } from "@/lib/peptides"
+import { biomarkers } from "@/lib/biomarkers"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -8,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/peptidler",
     "/journal",
     "/longevity-skoru",
+    "/metodoloji",
+    "/biyobelirtecler",
     "/gizlilik",
   ].map((path) => ({
     url: `${siteUrl}${path}`,
@@ -19,5 +23,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(a.date),
   }))
 
-  return [...staticRoutes, ...articleRoutes]
+  const peptideRoutes = peptides.map((p) => ({
+    url: `${siteUrl}/peptidler/${p.slug}`,
+    lastModified: new Date(),
+  }))
+
+  const biomarkerRoutes = biomarkers.map((b) => ({
+    url: `${siteUrl}/biyobelirtecler/${b.slug}`,
+    lastModified: new Date(),
+  }))
+
+  return [...staticRoutes, ...articleRoutes, ...peptideRoutes, ...biomarkerRoutes]
 }

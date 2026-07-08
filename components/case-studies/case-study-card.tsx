@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 import { caseStudyDisclaimer, type CaseStudy } from "@/lib/case-studies"
 import { BiomarkerSparkline } from "@/components/case-studies/biomarker-sparkline"
@@ -76,7 +77,16 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
             {study.biomarkers.map((b) => (
               <tr key={b.label} className="border-b border-hairline last:border-b-0">
                 <th scope="row" className="py-2 pr-4 text-left font-normal text-foreground">
-                  {b.label}
+                  {b.biomarkerSlug ? (
+                    <Link
+                      href={`/biyobelirtecler/${b.biomarkerSlug}`}
+                      className="underline decoration-hairline underline-offset-4 transition-colors hover:text-gold hover:decoration-gold/60"
+                    >
+                      {b.label}
+                    </Link>
+                  ) : (
+                    b.label
+                  )}
                 </th>
                 <td className="py-2 pr-4 text-muted-foreground/80">{b.baseline}</td>
                 <td className="py-2 pr-4 text-foreground">{b.final}</td>

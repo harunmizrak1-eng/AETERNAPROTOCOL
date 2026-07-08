@@ -1,6 +1,7 @@
 const EXPLORE_LINKS = [
   { href: "/#kategoriler", label: "Odak Alanları" },
   { href: "/peptidler", label: "Peptid Kütüphanesi" },
+  { href: "/biyobelirtecler", label: "Biyobelirteç Sözlüğü" },
   { href: "/journal", label: "Journal" },
   { href: "/longevity-skoru", label: "Longevity Skoru" },
 ]
@@ -14,7 +15,10 @@ const CONSULT_LINKS = [
   },
 ]
 
-const LEGAL_LINKS = [{ href: "/gizlilik", label: "Gizlilik & KVKK" }]
+const LEGAL_LINKS = [
+  { href: "/metodoloji", label: "Metodoloji" },
+  { href: "/gizlilik", label: "Gizlilik & KVKK" },
+]
 
 function FooterColumn({
   heading,

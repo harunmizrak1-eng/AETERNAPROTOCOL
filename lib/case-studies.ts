@@ -12,6 +12,8 @@ export interface CaseStudyBiomarker {
   final: string
   change: string
   direction: "up" | "down"
+  /** slug into lib/biomarkers.ts, when this marker has a dictionary entry */
+  biomarkerSlug?: string
 }
 
 export interface CaseStudy {
@@ -46,10 +48,10 @@ export const caseStudies: CaseStudy[] = [
     papersReviewed: 47,
     biomarkers: [
       { label: "Kilo", baseline: "94 kg", final: "83 kg", change: "↓ 11 kg", direction: "down" },
-      { label: "Vücut Yağ Oranı", baseline: "%28", final: "%22", change: "↓ %6", direction: "down" },
-      { label: "HbA1c", baseline: "%5.8", final: "%5.0", change: "↓ 0.8", direction: "down" },
+      { label: "Vücut Yağ Oranı", baseline: "%28", final: "%22", change: "↓ %6", direction: "down", biomarkerSlug: "vucut-yag-orani" },
+      { label: "HbA1c", baseline: "%5.8", final: "%5.0", change: "↓ 0.8", direction: "down", biomarkerSlug: "hba1c" },
       { label: "Karaciğer Yağı", baseline: "%22", final: "%5", change: "↓ %17", direction: "down" },
-      { label: "ApoB", baseline: "105 mg/dL", final: "72 mg/dL", change: "↓ 33 mg/dL", direction: "down" },
+      { label: "ApoB", baseline: "105 mg/dL", final: "72 mg/dL", change: "↓ 33 mg/dL", direction: "down", biomarkerSlug: "apob" },
     ],
   },
   {
@@ -65,8 +67,8 @@ export const caseStudies: CaseStudy[] = [
     evidenceNote: "Preklinik veri güçlü, insan çalışması sınırlı",
     papersReviewed: 147,
     biomarkers: [
-      { label: "Ağrı (VAS)", baseline: "7 / 10", final: "1 / 10", change: "↓ 6", direction: "down" },
-      { label: "CK", baseline: "380 U/L", final: "180 U/L", change: "↓ 200 U/L", direction: "down" },
+      { label: "Ağrı (VAS)", baseline: "7 / 10", final: "1 / 10", change: "↓ 6", direction: "down", biomarkerSlug: "vas-agri" },
+      { label: "CK", baseline: "380 U/L", final: "180 U/L", change: "↓ 200 U/L", direction: "down", biomarkerSlug: "ck" },
       { label: "Fonksiyonel Skor", baseline: "45", final: "92", change: "↑ 47", direction: "up" },
       { label: "Spora Dönüş", baseline: "16 hafta", final: "10 hafta", change: "↓ 6 hafta", direction: "down" },
     ],
@@ -107,10 +109,10 @@ export const caseStudies: CaseStudy[] = [
     evidenceNote: "Rusya kaynaklı klinik veri",
     papersReviewed: 89,
     biomarkers: [
-      { label: "BDNF (ng/mL)", baseline: "22 ng/mL", final: "31 ng/mL", change: "↑ 9 ng/mL", direction: "up" },
+      { label: "BDNF (ng/mL)", baseline: "22 ng/mL", final: "31 ng/mL", change: "↑ 9 ng/mL", direction: "up", biomarkerSlug: "bdnf" },
       { label: "Odak Skoru", baseline: "5 / 10", final: "8 / 10", change: "↑ 3", direction: "up" },
       { label: "Anksiyete Skoru", baseline: "7 / 10", final: "3 / 10", change: "↓ 4", direction: "down" },
-      { label: "Whoop HRV", baseline: "48 ms", final: "64 ms", change: "↑ 16 ms", direction: "up" },
+      { label: "Whoop HRV", baseline: "48 ms", final: "64 ms", change: "↑ 16 ms", direction: "up", biomarkerSlug: "hrv" },
       { label: "Derin Uyku", baseline: "%12", final: "%18", change: "↑ %6", direction: "up" },
     ],
   },

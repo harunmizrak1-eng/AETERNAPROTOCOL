@@ -1,9 +1,11 @@
+import Link from "next/link"
 import { peptides } from "@/lib/peptides"
 
 const PILLARS = [
   {
     title: "Kanıta Dayalı",
     line: `Her protokol, kanıt seviyesine göre sınıflandırılmış ${peptides.length}+ bileşiğin literatür taramasına dayanır. Klinik, mekanistik ve preklinik ayrımı hiçbir zaman bulanıklaştırılmaz.`,
+    link: { href: "/metodoloji", label: "Metodolojimizi inceleyin" },
   },
   {
     title: "Kişiye Özel",
@@ -26,18 +28,30 @@ export function WhyAeterna() {
           </p>
         </div>
 
+        <h2 className="mt-10 max-w-2xl text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
+          Bu sistemi güvenilir kılan şey.
+        </h2>
+
         <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {PILLARS.map((p) => (
             <div
               key={p.title}
-              className="rounded-sm border border-hairline bg-surface p-8"
+              className="flex flex-col rounded-sm border border-hairline bg-surface p-8"
             >
-              <h2 className="font-serif text-2xl font-light tracking-wide text-foreground">
+              <h3 className="font-serif text-2xl font-light tracking-wide text-foreground">
                 {p.title}
-              </h2>
+              </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {p.line}
               </p>
+              {p.link && (
+                <Link
+                  href={p.link.href}
+                  className="mt-6 text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-opacity hover:opacity-70"
+                >
+                  {p.link.label} →
+                </Link>
+              )}
             </div>
           ))}
         </div>

@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/peptidler", label: "Peptid Kütüphanesi" },
   { href: "/journal", label: "Journal" },
   { href: "/longevity-skoru", label: "Longevity Skoru" },
+  { href: "/metodoloji", label: "Metodoloji" },
   { href: "/#danismanlik", label: "Danışmanlık" },
 ]
 
@@ -40,7 +41,9 @@ export function Nav() {
               key={link.label}
               href={link.href}
               className={`text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground ${
-                link.label === "Longevity Skoru" ? "hidden lg:inline" : ""
+                link.label === "Longevity Skoru" || link.label === "Metodoloji"
+                  ? "hidden lg:inline"
+                  : ""
               }`}
             >
               {link.label}
@@ -62,7 +65,7 @@ export function Nav() {
       <div
         id="mobile-nav-panel"
         className={`overflow-hidden border-t border-hairline transition-[max-height] duration-300 ease-in-out sm:hidden ${
-          open ? "max-h-80" : "max-h-0 border-t-0"
+          open ? "max-h-96" : "max-h-0 border-t-0"
         }`}
       >
         <ul className="flex flex-col px-6 py-2">

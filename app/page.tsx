@@ -6,7 +6,7 @@ import { Idea } from "@/components/idea"
 import { Process } from "@/components/process"
 import { Offerings } from "@/components/offerings"
 import { Trust } from "@/components/trust"
-import { CaseStudy } from "@/components/case-study"
+import { CaseStudies } from "@/components/case-studies"
 import { FinalCta, Footer } from "@/components/final-cta"
 import { Reveal } from "@/components/reveal"
 
@@ -32,7 +32,7 @@ export default function Page() {
         <Trust />
       </Reveal>
       <Reveal>
-        <CaseStudy />
+        <CaseStudies />
       </Reveal>
       <Reveal>
         <FinalCta />

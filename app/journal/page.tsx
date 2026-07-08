@@ -37,7 +37,8 @@ export default function JournalPage() {
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
               Peptidler, longevity ve biohacking üzerine kanıt temelli notlar.
-              Trend değil, mekanizma ve veri.
+              Trend değil, mekanizma ve veri. Haftalık ritimde, yalnızca
+              söylemeye değer bir şey olduğunda yayımlanır.
             </p>
           </div>
         </section>

@@ -200,6 +200,64 @@ export const articles: Article[] = [
       { href: "/peptidler/tesamorelin", label: "Tesamorelin bileşik sayfası" },
     ],
   },
+  {
+    slug: "gh-salgilaticilar-ipamorelin-sermorelin",
+    title: "Büyüme hormonu salgılatıcıları: Ipamorelin ve Sermorelin farkı",
+    category: "Büyüme / GH",
+    excerpt:
+      "İkisi de doğal büyüme hormonu salınımını uyarır ama farklı reseptörler üzerinden. Aradaki mekanik fark neden önemli?",
+    readMinutes: 3,
+    date: "2026-07-15",
+    body: [
+      "Büyüme hormonu ekseniyle çalışan iki farklı yaklaşım var: GHRH analogları ve ghrelin reseptör agonistleri. Sermorelin birincisine, Ipamorelin ikincisine örnek.",
+      "Sermorelin, GHRH'nin aktif fragmanı olarak hipofizin kendi salınım ritmini korur. Ipamorelin ise ghrelin reseptörü üzerinden çalışır ve seçiciliğiyle öne çıkar — kortizol ve prolaktini belirgin etkilemeden büyüme hormonu salınımını uyardığı öne sürülür.",
+      "Bu iki yol tamamlayıcı olduğu için, pratikte bir GHRH analoğu ile bir ghrelin agonistinin birlikte kullanımı sık görülür (ör. CJC-1295 + Ipamorelin). Amaç, iki farklı sinyali aynı anda vererek daha fizyolojik bir salınım paterni oluşturmak.",
+      "Her ikisi de kütüphanemizde 'Mekanistik / Teorik' kademesinde: mekanizma iyi tanımlı, ancak uzun dönem geniş kontrollü insan verisi sınırlı. Bu ayrımı, beklentiyi doğru kurmak için net tutuyoruz.",
+    ],
+    relatedLinks: [
+      { href: "/peptidler/ipamorelin", label: "Ipamorelin bileşik sayfası" },
+      { href: "/peptidler/sermorelin", label: "Sermorelin bileşik sayfası" },
+      { href: "/biyobelirtecler/igf-1", label: "Biyobelirteç: IGF-1" },
+    ],
+  },
+  {
+    slug: "preklinik-ne-anlama-gelir",
+    title: "'Preklinik' bir bileşik ne anlama gelir, ne anlama gelmez?",
+    category: "Yaklaşım",
+    excerpt:
+      "Thymosin Beta-4 gibi moleküller hayvan modellerinde umut verici. Ama 'preklinik' etiketi, tam olarak neyi söyler ve neyi söylemez?",
+    readMinutes: 3,
+    date: "2026-07-22",
+    body: [
+      "Bir bileşiği 'preklinik' olarak etiketlediğimizde, kanıtın büyük ölçüde hücre kültürü ve hayvan çalışmalarına dayandığını, kontrollü insan verisinin ya hiç olmadığını ya da neredeyse hiç olmadığını kastediyoruz.",
+      "Bu, molekülün 'işe yaramadığı' anlamına gelmez. Thymosin Beta-4'ün hayvan modellerinde doku onarımı üzerindeki etkileri gerçek ve tekrarlanabilir. Ama hayvan modelinden insana geçiş, biyolojinin en zorlu adımlarından biridir — birçok umut verici molekül bu geçişte beklentiyi karşılayamaz.",
+      "Bu yüzden preklinik bileşikleri, klinik kanıtlı olanlarla aynı cümlede sunmayız. İkisi de değerli olabilir; ama biri 'insanda gösterildi', diğeri 'henüz gösterilmedi' der. Bu farkı bulanıklaştırmak, sektörün en yaygın yanıltmasıdır.",
+      "Kütüphanemizdeki her etiketin arkasındaki mantığı metodoloji sayfamızda ayrıntılandırdık.",
+    ],
+    relatedLinks: [
+      { href: "/metodoloji", label: "Metodoloji: Kanıtı nasıl değerlendiriyoruz" },
+      { href: "/peptidler/thymosin-beta-4", label: "Thymosin Beta-4 bileşik sayfası" },
+    ],
+  },
+  {
+    slug: "uyku-mimarisi-ve-toparlanma",
+    title: "Uyku mimarisi: toparlanmanın görünmeyen altyapısı",
+    category: "Longevity",
+    excerpt:
+      "Derin uyku ve REM oranları, toparlanmanın ham süreden daha belirleyici bileşenleri. Neden uyku 'süresi' tek başına yeterli bir ölçüt değil?",
+    readMinutes: 3,
+    date: "2026-07-29",
+    body: [
+      "Uyku çoğu zaman tek bir sayıyla konuşulur: kaç saat. Oysa toparlanma açısından asıl belirleyici olan, o saatlerin nasıl dağıldığı — derin (yavaş dalga) uyku ve REM oranları.",
+      "Derin uyku, fiziksel toparlanma ve hormonal düzenlenmeyle; REM ise bilişsel konsolidasyon ve duygusal işlemlemeyle ilişkilendirilir. İkisinin de baskılandığı bir gece, süre olarak 'yeterli' görünse bile fonksiyonel olarak yetersiz olabilir.",
+      "Bu yüzden takip ettiğimiz belirteçler arasında toplam süre kadar uyku mimarisi ve HRV gibi otonom toparlanma sinyalleri de yer alır. DSIP gibi uykuyla ilişkilendirilen bileşiklerse hâlâ erken araştırma aşamasında — mekanizma ilgi çekici ama insan verisi sınırlı ve tutarsız.",
+      "Toparlanmayı bir sayıya değil, bir yapıya bakarak değerlendirmek — yaklaşımımızın temel farklarından biri.",
+    ],
+    relatedLinks: [
+      { href: "/biyobelirtecler/hrv", label: "Biyobelirteç: HRV" },
+      { href: "/peptidler/dsip", label: "DSIP bileşik sayfası" },
+    ],
+  },
 ]
 
 export const getArticle = (slug: string) =>

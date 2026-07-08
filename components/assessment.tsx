@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react"
+import Link from "next/link"
 import { Dialog } from "@base-ui/react/dialog"
 import { categoryCards } from "@/lib/categories"
 
@@ -51,10 +52,51 @@ const BIOMARKER_OPTIONS = [
   "Henüz yok",
 ]
 
+const HORIZON_OPTIONS = [
+  "Kısa vade — belirli bir hedefe odaklı",
+  "Orta vade — birkaç aylık yapılandırılmış süreç",
+  "Uzun vade — sürdürülebilir bir sistem",
+]
+
+const EVIDENCE_OPTIONS = [
+  "Yalnızca klinik kanıtı güçlü bileşikler",
+  "Mekanizması sağlam, gelişmekte olan bileşiklere de açığım",
+  "Kararı bir uzmanla birlikte vermek isterim",
+]
+
 const TIER_NAMES: Record<Tier, string> = {
   I: "Değerlendirme",
   II: "Kişisel Protokol",
   III: "Sürekli Optimizasyon",
+}
+
+/** Each focus area maps to a representative journal reading — used to give
+ * the result a concrete next step rather than a dead end. */
+const GOAL_READING: Record<string, { href: string; label: string }> = {
+  "Yağ Kaybı & Metabolizma": {
+    href: "/journal/yag-kaybi-protokol-mantigi",
+    label: "Yağ kaybı protokolünün mantığı",
+  },
+  "Doku Onarımı & İyileşme": {
+    href: "/journal/doku-onarimi-bpc157-tb500",
+    label: "Doku onarımında iki peptidin birlikte çalışması",
+  },
+  "Anti-Aging & Cilt": {
+    href: "/journal/cilt-icin-icten-yaklasim",
+    label: "Cilt için içten yaklaşım",
+  },
+  "Performans & Enerji": {
+    href: "/journal/performans-toparlanma-penceresi",
+    label: "Toparlanma, performansın görünmeyen yarısı",
+  },
+  "Longevity & Hücresel Sağlık": {
+    href: "/journal/hucresel-saglik-uzun-vade",
+    label: "Hücresel sağlık, uzun vadeli bir proje",
+  },
+  "Kognitif & Nörolojik": {
+    href: "/journal/kognitif-protokoller-semax-selank",
+    label: "Kognitif protokollerde Rusya kaynaklı iki molekül",
+  },
 }
 
 interface Answers {
@@ -62,9 +104,11 @@ interface Answers {
   experience?: string
   support?: string
   biomarker?: string
+  horizon?: string
+  evidence?: string
 }
 
-const QUESTION_COUNT = 4
+const QUESTION_COUNT = 6
 
 function OptionList({
   options,
@@ -133,15 +177,27 @@ function AssessmentDialog({
     notes.push("İlk adım güncel biyobelirteç okuması olacak.")
   }
   if (answers.experience === EXPERIENCE_OPTIONS[0]) {
-    notes.push("Başlangıçta daha yakın yönlendirme öneriyoruz.")
+    notes.push("Bu alanda ilk kez ilerlediğiniz için başlangıçta daha yakın yönlendirme öneriyoruz.")
+  }
+  if (answers.horizon === HORIZON_OPTIONS[2]) {
+    notes.push("Uzun vadeli ufkunuz, sürekli optimize edilen bir yaklaşımla uyumlu.")
+  }
+  if (answers.evidence === EVIDENCE_OPTIONS[0]) {
+    notes.push("Yalnızca klinik kanıtı güçlü bileşiklerle ilerlemeyi tercih ediyorsunuz — protokol bu kısıtla kurulur.")
+  } else if (answers.evidence === EVIDENCE_OPTIONS[1]) {
+    notes.push("Gelişmekte olan bileşiklere açıksınız; her birinin kanıt seviyesi süreç boyunca şeffaf şekilde paylaşılır.")
   }
   if (notes.length === 0) {
     notes.push("Seçimleriniz mevcut yaklaşımınızla uyumlu görünüyor.")
   }
 
+  const reading = answers.goal ? GOAL_READING[answers.goal] : undefined
+
   const waMessage = [
     "Merhaba, ön değerlendirmeyi tamamladım.",
     answers.goal ? `Odak alanı: ${answers.goal}` : null,
+    answers.horizon ? `Zaman ufku: ${answers.horizon}` : null,
+    answers.evidence ? `Kanıt yaklaşımı: ${answers.evidence}` : null,
     `Önerilen seviye: ${TIER_NAMES[recommendedTier]} (Seviye ${recommendedTier})`,
     "Görüşme talep ediyorum.",
   ]
@@ -174,6 +230,18 @@ function AssessmentDialog({
       value: answers.biomarker,
       options: BIOMARKER_OPTIONS,
       onChange: (v: string) => setAnswers((a) => ({ ...a, biomarker: v })),
+    },
+    {
+      label: "Hangi zaman ufkunu düşünüyorsunuz?",
+      value: answers.horizon,
+      options: HORIZON_OPTIONS,
+      onChange: (v: string) => setAnswers((a) => ({ ...a, horizon: v })),
+    },
+    {
+      label: "Kanıt konusundaki yaklaşımınız hangisine yakın?",
+      value: answers.evidence,
+      options: EVIDENCE_OPTIONS,
+      onChange: (v: string) => setAnswers((a) => ({ ...a, evidence: v })),
     },
   ]
 
@@ -268,6 +336,19 @@ function AssessmentDialog({
                   </li>
                 ))}
               </ul>
+
+              {reading && (
+                <p className="mt-8 text-sm leading-relaxed text-muted-foreground">
+                  Bu arada okumak isteyebilirsiniz:{" "}
+                  <Link
+                    href={reading.href}
+                    onClick={onClose}
+                    className="text-gold underline-offset-4 hover:underline"
+                  >
+                    {reading.label}
+                  </Link>
+                </p>
+              )}
 
               <Dialog.Description className="mt-8 text-[0.7rem] leading-relaxed text-muted-foreground/60">
                 Bu ön değerlendirme bilgilendirme amaçlıdır; tıbbi teşhis ya da

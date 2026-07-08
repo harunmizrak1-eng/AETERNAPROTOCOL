@@ -454,6 +454,85 @@ export const peptides: Peptide[] = [
     clinicalStatus:
       "Bazı ülkelerde klinik kullanımda, sonuçlar karışık",
   },
+  {
+    slug: "ipamorelin",
+    name: "Ipamorelin",
+    category: "Büyüme / GH",
+    tier: "theoretical",
+    short:
+      "Seçici ghrelin reseptör agonisti. Kortizol ve prolaktini belirgin etkilemeden büyüme hormonu salınımını uyardığı öne sürülen, iyi tanımlı bir peptid.",
+    mechanism:
+      "Ghrelin reseptörü üzerinden hipofizden büyüme hormonu salınımını seçici olarak uyarır; CJC-1295 gibi GHRH analoglarıyla sıklıkla birlikte kullanılır.",
+    primaryOutcomes: [
+      "Büyüme hormonu ve IGF-1 düzeylerinde artış",
+      "Seçiciliği nedeniyle daha sınırlı yan etki profili öne sürülüyor",
+      "Uzun dönem kontrollü insan verisi sınırlı",
+    ],
+    clinicalStatus: "Mekanizma iyi tanımlı, geniş kontrollü insan çalışması sınırlı",
+    relatedArticleSlug: "gh-salgilaticilar-ipamorelin-sermorelin",
+  },
+  {
+    slug: "sermorelin",
+    name: "Sermorelin",
+    category: "Büyüme / GH",
+    tier: "theoretical",
+    short:
+      "GHRH'nin ilk 29 aminoasitinden oluşan analog. Geçmişte tanısal amaçla onaylı kullanımı olmuş; doğal büyüme hormonu salınımını fizyolojik yolla uyarır.",
+    mechanism:
+      "GHRH analoğu; hipofizin kendi büyüme hormonu salınımını fizyolojik geri bildirim döngüsünü koruyarak uyarır.",
+    primaryOutcomes: [
+      "Büyüme hormonu ve IGF-1 düzeylerinde artış",
+      "Geçmişte pediatrik tanısal kullanımı onaylanmış, ilgili ürün piyasadan çekilmiştir",
+    ],
+    clinicalStatus: "Mekanizma iyi tanımlı, güncel geniş etkinlik verisi sınırlı",
+    relatedArticleSlug: "gh-salgilaticilar-ipamorelin-sermorelin",
+  },
+  {
+    slug: "thymosin-beta-4",
+    name: "Thymosin Beta-4",
+    category: "Doku Onarımı",
+    tier: "preclinical",
+    short:
+      "Hücre iskeleti düzenleyici bir protein. TB-500'ün türetildiği ana molekül; doku rejenerasyonundaki rolü büyük ölçüde hayvan modellerinde araştırılıyor.",
+    mechanism:
+      "Aktin bağlayarak hücre göçünü ve doku onarımını desteklediği düşünülen, doğal olarak bulunan bir peptid. TB-500, bunun sentetik bir fragmanıdır.",
+    primaryOutcomes: [
+      "Hayvan modellerinde kardiyak ve dermal doku onarımı bildirimleri",
+      "İnsan RCT verisi yok",
+    ],
+    clinicalStatus: "Preklinik aşama",
+    relatedArticleSlug: "preklinik-ne-anlama-gelir",
+  },
+  {
+    slug: "dsip",
+    name: "DSIP",
+    category: "Kognitif",
+    tier: "preclinical",
+    short:
+      "Delta uyku indükleyici peptid. Uyku mimarisi ve stres yanıtı üzerindeki etkileri onlarca yıldır araştırılıyor ama insan verisi hâlâ sınırlı ve tutarsız.",
+    mechanism:
+      "Merkezi sinir sisteminde uyku düzenlenmesi ve nöroendokrin modülasyonla ilişkilendirilen bir nöropeptid; kesin mekanizması tam aydınlatılmamıştır.",
+    primaryOutcomes: [
+      "Eski çalışmalarda uyku ve stres belirteçleri üzerinde etki bildirimleri",
+      "Modern kontrollü insan verisi sınırlı ve tutarsız",
+    ],
+    clinicalStatus: "Preklinik / erken araştırma aşaması",
+  },
+  {
+    slug: "5-amino-1mq",
+    name: "5-Amino-1MQ",
+    category: "Metabolik",
+    tier: "preclinical",
+    short:
+      "NNMT enzim inhibitörü küçük molekül. Yağ hücresi metabolizması üzerindeki etkileri hayvan modellerinde araştırılıyor; insan verisi bulunmuyor.",
+    mechanism:
+      "Nikotinamid N-metiltransferaz (NNMT) enzimini inhibe ederek yağ hücresi enerji metabolizmasını etkilediği öne sürülen deneysel bir bileşik.",
+    primaryOutcomes: [
+      "Hayvan modellerinde yağ kütlesi ve metabolik belirteçlerde değişim bildirimleri",
+      "İnsan verisi yok",
+    ],
+    clinicalStatus: "Erken preklinik aşama, insan verisi bulunmuyor",
+  },
 ]
 
 export const getPeptide = (slug: string) =>

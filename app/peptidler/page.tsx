@@ -1,14 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/final-cta"
-import {
-  peptides,
-  tierLabel,
-  tierColorVar,
-  tierBorderVar,
-  tierDots,
-} from "@/lib/peptides"
+import { Footer } from "@/components/footer"
+import { PeptideLibrary } from "@/components/peptide-library"
+import { tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 
 export const metadata: Metadata = {
   title: "Peptid Kütüphanesi",
@@ -61,45 +56,7 @@ export default function PeptidlerPage() {
           </div>
         </section>
 
-        {/* Peptide grid */}
-        <section className="px-6 pb-28 sm:pb-36 md:px-10">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {peptides.map((p) => (
-              <article
-                key={p.name}
-                className={`group flex flex-col border bg-surface p-8 transition-colors duration-500 hover:border-gold/50 ${tierBorderVar[p.tier]}`}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <h2 className="font-serif text-2xl font-light tracking-wide text-foreground">
-                    {p.name}
-                  </h2>
-                </div>
-
-                <p className="mt-2 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/70">
-                  {p.category}
-                </p>
-
-                <p className="mt-6 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {p.short}
-                </p>
-
-                <div className="mt-8 flex items-center gap-2">
-                  <span
-                    aria-hidden="true"
-                    className={`font-mono text-xs ${tierColorVar[p.tier]}`}
-                  >
-                    {tierDots[p.tier]}
-                  </span>
-                  <span
-                    className={`text-[0.65rem] uppercase tracking-eyebrow ${tierColorVar[p.tier]}`}
-                  >
-                    {tierLabel[p.tier]}
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        <PeptideLibrary />
 
         {/* CTA back to consulting */}
         <section className="px-6 pb-28 text-center sm:pb-36">

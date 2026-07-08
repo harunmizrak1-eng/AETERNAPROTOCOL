@@ -1,5 +1,6 @@
 import { tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 import { caseStudyDisclaimer, type CaseStudy } from "@/lib/case-studies"
+import { BiomarkerSparkline } from "@/components/case-studies/biomarker-sparkline"
 
 export function CaseStudyCard({ study }: { study: CaseStudy }) {
   return (
@@ -79,7 +80,12 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
                 </th>
                 <td className="py-2 pr-4 text-muted-foreground/80">{b.baseline}</td>
                 <td className="py-2 pr-4 text-foreground">{b.final}</td>
-                <td className="py-2 text-gold">{b.change}</td>
+                <td className="py-2 text-gold">
+                  <div className="flex items-center gap-2">
+                    <BiomarkerSparkline direction={b.direction} />
+                    <span>{b.change}</span>
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>

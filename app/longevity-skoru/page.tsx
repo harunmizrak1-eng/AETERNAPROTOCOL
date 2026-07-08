@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/final-cta"
+import { Footer } from "@/components/footer"
 import { LongevityScoreForm } from "@/components/longevity-score-form"
 
 export const metadata: Metadata = {

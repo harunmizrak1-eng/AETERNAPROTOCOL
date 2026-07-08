@@ -10,11 +10,18 @@ export function LongevityScoreForm() {
   const { open } = useAssessment()
 
   const allAnswered = scoreDimensions.every((d) => answers[d.id] !== undefined)
+  const answeredCount = scoreDimensions.filter(
+    (d) => answers[d.id] !== undefined,
+  ).length
   const score = computeScore(answers)
 
   return (
     <div>
-      <div className="flex flex-col gap-10">
+      <p className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/70">
+        {answeredCount} / {scoreDimensions.length}
+      </p>
+
+      <div className="mt-6 flex flex-col gap-10">
         {scoreDimensions.map((d) => (
           <div key={d.id}>
             <h2 className="font-serif text-xl font-light tracking-wide text-foreground">

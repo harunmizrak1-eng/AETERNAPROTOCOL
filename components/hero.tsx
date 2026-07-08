@@ -3,11 +3,7 @@
 import { Reveal } from "@/components/reveal"
 import { HeroSignature } from "@/components/hero-signature"
 import { useAssessment } from "@/components/assessment"
-
-const lastReviewed = new Intl.DateTimeFormat("tr-TR", {
-  month: "long",
-  year: "numeric",
-}).format(new Date())
+import { lastContentReview } from "@/lib/site"
 
 export function Hero() {
   const { open } = useAssessment()
@@ -37,7 +33,7 @@ export function Hero() {
 
         <p className="mt-6 text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
           Kanıt seviyesine göre sınıflandırılmış protokoller · Son inceleme:{" "}
-          {lastReviewed}
+          {lastContentReview}
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">

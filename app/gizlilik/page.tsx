@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Nav } from "@/components/nav"
-import { Footer } from "@/components/final-cta"
+import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Gizlilik & KVKK",

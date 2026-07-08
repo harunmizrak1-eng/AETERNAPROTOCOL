@@ -272,6 +272,158 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Preklinik aşama, sporda yasaklı madde statüsünde",
   },
+  {
+    slug: "aod-9604",
+    name: "AOD-9604",
+    category: "Metabolik",
+    tier: "preclinical",
+    short:
+      "Büyüme hormonunun yağ yakıcı bölgesinden türetilmiş fragman (Fragment 176-191). Obezite endikasyonunda Faz 2 çalışmalarında plasebodan üstünlük gösterememiştir.",
+    mechanism:
+      "Büyüme hormonunun lipoliz ile ilişkili C-terminal bölgesinden türetilmiş; kan şekerini etkilemeden yağ yakımını artırdığı öne sürülüyor.",
+    primaryOutcomes: [
+      "Faz 2 insan çalışmalarında plasebo karşısında anlamlı üstünlük gösterilemedi",
+      "Geliştirme programı obezite endikasyonu için durduruldu",
+    ],
+    clinicalStatus:
+      "Faz 2 sonrası geliştirmesi durduruldu — kanıt seviyesi düşük",
+  },
+  {
+    slug: "thymosin-alpha-1",
+    name: "Thymosin Alpha-1",
+    category: "Doku Onarımı",
+    tier: "theoretical",
+    short:
+      "Timüs kaynaklı immün modülatör peptid. Bazı ülkelerde hepatit ve bağışıklık desteği amacıyla onaylı; ABD'de FDA onayı yok.",
+    mechanism:
+      "T hücre olgunlaşmasını ve immün yanıtı düzenlediği düşünülen timik peptid; doğal bağışıklık ve adaptif bağışıklık arayüzünde rol oynar.",
+    primaryOutcomes: [
+      "Bazı ülkelerde hepatit B/C ve immün destek endikasyonlarında onaylı kullanım",
+      "ABD ve AB'de geniş RCT verisi sınırlı",
+    ],
+    clinicalStatus: "Bazı ülkelerde onaylı (Zadaxin), FDA onayı yok",
+  },
+  {
+    slug: "pt-141",
+    name: "PT-141",
+    category: "Estetik / Onarım",
+    tier: "proven",
+    short:
+      "Bremelanotide. Melanokortin reseptör agonisti; kadınlarda hipoaktif cinsel istek bozukluğu için FDA onaylı (Vyleesi).",
+    mechanism:
+      "Merkezi melanokortin 4 reseptörü (MC4R) üzerinden etki eden, cinsel isteği düzenleyen nöral yolakları uyarır. Vasküler değil merkezi sinir sistemi kaynaklı bir mekanizmadır.",
+    primaryOutcomes: [
+      "Kadınlarda hipoaktif cinsel istek bozukluğunda FDA onaylı endikasyon",
+      "Erkeklerde kullanım klinik dışı, sınırlı kontrollü veri",
+    ],
+    clinicalStatus: "FDA onaylı (Vyleesi, kadın endikasyonu)",
+  },
+  {
+    slug: "ghrp-2",
+    name: "GHRP-2",
+    category: "Büyüme / GH",
+    tier: "theoretical",
+    short:
+      "Ghrelin reseptör agonisti büyüme hormonu salgılatıcı peptid. Mekanizma iyi tanımlı, uzun dönem insan verisi sınırlı.",
+    mechanism:
+      "Ghrelin reseptörü üzerinden hipofizden büyüme hormonu salınımını uyarır; iştah artışına da yol açabilir.",
+    primaryOutcomes: [
+      "Büyüme hormonu ve IGF-1 düzeylerinde artış",
+      "Uzun dönem güvenlik ve etkinlik verisi sınırlı",
+    ],
+    clinicalStatus: "Mekanizma iyi tanımlı, kontrollü insan çalışması sınırlı",
+  },
+  {
+    slug: "hexarelin",
+    name: "Hexarelin",
+    category: "Büyüme / GH",
+    tier: "preclinical",
+    short:
+      "Güçlü bir ghrelin reseptör agonisti. Hayvan çalışmalarında kardiyoprotektif etkiler gösterdi; insan verisi sınırlı.",
+    mechanism:
+      "Ghrelin reseptörü üzerinden güçlü büyüme hormonu salınımı tetikler; hayvan modellerinde doğrudan kardiyak dokuda koruyucu etki gösterdiği bildirilmiştir.",
+    primaryOutcomes: [
+      "Hayvan modellerinde kardiyoprotektif etki bildirimleri",
+      "İnsan RCT verisi sınırlı",
+    ],
+    clinicalStatus: "Preklinik ağırlıklı, insan verisi sınırlı",
+  },
+  {
+    slug: "tesamorelin",
+    name: "Tesamorelin",
+    category: "Büyüme / GH",
+    tier: "proven",
+    short:
+      "GHRH analoğu. HIV ile ilişkili lipodistrofide viseral yağ azaltımı için FDA onaylı (Egrifta).",
+    mechanism:
+      "Büyüme hormonu salgılatıcı hormon (GHRH) analoğu; hipofizden doğal büyüme hormonu salınımını fizyolojik yolla artırır.",
+    primaryOutcomes: [
+      "HIV ilişkili lipodistrofide viseral yağ azalması (FDA onaylı endikasyon)",
+      "IGF-1 düzeylerinde artış",
+    ],
+    clinicalStatus: "FDA onaylı (Egrifta, lipodistrofi endikasyonu)",
+  },
+  {
+    slug: "thymalin",
+    name: "Thymalin",
+    category: "Longevity",
+    tier: "preclinical",
+    short:
+      "Rusya kaynaklı timik bioregülatör peptid karışımı. Epithalon ile aynı araştırma geleneğinden; bağımsız modern RCT bulunmuyor.",
+    mechanism:
+      "Timüs dokusundan izole edilmiş peptid karışımı; immün fonksiyon ve hücresel yaşlanma belirteçleri üzerinde düzenleyici etki öne sürülüyor.",
+    primaryOutcomes: [
+      "Eski Rusya kaynaklı çalışmalarda immün fonksiyonda iyileşme bildirimleri",
+      "Bağımsız modern RCT bulunmuyor",
+    ],
+    clinicalStatus: "Preklinik aşama, bağımsız doğrulama sınırlı",
+  },
+  {
+    slug: "humanin",
+    name: "Humanin",
+    category: "Longevity",
+    tier: "preclinical",
+    short:
+      "Mitokondriyal DNA kaynaklı sinyal peptidi. Akademik longevity araştırmalarında ilgi görüyor; insan RCT verisi yok.",
+    mechanism:
+      "Mitokondriyal DNA'dan kodlanan, hücre koruyucu (sitoprotektif) sinyal yolaklarını aktive ettiği düşünülen bir mikropeptid.",
+    primaryOutcomes: [
+      "Hücre kültürü ve hayvan modellerinde koruyucu etki bildirimleri",
+      "İnsan RCT verisi yok",
+    ],
+    clinicalStatus: "Preklinik aşama, akademik araştırma düzeyinde",
+  },
+  {
+    slug: "dihexa",
+    name: "Dihexa",
+    category: "Kognitif",
+    tier: "preclinical",
+    short:
+      "HGF/c-Met yolağını hedefleyen deneysel nootropik. Hayvan modellerinde sinaptik etkiler bildirildi; insan verisi yok.",
+    mechanism:
+      "Hepatosit büyüme faktörü (HGF) yolağını güçlendirdiği ve sinaptik bağlantı yoğunluğunu artırdığı öne sürülen deneysel bir bileşik.",
+    primaryOutcomes: [
+      "Hayvan modellerinde bildirilen etki büyüklükleri bağımsız olarak geniş çapta doğrulanmadı",
+      "İnsan verisi yok",
+    ],
+    clinicalStatus: "Erken preklinik aşama, insan verisi bulunmuyor",
+  },
+  {
+    slug: "cerebrolysin",
+    name: "Cerebrolysin",
+    category: "Kognitif",
+    tier: "theoretical",
+    short:
+      "Domuz beyninden elde edilen nöropeptid karışımı. Bazı ülkelerde inme ve demans desteğinde kullanılıyor; sonuçlar çalışmalar arasında tutarsız.",
+    mechanism:
+      "Nörotrofik faktörlere benzer etkiyle nöroplastisiteyi desteklediği düşünülen, çoklu peptid fraksiyonundan oluşan bir karışım.",
+    primaryOutcomes: [
+      "Bazı RCT'lerde bilişsel skorlarda iyileşme",
+      "Çalışmalar arasında sonuçlar tutarsız, ABD/AB onayı yok",
+    ],
+    clinicalStatus:
+      "Bazı ülkelerde klinik kullanımda, sonuçlar karışık",
+  },
 ]
 
 export const getPeptide = (slug: string) =>

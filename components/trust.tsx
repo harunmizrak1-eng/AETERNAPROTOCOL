@@ -1,5 +1,5 @@
 const STATS = [
-  { value: "50+", label: "Vaka" },
+  { value: "50+", label: "Profil" },
   { value: "10", label: "Yıl Deneyim" },
   { value: "6", label: "Protokol Kategorisi" },
 ]
@@ -7,17 +7,18 @@ const STATS = [
 const QUOTES = [
   {
     quote:
-      "İlk kez biyolojimin nasıl çalıştığını anladım. Enerjim ve uykum tamamen değişti.",
-    label: "Erkek · 41 · Metabolik Protokol",
+      "İlk kez biyolojimin nasıl çalıştığını anladım. On altı haftalık süreçte enerjim ve uyku düzenim belirgin şekilde değişti.",
+    label: "Kadın · 39 · Metabolik Protokol",
   },
   {
     quote:
-      "Yıllardır geçmeyen tendon problemim, doğru protokolle birkaç ayda toparlandı.",
+      "Yıllardır geçmeyen omuz problemim, on iki haftalık protokolle büyük ölçüde toparlandı.",
     label: "Erkek · 34 · Doku Onarımı Protokolü",
   },
   {
-    quote: "Beklediğim şey bir takviye değildi. Bir sistemdi. Fark buradaydı.",
-    label: "Erkek · 53 · Longevity Protokolü",
+    quote:
+      "Beklediğim şey bir takviye değildi. Bir sistemdi. Fark, birkaç ay içinde netleşti.",
+    label: "Kadın · 53 · Longevity Protokolü",
   },
 ]
 

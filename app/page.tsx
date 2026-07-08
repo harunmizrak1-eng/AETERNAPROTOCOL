@@ -1,6 +1,7 @@
 import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
 import { ResearchMetrics } from "@/components/research-metrics"
+import { WhyAeterna } from "@/components/why-aeterna"
 import { Categories } from "@/components/categories"
 import { Idea } from "@/components/idea"
 import { Process } from "@/components/process"
@@ -17,6 +18,9 @@ export default function Page() {
       <Nav />
       <Hero />
       <ResearchMetrics />
+      <Reveal>
+        <WhyAeterna />
+      </Reveal>
       <Reveal>
         <Categories />
       </Reveal>

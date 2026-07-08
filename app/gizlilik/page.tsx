@@ -3,9 +3,12 @@ import { Nav } from "@/components/nav"
 import { Footer } from "@/components/final-cta"
 
 export const metadata: Metadata = {
-  title: "Gizlilik & KVKK — ÆTERNA",
+  title: "Gizlilik & KVKK",
   description:
     "Kişisel verilerin korunması, sağlık verisi işleme ve gizlilik politikası.",
+  alternates: {
+    canonical: "/gizlilik",
+  },
 }
 
 const SECTIONS = [
@@ -50,16 +53,16 @@ export default function PrivacyPage() {
                   <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
                     {s.h}
                   </h2>
-                  <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                     {s.p}
                   </p>
                 </div>
               ))}
             </div>
 
-            <p className="mt-16 border-t border-hairline pt-8 text-[0.7rem] font-light leading-relaxed text-muted-foreground/50">
-              Bu metin bilgilendirme amaçlı bir taslaktır. Yürürlüğe girmeden önce
-              bir hukuk danışmanı tarafından gözden geçirilmelidir.
+            <p className="mt-16 border-t border-hairline pt-8 text-[0.7rem] leading-relaxed text-muted-foreground/50">
+              Bu metin bilgilendirme amaçlı bir taslaktır. Yürürlüğe girmeden
+              önce bir hukuk danışmanı tarafından gözden geçirilmelidir.
             </p>
           </div>
         </section>

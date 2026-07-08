@@ -25,6 +25,13 @@ export const tierBorderVar: Record<EvidenceTier, string> = {
   preclinical: "border-tier-preclinical/40",
 }
 
+/** Evidence Score — dot indicator: strong / moderate / early. */
+export const tierDots: Record<EvidenceTier, string> = {
+  proven: "●●●",
+  theoretical: "●●○",
+  preclinical: "●○○",
+}
+
 export const peptides: Peptide[] = [
   {
     name: "Retatrutide",

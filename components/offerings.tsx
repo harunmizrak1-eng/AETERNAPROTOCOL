@@ -1,14 +1,14 @@
+"use client"
+
+import { useAssessment } from "@/components/assessment"
+
 const TIERS = [
   {
     tier: "I",
     name: "Değerlendirme",
     positioning: "Başlangıç",
     line: "Mevcut durumunuzun okunması. Hedeflerin netleşmesi ve doğru yönün belirlenmesi için ilk temas.",
-    includes: [
-      "Gizli ön görüşme",
-      "Hedef ve geçmiş analizi",
-      "Yön önerisi",
-    ],
+    includes: ["Gizli ön görüşme", "Hedef ve geçmiş analizi", "Yön önerisi"],
     featured: false,
   },
   {
@@ -43,18 +43,23 @@ const PACKAGES = [
   {
     name: "Metabolik Reset",
     line: "Yağ kaybı ve iştah kontrolü için yapılandırılmış giriş protokolü.",
+    goal: "Yağ Kaybı & Metabolizma",
   },
   {
     name: "Recovery Stack",
     line: "Doku onarımı ve toparlanma odaklı, sporcular için hazırlanmış kombinasyon.",
+    goal: "Doku Onarımı & İyileşme",
   },
   {
     name: "Longevity Foundation",
     line: "Hücresel sağlık ve sağlıklı yaşlanma için uzun vadeli temel protokol.",
+    goal: "Longevity & Hücresel Sağlık",
   },
 ]
 
 export function Offerings() {
+  const { open } = useAssessment()
+
   return (
     <section id="danismanlik" className="px-6 py-28 sm:py-36 md:px-10">
       <div className="mx-auto max-w-6xl">
@@ -69,8 +74,9 @@ export function Offerings() {
         <h2 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
           Her seviyede, aynı hassasiyet.
         </h2>
-        <p className="mt-6 max-w-md text-sm font-light leading-relaxed text-muted-foreground">
-          Çalışma seçici ilerler. Sizin için doğru başlangıç noktasını görüşmede birlikte belirleriz.
+        <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
+          Çalışma seçici ilerler. Sizin için doğru başlangıç noktasını görüşmede
+          birlikte belirleriz.
         </p>
 
         {/* Consulting tiers */}
@@ -104,7 +110,7 @@ export function Offerings() {
               <h3 className="mt-6 font-serif text-2xl font-light tracking-wide text-foreground sm:text-[1.7rem]">
                 {t.name}
               </h3>
-              <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {t.line}
               </p>
 
@@ -112,29 +118,31 @@ export function Offerings() {
                 {t.includes.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-sm font-light text-foreground/80"
+                    className="flex items-start gap-3 text-sm text-foreground/80"
                   >
-                    <span aria-hidden="true" className="mt-2 h-px w-3 flex-shrink-0 bg-gold/60" />
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 h-px w-3 flex-shrink-0 bg-gold/60"
+                    />
                     {item}
                   </li>
                 ))}
               </ul>
 
               <div className="mt-auto pt-10">
-                <a
-                  href={`https://wa.me/905359184587?text=Merhaba%2C%20${encodeURIComponent(
-                    t.name,
-                  )}%20seviyesi%20i%C3%A7in%20g%C3%B6r%C3%BC%C5%9Fmek%20istiyorum.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-block border px-7 py-3 text-[0.65rem] uppercase tracking-eyebrow transition-colors duration-300 hover:bg-gold hover:text-primary-foreground ${
+                <button
+                  type="button"
+                  onClick={() =>
+                    open({ tier: t.tier as "I" | "II" | "III" })
+                  }
+                  className={`inline-block rounded-sm border px-7 py-3 text-[0.65rem] uppercase tracking-eyebrow font-medium transition-colors duration-300 hover:bg-gold hover:text-primary-foreground ${
                     t.featured
                       ? "border-gold/60 text-gold"
                       : "border-hairline text-foreground/80 hover:border-gold/60"
                   }`}
                 >
                   Başvuru Yap
-                </a>
+                </button>
               </div>
             </article>
           ))}
@@ -157,20 +165,17 @@ export function Offerings() {
               <h3 className="font-serif text-xl font-light tracking-wide text-foreground">
                 {p.name}
               </h3>
-              <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {p.line}
               </p>
               <div className="mt-8">
-                <a
-                  href={`https://wa.me/905359184587?text=Merhaba%2C%20${encodeURIComponent(
-                    p.name,
-                  )}%20protokol%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[0.65rem] uppercase tracking-eyebrow text-gold transition-opacity duration-300 hover:opacity-70"
+                <button
+                  type="button"
+                  onClick={() => open({ goal: p.goal })}
+                  className="text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-opacity duration-300 hover:opacity-70"
                 >
                   Bilgi Al →
-                </a>
+                </button>
               </div>
             </article>
           ))}

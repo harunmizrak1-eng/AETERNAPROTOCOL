@@ -19,7 +19,7 @@ export function Idea() {
               {s.headline}
             </h2>
             <div aria-hidden="true" className="mt-8 h-px w-12 bg-gold/50" />
-            <p className="mt-8 max-w-md text-pretty text-sm font-light leading-relaxed text-muted-foreground">
+            <p className="mt-8 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
               {s.line}
             </p>
           </div>

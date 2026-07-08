@@ -31,6 +31,12 @@ export function Nav() {
             Journal
           </Link>
           <Link
+            href="/longevity-skoru"
+            className="hidden text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground lg:inline"
+          >
+            Longevity Skoru
+          </Link>
+          <Link
             href="/#danismanlik"
             className="hidden text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground sm:inline"
           >

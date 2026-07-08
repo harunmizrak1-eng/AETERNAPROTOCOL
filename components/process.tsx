@@ -53,7 +53,7 @@ export function Process() {
                   aria-hidden="true"
                   className="mt-4 block h-px w-0 bg-gold transition-all duration-500 group-hover:w-12"
                 />
-                <p className="mt-6 text-sm font-light leading-relaxed text-muted-foreground">
+                <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
                   {step.line}
                 </p>
               </div>

@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav"
 import { Footer } from "@/components/final-cta"
 import { Newsletter } from "@/components/newsletter"
 import { articles, getArticle } from "@/lib/articles"
+import { siteUrl, siteName } from "@/lib/site"
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }))
@@ -17,10 +18,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const article = getArticle(slug)
-  if (!article) return { title: "Journal — ÆTERNA" }
+  if (!article) return { title: "Journal" }
   return {
-    title: `${article.title} — ÆTERNA`,
+    title: article.title,
     description: article.excerpt,
+    alternates: {
+      canonical: `/journal/${article.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.excerpt,
+      publishedTime: article.date,
+      url: `${siteUrl}/journal/${article.slug}`,
+    },
   }
 }
 
@@ -35,6 +46,29 @@ export default async function ArticlePage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: article.title,
+            description: article.excerpt,
+            datePublished: article.date,
+            dateModified: article.date,
+            author: {
+              "@type": "Organization",
+              name: siteName,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: siteName,
+            },
+            mainEntityOfPage: `${siteUrl}/journal/${article.slug}`,
+          }),
+        }}
+      />
       <Nav />
       <main className="relative z-10 bg-background pt-32">
         <article className="px-6 pb-24 md:px-10">
@@ -63,7 +97,7 @@ export default async function ArticlePage({
               {article.body.map((para, i) => (
                 <p
                   key={i}
-                  className="text-base font-light leading-relaxed text-foreground/85"
+                  className="text-base leading-relaxed text-foreground/85"
                 >
                   {para}
                 </p>
@@ -71,7 +105,7 @@ export default async function ArticlePage({
             </div>
 
             <div className="mt-16 border-t border-hairline pt-8">
-              <p className="text-[0.7rem] font-light leading-relaxed text-muted-foreground/60">
+              <p className="text-[0.7rem] leading-relaxed text-muted-foreground/60">
                 Bu yazı bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez.
                 Herhangi bir protokole başlamadan önce bir hekime danışın.
               </p>

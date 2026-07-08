@@ -1,38 +1,50 @@
-import { Reveal } from "./reveal"
+"use client"
+
+import { Reveal } from "@/components/reveal"
+import { HeroSignature } from "@/components/hero-signature"
+import { useAssessment } from "@/components/assessment"
+
+const lastReviewed = new Intl.DateTimeFormat("tr-TR", {
+  month: "long",
+  year: "numeric",
+}).format(new Date())
 
 export function Hero() {
+  const { open } = useAssessment()
+
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(196,168,130,0.06),transparent_60%)]"
       />
+      <HeroSignature />
 
       <Reveal className="relative z-10 flex flex-col items-center">
-        <h1 className="font-serif text-6xl font-light tracking-wordmark text-foreground sm:text-7xl md:text-8xl">
+        <p className="font-serif text-sm tracking-wordmark text-foreground/60">
           ÆTERNA
+        </p>
+
+        <h1 className="mt-6 max-w-2xl text-balance font-serif text-4xl font-light leading-[1.15] tracking-wide text-foreground sm:text-6xl md:text-7xl">
+          Uzun yaşam için özel bir işletim sistemi.
         </h1>
 
-        <p className="mt-8 font-serif text-xl italic tracking-wide text-foreground/90 sm:text-2xl">
-          Hassas Biyoloji. Özel Erişim.
+        <p className="mt-8 max-w-lg text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+          Seçili sayıda birey için, kan değerlerinden literatüre kadar her
+          adımı kanıta dayalı olarak kurulan, tamamen kişiye özel biyolojik
+          optimizasyon protokolleri.
         </p>
 
-        <div
-          aria-hidden="true"
-          className="mt-8 h-px w-16 bg-gold/60"
-        />
-
-        <p className="mt-8 max-w-md text-pretty text-sm font-light leading-relaxed text-muted-foreground sm:text-base">
-          Performans, iyileşme ve uzun yaşam için kişiye özel optimizasyon
-          protokolleri.
+        <p className="mt-6 text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+          Kanıt seviyesine göre sınıflandırılmış protokoller · Son inceleme:{" "}
+          {lastReviewed}
         </p>
 
-        <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            href="https://wa.me/905359184587?text=Merhaba%2C%20protokol%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+          <button
+            type="button"
+            onClick={() => open()}
+            className="flex items-center gap-3 rounded-sm border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
           >
             <svg
               aria-hidden="true"
@@ -42,14 +54,14 @@ export function Hero() {
             >
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
             </svg>
-            Özel Görüşme Talep Et
-          </a>
+            Ön Değerlendirmeyi Başlat
+          </button>
 
           <a
             href="https://www.instagram.com/aeterna.protocol?igsh=anVvbGp3bGV5MXQ1"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 border border-gold/40 px-10 py-4 text-xs uppercase tracking-eyebrow text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+            className="flex items-center gap-3 rounded-sm border border-gold/40 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
           >
             <svg
               aria-hidden="true"
@@ -62,15 +74,6 @@ export function Hero() {
             Sürecin İçinden İçerik
           </a>
         </div>
-
-        <div className="mt-12 text-[0.65rem] uppercase tracking-widest text-muted-foreground/50">
-          Kanıt Temelli  ·  Kişiye Özel  ·  Gizli Çalışma
-        </div>
-
-        <div
-          aria-hidden="true"
-          className="mt-12 h-10 w-px animate-pulse bg-gold/30"
-        />
       </Reveal>
     </section>
   )

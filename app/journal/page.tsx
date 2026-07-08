@@ -6,9 +6,12 @@ import { Reveal } from "@/components/reveal"
 import { articles } from "@/lib/articles"
 
 export const metadata: Metadata = {
-  title: "Journal — ÆTERNA",
+  title: "Journal",
   description:
     "Peptidler, longevity ve biohacking üzerine kanıt temelli Türkçe yazılar.",
+  alternates: {
+    canonical: "/journal",
+  },
 }
 
 export default function JournalPage() {
@@ -27,7 +30,7 @@ export default function JournalPage() {
             <h1 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
               Yazılar
             </h1>
-            <p className="mt-6 max-w-xl text-sm font-light leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
               Peptidler, longevity ve biohacking üzerine kanıt temelli notlar.
               Trend değil, mekanizma ve veri.
             </p>
@@ -53,7 +56,7 @@ export default function JournalPage() {
                   <h2 className="mt-4 font-serif text-2xl font-light tracking-wide text-foreground transition-colors group-hover:text-gold sm:text-3xl">
                     {a.title}
                   </h2>
-                  <p className="mt-4 max-w-2xl text-sm font-light leading-relaxed text-muted-foreground">
+                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                     {a.excerpt}
                   </p>
                   <span className="mt-6 text-[0.65rem] uppercase tracking-eyebrow text-foreground/70 transition-opacity group-hover:opacity-70">

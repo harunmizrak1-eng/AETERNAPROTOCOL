@@ -1,6 +1,6 @@
 const STATS = [
   { value: "50+", label: "Vaka" },
-  { value: "3+", label: "Yıl Deneyim" },
+  { value: "10", label: "Yıl Deneyim" },
   { value: "6", label: "Protokol Kategorisi" },
 ]
 
@@ -16,8 +16,7 @@ const QUOTES = [
     label: "Erkek · 34 · Doku Onarımı Protokolü",
   },
   {
-    quote:
-      "Beklediğim şey bir takviye değildi. Bir sistemdi. Fark buradaydı.",
+    quote: "Beklediğim şey bir takviye değildi. Bir sistemdi. Fark buradaydı.",
     label: "Erkek · 53 · Longevity Protokolü",
   },
 ]

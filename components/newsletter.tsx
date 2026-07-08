@@ -33,7 +33,7 @@ export function Newsletter() {
         <h2 className="mt-8 text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
           İlk bilenlerden olun.
         </h2>
-        <p className="mx-auto mt-5 max-w-md text-sm font-light leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
           Yeni araştırmalar, bileşik notları ve protokol içgörüleri. Ara sıra,
           sadece değerli olduğunda.
         </p>
@@ -50,19 +50,17 @@ export function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-posta adresiniz"
-              className="flex-1 border border-hairline bg-surface px-5 py-3.5 text-sm font-light text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-gold/60"
+              className="flex-1 border border-hairline bg-surface px-5 py-3.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-gold/60"
             />
             <button
               onClick={handleSubmit}
-              className="border border-gold/60 px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+              className="rounded-sm border border-gold/60 px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
             >
               Katıl
             </button>
           </div>
         )}
-        {error && (
-          <p className="mt-3 text-xs font-light text-[#c2614f]">{error}</p>
-        )}
+        {error && <p className="mt-3 text-xs text-[#c2614f]">{error}</p>}
       </div>
     </section>
   )

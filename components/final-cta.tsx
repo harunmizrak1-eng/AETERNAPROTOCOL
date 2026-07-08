@@ -1,4 +1,10 @@
+"use client"
+
+import { useAssessment } from "@/components/assessment"
+
 export function FinalCta() {
+  const { open } = useAssessment()
+
   return (
     <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
       <h2 className="max-w-3xl text-balance font-serif text-4xl font-light leading-[1.15] tracking-wide text-foreground sm:text-6xl md:text-7xl">
@@ -7,14 +13,13 @@ export function FinalCta() {
 
       <div aria-hidden="true" className="mt-10 h-px w-16 bg-gold/60" />
 
-      <a
-        href="https://wa.me/905359184587?text=Merhaba%2C%20protokol%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-12 border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+      <button
+        type="button"
+        onClick={() => open()}
+        className="mt-12 rounded-sm border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
       >
         Özel Görüşme Talep Et
-      </a>
+      </button>
     </section>
   )
 }
@@ -47,7 +52,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-hairline pt-8">
-          <p className="mx-auto max-w-3xl text-center text-[0.7rem] font-light leading-relaxed text-muted-foreground/60">
+          <p className="mx-auto max-w-3xl text-center text-[0.7rem] leading-relaxed text-muted-foreground/60">
             Bu sitedeki içerik yalnızca bilgilendirme amaçlıdır ve tıbbi tavsiye
             yerine geçmez. Hiçbir ifade hastalık teşhis, tedavi veya önleme
             iddiası taşımaz. Herhangi bir protokole başlamadan önce bir hekime

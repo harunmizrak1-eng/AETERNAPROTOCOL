@@ -7,12 +7,16 @@ import {
   tierLabel,
   tierColorVar,
   tierBorderVar,
+  tierDots,
 } from "@/lib/peptides"
 
 export const metadata: Metadata = {
-  title: "Peptid Kütüphanesi — ÆTERNA",
+  title: "Peptid Kütüphanesi",
   description:
     "Peptidler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
+  alternates: {
+    canonical: "/peptidler",
+  },
 }
 
 export default function PeptidlerPage() {
@@ -32,26 +36,22 @@ export default function PeptidlerPage() {
             <h1 className="mt-10 max-w-3xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
               Peptid Kütüphanesi
             </h1>
-            <p className="mt-6 max-w-xl text-sm font-light leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
               Her bileşik, kanıt seviyesine göre sınıflandırılmıştır. Bu ayrım,
-              markanın temel ilkesidir: kanıtlanmış olanı spekülatif olandan asla
-              ayırmadan sunmayız.
+              markanın temel ilkesidir: kanıtlanmış olanı spekülatif olandan
+              asla ayırmadan sunmayız.
             </p>
 
-            {/* Tier legend */}
+            {/* Evidence Score legend */}
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
               {(["proven", "theoretical", "preclinical"] as const).map((t) => (
                 <div key={t} className="flex items-center gap-2">
                   <span
                     aria-hidden="true"
-                    className={`h-1.5 w-1.5 rounded-full ${
-                      t === "proven"
-                        ? "bg-tier-proven"
-                        : t === "theoretical"
-                          ? "bg-tier-theoretical"
-                          : "bg-tier-preclinical"
-                    }`}
-                  />
+                    className={`font-mono text-xs ${tierColorVar[t]}`}
+                  >
+                    {tierDots[t]}
+                  </span>
                   <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
                     {tierLabel[t]}
                   </span>
@@ -79,21 +79,17 @@ export default function PeptidlerPage() {
                   {p.category}
                 </p>
 
-                <p className="mt-6 flex-1 text-sm font-light leading-relaxed text-muted-foreground">
+                <p className="mt-6 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {p.short}
                 </p>
 
                 <div className="mt-8 flex items-center gap-2">
                   <span
                     aria-hidden="true"
-                    className={`h-1.5 w-1.5 rounded-full ${
-                      p.tier === "proven"
-                        ? "bg-tier-proven"
-                        : p.tier === "theoretical"
-                          ? "bg-tier-theoretical"
-                          : "bg-tier-preclinical"
-                    }`}
-                  />
+                    className={`font-mono text-xs ${tierColorVar[p.tier]}`}
+                  >
+                    {tierDots[p.tier]}
+                  </span>
                   <span
                     className={`text-[0.65rem] uppercase tracking-eyebrow ${tierColorVar[p.tier]}`}
                   >
@@ -112,7 +108,7 @@ export default function PeptidlerPage() {
           </p>
           <Link
             href="/#danismanlik"
-            className="mt-10 inline-block border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+            className="mt-10 inline-block rounded-sm border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
           >
             Danışmanlığı İncele
           </Link>

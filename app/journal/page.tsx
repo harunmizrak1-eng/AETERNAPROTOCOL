@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
-import { Reveal } from "@/components/reveal"
+import { JournalList } from "@/components/journal-list"
 import { articles } from "@/lib/articles"
 
 export const metadata: Metadata = {
@@ -44,33 +43,8 @@ export default function JournalPage() {
         </section>
 
         <section className="px-6 pb-28 sm:pb-36 md:px-10">
-          <div className="mx-auto flex max-w-4xl flex-col">
-            {articles.map((a, i) => (
-              <Reveal key={a.slug} delay={i * 80}>
-                <Link
-                  href={`/journal/${a.slug}`}
-                  className="group flex flex-col border-t border-hairline py-10 transition-colors last:border-b hover:border-gold/40"
-                >
-                  <div className="flex items-center gap-4">
-                    <span className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-                      {a.category}
-                    </span>
-                    <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/50">
-                      {a.readMinutes} dk okuma
-                    </span>
-                  </div>
-                  <h2 className="mt-4 font-serif text-2xl font-light tracking-wide text-foreground transition-colors group-hover:text-gold sm:text-3xl">
-                    {a.title}
-                  </h2>
-                  <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                    {a.excerpt}
-                  </p>
-                  <span className="mt-6 text-[0.65rem] uppercase tracking-eyebrow text-foreground/70 transition-opacity group-hover:opacity-70">
-                    Oku →
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
+          <div className="mx-auto max-w-4xl">
+            <JournalList articles={articles} />
           </div>
         </section>
       </main>

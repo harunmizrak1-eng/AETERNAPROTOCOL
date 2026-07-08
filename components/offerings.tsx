@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useAssessment } from "@/components/assessment"
 
 const TIERS = [
@@ -41,19 +42,19 @@ const TIERS = [
 
 const PACKAGES = [
   {
+    slug: "metabolik-reset",
     name: "Metabolik Reset",
     line: "Yağ kaybı ve iştah kontrolü için yapılandırılmış giriş protokolü.",
-    goal: "Yağ Kaybı & Metabolizma",
   },
   {
+    slug: "recovery-stack",
     name: "Recovery Stack",
     line: "Doku onarımı ve toparlanma odaklı, sporcular için hazırlanmış kombinasyon.",
-    goal: "Doku Onarımı & İyileşme",
   },
   {
+    slug: "longevity-foundation",
     name: "Longevity Foundation",
     line: "Hücresel sağlık ve sağlıklı yaşlanma için uzun vadeli temel protokol.",
-    goal: "Longevity & Hücresel Sağlık",
   },
 ]
 
@@ -158,26 +159,21 @@ export function Offerings() {
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {PACKAGES.map((p) => (
-            <article
+            <Link
               key={p.name}
+              href={`/protokoller/${p.slug}`}
               className="group flex flex-col rounded-sm border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
             >
               <h3 className="font-serif text-xl font-light tracking-wide text-foreground">
                 {p.name}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {p.line}
               </p>
-              <div className="mt-8">
-                <button
-                  type="button"
-                  onClick={() => open({ goal: p.goal })}
-                  className="text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-opacity duration-300 hover:opacity-70"
-                >
-                  Bilgi Al →
-                </button>
-              </div>
-            </article>
+              <span className="mt-8 text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-opacity duration-300 group-hover:opacity-70">
+                Protokolü İncele →
+              </span>
+            </Link>
           ))}
         </div>
       </div>

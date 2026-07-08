@@ -44,6 +44,10 @@ export default async function ArticlePage({
   const article = getArticle(slug)
   if (!article) notFound()
 
+  const relatedByCategory = articles
+    .filter((a) => a.category === article.category && a.slug !== article.slug)
+    .slice(0, 3)
+
   return (
     <>
       <script
@@ -117,6 +121,25 @@ export default async function ArticlePage({
                       className="text-sm text-muted-foreground transition-colors hover:text-gold"
                     >
                       {link.label} →
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {relatedByCategory.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-8">
+                <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  {article.category} · İlgili Yazılar
+                </p>
+                <div className="mt-4 flex flex-col gap-2">
+                  {relatedByCategory.map((a) => (
+                    <Link
+                      key={a.slug}
+                      href={`/journal/${a.slug}`}
+                      className="text-sm text-muted-foreground transition-colors hover:text-gold"
+                    >
+                      {a.title} →
                     </Link>
                   ))}
                 </div>

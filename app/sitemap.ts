@@ -3,6 +3,7 @@ import { siteUrl } from "@/lib/site"
 import { articles } from "@/lib/articles"
 import { peptides } from "@/lib/peptides"
 import { biomarkers } from "@/lib/biomarkers"
+import { protocols } from "@/lib/protocols"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/longevity-skoru",
     "/metodoloji",
     "/biyobelirtecler",
+    "/sss",
     "/gizlilik",
   ].map((path) => ({
     url: `${siteUrl}${path}`,
@@ -33,5 +35,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }))
 
-  return [...staticRoutes, ...articleRoutes, ...peptideRoutes, ...biomarkerRoutes]
+  const protocolRoutes = protocols.map((p) => ({
+    url: `${siteUrl}/protokoller/${p.slug}`,
+    lastModified: new Date(),
+  }))
+
+  return [
+    ...staticRoutes,
+    ...articleRoutes,
+    ...peptideRoutes,
+    ...biomarkerRoutes,
+    ...protocolRoutes,
+  ]
 }

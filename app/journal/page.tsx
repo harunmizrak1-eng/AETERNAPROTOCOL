@@ -12,13 +12,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/journal",
   },
+  openGraph: {
+    title: "Journal",
+    description:
+      "Peptidler, longevity ve biohacking üzerine kanıt temelli Türkçe yazılar.",
+    url: "/journal",
+  },
 }
 
 export default function JournalPage() {
   return (
     <>
       <Nav />
-      <main className="relative z-10 bg-background pt-32">
+      <main id="main-content" className="relative z-10 bg-background pt-32">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-4xl">
             <div className="flex items-center gap-4">

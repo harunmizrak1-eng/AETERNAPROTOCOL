@@ -91,7 +91,7 @@ export function PeptideLibrary() {
                 <Link
                   key={p.slug}
                   href={`/peptidler/${p.slug}`}
-                  className={`group flex flex-col rounded-sm border bg-surface p-8 transition-colors duration-500 hover:border-gold/50 ${tierBorderVar[p.tier]}`}
+                  className={`group flex flex-col rounded-sm border bg-surface p-8 transition-colors duration-500 hover:border-gold/60 ${tierBorderVar[p.tier]}`}
                 >
                   <h2 className="font-serif text-2xl font-light tracking-wide text-foreground">
                     {p.name}

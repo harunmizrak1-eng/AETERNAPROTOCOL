@@ -13,7 +13,7 @@ import { Reveal } from "@/components/reveal"
 
 export default function Page() {
   return (
-    <main className="bg-background">
+    <main id="main-content" className="bg-background">
       <Nav />
       <Hero />
       <ResearchMetrics />

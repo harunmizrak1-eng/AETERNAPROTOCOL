@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-hairline pt-8">
-          <p className="mx-auto max-w-3xl text-center text-[0.7rem] leading-relaxed text-muted-foreground/60">
+          <p className="mx-auto max-w-3xl text-center text-[0.7rem] leading-relaxed text-muted-foreground">
             Bu sitedeki içerik yalnızca bilgilendirme amaçlıdır ve tıbbi tavsiye
             yerine geçmez. Hiçbir ifade hastalık teşhis, tedavi veya önleme
             iddiası taşımaz. Herhangi bir protokole başlamadan önce bir hekime
@@ -77,7 +77,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-hairline pt-6 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground/50 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-hairline pt-6 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground sm:flex-row">
           <p>© {year} ÆTERNA. Tüm hakları saklıdır.</p>
           <p>Özel Biyolojik Optimizasyon · Türkiye</p>
         </div>

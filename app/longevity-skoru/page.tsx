@@ -10,13 +10,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/longevity-skoru",
   },
+  openGraph: {
+    title: "Longevity Skoru",
+    description:
+      "Altı yaşam tarzı boyutuna dayanan, şeffaf ve basit ağırlıklı ortalamayla hesaplanan longevity skoru. Tıbbi teşhis yerine geçmez.",
+    url: "/longevity-skoru",
+  },
 }
 
 export default function LongevityScorePage() {
   return (
     <>
       <Nav />
-      <main className="bg-background pt-32">
+      <main id="main-content" className="bg-background pt-32">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-2xl">
             <div className="flex items-center gap-4">

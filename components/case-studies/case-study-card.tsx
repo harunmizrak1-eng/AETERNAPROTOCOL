@@ -92,7 +92,7 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
         </table>
       </div>
 
-      <p className="mt-6 text-[0.65rem] font-light leading-relaxed text-muted-foreground/50">
+      <p className="mt-6 text-[0.65rem] font-light leading-relaxed text-muted-foreground">
         {caseStudyDisclaimer}
       </p>
     </article>

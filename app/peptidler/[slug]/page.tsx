@@ -33,6 +33,11 @@ export async function generateMetadata({
     alternates: {
       canonical: `/peptidler/${peptide.slug}`,
     },
+    openGraph: {
+      title: peptide.name,
+      description: peptide.short,
+      url: `/peptidler/${peptide.slug}`,
+    },
   }
 }
 
@@ -53,7 +58,7 @@ export default async function PeptideDetailPage({
   return (
     <>
       <Nav />
-      <main className="relative z-10 bg-background pt-32">
+      <main id="main-content" className="relative z-10 bg-background pt-32">
         <article className="px-6 pb-28 sm:pb-36 md:px-10">
           <div className="mx-auto max-w-2xl">
             <Link
@@ -90,18 +95,18 @@ export default async function PeptideDetailPage({
             </p>
 
             <div className="mt-14 border-t border-hairline pt-10">
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+              <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
                 Mekanizma
-              </p>
+              </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {peptide.mechanism}
               </p>
             </div>
 
             <div className="mt-10 border-t border-hairline pt-10">
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+              <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
                 Birincil Sonuç Göstergeleri
-              </p>
+              </h2>
               <ul className="mt-4 flex flex-col gap-3">
                 {peptide.primaryOutcomes.map((outcome) => (
                   <li
@@ -120,9 +125,9 @@ export default async function PeptideDetailPage({
 
             {relatedArticle && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
                   İlgili Journal Yazısı
-                </p>
+                </h2>
                 <Link
                   href={`/journal/${relatedArticle.slug}`}
                   className="mt-4 inline-block font-serif text-lg font-light italic text-foreground/90 transition-colors hover:text-gold"
@@ -134,7 +139,7 @@ export default async function PeptideDetailPage({
 
             <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-10 sm:flex-row sm:items-center">
               <PeptideCta goal={goal} />
-              <p className="text-[0.65rem] font-light leading-relaxed text-muted-foreground/50">
+              <p className="text-[0.65rem] font-light leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}
               </p>
             </div>

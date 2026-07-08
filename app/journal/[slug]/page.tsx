@@ -70,7 +70,7 @@ export default async function ArticlePage({
         }}
       />
       <Nav />
-      <main className="relative z-10 bg-background pt-32">
+      <main id="main-content" className="relative z-10 bg-background pt-32">
         <article className="px-6 pb-24 md:px-10">
           <div className="mx-auto max-w-2xl">
             <Link
@@ -105,7 +105,7 @@ export default async function ArticlePage({
             </div>
 
             <div className="mt-16 border-t border-hairline pt-8">
-              <p className="text-[0.7rem] leading-relaxed text-muted-foreground/60">
+              <p className="text-[0.7rem] leading-relaxed text-muted-foreground">
                 Bu yazı bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez.
                 Herhangi bir protokole başlamadan önce bir hekime danışın.
               </p>

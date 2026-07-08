@@ -55,7 +55,7 @@ export function Trust() {
           {QUOTES.map((q) => (
             <figure
               key={q.label}
-              className="border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
+              className="rounded-sm border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
             >
               <blockquote className="font-serif text-xl font-light italic leading-relaxed text-foreground/90">
                 {`“${q.quote}”`}

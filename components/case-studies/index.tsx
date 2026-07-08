@@ -17,8 +17,8 @@ export function CaseStudies() {
         </h2>
         <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
           Metabolik, doku onarımı, cinsel sağlık ve kognitif alanlardan birer
-          örnek — her biri literatürle tutarlı büyüklükte, editorial olarak
-          hazırlanmış vaka analizi.
+          örnek. Her biri, öğretici amaçla hazırlanmış ve literatürdeki
+          gözlenen etki büyüklükleriyle tutarlı kurgusal bir vakadır.
         </p>
 
         <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-2">

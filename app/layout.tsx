@@ -83,6 +83,12 @@ export default function RootLayout({
             }),
           }}
         />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-6 focus:top-6 focus:z-[100] focus:rounded-sm focus:border focus:border-gold/60 focus:bg-background focus:px-5 focus:py-3 focus:text-xs focus:uppercase focus:tracking-eyebrow focus:text-gold"
+        >
+          İçeriğe geç
+        </a>
         <AssessmentProvider>{children}</AssessmentProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

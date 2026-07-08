@@ -84,7 +84,7 @@ export function Offerings() {
           {TIERS.map((t) => (
             <article
               key={t.name}
-              className={`group relative flex flex-col border bg-surface p-8 transition-colors duration-500 sm:p-10 ${
+              className={`group relative flex flex-col rounded-sm border bg-surface p-8 transition-colors duration-500 sm:p-10 ${
                 t.featured
                   ? "border-gold/60"
                   : "border-hairline hover:border-gold/40"
@@ -160,7 +160,7 @@ export function Offerings() {
           {PACKAGES.map((p) => (
             <article
               key={p.name}
-              className="group flex flex-col border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
+              className="group flex flex-col rounded-sm border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
             >
               <h3 className="font-serif text-xl font-light tracking-wide text-foreground">
                 {p.name}

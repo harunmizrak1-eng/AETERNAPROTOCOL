@@ -36,7 +36,7 @@ export function Process() {
           {STEPS.map((step) => (
             <article
               key={step.numeral}
-              className="group relative overflow-hidden border border-hairline bg-surface px-8 py-12"
+              className="group relative overflow-hidden rounded-sm border border-hairline bg-surface px-8 py-12"
             >
               <span
                 aria-hidden="true"

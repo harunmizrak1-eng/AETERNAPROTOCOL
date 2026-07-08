@@ -20,7 +20,7 @@ export function Categories() {
           {CARDS.map((card) => (
             <article
               key={card.title}
-              className="group flex flex-col border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60 sm:p-10"
+              className="group flex flex-col rounded-sm border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60 sm:p-10"
             >
               <h3 className="font-serif text-2xl font-light tracking-wide text-foreground sm:text-[1.7rem]">
                 {card.title}
@@ -44,7 +44,7 @@ export function Categories() {
                 <button
                   type="button"
                   onClick={() => open({ goal: card.title })}
-                  className="inline-block border border-hairline px-7 py-3 text-[0.65rem] uppercase tracking-eyebrow font-medium text-foreground/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:border-gold/60 hover:bg-gold hover:text-primary-foreground"
+                  className="inline-block rounded-sm border border-hairline px-7 py-3 text-[0.65rem] uppercase tracking-eyebrow font-medium text-foreground/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:border-gold/60 hover:bg-gold hover:text-primary-foreground"
                 >
                   Protokol Talep Et
                 </button>

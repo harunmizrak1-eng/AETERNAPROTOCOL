@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/gizlilik",
   },
+  openGraph: {
+    title: "Gizlilik & KVKK",
+    description:
+      "Kişisel verilerin korunması, sağlık verisi işleme ve gizlilik politikası.",
+    url: "/gizlilik",
+  },
 }
 
 const SECTIONS = [
@@ -34,7 +40,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Nav />
-      <main className="relative z-10 bg-background pt-32">
+      <main id="main-content" className="relative z-10 bg-background pt-32">
         <section className="px-6 pb-28 md:px-10">
           <div className="mx-auto max-w-2xl">
             <div className="flex items-center gap-4">
@@ -60,7 +66,7 @@ export default function PrivacyPage() {
               ))}
             </div>
 
-            <p className="mt-16 border-t border-hairline pt-8 text-[0.7rem] leading-relaxed text-muted-foreground/50">
+            <p className="mt-16 border-t border-hairline pt-8 text-[0.7rem] leading-relaxed text-muted-foreground">
               Bu metin bilgilendirme amaçlı bir taslaktır. Yürürlüğe girmeden
               önce bir hukuk danışmanı tarafından gözden geçirilmelidir.
             </p>

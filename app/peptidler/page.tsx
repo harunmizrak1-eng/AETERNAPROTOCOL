@@ -12,13 +12,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/peptidler",
   },
+  openGraph: {
+    title: "Peptid Kütüphanesi",
+    description:
+      "Peptidler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
+    url: "/peptidler",
+  },
 }
 
 export default function PeptidlerPage() {
   return (
     <>
       <Nav />
-      <main className="bg-background pt-32">
+      <main id="main-content" className="bg-background pt-32">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center gap-4">

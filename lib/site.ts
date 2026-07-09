@@ -1,7 +1,8 @@
-// Set NEXT_PUBLIC_SITE_URL in production to the real domain — this fallback
-// is only for local/preview builds so metadataBase always resolves.
+// Canonical production domain. NEXT_PUBLIC_SITE_URL can override it (e.g. for
+// preview deployments); otherwise every canonical, sitemap entry and OG url
+// resolves against the real domain below.
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aeternaprotocol.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aeternaprotocol.net"
 
 export const siteName = "ÆTERNA"
 

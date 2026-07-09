@@ -164,7 +164,10 @@ export default async function ProtocolDetailPage({
             )}
 
             <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-10 sm:flex-row sm:items-center">
-              <PeptideCta goal={protocol.goal} />
+              <PeptideCta
+                goal={protocol.goal}
+                label="Bu Protokol İçin Değerlendirme Başlat"
+              />
               <p className="text-[0.65rem] font-light leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}
               </p>

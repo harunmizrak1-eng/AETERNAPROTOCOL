@@ -78,7 +78,7 @@ export function LongevityScoreForm() {
 
           <p className="mt-8 max-w-lg text-sm leading-relaxed text-muted-foreground">
             Bu skor, altı yaşam tarzı boyutunun basit ve eşit ağırlıklı
-            ortalamasıdır — her boyut 0–100 arası puanlanır ve altısının
+            ortalamasıdır. Her boyut 0-100 arası puanlanır ve altısının
             aritmetik ortalaması alınır. Herhangi bir gizli algoritma veya
             klinik model kullanılmaz.
           </p>

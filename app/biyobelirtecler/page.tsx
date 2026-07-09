@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { biomarkers } from "@/lib/biomarkers"
 
 const description =
-  "ApoB, HbA1c, hs-CRP, HOMA-IR, HRV ve daha fazlası — vaka analizlerinde ve protokollerde kullanılan biyobelirteçlerin kısa, editorial sözlüğü."
+  "ApoB, HbA1c, hs-CRP, HOMA-IR, HRV ve daha fazlası: vaka analizlerinde ve protokollerde kullanılan biyobelirteçlerin kısa, editorial sözlüğü."
 
 export const metadata: Metadata = {
   title: "Biyobelirteç Sözlüğü",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     canonical: "/biyobelirtecler",
   },
   openGraph: {
-    title: "Biyobelirteç Sözlüğü — ÆTERNA",
+    title: "Biyobelirteç Sözlüğü · ÆTERNA",
     description,
     url: "/biyobelirtecler",
   },
@@ -38,7 +38,7 @@ export default function BiomarkersPage() {
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
               Vaka analizlerinde ve protokol sayfalarında geçen her belirteç
-              burada açıklanır — ne ölçtüğü, neden önemli olduğu ve nasıl
+              burada açıklanır: ne ölçtüğü, neden önemli olduğu ve nasıl
               yorumlanması gerektiği.
             </p>
           </div>

@@ -56,7 +56,7 @@ export const protocols: Protocol[] = [
     tagline: "Hücresel sağlık & sağlıklı yaşlanma",
     goal: "Longevity & Hücresel Sağlık",
     summary:
-      "Mitokondriyal fonksiyon ve hücresel enerji metabolizması üzerine kurulu, uzun vadeli bir temel protokol. Kanıt seviyesi molekülden moleküle değişir — bu ayrım hiçbir zaman bulanıklaştırılmaz.",
+      "Mitokondriyal fonksiyon ve hücresel enerji metabolizması üzerine kurulu, uzun vadeli bir temel protokol. Kanıt seviyesi molekülden moleküle değişir; bu ayrım hiçbir zaman bulanıklaştırılmaz.",
     tier: "theoretical",
     tierNote:
       "Moleküller arasında kanıt seviyesi değişkendir; SS-31 klinik test edilmişken, bazı bileşikler preklinik aşamadadır.",

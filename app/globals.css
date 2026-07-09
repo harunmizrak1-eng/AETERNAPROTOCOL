@@ -92,7 +92,7 @@
   }
 }
 
-/* Ultra-subtle film grain — lifts flat black into "printed catalogue" feel */
+/* Ultra-subtle film grain; lifts flat black into "printed catalogue" feel */
 body::before {
   content: "";
   position: fixed;
@@ -128,10 +128,10 @@ body::before {
   }
 }
 
-/* ÆTERNA signature motion — a barely-visible, slow-pulsing line chart in the
+/* ÆTERNA signature motion: a barely-visible, slow-pulsing line chart in the
    hero background, evoking continuous biomarker monitoring. Never literal
    data, never interactive, never loud. This is the brand's ONE signature
-   motion element — do not replicate elsewhere. */
+   motion element; do not replicate elsewhere. */
 @media (prefers-reduced-motion: no-preference) {
   .signature-pulse {
     animation: aeterna-signature-pulse 9s ease-in-out infinite;

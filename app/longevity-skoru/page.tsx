@@ -37,7 +37,7 @@ export default function LongevityScorePage() {
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
               Altı kısa soru. Şeffaf bir hesaplama. Bu araç sizi bir sayıya
-              indirgemez — yalnızca nerede durduğunuza dair kaba bir referans
+              indirgemez; yalnızca nerede durduğunuza dair kaba bir referans
               noktası verir.
             </p>
           </div>

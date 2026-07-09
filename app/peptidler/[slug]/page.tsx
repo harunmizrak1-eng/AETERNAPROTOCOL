@@ -132,7 +132,7 @@ export default async function PeptideDetailPage({
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   Aşağıdaki her sonuç, kaynak bölümündeki çalışmada doğrudan
-                  raporlanmıştır — genel kanıt kademesinden bağımsız olarak.
+                  raporlanmıştır, genel kanıt kademesinden bağımsız olarak.
                 </p>
                 <div className="mt-4 overflow-x-auto">
                   <table className="w-full min-w-[380px] border-collapse font-mono text-xs">
@@ -169,7 +169,7 @@ export default async function PeptideDetailPage({
                     {citation.label}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/90">
-                    {citation.authors} — <em className="font-serif italic">{citation.journal}</em>, {citation.year}
+                    {citation.authors}, <em className="font-serif italic">{citation.journal}</em>, {citation.year}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {citation.note}

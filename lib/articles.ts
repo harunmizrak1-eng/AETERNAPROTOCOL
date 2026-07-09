@@ -5,7 +5,7 @@ export interface Article {
   excerpt: string
   readMinutes: number
   date: string
-  /** paragraphs — kept simple, no CMS yet */
+  /** paragraphs, kept simple, no CMS yet */
   body: string[]
   relatedLinks?: { href: string; label: string }[]
 }
@@ -65,7 +65,7 @@ export const articles: Article[] = [
     date: "2026-07-01",
     body: [
       "BPC-157 anjiyogenezi, yani yeni damar oluşumunu desteklediği düşünülen bir molekül. TB-500 ise hücre göçünü kolaylaştırarak dokunun kendini onarma hızını artırdığı öne sürülen bir fragman.",
-      "İki molekülün farklı mekanizmalarla aynı sürece katkı sağlaması, birlikte kullanımın arkasındaki mantık. Biri damarlanmayı, diğeri hücresel göçü destekliyor — teorik olarak tamamlayıcı bir çift.",
+      "İki molekülün farklı mekanizmalarla aynı sürece katkı sağlaması, birlikte kullanımın arkasındaki mantık. Biri damarlanmayı, diğeri hücresel göçü destekliyor. Teorik olarak tamamlayıcı bir çift.",
       "Ancak burada dürüst olmak gerekiyor: bu kombinasyonun insan verisi büyük ölçüde anekdotal. Mekanizma güçlü, kontrollü klinik çalışma yok. Kütüphanemizde bu ikili 'Mekanistik / Teorik' kademesinde sınıflandırılıyor, 'Klinik Kanıt' değil.",
       "Bu ayrımı bulanıklaştırmadan sunmak, sporcu ve aktif bireylerle çalışırken en çok önem verdiğimiz nokta. Doğru beklenti, doğru sonucun ilk şartı.",
     ],
@@ -81,7 +81,7 @@ export const articles: Article[] = [
     body: [
       "Semax ve Selank, ACTH ve tuftsin türevi iki nöropeptid. İkisi de Rusya'da resmi klinik kullanımda; batıda ise büyük ölçüde araştırma aşamasında kalmış moleküller.",
       "Semax'ın BDNF ve dopaminerjik sinyali desteklediği, Selank'ın ise sedasyon yaratmadan anksiyolitik etki gösterdiği düşünülüyor. Mekanizmaları makul ve tutarlı, ancak kontrollü randomize çalışmaların çoğu Rusça literatürde ve batı standartlarında tekrarlanmamış.",
-      "Bu, molekülleri geçersiz kılmıyor — sadece kanıt seviyesini 'Mekanistik / Teorik' kademesinde tutuyor. Kognitif protokollerde bu şeffaflık, özellikle yüksek performans beklentisi olan bireyler için kritik: beklenti gerçek kanıt seviyesiyle uyumlu olmalı.",
+      "Bu, molekülleri geçersiz kılmaz. Yalnızca kanıt seviyelerini 'Mekanistik / Teorik' kademesinde tutar. Kognitif protokollerde bu şeffaflık, özellikle yüksek performans beklentisi olan bireyler için kritik: beklenti gerçek kanıt seviyesiyle uyumlu olmalı.",
     ],
   },
   {
@@ -108,10 +108,10 @@ export const articles: Article[] = [
     readMinutes: 3,
     date: "2026-05-02",
     body: [
-      "Cilt bakımının çoğu, yüzeyde kalan bir müdahale. Nemlendirme, koruma, düzeltme — hepsi gerekli ama hücresel yenilenme hızını değiştirmiyor.",
+      "Cilt bakımının çoğu, yüzeyde kalan bir müdahale. Nemlendirme, koruma, düzeltme. Hepsi gerekli ama hücresel yenilenme hızını değiştirmiyor.",
       "GHK-Cu gibi bakır bağlı peptidler, kolajen ve elastin sentezini doğrudan uyararak farklı bir katmanda çalışıyor. RCT'lerle desteklenen az sayıda estetik molekülden biri olması, onu kütüphanemizde 'Klinik Kanıt' kademesine taşıyor.",
       "Ancak tek başına bir molekül, bir protokol değildir. Doz, uygulama şekli (topikal veya enjekte edilebilir) ve bireyin başlangıç noktası, sonucu belirleyen asıl değişkenler.",
-      "Anti-aging'i bir ürün seçimi değil, sürdürülebilir bir sistem olarak kurmak — yaklaşımımızın temel farkı burada.",
+      "Anti-aging'i bir ürün seçimi değil, sürdürülebilir bir sistem olarak kurmak. Yaklaşımımızın temel farkı burada.",
     ],
   },
   {
@@ -124,9 +124,9 @@ export const articles: Article[] = [
     date: "2026-04-18",
     body: [
       "Performans konuşulduğunda akla genelde antrenman şiddeti gelir. Oysa adaptasyonun büyük kısmı, antrenman sonrası toparlanma penceresinde gerçekleşir.",
-      "CJC-1295 ve Ipamorelin gibi kombinasyonlar, büyüme hormonu salınımını fizyolojik atım paternine yakın bir şekilde uyararak bu pencereyi desteklediği düşünülüyor. Mekanizma iyi tanımlı, ama uzun dönem randomize veri sınırlı — bu yüzden 'Mekanistik / Teorik' kademesinde yer alıyor.",
+      "CJC-1295 ve Ipamorelin gibi kombinasyonlar, büyüme hormonu salınımını fizyolojik atım paternine yakın bir şekilde uyararak bu pencereyi desteklediği düşünülüyor. Mekanizma iyi tanımlı, ama uzun dönem randomize veri sınırlı. Bu yüzden 'Mekanistik / Teorik' kademesinde yer alıyor.",
       "Toparlanma odaklı bir protokol kurarken asıl soru molekül değil: uyku kalitesi, yük yönetimi ve biyobelirteç takibi olmadan hiçbir molekül tek başına yeterli değil.",
-      "Performans protokollerimiz bu yüzden her zaman çok boyutlu kurulur — tek değişkenli değil.",
+      "Performans protokollerimiz bu yüzden her zaman çok boyutlu kurulur, tek değişkenli değil.",
     ],
   },
   {
@@ -138,9 +138,9 @@ export const articles: Article[] = [
     readMinutes: 4,
     date: "2026-04-05",
     body: [
-      "Longevity alanındaki moleküllerin çoğu, hızlı ve görünür bir etki vaat etmiyor. Hedef aldıkları şey — mitokondriyal fonksiyon, hücresel enerji metabolizması — yıllar içinde birikimli olarak fark yaratan bir katman.",
+      "Longevity alanındaki moleküllerin çoğu, hızlı ve görünür bir etki vaat etmiyor. Hedef aldıkları şey, yani mitokondriyal fonksiyon ve hücresel enerji metabolizması, yıllar içinde birikimli olarak fark yaratan bir katman.",
       "SS-31 gibi mitokondri koruyucu moleküller klinik olarak test edilirken, NAD+ öncülleri ve MOTS-c gibi bileşikler hâlâ insan verisinin olgunlaştığı bir aşamada. Kanıt seviyesi bu yüzden molekülden moleküle büyük farklılık gösteriyor.",
-      "Bu alanda en büyük risk, sabırsızlık. Preklinik bir bileşiği klinik kanıtlıymış gibi sunmak, longevity pazarlamasının en yaygın hatası — biz bu ayrımı hiç bulandırmıyoruz.",
+      "Bu alanda en büyük risk, sabırsızlık. Preklinik bir bileşiği klinik kanıtlıymış gibi sunmak, longevity pazarlamasının en yaygın hatası. Biz bu ayrımı hiç bulandırmıyoruz.",
       "Uzun vadeli bir stratejide, bugünün küçük ve doğrulanabilir kazanımları, yarının büyük iddialarından daha değerlidir.",
     ],
   },
@@ -149,13 +149,13 @@ export const articles: Article[] = [
     title: "Neden bazı bileşiklerin kaynağı var, bazılarının yok?",
     category: "Yaklaşım",
     excerpt:
-      "Kütüphanemizdeki her PMID gerçek ve doğrulanabilir. Bir bileşiğin kaynağı yoksa, bu aramadığımız değil — bulamadığımız anlamına gelir.",
+      "Kütüphanemizdeki her PMID gerçek ve doğrulanabilir. Bir bileşiğin kaynağı yoksa, bu, aramadığımız değil, bulamadığımız anlamına gelir.",
     readMinutes: 3,
     date: "2026-07-08",
     body: [
-      "Kısa süre önce GHK-Cu'yu kütüphanemizde 'Klinik Kanıt' kademesinden 'Mekanistik / Teorik' kademesine indirdik. Neden? Çünkü bağımsız bir insan RCT'si aradık ve bulamadık — mekanizma hücre kültürü ve hayvan modellerinde iyi tanımlı, ama bu, klinik kanıtla aynı şey değil.",
-      "Kaynak eklerken PMID ve DOI numaralarını gerçek veritabanlarından çekiyoruz. Bir bileşik için doğrulanabilir bir kaynak yoksa, sayfasında kaynak bölümü hiç görünmez — uydurma bir referans eklenmez.",
-      "Bu bazı okuyucular için garip görünebilir: neden Retatrutide'nin sayfasında PMID ve DOI var da BPC-157'de yok? Cevap basit — biri randomize kontrollü bir insan çalışmasıyla test edildi, diğeri henüz edilmedi. İkisi de değerli olabilir; ama ikisi aynı cümleyle anlatılamaz.",
+      "Kısa süre önce GHK-Cu'yu kütüphanemizde 'Klinik Kanıt' kademesinden 'Mekanistik / Teorik' kademesine indirdik. Neden? Çünkü bağımsız bir insan RCT'si aradık ve bulamadık. Mekanizma hücre kültürü ve hayvan modellerinde iyi tanımlı ama bu, klinik kanıtla aynı şey değil.",
+      "Kaynak eklerken PMID ve DOI numaralarını gerçek veritabanlarından çekiyoruz. Bir bileşik için doğrulanabilir bir kaynak yoksa, sayfasında kaynak bölümü hiç görünmez. Uydurma bir referans eklenmez.",
+      "Bu bazı okuyucular için garip görünebilir: neden Retatrutide'nin sayfasında PMID ve DOI var da BPC-157'de yok? Cevap basit: biri randomize kontrollü bir insan çalışmasıyla test edildi, diğeri henüz edilmedi. İkisi de değerli olabilir; ama ikisi aynı cümleyle anlatılamaz.",
       "Bu sürecin tamamını metodoloji sayfamızda açıkladık. Amacımız güven telkin etmek değil, güvenin nereden geldiğini göstermek.",
     ],
     relatedLinks: [
@@ -172,9 +172,9 @@ export const articles: Article[] = [
     readMinutes: 3,
     date: "2026-07-01",
     body: [
-      "LDL-kolesterol, aslında kandaki LDL parçacıklarının içindeki kolesterol miktarını ölçer — parçacık sayısını değil. Bazı bireylerde LDL-kolesterol normal görünürken parçacık sayısı yüksek olabilir; bu duruma bazen 'gizli risk' deniyor.",
+      "LDL-kolesterol, aslında kandaki LDL parçacıklarının içindeki kolesterol miktarını ölçer, parçacık sayısını değil. Bazı bireylerde LDL-kolesterol normal görünürken parçacık sayısı yüksek olabilir; bu duruma bazen 'gizli risk' deniyor.",
       "ApoB, her aterojenik parçacığın yüzeyinde tam olarak bir kopya bulunan bir protein olduğu için, parçacık sayısını doğrudan verir. Bu yüzden kardiyovasküler risk değerlendirmesinde LDL-kolesterole göre daha isabetli kabul ediliyor.",
-      "Metabolik protokollerimizde ApoB'yi bu yüzden ayrı bir belirteç olarak izliyoruz — özellikle Retatrutide, Semaglutide ve Tirzepatide gibi molekülleri kullanan danışanlarda, kilo kaybının ötesinde kardiyometabolik riskin nasıl değiştiğini görmek için.",
+      "Metabolik protokollerimizde ApoB'yi bu yüzden ayrı bir belirteç olarak izliyoruz; özellikle Retatrutide, Semaglutide ve Tirzepatide gibi molekülleri kullanan danışanlarda, kilo kaybının ötesinde kardiyometabolik riskin nasıl değiştiğini görmek için.",
       "Biyobelirteç sözlüğümüzde ApoB'yi bu bağlamda detaylandırdık.",
     ],
     relatedLinks: [
@@ -193,7 +193,7 @@ export const articles: Article[] = [
     body: [
       "HIV ilişkili lipodistrofi endikasyonunda FDA onaylı olan tesamorelin, büyüme hormonu ekseni içindeki en sağlam insan verisine sahip moleküllerden biri.",
       "Yakın zamanda yayınlanan bir meta-analiz, beş randomize kontrollü çalışmayı bir araya getirerek viseral yağ dokusu, karaciğer yağ oranı ve yağsız vücut kütlesi üzerindeki etkileri özetliyor.",
-      "Sonuçlar tutarlı: viseral yağ dokusunda ve karaciğer yağ oranında anlamlı azalma, yağsız kütlede artış — glikoz metabolizmasını bozmadan.",
+      "Sonuçlar tutarlı: viseral yağ dokusunda ve karaciğer yağ oranında anlamlı azalma, yağsız kütlede artış, üstelik glikoz metabolizmasını bozmadan.",
       "Bu, kütüphanemizde tesamorelini 'Klinik Kanıt' kademesine yerleştirmemizin nedeni. Sonuç bazlı kanıt matrisini bileşik sayfasında görebilirsiniz.",
     ],
     relatedLinks: [
@@ -210,7 +210,7 @@ export const articles: Article[] = [
     date: "2026-07-15",
     body: [
       "Büyüme hormonu ekseniyle çalışan iki farklı yaklaşım var: GHRH analogları ve ghrelin reseptör agonistleri. Sermorelin birincisine, Ipamorelin ikincisine örnek.",
-      "Sermorelin, GHRH'nin aktif fragmanı olarak hipofizin kendi salınım ritmini korur. Ipamorelin ise ghrelin reseptörü üzerinden çalışır ve seçiciliğiyle öne çıkar — kortizol ve prolaktini belirgin etkilemeden büyüme hormonu salınımını uyardığı öne sürülür.",
+      "Sermorelin, GHRH'nin aktif fragmanı olarak hipofizin kendi salınım ritmini korur. Ipamorelin ise ghrelin reseptörü üzerinden çalışır ve seçiciliğiyle öne çıkar. Kortizol ve prolaktini belirgin etkilemeden büyüme hormonu salınımını uyardığı öne sürülür.",
       "Bu iki yol tamamlayıcı olduğu için, pratikte bir GHRH analoğu ile bir ghrelin agonistinin birlikte kullanımı sık görülür (ör. CJC-1295 + Ipamorelin). Amaç, iki farklı sinyali aynı anda vererek daha fizyolojik bir salınım paterni oluşturmak.",
       "Her ikisi de kütüphanemizde 'Mekanistik / Teorik' kademesinde: mekanizma iyi tanımlı, ancak uzun dönem geniş kontrollü insan verisi sınırlı. Bu ayrımı, beklentiyi doğru kurmak için net tutuyoruz.",
     ],
@@ -230,7 +230,7 @@ export const articles: Article[] = [
     date: "2026-07-22",
     body: [
       "Bir bileşiği 'preklinik' olarak etiketlediğimizde, kanıtın büyük ölçüde hücre kültürü ve hayvan çalışmalarına dayandığını, kontrollü insan verisinin ya hiç olmadığını ya da neredeyse hiç olmadığını kastediyoruz.",
-      "Bu, molekülün 'işe yaramadığı' anlamına gelmez. Thymosin Beta-4'ün hayvan modellerinde doku onarımı üzerindeki etkileri gerçek ve tekrarlanabilir. Ama hayvan modelinden insana geçiş, biyolojinin en zorlu adımlarından biridir — birçok umut verici molekül bu geçişte beklentiyi karşılayamaz.",
+      "Bu, molekülün 'işe yaramadığı' anlamına gelmez. Thymosin Beta-4'ün hayvan modellerinde doku onarımı üzerindeki etkileri gerçek ve tekrarlanabilir. Ama hayvan modelinden insana geçiş, biyolojinin en zorlu adımlarından biridir. Birçok umut verici molekül bu geçişte beklentiyi karşılayamaz.",
       "Bu yüzden preklinik bileşikleri, klinik kanıtlı olanlarla aynı cümlede sunmayız. İkisi de değerli olabilir; ama biri 'insanda gösterildi', diğeri 'henüz gösterilmedi' der. Bu farkı bulanıklaştırmak, sektörün en yaygın yanıltmasıdır.",
       "Kütüphanemizdeki her etiketin arkasındaki mantığı metodoloji sayfamızda ayrıntılandırdık.",
     ],
@@ -248,10 +248,10 @@ export const articles: Article[] = [
     readMinutes: 3,
     date: "2026-07-29",
     body: [
-      "Uyku çoğu zaman tek bir sayıyla konuşulur: kaç saat. Oysa toparlanma açısından asıl belirleyici olan, o saatlerin nasıl dağıldığı — derin (yavaş dalga) uyku ve REM oranları.",
+      "Uyku çoğu zaman tek bir sayıyla konuşulur: kaç saat. Oysa toparlanma açısından asıl belirleyici olan, o saatlerin nasıl dağıldığı: derin (yavaş dalga) uyku ve REM oranları.",
       "Derin uyku, fiziksel toparlanma ve hormonal düzenlenmeyle; REM ise bilişsel konsolidasyon ve duygusal işlemlemeyle ilişkilendirilir. İkisinin de baskılandığı bir gece, süre olarak 'yeterli' görünse bile fonksiyonel olarak yetersiz olabilir.",
-      "Bu yüzden takip ettiğimiz belirteçler arasında toplam süre kadar uyku mimarisi ve HRV gibi otonom toparlanma sinyalleri de yer alır. DSIP gibi uykuyla ilişkilendirilen bileşiklerse hâlâ erken araştırma aşamasında — mekanizma ilgi çekici ama insan verisi sınırlı ve tutarsız.",
-      "Toparlanmayı bir sayıya değil, bir yapıya bakarak değerlendirmek — yaklaşımımızın temel farklarından biri.",
+      "Bu yüzden takip ettiğimiz belirteçler arasında toplam süre kadar uyku mimarisi ve HRV gibi otonom toparlanma sinyalleri de yer alır. DSIP gibi uykuyla ilişkilendirilen bileşiklerse hâlâ erken araştırma aşamasında. Mekanizma ilgi çekici ama insan verisi sınırlı ve tutarsız.",
+      "Toparlanmayı bir sayıya değil, bir yapıya bakarak değerlendirmek. Yaklaşımımızın temel farklarından biri bu.",
     ],
     relatedLinks: [
       { href: "/biyobelirtecler/hrv", label: "Biyobelirteç: HRV" },

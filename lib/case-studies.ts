@@ -1,10 +1,10 @@
 import type { EvidenceTier } from "@/lib/peptides"
 
-// editorial example, literature-based — these four case studies are not real
+// editorial example, literature-based. These four case studies are not real
 // patient records. Each is a composite built to be numerically consistent
 // with published protocol/mechanism literature for its compound(s). No real
 // patient identifiers, exact ages, or claimed consent are used anywhere here.
-// Do not replace with real patient data — see AGENTS.md.
+// Do not replace with real patient data (see AGENTS.md).
 
 export interface CaseStudyBiomarker {
   label: string

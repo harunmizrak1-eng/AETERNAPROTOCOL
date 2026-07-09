@@ -3,7 +3,7 @@ import { instagramUrl } from "@/lib/contact"
 
 // Note: an email newsletter was intentionally removed until a real provider
 // is wired up. A form that silently captures nothing is worse than none in a
-// trust-first brand — so this points to the channels that actually publish.
+// trust-first brand, so this points to the channels that actually publish.
 export function Newsletter() {
   return (
     <section className="border-t border-hairline px-6 py-24 md:px-10">
@@ -20,8 +20,8 @@ export function Newsletter() {
           Süreci takip edin.
         </h2>
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-          Yeni araştırmalar, bileşik notları ve protokol içgörüleri Journal'da
-          yayımlanır — haftalık ritimde, sadece değerli olduğunda. Sürecin
+          Yeni araştırmalar, bileşik notları ve protokol içgörüleri Journal'da,
+          haftalık ritimde ve yalnızca değerli olduğunda yayımlanır. Sürecin
           içinden içerik ise Instagram'da paylaşılır.
         </p>
 

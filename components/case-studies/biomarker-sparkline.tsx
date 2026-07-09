@@ -1,4 +1,4 @@
-/** Decorative directional glyph next to a biomarker's change value — the
+/** Decorative directional glyph next to a biomarker's change value; the
  * actual numbers already live in the adjacent table cells as text, so this
  * never carries information on its own (color is never the only signal). */
 export function BiomarkerSparkline({ direction }: { direction: "up" | "down" }) {

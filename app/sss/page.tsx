@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/sss" },
   openGraph: {
-    title: "Sık Sorulan Sorular — ÆTERNA",
+    title: "Sık Sorulan Sorular · ÆTERNA",
     description,
     url: "/sss",
   },

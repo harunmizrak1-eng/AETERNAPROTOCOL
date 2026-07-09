@@ -16,7 +16,7 @@ export interface Peptide {
   clinicalStatus: string
   relatedArticleSlug?: string
   /** Per-outcome evidence, populated only where a specific trial/review
-   * verifiably reports that outcome — never inferred beyond the source. */
+   * verifiably reports that outcome; never inferred beyond the source. */
   evidenceMatrix?: EvidenceMatrixRow[]
 }
 
@@ -38,7 +38,7 @@ export const tierBorderVar: Record<EvidenceTier, string> = {
   preclinical: "border-tier-preclinical/40",
 }
 
-/** Evidence Score — dot indicator: strong / moderate / early. */
+/** Evidence Score dot indicator: strong / moderate / early. */
 export const tierDots: Record<EvidenceTier, string> = {
   proven: "●●●",
   theoretical: "●●○",
@@ -144,7 +144,7 @@ export const peptides: Peptide[] = [
     category: "Longevity",
     tier: "proven",
     short:
-      "Mitokondriyal membran koruyucu tetrapeptid. FDA'nın onayladığı ilk mitokondri ilacı — mitokondriyal işlev bozukluklarında klinik olarak test edildi.",
+      "Mitokondriyal membran koruyucu tetrapeptid. FDA'nın onayladığı ilk mitokondri ilacı. Mitokondriyal işlev bozukluklarında klinik olarak test edildi.",
     mechanism:
       "Mitokondri iç membranında kardiyolipin ile etkileşerek elektron transport zincirinin verimliliğini korur; oksidatif stresi azaltır.",
     primaryOutcomes: [
@@ -306,7 +306,7 @@ export const peptides: Peptide[] = [
       "Geliştirme programı obezite endikasyonu için durduruldu",
     ],
     clinicalStatus:
-      "Faz 2 sonrası geliştirmesi durduruldu — kanıt seviyesi düşük",
+      "Faz 2 sonrası geliştirmesi durduruldu, kanıt seviyesi düşük",
   },
   {
     slug: "thymosin-alpha-1",
@@ -539,7 +539,7 @@ export const getPeptide = (slug: string) =>
   peptides.find((p) => p.slug === slug)
 
 /** Best-effort mapping from a peptide's library category to the closest
- * assessment goal option — left unmapped where there's no clean match. */
+ * assessment goal option; left unmapped where there's no clean match. */
 export const categoryGoalMap: Partial<Record<string, string>> = {
   Metabolik: "Yağ Kaybı & Metabolizma",
   "Doku Onarımı": "Doku Onarımı & İyileşme",

@@ -6,7 +6,7 @@ import { tierLabel, tierDots, tierColorVar } from "@/lib/peptides"
 import { lastContentReview } from "@/lib/site"
 
 const description =
-  "ÆTERNA'nın kanıt seviyesi sistemini nasıl kurduğu, protokolleri nasıl incelediği, neyi önermediği ve çıkar çatışmalarını nasıl ele aldığı — editorial standartlarımız."
+  "ÆTERNA'nın kanıt seviyesi sistemini nasıl kurduğu, protokolleri nasıl incelediği, neyi önermediği ve çıkar çatışmalarını nasıl ele aldığı ile editorial standartlarımız."
 
 export const metadata: Metadata = {
   title: "Metodoloji",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: "/metodoloji",
   },
   openGraph: {
-    title: "Metodoloji — ÆTERNA",
+    title: "Metodoloji · ÆTERNA",
     description,
     url: "/metodoloji",
   },
@@ -64,7 +64,7 @@ export default function MethodologyPage() {
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 Her bileşik üç kademeden birine yerleştirilir. Bu ayrım
-                popülerlik, fiyat veya pazarlama anlatısından bağımsızdır —
+                popülerlik, fiyat veya pazarlama anlatısından bağımsızdır;
                 yalnızca insan verisinin varlığına ve kalitesine bakar.
               </p>
               <div className="mt-6 flex flex-col gap-4">
@@ -107,7 +107,7 @@ export default function MethodologyPage() {
                   Peptid Kütüphanesi
                 </Link>
                 'ndeki "Klinik Kanıt" bileşiklerinin sayfalarında bu kaynaklar
-                görünür durumdadır. Bulamadığımız yerde kaynak uydurmayız —
+                görünür durumdadır. Bulamadığımız yerde kaynak uydurmayız;
                 bileşik bir alt kademede kalır.
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function MethodologyPage() {
                 Yeni literatür düzenli aralıklarla taranır ve mevcut
                 sınıflandırmalar bu taramaya göre güncellenir. Güncelleme
                 otomatik bir tarih damgası değil, elle yapılan bir incelemenin
-                sonucudur — bu yüzden sitede gördüğünüz "son inceleme"
+                sonucudur. Bu yüzden sitede gördüğünüz "son inceleme"
                 tarihleri gerçek bir gözden geçirmeyi temsil eder.
               </p>
             </div>
@@ -152,7 +152,7 @@ export default function MethodologyPage() {
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 ÆTERNA hem protokol danışmanlığı hem de tedarik yönlendirmesi
                 sunar. Bu, bir bileşiği önerme kararımızın ticari bir tarafı
-                da olduğu anlamına gelir — bunu gizlemek yerine açıkça
+                da olduğu anlamına gelir. Bunu gizlemek yerine açıkça
                 belirtiyoruz. Kanıt sınıflandırması bu ticari ilişkiden
                 etkilenmez: preklinik bir bileşik, iş modelimize ne kadar
                 uygun olursa olsun preklinik olarak kalır.
@@ -166,7 +166,7 @@ export default function MethodologyPage() {
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 İçerik, yeni klinik veri yayınlandığında veya bir
                 sınıflandırmanın artık doğru olmadığı belirlendiğinde
-                güncellenir — pazarlama takvimine göre değil. Bir hata
+                güncellenir, pazarlama takvimine göre değil. Bir hata
                 fark edildiğinde, sessizce düzeltmek yerine neyin
                 değiştiğini kayıt altına alırız.
               </p>

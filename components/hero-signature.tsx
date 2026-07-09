@@ -1,5 +1,5 @@
 /**
- * The brand's one signature motion element (see AGENTS.md — UNIQUE SIGNATURE):
+ * The brand's one signature motion element (see AGENTS.md; UNIQUE SIGNATURE):
  * a near-invisible, slow-pulsing line evoking continuous biomarker monitoring.
  * Pure CSS animation, no JS, respects prefers-reduced-motion.
  */

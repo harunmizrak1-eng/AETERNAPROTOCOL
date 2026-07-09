@@ -54,9 +54,9 @@ const BIOMARKER_OPTIONS = [
 ]
 
 const HORIZON_OPTIONS = [
-  "Kısa vade — belirli bir hedefe odaklı",
-  "Orta vade — birkaç aylık yapılandırılmış süreç",
-  "Uzun vade — sürdürülebilir bir sistem",
+  "Kısa vade: belirli bir hedefe odaklı",
+  "Orta vade: birkaç aylık yapılandırılmış süreç",
+  "Uzun vade: sürdürülebilir bir sistem",
 ]
 
 const EVIDENCE_OPTIONS = [
@@ -71,7 +71,7 @@ const TIER_NAMES: Record<Tier, string> = {
   III: "Sürekli Optimizasyon",
 }
 
-/** Each focus area maps to a representative journal reading — used to give
+/** Each focus area maps to a representative journal reading, used to give
  * the result a concrete next step rather than a dead end. */
 const GOAL_READING: Record<string, { href: string; label: string }> = {
   "Yağ Kaybı & Metabolizma": {
@@ -184,7 +184,7 @@ function AssessmentDialog({
     notes.push("Uzun vadeli ufkunuz, sürekli optimize edilen bir yaklaşımla uyumlu.")
   }
   if (answers.evidence === EVIDENCE_OPTIONS[0]) {
-    notes.push("Yalnızca klinik kanıtı güçlü bileşiklerle ilerlemeyi tercih ediyorsunuz — protokol bu kısıtla kurulur.")
+    notes.push("Yalnızca klinik kanıtı güçlü bileşiklerle ilerlemeyi tercih ediyorsunuz. Protokol bu kısıtla kurulur.")
   } else if (answers.evidence === EVIDENCE_OPTIONS[1]) {
     notes.push("Gelişmekte olan bileşiklere açıksınız; her birinin kanıt seviyesi süreç boyunca şeffaf şekilde paylaşılır.")
   }

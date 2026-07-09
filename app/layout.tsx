@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Geist_Mono, Inter } from 'next/font/google'
 import { AssessmentProvider } from '@/components/assessment'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
+import { contactEmail } from '@/lib/contact'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -79,6 +80,7 @@ export default function RootLayout({
               name: siteName,
               description: siteDescription,
               url: siteUrl,
+              email: contactEmail,
               areaServed: 'TR',
             }),
           }}

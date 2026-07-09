@@ -1,3 +1,5 @@
+import { contactEmail, instagramUrl } from "@/lib/contact"
+
 const EXPLORE_LINKS = [
   { href: "/#kategoriler", label: "Odak Alanları" },
   { href: "/peptidler", label: "Peptid Kütüphanesi" },
@@ -8,11 +10,8 @@ const EXPLORE_LINKS = [
 
 const CONSULT_LINKS = [
   { href: "/#danismanlik", label: "Danışmanlık" },
-  {
-    href: "https://www.instagram.com/aeterna.protocol?igsh=anVvbGp3bGV5MXQ1",
-    label: "Instagram",
-    external: true,
-  },
+  { href: `mailto:${contactEmail}`, label: contactEmail, external: true },
+  { href: instagramUrl, label: "Instagram", external: true },
 ]
 
 const LEGAL_LINKS = [
@@ -68,7 +67,7 @@ export function Footer() {
           </div>
 
           <FooterColumn heading="Keşfet" links={EXPLORE_LINKS} />
-          <FooterColumn heading="Danışmanlık" links={CONSULT_LINKS} />
+          <FooterColumn heading="İletişim" links={CONSULT_LINKS} />
           <FooterColumn heading="Yasal" links={LEGAL_LINKS} />
         </div>
 

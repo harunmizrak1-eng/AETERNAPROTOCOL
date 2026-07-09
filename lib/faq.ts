@@ -1,3 +1,5 @@
+import { contactEmail } from "@/lib/contact"
+
 export interface FaqItem {
   question: string
   answer: string
@@ -36,7 +38,6 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Verilerim nasıl korunuyor?",
-    answer:
-      "Paylaştığınız sağlık verileri KVKK kapsamında özel nitelikli kişisel veri olarak işlenir, gizli tutulur ve pazarlama amacıyla üçüncü taraflarla paylaşılmaz. Detaylar Gizlilik & KVKK sayfamızda.",
+    answer: `Paylaştığınız sağlık verileri KVKK kapsamında özel nitelikli kişisel veri olarak işlenir, gizli tutulur ve pazarlama amacıyla üçüncü taraflarla paylaşılmaz. Veri talepleriniz için ${contactEmail} adresine yazabilir, detaylar için Gizlilik & KVKK sayfamıza bakabilirsiniz.`,
   },
 ]

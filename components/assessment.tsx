@@ -10,6 +10,7 @@ import {
 import Link from "next/link"
 import { Dialog } from "@base-ui/react/dialog"
 import { categoryCards } from "@/lib/categories"
+import { whatsappLink } from "@/lib/contact"
 
 type Tier = "I" | "II" | "III"
 
@@ -204,7 +205,7 @@ function AssessmentDialog({
     .filter(Boolean)
     .join("\n")
 
-  const waLink = `https://wa.me/905359184587?text=${encodeURIComponent(waMessage)}`
+  const waLink = whatsappLink(waMessage)
 
   const steps = [
     {

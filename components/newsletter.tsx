@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { instagramUrl } from "@/lib/contact"
 
 // Note: an email newsletter was intentionally removed until a real provider
 // is wired up. A form that silently captures nothing is worse than none in a
@@ -32,7 +33,7 @@ export function Newsletter() {
             Journal'ı İncele
           </Link>
           <a
-            href="https://www.instagram.com/aeterna.protocol?igsh=anVvbGp3bGV5MXQ1"
+            href={instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full rounded-sm border border-hairline px-8 py-3.5 text-center text-[0.65rem] uppercase tracking-eyebrow font-medium text-foreground/80 transition-colors duration-300 hover:border-gold/60 hover:bg-gold hover:text-primary-foreground sm:w-auto"

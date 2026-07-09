@@ -4,6 +4,7 @@ import { Reveal } from "@/components/reveal"
 import { HeroSignature } from "@/components/hero-signature"
 import { useAssessment } from "@/components/assessment"
 import { lastContentReview } from "@/lib/site"
+import { instagramUrl } from "@/lib/contact"
 
 export function Hero() {
   const { open } = useAssessment()
@@ -54,7 +55,7 @@ export function Hero() {
           </button>
 
           <a
-            href="https://www.instagram.com/aeterna.protocol?igsh=anVvbGp3bGV5MXQ1"
+            href={instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-sm border border-gold/40 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"

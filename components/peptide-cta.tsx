@@ -4,7 +4,7 @@ import { useAssessment } from "@/components/assessment"
 
 export function PeptideCta({
   goal,
-  label = "Bu Bileşik İçin Değerlendirme Başlat",
+  label = "Bu Bileşik İçin Değerlendirmeyi Başlat",
 }: {
   goal?: string
   label?: string

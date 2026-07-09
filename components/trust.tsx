@@ -35,7 +35,7 @@ export function Trust() {
           </div>
 
           <h2 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
-            Sessiz bir itibar üzerine kurulu.
+            Sessizce kazanılmış bir itibar.
           </h2>
 
           <div className="mt-14 flex gap-16">

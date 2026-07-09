@@ -8,7 +8,7 @@ const TIERS = [
     tier: "I",
     name: "Değerlendirme",
     positioning: "Başlangıç",
-    line: "Mevcut durumunuzun okunması. Hedeflerin netleşmesi ve doğru yönün belirlenmesi için ilk temas.",
+    line: "Mevcut durumunuzu okuyoruz. Hedeflerinizi netleştirmek ve doğru yönü belirlemek için attığımız ilk adım.",
     includes: ["Gizli ön görüşme", "Hedef ve geçmiş analizi", "Yön önerisi"],
     featured: false,
   },
@@ -16,7 +16,7 @@ const TIERS = [
     tier: "II",
     name: "Kişisel Protokol",
     positioning: "En çok tercih edilen",
-    line: "Biyolojik verilerinize göre tasarlanmış, aşamalı ve ölçülebilir tam protokol. Süreç boyunca yönlendirme dahil.",
+    line: "Biyolojik verilerinize göre tasarlanan, aşamalı ve ölçülebilir eksiksiz bir protokol. Süreç boyunca birebir yönlendirme dahildir.",
     includes: [
       "Kan değeri & biyobelirteç okuması",
       "Kişiye özel protokol tasarımı",
@@ -29,7 +29,7 @@ const TIERS = [
     tier: "III",
     name: "Sürekli Optimizasyon",
     positioning: "Elit",
-    line: "Uzun vadeli, kapalı çevrimde çalışan danışmanlık. Düzenli yeniden değerlendirme ve ince ayarla protokolün zamanla evrilmesi.",
+    line: "Uzun vadeli, sürekli geri bildirimle ilerleyen bir danışmanlık. Düzenli değerlendirme ve ince ayarlarla protokol zamanla sizinle birlikte gelişir.",
     includes: [
       "Sınırsız protokol revizyonu",
       "Periyodik biyobelirteç takibi",
@@ -76,8 +76,8 @@ export function Offerings() {
           Her seviyede, aynı hassasiyet.
         </h2>
         <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-          Çalışma seçici ilerler. Sizin için doğru başlangıç noktasını görüşmede
-          birlikte belirleriz.
+          Seçici çalışıyoruz. Sizin için doğru başlangıç noktasını görüşmede
+          birlikte belirliyoruz.
         </p>
 
         {/* Consulting tiers */}

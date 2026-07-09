@@ -8,7 +8,7 @@ export function FinalCta() {
   return (
     <section className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
       <h2 className="max-w-3xl text-balance font-serif text-4xl font-light leading-[1.15] tracking-wide text-foreground sm:text-6xl md:text-7xl">
-        Daha iyi biyoloji tesadüf değildir.
+        Daha iyi bir biyoloji tesadüfe bırakılmaz.
       </h2>
 
       <div aria-hidden="true" className="mt-10 h-px w-16 bg-gold/60" />

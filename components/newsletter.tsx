@@ -20,9 +20,10 @@ export function Newsletter() {
           Süreci takip edin.
         </h2>
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-          Yeni araştırmalar, bileşik notları ve protokol içgörüleri Journal'da,
-          haftalık ritimde ve yalnızca değerli olduğunda yayımlanır. Sürecin
-          içinden içerik ise Instagram'da paylaşılır.
+          Yeni araştırmalar, bileşik değerlendirmeleri ve protokol notları
+          Journal'da; haftalık bir ritimde, yalnızca paylaşmaya değer bir şey
+          olduğunda yayımlanır. Sürecin perde arkasını ise Instagram'da
+          bulabilirsiniz.
         </p>
 
         <div className="mx-auto mt-10 flex max-w-md flex-col items-center gap-4 sm:flex-row sm:justify-center">

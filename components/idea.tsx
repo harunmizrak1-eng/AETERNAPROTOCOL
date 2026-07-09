@@ -1,11 +1,11 @@
 const STATEMENTS = [
   {
     headline: "Sağlık rastlantı değildir. Tasarlanır.",
-    line: "Her protokol, ölçülebilir biyolojik verilere dayanarak tek bir kişi için inşa edilir.",
+    line: "Her protokol, ölçülebilir biyolojik verilere dayanarak tek bir kişi için tasarlanır.",
   },
   {
     headline: "Mesele disiplin değil. Doğru sinyaller.",
-    line: "Vücut doğru sinyalleri aldığında, zorladığınız değişim kendiliğinden başlar.",
+    line: "Vücut doğru sinyalleri aldığında, zorlayarak elde edemediğiniz değişim kendiliğinden başlar.",
   },
 ]
 

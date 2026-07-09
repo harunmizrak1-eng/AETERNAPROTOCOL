@@ -9,7 +9,7 @@ const PILLARS = [
   },
   {
     title: "Kişiye Özel",
-    line: "Standart protokol yok. Ön değerlendirme sürecinden çıkan biyolojik profile ve hedefe göre, her danışan için ayrı bir yol haritası kurulur.",
+    line: "Standart protokol yok. Ön değerlendirmeden çıkan biyolojik profile ve hedefe göre her danışan için ayrı bir yol haritası çıkarıyoruz.",
   },
   {
     title: "Seçici ve Gizli",

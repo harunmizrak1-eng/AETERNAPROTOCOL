@@ -33,18 +33,25 @@ function FooterColumn({
         {heading}
       </p>
       <ul className="mt-4 flex flex-col gap-3">
-        {links.map((link) => (
-          <li key={link.label}>
-            <a
-              href={link.href}
-              target={link.external ? "_blank" : undefined}
-              rel={link.external ? "noopener noreferrer" : undefined}
-              className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {links.map((link) => {
+          const isEmail = link.label.includes("@")
+          return (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className={`text-[0.65rem] text-muted-foreground transition-colors hover:text-foreground ${
+                  isEmail
+                    ? "break-all lowercase"
+                    : "uppercase tracking-eyebrow"
+                }`}
+              >
+                {link.label}
+              </a>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

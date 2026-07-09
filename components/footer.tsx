@@ -62,7 +62,7 @@ export function Footer() {
             <p className="font-serif text-lg tracking-wordmark text-foreground">
               ÆTERNA
             </p>
-            <p className="mt-4 max-w-[16ch] text-[0.7rem] leading-relaxed text-muted-foreground/70">
+            <p className="mt-4 max-w-[16ch] text-[0.7rem] leading-relaxed text-muted-foreground">
               Hassas Biyoloji. Özel Erişim.
             </p>
           </div>

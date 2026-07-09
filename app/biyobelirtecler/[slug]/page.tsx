@@ -62,7 +62,7 @@ export default async function BiomarkerDetailPage({
               ← Biyobelirteç Sözlüğü
             </Link>
 
-            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/70">
+            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
               {biomarker.category}
             </p>
             <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">

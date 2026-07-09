@@ -102,7 +102,7 @@ export function Offerings() {
                   {t.tier}
                 </span>
                 {!t.featured && (
-                  <span className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground/70">
+                  <span className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
                     {t.positioning}
                   </span>
                 )}

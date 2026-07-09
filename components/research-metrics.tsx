@@ -15,7 +15,7 @@ export function ResearchMetrics() {
           <p className="font-mono text-2xl text-foreground sm:text-3xl">
             {peptides.length}
           </p>
-          <p className="mt-2 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground/70">
+          <p className="mt-2 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
             Bileşik
           </p>
         </Link>
@@ -24,7 +24,7 @@ export function ResearchMetrics() {
             <p className="font-mono text-2xl text-foreground sm:text-3xl">
               {m.value}
             </p>
-            <p className="mt-2 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground/70">
+            <p className="mt-2 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
               {m.label}
             </p>
           </div>

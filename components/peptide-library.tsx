@@ -97,7 +97,7 @@ export function PeptideLibrary() {
                     {p.name}
                   </h2>
 
-                  <p className="mt-2 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/70">
+                  <p className="mt-2 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
                     {p.category}
                   </p>
 

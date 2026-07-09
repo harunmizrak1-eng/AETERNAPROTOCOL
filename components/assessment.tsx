@@ -265,7 +265,7 @@ function AssessmentDialog({
                 <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
                   Ön Değerlendirme
                 </p>
-                <p className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/60">
+                <p className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
                   {step + 1} / {QUESTION_COUNT}
                 </p>
               </div>
@@ -350,7 +350,7 @@ function AssessmentDialog({
                 </p>
               )}
 
-              <Dialog.Description className="mt-8 text-[0.7rem] leading-relaxed text-muted-foreground/60">
+              <Dialog.Description className="mt-8 text-[0.7rem] leading-relaxed text-muted-foreground">
                 Bu ön değerlendirme bilgilendirme amaçlıdır; tıbbi teşhis ya da
                 kesin protokol ataması değildir. Nihai plan, danışmanlık
                 görüşmesinde birlikte netleştirilir.

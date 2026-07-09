@@ -1,24 +1,9 @@
-"use client"
+import Link from "next/link"
 
-import { useState } from "react"
-
+// Note: an email newsletter was intentionally removed until a real provider
+// is wired up. A form that silently captures nothing is worse than none in a
+// trust-first brand — so this points to the channels that actually publish.
 export function Newsletter() {
-  const [email, setEmail] = useState("")
-  const [submitted, setSubmitted] = useState(false)
-  const [error, setError] = useState("")
-
-  function handleSubmit() {
-    const trimmed = email.trim()
-    if (!trimmed || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) {
-      setError("Geçerli bir e-posta girin.")
-      return
-    }
-    setError("")
-    // TODO: wire to a real provider (Resend / Mailchimp / Supabase).
-    // For now this only captures locally so the UI is complete.
-    setSubmitted(true)
-  }
-
   return (
     <section className="border-t border-hairline px-6 py-24 md:px-10">
       <div className="mx-auto max-w-2xl text-center">
@@ -31,36 +16,30 @@ export function Newsletter() {
         </div>
 
         <h2 className="mt-8 text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
-          İlk bilenlerden olun.
+          Süreci takip edin.
         </h2>
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-          Yeni araştırmalar, bileşik notları ve protokol içgörüleri. Ara sıra,
-          sadece değerli olduğunda.
+          Yeni araştırmalar, bileşik notları ve protokol içgörüleri Journal'da
+          yayımlanır — haftalık ritimde, sadece değerli olduğunda. Sürecin
+          içinden içerik ise Instagram'da paylaşılır.
         </p>
 
-        {submitted ? (
-          <p className="mt-10 font-serif text-xl font-light italic text-gold">
-            Kaydınız alındı.
-          </p>
-        ) : (
-          <div className="mx-auto mt-10 flex max-w-md flex-col gap-3 sm:flex-row">
-            <input
-              type="email"
-              inputMode="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="E-posta adresiniz"
-              className="flex-1 border border-hairline bg-surface px-5 py-3.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/50 focus:border-gold/60"
-            />
-            <button
-              onClick={handleSubmit}
-              className="rounded-sm border border-gold/60 px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
-            >
-              Katıl
-            </button>
-          </div>
-        )}
-        {error && <p className="mt-3 text-xs text-[#c2614f]">{error}</p>}
+        <div className="mx-auto mt-10 flex max-w-md flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <Link
+            href="/journal"
+            className="w-full rounded-sm border border-gold/60 px-8 py-3.5 text-center text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground sm:w-auto"
+          >
+            Journal'ı İncele
+          </Link>
+          <a
+            href="https://www.instagram.com/aeterna.protocol?igsh=anVvbGp3bGV5MXQ1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full rounded-sm border border-hairline px-8 py-3.5 text-center text-[0.65rem] uppercase tracking-eyebrow font-medium text-foreground/80 transition-colors duration-300 hover:border-gold/60 hover:bg-gold hover:text-primary-foreground sm:w-auto"
+          >
+            Instagram'da Takip Et
+          </a>
+        </div>
       </div>
     </section>
   )

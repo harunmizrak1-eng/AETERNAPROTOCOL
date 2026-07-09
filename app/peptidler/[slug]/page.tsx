@@ -70,7 +70,7 @@ export default async function PeptideDetailPage({
               ← Peptid Kütüphanesi
             </Link>
 
-            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/70">
+            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
               {peptide.category}
             </p>
             <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
@@ -87,7 +87,7 @@ export default async function PeptideDetailPage({
               <span className={tierColorVar[peptide.tier]}>
                 {tierLabel[peptide.tier]}
               </span>
-              <span className="text-muted-foreground/60">
+              <span className="text-muted-foreground">
                 · {peptide.clinicalStatus}
               </span>
             </div>
@@ -130,7 +130,7 @@ export default async function PeptideDetailPage({
                 <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
                   Kanıt Matrisi
                 </h2>
-                <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground/70">
+                <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   Aşağıdaki her sonuç, kaynak bölümündeki çalışmada doğrudan
                   raporlanmıştır — genel kanıt kademesinden bağımsız olarak.
                 </p>
@@ -165,7 +165,7 @@ export default async function PeptideDetailPage({
                   Kaynak
                 </h2>
                 <div className="mt-4 rounded-sm border border-hairline bg-surface p-6">
-                  <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground/70">
+                  <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
                     {citation.label}
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-foreground/90">

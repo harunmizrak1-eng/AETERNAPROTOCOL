@@ -17,7 +17,7 @@ export function LongevityScoreForm() {
 
   return (
     <div>
-      <p className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/70">
+      <p className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
         {answeredCount} / {scoreDimensions.length}
       </p>
 

@@ -66,7 +66,7 @@ export default async function ProtocolDetailPage({
               ← Danışmanlık
             </Link>
 
-            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/70">
+            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
               {protocol.tagline}
             </p>
             <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
@@ -116,7 +116,7 @@ export default async function ProtocolDetailPage({
                       <p className="font-serif text-lg font-light tracking-wide text-foreground">
                         {p.name}
                       </p>
-                      <p className="mt-1 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground/70">
+                      <p className="mt-1 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
                         {p.category}
                       </p>
                     </div>

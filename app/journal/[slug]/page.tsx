@@ -88,7 +88,7 @@ export default async function ArticlePage({
               <span className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
                 {article.category}
               </span>
-              <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/50">
+              <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
                 {article.readMinutes} dk okuma
               </span>
             </div>

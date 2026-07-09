@@ -52,7 +52,7 @@ export function JournalList({ articles }: { articles: Article[] }) {
                 <span className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
                   {a.category}
                 </span>
-                <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground/50">
+                <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
                   {a.readMinutes} dk okuma
                 </span>
               </div>

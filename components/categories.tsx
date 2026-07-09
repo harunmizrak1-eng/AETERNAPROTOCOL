@@ -33,7 +33,7 @@ export function Categories() {
                 {card.peptides.map((p) => (
                   <span
                     key={p}
-                    className="text-[0.75rem] uppercase tracking-[0.15em] text-muted-foreground/75 transition-colors duration-500 group-hover:text-foreground/90"
+                    className="text-[0.75rem] uppercase tracking-[0.15em] text-muted-foreground transition-colors duration-500 group-hover:text-foreground/90"
                   >
                     {p}
                   </span>

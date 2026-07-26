@@ -853,7 +853,35 @@ export const peptides: Peptide[] = [
         compound: "Uyarıcılar",
         note: "Uyarıcı etkileri güçlendirebilir — dikkatle izlenmeli, uyarıcı dozu azaltılmalı.",
       },
+      {
+        compound: "MAO İnhibitörleri",
+        note: "Teorik monoamin sistemi riski; dikkatli kullanılmalı.",
+      },
+      {
+        compound: "NA-Semax-Amidat",
+        note: "Aynı peptidin varyantlarıdır — eşzamanlı kullanılmamalı, ikisinden biri seçilmelidir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-3. Gün", result: "İlk bilişsel netlik ve odaklanma artışı, olası hafif burun hissi" },
+      { period: "1. Hafta", result: "Zorlu görevlerde artan dikkat" },
+      { period: "2-3. Hafta", result: "Gelişmiş bellek pekiştirme, stabil ruh hali" },
+      { period: "4. Hafta", result: "Zirve bilişsel fayda, artan stres direnci" },
+      { period: "Kullanım Sonrası", result: "3-7 gün içinde kademeli başlangıç düzeyine dönüş; bazı faydalar kalıcı olabilir" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Berrak, renksiz nazal çözelti",
+        "Doğru konsantrasyon etiketi (%0.1 veya %1)",
+        "Buz paketleriyle soğuk zincir sevkiyatı",
+        "Steril kapatılmış ambalaj",
+      ],
+      bad: [
+        "Kristalleşme veya çökelme",
+        "Bulanık veya renkli çözeltiler",
+        "Görünür parçacıklar",
+      ],
+    },
   },
   {
     slug: "selank",
@@ -906,7 +934,37 @@ export const peptides: Peptide[] = [
         compound: "Alkol",
         note: "Her ikisi de GABA sistemini etkiler; aşırı sedasyon riski.",
       },
+      {
+        compound: "Noopept",
+        note: "Her ikisi de farklı yollarla BDNF'yi artırır.",
+      },
+      {
+        compound: "Modafinil",
+        note: "Dengeli anksiyete azaltımı ve uyanıklık.",
+      },
+      {
+        compound: "SSRI Antidepresanlar",
+        note: "Güçlendirilmiş ruh hali düzenlemesi için birleştirilebilir; yakından izlenmelidir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "30-60 Dakika", result: "Hafif anksiyete azalması başlar" },
+      { period: "1-3. Gün", result: "Gelişmiş zihinsel netlik ve odaklanma" },
+      { period: "1. Hafta", result: "Artan stres direnci ve duygusal stabilite" },
+      { period: "1-2. Hafta", result: "Zirve bilişsel güçlendirme etkileri" },
+      { period: "Kesim Sonrası", result: "Faydalar birkaç gün daha sürebilir" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Topaklanmamış, beyaz-krem renkli liyofilize toz",
+        "Berrak, renksiz sulandırılmış çözelti",
+        "Net parti bilgisi, saflık testi, son kullanma tarihleri",
+      ],
+      bad: [
+        "Sararma, topaklanma veya nem maruziyeti",
+        "Sulandırma sonrası süregelen bulanıklık",
+      ],
+    },
   },
   {
     slug: "tb-500",
@@ -955,7 +1013,37 @@ export const peptides: Peptide[] = [
         compound: "CJC-1295",
         note: "GH salgılatıcı etkiyle birleşen doku onarımı, kapsamlı toparlanma sağlar.",
       },
+      {
+        compound: "IGF-1",
+        note: "Tamamlayıcı büyüme yolları üzerinden geliştirilmiş kas ve doku yenilenmesi.",
+      },
+      {
+        compound: "GHRP-6",
+        note: "Bilinen olumsuz etkileşim yok; potansiyel geliştirilmiş toparlanma.",
+      },
+      {
+        compound: "Melanotan II",
+        note: "Farklı reseptör aileleri, yol örtüşmesi yok.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Azalan inflamasyon ve gelişmiş doku hissi" },
+      { period: "2-4. Hafta", result: "Hızlanan iyileşme oranı ve gelişmiş doku kalitesi" },
+      { period: "4-8. Hafta", result: "Maksimum doku onarımı ve rejeneratif fayda" },
+      { period: "6-12. Hafta", result: "Doku gücü ve fonksiyonunda sürekli iyileşme" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz liyofilize toz — ince, eşit dağılmış, hafif kabarık doku",
+        "Sulandırma sonrası parçacıksız, berrak renksiz çözelti",
+        "Sağlam vakumlu mühür ve güvenli lastik tıpa",
+      ],
+      bad: [
+        "Renkli/kristalize toz bozulmaya işaret eder",
+        "Süregelen bulanıklık, yüzen parçacıklar veya çökelti",
+        "Hasarlı flakon mührü veya kontaminasyon belirtisi",
+      ],
+    },
   },
   {
     slug: "mots-c",
@@ -998,7 +1086,37 @@ export const peptides: Peptide[] = [
         compound: "SS-31 (Elamipretide)",
         note: "Farklı yollar üzerinden tamamlayıcı mitokondriyal destek.",
       },
+      {
+        compound: "Berberin",
+        note: "Her ikisi de AMPK aktivatörüdür; birikimli etkiler için izlenmelidir.",
+      },
+      {
+        compound: "Resveratrol",
+        note: "Tamamlayıcı SIRT1/AMPK aktivasyon yolları.",
+      },
+      {
+        compound: "Diyabet İlaçları",
+        note: "Hipoglisemiyi önlemek için doz ayarlaması gerekebilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "AMPK yolağı aktivasyonu; ilk glukoz toleransı iyileşmeleri" },
+      { period: "2-4. Hafta", result: "Gelişmiş egzersiz kapasitesi; iyileşmiş insülin duyarlılığı" },
+      { period: "4-8. Hafta", result: "Sürdürülen metabolik faydalar; olası vücut kompozisyonu değişimleri" },
+      { period: "8-12. Hafta", result: "Maksimum mitokondriyal fonksiyon artışı; metabolik esneklik" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renginde homojen toz",
+        "Sulandırma sonrası parçacıksız, berrak renksiz çözelti",
+        "RP-HPLC ile >%95 saflıkla dizi doğrulaması",
+      ],
+      bad: [
+        "Renk değişimi göstermiş toz veya çözelti",
+        "Sulandırma sonrası bulanık çözelti",
+        "Analiz sertifikasının bulunmaması",
+      ],
+    },
   },
   {
     slug: "epithalon",
@@ -1045,7 +1163,38 @@ export const peptides: Peptide[] = [
         compound: "Kanser Tedavileri",
         note: "Telomeraz aktivasyonu teorik olarak maligniteyi etkileyebilir; aktif kanserde kaçınılmalıdır.",
       },
+      {
+        compound: "Melatonin",
+        note: "Her ikisi de pineal yolaklar üzerinden çalışır; sirkadiyen ritim etkilerini güçlendirebilir.",
+      },
+      {
+        compound: "NAD+ Öncülleri",
+        note: "Farklı anti-aging yolları; tamamlayıcı mekanizmalar.",
+      },
+      {
+        compound: "Cortexin",
+        note: "Her ikisi de nöroprotektiftir; birikimli etkiler açısından izlenmelidir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-3. Gün", result: "Olası hafif enerji iyileşmesi" },
+      { period: "3-7. Gün", result: "Daha iyi uyku kalitesi, canlı rüyalar (melatonin etkisi)" },
+      { period: "2. Hafta", result: "Artan sabah enerjisi, ruh hali stabilitesi" },
+      { period: "3-4. Hafta", result: "Cilt kalitesinde iyileşme, gelişmiş yara iyileşmesi" },
+      { period: "2-3. Ay", result: "Laboratuvar belirteçlerinde telomer değişimleri gözlenebilir (hayvan verisi)" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırıldığında berrak, renksiz çözelti",
+        "Analiz sertifikası mevcut (>%98 saflık)",
+      ],
+      bad: [
+        "Sarı veya renk değişimi göstermiş toz (bozulma)",
+        "Karıştırma sonrası bulanık çözelti (kontaminasyon)",
+        "Yaygın doz yanlış bilgisi: birçok kaynak çeviri hatasına dayanarak 5-10mg önerir, oysa orijinal araştırma mikrogram düzeyinde etkinlik göstermiştir — tedarikçi bilgilerini dikkatle doğrulayın",
+      ],
+    },
   },
   {
     slug: "aicar",
@@ -1085,7 +1234,33 @@ export const peptides: Peptide[] = [
         compound: "Metformin",
         note: "Her ikisi de farklı mekanizmalarla AMPK'yı aktive eder; glukoz metabolizması üzerinde birikimli etki olabilir.",
       },
+      {
+        compound: "GW501516",
+        note: "Farklı yollar (AMPK vs PPARδ) metabolik etkileri tamamlayabilir; popüler bir araştırma kombinasyonu.",
+      },
+      {
+        compound: "SR9009",
+        note: "Rev-ErbA agonisti; tamamlayıcı metabolik etkiler.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Enerji düzeylerinde hafif değişimler; vücut AMPK aktivasyonuna uyum sağlıyor" },
+      { period: "3-4. Hafta", result: "Dayanıklılık kapasitesinde ve metabolik belirteçlerde olası iyileşme" },
+      { period: "5-8. Hafta", result: "Birikimli metabolik adaptasyonlar; artan yağ oksidasyonu" },
+      { period: "8-12. Hafta", result: "Mitokondriyal yoğunluk ve metabolik verimlilik üzerinde tam etki" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası berrak çözelti",
+        "Saflık testi ile analiz sertifikası",
+      ],
+      bad: [
+        "Renk değişimi göstermiş veya topaklanmış toz",
+        "Sulandırma sonrası bulanık çözelti",
+        "Görünür partikül madde",
+      ],
+    },
   },
   {
     slug: "aod-9604",
@@ -1129,7 +1304,37 @@ export const peptides: Peptide[] = [
         compound: "CJC-1295",
         note: "AOD-9604, GH eksenini etkilemez; birlikte kullanılabilir.",
       },
+      {
+        compound: "Hyaluronik Asit",
+        note: "Eklem sağlığı için birleştirildiğinde güçlendirilmiş kıkırdak onarımı.",
+      },
+      {
+        compound: "Ipamorelin",
+        note: "Farklı mekanizmalar; bilinen etkileşim yok.",
+      },
+      {
+        compound: "İnsülin",
+        note: "AOD-9604, tam hGH'nin aksine glukoz metabolizmasını etkilemez.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Minimal fark edilir etki; bileşik birikiyor" },
+      { period: "3-4. Hafta", result: "Vücut kompozisyonunda hafif değişimler başlayabilir" },
+      { period: "5-8. Hafta", result: "Özellikle diyet ve egzersizle daha belirgin yağ kaybı" },
+      { period: "8-12. Hafta", result: "Sürekli yağ azalması ve iyileşmiş vücut kompozisyonu" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Homojen görünümlü beyaz liyofilize toz",
+        "Sulandırma sonrası parçacıksız kristal berraklıkta çözelti",
+        "HPLC ile >%98 saflık gösteren analiz sertifikası",
+      ],
+      bad: [
+        "Renk değişimi göstermiş veya topaklanmış toz (sarı bozulmayı gösterir)",
+        "Sulandırma sonrası bulanık çözelti",
+        "Çökmüş veya nem hasarı görmüş görünüm",
+      ],
+    },
   },
   {
     slug: "thymosin-alpha-1",
@@ -1175,7 +1380,29 @@ export const peptides: Peptide[] = [
         compound: "Aşılar",
         note: "Aşı immünojenisitesini artırır.",
       },
+      {
+        compound: "Kemoterapi",
+        note: "Kemik iliği hasarına karşı koruyucu.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "İlk bağışıklık sistemi aktivasyonu" },
+      { period: "2-6. Hafta", result: "Gelişmiş bağışıklık fonksiyonu, azalan enfeksiyon riski" },
+      { period: "6-12. Hafta", result: "Maksimum immünomodülatör fayda" },
+      { period: "12+. Hafta", result: "Devam eden kullanımla sürdürülen bağışıklık desteği" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz, kabarık liyofilize toz (flakon dibini dolduran)",
+        "Sulandırma sonrası kristal berraklıkta çözelti (parçacık/bulanıklık yok)",
+        "Parti numaraları ve son kullanma tarihiyle profesyonel etiketleme",
+      ],
+      bad: [
+        "Renk değişimi göstermiş (sarı/kahverengi) veya çökmüş görünüm",
+        "Sulandırma sonrası süregelen bulanıklık veya parçacık",
+        "Profesyonel olmayan kaynak veya belirsiz etiketleme",
+      ],
+    },
   },
   {
     slug: "pt-141",

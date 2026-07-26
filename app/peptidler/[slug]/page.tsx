@@ -98,6 +98,51 @@ export default async function PeptideDetailPage({
               {peptide.short}
             </p>
 
+            {peptide.molecular && (
+              <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-hairline pt-6 sm:grid-cols-4">
+                {peptide.molecular.weight && (
+                  <div>
+                    <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                      Moleküler Ağırlık
+                    </p>
+                    <p className="mt-1 font-mono text-sm text-foreground/90">
+                      {peptide.molecular.weight}
+                    </p>
+                  </div>
+                )}
+                {peptide.molecular.halfLife && (
+                  <div>
+                    <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                      Yarı Ömür
+                    </p>
+                    <p className="mt-1 font-mono text-sm text-foreground/90">
+                      {peptide.molecular.halfLife}
+                    </p>
+                  </div>
+                )}
+                {peptide.molecular.chain && (
+                  <div>
+                    <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                      Zincir
+                    </p>
+                    <p className="mt-1 font-mono text-sm text-foreground/90">
+                      {peptide.molecular.chain}
+                    </p>
+                  </div>
+                )}
+                {peptide.molecular.sequence && (
+                  <div>
+                    <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                      Dizi
+                    </p>
+                    <p className="mt-1 font-mono text-sm text-foreground/90">
+                      {peptide.molecular.sequence}
+                    </p>
+                  </div>
+                )}
+              </div>
+            )}
+
             <div className="mt-14 border-t border-hairline pt-10">
               <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
                 Mekanizma
@@ -177,6 +222,27 @@ export default async function PeptideDetailPage({
                 <div className="mt-6">
                   <DoseLadderChart steps={peptide.dosing} />
                 </div>
+              </div>
+            )}
+
+            {peptide.reconstitutionSteps && peptide.reconstitutionSteps.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Hazırlama Adımları
+                </h2>
+                <ol className="mt-4 flex flex-col gap-3">
+                  {peptide.reconstitutionSteps.map((step, i) => (
+                    <li
+                      key={step}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      <span className="font-mono text-xs text-gold/80">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      {step}
+                    </li>
+                  ))}
+                </ol>
               </div>
             )}
 

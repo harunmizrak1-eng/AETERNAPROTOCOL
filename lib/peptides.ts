@@ -32,7 +32,18 @@ export interface TimelinePoint {
 
 export interface QualityIndicators {
   good: string[]
+  /** Acceptable-but-worth-noting signals - between "good" and "bad". */
+  warning?: string[]
   bad: string[]
+}
+
+export interface MolecularData {
+  weight?: string
+  halfLife?: string
+  chain?: string
+  /** One-letter amino acid sequence, peptides only (omitted for small
+   * molecules like NAD+ or Methylene Blue). */
+  sequence?: string
 }
 
 export interface SecondaryDosing {
@@ -76,6 +87,10 @@ export interface Peptide {
    * would inspect (color, texture, packaging) - only meaningful for
    * injectable/topical compounds actually purchased as a substance. */
   qualityIndicators?: QualityIndicators
+  molecular?: MolecularData
+  /** Practical prep steps (e.g. reconstituting lyophilized powder) -
+   * distinct from dosingNote, which is about how much/how often. */
+  reconstitutionSteps?: string[]
 }
 
 export const tierLabel: Record<EvidenceTier, string> = {
@@ -120,6 +135,12 @@ export const peptides: Peptide[] = [
     name: "Retatrutide",
     category: "Metabolik",
     tier: "proven",
+    molecular: {
+      weight: "4,731.33 Da",
+      halfLife: "~6 gün",
+      chain: "39 aminoasit",
+      sequence: "HUEGTFTSDVSSYLEGQAAKEFIAWLVRGRGPSSGAPPPS",
+    },
     short:
       "GLP-1, GIP ve glukagon reseptörlerine aynı anda etki eden üçlü agonist. Faz 3 çalışmalarında en yüksek kilo kaybı sonuçlarını veren metabolik molekül.",
     mechanism:
@@ -134,6 +155,15 @@ export const peptides: Peptide[] = [
     evidenceMatrix: [{ outcome: "Vücut Ağırlığı", tier: "proven" }],
     dosingNote:
       "Haftalık subkutan enjeksiyon; karın, uyluk veya üst kol bölgesine, enjeksiyon yeri rotasyonuyla uygulanır.",
+    reconstitutionSteps: [
+      "Flakonu oda sıcaklığına gelene kadar bekletin (15-20 dakika)",
+      "Flakon kapağını alkollü mendille temizleyin ve tamamen kurumasını bekleyin",
+      "Hesaplanan bakteriyostatik suyu flakon kenarından yavaşça ekleyin",
+      "Dairesel hareketlerle nazikçe çalkalayın — sert sallamaktan kaçının",
+      "Tam çözünmeyi bekleyin (2-3 dakika); çözelti berrak ve renksiz olmalı",
+      "Sulandırılmış çözeltiyi 2-8°C'de buzdolabında en fazla 28 gün saklayın",
+      "Subkutan enjekte edin; bölgeleri haftalık rotasyonla değiştirin",
+    ],
     dosing: [
       { label: "Başlangıç (1-4. hafta)", amount: "0.5mg", amountValue: 0.5, frequency: "Haftada bir", route: "Subkutan" },
       { label: "Düşük İdame (4-8. hafta)", amount: "1mg", amountValue: 1, frequency: "Haftada bir", route: "Subkutan" },
@@ -213,6 +243,11 @@ export const peptides: Peptide[] = [
     name: "Cagrilintide",
     category: "Metabolik",
     tier: "proven",
+    molecular: {
+      weight: "4,409.01 Da",
+      halfLife: "~7 gün (159-195 saat)",
+      chain: "37 aminoasit",
+    },
     short:
       "Amilin reseptör agonisti. Semaglutide ile kombine edildiğinde (CagriSema) tokluk sinyalini güçlendirerek güçlü kilo kaybı sağlar.",
     mechanism:
@@ -227,6 +262,15 @@ export const peptides: Peptide[] = [
     ],
     dosingNote:
       "Karın, uyluk veya üst kol bölgesine haftalık subkutan enjeksiyon; ticari kullanıma sunulduğunda önceden dolu kalem şeklinde olacak.",
+    reconstitutionSteps: [
+      "KRİTİK: Fibril oluşumunu önlemek için asidik pH (3.5-4.5) gereklidir",
+      "Flakon kenarından yavaşça sulandırın; nazikçe çalkalayın (sallamayın)",
+      "Sulandırma sonrası pH 3.5-4.5 olduğunu doğrulayın",
+      "Çözelti berrak olmalı — bulanık veya parçacıklıysa atın",
+      "Buzdolabında saklayın (2-8°C); her enjeksiyondan önce kontrol edin",
+      "Enjeksiyondan önce oda sıcaklığına gelmesi için 15-30 dakika bekleyin",
+      "Enjeksiyon bölgelerini haftalık rotasyonla değiştirin",
+    ],
     dosing: [
       { label: "Doz Yükseltme (başlangıç)", amount: "0.25mg", amountValue: 0.25, frequency: "Haftada bir", route: "Subkutan" },
       { label: "Doz Yükseltme (ara basamak)", amount: "1mg", amountValue: 1, frequency: "Haftada bir", route: "Subkutan" },
@@ -293,6 +337,12 @@ export const peptides: Peptide[] = [
     name: "Semaglutide",
     category: "Metabolik",
     tier: "proven",
+    molecular: {
+      weight: "4,113.64 Da",
+      halfLife: "~7 gün (168 saat)",
+      chain: "31 aminoasit",
+      sequence: "HUEGTFTSDVSSYLEGQAAKEFIAWLVRGRG",
+    },
     short:
       "GLP-1 reseptör agonisti. İştahı baskılar, kan şekerini düzenler. Kilo yönetiminde en yaygın klinik veriye sahip moleküllerden.",
     mechanism:
@@ -308,6 +358,14 @@ export const peptides: Peptide[] = [
     ],
     dosingNote:
       "Önceden dolu kalem veya flakon; haftada bir subkutan enjeksiyon. Uyluk, karın (göbekten 5cm+ uzakta) veya üst kol bölgesine uygulanır.",
+    reconstitutionSteps: [
+      "Önceden dolu kalem kullanıyorsanız yeni iğne takıp talimata göre hazırlayın",
+      "Flakon kullanıyorsanız reçete edilen dozu uygun şırıngayla çekin",
+      "Enjeksiyon bölgesini alkollü mendille temizleyip kurumasını bekleyin",
+      "90 derece açıyla subkutan enjekte edin (zayıfsanız 45 derece)",
+      "Tam doz verilmesini sağlamak için enjeksiyon sonrası 6 saniye bekleyin",
+      "İğneyi güvenle atın, enjeksiyon bölgelerini haftalık rotasyonla değiştirin",
+    ],
     dosing: [
       { label: "Başlangıç (1-4. hafta)", amount: "0.25mg", amountValue: 0.25, frequency: "Haftada bir, 4 hafta ardından artırılır", route: "Subkutan" },
       { label: "Diyabet Yönetimi", amount: "0.5-1mg", amountValue: 1, frequency: "Haftada bir", route: "Subkutan" },
@@ -381,6 +439,12 @@ export const peptides: Peptide[] = [
     name: "Tirzepatide",
     category: "Metabolik",
     tier: "proven",
+    molecular: {
+      weight: "4,813.55 Da",
+      halfLife: "~5 gün (120 saat)",
+      chain: "39 aminoasit",
+      sequence: "HUEGTFTSDVSSYLEGQAAKEFIAWLVRGRGGGGGPSKKKKKK",
+    },
     short:
       "GLP-1 ve GIP çift agonisti. Semaglutide'den daha güçlü kilo kaybı sonuçlarıyla öne çıkan ikili reseptör molekülü.",
     mechanism:
@@ -396,6 +460,19 @@ export const peptides: Peptide[] = [
     ],
     dosingNote:
       "Haftada bir subkutan enjeksiyon, günün herhangi bir saatinde, aç veya tok karnına uygulanabilir. Uyluk, karın (göbekten 5cm+ uzakta) veya üst kol.",
+    reconstitutionSteps: [
+      "Flakonu oda sıcaklığına gelene kadar bekletin (15-20 dakika)",
+      "Flakon kapaklarını alkollü mendille temizleyin, kurumasını bekleyin",
+      "Sulandırma hacmini hesaplayın",
+      "Bakteriyostatik suyu dikkatlice şırıngaya çekin",
+      "İğneyi cam duvara karşı 45 derece açıyla yerleştirin",
+      "Köpürmeyi önlemek için suyu flakon kenarından yavaşça enjekte edin",
+      "Nazikçe çalkalayın — asla sert sallamayın",
+      "Bulanıklık varsa berraklaşması için 2-3 dakika bekleyin",
+      "Son çözelti tamamen berrak ve renksiz olmalı",
+      "Tarih ve konsantrasyon ile etiketleyin",
+      "2-8°C'de saklayın, 28 gün içinde kullanın",
+    ],
     dosing: [
       { label: "Başlangıç (ilk 4 hafta)", amount: "2.5mg", amountValue: 2.5, frequency: "Haftada bir", route: "Subkutan" },
       { label: "İlerleme", amount: "5mg", amountValue: 5, frequency: "Haftada bir", route: "Subkutan" },
@@ -469,6 +546,12 @@ export const peptides: Peptide[] = [
     name: "GHK-Cu",
     category: "Estetik / Onarım",
     tier: "theoretical",
+    molecular: {
+      weight: "404.96 Da",
+      halfLife: "0.5-2 saat",
+      chain: "3 aminoasit",
+      sequence: "GHK",
+    },
     short:
       "Bakır iyonu taşıyan tripeptid. Kolajen ve elastaz aktivitesi üzerindeki etkileri hücre ve hayvan modellerinde iyi tanımlı; bağımsız insan RCT verisi sınırlı.",
     mechanism:
@@ -483,6 +566,14 @@ export const peptides: Peptide[] = [
     relatedArticleSlug: "kaynak-politikamiz-neden-onemli",
     dosingNote:
       "En yaygın topikal (krem/serum) kullanılır; enjektabl formu ayrı bir risk-yarar profiline sahiptir ve gebelikte önerilmez.",
+    reconstitutionSteps: [
+      "Cildi yumuşak bir temizleyiciyle iyice temizleyin",
+      "Cildi kurulayın ve 5 dakika bekleyin",
+      "Hedef bölgelere ince ve eşit bir tabaka uygulayın",
+      "Tamamen emilene kadar nazikçe masaj yapın (1-2 dakika)",
+      "Serum kullanıyorsanız ardından nemlendirici uygulayın",
+      "Gündüz kullanımda her zaman güneş kremi uygulayın",
+    ],
     dosing: [
       { label: "Genel Cilt Sağlığı (serum)", amount: "%0.5", amountValue: 0.5, frequency: "Günde 1 kez", route: "Topikal (yüz/boyun)" },
       { label: "Anti-Aging (krem)", amount: "%0.5-1", amountValue: 1, frequency: "Günde 1-2 kez", route: "Topikal" },
@@ -563,6 +654,10 @@ export const peptides: Peptide[] = [
     name: "SS-31 (Elamipretide)",
     category: "Longevity",
     tier: "proven",
+    molecular: {
+      halfLife: "~2 saat",
+      chain: "4 aminoasit (aromatik-katyonik tetrapeptid)",
+    },
     short:
       "Mitokondriyal membran koruyucu tetrapeptid. FDA'nın onayladığı ilk mitokondri ilacı. Mitokondriyal işlev bozukluklarında klinik olarak test edildi.",
     mechanism:
@@ -575,6 +670,16 @@ export const peptides: Peptide[] = [
       "Belirli endikasyonlarda onaylı, diğer kullanım alanlarında klinik çalışmalar sürüyor",
     dosingNote:
       "Işığa duyarlıdır, ışıktan korunmalıdır. Subkutan veya intravenöz uygulanır; klinik protokoller ile araştırma/performans amaçlı dozlar arasında büyük fark vardır.",
+    reconstitutionSteps: [
+      "Flakonu alkollü mendille temizleyin",
+      "Her 10mg peptid için 1-2mL bakteriyostatik su ekleyin",
+      "Çözünene kadar nazikçe çalkalayın (kolayca çözünür)",
+      "Berrak, renksiz çözelti olduğunu doğrulayın",
+      "İsteğe bağlı: IV kullanım için steril filtrasyon",
+      "Konsantrasyon ve tarih ile etiketleyin",
+      "Hemen 2-8°C'de saklayın",
+      "Işıktan koruyun — mümkünse amber flakon kullanın",
+    ],
     dosing: [
       { label: "Genel Mitokondriyal Destek", amount: "5-10mg", amountValue: 10, frequency: "Günde 1 kez", route: "Subkutan" },
       { label: "Atletik Performans", amount: "10-20mg", amountValue: 20, frequency: "Günde 1 kez, antrenman öncesi", route: "Subkutan" },
@@ -644,6 +749,12 @@ export const peptides: Peptide[] = [
     name: "BPC-157",
     category: "Doku Onarımı",
     tier: "theoretical",
+    molecular: {
+      weight: "1,419.53 Da",
+      halfLife: "<30 dakika",
+      chain: "15 aminoasit (pentadekapeptid)",
+      sequence: "GKPPPGKPADDAGLV",
+    },
     short:
       "Gastrik mukozadan izole pentadekapeptid. Anjiyogenez ve doku onarımını desteklediği düşünülüyor. Mekanizması güçlü, geniş insan çalışması yok.",
     mechanism:
@@ -655,6 +766,14 @@ export const peptides: Peptide[] = [
     clinicalStatus: "Mekanizma güçlü, kontrollü insan çalışması yok",
     dosingNote:
       "Genellikle yaralanma bölgesine yakın subkutan enjeksiyon şeklinde uygulanır; lokalize doku onarımı için tercih edilir.",
+    reconstitutionSteps: [
+      "Çalışma alanını ve elleri iyice temizleyin",
+      "Hesaplayıcı ile gerekli bakteriyostatik su hacmini hesaplayın",
+      "Bakteriyostatik suyu şırıngaya çekin",
+      "Flakon kenarından yavaşça enjekte edin (doğrudan tozun üzerine değil)",
+      "Çözünene kadar nazikçe çalkalayın (asla sallamayın)",
+      "Buzdolabında saklayın, 28 gün içinde kullanın",
+    ],
     dosing: [
       { label: "İdame", amount: "250mcg", amountValue: 250, frequency: "Günde 1 kez", route: "Subkutan" },
       { label: "Genel İyileşme", amount: "250-500mcg", amountValue: 500, frequency: "Günde 1-2 kez", route: "Subkutan/IM" },

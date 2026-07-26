@@ -66,7 +66,7 @@ export default async function PeptideDetailPage({
     ? getArticle(peptide.relatedArticleSlug)
     : undefined
   const goal = categoryGoalMap[peptide.category]
-  const citation = citations[peptide.slug]
+  const citationList = citations[peptide.slug]
 
   const halfLifeHours = peptide.molecular?.halfLifeHours
   const lastDoseStep = peptide.dosing?.[peptide.dosing.length - 1]
@@ -450,49 +450,56 @@ export default async function PeptideDetailPage({
               </div>
             )}
 
-            {citation && (
+            {citationList && citationList.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
-                  Kaynak
+                  {citationList.length > 1 ? "Kaynaklar" : "Kaynak"}
                 </h2>
-                <div className="mt-4 rounded-sm border border-hairline bg-surface p-6">
-                  <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
-                    {citation.label}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-foreground/90">
-                    {citation.authors}, <em className="font-serif italic">{citation.journal}</em>, {citation.year}
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {citation.note}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs">
-                    <a
-                      href={`https://pubmed.ncbi.nlm.nih.gov/${citation.pmid}/`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gold transition-opacity hover:opacity-70"
+                <div className="mt-4 flex flex-col gap-4">
+                  {citationList.map((citation) => (
+                    <div
+                      key={citation.pmid}
+                      className="rounded-sm border border-hairline bg-surface p-6"
                     >
-                      PubMed PMID: {citation.pmid} →
-                    </a>
-                    <a
-                      href={`https://doi.org/${citation.doi}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gold transition-opacity hover:opacity-70"
-                    >
-                      DOI: {citation.doi} →
-                    </a>
-                    {citation.nct && (
-                      <a
-                        href={`https://clinicaltrials.gov/study/${citation.nct}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gold transition-opacity hover:opacity-70"
-                      >
-                        ClinicalTrials: {citation.nct} →
-                      </a>
-                    )}
-                  </div>
+                      <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                        {citation.label}
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-foreground/90">
+                        {citation.authors}, <em className="font-serif italic">{citation.journal}</em>, {citation.year}
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {citation.note}
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs">
+                        <a
+                          href={`https://pubmed.ncbi.nlm.nih.gov/${citation.pmid}/`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gold transition-opacity hover:opacity-70"
+                        >
+                          PubMed PMID: {citation.pmid} →
+                        </a>
+                        <a
+                          href={`https://doi.org/${citation.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gold transition-opacity hover:opacity-70"
+                        >
+                          DOI: {citation.doi} →
+                        </a>
+                        {citation.nct && (
+                          <a
+                            href={`https://clinicaltrials.gov/study/${citation.nct}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gold transition-opacity hover:opacity-70"
+                          >
+                            ClinicalTrials: {citation.nct} →
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}

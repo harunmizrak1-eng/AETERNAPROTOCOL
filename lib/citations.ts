@@ -15,8 +15,8 @@ export interface Citation {
   note: string
 }
 
-export const citations: Record<string, Citation> = {
-  retatrutide: {
+export const citations: Record<string, Citation[]> = {
+  retatrutide: [{
     label: "Birincil Çalışma",
     authors: "Jastreboff ve ark.",
     journal: "New England Journal of Medicine",
@@ -25,8 +25,8 @@ export const citations: Record<string, Citation> = {
     doi: "10.1056/NEJMoa2301972",
     nct: "NCT04881760",
     note: "Faz 2, randomize, plasebo kontrollü. Obezitede vücut ağırlığı birincil sonlanım noktası.",
-  },
-  semaglutide: {
+  }],
+  semaglutide: [{
     label: "Birincil Çalışma",
     authors: "Lincoff ve ark. (SELECT)",
     journal: "New England Journal of Medicine",
@@ -35,8 +35,8 @@ export const citations: Record<string, Citation> = {
     doi: "10.1056/NEJMoa2307563",
     nct: "NCT03574597",
     note: "Faz 3, randomize, plasebo kontrollü. Kardiyovasküler olay riski birincil sonlanım noktası.",
-  },
-  tirzepatide: {
+  }],
+  tirzepatide: [{
     label: "Birincil Çalışma",
     authors: "Jastreboff ve ark. (SURMOUNT-1)",
     journal: "New England Journal of Medicine",
@@ -45,8 +45,8 @@ export const citations: Record<string, Citation> = {
     doi: "10.1056/NEJMoa2206038",
     nct: "NCT04184622",
     note: "Faz 3, randomize, plasebo kontrollü. Obezitede vücut ağırlığı birincil sonlanım noktası.",
-  },
-  cagrilintide: {
+  }],
+  cagrilintide: [{
     label: "Birincil Çalışma",
     authors: "Garvey ve ark. (REDEFINE 1)",
     journal: "New England Journal of Medicine",
@@ -55,8 +55,8 @@ export const citations: Record<string, Citation> = {
     doi: "10.1056/NEJMoa2502081",
     nct: "NCT05567796",
     note: "Faz 3a, randomize, plasebo ve aktif kontrollü. Semaglutid ile kombinasyon (CagriSema) değerlendirildi.",
-  },
-  "ss-31-elamipretide": {
+  }],
+  "ss-31-elamipretide": [{
     label: "Mekanizma & Klinik Geliştirme İncelemesi",
     authors: "Szeto, H. H.",
     journal: "British Journal of Pharmacology",
@@ -64,8 +64,8 @@ export const citations: Record<string, Citation> = {
     pmid: "24117165",
     doi: "10.1111/bph.12461",
     note: "Mekanizma ve klinik geliştirme programının derleme makalesi, tekil bir RCT değil.",
-  },
-  "pt-141": {
+  }],
+  "pt-141": [{
     label: "Birincil Çalışma",
     authors: "Kingsberg ve ark. (RECONNECT)",
     journal: "Obstetrics & Gynecology",
@@ -74,8 +74,48 @@ export const citations: Record<string, Citation> = {
     doi: "10.1097/AOG.0000000000003500",
     nct: "NCT02333071",
     note: "İki Faz 3, randomize, çift kör, plasebo kontrollü çalışma. Kadınlarda hipoaktif cinsel istek bozukluğu.",
-  },
-  tesamorelin: {
+  }],
+  "ghk-cu": [
+    {
+      label: "İnceleme",
+      authors: "Pickart, Vasquez-Soltero, Margolina",
+      journal: "BioMed Research International",
+      year: 2015,
+      pmid: "26236730",
+      doi: "10.1155/2015/648108",
+      note: "GHK'nın cilt rejenerasyonunda çoklu hücresel yolaklar üzerindeki etkilerinin derlemesi.",
+    },
+    {
+      label: "İnceleme",
+      authors: "Pickart, L.",
+      journal: "Journal of Biomaterials Science, Polymer Edition",
+      year: 2008,
+      pmid: "18644225",
+      doi: "10.1163/156856208784909435",
+      note: "GHK tripeptidinin doku yeniden yapılanmasındaki (remodeling) rolünün derlemesi.",
+    },
+  ],
+  "bpc-157": [
+    {
+      label: "İnceleme",
+      authors: "Seiwerth, Milavic, Vukojevic ve ark.",
+      journal: "Frontiers in Pharmacology",
+      year: 2021,
+      pmid: "34267654",
+      doi: "10.3389/fphar.2021.627533",
+      note: "BPC 157'nin yara iyileşmesindeki rolü üzerine derleme; insan çalışmaları sınırlı, kanıtın büyük kısmı hayvan modellerinden.",
+    },
+    {
+      label: "İnceleme",
+      authors: "Gwyer, Wragg, Wilson",
+      journal: "Cell and Tissue Research",
+      year: 2019,
+      pmid: "30915550",
+      doi: "10.1007/s00441-019-03016-8",
+      note: "Kas-iskelet yumuşak doku iyileşmesinde BPC 157'nin rolü üzerine derleme; etkinlik insanda henüz doğrulanmamış.",
+    },
+  ],
+  tesamorelin: [{
     label: "Meta-Analiz",
     authors: "Badran ve ark.",
     journal: "Obesity Research & Clinical Practice",
@@ -83,5 +123,5 @@ export const citations: Record<string, Citation> = {
     pmid: "41545261",
     doi: "10.1016/j.orcp.2026.01.002",
     note: "5 randomize kontrollü çalışmanın meta-analizi. HIV ilişkili lipodistrofide vücut kompozisyonu.",
-  },
+  }],
 }

@@ -1913,6 +1913,40 @@ export const peptides: Peptide[] = [
     evidenceMatrix: [
       { outcome: "Methemoglobinemi Tedavisi", tier: "proven" },
     ],
+    dosingNote:
+      "Oral yol, düşük doz nootropik/longevity kullanımı için standarttır (%72 civarı biyoyararlanım). Yalnızca eczacılık kalitesinde (USP) formlar kullanılmalıdır — endüstriyel/laboratuvar kalitesi ağır metal kontaminasyonu içerebilir.",
+    dosing: [
+      { label: "Düşük Doz Nootropik", amount: "0.5-1 mg/kg", amountValue: 1, frequency: "Günde 1 kez (sabah)", route: "Oral (USP kalite)" },
+      { label: "Orta Düzey Bilişsel Destek", amount: "1-2 mg/kg", amountValue: 2, frequency: "Günde 1 kez (sabah)", route: "Oral (USP kalite)" },
+    ],
+    warnings: [
+      "SSRI, SNRI veya MAO inhibitörü ile eşzamanlı kullanım (serotonin sendromu riski — KRİTİK)",
+      "Glukoz-6-fosfat dehidrogenaz (G6PD) eksikliği (şiddetli hemolitik anemi riski)",
+      "Böbrek yetmezliği (esas olarak böbrekten atılır)",
+      "Methylene blue veya fenotiazin bileşiklerine bilinen aşırı duyarlılık",
+      "Gebelik ve emzirme dönemi (yetersiz güvenlik verisi)",
+      "Serotonin sendromu belirtileri: ajitasyon, konfüzyon, hızlı kalp atışı, yüksek ateş, kas sertliği veya nöbet",
+    ],
+    sideEffects: [
+      "İdrarda mavi/mavi-yeşil renk değişimi (beklenen ve zararsız)",
+      "Sıvı formülasyonlarla dilde mavi-yeşil lekelenme",
+      "Özellikle yüksek dozlarda hafif bulantı veya mide rahatsızlığı",
+      "Başlangıçta hafif baş ağrısı",
+    ],
+    interactions: [
+      {
+        compound: "SSRI'lar",
+        note: "KRİTİK ETKİLEŞİM: Methylene blue güçlü bir MAO-A inhibitörüdür. SSRI'larla (fluoksetin, sertralin, paroksetin) birleştirilmesi hayatı tehdit edebilecek serotonin sendromuna yol açabilir. FDA bu kombinasyona karşı resmi uyarı yayınlamıştır — eşzamanlı kullanılmamalıdır.",
+      },
+      {
+        compound: "MAO İnhibitörleri",
+        note: "Diğer MAO inhibitörleriyle birleştirilmesi, birikimli MAO inhibisyonu yaratır ve serotonin sendromu ile hipertansif kriz riskini belirgin şekilde artırır.",
+      },
+      {
+        compound: "CoQ10 / Ubikinol",
+        note: "Her ikisi de mitokondriyal elektron taşıma zincirini tamamlayıcı mekanizmalarla destekler; birikimli mitokondriyal fayda sağlayabilir.",
+      },
+    ],
   },
   {
     slug: "glutathione",
@@ -1929,6 +1963,34 @@ export const peptides: Peptide[] = [
       "Longevity endikasyonu için bağımsız büyük ölçekli RCT verisi sınırlı",
     ],
     clinicalStatus: "Geniş kullanım geçmişi, longevity endikasyonu için kanıt sınırlı",
+    dosingNote:
+      "Enjektabl form, GI parçalanmayı atlayarak en etkili yoldur; subkutan enjeksiyon genellikle haftada 2-3 kez uygulanır.",
+    dosing: [
+      { label: "Genel Wellness", amount: "100-200mg", amountValue: 200, frequency: "Haftada 2-3 kez", route: "Subkutan" },
+      { label: "Yoğun Terapi", amount: "200-600mg", amountValue: 600, frequency: "Haftada 2-3 kez", route: "Subkutan veya IV" },
+    ],
+    warnings: [
+      "Bilinen glutatyon alerjisi",
+      "Gebelik veya emzirme dönemi (yetersiz güvenlik verisi)",
+      "Astım (bazılarında bronkospazmı tetikleyebilir)",
+      "Alerjik reaksiyon belirtileri (döküntü, nefes darlığı)",
+      "Şiddetli karın ağrısı",
+    ],
+    sideEffects: [
+      "Enjeksiyon bölgesi reaksiyonları",
+      "Hafif bulantı (genellikle yüksek dozlarda)",
+      "Karın krampı",
+    ],
+    interactions: [
+      {
+        compound: "NAD+ / NMN",
+        note: "Her ikisi de hücresel enerji ve antioksidan sistemleri destekler; longevity protokollerinde sıklıkla birleştirilir.",
+      },
+      {
+        compound: "SS-31 (Elamipretide)",
+        note: "Her ikisi de mitokondriyi korur; farklı mekanizmalar birbirini tamamlar.",
+      },
+    ],
   },
   {
     slug: "foxo4-dri",
@@ -1945,6 +2007,28 @@ export const peptides: Peptide[] = [
       "İnsan klinik verisi yok",
     ],
     clinicalStatus: "Tamamen preklinik, yalnızca hayvan çalışmaları",
+    dosingNote:
+      "Hiçbir insan dozaj protokolü doğrulanmamıştır. Aşağıdaki değer, 2017 fare çalışmasının (5mg/kg, İP, gün aşırı 3 doz) 60kg bir insana matematiksel ölçeklenmesidir — klinik bir doz önerisi değildir.",
+    dosing: [
+      { label: "Fare Çalışması Ölçeklemesi (60kg insan için)", amount: "~25mg", amountValue: 25, frequency: "3 doz, gün aşırı", route: "İntraperitoneal (orijinal çalışma)" },
+    ],
+    warnings: [
+      "İnsan kullanımı için henüz onaylanmamıştır",
+      "Gebelik veya emzirme dönemi",
+      "Bağışıklığı baskılanmış bireylerde güvenlik bilinmiyor",
+      "Aktif kanser (teorik — onkologla görüşülmeli)",
+      "Alerjik reaksiyonlar",
+    ],
+    sideEffects: [
+      "Sınırlı insan verisi mevcut",
+      "Hayvan çalışmalarında genellikle iyi tolere edildi",
+    ],
+    interactions: [
+      {
+        compound: "Humanin",
+        note: "Farklı mekanizmalar; Humanin sağlıklı hücreleri korurken FOXO4-DRI senesan olanları temizler.",
+      },
+    ],
   },
   {
     slug: "cortagen",
@@ -1961,6 +2045,36 @@ export const peptides: Peptide[] = [
       "Batı literatüründe bağımsız doğrulama sınırlı",
     ],
     clinicalStatus: "Esas olarak tek araştırma grubunun yayınları, bağımsız doğrulama sınırlı",
+    dosingNote:
+      "Oral kapsül formunda mevcuttur; tipik protokol yılda 2-3 kez tekrarlanan 10-20 günlük döngülerden oluşur.",
+    dosing: [
+      { label: "Standart Protokol", amount: "10-20mg", amountValue: 20, frequency: "Günde 1 kez, 10-20 gün", route: "Oral" },
+      { label: "İdame", amount: "10mg", amountValue: 10, frequency: "Yılda 2-3 döngü", route: "Oral" },
+    ],
+    warnings: [
+      "Aktif nörolojik aciller (tıbbi yardım alınmalı)",
+      "Bilinen aşırı duyarlılık",
+      "Gebelik veya emzirme dönemi",
+      "Olağandışı nörolojik semptomlar",
+    ],
+    sideEffects: [
+      "Genellikle iyi tolere edilir",
+      "Minimal yan etki bildirilmiştir",
+    ],
+    interactions: [
+      {
+        compound: "Epithalon",
+        note: "Kapsamlı anti-aging Khavinson protokollerinde sıklıkla birlikte kullanılır.",
+      },
+      {
+        compound: "Thymalin",
+        note: "Farklı organ hedefleri; kapsamlı biyoregülatör protokollerinde kullanılabilir.",
+      },
+      {
+        compound: "Cardiogen",
+        note: "Khavinson biyoregülatör ailesinin bir parçası; farklı dokuyu hedefler.",
+      },
+    ],
   },
   {
     slug: "cardiogen",
@@ -1977,6 +2091,32 @@ export const peptides: Peptide[] = [
       "Batı literatüründe bağımsız doğrulama sınırlı",
     ],
     clinicalStatus: "Esas olarak tek araştırma grubunun yayınları, bağımsız doğrulama sınırlı",
+    dosingNote:
+      "Oral kapsül formunda mevcuttur; tipik protokol yılda 2-3 kez tekrarlanan 10-20 günlük döngülerden oluşur.",
+    dosing: [
+      { label: "Standart Protokol", amount: "10-20mg", amountValue: 20, frequency: "Günde 1 kez, 10-20 gün", route: "Oral" },
+      { label: "İdame", amount: "10mg", amountValue: 10, frequency: "Yılda 2-3 döngü", route: "Oral" },
+    ],
+    warnings: [
+      "Aktif kardiyak aciller (tıbbi yardım alınmalı)",
+      "Bilinen aşırı duyarlılık",
+      "Gebelik veya emzirme dönemi",
+      "Olağandışı kardiyak semptomlar",
+    ],
+    sideEffects: [
+      "Genellikle iyi tolere edilir",
+      "Minimal yan etki bildirilmiştir",
+    ],
+    interactions: [
+      {
+        compound: "Epithalon",
+        note: "Kapsamlı anti-aging Khavinson protokollerinde sıklıkla birlikte kullanılır.",
+      },
+      {
+        compound: "Thymalin",
+        note: "Farklı organ hedefleri; kapsamlı biyoregülatör protokollerinde kullanılabilir.",
+      },
+    ],
   },
   {
     slug: "livagen",
@@ -1993,6 +2133,36 @@ export const peptides: Peptide[] = [
       "Batı literatüründe bağımsız doğrulama sınırlı",
     ],
     clinicalStatus: "Esas olarak tek araştırma grubunun yayınları, bağımsız doğrulama sınırlı",
+    dosingNote:
+      "Oral kapsül formunda mevcuttur; tipik protokol yılda 2-3 kez tekrarlanan 10-20 günlük döngülerden oluşur.",
+    dosing: [
+      { label: "Standart Protokol", amount: "10-20mg", amountValue: 20, frequency: "Günde 1 kez, 10-20 gün", route: "Oral" },
+      { label: "İdame", amount: "10mg", amountValue: 10, frequency: "Yılda 2-3 döngü", route: "Oral" },
+    ],
+    warnings: [
+      "Aktif karaciğer acilleri (tıbbi yardım alınmalı)",
+      "Bilinen aşırı duyarlılık",
+      "Gebelik veya emzirme dönemi",
+      "Olağandışı karaciğer semptomları",
+    ],
+    sideEffects: [
+      "Genellikle iyi tolere edilir",
+      "Minimal yan etki bildirilmiştir",
+    ],
+    interactions: [
+      {
+        compound: "Epithalon",
+        note: "Yapısal olarak benzer; kapsamlı anti-aging protokollerinde sıklıkla birlikte kullanılır.",
+      },
+      {
+        compound: "Glutathione",
+        note: "Her ikisi de karaciğer fonksiyonunu ve antioksidan durumunu destekler.",
+      },
+      {
+        compound: "Vilon",
+        note: "Farklı organ hedefleri; biyoregülatör protokollerinde birleştirilebilir.",
+      },
+    ],
   },
   {
     slug: "vilon",
@@ -2009,6 +2179,32 @@ export const peptides: Peptide[] = [
       "İnsan klinik verisi yok",
     ],
     clinicalStatus: "Tamamen preklinik, insan verisi yok",
+    dosingNote:
+      "En kısa Khavinson peptidi (yalnızca 2 aminoasit) olarak oral yolla kolayca emilir; tipik protokol yılda 2-3 kez tekrarlanan 10-20 günlük döngülerden oluşur.",
+    dosing: [
+      { label: "Standart Protokol", amount: "10-20mg", amountValue: 20, frequency: "Günde 1 kez, 10-20 gün", route: "Oral" },
+      { label: "İdame", amount: "10mg", amountValue: 10, frequency: "Yılda 2-3 döngü", route: "Oral" },
+    ],
+    warnings: [
+      "Aktif otoimmün alevlenmeler (hekime danışılmalı)",
+      "Bilinen aşırı duyarlılık",
+      "Gebelik veya emzirme dönemi",
+      "Olağandışı bağışıklık semptomları",
+    ],
+    sideEffects: [
+      "Genellikle iyi tolere edilir",
+      "Minimal yan etki bildirilmiştir",
+    ],
+    interactions: [
+      {
+        compound: "Thymalin",
+        note: "Her ikisi de timüs/bağışıklık sistemini hedefler; tamamlayıcı mekanizmalar.",
+      },
+      {
+        compound: "Epithalon",
+        note: "Kapsamlı anti-aging Khavinson protokollerinde sıklıkla birlikte kullanılır.",
+      },
+    ],
   },
   {
     slug: "bam-15",
@@ -2025,6 +2221,37 @@ export const peptides: Peptide[] = [
       "İnsan klinik verisi yok",
     ],
     clinicalStatus: "Tamamen preklinik, insan verisi yok",
+    dosingNote:
+      "Oral olarak biyoyararlanımlıdır; insan dozlama protokolleri hâlâ araştırma aşamasında oluşturulmaktadır, aşağıdaki değerler tahmini araştırma referanslarıdır.",
+    dosing: [
+      { label: "Metabolik Destek", amount: "25-50mg", amountValue: 50, frequency: "Günde 1-2 kez", route: "Oral" },
+    ],
+    warnings: [
+      "Hipertiroidi veya tiroid bozuklukları",
+      "Kalp rahatsızlıkları",
+      "Gebelik veya emzirme dönemi",
+      "Diğer mitokondriyal uncoupler'ların (DNP, FCCP) kullanımı",
+      "Ateş veya aktif enfeksiyon",
+      "Belirgin hipertermi/aşırı ısınma",
+    ],
+    sideEffects: [
+      "Araştırmalarda genellikle iyi tolere edildi",
+      "Vücut sıcaklığında olası hafif artış (DNP'den daha az)",
+    ],
+    interactions: [
+      {
+        compound: "Semaglutide/GLP-1 Agonistleri",
+        note: "2024 araştırmaları, GLP-1 etkinliğini sınırlayan metabolik adaptasyonu dengeleyerek kombinasyonun daha güçlü metabolik fayda sağladığını gösteriyor.",
+      },
+      {
+        compound: "DNP/FCCP",
+        note: "Diğer mitokondriyal uncoupler'larla birleştirilmemelidir — tehlikeli birikimli etkiler mümkündür.",
+      },
+      {
+        compound: "MOTS-c",
+        note: "Her ikisi de mitokondriyal fonksiyonu etkiler ancak farklı mekanizmalarla.",
+      },
+    ],
   },
   {
     slug: "adipotide",
@@ -2041,6 +2268,35 @@ export const peptides: Peptide[] = [
       "Klinik geliştirme aktif değil",
     ],
     clinicalStatus: "Faz 1 sonrası güvenlik nedeniyle durduruldu",
+    dosingNote:
+      "Klinik geliştirme durdurulmuştur. Yayınlanan veriler öncelikle primat çalışmalarından (0.10-0.75 mg/kg aralığında doz-bulma) gelir; doğrulanmış bir insan dozaj protokolü yoktur.",
+    warnings: [
+      "Gebelik/laktasyon (araştırılmamış)",
+      "Dehidrasyon",
+      "Nefrotoksik ilaçların eşzamanlı kullanımı",
+      "Süregelen kreatinin yükselmesi veya oligüri",
+      "İlerleyici elektrolit anormallikleri",
+      "Şiddetli enjeksiyon bölgesi reaksiyonu veya sistemik semptomlar",
+    ],
+    sideEffects: [
+      "Hafif kreatinin yükselmesi",
+      "Elektrolit değişimleri",
+      "Doza bağlı proksimal tübül değişiklikleri (primatlarda geri dönüşümlü)",
+    ],
+    interactions: [
+      {
+        compound: "Semaglutide",
+        note: "Olası birikimli dehidrasyon/GI etkileri; böbrek fonksiyonu izlenmelidir.",
+      },
+      {
+        compound: "Tirzepatide",
+        note: "Örtüşen kilo kaybı etkileri; böbrek fonksiyonu, hacim durumu ve elektrolitler izlenmelidir.",
+      },
+      {
+        compound: "Nefrotoksik İlaçlar",
+        note: "Adipotide doza bağlı proksimal tübül hasarı gösterir; ek böbrek yükünden kaçınılmalıdır.",
+      },
+    ],
   },
   {
     slug: "dnsp-11",
@@ -2057,6 +2313,29 @@ export const peptides: Peptide[] = [
       "İnsan klinik verisi yok",
     ],
     clinicalStatus: "Tamamen preklinik, yalnızca hayvan/hücre çalışmaları",
+    dosingNote:
+      "İntranazal uygulama, koku yolu üzerinden potansiyel doğrudan CNS iletimine olanak tanır; çok sınırlı insan güvenlik verisi vardır.",
+    dosing: [
+      { label: "Genel Nöroproteksiyon", amount: "100-200mcg", amountValue: 200, frequency: "Günde 1 kez", route: "İntranazal" },
+    ],
+    warnings: [
+      "Gebelik veya emzirme dönemi",
+      "Bilinen peptid alerjileri",
+      "Çok sınırlı insan güvenlik verisi; kendi sorumluluğunuzda kullanılır",
+      "Dopaminerjik ilaçlarla birleştirmeden önce hekime danışılmalı",
+      "Şiddetli veya süregelen burun tahrişi veya kanaması",
+      "Olağandışı nörolojik semptomlar (tremor, istem dışı hareketler)",
+    ],
+    sideEffects: [
+      "Burun tahrişi veya hafif yanma hissi (intranazal yol)",
+      "Enjeksiyon bölgesi reaksiyonları (subkutan yolda)",
+    ],
+    interactions: [
+      {
+        compound: "Semax",
+        note: "Tamamlayıcı nörotrofik yollar; Semax BDNF yukarı regülasyonu üzerinden, DNSP-11 GDNF ilişkili dopaminerjik nöroproteksiyon üzerinden etki eder.",
+      },
+    ],
   },
 ]
 

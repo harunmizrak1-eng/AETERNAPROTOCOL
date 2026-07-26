@@ -2633,6 +2633,11 @@ export const peptides: Peptide[] = [
     slug: "hgh",
     name: "İnsan Büyüme Hormonu (HGH)",
     category: "Büyüme / GH",
+    molecular: {
+      weight: "22,124 Da",
+      halfLife: "3-4 saat (SubQ), 20-30 dakika (IV)",
+      chain: "191 aminoasit (iki disülfit köprülü tek zincirli polipeptid)",
+    },
     tier: "proven",
     short:
       "Sentetik somatropin. Çocuk ve yetişkinlerde büyüme hormonu eksikliğinde onaylı tedavi; longevity amaçlı off-label kullanımı farklı ve daha zayıf bir kanıt düzeyine dayanır.",
@@ -2727,6 +2732,10 @@ export const peptides: Peptide[] = [
     slug: "igf-1-lr3",
     name: "IGF-1 LR3",
     category: "Büyüme / GH",
+    molecular: {
+      halfLife: "20-30 saat",
+      chain: "83 aminoasit (sentetik IGF-1 analoğu)",
+    },
     tier: "theoretical",
     short:
       "IGF-1'in uzun etkili, bağlayıcı proteinlerce daha az tutulan bir analoğu. Kas hipertrofisi ve doku onarımını hedefleyen bir araştırma bileşiği; kontrollü insan verisi yok.",
@@ -2822,6 +2831,11 @@ export const peptides: Peptide[] = [
     slug: "ghrp-6",
     name: "GHRP-6",
     category: "Büyüme / GH",
+    molecular: {
+      weight: "873 Da",
+      halfLife: "15-60 dakika",
+      chain: "6 aminoasit (sentetik hekzapeptid)",
+    },
     tier: "theoretical",
     short:
       "Ghrelin reseptörünü (GHS-R1a) aktive ederek büyüme hormonu salınımını uyaran bir sekretagog. Belirgin iştah artışı en tutarlı bildirilen etkisidir.",
@@ -2899,6 +2913,11 @@ export const peptides: Peptide[] = [
     slug: "cjc-1295-dac",
     name: "CJC-1295 (DAC)",
     category: "Büyüme / GH",
+    molecular: {
+      weight: "3,647.28 Da",
+      halfLife: "6-8 gün",
+      chain: "30 aminoasit (DAC'lı GHRH analoğu)",
+    },
     tier: "theoretical",
     short:
       "CJC-1295'in albümine bağlanan, 6-8 gün yarı ömürlü uzun etkili formu. Sürekli GHRH reseptör uyarımı sağlar, doz sıklığı avantajı sunar.",
@@ -2973,6 +2992,10 @@ export const peptides: Peptide[] = [
     slug: "kpv",
     name: "KPV",
     category: "Doku Onarımı",
+    molecular: {
+      halfLife: "1-2 saat",
+      chain: "3 aminoasit (tripeptid)",
+    },
     tier: "theoretical",
     short:
       "Alfa-MSH'ın anti-inflamatuar tripeptid fragmanı. Steroidlerin bağışıklık baskılama etkisi olmadan iltihabı azalttığı düşünülüyor.",
@@ -3049,6 +3072,11 @@ export const peptides: Peptide[] = [
     slug: "ara-290",
     name: "ARA-290 (Cibinetide)",
     category: "Doku Onarımı",
+    molecular: {
+      weight: "1,257 Da",
+      halfLife: "~20 dakika (SubQ), ~2 dakika (IV)",
+      chain: "11 aminoasit (mühendislik ürünü peptid)",
+    },
     tier: "theoretical",
     short:
       "Eritropoietin türevi, eritropoietik etkisi olmayan doku-koruyucu bir peptid. Sinir onarımı odaklı Faz 2 insan çalışmalarında test edildi.",
@@ -3125,6 +3153,11 @@ export const peptides: Peptide[] = [
     slug: "cyclic-glycine-proline",
     name: "Cyclic Glycine-Proline (CGP)",
     category: "Kognitif",
+    molecular: {
+      weight: "154.17 Da",
+      halfLife: "Uzun kararlılık (doğrusal GPE öncülünden daha stabil)",
+      chain: "2 aminoasit (siklik dipeptid)",
+    },
     tier: "theoretical",
     short:
       "IGF-1'in doğal, kan-beyin bariyerini geçebilen metaboliti. Biyoyararlanır IGF-1 düzeyini dengeleyerek nöroprotektif etki gösterdiği düşünülüyor.",
@@ -3192,6 +3225,11 @@ export const peptides: Peptide[] = [
     slug: "b7-33",
     name: "B7-33",
     category: "Doku Onarımı",
+    molecular: {
+      weight: "~4,000 Da",
+      halfLife: "İyi karakterize edilmemiş",
+      chain: "Tek zincirli peptid (relaksin-2 B-zinciri analoğu)",
+    },
     tier: "preclinical",
     short:
       "Relaksin-2'nin seçici RXFP1 agonisti bir analoğu. Kardiyak ve renal fibrozu hedefleyen, tamamen preklinik aşamada bir araştırma peptidi.",
@@ -3251,6 +3289,11 @@ export const peptides: Peptide[] = [
     slug: "methylene-blue",
     name: "Methylene Blue",
     category: "Kognitif",
+    molecular: {
+      weight: "319.85 Da",
+      halfLife: "~5-6 saat",
+      chain: "Fenotiazin boya bileşiği (peptid değil, C16H18ClN3S)",
+    },
     tier: "proven",
     short:
       "Mitokondriyal elektron taşıma zincirinde alternatif yol sağlayan redoks ajanı. Methemoglobinemi tedavisinde onaylı; düşük dozda bilişsel etkileri araştırılıyor.",
@@ -3337,6 +3380,11 @@ export const peptides: Peptide[] = [
     slug: "glutathione",
     name: "Glutatyon",
     category: "Longevity",
+    molecular: {
+      weight: "307.32 Da",
+      halfLife: "~10-14 dakika (IV)",
+      chain: "3 aminoasit (glutamik asit, sistein, glisin tripeptidi)",
+    },
     tier: "theoretical",
     short:
       "Vücudun ana hücre içi antioksidanı. Detoksifikasyon, bağışıklık düzenlemesi ve hücresel redoks dengesinde merkezi rol oynar.",

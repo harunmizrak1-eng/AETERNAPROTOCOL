@@ -1527,6 +1527,48 @@ export const peptides: Peptide[] = [
     evidenceMatrix: [
       { outcome: "Büyüme Hormonu Eksikliği Tedavisi", tier: "proven" },
     ],
+    dosingNote:
+      "Subkutan enjeksiyon tek etkili yoldur. Sabah aç karnına enjeksiyon yağ yakımını en üst düzeye çıkarır; akşam enjeksiyonu doğal gece GH atımını taklit eder.",
+    dosing: [
+      { label: "Tıbbi GH Eksikliği (idame)", amount: "0.4-0.8mg", amountValue: 0.8, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Anti-Aging / Wellness", amount: "0.33-0.67mg", amountValue: 0.67, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Vücut Kompozisyonu", amount: "0.67-1.33mg", amountValue: 1.33, frequency: "Günde 1-2 kez", route: "Subkutan" },
+      { label: "Performans (Yüksek Risk)", amount: "1.33-2.67mg", amountValue: 2.67, frequency: "Günde 2 kez, bölünmüş", route: "Subkutan" },
+    ],
+    warnings: [
+      "Aktif kanser (tümör büyümesini hızlandırabilir)",
+      "Akut kritik hastalık (yoğun bakım hastalarında artmış mortalite)",
+      "Gebelik/emzirme dönemi",
+      "Ciddi veya kötüleşen karpal tünel semptomları",
+      "Diyabet belirtileri (artan susama, sık idrara çıkma, bulanık görme)",
+      "Ciddi ödem (yüz, el veya ayak şişmesi)",
+      "Yeni oluşan kitle veya hızla büyüyen ben",
+    ],
+    sideEffects: [
+      "Su tutulumu ve sıvı birikimi",
+      "Eklem ağrısı ve sertliği",
+      "Karpal tünel sendromu (genellikle doz azaltmayla düzelir)",
+      "Baş ağrısı",
+      "Ellerde uyuşma/karıncalanma",
+    ],
+    interactions: [
+      {
+        compound: "İnsülin",
+        note: "HGH insülin duyarlılığını azaltır; diyabetiklerde artan insülin dozu gerekebilir.",
+      },
+      {
+        compound: "IGF-1 LR3",
+        note: "Sinerjistik ancak dikkat: artan hipoglisemi ve yan etki riskiyle güçlenmiş etkiler.",
+      },
+      {
+        compound: "Tiroid Hormonları (T3/T4)",
+        note: "T4'ten T3'e dönüşümü artırır; hastaların %36-47'sinde gizli hipotiroidizmi ortaya çıkarır.",
+      },
+      {
+        compound: "Semaglutide/Tirzepatide",
+        note: "GLP-1 agonistleri, HGH tedavisi sırasında insülin direncinin yönetilmesine yardımcı olur.",
+      },
+    ],
   },
   {
     slug: "igf-1-lr3",
@@ -1543,6 +1585,42 @@ export const peptides: Peptide[] = [
       "Kontrollü insan klinik çalışması yok",
     ],
     clinicalStatus: "Preklinik ağırlıklı, insan verisi yok",
+    dosingNote:
+      "İnsan kullanımı için hiçbir zaman onaylanmamıştır — yalnızca araştırma kimyasalıdır. Kaynak protokoller, enjeksiyon sonrası hipoglisemiyi önlemek için hızlı karbonhidrat alımını zorunlu tutar; yatmadan önce asla enjekte edilmemesi belirtilir.",
+    dosing: [
+      { label: "Başlangıç Protokolü", amount: "20-30mcg", amountValue: 30, frequency: "Günde 1 kez, antrenman sonrası", route: "Subkutan/Kas içi" },
+      { label: "Orta Düzey", amount: "40-60mcg", amountValue: 60, frequency: "Günde 1 kez", route: "Subkutan/Kas içi" },
+      { label: "İleri Düzey", amount: "80-100mcg", amountValue: 100, frequency: "Günde 1 kez veya sabah/akşam bölünmüş", route: "Subkutan/Kas içi" },
+    ],
+    warnings: [
+      "İnsan kullanımı için ONAYLANMAMIŞTIR — yalnızca araştırma kimyasalı",
+      "Kanser öyküsü veya tanı almamış büyümeler",
+      "Organ hipertrofisine (kalp, bağırsak) neden olabilir",
+      "WADA tarafından yasaklı — pozitif dopingi testine yol açar",
+      "Karbonhidrat alımına rağmen şiddetli veya tekrarlayan hipoglisemi",
+      "Olağandışı büyüme, kitle veya hızlı ben değişimi",
+    ],
+    sideEffects: [
+      "Hipoglisemi (30 saate kadar sürebilir) — KRİTİK",
+      "Su tutulumu",
+      "Eklem sertliği",
+      "Kas ağrısı",
+      "Antrenman sırasında artan pompa hissi",
+    ],
+    interactions: [
+      {
+        compound: "İnsan Büyüme Hormonu (HGH)",
+        note: "Aşırı IGF-1 düzeyi oluşturur; kombinasyondan kaçınılmalıdır.",
+      },
+      {
+        compound: "İnsülin",
+        note: "Sinerjistik hipoglisemik etkiler hayatı tehdit edebilir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Tamamlayıcı iyileşme mekanizmaları.",
+      },
+    ],
   },
   {
     slug: "ghrp-6",
@@ -1559,6 +1637,40 @@ export const peptides: Peptide[] = [
       "Belirgin iştah artışı (yan etki olarak da izlenir)",
     ],
     clinicalStatus: "Sınırlı insan verisi, çoğunlukla mekanistik",
+    dosingNote:
+      "Aç karnına subkutan uygulanmalıdır — yükselmiş kan şekeri veya insülin GH salınımını belirgin şekilde köreltir.",
+    dosing: [
+      { label: "GH Optimizasyonu", amount: "100mcg", amountValue: 100, frequency: "Günde 2-3 kez", route: "Subkutan" },
+      { label: "Güçlendirilmiş Sonuçlar", amount: "200-300mcg", amountValue: 300, frequency: "Günde 2-3 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Aktif kanser veya kanser öyküsü",
+      "Gebelik veya emzirme dönemi",
+      "Hipofiz bozuklukları",
+      "Diyabet (dikkatli kullanılmalı)",
+      "Yarışan sporcular için WADA tarafından yasaklı",
+      "Hipoglisemi belirtileri",
+    ],
+    sideEffects: [
+      "Yoğun açlık/artmış iştah (en belirgin yan etki)",
+      "Su tutulumu",
+      "Ekstremitelerde karıncalanma veya uyuşma",
+      "Enjeksiyon sonrası yorgunluk veya halsizlik",
+    ],
+    interactions: [
+      {
+        compound: "CJC-1295 (DAC)",
+        note: "GHRH + GHRP kombinasyonu, tekilinden belirgin şekilde daha güçlü sinerjistik GH salınımı üretir.",
+      },
+      {
+        compound: "GHRP-2",
+        note: "Benzer mekanizma; GHRP-2 daha potent ve daha az iştah uyarımına sahiptir.",
+      },
+      {
+        compound: "İnsülin",
+        note: "Eşzamanlı uygulama GH yanıtını artırabilir, ancak karbonhidrat tüketimi GH salınımını köreltir.",
+      },
+    ],
   },
   {
     slug: "cjc-1295-dac",
@@ -1575,6 +1687,39 @@ export const peptides: Peptide[] = [
       "Kısa etkili formlara kıyasla daha seyrek doz gerekliliği",
     ],
     clinicalStatus: "Sınırlı insan verisi, mekanistik ağırlıklı",
+    dosingNote:
+      "DAC varyantı için subkutan enjeksiyon tercih edilen yoldur; uzun yarı ömrü nedeniyle haftada bir doz yeterlidir.",
+    dosing: [
+      { label: "Muhafazakar Anti-Aging", amount: "1mg", amountValue: 1, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "Standart Protokol", amount: "2mg", amountValue: 2, frequency: "Haftada bir", route: "Subkutan" },
+    ],
+    warnings: [
+      "Diyabet öyküsü",
+      "Kanser öyküsü",
+      "Uyku apnesi yatkınlığı",
+      "Şiddetli eklem ağrısı veya karpal tünel sendromu",
+      "Günlük yaşamı etkileyen aşırı su tutulumu",
+      "Akromegali belirtileri (çene büyümesi, el/ayak genişlemesi)",
+    ],
+    sideEffects: [
+      "Su tutulumu",
+      "Eklem ağrısı",
+      "Karpal tünel semptomları",
+    ],
+    interactions: [
+      {
+        compound: "Ipamorelin",
+        note: "Sürekli GH yükselmesi, pulsatil protokollerin sinerjistik faydalarını azaltabilir.",
+      },
+      {
+        compound: "Tesamorelin",
+        note: "Her ikisi de GHRH analoğudur; ek fayda sağlamaz, reseptör rekabeti olası.",
+      },
+      {
+        compound: "HGH",
+        note: "Amacı boşa çıkarır ve doğal üretimi baskılayabilir.",
+      },
+    ],
   },
   {
     slug: "kpv",
@@ -1591,6 +1736,39 @@ export const peptides: Peptide[] = [
       "Kontrollü insan çalışması sınırlı",
     ],
     clinicalStatus: "Preklinik ağırlıklı, insan verisi sınırlı",
+    dosingNote:
+      "Subkutan enjeksiyon sistemik anti-inflamatuar etki sağlar; bağırsak ile ilgili sorunlarda karın bölgesi tercih edilir.",
+    dosing: [
+      { label: "Genel Anti-İnflamatuar", amount: "200-300mcg", amountValue: 300, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Aktif İnflamasyon", amount: "250mcg", amountValue: 500, frequency: "Günde 2 kez", route: "Subkutan" },
+      { label: "Otoimmün Destek", amount: "500mcg", amountValue: 500, frequency: "Günde 1 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Bilinen peptid alerjileri",
+      "Aktif şiddetli enfeksiyonlar (teorik)",
+      "Gebelik veya emzirme dönemi (sınırlı veri)",
+      "Enfeksiyon belirtileri (ateş, titreme) — çok nadir",
+      "Paradoksal inflamasyon artışı",
+    ],
+    sideEffects: [
+      "Minimal veya hiç yan etki bildirilmedi",
+      "Steroidler gibi immünosupresyona neden olmaz",
+      "Melanin üretimi/bronzlaşma etkisi yok",
+    ],
+    interactions: [
+      {
+        compound: "BPC-157",
+        note: "Tamamlayıcı mekanizmalarla güçlendirilmiş bağırsak iyileşmesi ve anti-inflamatuar etki.",
+      },
+      {
+        compound: "Thymosin Alpha-1",
+        note: "Her ikisi de farklı yollarla bağışıklık işlevini destekler.",
+      },
+      {
+        compound: "GHK-Cu",
+        note: "Cilt sağlığı ve yenilenme için sinerjistik.",
+      },
+    ],
   },
   {
     slug: "ara-290",
@@ -1607,6 +1785,33 @@ export const peptides: Peptide[] = [
       "FDA onayı yok, geliştirme sürecinde",
     ],
     clinicalStatus: "Faz 2 insan çalışmaları tamamlandı, onaylı değil",
+    dosingNote:
+      "Klinik çalışmalarda kullanılan doz endikasyona göre değişir (nöropati tedavisi günde 4mg, doku koruması 1-8mg aralığında, akut müdahale IV yoldan); tek bir doz merdiveni yerine endikasyona özgü protokol uygulanır.",
+    warnings: [
+      "Son 6 ay içinde anti-TNF tedavisi",
+      "Son 2 ay içinde EPO kullanımı",
+      "Gebelik",
+      "Vücut kitle indeksi > 34 kg/m²",
+      "Şiddetli enjeksiyon bölgesi reaksiyonu",
+      "Beklenmeyen kan sayımı değişiklikleri",
+    ],
+    sideEffects: [
+      "Klinik çalışmalarda ciddi ilaç ilişkili advers olay bildirilmeden mükemmel güvenlik profili",
+    ],
+    interactions: [
+      {
+        compound: "BPC-157",
+        note: "Tamamlayıcı doku onarım yolları yara iyileşmesini güçlendirebilir.",
+      },
+      {
+        compound: "EPO",
+        note: "Klinik çalışmalar, reseptör girişimi nedeniyle son 2 ay içinde EPO kullanımını hariç tutar.",
+      },
+      {
+        compound: "Anti-TNF Biyolojikleri",
+        note: "İmmün etkileşimlerden kaçınmak için Ara-290 öncesi 6 aylık arınma süresi gerekir.",
+      },
+    ],
   },
   {
     slug: "cyclic-glycine-proline",
@@ -1623,6 +1828,34 @@ export const peptides: Peptide[] = [
       "Kontrollü büyük ölçekli insan verisi yok",
     ],
     clinicalStatus: "Erken insan verisi, çoğunlukla preklinik",
+    dosingNote:
+      "Oral kapsül, kan-beyin bariyerini geçme kapasitesiyle iyi biyoyararlanım sağlar. Mikrogram düzeyinde dozlanır (miligram değil).",
+    dosing: [
+      { label: "Genel Bilişsel Destek", amount: "20-40mcg", amountValue: 40, frequency: "Günde 1 kez", route: "Oral" },
+      { label: "Nöroproteksiyon/Anti-Aging", amount: "40-50mcg", amountValue: 50, frequency: "Günde 1 kez", route: "Oral" },
+      { label: "Metabolik/Kardiyovasküler Destek", amount: "40-100mcg", amountValue: 100, frequency: "Günde 1 kez", route: "Oral" },
+    ],
+    warnings: [
+      "IGF-1 veya büyüme hormonu ilacı kullanıyorsanız hekime danışılmalı",
+      "Sınırlı uzun dönem insan verisi",
+      "Gebelikte incelenmemiştir",
+      "Alerjik reaksiyonlar (döküntü, nefes darlığı, şişlik)",
+      "Beklenmeyen kan şekeri değişiklikleri",
+    ],
+    interactions: [
+      {
+        compound: "BPC-157",
+        note: "Farklı yollar; BPC-157 doku onarımını destekler, cGP ise IGF-1'i modüle eder.",
+      },
+      {
+        compound: "Semax",
+        note: "Her ikisi de farklı yollarla nöroproteksiyon ve nootropik etki sunar.",
+      },
+      {
+        compound: "Selank",
+        note: "Tamamlayıcı bilişsel etkiler; Selank anksiyeteyi ele alırken cGP IGF-1'i optimize eder.",
+      },
+    ],
   },
   {
     slug: "b7-33",
@@ -1639,6 +1872,28 @@ export const peptides: Peptide[] = [
       "İnsan verisi yok",
     ],
     clinicalStatus: "Tamamen preklinik, insan verisi yok",
+    dosingNote:
+      "İnsan güvenlik verisi bulunmamaktadır — tüm protokoller preklinik/hayvan araştırmalarından tahmin edilmiştir.",
+    dosing: [
+      { label: "Anti-Fibrotik / Kardiyovasküler Destek", amount: "100-250mcg", amountValue: 250, frequency: "Günde 1 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Önceden var olan hipotansiyon veya vazodilatasyonla kötüleşen durumlar",
+      "Gebelik veya emzirme dönemi (güvenlik verisi yok)",
+      "Güçlü antihipertansif ajanların tıbbi gözetim olmadan eşzamanlı kullanımı",
+      "İnsan güvenlik verisi bulunmuyor — tüm protokoller preklinik araştırmadan tahmin edilmiştir",
+      "Süregelen veya semptomatik hipotansiyon (baş dönmesi, sersemlik, bayılma)",
+    ],
+    sideEffects: [
+      "Enjeksiyon bölgesi reaksiyonları (kızarıklık, hafif tahriş)",
+      "Vazodilatör etkiler nedeniyle olası geçici hipotansiyon",
+    ],
+    interactions: [
+      {
+        compound: "Telmisartan",
+        note: "Kardiyak koruma için olası sinerjistik etki; her ikisi de kardiyak yeniden yapılanma ve fibrozla ilgili tamamlayıcı yolları hedefler.",
+      },
+    ],
   },
   {
     slug: "methylene-blue",

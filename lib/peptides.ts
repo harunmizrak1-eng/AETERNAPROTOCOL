@@ -533,6 +533,300 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Erken preklinik aşama, insan verisi bulunmuyor",
   },
+  {
+    slug: "hgh",
+    name: "İnsan Büyüme Hormonu (HGH)",
+    category: "Büyüme / GH",
+    tier: "proven",
+    short:
+      "Sentetik somatropin. Çocuk ve yetişkinlerde büyüme hormonu eksikliğinde onaylı tedavi; longevity amaçlı off-label kullanımı farklı ve daha zayıf bir kanıt düzeyine dayanır.",
+    mechanism:
+      "GH reseptörlerine bağlanarak JAK2-STAT5 sinyal yolunu tetikler; doğrudan lipoliz ve protein sentezini, IGF-1 aracılığıyla dolaylı büyüme etkilerini uyarır.",
+    primaryOutcomes: [
+      "Büyüme hormonu eksikliğinde büyüme ve metabolik düzelme (onaylı endikasyon)",
+      "Yağsız vücut kütlesinde artış",
+      "Anti-aging amaçlı off-label kullanım için kontrollü insan verisi sınırlı",
+    ],
+    clinicalStatus: "FDA onaylı (GH eksikliği); longevity kullanımı onay dışı",
+    evidenceMatrix: [
+      { outcome: "Büyüme Hormonu Eksikliği Tedavisi", tier: "proven" },
+    ],
+  },
+  {
+    slug: "igf-1-lr3",
+    name: "IGF-1 LR3",
+    category: "Büyüme / GH",
+    tier: "theoretical",
+    short:
+      "IGF-1'in uzun etkili, bağlayıcı proteinlerce daha az tutulan bir analoğu. Kas hipertrofisi ve doku onarımını hedefleyen bir araştırma bileşiği; kontrollü insan verisi yok.",
+    mechanism:
+      "IGF-1 reseptörünü tam agonist olarak aktive eder, PI3K/Akt/mTOR ve MAPK/ERK yollarını uyarır; yapısal değişiklik, bağlayıcı proteinlerce tutulmasını azaltarak dolaşımdaki serbest düzeyi uzatır.",
+    primaryOutcomes: [
+      "Hücre ve hayvan modellerinde kas hipertrofisi bildirimleri",
+      "Tendon/bağ iyileşmesinde mekanistik ilgi",
+      "Kontrollü insan klinik çalışması yok",
+    ],
+    clinicalStatus: "Preklinik ağırlıklı, insan verisi yok",
+  },
+  {
+    slug: "ghrp-6",
+    name: "GHRP-6",
+    category: "Büyüme / GH",
+    tier: "theoretical",
+    short:
+      "Ghrelin reseptörünü (GHS-R1a) aktive ederek büyüme hormonu salınımını uyaran bir sekretagog. Belirgin iştah artışı en tutarlı bildirilen etkisidir.",
+    mechanism:
+      "GHS-R1a reseptörüne bağlanarak hipotalamus-hipofiz ekseninden pulsatil GH salınımını tetikler; aynı reseptör üzerinden ghrelin salınımını da artırarak iştahı belirgin şekilde yükseltir.",
+    primaryOutcomes: [
+      "Doğal GH salınımında artış",
+      "IGF-1 düzeylerinde yükselme",
+      "Belirgin iştah artışı (yan etki olarak da izlenir)",
+    ],
+    clinicalStatus: "Sınırlı insan verisi, çoğunlukla mekanistik",
+  },
+  {
+    slug: "cjc-1295-dac",
+    name: "CJC-1295 (DAC)",
+    category: "Büyüme / GH",
+    tier: "theoretical",
+    short:
+      "CJC-1295'in albümine bağlanan, 6-8 gün yarı ömürlü uzun etkili formu. Sürekli GHRH reseptör uyarımı sağlar, doz sıklığı avantajı sunar.",
+    mechanism:
+      "DAC bileşeni dolaşımdaki albümine bağlanarak yarı ömrü belirgin şekilde uzatır; GHRH reseptöründe kesintisiz uyarım sağlayarak sürdürülebilir GH/IGF-1 yükselmesi oluşturur.",
+    primaryOutcomes: [
+      "Uzun süreli, sürekli GH yükselmesi",
+      "IGF-1 optimizasyonu",
+      "Kısa etkili formlara kıyasla daha seyrek doz gerekliliği",
+    ],
+    clinicalStatus: "Sınırlı insan verisi, mekanistik ağırlıklı",
+  },
+  {
+    slug: "kpv",
+    name: "KPV",
+    category: "Doku Onarımı",
+    tier: "theoretical",
+    short:
+      "Alfa-MSH'ın anti-inflamatuar tripeptid fragmanı. Steroidlerin bağışıklık baskılama etkisi olmadan iltihabı azalttığı düşünülüyor.",
+    mechanism:
+      "Hücre içine girerek nükleer düzeyde NF-κB sinyalini baskılar; TNF-α ve IL-6 gibi pro-inflamatuar sitokinleri immünosupresyon oluşturmadan azalttığı öne sürülüyor.",
+    primaryOutcomes: [
+      "Hayvan modellerinde sistemik inflamasyonda azalma",
+      "Bağırsak bariyer onarımı üzerinde mekanistik ilgi",
+      "Kontrollü insan çalışması sınırlı",
+    ],
+    clinicalStatus: "Preklinik ağırlıklı, insan verisi sınırlı",
+  },
+  {
+    slug: "ara-290",
+    name: "ARA-290 (Cibinetide)",
+    category: "Doku Onarımı",
+    tier: "theoretical",
+    short:
+      "Eritropoietin türevi, eritropoietik etkisi olmayan doku-koruyucu bir peptid. Sinir onarımı odaklı Faz 2 insan çalışmalarında test edildi.",
+    mechanism:
+      "EPOR/β-ortak reseptör kompleksi üzerinden 'innate repair receptor' (IRR) yolunu aktive eder; kırmızı kan hücresi üretimini artırmadan doku koruyucu sinyal iletir.",
+    primaryOutcomes: [
+      "Faz 2 çalışmalarda diyabetik nöropatide semptom azalması bildirimleri",
+      "Periferik sinir rejenerasyonunda mekanistik ilgi",
+      "FDA onayı yok, geliştirme sürecinde",
+    ],
+    clinicalStatus: "Faz 2 insan çalışmaları tamamlandı, onaylı değil",
+  },
+  {
+    slug: "cyclic-glycine-proline",
+    name: "Cyclic Glycine-Proline (CGP)",
+    category: "Kognitif",
+    tier: "theoretical",
+    short:
+      "IGF-1'in doğal, kan-beyin bariyerini geçebilen metaboliti. Biyoyararlanır IGF-1 düzeyini dengeleyerek nöroprotektif etki gösterdiği düşünülüyor.",
+    mechanism:
+      "IGFBP-3'e IGF-1 ile rekabet ederek dolaşımdaki serbest IGF-1 düzeyini normalize eder; AMPA ve GABA-A reseptörlerinde pozitif allosterik modülasyon yaptığı ve BDNF düzeyini artırdığı öne sürülüyor.",
+    primaryOutcomes: [
+      "Hayvan modellerinde bilişsel performansta iyileşme bildirimleri",
+      "Nöroprotektif etki üzerinde mekanistik ilgi",
+      "Kontrollü büyük ölçekli insan verisi yok",
+    ],
+    clinicalStatus: "Erken insan verisi, çoğunlukla preklinik",
+  },
+  {
+    slug: "b7-33",
+    name: "B7-33",
+    category: "Doku Onarımı",
+    tier: "preclinical",
+    short:
+      "Relaksin-2'nin seçici RXFP1 agonisti bir analoğu. Kardiyak ve renal fibrozu hedefleyen, tamamen preklinik aşamada bir araştırma peptidi.",
+    mechanism:
+      "RXFP1 reseptörünü seçici olarak aktive ederek fibroblast aktivasyonunu ve kolajen birikimini azalttığı, matriks metalloproteinaz aktivitesini artırarak doku yeniden yapılanmasını desteklediği gösterilmiştir.",
+    primaryOutcomes: [
+      "Hayvan modellerinde kardiyak fibrozda azalma",
+      "Vazodilatasyon üzerinde etki",
+      "İnsan verisi yok",
+    ],
+    clinicalStatus: "Tamamen preklinik, insan verisi yok",
+  },
+  {
+    slug: "methylene-blue",
+    name: "Methylene Blue",
+    category: "Kognitif",
+    tier: "proven",
+    short:
+      "Mitokondriyal elektron taşıma zincirinde alternatif yol sağlayan redoks ajanı. Methemoglobinemi tedavisinde onaylı; düşük dozda bilişsel etkileri araştırılıyor.",
+    mechanism:
+      "Kompleks I ve III'ü baypas ederek NADH'den elektronu doğrudan sitokrom c'ye aktarır, ATP sentezini sürdürür ve reaktif oksijen türü üretimini azaltır; ayrıca MAO-A inhibisyonu yoluyla nörotransmitter düzeylerini etkiler.",
+    primaryOutcomes: [
+      "Methemoglobinemi tedavisi (onaylı endikasyon)",
+      "Düşük dozda mitokondriyal/bilişsel destek üzerinde araştırma",
+      "Doz-yanıt eğrisi hormetik: yüksek doz ters etkili",
+    ],
+    clinicalStatus: "FDA onaylı (methemoglobinemi); bilişsel kullanım onay dışı",
+    evidenceMatrix: [
+      { outcome: "Methemoglobinemi Tedavisi", tier: "proven" },
+    ],
+  },
+  {
+    slug: "glutathione",
+    name: "Glutatyon",
+    category: "Longevity",
+    tier: "theoretical",
+    short:
+      "Vücudun ana hücre içi antioksidanı. Detoksifikasyon, bağışıklık düzenlemesi ve hücresel redoks dengesinde merkezi rol oynar.",
+    mechanism:
+      "Sistein tiyol grubu üzerinden reaktif oksijen türlerini doğrudan nötralize eder, C ve E vitaminlerini rejenere eder, toksinlerle konjuge olarak atılımını sağlar.",
+    primaryOutcomes: [
+      "Oksidatif stres belirteçlerinde azalma",
+      "Karaciğer detoksifikasyon desteği üzerinde ilgi",
+      "Longevity endikasyonu için bağımsız büyük ölçekli RCT verisi sınırlı",
+    ],
+    clinicalStatus: "Geniş kullanım geçmişi, longevity endikasyonu için kanıt sınırlı",
+  },
+  {
+    slug: "foxo4-dri",
+    name: "FOXO4-DRI",
+    category: "Longevity",
+    tier: "preclinical",
+    short:
+      "Senesan (yaşlanmış) hücreleri seçici olarak temizlemeyi hedefleyen deneysel bir senolitik peptid. Fare çalışmalarında doku gençleşmesi gösterildi; insan verisi yok.",
+    mechanism:
+      "FOXO4'ün p53 ile bağlanmasını rekabetçi şekilde engeller; bu, senesan hücrelerde p53'ün çekirdek dışına çıkmasına ve programlı hücre ölümüne yol açarken, FOXO4 sağlıklı dokuda düşük eksprese olduğu için işlevsel hücreler büyük ölçüde etkilenmiyor.",
+    primaryOutcomes: [
+      "Fare modellerinde senesan hücre temizliği",
+      "Doku fonksiyonunda gençleşme (fare verisi)",
+      "İnsan klinik verisi yok",
+    ],
+    clinicalStatus: "Tamamen preklinik, yalnızca hayvan çalışmaları",
+  },
+  {
+    slug: "cortagen",
+    name: "Cortagen",
+    category: "Longevity",
+    tier: "theoretical",
+    short:
+      "Rus jerontoloji literatüründen (Khavinson ekibi) beyin dokusuna özgü kısa peptid biyoregülatör. Bulgular esas olarak tek bir araştırma grubundan gelmektedir.",
+    mechanism:
+      "Hücre çekirdeğine girerek gen ekspresyonunu epigenetik düzeyde modüle ettiği; sinir sisteminde inflamatuar yanıtı ve oksidatif-antioksidan dengeyi etkilediği öne sürülüyor.",
+    primaryOutcomes: [
+      "İskemik beyin hasarı sonrası toparlanma üzerinde araştırma",
+      "Nöroinflamasyon üzerinde mekanistik ilgi",
+      "Batı literatüründe bağımsız doğrulama sınırlı",
+    ],
+    clinicalStatus: "Esas olarak tek araştırma grubunun yayınları, bağımsız doğrulama sınırlı",
+  },
+  {
+    slug: "cardiogen",
+    name: "Cardiogen",
+    category: "Longevity",
+    tier: "theoretical",
+    short:
+      "Kalp dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Kardiyak doku onarımı ve gen ekspresyonu üzerindeki etkileri esas olarak tek bir araştırma grubunca bildirilmiştir.",
+    mechanism:
+      "Hücre çekirdeğine girip DNA bölgeleri, histonlar ve nükleozomlarla etkileşerek DNA dizisini değiştirmeden gen aktivasyonunu düzenlediği öne sürülüyor; bu yolla kardiyak doku onarımını desteklediği iddia ediliyor.",
+    primaryOutcomes: [
+      "Kardiyak doku onarımı üzerinde araştırma",
+      "Miyokard fonksiyonu üzerinde mekanistik ilgi",
+      "Batı literatüründe bağımsız doğrulama sınırlı",
+    ],
+    clinicalStatus: "Esas olarak tek araştırma grubunun yayınları, bağımsız doğrulama sınırlı",
+  },
+  {
+    slug: "livagen",
+    name: "Livagen",
+    category: "Longevity",
+    tier: "theoretical",
+    short:
+      "Karaciğer dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Hepatoprotektif etkileri esas olarak tek bir araştırma grubunca bildirilmiştir.",
+    mechanism:
+      "Kromatin yapısını gevşeterek belirli genlerin ekspresyonunu artırdığı; karaciğer dokusunda bağışıklık ve antioksidan durumunu normalize ederek hepatoprotektif etki gösterdiği öne sürülüyor.",
+    primaryOutcomes: [
+      "Karaciğer fibrozunda araştırma konusu",
+      "Yaşa bağlı karaciğer fonksiyon kaybında ilgi",
+      "Batı literatüründe bağımsız doğrulama sınırlı",
+    ],
+    clinicalStatus: "Esas olarak tek araştırma grubunun yayınları, bağımsız doğrulama sınırlı",
+  },
+  {
+    slug: "vilon",
+    name: "Vilon",
+    category: "Longevity",
+    tier: "preclinical",
+    short:
+      "Timüs dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Yaşlanan bağışıklık sisteminin gençleştirilmesi üzerine araştırma konusu, tamamen preklinik.",
+    mechanism:
+      "Bağışıklık hücrelerinde kromatin yapısını ve gen ekspresyonunu etkileyerek timosit çoğalmasını ve T-yardımcı hücre aktivasyonunu artırdığı gösterilmiştir.",
+    primaryOutcomes: [
+      "Timüs dokusunda hücre çoğalma indeksinde artış (hayvan verisi)",
+      "Yaşa bağlı bağışıklık zayıflamasında araştırma konusu",
+      "İnsan klinik verisi yok",
+    ],
+    clinicalStatus: "Tamamen preklinik, insan verisi yok",
+  },
+  {
+    slug: "bam-15",
+    name: "BAM-15",
+    category: "Metabolik",
+    tier: "preclinical",
+    short:
+      "Mitokondriyal iç zarda proton geçirgenliğini artıran bir 'uncoupler'. DNP'nin aksine hücre zarını bozmadığı için daha güvenli bir profille araştırılıyor.",
+    mechanism:
+      "Proton gradyanını dağıtarak elektron taşımayı ATP sentezinden ayırır; mitokondriyi daha fazla substrat (özellikle yağ) yakmaya zorlar. AMPK ve PGC-1α aktivasyonuyla mitokondriyal biyogenezi desteklediği gösterilmiştir.",
+    primaryOutcomes: [
+      "Hayvan modellerinde yağ oksidasyonunda artış",
+      "İnsülin direncinde iyileşme (preklinik veri)",
+      "İnsan klinik verisi yok",
+    ],
+    clinicalStatus: "Tamamen preklinik, insan verisi yok",
+  },
+  {
+    slug: "adipotide",
+    name: "Adipotide",
+    category: "Metabolik",
+    tier: "theoretical",
+    short:
+      "Beyaz yağ dokusu endotelini hedefleyen, apoptoz tetikleyen bir peptid-konjugat. Faz 1 insan çalışmasında etkili bulundu ancak geri dönüşümlü böbrek toksisitesi nedeniyle geliştirilmesi durduruldu.",
+    mechanism:
+      "Bağlayıcı kısım beyaz yağ endotelindeki prohibitin/anneksin A2'yi hedefler; bağlı pro-apoptotik kısım hücre içine girince mitokondriyal zarı bozarak lokalize endotel apoptozu ve yağ hücresi kaybı tetikler.",
+    primaryOutcomes: [
+      "Faz 1 çalışmada yağ kütlesinde azalma",
+      "Geri dönüşümlü böbrek toksisitesi nedeniyle çalışma durduruldu",
+      "Klinik geliştirme aktif değil",
+    ],
+    clinicalStatus: "Faz 1 sonrası güvenlik nedeniyle durduruldu",
+  },
+  {
+    slug: "dnsp-11",
+    name: "DNSP-11",
+    category: "Kognitif",
+    tier: "preclinical",
+    short:
+      "GDNF ailesinden farklı bir mekanizmayla dopaminerjik nöronları koruyan deneysel bir peptid fragmanı. Motivasyon ve ruh hali ile ilişkili tamamen preklinik bir araştırma konusu.",
+    mechanism:
+      "Klasik GFRalpha1/RET reseptör kompleksini kullanmadan dopaminerjik nöron sağkalımını desteklediği; tirozin hidroksilaz ekspresyonunu artırarak dopamin sentezini ve mitokondriyal fonksiyonu desteklediği gösterilmiştir.",
+    primaryOutcomes: [
+      "Hayvan modellerinde dopaminerjik nöron korunması",
+      "Motivasyon/dürtü üzerinde araştırma konusu",
+      "İnsan klinik verisi yok",
+    ],
+    clinicalStatus: "Tamamen preklinik, yalnızca hayvan/hücre çalışmaları",
+  },
 ]
 
 export const getPeptide = (slug: string) =>

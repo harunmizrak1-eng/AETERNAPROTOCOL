@@ -25,6 +25,23 @@ export interface PeptideInteraction {
   note: string
 }
 
+export interface TimelinePoint {
+  period: string
+  result: string
+}
+
+export interface QualityIndicators {
+  good: string[]
+  bad: string[]
+}
+
+export interface SecondaryDosing {
+  /** Heading for this alternate route, e.g. "Enjektabl Form". */
+  routeLabel: string
+  note?: string
+  steps: DoseStep[]
+}
+
 export interface Peptide {
   slug: string
   name: string
@@ -45,9 +62,20 @@ export interface Peptide {
   /** Free-text note shown above the dosing chart (route/vehicle context
    * that doesn't fit the step table, e.g. reconstitution constraints). */
   dosingNote?: string
+  /** A second, meaningfully different administration route (e.g. topical
+   * vs injectable) with its own step table - rendered as a separate chart
+   * rather than merged into `dosing`, since units/scale usually differ. */
+  secondaryDosing?: SecondaryDosing
   warnings?: string[]
   sideEffects?: string[]
   interactions?: PeptideInteraction[]
+  /** Self-reported user timeline from community/literature sources - not
+   * a guarantee, framed as such on the detail page. */
+  expectedTimeline?: TimelinePoint[]
+  /** Sourcing/formulation quality signals for a physical product a buyer
+   * would inspect (color, texture, packaging) - only meaningful for
+   * injectable/topical compounds actually purchased as a substance. */
+  qualityIndicators?: QualityIndicators
 }
 
 export const tierLabel: Record<EvidenceTier, string> = {
@@ -147,7 +175,38 @@ export const peptides: Peptide[] = [
         compound: "İnsülin",
         note: "İnsülin ihtiyacını belirgin şekilde azaltabilir. Kan şekeri izlenmeli ve doz buna göre ayarlanmalıdır.",
       },
+      {
+        compound: "Metformin",
+        note: "Klinik çalışmalarda güvenli kombinasyon olarak test edildi; farklı mekanizmalar glukoz kontrolünde tamamlayıcı çalışır.",
+      },
+      {
+        compound: "SGLT2 İnhibitörleri",
+        note: "Klinik çalışmalarda güvenlik sorunu bildirilmeden birlikte kullanıldı.",
+      },
+      {
+        compound: "Oral Kontraseptifler",
+        note: "Gecikmiş mide boşalması nedeniyle retatrutidden 1 saat önce alınmalıdır.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Üçlü hormon aktivasyonuna vücut uyum sağlarken başlangıç iştah baskılanması ve hafif gastrointestinal etkiler" },
+      { period: "2-4. Hafta", result: "Belirgin yeme isteği azalması ve porsiyon küçülmesi; erken kilo kaybı (%2-5)" },
+      { period: "4-8. Hafta", result: "Belirgin iştah kontrolü ve düzenli kilo kaybı (%5-10); kan şekeri kontrolünde iyileşme" },
+      { period: "8-16. Hafta", result: "Önemli kilo azalması (%10-18) ve artan enerji harcaması" },
+      { period: "16-24. Hafta", result: "Majör kilo kaybı eşiği (%15-22), kardiyovasküler fayda ve karaciğer yağında azalma" },
+      { period: "24-48. Hafta", result: "Maksimum klinik etkinlik (%20-24,2) ile kapsamlı metabolik iyileşmeler" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Eczacılık kalitesinde, homojen dokulu beyaz toz",
+        "Doğru soğuk zincir korunumu (2-8°C buzdolabı)",
+        "Berrak, renksiz, parçacıksız sulandırılmış çözelti",
+      ],
+      bad: [
+        "Hızlı tolerans veya etkinlik kaybı, bozulmuş/sahte ürüne işaret edebilir",
+        "Olağandışı yan etki profili kontaminasyona işaret edebilir",
+      ],
+    },
   },
   {
     slug: "cagrilintide",
@@ -198,7 +257,36 @@ export const peptides: Peptide[] = [
         compound: "Retatrutide",
         note: "Birikimli gastrointestinal etkiler uzman gözetimi olmadan belirgin risk oluşturur.",
       },
+      {
+        compound: "Metformin",
+        note: "Faz 2/3 çalışmalarında farmakokinetik etkileşim olmadan iyi tolere edildi.",
+      },
+      {
+        compound: "SGLT2 İnhibitörleri",
+        note: "Klinik çalışmalar tamamlayıcı mekanizmalarla güvenli eşzamanlı kullanım gösterdi.",
+      },
+      {
+        compound: "Pramlintid",
+        note: "Her ikisi de amilin reseptörünü aktive eder; kombinasyon ek fayda sağlamaz ve gastrointestinal riskleri artırır.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Gastrointestinal uyum; doz yükseltme sırasında hafif bulantı" },
+      { period: "4-8. Hafta", result: "Erken kilo azalması (%2-5); belirgin iştah baskılanması" },
+      { period: "12-26. Hafta", result: "Belirgin kilo kaybı hızlanması (%10-15); iyileşmiş tokluk sinyali" },
+      { period: "26+. Hafta", result: "Zirve etkinlik (%15-23 kilo kaybı); devam eden tedaviyle sürdürülen idame" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Ticari onay sonrası önceden dolu kalem tasarımı",
+        "%98'i aşan eczacılık kalitesinde saflık",
+        "-20°C'de dondurularak saklama kararlılığı",
+      ],
+      bad: [
+        "Uygunsuz pH'ta fibril oluşumu; çözelti berrak kalmalıdır",
+        "Agregasyon veya çökme bozulmaya işaret eder",
+      ],
+    },
   },
   {
     slug: "semaglutide",
@@ -255,7 +343,38 @@ export const peptides: Peptide[] = [
         compound: "Cagrilintide",
         note: "Klinik çalışmalarda CagriSema olarak birleştirilmiş, güçlendirilmiş kilo kaybı etkinliği için.",
       },
+      {
+        compound: "BPC-157",
+        note: "Kontrendikasyon yok; gastrointestinal yan etkilerin azaltılmasına yardımcı olabilir.",
+      },
+      {
+        compound: "Sülfonilüreler",
+        note: "Artmış hipoglisemi riski; sülfonilüre dozunun azaltılması gerekebilir.",
+      },
+      {
+        compound: "Oral İlaçlar",
+        note: "Gecikmiş mide boşalması, oral ilaçların emilimini etkileyebilir; zamanlama ayarlanmalıdır.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-4. Hafta", result: "İlk dozda hafif iştah azalması, olası bulantı" },
+      { period: "2-3. Ay", result: "Belirgin kilo kaybı (tipik %5-10), iyileşmiş tokluk hissi" },
+      { period: "4-6. Ay", result: "Devam eden kilo kaybı (yaygın %10-15), stabil glukoz düzeyleri" },
+      { period: "6+. Ay", result: "Olası kilo kaybı platosu, idameye odaklanma" },
+      { period: "Diyabet", result: "Kan şekerinde 1-2 hafta içinde iyileşme" },
+    ],
+    qualityIndicators: {
+      good: [
+        "FDA onaylı markalı ürünler (Ozempic, Wegovy, Rybelsus)",
+        "Doğrulanmış ve süresi geçmemiş soğuk zincir",
+        "Kalem/flakonda berrak, renksiz veya hafif sarımsı çözelti",
+      ],
+      bad: [
+        "Bulanık veya renk değişimi göstermiş çözelti",
+        "Görünür parçacık veya çökelti",
+        "Eczane dışı veya doğrulanmamış çevrimiçi satıcılar",
+      ],
+    },
   },
   {
     slug: "tirzepatide",
@@ -315,7 +434,35 @@ export const peptides: Peptide[] = [
         compound: "BPC-157",
         note: "Bilinen olumsuz etkileşim yok; bağırsak sağlığını destekleyip gastrointestinal etkileri azaltabilir.",
       },
+      {
+        compound: "Liraglutide",
+        note: "Başka bir GLP-1 agonisti — ikili tedavi birikimli etkiler nedeniyle kontrendikedir.",
+      },
+      {
+        compound: "5-Amino-1MQ",
+        note: "NNMT inhibisyonu, metabolik optimizasyon için GLP-1 etkilerini tamamlayabilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-3. Gün", result: "İştah azalması başlar" },
+      { period: "1-2. Hafta", result: "Kan şekeri kontrolünde iyileşme; hafif bulantı yaygın" },
+      { period: "2-4. Hafta", result: "İlk kilo kaybı; gastrointestinal etkiler genellikle düzelir" },
+      { period: "Devam Eden", result: "Aktif dönemde haftada 0.5-1.4 kg kilo kaybı" },
+      { period: "16-24. Hafta", result: "Zirve kilo kaybı etkileri gözlenir" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Topaklanmamış, beyaz-krem renkli liyofilize toz",
+        "Berrak, renksiz sulandırılmış çözelti",
+        "Sağlam flakon mührü, görünür doz etiketi ve parti numarası",
+        "2-8°C'de, ışıktan korunarak doğru saklama",
+      ],
+      bad: [
+        "Toz topaklanması, renk değişimi veya sarı/kahverengi görünüm",
+        "Sulandırma sonrası süregelen bulanıklık",
+        "Olağandışı kristalleşme deseni",
+      ],
+    },
   },
   {
     slug: "ghk-cu",
@@ -337,16 +484,28 @@ export const peptides: Peptide[] = [
     dosingNote:
       "En yaygın topikal (krem/serum) kullanılır; enjektabl formu ayrı bir risk-yarar profiline sahiptir ve gebelikte önerilmez.",
     dosing: [
-      { label: "Genel Cilt Sağlığı (serum)", amount: "%0.5", amountValue: 0.5, frequency: "Günde 1 kez", route: "Topikal" },
+      { label: "Genel Cilt Sağlığı (serum)", amount: "%0.5", amountValue: 0.5, frequency: "Günde 1 kez", route: "Topikal (yüz/boyun)" },
       { label: "Anti-Aging (krem)", amount: "%0.5-1", amountValue: 1, frequency: "Günde 1-2 kez", route: "Topikal" },
+      { label: "Saç Büyümesi (çözelti)", amount: "%1-2", amountValue: 2, frequency: "Günde 1 kez", route: "Saç derisi masajı" },
+      { label: "Yara İyileşmesi (jel)", amount: "%1-2", amountValue: 2, frequency: "Günde 2-3 kez", route: "Direkt uygulama" },
       { label: "Yoğun Onarım (hedefli alan)", amount: "%2", amountValue: 2, frequency: "Günde 1 kez", route: "Topikal" },
     ],
+    secondaryDosing: {
+      routeLabel: "Enjektabl Form",
+      note: "Farklı bir risk-yarar profiline sahiptir; gebelikte önerilmez, ayrı saklama koşulları gerektirir (2-8°C).",
+      steps: [
+        { label: "Standart Protokol", amount: "1-3mg", amountValue: 3, frequency: "Günde 1 kez, 8-16 haftalık siklus", route: "Subkutan" },
+      ],
+    },
     warnings: [
       "Bilinen bakır hassasiyeti veya Wilson hastalığı",
       "Uygulama bölgesinde aktif cilt enfeksiyonu",
       "Gebelik veya emzirme dönemi (enjektabl form)",
       "Şiddetli cilt tahrişi, yanma veya süregelen kızarıklık",
       "Alerjik reaksiyon belirtileri (döküntü, şişlik, nefes darlığı)",
+      "Olağandışı cilt renk değişimi veya lekelenme",
+      "Süregelen metalik tat (enjektabl form)",
+      "4-6 hafta sonra cilt durumunun kötüleşmesi",
     ],
     sideEffects: [
       "Başlangıçta hafif cilt tahrişi (genellikle geçici)",
@@ -362,10 +521,42 @@ export const peptides: Peptide[] = [
         note: "Birlikte kullanıldığında geliştirilmiş yara iyileşmesi ve doku onarımı.",
       },
       {
+        compound: "Melanotan II",
+        note: "Her ikisi de melanin üretimini etkiler; kombinasyonda dikkatli olunmalı.",
+      },
+      {
         compound: "Bakır Takviyeleri",
         note: "Bakır toksisitesi riski; oral bakır takviyeleriyle birleştirilmemelidir.",
       },
+      {
+        compound: "CJC-1295",
+        note: "Bilinen etkileşim yok.",
+      },
+      {
+        compound: "Demir Şelatlayıcılar",
+        note: "Bakır emilimini ve aktivitesini etkileyebilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Gelişmiş cilt dokusu ve hidrasyon" },
+      { period: "3-4. Hafta", result: "İnce çizgilerde azalma, artan pürüzsüzlük" },
+      { period: "6-8. Hafta", result: "Gelişmiş cilt sıkılığı ve elastikiyet" },
+      { period: "8-12. Hafta", result: "Cilt tonunda ve netliğinde görünür iyileşme" },
+      { period: "Saç Büyümesi", result: "İlk sonuçlar için 6-12 hafta" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Bakır içeriğinden gelen açık mavi ton",
+        "Pürüzsüz doku, tanecik yok",
+        "Ayrışma veya kristalleşme olmayan stabil formülasyon",
+        "UV korumalı profesyonel ambalaj",
+      ],
+      bad: [
+        "Yeşil veya koyu renk değişimi (oksidasyon/kontaminasyon göstergesi)",
+        "Tanecikli doku (zayıf formülasyon)",
+        "Bileşenlerin ayrışması veya çökmesi",
+      ],
+    },
   },
   {
     slug: "ss-31-elamipretide",
@@ -386,6 +577,7 @@ export const peptides: Peptide[] = [
       "Işığa duyarlıdır, ışıktan korunmalıdır. Subkutan veya intravenöz uygulanır; klinik protokoller ile araştırma/performans amaçlı dozlar arasında büyük fark vardır.",
     dosing: [
       { label: "Genel Mitokondriyal Destek", amount: "5-10mg", amountValue: 10, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Atletik Performans", amount: "10-20mg", amountValue: 20, frequency: "Günde 1 kez, antrenman öncesi", route: "Subkutan" },
       { label: "Klinik Protokol", amount: "40mg", amountValue: 40, frequency: "Günde 1 kez", route: "Subkutan veya IV" },
     ],
     warnings: [
@@ -417,7 +609,35 @@ export const peptides: Peptide[] = [
         compound: "Thymosin Beta-4",
         note: "Her ikisi de farklı yollarla kardiyoprotektiftir.",
       },
+      {
+        compound: "NAD+",
+        note: "Her ikisi de mitokondriyal fonksiyonu farklı mekanizmalarla destekler.",
+      },
+      {
+        compound: "GHK-Cu",
+        note: "Farklı mekanizmalar; çatışma yok.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-3. Gün", result: "Hafif enerji iyileşmesi, azalan yorgunluk" },
+      { period: "1-2. Hafta", result: "Daha iyi egzersiz dayanıklılığı, hızlanan toparlanma" },
+      { period: "2-4. Hafta", result: "Gelişmiş dayanıklılık, zihinsel netlik, daha iyi uyku" },
+      { period: "4-8. Hafta", result: "Belirgin egzersiz kapasitesi iyileşmesi" },
+      { period: "8-12. Hafta", result: "Sürdürülen enerji, olası biyobelirteç değişimleri" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Eczacılık kalitesinde (>%98 saflık)",
+        "Sulandırma sonrası berrak, renksiz çözelti",
+        "Analiz Sertifikası (CoA) mevcut",
+        "Doğru soğuk zincir korunumu",
+      ],
+      bad: [
+        "Sarı veya kahverengi renk değişimi bozulmaya işaret eder",
+        "Bulanık çözelti veya görünür parçacıklar",
+        "Uygunsuz saklama koşulları",
+      ],
+    },
   },
   {
     slug: "bpc-157",
@@ -440,6 +660,13 @@ export const peptides: Peptide[] = [
       { label: "Genel İyileşme", amount: "250-500mcg", amountValue: 500, frequency: "Günde 1-2 kez", route: "Subkutan/IM" },
       { label: "Ciddi Yaralanma", amount: "500-1000mcg", amountValue: 1000, frequency: "Günde 2 kez", route: "Yaralanma bölgesine yakın SubQ" },
     ],
+    secondaryDosing: {
+      routeLabel: "Oral Form",
+      note: "Sistemik/tüm vücut faydaları için; aç karnına alınması önerilir. Yerel enjeksiyon kadar hedefe yönelik değildir.",
+      steps: [
+        { label: "Genel İyileşme", amount: "250-500mcg", amountValue: 500, frequency: "Günde 1-2 kez, aç karnına", route: "Oral" },
+      ],
+    },
     warnings: [
       "Aktif kanser (anjiyojenik etkiler nedeniyle)",
       "Gebelik veya emzirme dönemi",
@@ -465,7 +692,32 @@ export const peptides: Peptide[] = [
         compound: "CJC-1295",
         note: "BPC-157, GH reseptörlerini yukarı regüle ederek doku onarımı etkinliğini artırır.",
       },
+      {
+        compound: "Melanotan II",
+        note: "Bilinen etkileşim yok; farklı mekanizmalar ve reseptör hedefleri.",
+      },
+      {
+        compound: "AOD-9604",
+        note: "Güvenli kombinasyon; farklı yollar. Rejeneratif protokollerde sıklıkla birlikte kullanılır.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Enjeksiyon bölgesinde inflamasyon ve ağrıda azalma" },
+      { period: "2-4. Hafta", result: "İyileşme hızında ve doku onarımında gelişme" },
+      { period: "4-8. Hafta", result: "Maksimum lokalize iyileşme faydası" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz, kabarık liyofilize toz (flakon dibini dolduran 'kek' formu)",
+        "Sulandırma sonrası parçacıksız, kristal berraklıkta çözelti",
+        "Flakonda sağlam vakum mührü",
+      ],
+      bad: [
+        "Çökmüş, erimiş veya flakon duvarına yapışmış toz (ısı hasarı)",
+        "Sulandırma sonrası bulanık çözelti, parçacık veya çökelti",
+        "Tozda renk değişimi",
+      ],
+    },
   },
   {
     slug: "cjc-1295-ipamorelin",
@@ -499,6 +751,7 @@ export const peptides: Peptide[] = [
     dosingNote:
       "IV infüzyon en yüksek biyoyararlanımı sağlar ve tıbbi gözetim gerektirir; IM/subkutan alternatif bir yoldur.",
     dosing: [
+      { label: "İntranazal", amount: "25-50mg", amountValue: 50, frequency: "Günde 1-2 kez", route: "İntranazal" },
       { label: "IM/SubQ", amount: "100-500mg", amountValue: 500, frequency: "Haftada 2-3 kez", route: "Kas içi / Subkutan" },
       { label: "IV İnfüzyon", amount: "250-1000mg", amountValue: 1000, frequency: "Haftada 1-2 kez", route: "İntravenöz" },
     ],
@@ -523,10 +776,37 @@ export const peptides: Peptide[] = [
         note: "Geliştirilmiş toparlanma ve anti-aging etkileri.",
       },
       {
+        compound: "Tirzepatide",
+        note: "GLP-1 agonistleriyle güçlendirilmiş metabolik yolları destekler.",
+      },
+      {
+        compound: "Ipamorelin",
+        note: "Büyüme hormonu yolları, gelişmiş enerji metabolizmasından faydalanır.",
+      },
+      {
         compound: "Alkol",
         note: "Alkol, NAD+ düzeylerini ve etkinliğini belirgin şekilde azaltır.",
       },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "İlk enerji iyileşmeleri ve zihinsel netlik" },
+      { period: "3-4. Hafta", result: "Gelişmiş fiziksel performans ve toparlanma" },
+      { period: "5-8. Hafta", result: "Sürdürülen enerji düzeyleri ve iyileşmiş uyku kalitesi" },
+      { period: "9-12. Hafta", result: "Optimize edilmiş metabolik fonksiyon ve bilişsel faydalar" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Berrak, renksiz enjektabl çözelti",
+        "2-8°C'de doğru soğuk zincir",
+        "Steril enjeksiyon tekniği",
+        "Üçüncü taraf saflık testi",
+      ],
+      bad: [
+        "Bulanık veya renk değişimi kontaminasyona işaret eder",
+        "Oda sıcaklığında saklama NAD+'ı hızla bozar",
+        "Sulandırılmış çözeltiler en fazla 28 gün içinde kullanılmalı",
+      ],
+    },
   },
   {
     slug: "semax",

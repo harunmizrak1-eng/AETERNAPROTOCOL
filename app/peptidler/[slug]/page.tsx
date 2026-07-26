@@ -180,6 +180,93 @@ export default async function PeptideDetailPage({
               </div>
             )}
 
+            {peptide.secondaryDosing && peptide.secondaryDosing.steps.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Dozaj Protokolü — {peptide.secondaryDosing.routeLabel}
+                </h2>
+                <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
+                  {tierDosingDisclaimer[peptide.tier]}
+                </p>
+                {peptide.secondaryDosing.note && (
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {peptide.secondaryDosing.note}
+                  </p>
+                )}
+                <div className="mt-6">
+                  <DoseLadderChart steps={peptide.secondaryDosing.steps} />
+                </div>
+              </div>
+            )}
+
+            {peptide.expectedTimeline && peptide.expectedTimeline.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Beklenen Sonuçlar (Bildirilen Zaman Çizelgesi)
+                </h2>
+                <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
+                  Kaynak literatür/topluluk raporlarına dayanan, bireysel yanıtın
+                  büyük ölçüde değişebildiği bir zaman çizelgesidir — bir garanti
+                  değildir.
+                </p>
+                <div className="mt-6 overflow-x-auto">
+                  <table className="w-full min-w-[380px] border-collapse text-sm">
+                    <caption className="sr-only">
+                      {peptide.name} beklenen sonuç zaman çizelgesi
+                    </caption>
+                    <tbody>
+                      {peptide.expectedTimeline.map((point) => (
+                        <tr key={point.period} className="border-b border-hairline last:border-b-0">
+                          <th scope="row" className="py-3 pr-4 text-left font-mono text-xs uppercase tracking-eyebrow text-gold/80">
+                            {point.period}
+                          </th>
+                          <td className="py-3 text-muted-foreground">{point.result}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+
+            {peptide.qualityIndicators && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Kalite Kontrol İşaretleri
+                </h2>
+                <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
+                  Yalnızca fiziksel bir ürün olarak temin edilen bileşikler için
+                  geçerlidir; klinik etkinliğin göstergesi değildir.
+                </p>
+                <div className="mt-6 grid gap-8 sm:grid-cols-2">
+                  <div>
+                    <p className="text-[0.65rem] uppercase tracking-eyebrow text-tier-proven">
+                      İyi İşaretler
+                    </p>
+                    <ul className="mt-3 flex flex-col gap-2">
+                      {peptide.qualityIndicators.good.map((item) => (
+                        <li key={item} className="text-sm leading-relaxed text-muted-foreground">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-[0.65rem] uppercase tracking-eyebrow text-tier-preclinical">
+                      Kötü İşaretler
+                    </p>
+                    <ul className="mt-3 flex flex-col gap-2">
+                      {peptide.qualityIndicators.bad.map((item) => (
+                        <li key={item} className="text-sm leading-relaxed text-muted-foreground">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {peptide.warnings && peptide.warnings.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">

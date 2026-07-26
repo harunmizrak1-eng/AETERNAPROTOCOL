@@ -734,6 +734,38 @@ export const peptides: Peptide[] = [
       "Bağımsız modern RCT bulunmuyor",
     ],
     clinicalStatus: "Preklinik aşama, bağımsız doğrulama sınırlı",
+    dosingNote:
+      "Kısa döngüler (10-20 gün) halinde, aralarda 4-6 aylık ara verilerek subkutan uygulanır; sürekli kullanım protokolü yoktur.",
+    dosing: [
+      { label: "Muhafazakar Başlangıç", amount: "100mcg", amountValue: 100, frequency: "Günde 1 kez, 10-20 gün", route: "Subkutan" },
+      { label: "Standart", amount: "200-500mcg", amountValue: 500, frequency: "Günde 1 kez, 10-20 gün", route: "Subkutan" },
+    ],
+    warnings: [
+      "Aktif malignite (telomeraz aktivasyonu endişesi)",
+      "Kronik sinüzit (nazal yol)",
+      "Gebelik veya emzirme dönemi",
+      "Yeni oluşan veya değişen benler (cilt izlenmeli)",
+      "Kanser tanısı alınması halinde derhal kesilmeli",
+    ],
+    sideEffects: [
+      "Genellikle iyi tolere edilir, minimal yan etki",
+      "Hafif enjeksiyon bölgesi reaksiyonu",
+      "Canlı rüyalar (melatonin ilişkili)",
+    ],
+    interactions: [
+      {
+        compound: "Thymalin",
+        note: "Güçlendirilmiş immünomodülasyon — Rus protokollerinde sıklıkla birlikte kullanılır.",
+      },
+      {
+        compound: "Semax",
+        note: "Farklı nörokognitif odak, bilinen olumsuz etkileşim yok.",
+      },
+      {
+        compound: "Kanser Tedavileri",
+        note: "Telomeraz aktivasyonu teorik olarak maligniteyi etkileyebilir; aktif kanserde kaçınılmalıdır.",
+      },
+    ],
   },
   {
     slug: "aicar",
@@ -749,6 +781,31 @@ export const peptides: Peptide[] = [
       "İnsan performans verisi yok",
     ],
     clinicalStatus: "Preklinik aşama, sporda yasaklı madde statüsünde",
+    dosingNote:
+      "Günde bir kez subkutan enjeksiyon; toleransı değerlendirmek için kademeli doz artışı yaygındır.",
+    dosing: [
+      { label: "Kademeli Giriş (başlangıç)", amount: "1mg", amountValue: 1, frequency: "Günde 1 kez, 4 hafta titrasyon", route: "Subkutan" },
+      { label: "Standart Protokol", amount: "1-3mg", amountValue: 3, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "İleri Protokol", amount: "3-5mg", amountValue: 5, frequency: "Günde 1 kez, 8-12 hafta", route: "Subkutan" },
+    ],
+    warnings: [
+      "Diyabet (hipoglisemi riski)",
+      "Kardiyak rahatsızlıklar",
+      "Gebelik veya emzirme dönemi",
+      "Yarışan sporcular için WADA tarafından yasaklı",
+      "Laktik asidoz belirtileri (kas ağrısı, güçsüzlük, nefes darlığı)",
+    ],
+    sideEffects: [
+      "Enjeksiyon bölgesi reaksiyonları",
+      "Uyum sürecinde hafif yorgunluk",
+      "Olası hipoglisemi",
+    ],
+    interactions: [
+      {
+        compound: "Metformin",
+        note: "Her ikisi de farklı mekanizmalarla AMPK'yı aktive eder; glukoz metabolizması üzerinde birikimli etki olabilir.",
+      },
+    ],
   },
   {
     slug: "aod-9604",
@@ -765,6 +822,34 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus:
       "Faz 2 sonrası geliştirmesi durduruldu, kanıt seviyesi düşük",
+    dosingNote:
+      "Sabah aç karnına subkutan uygulama; enjeksiyondan sonra 30 dakika yemek beklenmesi önerilir.",
+    dosing: [
+      { label: "Muhafazakar Başlangıç", amount: "200mcg", amountValue: 200, frequency: "Günde 1 kez (sabah, aç)", route: "Subkutan" },
+      { label: "Standart Yağ Kaybı", amount: "250-300mcg", amountValue: 300, frequency: "Günde 1 kez (sabah, aç)", route: "Subkutan" },
+      { label: "Güçlendirilmiş Protokol", amount: "400-500mcg", amountValue: 500, frequency: "Günde 1 kez (sabah, aç)", route: "Subkutan" },
+    ],
+    warnings: [
+      "Gebelik veya emzirme dönemi",
+      "WADA tarafından yasaklı — test edilen sporcular kaçınmalı",
+      "Şiddetli enjeksiyon bölgesi reaksiyonu veya enfeksiyon belirtisi",
+      "Olağandışı şişlik veya süregelen kızarıklık",
+    ],
+    sideEffects: [
+      "Klinik çalışmalarda genellikle iyi tolere edildi",
+      "Hafif enjeksiyon bölgesi reaksiyonu mümkün",
+      "Kan şekeri veya insülin üzerinde bildirilen etki yok",
+    ],
+    interactions: [
+      {
+        compound: "Semaglutide",
+        note: "Farklı yollar üzerinden tamamlayıcı kilo kaybı mekanizmaları.",
+      },
+      {
+        compound: "CJC-1295",
+        note: "AOD-9604, GH eksenini etkilemez; birlikte kullanılabilir.",
+      },
+    ],
   },
   {
     slug: "thymosin-alpha-1",
@@ -780,6 +865,37 @@ export const peptides: Peptide[] = [
       "ABD ve AB'de geniş RCT verisi sınırlı",
     ],
     clinicalStatus: "Bazı ülkelerde onaylı (Zadaxin), FDA onayı yok",
+    dosingNote:
+      "Subkutan enjeksiyon, %90-95 biyoyararlanıma sahip birincil yol. Standart doz haftada iki kez 1.6mg'dır.",
+    dosing: [
+      { label: "Standart Bağışıklık Desteği", amount: "1.6mg", amountValue: 1.6, frequency: "Haftada 2 kez", route: "Subkutan" },
+      { label: "İdame / Koruyucu", amount: "1.6mg", amountValue: 1.6, frequency: "Haftada 2 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Organ nakli alıcıları (greft reddi riski)",
+      "Gebelik ve emzirme dönemi",
+      "Nakil alıcılarında greft reddi belirtileri",
+      "Süregelen enjeksiyon bölgesi reaksiyonu veya enfeksiyon belirtileri",
+      "Olağandışı bağışıklık sistemi aşırı aktivitesi",
+    ],
+    sideEffects: [
+      "Hafif enjeksiyon bölgesi reaksiyonu (%10'dan az görülme sıklığı)",
+      "Genellikle olağanüstü iyi bir güvenlik profiliyle tolere edilir",
+    ],
+    interactions: [
+      {
+        compound: "İmmünosüpresif Ajanlar",
+        note: "Nakil hastalarında ölümcül greft reddi riski — kontrendikedir.",
+      },
+      {
+        compound: "Kortikosteroidler",
+        note: "Farmakodinamik antagonizma olası.",
+      },
+      {
+        compound: "Aşılar",
+        note: "Aşı immünojenisitesini artırır.",
+      },
+    ],
   },
   {
     slug: "pt-141",
@@ -799,6 +915,42 @@ export const peptides: Peptide[] = [
       { outcome: "Cinsel İstek (FSFI-desire)", tier: "proven" },
       { outcome: "İlişkili Sıkıntı (FSDS-DAO)", tier: "proven" },
     ],
+    dosingNote:
+      "Beklenen cinsel aktiviteden 45-60 dakika önce subkutan uygulanır; FDA onaylı yol budur.",
+    dosing: [
+      { label: "Düşük Test Dozu", amount: "0.5mg", amountValue: 0.5, frequency: "İhtiyaç halinde", route: "Subkutan" },
+      { label: "Kadın HSDD (FDA onaylı)", amount: "1.75mg", amountValue: 1.75, frequency: "İhtiyaç halinde, 24 saatte maks. 1 doz", route: "Subkutan" },
+      { label: "Erkek Erektil Disfonksiyon", amount: "1-2mg", amountValue: 2, frequency: "İhtiyaç halinde, 45-60 dk önce", route: "Subkutan" },
+    ],
+    warnings: [
+      "Kontrolsüz hipertansiyon",
+      "Kardiyovasküler hastalık",
+      "Nitrat ilaçlarının kullanımı",
+      "Gebelik veya emzirme dönemi",
+      "Belirgin kan basıncı düşüşü veya baş dönmesi",
+      "Göğüs ağrısı veya düzensiz kalp atışı",
+      "4 saati aşan uzamış ereksiyon",
+    ],
+    sideEffects: [
+      "Bulantı (%40)",
+      "Yüz kızarması (%20)",
+      "Baş ağrısı (%11)",
+      "Enjeksiyon bölgesi reaksiyonları",
+    ],
+    interactions: [
+      {
+        compound: "Sildenafil/Tadalafil",
+        note: "PT-141 merkezi, PDE5 inhibitörleri periferik etki gösterir — birikimli tansiyon etkisi izlenmeli.",
+      },
+      {
+        compound: "Nitratlar",
+        note: "Şiddetli hipotansiyon riski — kalp hastalığı ilaçlarıyla kontrendikedir.",
+      },
+      {
+        compound: "Alkol",
+        note: "Her ikisi de tansiyonu düşürür ve yüz kızarmasına neden olur — aşırı hipotansiyondan kaçınmak için tüketim sınırlanmalı.",
+      },
+    ],
   },
   {
     slug: "ghrp-2",
@@ -814,6 +966,36 @@ export const peptides: Peptide[] = [
       "Uzun dönem güvenlik ve etkinlik verisi sınırlı",
     ],
     clinicalStatus: "Mekanizma iyi tanımlı, kontrollü insan çalışması sınırlı",
+    dosingNote:
+      "Aç karnına subkutan enjeksiyon, optimal GH salınımı için önerilir. Yükseltilmiş GH düzeyini korumak için günde birden fazla doz yaygındır.",
+    dosing: [
+      { label: "GH Optimizasyonu", amount: "100-150mcg", amountValue: 150, frequency: "Günde 2-3 kez", route: "Subkutan" },
+      { label: "Güçlendirilmiş Sonuçlar", amount: "200-300mcg", amountValue: 300, frequency: "Günde 2-3 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Aktif kanser veya kanser öyküsü",
+      "Gebelik veya emzirme dönemi",
+      "Hipofiz bozuklukları",
+      "Diyabetik retinopati",
+      "Yarışan sporcular için WADA tarafından yasaklı",
+      "Şiddetli veya süregelen baş ağrısı",
+    ],
+    sideEffects: [
+      "İştah artışı (GHRP-6'ya göre daha az)",
+      "Hafif su tutulumu",
+      "Ekstremitelerde karıncalanma veya uyuşma",
+      "Enjeksiyon sonrası yorgunluk veya halsizlik",
+    ],
+    interactions: [
+      {
+        compound: "CJC-1295",
+        note: "Güçlü sinerji; GHRH + GHRP kombinasyonu GH salınımını belirgin şekilde artırır.",
+      },
+      {
+        compound: "Ipamorelin",
+        note: "Her ikisi de GHRP'dir; genellikle birlikte değil dönüşümlü kullanılır.",
+      },
+    ],
   },
   {
     slug: "hexarelin",
@@ -829,6 +1011,36 @@ export const peptides: Peptide[] = [
       "İnsan RCT verisi sınırlı",
     ],
     clinicalStatus: "Preklinik ağırlıklı, insan verisi sınırlı",
+    dosingNote:
+      "Subkutan veya kas içi enjeksiyon, aç karnına uygulanır. Proteolitik enzimlere karşı dirençlidir ve hızlı emilir.",
+    dosing: [
+      { label: "GH Optimizasyonu", amount: "100mcg", amountValue: 100, frequency: "Günde 2-3 kez", route: "Subkutan/Kas içi" },
+      { label: "Güçlendirilmiş Sonuçlar", amount: "200mcg", amountValue: 200, frequency: "Günde 2-3 kez", route: "Subkutan/Kas içi" },
+      { label: "Kardiyoprotektif Protokol", amount: "100-200mcg", amountValue: 200, frequency: "Günde 1-2 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Aktif kanser veya kanser öyküsü",
+      "Gebelik veya emzirme dönemi",
+      "Hipofiz bozuklukları",
+      "Yarışan sporcular için WADA tarafından yasaklı",
+      "Şiddetli veya süregelen baş ağrısı",
+    ],
+    sideEffects: [
+      "İştah artışı (GHRP-6'ya göre daha az)",
+      "Su tutulumu",
+      "Karıncalanma veya uyuşma",
+      "Enjeksiyon sonrası yorgunluk",
+    ],
+    interactions: [
+      {
+        compound: "CJC-1295",
+        note: "Güçlü sinerji; kombinasyon, tekil etkilerin toplamından daha büyük bir GH yanıtı üretir.",
+      },
+      {
+        compound: "GHRP-2",
+        note: "Benzer mekanizma; genellikle birlikte değil dönüşümlü kullanılır.",
+      },
+    ],
   },
   {
     slug: "tesamorelin",
@@ -850,6 +1062,38 @@ export const peptides: Peptide[] = [
       { outcome: "Yağsız Vücut Kütlesi", tier: "proven" },
     ],
     relatedArticleSlug: "tesamorelin-viseral-yag-meta-analiz",
+    dosingNote:
+      "Karın bölgesine (göbekten ±5cm uzakta) subkutan enjeksiyon. GH sirkadiyen ritmine uyum için akşam uygulaması tercih edilir.",
+    dosing: [
+      { label: "HIV Lipodistrofi (FDA onaylı)", amount: "1.4mg", amountValue: 1.4, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Viseral Yağ Azaltımı", amount: "2mg", amountValue: 2, frequency: "Günde 1 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Aktif malignite",
+      "Hipofiz bozuklukları",
+      "Gebelik",
+      "Diyabet gelişimi veya şiddetli glukoz intoleransı (HbA1c ≥%6.5)",
+      "Aşırı IGF-1 yükselmesi ile birlikte akromegali belirtileri",
+    ],
+    sideEffects: [
+      "Enjeksiyon bölgesi reaksiyonları (%17)",
+      "Eklem ağrısı (%13)",
+      "Su tutulumu",
+    ],
+    interactions: [
+      {
+        compound: "Ipamorelin",
+        note: "Sinerjistik GH uyarımı; IGF-1 düzeyleri izlenmelidir.",
+      },
+      {
+        compound: "İnsülin",
+        note: "Diyabet riskinde 3,3 kat artış; kan şekeri yakından izlenmelidir.",
+      },
+      {
+        compound: "Büyüme Hormonu",
+        note: "Gereksiz tekrar; akromegali benzeri etki riski.",
+      },
+    ],
   },
   {
     slug: "thymalin",
@@ -865,6 +1109,36 @@ export const peptides: Peptide[] = [
       "Bağımsız modern RCT bulunmuyor",
     ],
     clinicalStatus: "Preklinik aşama, bağımsız doğrulama sınırlı",
+    dosingNote:
+      "Kısa 5-10 günlük döngüler halinde kas içi veya subkutan uygulanır; sıklıkla Epithalon veya Vilon gibi diğer biyoregülatörlerle birlikte kullanılır.",
+    dosing: [
+      { label: "Standart Döngü", amount: "10mg", amountValue: 10, frequency: "Günde 1 kez, 5-10 gün", route: "Kas içi / Subkutan" },
+      { label: "İdame", amount: "10mg", amountValue: 10, frequency: "Yılda 1-2 döngü", route: "Kas içi / Subkutan" },
+    ],
+    warnings: [
+      "Otoimmün hastalıklar (dikkatli kullanılmalı)",
+      "Organ nakli alıcıları (immünosüpresyon gerektirir)",
+      "Gebelik veya emzirme dönemi",
+      "Bilinen aşırı duyarlılık",
+    ],
+    sideEffects: [
+      "Hafif enjeksiyon bölgesi reaksiyonu",
+      "Pratik olarak yan etki bildirilmemiştir",
+    ],
+    interactions: [
+      {
+        compound: "Epithalon",
+        note: "Birlikte kullanımda, yalnızca Thymalin'e kıyasla (2,0 kat) 4,1 kat mortalite azalması bildirildi (hayvan çalışması).",
+      },
+      {
+        compound: "Vilon",
+        note: "Güçlendirilmiş sistemik toparlanma ve bağışıklık desteği için sıklıkla birlikte kullanılır.",
+      },
+      {
+        compound: "Thymosin Alpha-1",
+        note: "Benzer timik köken; farklı mekanizmalar birbirini tamamlayabilir.",
+      },
+    ],
   },
   {
     slug: "humanin",
@@ -880,6 +1154,32 @@ export const peptides: Peptide[] = [
       "İnsan RCT verisi yok",
     ],
     clinicalStatus: "Preklinik aşama, akademik araştırma düzeyinde",
+    dosingNote:
+      "Faydaları yavaş ve hücreseldir; haftalar-aylar içinde hissedilir. Daha güçlü analog HNG, doğal humaninden 1000 kat daha potenttir.",
+    dosing: [
+      { label: "Longevity / Anti-Aging", amount: "1-3mg", amountValue: 3, frequency: "Haftada 2 kez", route: "Subkutan" },
+      { label: "Nöroproteksiyon", amount: "1-5mg", amountValue: 5, frequency: "Haftada 2-3 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Aktif kanser (anti-apoptotik etkilerle teorik endişe)",
+      "Gebelik veya emzirme dönemi",
+      "Peptid bileşenlerine aşırı duyarlılık",
+    ],
+    sideEffects: [
+      "Enjeksiyon bölgesi reaksiyonları",
+      "Başlangıçta hafif yorgunluk",
+      "Baş ağrısı (nadir)",
+    ],
+    interactions: [
+      {
+        compound: "MOTS-c",
+        note: "Her ikisi de mitokondri kaynaklıdır, tamamlayıcı longevity ve metabolik faydalar sunar.",
+      },
+      {
+        compound: "SS-31 (Elamipretide)",
+        note: "Her ikisi de mitokondriyal fonksiyonu hedefler; hücresel sağlık için birikimli fayda olabilir.",
+      },
+    ],
   },
   {
     slug: "dihexa",

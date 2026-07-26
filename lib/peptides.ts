@@ -932,6 +932,12 @@ export const peptides: Peptide[] = [
     name: "Semax",
     category: "Kognitif",
     tier: "theoretical",
+    molecular: {
+      weight: "813.93 Da",
+      halfLife: "0.5-2 saat",
+      chain: "7 aminoasit (ACTH(4-10) sentetik analoğu)",
+      sequence: "MEHFPGP",
+    },
     short:
       "ACTH türevi nootropik. BDNF ve dopaminerjik modülasyon yoluyla odak ve zihinsel netlik desteklediği öne sürülüyor. Rusya'da klinik kullanımda.",
     mechanism:
@@ -1007,6 +1013,12 @@ export const peptides: Peptide[] = [
     name: "Selank",
     category: "Kognitif",
     tier: "theoretical",
+    molecular: {
+      weight: "751.89 Da",
+      halfLife: "2-10 dakika",
+      chain: "7 aminoasit (Tuftsin analoğu)",
+      sequence: "TKPRPGP",
+    },
     short:
       "Tuftsin analogu anksiyolitik. Sedasyon ve bağımlılık olmadan sakinleştirici etki tanımlanıyor. Kontrollü klinik veri sınırlı.",
     mechanism:
@@ -1090,6 +1102,11 @@ export const peptides: Peptide[] = [
     name: "TB-500",
     category: "Doku Onarımı",
     tier: "preclinical",
+    molecular: {
+      weight: "4,963.44 Da",
+      halfLife: "~2 saat",
+      chain: "43 aminoasit (Thymosin fragmanı)",
+    },
     short:
       "Thymosin Beta-4 fragmanı. Doku rejenerasyonunu desteklediği düşünülüyor. İnsan verisi neredeyse yok, kanıt büyük ölçüde hayvan çalışmalarına dayalı.",
     mechanism:
@@ -1169,6 +1186,12 @@ export const peptides: Peptide[] = [
     name: "MOTS-c",
     category: "Longevity",
     tier: "preclinical",
+    molecular: {
+      weight: "2,174.6 Da",
+      halfLife: "~30 dakika",
+      chain: "16 aminoasit",
+      sequence: "MRWQEMGYIFYPRKLR",
+    },
     short:
       "Mitokondriyal DNA kaynaklı peptid. AMPK yolağını aktive ederek egzersiz etkisini taklit ettiği öne sürülüyor. İnsan RCT verisi yok.",
     mechanism:
@@ -1242,6 +1265,12 @@ export const peptides: Peptide[] = [
     name: "Epithalon",
     category: "Longevity",
     tier: "preclinical",
+    molecular: {
+      weight: "390.35 Da",
+      halfLife: "Belirlenmemiş (kısa peptid)",
+      chain: "4 aminoasit (tetrapeptid)",
+      sequence: "AEDG",
+    },
     short:
       "Pineal bez kaynaklı tetrapeptid. Telomeraz aktivasyonu ve sirkadiyen ritim etkileri araştırılıyor. Bağımsız modern RCT bulunmuyor.",
     mechanism:
@@ -1320,6 +1349,11 @@ export const peptides: Peptide[] = [
     name: "AICAR",
     category: "Performans",
     tier: "preclinical",
+    molecular: {
+      weight: "338.21 Da",
+      halfLife: "~2-3 saat",
+      chain: "Nükleosit analoğu (peptid değil)",
+    },
     short:
       "AMPK aktivatörü, egzersiz taklit edici. Hayvan çalışmalarında dayanıklılık artışı gösterdi. İnsan performans verisi yok, deneysel seviyede.",
     mechanism:
@@ -1386,6 +1420,12 @@ export const peptides: Peptide[] = [
     name: "AOD-9604",
     category: "Metabolik",
     tier: "preclinical",
+    molecular: {
+      weight: "1,815.1 Da",
+      halfLife: "3-4 dakika",
+      chain: "17 aminoasit (hGH C-terminal fragmanı)",
+      sequence: "YLRIVQCRSVEGSCGF",
+    },
     short:
       "Büyüme hormonunun yağ yakıcı bölgesinden türetilmiş fragman (Fragment 176-191). Obezite endikasyonunda Faz 2 çalışmalarında plasebodan üstünlük gösterememiştir.",
     mechanism:
@@ -1460,6 +1500,12 @@ export const peptides: Peptide[] = [
     name: "Thymosin Alpha-1",
     category: "Doku Onarımı",
     tier: "theoretical",
+    molecular: {
+      weight: "3,108 Da",
+      halfLife: "~2 saat",
+      chain: "28 aminoasit (asetile polipeptid)",
+      sequence: "SDAAVDTSSEITTKDLKEKKEVVEEAEN",
+    },
     short:
       "Timüs kaynaklı immün modülatör peptid. Bazı ülkelerde hepatit ve bağışıklık desteği amacıyla onaylı; ABD'de FDA onayı yok.",
     mechanism:
@@ -1527,6 +1573,9 @@ export const peptides: Peptide[] = [
     slug: "pt-141",
     name: "PT-141",
     category: "Estetik / Onarım",
+    molecular: {
+      halfLife: "~2.7 saat",
+    },
     tier: "proven",
     short:
       "Bremelanotide. Melanokortin reseptör agonisti; kadınlarda hipoaktif cinsel istek bozukluğu için FDA onaylı (Vyleesi).",
@@ -1617,6 +1666,11 @@ export const peptides: Peptide[] = [
     name: "GHRP-2",
     category: "Büyüme / GH",
     tier: "theoretical",
+    molecular: {
+      weight: "817.9 Da",
+      halfLife: "~30 dakika",
+      chain: "6 aminoasit (sentetik hekzapeptid)",
+    },
     short:
       "Ghrelin reseptör agonisti büyüme hormonu salgılatıcı peptid. Mekanizma iyi tanımlı, uzun dönem insan verisi sınırlı.",
     mechanism:
@@ -1689,6 +1743,11 @@ export const peptides: Peptide[] = [
     name: "Hexarelin",
     category: "Büyüme / GH",
     tier: "preclinical",
+    molecular: {
+      weight: "887 Da",
+      halfLife: "1-2 saat",
+      chain: "6 aminoasit (sentetik hekzapeptid)",
+    },
     short:
       "Güçlü bir ghrelin reseptör agonisti. Hayvan çalışmalarında kardiyoprotektif etkiler gösterdi; insan verisi sınırlı.",
     mechanism:
@@ -1760,6 +1819,12 @@ export const peptides: Peptide[] = [
     slug: "tesamorelin",
     name: "Tesamorelin",
     category: "Büyüme / GH",
+    molecular: {
+      weight: "5,135.9 Da",
+      halfLife: "26-38 dakika",
+      chain: "44 aminoasit (GHRH analoğu)",
+      sequence: "HADGIFTNSYRKVLGQLSARKLLQDIMSRQQGESNQERGARARL",
+    },
     tier: "proven",
     short:
       "GHRH analoğu. HIV ile ilişkili lipodistrofide viseral yağ azaltımı için FDA onaylı (Egrifta).",
@@ -1846,6 +1911,10 @@ export const peptides: Peptide[] = [
     slug: "thymalin",
     name: "Thymalin",
     category: "Longevity",
+    molecular: {
+      halfLife: "Belirlenmemiş (karışım); etkiler haftalarca sürer",
+      chain: "Kısa peptid karışımı (KE, EW, EDP)",
+    },
     tier: "preclinical",
     short:
       "Rusya kaynaklı timik bioregülatör peptid karışımı. Epithalon ile aynı araştırma geleneğinden; bağımsız modern RCT bulunmuyor.",
@@ -1910,6 +1979,12 @@ export const peptides: Peptide[] = [
     slug: "humanin",
     name: "Humanin",
     category: "Longevity",
+    molecular: {
+      weight: "2,687 Da",
+      halfLife: "~30 dakika (fare); >4 saat (sıçan)",
+      chain: "24 aminoasit (mitokondri kaynaklı peptid)",
+      sequence: "MAPRGFSCLLLLTSEIDLPVKRRA",
+    },
     tier: "preclinical",
     short:
       "Mitokondriyal DNA kaynaklı sinyal peptidi. Akademik longevity araştırmalarında ilgi görüyor; insan RCT verisi yok.",

@@ -2062,7 +2062,37 @@ export const peptides: Peptide[] = [
         compound: "Sermorelin",
         note: "Her ikisi de GH'yi uyarır; reseptör aşırı doygunluğundan kaçınmak için birini seçin.",
       },
+      {
+        compound: "TB-500",
+        note: "Toparlanma ve doku onarımı için tamamlayıcı.",
+      },
+      {
+        compound: "GHRP-2",
+        note: "Gereksiz GH yolları reseptör desensitizasyonuna neden olabilir — kaçının.",
+      },
+      {
+        compound: "GHRP-6",
+        note: "Benzer mekanizma, daha yüksek açlık etkisiyle; gereksiz — kaçının.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Uyku iyileşmeleri ve sabah canlılığında artış" },
+      { period: "2-4. Hafta", result: "Egzersiz sonrası daha iyi toparlanma ve azalan kas ağrısı" },
+      { period: "4-8. Hafta", result: "Artan kas gelişimiyle vücut kompozisyonu değişimleri" },
+      { period: "8-12. Hafta", result: "Sürdürülen kas belirginliği, cilt iyileşmeleri, enerji kazanımları" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz, ince kristal toz, topaklanma yok",
+        "Sulandırma sonrası berrak çözelti",
+        "Dozdan 20-30 dakika sonra iştah uyarımı (beklenen etki)",
+      ],
+      bad: [
+        "Renk değişimi göstermiş veya sararmış toz (oksidasyon/bozulma göstergesi)",
+        "Sulandırma sonrası bulanık çözelti",
+        "Uzun süreli kullanım sonrası etki yokluğu",
+      ],
+    },
   },
   {
     slug: "sermorelin",
@@ -2111,7 +2141,38 @@ export const peptides: Peptide[] = [
         compound: "İnsülin",
         note: "GH insülin etkisine antagonisttir; kombinasyon yakından izlenmelidir.",
       },
+      {
+        compound: "Octreotide/Lanreotide",
+        note: "Somatostatin analogları, inhibitör reseptörleri aktive ederek GH salınımını doğrudan bloke eder — kaçının.",
+      },
+      {
+        compound: "Prednizon",
+        note: "Yüksek doz glukokortikoidler GHRH reseptör duyarlılığını azaltır.",
+      },
+      {
+        compound: "Tiroid Hormonları",
+        note: "Tedavi edilmemiş hipotiroidizm sermorelin yanıtını engellediği için gerekli bir kombinasyondur.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "IGF-1 yükselmesi başlar; uyku kalitesi ve toparlanma iyileşir" },
+      { period: "2-4. Hafta", result: "Vücut kompozisyonu değişimleri başlar; enerji ve iyilik hali artar" },
+      { period: "4-8. Hafta", result: "Görünür kas tonusu iyileşmesi; yağ azalması; cilt kalitesinde artış" },
+      { period: "8-12. Hafta", result: "Sürdürülen iyileşmeler; optimal IGF-1 yükselmesi" },
+      { period: "3-6. Ay", result: "Maksimum fayda: kas gelişimi, yağ kaybı, anti-aging etkileri" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Parçacık, bulanıklık veya çökelti olmadan tamamen berrak ve renksiz çözelti",
+        "USP standartlarına göre %98'den yüksek peptid saflığı",
+        "Steril, pirojenik olmayan liyofilize toz",
+        "FDA kayıtlı tesislerde cGMP'ye uygun üretim",
+      ],
+      bad: [
+        "Herhangi bir bulanıklık, parçacık, renk değişimi veya çökelti bozulmaya işaret eder",
+        "3.358 Da (serbest baz) veya 3.418 Da (asetat tuzu) moleküler ağırlığından sapma",
+      ],
+    },
   },
   {
     slug: "thymosin-beta-4",
@@ -2153,7 +2214,32 @@ export const peptides: Peptide[] = [
         compound: "Kemoterapi",
         note: "Kanser hastalarında anjiyogenezi teşvik etme konusunda teorik endişe; aktif kemoterapi sırasında kaçınılmalıdır.",
       },
+      {
+        compound: "Büyüme Hormonu",
+        note: "Bilinen doğrudan etkileşim yok; her ikisi de farklı yollarla doku onarımını destekler.",
+      },
+      {
+        compound: "IGF-1",
+        note: "Doğrudan etkileşim olmadan tamamlayıcı büyüme faktörü etkileri.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "İlk doku yanıtı; olası hafif enjeksiyon bölgesi reaksiyonları" },
+      { period: "2-4. Hafta", result: "Hızlanan iyileşme belirginleşir; azalan inflamasyon" },
+      { period: "4-8. Hafta", result: "Önemli doku rejenerasyonu ve fonksiyonel iyileşme" },
+      { period: "8-12. Hafta", result: "Yanıt veren durumlarda sürdürülen fayda ve neredeyse tam iyileşme" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Sulandırma sonrası berrak, renksiz çözelti",
+        "Sağlam mühürlü, uygun steril ambalaj",
+        "HPLC/MS ile doğrulanmış moleküler ağırlık, >%98 saflık analiz sertifikası",
+      ],
+      bad: [
+        "Bulanık veya renk değişimi göstermiş çözelti",
+        "Sulandırma sonrası kristalleşme, uygunsuz saklama geçmişine işaret eder",
+      ],
+    },
   },
   {
     slug: "dsip",
@@ -2202,7 +2288,42 @@ export const peptides: Peptide[] = [
         compound: "Epithalon",
         note: "Her ikisi de sirkadiyen düzenlemeyi ve uyku kalitesini destekler.",
       },
+      {
+        compound: "GABA Agonistleri",
+        note: "DSIP GABA'yı güçlendirir — aşırı sedasyona dikkat edilmeli.",
+      },
+      {
+        compound: "Kortizol Düzenleyicileri",
+        note: "Kapsamlı stres yönetimi için birleştirilebilir.",
+      },
+      {
+        compound: "Opioid İlaçlar",
+        note: "Opioid reseptörlerini modüle edebilir; profesyonel gözetim gerektirir.",
+      },
+      {
+        compound: "Büyüme Hormonu Peptidleri",
+        note: "Doğrudan etkileşim yok; DSIP uyku sırasında doğal GH salınımını destekleyebilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "İlk Doz", result: "Fark edilir uyku baskısı ve kolaylaşan uykuya dalma" },
+      { period: "1-3. Gece", result: "Daha derin uyku, daha az uyanma, olası canlı rüyalar" },
+      { period: "2-5. Gün", result: "İyileşmiş sabah dinçliği, stabil gündüz enerjisi" },
+      { period: "5-10. Gün", result: "Birikimli stres azalması, ruh hali iyileşmeleri" },
+      { period: "Kullanım Sonrası", result: "Faydalar durdurulduktan sonra 1-2 hafta sürebilir" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz liyofilize toz",
+        "Sulandırıldığında berrak ve renksiz çözelti",
+        "Üçüncü taraf testi yapan güvenilir kaynak",
+      ],
+      bad: [
+        "Sarı veya bulanık çözelti bozulmaya işaret eder",
+        "Renk değişimi göstermiş toz",
+        "Kısa (14 gün) sulandırılmış stabilite penceresine dikkat edilmeli",
+      ],
+    },
   },
   {
     slug: "5-amino-1mq",
@@ -2252,7 +2373,33 @@ export const peptides: Peptide[] = [
         compound: "BPC-157",
         note: "Bilinen etkileşim yok; farklı mekanizmalar tamamlayıcı fayda sağlayabilir.",
       },
+      {
+        compound: "Kan Sulandırıcılar",
+        note: "Sınırlı etkileşim verisi; birleştirmeden önce hekime danışılmalı.",
+      },
+      {
+        compound: "Berberin",
+        note: "Her ikisi de metabolik yolları etkiler; olası ek glukoz metabolizması etkisi.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Kademeli enerji artışı ve zihinsel netlik" },
+      { period: "2-4. Hafta", result: "Gelişmiş egzersiz performansı ve toparlanma" },
+      { period: "4-8. Hafta", result: "İyileşmiş metabolik belirteçler ve vücut kompozisyonu" },
+      { period: "8-12. Hafta", result: "Sürdürülen longevity faydaları ve hücresel sağlık iyileşmeleri" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem (veya toz için turuncu/kehribar) görünüm",
+        "Üçüncü taraf analiz sertifikası, >%98 saflık",
+        "Net parti bilgisi ve son kullanma tarihleri",
+      ],
+      bad: [
+        "Yapışkan, renk değişimi göstermiş veya ısı hasarlı görünüm",
+        "Olağandışı koku (nispeten kokusuz olmalı)",
+        "Bozulmaya işaret eden topaklanma veya nem hasarı",
+      ],
+    },
   },
   {
     slug: "hgh",
@@ -2313,7 +2460,40 @@ export const peptides: Peptide[] = [
         compound: "Semaglutide/Tirzepatide",
         note: "GLP-1 agonistleri, HGH tedavisi sırasında insülin direncinin yönetilmesine yardımcı olur.",
       },
+      {
+        compound: "GHRP-6/GHRP-2",
+        note: "Doğal pulsatil salınımı güçlendirir.",
+      },
+      {
+        compound: "Kortizol/Hidrokortizon",
+        note: "Kortizol eksikliğini ortaya çıkarabilir; replasman HGH'den önce yapılmalıdır.",
+      },
+      {
+        compound: "Testosteron",
+        note: "Hormon replasman tedavisinde yaygın olarak birlikte kullanılır.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "İyileşmiş uyku, artan enerji, olası su tutulumu ve eklem sertliği" },
+      { period: "2-4. Hafta", result: "Gelişmiş egzersiz toparlanması, cilt iyileşmesi, olası karpal tünel semptomları" },
+      { period: "1-2. Ay", result: "Fark edilir yağ kaybı (özellikle karın bölgesi), gelişmiş cilt elastikiyeti" },
+      { period: "2-3. Ay", result: "Devam eden yağ kaybı, yağsız kütle iyileşmeleri, saç/tırnak büyümesi, azalan toparlanma süresi" },
+      { period: "3-6. Ay", result: "Belirgin vücut kompozisyonu değişimleri, iyileşmiş kemik yoğunluğu, sürdürülen enerji" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz veya katı 'kek'",
+        "Parçacıksız kristal berraklıkta sulandırılmış çözelti",
+        "Mühürlü flakonda sağlam vakum",
+        "Analiz sertifikalı eczacılık kalitesi (Genotropin, Norditropin, Humatrope)",
+      ],
+      bad: [
+        "Bulanık, renk değişimi göstermiş veya parçacıklı çözelti",
+        "Erimiş görünen veya flakona yapışmış toz (uygunsuz saklama)",
+        "Sarı/kahverengi renklenme",
+        "Kalitesi değişken, kayıt dışı laboratuvar ürünleri",
+      ],
+    },
   },
   {
     slug: "igf-1-lr3",
@@ -2365,7 +2545,50 @@ export const peptides: Peptide[] = [
         compound: "BPC-157",
         note: "Tamamlayıcı iyileşme mekanizmaları.",
       },
+      {
+        compound: "CJC-1295/Ipamorelin",
+        note: "Her ikisi de GH/IGF-1 eksenini uyarır; kombinasyonda dikkatli olunmalı.",
+      },
+      {
+        compound: "MK-677",
+        note: "GH uyarımı yoluyla metabolik etkileri birleştirebilir.",
+      },
+      {
+        compound: "TB-500",
+        note: "Farklı onarım yolu aktivasyonu.",
+      },
+      {
+        compound: "Anabolik Steroidler",
+        note: "Artan riskle güçlendirilmiş etkiler.",
+      },
+      {
+        compound: "Metformin",
+        note: "İnsülin direncini hafifletebilir.",
+      },
+      {
+        compound: "Cerebrolysin",
+        note: "Birikimli nörotrofik yol etkileri.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Artan kas dolgunluğu; yetersiz karbonhidrat alımında olası hipoglisemi" },
+      { period: "2-4. Hafta", result: "Gelişmiş toparlanma, güç artışı, görünür dolgunluk, olası su tutulumu" },
+      { period: "4-6. Hafta", result: "Zirve terapötik etkiler; reseptör desensitizasyonu ortaya çıkabilir, eklem sertliği sık görülür" },
+      { period: "Kullanım Sonrası", result: "Pompa hissi 1-2 hafta içinde azalır; güç/boyut kazanımları tutarlı antrenmanla sürebilir" },
+    ],
+    qualityIndicators: {
+      good: [
+        "%95'i aşan HPLC saflığı",
+        "Kütle spektrometrisi doğrulaması",
+        "Korunmuş soğuk saklama (-20°C liyofilize)",
+        "Güvenilir kaynaktan analiz sertifikası",
+      ],
+      bad: [
+        "İnsan kullanımı için hiçbir zaman onaylanmamış araştırma kimyasalı statüsü",
+        "Sıfır insan klinik çalışması mevcut",
+        "Kayıt dışı piyasa kalitesi değişken — oksitlenmiş ve bozulmuş formlar yaygın",
+      ],
+    },
   },
   {
     slug: "ghrp-6",
@@ -2415,7 +2638,34 @@ export const peptides: Peptide[] = [
         compound: "İnsülin",
         note: "Eşzamanlı uygulama GH yanıtını artırabilir, ancak karbonhidrat tüketimi GH salınımını köreltir.",
       },
+      {
+        compound: "Mod GRF 1-29",
+        note: "Klasik kombinasyon; GHRH, GHRP-6'nın büyüme hormonu salınımı üzerindeki etkisini güçlendirir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Bilinen olumsuz etkileşim yok; toparlanma protokollerinde sıklıkla birlikte kullanılır.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Anında", result: "15-20 dakika içinde yoğun açlık; 30 dakika içinde GH artışı" },
+      { period: "1-2. Hafta", result: "İyileşmiş uyku kalitesi ve artan iştah" },
+      { period: "2-4. Hafta", result: "Gelişmiş toparlanma ve enerji düzeyleri" },
+      { period: "4-8. Hafta", result: "Vücut kompozisyonunda fark edilir değişimler" },
+      { period: "8-12. Hafta", result: "Gelişmiş kas dolgunluğu ve yağ kaybıyla tam fayda" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası berrak çözelti",
+        "Flakonda sağlam vakum mührü",
+      ],
+      bad: [
+        "Renk değişimi göstermiş veya sarı toz",
+        "Sulandırma sonrası bulanık çözelti",
+        "Çözeltide parçacık veya çökelti",
+      ],
+    },
   },
   {
     slug: "cjc-1295-dac",

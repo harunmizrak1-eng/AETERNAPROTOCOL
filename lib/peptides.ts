@@ -1195,6 +1195,41 @@ export const peptides: Peptide[] = [
       "İnsan verisi yok",
     ],
     clinicalStatus: "Erken preklinik aşama, insan verisi bulunmuyor",
+    dosingNote:
+      "Oral kapsül/tablet formu en yaygın olanıdır, sabah aç veya tok karnına alınabilir. Yeniden sulandırma gerekmez.",
+    dosing: [
+      { label: "Düşük Doz İdame", amount: "5mg", amountValue: 5, frequency: "Günde 1 kez (sabah)", route: "Oral" },
+      { label: "Standart Bilişsel Destek", amount: "8-10mg", amountValue: 10, frequency: "Günde 1 kez (sabah)", route: "Oral" },
+      { label: "Yoğun Öğrenme Protokolü", amount: "10-15mg", amountValue: 15, frequency: "Günde 1 kez (sabah)", route: "Oral" },
+    ],
+    warnings: [
+      "FDA onaylı değil — yalnızca araştırma bileşiği",
+      "c-Met aktivasyonu üzerinden teorik kanser riski",
+      "Kanser öyküsü (c-Met yolağı nedeniyle kaçınılmalı)",
+      "Gebelik veya emzirme dönemi",
+      "Uzun dönem insan güvenlik verisi yok",
+      "Artan anksiyete veya panik atak",
+    ],
+    sideEffects: [
+      "Baş ağrısı (en sık bildirilen yan etki)",
+      "Anksiyete veya aşırı uyarılma",
+      "Günün geç saatinde dozlandığında uyku bozulması",
+      "Zihinsel netlikte artış",
+    ],
+    interactions: [
+      {
+        compound: "Semax",
+        note: "Güçlendirilmiş bilişsel fayda; aşırı uyarılma açısından izlenmeli.",
+      },
+      {
+        compound: "Cerebrolysin",
+        note: "Her ikisi de güçlü nöroaktiftir; aşırı uyarılmaya neden olabilir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Farklı mekanizmalar; bilinen olumsuz etkileşim yok.",
+      },
+    ],
   },
   {
     slug: "cerebrolysin",
@@ -1211,6 +1246,29 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus:
       "Bazı ülkelerde klinik kullanımda, sonuçlar karışık",
+    dosingNote:
+      "IV/IM uygulama, endikasyona göre büyük farklılık gösterir (akut inme, travmatik beyin hasarı, Alzheimer desteği farklı doz/süre gerektirir); bu nedenle tek bir doz merdiveni yerine mutlaka tıbbi gözetim altında endikasyona özgü protokol uygulanır.",
+    warnings: [
+      "Epilepsi",
+      "Ciddi böbrek yetmezliği",
+      "Domuz kaynaklı ürünlere şiddetli alerjik reaksiyon öyküsü",
+      "Şiddetli alerjik reaksiyon (anafilaksi, ciddi döküntü)",
+      "Yeni başlayan nöbet aktivitesi",
+    ],
+    sideEffects: [
+      "Genellikle iyi tolere edilir",
+      "Tedavinin erken döneminde olası hafif baş dönmesi veya ajitasyon",
+    ],
+    interactions: [
+      {
+        compound: "SSRI'lar",
+        note: "Potansiyel birikimli nörotropik etkiler; güçlenmiş antidepresan etkisi açısından izlenmeli.",
+      },
+      {
+        compound: "Amino Asit Solüsyonları",
+        note: "Reçete bilgisine göre kontrendikedir; aynı infüzyonda karıştırılmamalıdır.",
+      },
+    ],
   },
   {
     slug: "ipamorelin",
@@ -1228,6 +1286,38 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Mekanizma iyi tanımlı, geniş kontrollü insan çalışması sınırlı",
     relatedArticleSlug: "gh-salgilaticilar-ipamorelin-sermorelin",
+    dosingNote:
+      "Aç karnına, uyku öncesi enjeksiyon uyku faydaları için optimaldir.",
+    dosing: [
+      { label: "Genel Sağlık & Longevity", amount: "200mcg", amountValue: 200, frequency: "Günde 1 kez, yatmadan önce", route: "Subkutan" },
+      { label: "Vücut Kompozisyonu", amount: "250-300mcg", amountValue: 300, frequency: "Günde 2 kez (sabah, antrenman öncesi)", route: "Subkutan" },
+    ],
+    warnings: [
+      "Gebelik veya emzirme dönemi",
+      "Aktif kanser veya kanser öyküsü",
+      "Ciddi böbrek veya karaciğer hastalığı",
+      "Reseptör desensitizasyonu belirtileri (3-4 ay sonra azalan yanıt)",
+      "Olağandışı eklem ağrısı veya şişlik",
+    ],
+    sideEffects: [
+      "Enjeksiyondan 20-30 dakika sonra hafif açlık hissi artışı",
+      "Yatmadan önce alındığında hafif uyku hali",
+      "Hafif su tutulumu",
+    ],
+    interactions: [
+      {
+        compound: "CJC-1295",
+        note: "GH salınımını optimal hormon döngüleri için uzatır. Popüler kombinasyon.",
+      },
+      {
+        compound: "BPC-157",
+        note: "GH reseptör yukarı regülasyonunu ve etkinliğini artırır.",
+      },
+      {
+        compound: "Sermorelin",
+        note: "Her ikisi de GH'yi uyarır; reseptör aşırı doygunluğundan kaçınmak için birini seçin.",
+      },
+    ],
   },
   {
     slug: "sermorelin",
@@ -1244,6 +1334,39 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Mekanizma iyi tanımlı, güncel geniş etkinlik verisi sınırlı",
     relatedArticleSlug: "gh-salgilaticilar-ipamorelin-sermorelin",
+    dosingNote:
+      "Yatmadan önce subkutan enjeksiyon, doğal gece GH atımlarıyla uyum sağlar. Enjeksiyondan en az 2 saat önce yemekten kaçınılması önerilir (karbonhidratlar GH yanıtını körelttiği için).",
+    dosing: [
+      { label: "Vücut Kompozisyonu", amount: "200mcg", amountValue: 200, frequency: "Haftada 5 gün", route: "Subkutan" },
+      { label: "Anti-Aging / Longevity", amount: "200-300mcg", amountValue: 300, frequency: "Yatmadan önce, günde 1 kez", route: "Subkutan" },
+      { label: "Atletik Performans", amount: "300-500mcg", amountValue: 500, frequency: "Yatmadan önce, günde 1 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Aktif malignite",
+      "Hipofiz tümörleri",
+      "Gebelik",
+      "Hipofiz tümörü büyümesi belirtileri (baş ağrısı, görme değişiklikleri)",
+      "Şiddetli enjeksiyon bölgesi reaksiyonu veya genel alerjik yanıt",
+      "Kontrolsüz diyabet veya belirgin glukoz intoleransı",
+    ],
+    sideEffects: [
+      "Enjeksiyon bölgesi reaksiyonları (hastaların %16,7'sinde — genellikle hafif)",
+      "Burun tahrişi (intranazal yolda)",
+    ],
+    interactions: [
+      {
+        compound: "Ipamorelin",
+        note: "3-5 kat GH salınım artışı sağlayan mükemmel kombinasyon.",
+      },
+      {
+        compound: "CJC-1295",
+        note: "Çok etkili kombinasyon — CJC-1295 sürdürülebilir 6-8 günlük salınım sağlarken sermorelin ani pulsatil etki sunar.",
+      },
+      {
+        compound: "İnsülin",
+        note: "GH insülin etkisine antagonisttir; kombinasyon yakından izlenmelidir.",
+      },
+    ],
   },
   {
     slug: "thymosin-beta-4",
@@ -1260,6 +1383,32 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Preklinik aşama",
     relatedArticleSlug: "preklinik-ne-anlama-gelir",
+    dosingNote:
+      "Dozaj hedefe göre büyük farklılık gösterir (akut yara iyileşmesi, kardiyak koruma, nörolojik toparlanma farklı doz/yol gerektirir); tek bir doz merdiveni yerine hedefe özgü protokol uygulanır, tamamı insan RCT verisinden değil hayvan modellerinden türetilmiştir.",
+    warnings: [
+      "Aktif kemoterapi tedavisi",
+      "Peptidlere karşı şiddetli sistemik alerji",
+      "Şiddetli enjeksiyon bölgesi reaksiyonu veya süregelen inflamasyon",
+      "Sistemik alerjik reaksiyon belirtileri (döküntü, nefes darlığı)",
+    ],
+    sideEffects: [
+      "Hafif enjeksiyon bölgesi reaksiyonları",
+      "Enjeksiyon bölgesinde lokal inflamasyon",
+    ],
+    interactions: [
+      {
+        compound: "TB-500",
+        note: "TB-500, Thymosin Beta-4'ün biyoaktif fragmanıdır. Birlikte kullanım tam uzunluklu peptid faydalarını yoğunlaştırılmış biyoaktif etkiyle birleştirir.",
+      },
+      {
+        compound: "Antikoagülanlar",
+        note: "Anjiyogenezi teşvik eder, bu da kanama riskini etkileyebilir; koagülasyon parametreleri izlenmelidir.",
+      },
+      {
+        compound: "Kemoterapi",
+        note: "Kanser hastalarında anjiyogenezi teşvik etme konusunda teorik endişe; aktif kemoterapi sırasında kaçınılmalıdır.",
+      },
+    ],
   },
   {
     slug: "dsip",
@@ -1275,6 +1424,40 @@ export const peptides: Peptide[] = [
       "Modern kontrollü insan verisi sınırlı ve tutarsız",
     ],
     clinicalStatus: "Preklinik / erken araştırma aşaması",
+    dosingNote:
+      "Standart yol subkutan enjeksiyondur; yatmadan 30-60 dakika önce alınması önerilir.",
+    dosing: [
+      { label: "Uyku Desteği", amount: "100-200mcg", amountValue: 200, frequency: "Her gece", route: "Subkutan" },
+      { label: "Stres Yönetimi", amount: "150mcg", amountValue: 150, frequency: "Akşam", route: "Subkutan" },
+      { label: "Kronik Ağrı Desteği", amount: "250-300mcg", amountValue: 300, frequency: "Günde 1 kez", route: "Subkutan veya IV" },
+    ],
+    warnings: [
+      "Etkiler bilinene kadar araç kullanmaktan kaçının",
+      "Gebelik veya emzirme dönemi",
+      "Aşırı gündüz sedasyonu",
+      "Paradoksal uykusuzluk veya ajitasyon",
+      "Süregelen baş ağrıları",
+    ],
+    sideEffects: [
+      "Genellikle iyi tolere edilir, minimal yan etki",
+      "Başlangıçta hafif uyuşukluk veya baş dönmesi (bazı kullanıcılarda)",
+      "Hassas bireylerde ara sıra baş ağrısı",
+      "Çalışmalarda tolerans veya bağımlılık bildirilmedi",
+    ],
+    interactions: [
+      {
+        compound: "Selank",
+        note: "Tamamlayıcı anksiyolitik etkiler.",
+      },
+      {
+        compound: "Semax",
+        note: "Farklı mekanizmalar; 24 saatlik işlevi optimize edebilir.",
+      },
+      {
+        compound: "Epithalon",
+        note: "Her ikisi de sirkadiyen düzenlemeyi ve uyku kalitesini destekler.",
+      },
+    ],
   },
   {
     slug: "5-amino-1mq",
@@ -1290,6 +1473,41 @@ export const peptides: Peptide[] = [
       "İnsan verisi yok",
     ],
     clinicalStatus: "Erken preklinik aşama, insan verisi bulunmuyor",
+    dosingNote:
+      "Oral alınır, emilimi artırmak ve gastrointestinal etkileri azaltmak için yemekle birlikte alınması önerilir. Tutarlı günlük NAD+ düzeyleri için düzenli saatte dozlama önerilir.",
+    dosing: [
+      { label: "Muhafazakar Başlangıç", amount: "25mg", amountValue: 25, frequency: "Günde 1 kez (yemekle)", route: "Oral" },
+      { label: "Standart Başlangıç", amount: "50mg", amountValue: 50, frequency: "Günde 1 kez (yemekle)", route: "Oral" },
+      { label: "Tipik İdame", amount: "75mg", amountValue: 75, frequency: "Günde 1 kez (yemekle)", route: "Oral" },
+      { label: "Maksimum Doz", amount: "100mg", amountValue: 100, frequency: "Günde 1 kez (yemekle)", route: "Oral" },
+    ],
+    warnings: [
+      "Gebelik veya emzirme dönemi",
+      "Önceden var olan metabolik rahatsızlıklar (hekime danışılmalı)",
+      "Şiddetli gastrointestinal rahatsızlık veya süregelen bulantı",
+      "Olağandışı yorgunluk veya güçsüzlük (beklenen etkinin tersi)",
+      "Süregelen baş ağrısı veya baş dönmesi",
+      "Uyku bozuklukları veya uykusuzluk",
+    ],
+    sideEffects: [
+      "Genellikle minimal yan etki",
+      "Ara sıra hafif gastrointestinal uyum",
+      "Günün geç saatinde dozlandığında olası uyku rahatsızlığı",
+    ],
+    interactions: [
+      {
+        compound: "NAD+ / NMN",
+        note: "NAD+ öncüllerini yıkımdan koruyarak üretimi destekleyerek sinerjistik çalışabilir.",
+      },
+      {
+        compound: "Metformin",
+        note: "Her ikisi de metabolik yolları etkiler; kombinasyon etkiyi güçlendirebilir ancak dikkatli izleme gerektirir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Bilinen etkileşim yok; farklı mekanizmalar tamamlayıcı fayda sağlayabilir.",
+      },
+    ],
   },
   {
     slug: "hgh",

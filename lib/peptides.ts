@@ -3282,7 +3282,30 @@ export const peptides: Peptide[] = [
         compound: "Cardiogen",
         note: "Khavinson biyoregülatör ailesinin bir parçası; farklı dokuyu hedefler.",
       },
+      {
+        compound: "Pinealon",
+        note: "Tamamlayıcı MSS biyoregülatörleri; Cortagen korteks için, Pinealon genel beyin için.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Döngü Sırasında", result: "Gen ekspresyonu modülasyonu başlar" },
+      { period: "Döngü Sonrası", result: "Epigenetik değişiklikler nedeniyle etkiler sürer" },
+      { period: "Haftalar-Aylar", result: "Nörolojik fonksiyon iyileşmeleri (esas olarak tek araştırma grubu verisi)" },
+      { period: "Uzun Vade", result: "Periyodik döngülerle birikimli fayda" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz toz veya kapsül",
+        "Sulandırılırsa berrak çözelti",
+        "Uygun ambalaj ve etiketleme",
+      ],
+      bad: [
+        "Bilinmeyen kaynak veya saflık",
+        "Renk değişimi",
+        "Olağandışı koku",
+        "Hasarlı ambalaj",
+      ],
+    },
   },
   {
     slug: "cardiogen",
@@ -3324,7 +3347,34 @@ export const peptides: Peptide[] = [
         compound: "Thymalin",
         note: "Farklı organ hedefleri; kapsamlı biyoregülatör protokollerinde kullanılabilir.",
       },
+      {
+        compound: "Vesugen",
+        note: "Tamamlayıcı kardiyovasküler biyoregülatörler — Cardiogen kalp için, Vesugen damarlar için.",
+      },
+      {
+        compound: "Pinealon",
+        note: "Khavinson biyoregülatör ailesinin bir parçası; farklı dokuyu hedefler.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Döngü Sırasında", result: "Gen ekspresyonu modülasyonu başlar" },
+      { period: "Döngü Sonrası", result: "Epigenetik değişiklikler nedeniyle etkiler sürer" },
+      { period: "Aylar", result: "Kardiyovasküler fonksiyon iyileşmeleri (esas olarak tek araştırma grubu verisi)" },
+      { period: "Uzun Vade", result: "Periyodik döngülerle birikimli fayda" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz toz veya kapsül",
+        "Sulandırılırsa berrak çözelti",
+        "Uygun ambalaj ve etiketleme",
+      ],
+      bad: [
+        "Bilinmeyen kaynak veya saflık",
+        "Renk değişimi",
+        "Olağandışı koku",
+        "Hasarlı ambalaj",
+      ],
+    },
   },
   {
     slug: "livagen",
@@ -3370,7 +3420,30 @@ export const peptides: Peptide[] = [
         compound: "Vilon",
         note: "Farklı organ hedefleri; biyoregülatör protokollerinde birleştirilebilir.",
       },
+      {
+        compound: "Ovagen",
+        note: "Farklı dizilere sahip tamamlayıcı karaciğer biyoregülatörleri.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Döngü Sırasında", result: "Kromatin yeniden yapılanması ve gen ekspresyonu değişimleri başlar" },
+      { period: "Döngü Sonrası", result: "Epigenetik değişiklikler nedeniyle etkiler sürer" },
+      { period: "Haftalar-Aylar", result: "Karaciğer fonksiyonu iyileşmeleri (esas olarak tek araştırma grubu verisi)" },
+      { period: "Uzun Vade", result: "Periyodik döngülerle birikimli fayda" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz toz veya kapsül",
+        "Sulandırılırsa berrak çözelti",
+        "Uygun ambalaj ve etiketleme",
+      ],
+      bad: [
+        "Bilinmeyen kaynak veya saflık",
+        "Renk değişimi",
+        "Olağandışı koku",
+        "Hasarlı ambalaj",
+      ],
+    },
   },
   {
     slug: "vilon",
@@ -3412,7 +3485,34 @@ export const peptides: Peptide[] = [
         compound: "Epithalon",
         note: "Kapsamlı anti-aging Khavinson protokollerinde sıklıkla birlikte kullanılır.",
       },
+      {
+        compound: "Crystagen",
+        note: "Her ikisi de bağışıklık koruyucu özelliğe sahiptir; farklı mekanizmalar.",
+      },
+      {
+        compound: "Thymogen",
+        note: "İlişkili bağışıklık peptidleri; kapsamlı protokollerde kullanılabilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Döngü Sırasında", result: "Bağışıklık aktivasyonu ve gen ekspresyonu modülasyonu başlar" },
+      { period: "Döngü Sonrası", result: "Epigenetik değişiklikler nedeniyle etkiler sürer" },
+      { period: "Haftalar-Aylar", result: "Bağışıklık fonksiyonu iyileşmeleri (esas olarak tek araştırma grubu verisi)" },
+      { period: "Uzun Vade", result: "Birikimli fayda; hayvan modellerinde longevity etkileri" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz toz veya kapsül",
+        "Sulandırılırsa berrak çözelti",
+        "Uygun ambalaj ve etiketleme",
+      ],
+      bad: [
+        "Bilinmeyen kaynak veya saflık",
+        "Renk değişimi",
+        "Olağandışı koku",
+        "Hasarlı ambalaj",
+      ],
+    },
   },
   {
     slug: "bam-15",
@@ -3459,7 +3559,31 @@ export const peptides: Peptide[] = [
         compound: "MOTS-c",
         note: "Her ikisi de mitokondriyal fonksiyonu etkiler ancak farklı mekanizmalarla.",
       },
+      {
+        compound: "Tiroid Hormonları",
+        note: "Her ikisi de metabolik hızı artırır; dikkatli izleme gerektirir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Saatler", result: "Artan oksijen tüketimi ve metabolik hız (hayvan verisi)" },
+      { period: "1-7. Gün", result: "Yağ oksidasyonuna kayış (düşük solunum değişim oranı)" },
+      { period: "2-4. Hafta", result: "Araştırmalarda ölçülebilir yağ kütlesi azalması" },
+      { period: "4-8. Hafta", result: "İyileşmiş insülin duyarlılığı ve glukoz toleransı" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli toz veya tablet",
+        "Analiz sertifikası, >%98 saflık",
+        "Uygun ışıktan koruyucu ambalaj",
+        "Güvenilir tedarikçi doğrulaması",
+      ],
+      bad: [
+        "Üçüncü taraf test eksikliği",
+        "Belirsiz kaynak bilgisi",
+        "Renk değişimi göstermiş ürün",
+        "Saflık belgesi eksikliği",
+      ],
+    },
   },
   {
     slug: "adipotide",
@@ -3504,7 +3628,38 @@ export const peptides: Peptide[] = [
         compound: "Nefrotoksik İlaçlar",
         note: "Adipotide doza bağlı proksimal tübül hasarı gösterir; ek böbrek yükünden kaçınılmalıdır.",
       },
+      {
+        compound: "Cagrilintide",
+        note: "Birlikte uygulama üzerine klinik veri yok; mekanizmalar farklıdır.",
+      },
+      {
+        compound: "AOD-9604",
+        note: "Birlikte kullanım veya farmakodinamik etkileşim üzerine yayınlanmış veri yok.",
+      },
+      {
+        compound: "CJC-1295/Ipamorelin",
+        note: "Metabolik etkiler vücut kompozisyonu sonuçlarını karıştırabilir.",
+      },
+      {
+        compound: "Melanotan II",
+        note: "Teorik vasküler/pressör etkiler; dozlama aralıklı yapılmalı, tansiyon ve hidrasyon izlenmelidir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Karın çevresinde erken azalma (primat/Faz 1 verisi)" },
+      { period: "2-4. Hafta", result: "İlerleyici kilo/yağ kütlesi azalması" },
+      { period: "Tedavi Sonrası", result: "Kısmi geri dönüş olası; hafif kreatinin yükselmesi ve elektrolit değişimleri" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Sağlam liyofilize kek — beyaz, homojen, uygun liyofilizasyona işaret eder",
+        "Berrak çözelti — sulandırma sonrası tam çözünmüş, parçacıksız",
+      ],
+      bad: [
+        "Çökmüş/nemli kek, sıcaklık sapmasına işaret eder; kalite kontrolü olmadan kullanılmamalı",
+        "Bulanıklık/çökelti bozulma veya kontaminasyona işaret eder — atılmalı",
+      ],
+    },
   },
   {
     slug: "dnsp-11",
@@ -3543,7 +3698,34 @@ export const peptides: Peptide[] = [
         compound: "Semax",
         note: "Tamamlayıcı nörotrofik yollar; Semax BDNF yukarı regülasyonu üzerinden, DNSP-11 GDNF ilişkili dopaminerjik nöroproteksiyon üzerinden etki eder.",
       },
+      {
+        compound: "Bromantan",
+        note: "Her ikisi de farklı mekanizmalarla dopaminerjik fonksiyonu destekler; Bromantan tirozin hidroksilaz gen ekspresyonunu artırırken DNSP-11 nörotrofik destek sağlar.",
+      },
+      {
+        compound: "9-Me-BC",
+        note: "Her ikisi de dopaminerjik nöron sağlığını hedefler; 9-Me-BC dendrit büyümesini ve dopamin sentezini desteklerken DNSP-11 nörotrofik koruma sağlar.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1. Hafta", result: "Genellikle fark edilir minimal etki; ince değişimler başlayabilir" },
+      { period: "2-3. Hafta", result: "Başlangıç ruh hali, motivasyon ve dürtü hissinde kademeli iyileşme" },
+      { period: "4-6. Hafta", result: "Öznel faydaların olası zirvesi; iyileşmiş duygusal dayanıklılık" },
+      { period: "Kullanım Sonrası", result: "Nörotrofik etkiler aktif dozlama döneminin ötesinde sürebilir" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası berrak, renksiz çözelti",
+        "Üçüncü taraf saflık testi ≥%95",
+        "Uygun soğuk zincir sevkiyatı, mühürlü steril ambalaj",
+      ],
+      bad: [
+        "Sulandırma sonrası bulanık veya renk değişimi göstermiş çözelti",
+        "Görünür parçacık veya çökelti",
+        "Tamamen çözünmeyen toz",
+      ],
+    },
   },
 ]
 

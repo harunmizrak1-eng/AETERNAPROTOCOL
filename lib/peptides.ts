@@ -2714,7 +2714,32 @@ export const peptides: Peptide[] = [
         compound: "HGH",
         note: "Amacı boşa çıkarır ve doğal üretimi baskılayabilir.",
       },
+      {
+        compound: "CJC-1295 (DAC'sız)",
+        note: "Farklı varyantlar asla birleştirilmemeli; istenen salınım paternine göre biri seçilmelidir.",
+      },
+      {
+        compound: "GHRP-6",
+        note: "Sürekli GH yükselmesiyle GHRP atım etkileri azalır.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1. Hafta", result: "Su tutulumu, iyileşen uyku, artan iştah" },
+      { period: "2-3. Hafta", result: "Toparlanma iyileşmeleri; bazılarında eklem rahatsızlığı bildiriliyor" },
+      { period: "4-6. Hafta", result: "Vücut kompozisyonu değişimleri görünür hale gelir; artan vaskülarite" },
+      { period: "6-8. Hafta", result: "Kazanımlar devam eder; desensitizasyon belirtileri izlenmeli" },
+      { period: "Kullanım Sonrası", result: "Kazanımlar büyük ölçüde korunur; IGF-1, 2-3 hafta içinde başlangıç düzeyine döner" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Yüksek saflık (>%98 gereklidir)",
+        "'DAC ile' ibaresini belirten net etiketleme",
+      ],
+      bad: [
+        "DAC'sız varyanttan belirgin şekilde ucuz fiyatlandırma (şüpheli)",
+        "Karıştırma anında hemen berrak çözelti (DAC varyantında hafif köpüklenme normaldir, çökmesi beklenmelidir)",
+      ],
+    },
   },
   {
     slug: "kpv",
@@ -2763,7 +2788,34 @@ export const peptides: Peptide[] = [
         compound: "GHK-Cu",
         note: "Cilt sağlığı ve yenilenme için sinerjistik.",
       },
+      {
+        compound: "LL-37",
+        note: "Tamamlayıcı antimikrobiyal ve iyileştirici etkiler.",
+      },
+      {
+        compound: "Melanotan II",
+        note: "Her ikisi de alfa-MSH'den türetilir; KPV'nin pigmentasyon etkisi yoktur ama birikimli etkiler izlenmelidir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-3. Gün", result: "İnflamasyonda hafif azalma, artan enerji" },
+      { period: "1. Hafta", result: "İnflamatuar semptomlarda fark edilir azalma" },
+      { period: "2-3. Hafta", result: "İyileşmiş bağırsak fonksiyonu (uygunsa), azalan ağrı/şişlik" },
+      { period: "4. Hafta", result: "İnflamatuar belirteçlerde önemli iyileşme" },
+      { period: "6-8. Hafta", result: "Sürdürülen fayda, iyileşmiş yaşam kalitesi" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Yüksek saflık (>%98)",
+        "Sulandırma sonrası berrak, renksiz çözelti",
+        "Kararlı küçük peptid yapısı",
+        "Analiz sertifikası mevcut",
+      ],
+      bad: [
+        "Görünür parçacıklar kontaminasyon/bozulmaya işaret eder",
+        "Sarı renklenme oksidasyon/potens kaybına işaret eder",
+      ],
+    },
   },
   {
     slug: "ara-290",
@@ -2806,7 +2858,40 @@ export const peptides: Peptide[] = [
         compound: "Anti-TNF Biyolojikleri",
         note: "İmmün etkileşimlerden kaçınmak için Ara-290 öncesi 6 aylık arınma süresi gerekir.",
       },
+      {
+        compound: "Thymosin Beta-4",
+        note: "Bilinen etkileşim yok; doku korumasında farklı mekanizmalar.",
+      },
+      {
+        compound: "NAD+",
+        note: "Her ikisi de hücresel metabolizmayı etkiler; birikimli etkiler açısından izlenmelidir.",
+      },
+      {
+        compound: "Semaglutide",
+        note: "Klinik çalışmalarda GLP-1 agonistleriyle olumsuz etkileşim bildirilmedi.",
+      },
+      {
+        compound: "Büyüme Hormonu",
+        note: "Her ikisi de doku onarımını etkiler; aşırı büyüme faktörü aktivitesi açısından izlenmelidir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "İlk anti-inflamatuar etkiler ve hafif ağrı semptomu iyileşmesi" },
+      { period: "2-4. Hafta", result: "İlerleyici sinir rejenerasyonu, iyileşmiş doku iyileşme belirteçleri" },
+      { period: "4-6. Hafta", result: "Zirve terapötik etkiler, maksimum sinir lifi yoğunluğu iyileşmesi" },
+      { period: "2-6. Ay", result: "Moleküler anahtar etkisi üzerinden uzun süreli fayda" },
+    ],
+    qualityIndicators: {
+      good: [
+        "GMP koşullarında eczacılık kalitesinde üretim",
+        "Doğru peptid dizisi doğrulaması (N-terminal pirogluatamatlı 11-aminoasit dizisi)",
+        "Uygun dondurarak kurutmayla steril liyofilize toz",
+        "Saflık >%95, endotoksin <1 EU/mg, sterilite doğrulanmış",
+      ],
+      bad: [
+        "Bulanık veya renk değişimi göstermiş çözelti bozulmaya işaret eder (berrak-hafif bulanık olmalı)",
+      ],
+    },
   },
   {
     slug: "cyclic-glycine-proline",
@@ -2850,7 +2935,30 @@ export const peptides: Peptide[] = [
         compound: "Selank",
         note: "Tamamlayıcı bilişsel etkiler; Selank anksiyeteyi ele alırken cGP IGF-1'i optimize eder.",
       },
+      {
+        compound: "GH Sekretagogları",
+        note: "Her ikisi de büyüme hormonu/IGF-1 eksenini etkiler; düzeyler üzerindeki birleşik etki izlenmelidir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Olası hafif zihinsel netlik iyileşmeleri" },
+      { period: "2-4. Hafta", result: "Gelişmiş bilişsel işlev ve odaklanma fark edilebilir hale gelebilir" },
+      { period: "4-8. Hafta", result: "Nöroprotektif ve metabolik faydalar birikiyor" },
+      { period: "8-12. Hafta", result: "Optimal IGF-1 düzenlenmesi ve sürdürülen bilişsel destek" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Üçüncü taraf saflık ve potens testi",
+        "Net cGP içerik etiketi (genellikle porsiyon başına mikrogram)",
+        "Yeni Zelanda kaynaklı doğal siyah frenk üzümü kaynakları",
+        "Nem/ışıktan korunmuş, mühürlü ambalaj",
+      ],
+      bad: [
+        "Belirsiz cGP içerik spesifikasyonlu ürünler",
+        "Desteklenmeyen terapötik iddialar",
+        "Belirsiz konsantrasyon açıklamaları",
+      ],
+    },
   },
   {
     slug: "b7-33",
@@ -2888,7 +2996,28 @@ export const peptides: Peptide[] = [
         compound: "Telmisartan",
         note: "Kardiyak koruma için olası sinerjistik etki; her ikisi de kardiyak yeniden yapılanma ve fibrozla ilgili tamamlayıcı yolları hedefler.",
       },
+      {
+        compound: "BPC-157",
+        note: "Bilinen olumsuz etkileşim yok; farklı mekanizmalarla tamamlayıcı doku onarımı ve anti-fibrotik özellikler.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Vazodilatör etkilerin başlangıcı; ilk anti-fibrotik sinyal aktivasyonu (hayvan verisi)" },
+      { period: "2-4. Hafta", result: "Preklinik zaman çizelgelerine göre fibrotik belirteçlerde ilerleyici azalma" },
+      { period: "4-8. Hafta", result: "Hayvan modellerinde doku fibrozu ve kardiyovasküler parametrelerde ölçülebilir iyileşme" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası parçacıksız berrak çözelti",
+        "Flakonda sağlam vakum mührü",
+      ],
+      bad: [
+        "Renk değişimi göstermiş veya nemli toz bozulmaya işaret eder",
+        "Sulandırma sonrası bulanık çözelti, görünür parçacık veya çökelti",
+        "Kırık veya eksik vakum mührü",
+      ],
+    },
   },
   {
     slug: "methylene-blue",
@@ -2941,7 +3070,40 @@ export const peptides: Peptide[] = [
         compound: "CoQ10 / Ubikinol",
         note: "Her ikisi de mitokondriyal elektron taşıma zincirini tamamlayıcı mekanizmalarla destekler; birikimli mitokondriyal fayda sağlayabilir.",
       },
+      {
+        compound: "SNRI'lar",
+        note: "SSRI'larla aynı serotonin sendromu riski (venlafaksin, duloksetin) — MAO-A inhibisyonu nedeniyle birleştirilmemelidir.",
+      },
+      {
+        compound: "Tramadol / Meperidin",
+        note: "Serotonerjik aktiviteye sahip opioidler; birikimli serotonin sendromu riski nedeniyle birleştirilmemelidir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Bilinen olumsuz etkileşim yok; her iki bileşik de farklı mekanizmalarla nöroprotektif özellik göstermiştir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "İlk Doz", result: "İdrar 1-2 saat içinde maviye döner; olası hafif zihinsel netlik" },
+      { period: "1-3. Gün", result: "Hafif odaklanma iyileşmesi; mavi renklenme sürer; olası hafif bulantı" },
+      { period: "1-2. Hafta", result: "İyileşmiş zihinsel dayanıklılık ve bellek hatırlama dahil tutarlı bilişsel etkiler" },
+      { period: "4-8. Hafta", result: "Sürdürülen bilişsel iyileşmelerle tam mitokondriyal fayda gerçekleşir" },
+      { period: "Kesim Sonrası", result: "Etkiler günler içinde azalır; mavi renk 24-48 saat içinde geri döner" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Analiz sertifikalı USP kalite tanımlaması",
+        "Bileşim eczanesinden eczacılık kalitesi",
+        "Parçacıksız berrak koyu mavi çözelti",
+        "Ağır metal ve mikrobiyal kontaminasyon için üçüncü taraf testi",
+      ],
+      bad: [
+        "Laboratuvar veya reaktif kalitesi ürünler",
+        "Analiz sertifikası eksikliği",
+        "Olağandışı indirimli fiyatlandırma",
+        "Endüstriyel/boyama kalitesi veya akvaryum kalitesi kaynaklar",
+      ],
+    },
   },
   {
     slug: "glutathione",
@@ -2985,7 +3147,31 @@ export const peptides: Peptide[] = [
         compound: "SS-31 (Elamipretide)",
         note: "Her ikisi de mitokondriyi korur; farklı mekanizmalar birbirini tamamlar.",
       },
+      {
+        compound: "C Vitamini",
+        note: "Glutatyon, oksitlenmiş C vitaminini yeniler; sinerjistik antioksidan etki yaratır.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Anında", result: "Antioksidan aktivite başlar" },
+      { period: "1. Gün-1. Hafta", result: "Olası enerji iyileşmeleri ve genel iyilik hali artışı" },
+      { period: "2-4. Hafta", result: "Birikimli detoksifikasyon avantajları" },
+      { period: "4-12. Hafta", result: "Cilt, bağışıklık ve hücresel faydaların tam olarak ortaya çıkması" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası berrak çözelti",
+        "İndirgenmiş (oksitlenmemiş) form",
+        "Vakum mührü sağlam kalır",
+      ],
+      bad: [
+        "Hafif sararma oksidasyona işaret eder",
+        "Koyu sarı veya kahverengi renklenme",
+        "Bulanık çözelti",
+        "Hafifin ötesinde güçlü kükürt kokusu",
+      ],
+    },
   },
   {
     slug: "foxo4-dri",
@@ -3023,7 +3209,34 @@ export const peptides: Peptide[] = [
         compound: "Humanin",
         note: "Farklı mekanizmalar; Humanin sağlıklı hücreleri korurken FOXO4-DRI senesan olanları temizler.",
       },
+      {
+        compound: "Fisetin",
+        note: "Diğer senolitikler senesan hücre temizliğinde birikimli etkiye sahip olabilir.",
+      },
+      {
+        compound: "Dasatinib + Quercetin",
+        note: "Farklı senolitik mekanizmalar; sıralı kullanım düşünülebilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Saatler-Günler", result: "Senesan hücre apoptozu başlar (hayvan verisi)" },
+      { period: "Günler-Haftalar", result: "Senesan hücre temizliği (hayvan verisi)" },
+      { period: "Haftalar-Aylar", result: "Doku rejenerasyonu ve fonksiyonel iyileşmeler (hayvan verisi)" },
+      { period: "Uzun Vade", result: "Periyodik tedavi ile sürdürülen fayda (hayvan verisi)" },
+    ],
+    qualityIndicators: {
+      good: [
+        "-20°C veya altında saklanmış",
+        "Beyaz liyofilize toz",
+        "Yüksek saflık (>%95)",
+        "Sulandırma sonrası berrak çözelti",
+      ],
+      bad: [
+        "Uzun süre oda sıcaklığına maruz kalma",
+        "Renk değişimi",
+        "Tekrarlanan dondurma-çözme döngüleri",
+      ],
+    },
   },
   {
     slug: "cortagen",

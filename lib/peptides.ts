@@ -5,6 +5,26 @@ export interface EvidenceMatrixRow {
   tier: EvidenceTier
 }
 
+export interface DoseStep {
+  label: string
+  /** Display string, unit included (e.g. "0.5mg", "200mcg") - never
+   * normalized across compounds, only compared to this same compound's
+   * own steps for the chart bar width. */
+  amount: string
+  /** Numeric value in the compound's own base unit, used only to size
+   * the bar relative to this compound's other steps. */
+  amountValue: number
+  frequency: string
+  route: string
+}
+
+export interface PeptideInteraction {
+  /** Free text, or a slug of another peptide in this library (rendered
+   * as an internal link when it matches). */
+  compound: string
+  note: string
+}
+
 export interface Peptide {
   slug: string
   name: string
@@ -18,6 +38,16 @@ export interface Peptide {
   /** Per-outcome evidence, populated only where a specific trial/review
    * verifiably reports that outcome; never inferred beyond the source. */
   evidenceMatrix?: EvidenceMatrixRow[]
+  /** Dose-escalation ladder, sourced from literature/community protocols.
+   * Not a clinical recommendation - see the tier-aware disclaimer
+   * rendered alongside the chart on the detail page. */
+  dosing?: DoseStep[]
+  /** Free-text note shown above the dosing chart (route/vehicle context
+   * that doesn't fit the step table, e.g. reconstitution constraints). */
+  dosingNote?: string
+  warnings?: string[]
+  sideEffects?: string[]
+  interactions?: PeptideInteraction[]
 }
 
 export const tierLabel: Record<EvidenceTier, string> = {
@@ -45,6 +75,17 @@ export const tierDots: Record<EvidenceTier, string> = {
   preclinical: "●○○",
 }
 
+/** Mandatory framing shown alongside any dosing chart - never let a
+ * clean chart imply clinical authority the tier doesn't have. */
+export const tierDosingDisclaimer: Record<EvidenceTier, string> = {
+  proven:
+    "Onaylı endikasyon veya geniş klinik kullanım verisine dayanır. Bireysel dozaj yine de bir klinisyenle belirlenmelidir.",
+  theoretical:
+    "Bu basamaklar klinik onaylı bir reçete değildir; literatür ve araştırma protokollerinden derlenmiş referans değerleridir.",
+  preclinical:
+    "İnsan klinik verisi yoktur. Aşağıdaki değerler yalnızca araştırma/topluluk kaynaklı referanslardır, tıbbi tavsiye değildir.",
+}
+
 export const peptides: Peptide[] = [
   {
     slug: "retatrutide",
@@ -63,6 +104,50 @@ export const peptides: Peptide[] = [
     clinicalStatus: "Faz 3 çalışmaları tamamlandı",
     relatedArticleSlug: "retatrutide-nedir",
     evidenceMatrix: [{ outcome: "Vücut Ağırlığı", tier: "proven" }],
+    dosingNote:
+      "Haftalık subkutan enjeksiyon; karın, uyluk veya üst kol bölgesine, enjeksiyon yeri rotasyonuyla uygulanır.",
+    dosing: [
+      { label: "Başlangıç (1-4. hafta)", amount: "0.5mg", amountValue: 0.5, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "Düşük İdame (4-8. hafta)", amount: "1mg", amountValue: 1, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "Yükseltme (8-12. hafta)", amount: "2mg", amountValue: 2, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "Orta Düzey (12-16. hafta)", amount: "4mg", amountValue: 4, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "İleri Düzey (16-20. hafta)", amount: "8mg", amountValue: 8, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "Maksimum Etki (20+. hafta)", amount: "12mg", amountValue: 12, frequency: "Haftada bir", route: "Subkutan" },
+    ],
+    warnings: [
+      "Kişisel veya ailede medüller tiroid kanseri öyküsü",
+      "MEN2 sendromu",
+      "Ciddi böbrek yetmezliği",
+      "Yeterli beslenmeyi engelleyen şiddetli ve süreğen bulantı/kusma",
+      "Pankreatit belirtileri: sırta yayılan şiddetli karın ağrısı",
+      "Şiddetli hipoglisemi belirtileri: konfüzyon, baş dönmesi, terleme",
+      "Aşırı kilo kaybı (haftada sürekli >1,4 kg veya toplam vücut ağırlığının >%25'i)",
+      "Safra kesesi sorunları: sağ üst karında şiddetli ağrı",
+    ],
+    sideEffects: [
+      "Gastrointestinal etkiler (bulantı, kusma, ishal) — genellikle hafif-orta düzeyde",
+      "Kalp atış hızında artış — özellikle ilk 24 haftada yaygın",
+      "İştah baskılanması",
+      "Hafif dehidrasyon",
+    ],
+    interactions: [
+      {
+        compound: "Tirzepatide",
+        note: "Başka çift/üçlü agonistlerle birleştirilmemelidir — şiddetli hipoglisemi ve aşırı gastrointestinal etki riski.",
+      },
+      {
+        compound: "Semaglutide",
+        note: "Birleştirilmemelidir — örtüşen GLP-1 agonist mekanizmaları şiddetli hipoglisemi riskini artırır.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Güvenli kombinasyon; BPC-157 retatrutid kullanımı sırasında gastrointestinal koruyucu fayda sağlayabilir.",
+      },
+      {
+        compound: "İnsülin",
+        note: "İnsülin ihtiyacını belirgin şekilde azaltabilir. Kan şekeri izlenmeli ve doz buna göre ayarlanmalıdır.",
+      },
+    ],
   },
   {
     slug: "cagrilintide",
@@ -80,6 +165,39 @@ export const peptides: Peptide[] = [
     clinicalStatus: "Faz 3 çalışmaları sürüyor",
     evidenceMatrix: [
       { outcome: "Vücut Ağırlığı (semaglutid ile kombinasyonda)", tier: "proven" },
+    ],
+    dosingNote:
+      "Karın, uyluk veya üst kol bölgesine haftalık subkutan enjeksiyon; ticari kullanıma sunulduğunda önceden dolu kalem şeklinde olacak.",
+    dosing: [
+      { label: "Doz Yükseltme (başlangıç)", amount: "0.25mg", amountValue: 0.25, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "Doz Yükseltme (ara basamak)", amount: "1mg", amountValue: 1, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "İdame / Kilo Kaybı Hedefi", amount: "2.4mg", amountValue: 2.4, frequency: "Haftada bir", route: "Subkutan" },
+    ],
+    warnings: [
+      "Gebelik veya emzirme döneminde önerilmez",
+      "Henüz ticari olarak onaylı değil",
+      "Hidrasyonu engelleyen şiddetli ve süreğen bulantı/kusma",
+      "Pankreatit belirtileri (sırta yayılan şiddetli karın ağrısı)",
+      "Şiddetli alerjik reaksiyon veya anafilaksi",
+    ],
+    sideEffects: [
+      "İlk haftalarda gastrointestinal etkiler (bulantı, kusma, ishal)",
+      "Vakaların %46-73'ünde anti-kagrilintid antikoru gelişimi (etkinliği etkilemiyor)",
+      "REDEFINE 1 çalışmasında hastaların yalnızca %57,3'ü maksimum 2,4mg dozuna ulaştı",
+    ],
+    interactions: [
+      {
+        compound: "Semaglutide",
+        note: "CagriSema kombinasyonu, tamamlayıcı GLP-1 ve amilin yolları üzerinden güçlendirilmiş kilo kaybı sağlar.",
+      },
+      {
+        compound: "Tirzepatide",
+        note: "Bilinen doğrudan etkileşim yok; farklı mekanizmalar eşzamanlı kullanıma izin verir.",
+      },
+      {
+        compound: "Retatrutide",
+        note: "Birikimli gastrointestinal etkiler uzman gözetimi olmadan belirgin risk oluşturur.",
+      },
     ],
   },
   {
@@ -100,6 +218,44 @@ export const peptides: Peptide[] = [
     evidenceMatrix: [
       { outcome: "Kardiyovasküler Olaylar (MACE)", tier: "proven" },
     ],
+    dosingNote:
+      "Önceden dolu kalem veya flakon; haftada bir subkutan enjeksiyon. Uyluk, karın (göbekten 5cm+ uzakta) veya üst kol bölgesine uygulanır.",
+    dosing: [
+      { label: "Başlangıç (1-4. hafta)", amount: "0.25mg", amountValue: 0.25, frequency: "Haftada bir, 4 hafta ardından artırılır", route: "Subkutan" },
+      { label: "Diyabet Yönetimi", amount: "0.5-1mg", amountValue: 1, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "İdame (Kilo Kaybı, 16 hafta titrasyon sonrası)", amount: "2.4mg", amountValue: 2.4, frequency: "Haftada bir", route: "Subkutan" },
+    ],
+    warnings: [
+      "Kişisel veya ailede medüller tiroid kanseri öyküsü",
+      "Şiddetli ve süreğen karın ağrısı (olası pankreatit)",
+      "Sürekli kusma ile sıvı alımının engellenmesi",
+      "Tiroid tümörü belirtileri (boyunda şişlik, ses kısıklığı, yutma güçlüğü)",
+      "Şiddetli alerjik reaksiyon (döküntü, kaşıntı, nefes darlığı)",
+      "Görme değişiklikleri (olası diyabetik retinopati ilerlemesi)",
+      "İnsülin/sülfonilüre ile birlikte şiddetli hipoglisemi",
+      "Böbrek sorunları (idrar azalması, ödem)",
+    ],
+    sideEffects: [
+      "Bulantı",
+      "İshal",
+      "Kusma",
+      "Kabızlık",
+      "Karın ağrısı",
+    ],
+    interactions: [
+      {
+        compound: "İnsülin",
+        note: "Birlikte kullanıldığında hipoglisemi riskini artırabilir; kan şekeri izlemi gerektirir.",
+      },
+      {
+        compound: "Tirzepatide",
+        note: "Her ikisi de inkretin taklitçisidir; örtüşen mekanizmalar birlikte kullanımda yan etkileri artırır.",
+      },
+      {
+        compound: "Cagrilintide",
+        note: "Klinik çalışmalarda CagriSema olarak birleştirilmiş, güçlendirilmiş kilo kaybı etkinliği için.",
+      },
+    ],
   },
   {
     slug: "tirzepatide",
@@ -119,6 +275,47 @@ export const peptides: Peptide[] = [
       { outcome: "Vücut Ağırlığı", tier: "proven" },
       { outcome: "Kardiyometabolik Göstergeler", tier: "proven" },
     ],
+    dosingNote:
+      "Haftada bir subkutan enjeksiyon, günün herhangi bir saatinde, aç veya tok karnına uygulanabilir. Uyluk, karın (göbekten 5cm+ uzakta) veya üst kol.",
+    dosing: [
+      { label: "Başlangıç (ilk 4 hafta)", amount: "2.5mg", amountValue: 2.5, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "İlerleme", amount: "5mg", amountValue: 5, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "Optimizasyon", amount: "7.5-10mg", amountValue: 10, frequency: "Haftada bir", route: "Subkutan" },
+      { label: "Maksimum Kilo Kaybı", amount: "12.5-15mg", amountValue: 15, frequency: "Haftada bir", route: "Subkutan" },
+    ],
+    warnings: [
+      "Kişisel veya ailede medüller tiroid kanseri öyküsü / MEN2 sendromu",
+      "Gebelik veya emzirme dönemi",
+      "Pankreatit öyküsü veya şiddetli/süreğen karın ağrısı",
+      "Tiroid tümörü belirtileri (boyunda şişlik, ses kısıklığı, yutma güçlüğü)",
+      "Şiddetli hipoglisemi belirtileri (konfüzyon, terleme, çarpıntı)",
+      "Böbrek sorunları (idrar azalması, ödem)",
+      "Safra kesesi sorunları (sağ üst karında şiddetli ağrı)",
+    ],
+    sideEffects: [
+      "Bulantı (hafif-orta, ilk 2-4 hafta)",
+      "İştah azalması",
+      "Uyum sürecinde olası yorgunluk",
+      "İshal veya kabızlık",
+    ],
+    interactions: [
+      {
+        compound: "Semaglutide",
+        note: "Her ikisi de GLP-1 agonistidir — birleştirmek hipoglisemi ve şiddetli gastrointestinal yan etki riskini artırır.",
+      },
+      {
+        compound: "İnsülin",
+        note: "Artan insülin duyarlılığı nedeniyle belirgin doz azaltımı gerektirebilir.",
+      },
+      {
+        compound: "CJC-1295",
+        note: "Büyüme hormonu desteği, kilo kaybı sırasında kas kütlesinin korunmasına yardımcı olabilir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Bilinen olumsuz etkileşim yok; bağırsak sağlığını destekleyip gastrointestinal etkileri azaltabilir.",
+      },
+    ],
   },
   {
     slug: "ghk-cu",
@@ -137,6 +334,38 @@ export const peptides: Peptide[] = [
     clinicalStatus:
       "Mekanizma hücre/hayvan modellerinde iyi tanımlı, insan RCT verisi sınırlı",
     relatedArticleSlug: "kaynak-politikamiz-neden-onemli",
+    dosingNote:
+      "En yaygın topikal (krem/serum) kullanılır; enjektabl formu ayrı bir risk-yarar profiline sahiptir ve gebelikte önerilmez.",
+    dosing: [
+      { label: "Genel Cilt Sağlığı (serum)", amount: "%0.5", amountValue: 0.5, frequency: "Günde 1 kez", route: "Topikal" },
+      { label: "Anti-Aging (krem)", amount: "%0.5-1", amountValue: 1, frequency: "Günde 1-2 kez", route: "Topikal" },
+      { label: "Yoğun Onarım (hedefli alan)", amount: "%2", amountValue: 2, frequency: "Günde 1 kez", route: "Topikal" },
+    ],
+    warnings: [
+      "Bilinen bakır hassasiyeti veya Wilson hastalığı",
+      "Uygulama bölgesinde aktif cilt enfeksiyonu",
+      "Gebelik veya emzirme dönemi (enjektabl form)",
+      "Şiddetli cilt tahrişi, yanma veya süregelen kızarıklık",
+      "Alerjik reaksiyon belirtileri (döküntü, şişlik, nefes darlığı)",
+    ],
+    sideEffects: [
+      "Başlangıçta hafif cilt tahrişi (genellikle geçici)",
+      "Artmış güneş hassasiyeti",
+    ],
+    interactions: [
+      {
+        compound: "BPC-157",
+        note: "Tamamlayıcı doku iyileşme ve yenilenme yolları.",
+      },
+      {
+        compound: "TB-500",
+        note: "Birlikte kullanıldığında geliştirilmiş yara iyileşmesi ve doku onarımı.",
+      },
+      {
+        compound: "Bakır Takviyeleri",
+        note: "Bakır toksisitesi riski; oral bakır takviyeleriyle birleştirilmemelidir.",
+      },
+    ],
   },
   {
     slug: "ss-31-elamipretide",
@@ -153,6 +382,42 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus:
       "Belirli endikasyonlarda onaylı, diğer kullanım alanlarında klinik çalışmalar sürüyor",
+    dosingNote:
+      "Işığa duyarlıdır, ışıktan korunmalıdır. Subkutan veya intravenöz uygulanır; klinik protokoller ile araştırma/performans amaçlı dozlar arasında büyük fark vardır.",
+    dosing: [
+      { label: "Genel Mitokondriyal Destek", amount: "5-10mg", amountValue: 10, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Klinik Protokol", amount: "40mg", amountValue: 40, frequency: "Günde 1 kez", route: "Subkutan veya IV" },
+    ],
+    warnings: [
+      "Bilinen peptid aşırı duyarlılığı",
+      "Gebelik veya emzirme dönemi (sınırlı veri)",
+      "Şiddetli enjeksiyon bölgesi reaksiyonları",
+      "Alerjik reaksiyon belirtileri (döküntü, nefes darlığı)",
+      "Kardiyovasküler semptomlar",
+    ],
+    sideEffects: [
+      "Klinik çalışmalarda mükemmel güvenlik profili",
+      "Terapötik dozlarda anlamlı yan etki bildirilmedi",
+      "Hafif enjeksiyon bölgesi reaksiyonları mümkün",
+    ],
+    interactions: [
+      {
+        compound: "MOTS-c",
+        note: "Her ikisi de mitokondriyal peptiddir, tamamlayıcı mekanizmalarla çalışır.",
+      },
+      {
+        compound: "Humanin",
+        note: "Hücresel fonksiyonu korumak için birlikte çalışabilir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "BPC-157 doku onarımına odaklanırken SS-31 hücresel enerji üretimini hedefler.",
+      },
+      {
+        compound: "Thymosin Beta-4",
+        note: "Her ikisi de farklı yollarla kardiyoprotektiftir.",
+      },
+    ],
   },
   {
     slug: "bpc-157",
@@ -168,6 +433,39 @@ export const peptides: Peptide[] = [
       "İnsan verisi büyük ölçüde anekdotal düzeyde",
     ],
     clinicalStatus: "Mekanizma güçlü, kontrollü insan çalışması yok",
+    dosingNote:
+      "Genellikle yaralanma bölgesine yakın subkutan enjeksiyon şeklinde uygulanır; lokalize doku onarımı için tercih edilir.",
+    dosing: [
+      { label: "İdame", amount: "250mcg", amountValue: 250, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Genel İyileşme", amount: "250-500mcg", amountValue: 500, frequency: "Günde 1-2 kez", route: "Subkutan/IM" },
+      { label: "Ciddi Yaralanma", amount: "500-1000mcg", amountValue: 1000, frequency: "Günde 2 kez", route: "Yaralanma bölgesine yakın SubQ" },
+    ],
+    warnings: [
+      "Aktif kanser (anjiyojenik etkiler nedeniyle)",
+      "Gebelik veya emzirme dönemi",
+      "Kan sulandırıcı kullanımı (anjiyogenez nedeniyle doktora danışılmalı)",
+      "Yarışan sporcular için WADA tarafından yasaklı",
+      "Süregelen enjeksiyon bölgesi reaksiyonu veya enfeksiyon belirtileri",
+    ],
+    sideEffects: [
+      "Hafif enjeksiyon bölgesi kızarıklığı",
+      "Enjeksiyon bölgesi tahrişi",
+      "Olası hafif sindirim rahatsızlığı (oral kullanımda)",
+    ],
+    interactions: [
+      {
+        compound: "TB-500",
+        note: "Tamamlayıcı iyileşme mekanizmaları; sıklıkla 'Wolverine Stack' olarak birlikte kullanılır.",
+      },
+      {
+        compound: "Ipamorelin",
+        note: "BPC-157, GH reseptör ekspresyonunu artırarak büyüme hormonu faydalarını güçlendirir.",
+      },
+      {
+        compound: "CJC-1295",
+        note: "BPC-157, GH reseptörlerini yukarı regüle ederek doku onarımı etkinliğini artırır.",
+      },
+    ],
   },
   {
     slug: "cjc-1295-ipamorelin",
@@ -198,6 +496,37 @@ export const peptides: Peptide[] = [
       "İnsan çalışmalarında fonksiyonel sonuçlar karışık",
     ],
     clinicalStatus: "İnsan verisi artıyor, sonuçlar tutarsız",
+    dosingNote:
+      "IV infüzyon en yüksek biyoyararlanımı sağlar ve tıbbi gözetim gerektirir; IM/subkutan alternatif bir yoldur.",
+    dosing: [
+      { label: "IM/SubQ", amount: "100-500mg", amountValue: 500, frequency: "Haftada 2-3 kez", route: "Kas içi / Subkutan" },
+      { label: "IV İnfüzyon", amount: "250-1000mg", amountValue: 1000, frequency: "Haftada 1-2 kez", route: "İntravenöz" },
+    ],
+    warnings: [
+      "IV uygulama tıbbi gözetim gerektirir",
+      "Tedavi sırasında alkolden kaçınılmalı",
+      "Tutarlı bir doz takvimi sürdürülmeli",
+      "Şiddetli enjeksiyon bölgesi reaksiyonu veya enfeksiyon belirtileri",
+      "Süregelen bulantı veya gastrointestinal rahatsızlık",
+    ],
+    sideEffects: [
+      "IV infüzyon sırasında hafif kızarma",
+      "Geçici bulantı",
+    ],
+    interactions: [
+      {
+        compound: "BPC-157",
+        note: "Güçlendirilmiş hücresel onarım ve enerji üretimi.",
+      },
+      {
+        compound: "CJC-1295",
+        note: "Geliştirilmiş toparlanma ve anti-aging etkileri.",
+      },
+      {
+        compound: "Alkol",
+        note: "Alkol, NAD+ düzeylerini ve etkinliğini belirgin şekilde azaltır.",
+      },
+    ],
   },
   {
     slug: "semax",
@@ -214,6 +543,37 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Rusya'da klinik kullanımda, FDA/EMA onayı yok",
     relatedArticleSlug: "kognitif-protokoller-semax-selank",
+    dosingNote:
+      "İntranazal uygulama, beyne doğrudan olfaktör taşımayla en etkili yoldur. Etki başlangıcı 15-30 dakika, doruk 1-2 saat.",
+    dosing: [
+      { label: "Bilişsel Destek", amount: "300-600mcg", amountValue: 600, frequency: "Günde 1-2 kez", route: "İntranazal" },
+      { label: "Yoğun Bilişsel Destek", amount: "600-900mcg", amountValue: 900, frequency: "Günde 2-3 kez", route: "İntranazal" },
+    ],
+    warnings: [
+      "Gebelik veya emzirme dönemi",
+      "Bilinen peptid alerjileri",
+      "Tıbbi gözetim olmadan 4 haftadan uzun sürekli kullanım önerilmez",
+      "Şiddetli burun tahrişi, kanama veya süregelen tıkanıklık",
+      "Olağandışı anksiyete, ajitasyon veya uyku bozukluğu",
+    ],
+    sideEffects: [
+      "Hafif burun rahatsızlığı (nazal yol)",
+      "Uygulama sırasında olası burun hissi",
+    ],
+    interactions: [
+      {
+        compound: "Selank",
+        note: "Tamamlayıcı anksiyolitik etkiler; popüler bir kombinasyon.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Her ikisi de farklı mekanizmalarla nöroplastisiteyi destekler.",
+      },
+      {
+        compound: "Uyarıcılar",
+        note: "Uyarıcı etkileri güçlendirebilir — dikkatle izlenmeli, uyarıcı dozu azaltılmalı.",
+      },
+    ],
   },
   {
     slug: "selank",
@@ -230,6 +590,43 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Rusya'da klinik kullanımda, kontrollü batı verisi sınırlı",
     relatedArticleSlug: "kognitif-protokoller-semax-selank",
+    dosingNote:
+      "Subkutan enjeksiyon birincil ve en iyi belgelenmiş yoldur, güvenilir emilim sağlar.",
+    dosing: [
+      { label: "Hafif Anksiyete", amount: "250mcg", amountValue: 250, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Orta Anksiyete/Bilişsel", amount: "250mcg", amountValue: 500, frequency: "Günde 2 kez (sabah-akşam)", route: "Subkutan" },
+      { label: "Yoğun Anksiyete Desteği", amount: "500mcg", amountValue: 500, frequency: "Günde 1 kez (bölünmüş doz)", route: "Subkutan" },
+    ],
+    warnings: [
+      "Bilinen peptid alerjileri",
+      "Gebelik veya emzirme dönemi",
+      "Birden fazla psikiyatrik ilaç kullanımında hekime danışılmalı",
+      "Şiddetli alerjik reaksiyon (döküntü, nefes darlığı, şişlik)",
+      "Süregelen enjeksiyon bölgesi reaksiyonu veya enfeksiyon belirtileri",
+    ],
+    sideEffects: [
+      "Minimal yan etki — güvenlik profili iyi",
+      "Sedasyon veya bilişsel bozulma yok",
+      "Tolerans, bağımlılık veya kesilme belirtisi bildirilmedi",
+    ],
+    interactions: [
+      {
+        compound: "Semax",
+        note: "Birlikte kullanıldığında güçlendirilmiş bilişsel ve anksiyolitik etkiler.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Tamamlayıcı stres yanıtı mekanizmaları.",
+      },
+      {
+        compound: "Benzodiazepinler",
+        note: "Benzer GABAerjik etkiler; tıbbi gözetim önerilir.",
+      },
+      {
+        compound: "Alkol",
+        note: "Her ikisi de GABA sistemini etkiler; aşırı sedasyon riski.",
+      },
+    ],
   },
   {
     slug: "tb-500",
@@ -246,6 +643,39 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Preklinik aşama",
     relatedArticleSlug: "doku-onarimi-bpc157-tb500",
+    dosingNote:
+      "Subkutan veya kas içi enjeksiyon; aç karnına uygulama gerekmez. Yaralanma bölgesine yakın enjekte edilebilir.",
+    dosing: [
+      { label: "İdame", amount: "2mg", amountValue: 2, frequency: "Haftada 1-2 kez", route: "Subkutan" },
+      { label: "Genel Doku Onarımı", amount: "2-3mg", amountValue: 3, frequency: "Haftada 2 kez", route: "Subkutan/Kas içi" },
+      { label: "Ciddi Yaralanma Toparlanması", amount: "4-5mg", amountValue: 5, frequency: "Haftada 3 kez", route: "Yaralanma bölgesine yakın SubQ" },
+    ],
+    warnings: [
+      "Aktif kanser tedavisi (anjiyojenik etkiler nedeniyle)",
+      "Gebelik veya emzirme dönemi",
+      "İmmünosüpresif ilaç kullanımı (hekime danışılmalı)",
+      "Yarışan sporcular için WADA tarafından yasaklı",
+      "Süregelen veya kötüleşen enjeksiyon bölgesi enfeksiyonu",
+    ],
+    sideEffects: [
+      "Genellikle minimal yan etki",
+      "Olası hafif enjeksiyon bölgesi reaksiyonu",
+      "Bazı kullanıcılarda geçici yorgunluk",
+    ],
+    interactions: [
+      {
+        compound: "BPC-157",
+        note: "Birlikte kullanıldığında güçlendirilmiş doku onarımı ile tamamlayıcı iyileşme mekanizmaları (Wolverine Stack).",
+      },
+      {
+        compound: "Ipamorelin",
+        note: "Dokunun büyüme hormonu etkilerine duyarlılığını artırabilir.",
+      },
+      {
+        compound: "CJC-1295",
+        note: "GH salgılatıcı etkiyle birleşen doku onarımı, kapsamlı toparlanma sağlar.",
+      },
+    ],
   },
   {
     slug: "mots-c",
@@ -261,6 +691,34 @@ export const peptides: Peptide[] = [
       "İnsan RCT verisi yok",
     ],
     clinicalStatus: "Preklinik aşama",
+    dosingNote:
+      "Birincil yol subkutan enjeksiyondur. Optimal uygulama egzersiz öncesi sabah saatleridir; AMPK aktivasyonu 30 dakika içinde başlar.",
+    dosing: [
+      { label: "Muhafazakar Başlangıç", amount: "5mg", amountValue: 5, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Metabolik Sağlık", amount: "5-10mg", amountValue: 10, frequency: "Günde 1 kez", route: "Subkutan" },
+      { label: "Anti-Aging Protokolü", amount: "15mg", amountValue: 15, frequency: "Haftada 3 kez", route: "Subkutan" },
+    ],
+    warnings: [
+      "Gebelik veya emzirme dönemi",
+      "WADA tarafından yasaklı madde (sportif yarışmalarda)",
+      "Sınırlı uzun dönem insan güvenlik verisi",
+      "Şiddetli alerjik reaksiyon veya anafilaksi",
+      "Tekrarlayan hipoglisemi (<50 mg/dL)",
+    ],
+    sideEffects: [
+      "Hayvan çalışmalarında genellikle iyi tolere edildi, minimal yan etki",
+      "Hafif enjeksiyon bölgesi reaksiyonu (kızarıklık, şişlik)",
+    ],
+    interactions: [
+      {
+        compound: "Metformin",
+        note: "Her ikisi de AMPK'yı aktive eder; birikimli hipoglisemik etkiler için izlenmeli.",
+      },
+      {
+        compound: "SS-31 (Elamipretide)",
+        note: "Farklı yollar üzerinden tamamlayıcı mitokondriyal destek.",
+      },
+    ],
   },
   {
     slug: "epithalon",

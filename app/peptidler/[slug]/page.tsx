@@ -4,12 +4,14 @@ import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { PeptideCta } from "@/components/peptide-cta"
+import { DoseLadderChart } from "@/components/dose-ladder-chart"
 import {
   peptides,
   getPeptide,
   tierLabel,
   tierColorVar,
   tierDots,
+  tierDosingDisclaimer,
   categoryGoalMap,
 } from "@/lib/peptides"
 import { getArticle } from "@/lib/articles"
@@ -155,6 +157,105 @@ export default async function PeptideDetailPage({
                       ))}
                     </tbody>
                   </table>
+                </div>
+              </div>
+            )}
+
+            {peptide.dosing && peptide.dosing.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Dozaj Protokolü
+                </h2>
+                <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
+                  {tierDosingDisclaimer[peptide.tier]}
+                </p>
+                {peptide.dosingNote && (
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {peptide.dosingNote}
+                  </p>
+                )}
+                <div className="mt-6">
+                  <DoseLadderChart steps={peptide.dosing} />
+                </div>
+              </div>
+            )}
+
+            {peptide.warnings && peptide.warnings.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Uyarılar ve Kontrendikasyonlar
+                </h2>
+                <ul className="mt-4 flex flex-col gap-3">
+                  {peptide.warnings.map((warning) => (
+                    <li
+                      key={warning}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 h-px w-3 flex-shrink-0 bg-tier-preclinical/70"
+                      />
+                      {warning}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {peptide.sideEffects && peptide.sideEffects.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Yan Etkiler
+                </h2>
+                <ul className="mt-4 flex flex-col gap-3">
+                  {peptide.sideEffects.map((effect) => (
+                    <li
+                      key={effect}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 h-px w-3 flex-shrink-0 bg-gold/60"
+                      />
+                      {effect}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {peptide.interactions && peptide.interactions.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Bilinen Etkileşimler
+                </h2>
+                <div className="mt-4 flex flex-col gap-5">
+                  {peptide.interactions.map((interaction) => {
+                    const linked = getPeptide(
+                      interaction.compound
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")
+                    )
+                    return (
+                      <div key={interaction.compound}>
+                        {linked ? (
+                          <Link
+                            href={`/peptidler/${linked.slug}`}
+                            className="text-sm font-medium text-foreground/90 transition-colors hover:text-gold"
+                          >
+                            {interaction.compound}
+                          </Link>
+                        ) : (
+                          <p className="text-sm font-medium text-foreground/90">
+                            {interaction.compound}
+                          </p>
+                        )}
+                        <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                          {interaction.note}
+                        </p>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             )}

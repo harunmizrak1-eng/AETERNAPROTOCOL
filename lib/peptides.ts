@@ -1457,7 +1457,41 @@ export const peptides: Peptide[] = [
         compound: "Alkol",
         note: "Her ikisi de tansiyonu düşürür ve yüz kızarmasına neden olur — aşırı hipotansiyondan kaçınmak için tüketim sınırlanmalı.",
       },
+      {
+        compound: "Melanotan II",
+        note: "Her ikisi de melanokortin agonistidir; kombinasyon aşırı aktivasyon ve yan etki riski taşır.",
+      },
+      {
+        compound: "Tansiyon İlaçları",
+        note: "PT-141 geçici olarak tansiyonu düşürebilir — yakından izlenmelidir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Farklı mekanizmalar; bilinen etkileşim yok.",
+      },
+      {
+        compound: "Testosteron",
+        note: "Farklı yollar üzerinden cinsel işlev bozukluğunda sinerjistik çalışabilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "0-30 Dakika", result: "Hafif bulantı veya yüz kızarması olası" },
+      { period: "45-90 Dakika", result: "Etki başlangıcı — artan uyarılma ve istek" },
+      { period: "2-4 Saat", result: "Zirve etki — güçlendirilmiş cinsel yanıt" },
+      { period: "6-12 Saat", result: "Etkilerin kademeli azalması" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Lisanslı eczaneden FDA onaylı eczacılık kalitesi (Vyleesi)",
+        "Beyaz kristal toz (saf PT-141)",
+        "Sulandırıldığında berrak çözelti",
+      ],
+      bad: [
+        "Safsızlık veya bozulmaya işaret eden renkli ya da yağlı görünüm",
+        "Sulandırma sonrası bulanık çözelti",
+        "Kalite belgesi olmayan bilinmeyen kaynak",
+      ],
+    },
   },
   {
     slug: "ghrp-2",
@@ -1502,7 +1536,34 @@ export const peptides: Peptide[] = [
         compound: "Ipamorelin",
         note: "Her ikisi de GHRP'dir; genellikle birlikte değil dönüşümlü kullanılır.",
       },
+      {
+        compound: "GHRP-6",
+        note: "Benzer mekanizma; GHRP-2 daha potent ve daha az iştah uyarımına sahiptir.",
+      },
+      {
+        compound: "BPC-157",
+        note: "Bilinen olumsuz etkileşim yok; farklı mekanizmalar.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Anında", result: "Enjeksiyon sonrası 15-30 dakika içinde GH artışı" },
+      { period: "1-2. Hafta", result: "Uyku kalitesinde iyileşme ve gelişmiş toparlanma" },
+      { period: "2-4. Hafta", result: "Belirgin enerji artışı ve genel iyilik hali kazanımları" },
+      { period: "4-8. Hafta", result: "Gözlemlenebilir vücut kompozisyonu değişimleri ve kas dolgunluğu" },
+      { period: "8-12. Hafta", result: "Tutarlı uygulamayla tam fayda gerçekleşmesi" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası berrak çözelti",
+        "Flakonda sağlam vakum mührü",
+      ],
+      bad: [
+        "Renk değişimi göstermiş veya sarı toz",
+        "Sulandırma sonrası bulanık çözelti",
+        "Çözeltide görünür parçacık veya çökelti",
+      ],
+    },
   },
   {
     slug: "hexarelin",
@@ -1547,7 +1608,34 @@ export const peptides: Peptide[] = [
         compound: "GHRP-2",
         note: "Benzer mekanizma; genellikle birlikte değil dönüşümlü kullanılır.",
       },
+      {
+        compound: "GHRP-6",
+        note: "Aynı reseptör hedefi; Hexarelin daha potent, daha az iştah uyarımıyla.",
+      },
+      {
+        compound: "Ipamorelin",
+        note: "Her ikisi de GHRP'dir; Hexarelin daha potenttir ancak daha fazla yan etkiye sahip olabilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "Anında", result: "Enjeksiyon sonrası 15-30 dakika içinde GH artışı" },
+      { period: "1-2. Hafta", result: "Uyku kalitesinde iyileşme ve toparlanma" },
+      { period: "2-4. Hafta", result: "Artan enerji ve iyilik hali" },
+      { period: "4-8. Hafta", result: "Vücut kompozisyonunda fark edilir iyileşmeler" },
+      { period: "8-12. Hafta", result: "Maksimum fayda; desensitizasyonu önlemek için döngü değerlendirilmeli" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası berrak çözelti",
+        "Flakonda sağlam vakum mührü",
+      ],
+      bad: [
+        "Renk değişimi göstermiş veya sarı toz",
+        "Sulandırma sonrası bulanık çözelti",
+        "Çözeltide parçacık veya çökelti",
+      ],
+    },
   },
   {
     slug: "tesamorelin",
@@ -1600,7 +1688,40 @@ export const peptides: Peptide[] = [
         compound: "Büyüme Hormonu",
         note: "Gereksiz tekrar; akromegali benzeri etki riski.",
       },
+      {
+        compound: "Sermorelin",
+        note: "Benzer mekanizma; daha yüksek dozlarda aşırı etki riski.",
+      },
+      {
+        compound: "Metformin",
+        note: "Tesamorelin ile ilişkili glukoz intoleransını hafifletebilir.",
+      },
+      {
+        compound: "Prednizon",
+        note: "Kortikosteroid etkinliğini azaltır.",
+      },
+      {
+        compound: "Octreotide",
+        note: "GH salınımını bloke eder, tesamorelin etkisini geçersiz kılar.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "IGF-1 yükselmesi başlar; hafif su tutulumu veya eklem rahatsızlığı olası" },
+      { period: "4-6. Hafta", result: "Metabolik değişimler ortaya çıkar; artan enerji ve uyku kalitesi" },
+      { period: "8-12. Hafta", result: "Görünür viseral yağ azalması; bel çevresinde küçülme" },
+      { period: "12-26. Hafta", result: "Önemli vücut kompozisyonu değişimleriyle maksimum fayda" },
+    ],
+    qualityIndicators: {
+      good: [
+        "FDA onaylı formülasyonlar (lisanslı eczaneden Egrifta SV/WR)",
+        "Beyaz kristal toz (homojen, kek benzeri)",
+        "Berrak sulandırılmış çözelti (renksiz, parçacıksız)",
+      ],
+      bad: [
+        "Renk değişimi göstermiş veya bulanık çözelti (sarı/kahverengi bozulmayı gösterir)",
+        "Görünür parçacık veya çökelti",
+      ],
+    },
   },
   {
     slug: "thymalin",
@@ -1646,6 +1767,25 @@ export const peptides: Peptide[] = [
         note: "Benzer timik köken; farklı mekanizmalar birbirini tamamlayabilir.",
       },
     ],
+    expectedTimeline: [
+      { period: "1-5. Gün", result: "İlk bağışıklık modülasyonu başlar" },
+      { period: "5-10. Gün", result: "T-hücre aktivasyonu ve farklılaşması güçlenir" },
+      { period: "2-4. Hafta", result: "Kan testlerinde iyileşmiş bağışıklık belirteçleri" },
+      { period: "1-3. Ay", result: "Azalan hastalanma sıklığı" },
+      { period: "Uzun Vade (yıllar)", result: "Yıllık döngülerle geroprotektif fayda (hayvan verisi)" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası berrak çözelti",
+        "Sağlam vakum mührü",
+      ],
+      bad: [
+        "Renk değişimi göstermiş toz",
+        "Bulanık veya parçacıklı çözelti",
+        "Kırık mühür",
+      ],
+    },
   },
   {
     slug: "humanin",
@@ -1686,7 +1826,29 @@ export const peptides: Peptide[] = [
         compound: "SS-31 (Elamipretide)",
         note: "Her ikisi de mitokondriyal fonksiyonu hedefler; hücresel sağlık için birikimli fayda olabilir.",
       },
+      {
+        compound: "Epithalon",
+        note: "Longevity protokollerinde birleştirilebilir.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Peptid hücresel düzeyde çalışmaya başlar" },
+      { period: "2-4. Hafta", result: "Gelişmiş enerji ve azalan yorgunluk başlayabilir" },
+      { period: "4-8. Hafta", result: "Güçlendirilmiş hücresel direnç ve stres yanıtı" },
+      { period: "8-12. Hafta", result: "Mitokondriyal fonksiyon ve sağlık ömrü belirteçlerinde birikimli fayda" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Beyaz-krem renkli liyofilize toz",
+        "Sulandırma sonrası berrak çözelti",
+        "Sağlam vakum mührü",
+      ],
+      bad: [
+        "Renk değişimi göstermiş toz",
+        "Bulanık veya parçacıklı çözelti",
+        "Kırık mühür",
+      ],
+    },
   },
   {
     slug: "dihexa",
@@ -1736,7 +1898,41 @@ export const peptides: Peptide[] = [
         compound: "BPC-157",
         note: "Farklı mekanizmalar; bilinen olumsuz etkileşim yok.",
       },
+      {
+        compound: "P21",
+        note: "Her ikisi de nöroplastisiteyi güçlü şekilde etkiler; eşzamanlı kullanımdan kaçınılmalıdır.",
+      },
+      {
+        compound: "Noopept",
+        note: "Bazıları bilişsel yığın olarak kullanır; güvenlik verisi sınırlı.",
+      },
+      {
+        compound: "NAD+",
+        note: "Hücresel sağlık için tamamlayıcı mekanizmalar.",
+      },
+      {
+        compound: "TB-500",
+        note: "Farklı hedefler; bilinen etkileşim yok.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "Hafif bilişsel değişimler; uyum sürecinde olası baş ağrıları" },
+      { period: "2-4. Hafta", result: "Gelişmiş odaklanma ve bellek oluşumu" },
+      { period: "4-8. Hafta", result: "Zirve bilişsel fayda ve gelişmiş öğrenme" },
+      { period: "Kullanım Sonrası", result: "Etkiler durdurulduktan sonra günler-haftalarca sürebilir" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Lisanslı bileşim eczanesinden eczacılık kalitesi",
+        ">%98 saflık gösteren analiz sertifikası",
+        "Net parti numaralı ve son kullanma tarihli homojen kapsüller",
+      ],
+      bad: [
+        "Eczacılık standardından yoksun araştırma kimyasalı kaynakları",
+        "Üçüncü taraf test belgesi olmayan ürünler",
+        "Renk değişimi göstermiş veya hasarlı kapsüller",
+      ],
+    },
   },
   {
     slug: "cerebrolysin",
@@ -1775,7 +1971,49 @@ export const peptides: Peptide[] = [
         compound: "Amino Asit Solüsyonları",
         note: "Reçete bilgisine göre kontrendikedir; aynı infüzyonda karıştırılmamalıdır.",
       },
+      {
+        compound: "Piracetam",
+        note: "Anlamlı bir etkileşim olmadan güvenli kombinasyon; her ikisi de bilişsel fonksiyonu destekler.",
+      },
+      {
+        compound: "Donepezil",
+        note: "Etkileşim bildirilmedi; Alzheimer tedavisinde sinerjistik bilişsel etkiler olabilir.",
+      },
+      {
+        compound: "Trisiklik Antidepresanlar",
+        note: "Birikimli nörolojik etkiler olabilir; dikkatli izleme gerektirir.",
+      },
+      {
+        compound: "Kardiyovasküler İlaçlar",
+        note: "Resmi kılavuzlara göre aynı IV infüzyonda karıştırılmamalıdır.",
+      },
+      {
+        compound: "Vitamin Solüsyonları",
+        note: "Uyumluluk sorunları; aynı IV infüzyonda karıştırılmamalıdır.",
+      },
+      {
+        compound: "Noopept",
+        note: "Her ikisi de nörotrofik faktörleri artırır; birikimli etkiler olası — düşük dozla başlanmalı.",
+      },
     ],
+    expectedTimeline: [
+      { period: "1-2. Hafta", result: "İlk nöroprotektif etkiler; olası hafif yan etkiler (baş dönmesi, ajitasyon)" },
+      { period: "2-4. Hafta", result: "Nörolojik iyileşmeler belirginleşir; bilişsel fonksiyon iyileşmeye başlayabilir" },
+      { period: "4-8. Hafta", result: "Devam eden toparlanma; inme/TBI hastalarında motor fonksiyon iyileşmesi" },
+      { period: "8-12. Hafta", result: "Sürdürülen fayda; kronik durumlarda bilişsel iyileşme platoya ulaşır" },
+    ],
+    qualityIndicators: {
+      good: [
+        "Yetkili kaynaktan berrak kehribar rengi çözelti",
+        "Oda sıcaklığında (≤25°C) saklama",
+        "Orijinal kutuda ışıktan korunmuş",
+        "Yetkili EVER Pharma distribütörü",
+      ],
+      bad: [
+        "Dondurulmuş ürün veya uygunsuz saklama",
+        "Uyumsuz solüsyonlarla (amino asit, vitamin, kardiyovasküler ilaç) karıştırma",
+      ],
+    },
   },
   {
     slug: "ipamorelin",

@@ -40,6 +40,12 @@ export interface QualityIndicators {
 export interface MolecularData {
   weight?: string
   halfLife?: string
+  /** Single representative half-life in hours (midpoint of any range),
+   * used only to drive the accumulation calculator - never displayed
+   * directly (the `halfLife` display string is the source of truth for
+   * what's shown to the reader). Omitted where the source gives no real
+   * numeric half-life (e.g. epigenetic bioregulators, "not established"). */
+  halfLifeHours?: number
   chain?: string
   /** One-letter amino acid sequence, peptides only (omitted for small
    * molecules like NAD+ or Methylene Blue). */
@@ -138,6 +144,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "4,731.33 Da",
       halfLife: "~6 gün",
+      halfLifeHours: 144,
       chain: "39 aminoasit",
       sequence: "HUEGTFTSDVSSYLEGQAAKEFIAWLVRGRGPSSGAPPPS",
     },
@@ -246,6 +253,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "4,409.01 Da",
       halfLife: "~7 gün (159-195 saat)",
+      halfLifeHours: 177,
       chain: "37 aminoasit",
     },
     short:
@@ -340,6 +348,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "4,113.64 Da",
       halfLife: "~7 gün (168 saat)",
+      halfLifeHours: 168,
       chain: "31 aminoasit",
       sequence: "HUEGTFTSDVSSYLEGQAAKEFIAWLVRGRG",
     },
@@ -442,6 +451,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "4,813.55 Da",
       halfLife: "~5 gün (120 saat)",
+      halfLifeHours: 120,
       chain: "39 aminoasit",
       sequence: "HUEGTFTSDVSSYLEGQAAKEFIAWLVRGRGGGGGPSKKKKKK",
     },
@@ -549,6 +559,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "404.96 Da",
       halfLife: "0.5-2 saat",
+      halfLifeHours: 1.25,
       chain: "3 aminoasit",
       sequence: "GHK",
     },
@@ -656,6 +667,7 @@ export const peptides: Peptide[] = [
     tier: "proven",
     molecular: {
       halfLife: "~2 saat",
+      halfLifeHours: 2,
       chain: "4 aminoasit (aromatik-katyonik tetrapeptid)",
     },
     short:
@@ -752,6 +764,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "1,419.53 Da",
       halfLife: "<30 dakika",
+      halfLifeHours: 0.4,
       chain: "15 aminoasit (pentadekapeptid)",
       sequence: "GKPPPGKPADDAGLV",
     },
@@ -860,6 +873,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "663.43 Da (NAD+)",
       halfLife: "1-4 saat (hücre içi)",
+      halfLifeHours: 2.5,
       chain: "Koenzim (C21H27N7O14P2, peptid değil)",
     },
     tier: "theoretical",
@@ -940,6 +954,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "813.93 Da",
       halfLife: "0.5-2 saat",
+      halfLifeHours: 1.25,
       chain: "7 aminoasit (ACTH(4-10) sentetik analoğu)",
       sequence: "MEHFPGP",
     },
@@ -1021,6 +1036,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "751.89 Da",
       halfLife: "2-10 dakika",
+      halfLifeHours: 0.1,
       chain: "7 aminoasit (Tuftsin analoğu)",
       sequence: "TKPRPGP",
     },
@@ -1110,6 +1126,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "4,963.44 Da",
       halfLife: "~2 saat",
+      halfLifeHours: 2,
       chain: "43 aminoasit (Thymosin fragmanı)",
     },
     short:
@@ -1194,6 +1211,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "2,174.6 Da",
       halfLife: "~30 dakika",
+      halfLifeHours: 0.5,
       chain: "16 aminoasit",
       sequence: "MRWQEMGYIFYPRKLR",
     },
@@ -1357,6 +1375,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "338.21 Da",
       halfLife: "~2-3 saat",
+      halfLifeHours: 2.5,
       chain: "Nükleosit analoğu (peptid değil)",
     },
     short:
@@ -1428,6 +1447,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "1,815.1 Da",
       halfLife: "3-4 dakika",
+      halfLifeHours: 0.06,
       chain: "17 aminoasit (hGH C-terminal fragmanı)",
       sequence: "YLRIVQCRSVEGSCGF",
     },
@@ -1508,6 +1528,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "3,108 Da",
       halfLife: "~2 saat",
+      halfLifeHours: 2,
       chain: "28 aminoasit (asetile polipeptid)",
       sequence: "SDAAVDTSSEITTKDLKEKKEVVEEAEN",
     },
@@ -1580,6 +1601,7 @@ export const peptides: Peptide[] = [
     category: "Estetik / Onarım",
     molecular: {
       halfLife: "~2.7 saat",
+      halfLifeHours: 2.7,
     },
     tier: "proven",
     short:
@@ -1674,6 +1696,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "817.9 Da",
       halfLife: "~30 dakika",
+      halfLifeHours: 0.5,
       chain: "6 aminoasit (sentetik hekzapeptid)",
     },
     short:
@@ -1751,6 +1774,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "887 Da",
       halfLife: "1-2 saat",
+      halfLifeHours: 1.5,
       chain: "6 aminoasit (sentetik hekzapeptid)",
     },
     short:
@@ -1827,6 +1851,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "5,135.9 Da",
       halfLife: "26-38 dakika",
+      halfLifeHours: 0.53,
       chain: "44 aminoasit (GHRH analoğu)",
       sequence: "HADGIFTNSYRKVLGQLSARKLLQDIMSRQQGESNQERGARARL",
     },
@@ -2056,6 +2081,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "504.7 Da",
       halfLife: "8-12 gün",
+      halfLifeHours: 240,
       chain: "Modifiye oligopeptid (5 aminoasit pozisyonu)",
     },
     tier: "preclinical",
@@ -2230,6 +2256,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "711.85 Da",
       halfLife: "~2 saat",
+      halfLifeHours: 2,
       chain: "5 aminoasit",
     },
     tier: "theoretical",
@@ -2314,6 +2341,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "3,358 Da",
       halfLife: "10-12 dakika",
+      halfLifeHours: 0.18,
       chain: "29 aminoasit (GHRH analoğu)",
     },
     tier: "theoretical",
@@ -2560,6 +2588,7 @@ export const peptides: Peptide[] = [
     category: "Metabolik",
     molecular: {
       halfLife: "4-7 saat (IV 3.8sa, oral 6.9sa)",
+      halfLifeHours: 5.5,
       chain: "Küçük molekül NNMT enzim inhibitörü (peptid değil)",
     },
     tier: "preclinical",
@@ -2641,6 +2670,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "22,124 Da",
       halfLife: "3-4 saat (SubQ), 20-30 dakika (IV)",
+      halfLifeHours: 3.5,
       chain: "191 aminoasit (iki disülfit köprülü tek zincirli polipeptid)",
     },
     tier: "proven",
@@ -2739,6 +2769,7 @@ export const peptides: Peptide[] = [
     category: "Büyüme / GH",
     molecular: {
       halfLife: "20-30 saat",
+      halfLifeHours: 25,
       chain: "83 aminoasit (sentetik IGF-1 analoğu)",
     },
     tier: "theoretical",
@@ -2839,6 +2870,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "873 Da",
       halfLife: "15-60 dakika",
+      halfLifeHours: 0.625,
       chain: "6 aminoasit (sentetik hekzapeptid)",
     },
     tier: "theoretical",
@@ -2921,6 +2953,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "3,647.28 Da",
       halfLife: "6-8 gün",
+      halfLifeHours: 168,
       chain: "30 aminoasit (DAC'lı GHRH analoğu)",
     },
     tier: "theoretical",
@@ -2999,6 +3032,7 @@ export const peptides: Peptide[] = [
     category: "Doku Onarımı",
     molecular: {
       halfLife: "1-2 saat",
+      halfLifeHours: 1.5,
       chain: "3 aminoasit (tripeptid)",
     },
     tier: "theoretical",
@@ -3080,6 +3114,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "1,257 Da",
       halfLife: "~20 dakika (SubQ), ~2 dakika (IV)",
+      halfLifeHours: 0.33,
       chain: "11 aminoasit (mühendislik ürünü peptid)",
     },
     tier: "theoretical",
@@ -3297,6 +3332,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "319.85 Da",
       halfLife: "~5-6 saat",
+      halfLifeHours: 5.5,
       chain: "Fenotiazin boya bileşiği (peptid değil, C16H18ClN3S)",
     },
     tier: "proven",
@@ -3388,6 +3424,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "307.32 Da",
       halfLife: "~10-14 dakika (IV)",
+      halfLifeHours: 0.2,
       chain: "3 aminoasit (glutamik asit, sistein, glisin tripeptidi)",
     },
     tier: "theoretical",
@@ -3831,6 +3868,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "326.28 Da",
       halfLife: "~1.7 saat",
+      halfLifeHours: 1.7,
       chain: "Küçük molekül (C16H10F2N6O, peptid değil)",
     },
     tier: "preclinical",

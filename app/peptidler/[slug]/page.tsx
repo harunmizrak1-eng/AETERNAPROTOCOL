@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { PeptideCta } from "@/components/peptide-cta"
 import { DoseLadderChart } from "@/components/dose-ladder-chart"
+import { AccumulationCalculator } from "@/components/accumulation-calculator"
 import {
   peptides,
   getPeptide,
@@ -17,6 +18,14 @@ import {
 import { getArticle } from "@/lib/articles"
 import { citations } from "@/lib/citations"
 import { lastContentReview } from "@/lib/site"
+
+/** Extracts a display unit from a dose step's amount string (e.g. "2mg" ->
+ * "mg", "%0.5" -> "%") so the calculator's input field can be labeled
+ * correctly without a separate unit field on every dosing step. */
+function extractDoseUnit(amount: string): string {
+  const match = amount.match(/[a-zA-Z%µ]+$/)
+  return match ? match[0] : ""
+}
 
 export function generateStaticParams() {
   return peptides.map((p) => ({ slug: p.slug }))
@@ -58,6 +67,9 @@ export default async function PeptideDetailPage({
     : undefined
   const goal = categoryGoalMap[peptide.category]
   const citation = citations[peptide.slug]
+
+  const halfLifeHours = peptide.molecular?.halfLifeHours
+  const lastDoseStep = peptide.dosing?.[peptide.dosing.length - 1]
 
   return (
     <>
@@ -261,6 +273,31 @@ export default async function PeptideDetailPage({
                 )}
                 <div className="mt-6">
                   <DoseLadderChart steps={peptide.secondaryDosing.steps} />
+                </div>
+              </div>
+            )}
+
+            {halfLifeHours && lastDoseStep && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                  Birikim Hesaplayıcı
+                </h2>
+                <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
+                  {peptide.molecular?.halfLife
+                    ? `Yarı ömür (${peptide.molecular.halfLife}) baz alınarak hesaplanan matematiksel bir model.`
+                    : "Yarı ömür baz alınarak hesaplanan matematiksel bir model."}{" "}
+                  Gerçek vücuttaki birikim; emilim hızı, bireysel metabolizma
+                  ve enjeksiyon yoluna göre değişir — bu bir tıbbi tavsiye
+                  değildir, yalnızca standart çoklu doz farmakokinetiğinin
+                  görselleştirmesidir.
+                </p>
+                <div className="mt-6">
+                  <AccumulationCalculator
+                    halfLifeHours={halfLifeHours}
+                    defaultDose={lastDoseStep.amountValue}
+                    defaultDoseUnit={extractDoseUnit(lastDoseStep.amount)}
+                    defaultIntervalHours={24}
+                  />
                 </div>
               </div>
             )}

@@ -2048,6 +2048,11 @@ export const peptides: Peptide[] = [
     slug: "dihexa",
     name: "Dihexa",
     category: "Kognitif",
+    molecular: {
+      weight: "504.7 Da",
+      halfLife: "8-12 gün",
+      chain: "Modifiye oligopeptid (5 aminoasit pozisyonu)",
+    },
     tier: "preclinical",
     short:
       "HGF/c-Met yolağını hedefleyen deneysel nootropik. Hayvan modellerinde sinaptik etkiler bildirildi; insan verisi yok.",
@@ -2132,6 +2137,10 @@ export const peptides: Peptide[] = [
     slug: "cerebrolysin",
     name: "Cerebrolysin",
     category: "Kognitif",
+    molecular: {
+      halfLife: "Dakikalar (bileşene bağlı, örn. BDNF ~10 dk)",
+      chain: "Çoklu peptid karışımı (domuz beyni proteinlerinden)",
+    },
     tier: "theoretical",
     short:
       "Domuz beyninden elde edilen nöropeptid karışımı. Bazı ülkelerde inme ve demans desteğinde kullanılıyor; sonuçlar çalışmalar arasında tutarsız.",
@@ -2213,6 +2222,11 @@ export const peptides: Peptide[] = [
     slug: "ipamorelin",
     name: "Ipamorelin",
     category: "Büyüme / GH",
+    molecular: {
+      weight: "711.85 Da",
+      halfLife: "~2 saat",
+      chain: "5 aminoasit",
+    },
     tier: "theoretical",
     short:
       "Seçici ghrelin reseptör agonisti. Kortizol ve prolaktini belirgin etkilemeden büyüme hormonu salınımını uyardığı öne sürülen, iyi tanımlı bir peptid.",
@@ -2292,6 +2306,11 @@ export const peptides: Peptide[] = [
     slug: "sermorelin",
     name: "Sermorelin",
     category: "Büyüme / GH",
+    molecular: {
+      weight: "3,358 Da",
+      halfLife: "10-12 dakika",
+      chain: "29 aminoasit (GHRH analoğu)",
+    },
     tier: "theoretical",
     short:
       "GHRH'nin ilk 29 aminoasitinden oluşan analog. Geçmişte tanısal amaçla onaylı kullanımı olmuş; doğal büyüme hormonu salınımını fizyolojik yolla uyarır.",
@@ -2372,6 +2391,11 @@ export const peptides: Peptide[] = [
     slug: "thymosin-beta-4",
     name: "Thymosin Beta-4",
     category: "Doku Onarımı",
+    molecular: {
+      weight: "4,963.44 Da",
+      halfLife: "Doza bağlı, göreceli kısa (kesin değerler belirlenmemiş)",
+      chain: "43 aminoasit",
+    },
     tier: "preclinical",
     short:
       "Hücre iskeleti düzenleyici bir protein. TB-500'ün türetildiği ana molekül; doku rejenerasyonundaki rolü büyük ölçüde hayvan modellerinde araştırılıyor.",
@@ -2439,6 +2463,12 @@ export const peptides: Peptide[] = [
     slug: "dsip",
     name: "DSIP",
     category: "Kognitif",
+    molecular: {
+      weight: "848.81 Da",
+      halfLife: "~15 dakika (in vitro)",
+      chain: "9 aminoasit (nonapeptid)",
+      sequence: "WAGGDASGE",
+    },
     tier: "preclinical",
     short:
       "Delta uyku indükleyici peptid. Uyku mimarisi ve stres yanıtı üzerindeki etkileri onlarca yıldır araştırılıyor ama insan verisi hâlâ sınırlı ve tutarsız.",
@@ -2523,6 +2553,10 @@ export const peptides: Peptide[] = [
     slug: "5-amino-1mq",
     name: "5-Amino-1MQ",
     category: "Metabolik",
+    molecular: {
+      halfLife: "4-7 saat (IV 3.8sa, oral 6.9sa)",
+      chain: "Küçük molekül NNMT enzim inhibitörü (peptid değil)",
+    },
     tier: "preclinical",
     short:
       "NNMT enzim inhibitörü küçük molekül. Yağ hücresi metabolizması üzerindeki etkileri hayvan modellerinde araştırılıyor; insan verisi bulunmuyor.",

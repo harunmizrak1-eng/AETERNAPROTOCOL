@@ -857,6 +857,11 @@ export const peptides: Peptide[] = [
     slug: "nad-nmn",
     name: "NAD+ / NMN",
     category: "Longevity",
+    molecular: {
+      weight: "663.43 Da (NAD+)",
+      halfLife: "1-4 saat (hücre içi)",
+      chain: "Koenzim (C21H27N7O14P2, peptid değil)",
+    },
     tier: "theoretical",
     short:
       "Hücresel enerji metabolizmasının kofaktörü. NAD+ öncülleri yaşla düşen bu havuzu besler. İnsan verisi umut verici ama sonuçlar karışık.",
@@ -3453,6 +3458,11 @@ export const peptides: Peptide[] = [
     slug: "foxo4-dri",
     name: "FOXO4-DRI",
     category: "Longevity",
+    molecular: {
+      weight: "~4,800 Da",
+      halfLife: "Belirlenmemiş",
+      chain: "~45 aminoasit (D-retro-inverso peptid)",
+    },
     tier: "preclinical",
     short:
       "Senesan (yaşlanmış) hücreleri seçici olarak temizlemeyi hedefleyen deneysel bir senolitik peptid. Fare çalışmalarında doku gençleşmesi gösterildi; insan verisi yok.",
@@ -3518,6 +3528,12 @@ export const peptides: Peptide[] = [
     slug: "cortagen",
     name: "Cortagen",
     category: "Longevity",
+    molecular: {
+      weight: "416 Da",
+      halfLife: "Dakikalar (kısa peptid); etkiler epigenetik değişimlerle sürer",
+      chain: "4 aminoasit (tetrapeptid biyoregülatör)",
+      sequence: "AEDP",
+    },
     tier: "theoretical",
     short:
       "Rus jerontoloji literatüründen (Khavinson ekibi) beyin dokusuna özgü kısa peptid biyoregülatör. Bulgular esas olarak tek bir araştırma grubundan gelmektedir.",
@@ -3587,6 +3603,12 @@ export const peptides: Peptide[] = [
     slug: "cardiogen",
     name: "Cardiogen",
     category: "Longevity",
+    molecular: {
+      weight: "460 Da",
+      halfLife: "Dakikalar (kısa peptid); etkiler epigenetik değişimlerle sürer",
+      chain: "4 aminoasit (tetrapeptid biyoregülatör)",
+      sequence: "AEDR",
+    },
     tier: "theoretical",
     short:
       "Kalp dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Kardiyak doku onarımı ve gen ekspresyonu üzerindeki etkileri esas olarak tek bir araştırma grubunca bildirilmiştir.",
@@ -3656,6 +3678,12 @@ export const peptides: Peptide[] = [
     slug: "livagen",
     name: "Livagen",
     category: "Longevity",
+    molecular: {
+      weight: "432 Da",
+      halfLife: "Belirlenmemiş",
+      chain: "4 aminoasit (tetrapeptid biyoregülatör)",
+      sequence: "KEDA",
+    },
     tier: "theoretical",
     short:
       "Karaciğer dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Hepatoprotektif etkileri esas olarak tek bir araştırma grubunca bildirilmiştir.",
@@ -3725,6 +3753,12 @@ export const peptides: Peptide[] = [
     slug: "vilon",
     name: "Vilon",
     category: "Longevity",
+    molecular: {
+      weight: "275 Da",
+      halfLife: "Belirlenmemiş",
+      chain: "2 aminoasit (dipeptid biyoregülatör)",
+      sequence: "KE",
+    },
     tier: "preclinical",
     short:
       "Timüs dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Yaşlanan bağışıklık sisteminin gençleştirilmesi üzerine araştırma konusu, tamamen preklinik.",
@@ -3794,6 +3828,11 @@ export const peptides: Peptide[] = [
     slug: "bam-15",
     name: "BAM-15",
     category: "Metabolik",
+    molecular: {
+      weight: "326.28 Da",
+      halfLife: "~1.7 saat",
+      chain: "Küçük molekül (C16H10F2N6O, peptid değil)",
+    },
     tier: "preclinical",
     short:
       "Mitokondriyal iç zarda proton geçirgenliğini artıran bir 'uncoupler'. DNP'nin aksine hücre zarını bozmadığı için daha güvenli bir profille araştırılıyor.",
@@ -3865,6 +3904,9 @@ export const peptides: Peptide[] = [
     slug: "adipotide",
     name: "Adipotide",
     category: "Metabolik",
+    molecular: {
+      chain: "Kimerik peptidomimetik (CKGGRAKDC-GG-D(KLAKLAK)2)",
+    },
     tier: "theoretical",
     short:
       "Beyaz yağ dokusu endotelini hedefleyen, apoptoz tetikleyen bir peptid-konjugat. Faz 1 insan çalışmasında etkili bulundu ancak geri dönüşümlü böbrek toksisitesi nedeniyle geliştirilmesi durduruldu.",
@@ -3941,6 +3983,12 @@ export const peptides: Peptide[] = [
     slug: "dnsp-11",
     name: "DNSP-11",
     category: "Kognitif",
+    molecular: {
+      weight: "~1,200 Da",
+      halfLife: "İyi karakterize edilmemiş",
+      chain: "11 aminoasit (GDNF ön-alanından türetilmiş)",
+      sequence: "PPEAPAEDRSL",
+    },
     tier: "preclinical",
     short:
       "GDNF ailesinden farklı bir mekanizmayla dopaminerjik nöronları koruyan deneysel bir peptid fragmanı. Motivasyon ve ruh hali ile ilişkili tamamen preklinik bir araştırma konusu.",

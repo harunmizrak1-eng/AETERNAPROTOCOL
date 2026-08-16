@@ -35,7 +35,7 @@ export default async function UrunlerPage({
       <Nav />
       <main id="main-content" className="bg-background pt-28">
         <section className="px-6 pb-8 md:px-10">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-4">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-4">
             <div>
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Ürünler
@@ -49,7 +49,7 @@ export default async function UrunlerPage({
         </section>
 
         <section className="px-6 pb-20 md:px-10">
-          <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-7xl">
             <Suspense fallback={null}>
               <ProductCatalog initialGoal={kategori} />
             </Suspense>

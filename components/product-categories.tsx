@@ -41,8 +41,8 @@ export function ProductCategories() {
     .filter((g) => g.count > 0)
 
   return (
-    <section className="border-t border-hairline px-6 py-20 md:px-10">
-      <div className="mx-auto max-w-6xl">
+    <section className="border-t border-hairline bg-surface px-6 py-20 md:px-10">
+      <div className="mx-auto max-w-7xl">
         <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
           Kategoriler
         </h2>
@@ -55,27 +55,27 @@ export function ProductCategories() {
             <li key={goal}>
               <Link
                 href={`/urunler?kategori=${encodeURIComponent(goal)}`}
-                className="group flex h-full items-center gap-5 rounded-lg border border-hairline bg-background p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md"
+                className="group flex h-full items-center gap-5 rounded-lg border border-hairline bg-background p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md"
               >
                 {image && (
-                  <div className="shrink-0 rounded-md bg-surface p-2">
+                  <div className="shrink-0 rounded-lg bg-surface p-3">
                     <Image
                       src={image}
                       alt=""
                       width={160}
                       height={160}
-                      className="h-16 w-16 object-contain mix-blend-multiply"
+                      className="h-24 w-24 object-contain mix-blend-multiply"
                     />
                   </div>
                 )}
                 <div className="min-w-0">
-                  <h3 className="text-base font-semibold leading-snug text-foreground transition-colors group-hover:text-gold">
+                  <h3 className="text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-gold">
                     {goal}
                   </h3>
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                     {BLURB[goal]}
                   </p>
-                  <p className="mt-2 text-xs font-medium text-gold">
+                  <p className="mt-2.5 text-sm font-semibold text-gold">
                     {count} ürün →
                   </p>
                 </div>

@@ -29,7 +29,7 @@ export function FeaturedProducts() {
 
   return (
     <section className="border-t border-hairline px-6 py-20 md:px-10">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
@@ -56,13 +56,13 @@ export function FeaturedProducts() {
                 className="group flex h-full flex-col overflow-hidden rounded-lg border border-hairline bg-background shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md"
               >
                 {product.image && (
-                  <div className="bg-surface p-4">
+                  <div className="bg-surface p-3">
                     <Image
                       src={product.image}
                       alt=""
                       width={400}
                       height={400}
-                      className="aspect-[4/3] w-full object-contain mix-blend-multiply"
+                      className="aspect-[5/4] w-full object-contain mix-blend-multiply"
                     />
                   </div>
                 )}

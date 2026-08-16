@@ -23,7 +23,7 @@ const PILLARS = [
 export function WhyZphc() {
   return (
     <section className="border-t border-hairline px-6 py-20 md:px-10">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
           Neden ZPHC Türkiye
         </h2>
@@ -32,12 +32,18 @@ export function WhyZphc() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {PILLARS.map((p) => (
+          {PILLARS.map((p, i) => (
             <div
               key={p.title}
               className="flex flex-col rounded-lg border border-hairline bg-background p-6 shadow-sm"
             >
-              <h3 className="text-lg font-semibold tracking-tight text-foreground">
+              <span
+                aria-hidden="true"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-surface font-mono text-sm font-semibold text-gold"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-4 text-lg font-semibold tracking-tight text-foreground">
                 {p.title}
               </h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">

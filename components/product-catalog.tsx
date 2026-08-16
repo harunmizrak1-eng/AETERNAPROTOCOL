@@ -70,7 +70,7 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
       {/* Filter bar sticks under the fixed header so category and search stay
           reachable while scrolling a 70-plus item grid. */}
       <div className="sticky top-[73px] z-30 -mx-6 border-b border-hairline bg-background/95 px-6 py-4 backdrop-blur md:-mx-10 md:px-10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap gap-2">
             {goals.map((g) => (
               <button
@@ -143,13 +143,13 @@ function ProductCard({ product }: { product: Product }) {
         {product.image && (
           // Tinted panel behind the photo: ZPHC product shots are cut out on
           // white, so on a white card they float with no grounding.
-          <div className="bg-surface p-4">
+          <div className="bg-surface p-3">
             <Image
               src={product.image}
               alt=""
               width={400}
               height={400}
-              className="aspect-[4/3] w-full object-contain mix-blend-multiply"
+              className="aspect-[5/4] w-full object-contain mix-blend-multiply"
             />
           </div>
         )}

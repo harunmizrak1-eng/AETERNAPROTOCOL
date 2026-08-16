@@ -4,10 +4,12 @@ import { articles } from "@/lib/articles"
 import { peptides } from "@/lib/peptides"
 import { biomarkers } from "@/lib/biomarkers"
 import { protocols } from "@/lib/protocols"
+import { products } from "@/lib/products"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
+    "/urunler",
     "/peptidler",
     "/journal",
     "/longevity-skoru",
@@ -40,11 +42,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }))
 
+  const productRoutes = products.map((p) => ({
+    url: `${siteUrl}/urunler/${p.slug}`,
+    lastModified: new Date(),
+  }))
+
   return [
     ...staticRoutes,
     ...articleRoutes,
     ...peptideRoutes,
     ...biomarkerRoutes,
     ...protocolRoutes,
+    ...productRoutes,
   ]
 }

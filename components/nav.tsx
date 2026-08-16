@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 
 const LINKS = [
+  { href: "/urunler", label: "Ürünler" },
   { href: "/#kategoriler", label: "Odak Alanları" },
   { href: "/peptidler", label: "Peptid Kütüphanesi" },
   { href: "/journal", label: "Journal" },

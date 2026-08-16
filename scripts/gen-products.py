@@ -121,8 +121,38 @@ def strip_tags(s: str) -> str:
     return html.unescape(s)
 
 
+# Ürün adlarındaki İngilizce betimleyiciler. Bileşik ve marka adlarına
+# (BPC-157, ZPHC, ZPtrop, Reta) dokunulmaz; yalnızca "5 vials × 5 mg" gibi
+# ambalaj tarifleri Türkçeleştirilir. Sıra önemli: uzun kalıplar önce.
+NAME_PHRASES = [
+    ("Lyophilized Peptide + Bacteriostatic Water", "Liyofilize Peptid + Bakteriyostatik Su"),
+    ("Lyophilized Powder + Bacteriostatic Water", "Liyofilize Toz + Bakteriyostatik Su"),
+    ("Dual-Chamber Cartridge + Sterile Water", "Çift Hazneli Kartuş + Steril Su"),
+    ("Two-Chamber Cartridges", "Çift Hazneli Kartuş"),
+    ("Cartridges for Multi-Use Pen", "Çok Kullanımlık Kalem Kartuşu"),
+    ("For 36 IU Cartridges", "36 IU Kartuşlar İçin"),
+    ("Dual-Chamber Pen", "Çift Hazneli Kalem"),
+    ("Dual Cartridge Pen", "Çift Kartuşlu Kalem"),
+    ("Premixed Vial", "Hazır Karışım Flakon"),
+    ("Premixed Pen", "Hazır Karışım Kalem"),
+    ("Reusable Dosing Device", "Yeniden Kullanılabilir Dozlama Cihazı"),
+    ("lyophilized vial", "liyofilize flakon"),
+    ("lyophilized vials", "liyofilize flakon"),
+    ("Bacteriostatic Water", "Bakteriyostatik Su"),
+    ("Sterile Water", "Steril Su"),
+    ("Premixed", "Hazır Karışım"),
+    ("total", "toplam"),
+    ("vials", "flakon"),
+    ("vial", "flakon"),
+    ("Kit", "Kit"),
+]
+
+
 def clean_name(s: str) -> str:
-    return html.unescape(s or "").replace("–", "-").strip()
+    n = html.unescape(s or "").replace("–", "-").strip()
+    for src, dst in NAME_PHRASES:
+        n = re.sub(re.escape(src), dst, n)
+    return n
 
 
 def norm(text: str) -> str:
@@ -191,6 +221,18 @@ def peptide_slug(name: str):
     return None
 
 
+def local_image(slug: str, images):
+    """public/products altındaki yerel görselin yolunu döndürür. Dosya
+    yoksa None döner ve sayfa görsel bloğunu hiç render etmez."""
+    if not images:
+        return None
+    ext = os.path.splitext(images[0]["src"].split("?")[0])[1] or ".jpg"
+    rel = f"/products/{slug}{ext}"
+    if os.path.exists(os.path.join(REPO, "public", rel.lstrip("/"))):
+        return rel
+    return None
+
+
 def ts(value) -> str:
     if value is None:
         return "undefined"
@@ -216,7 +258,10 @@ def main():
             "sku": p.get("sku") or None,
             "category": category_of(p, name),
             "peptideSlug": peptide_slug(name),
-            "image": images[0]["src"] if images else None,
+            # Görsel yerelleştirilir: uzak CDN'e hotlink hem kırılgan hem de
+            # kaynağın referer kontrolüne takılıyor. Dosyalar
+            # public/products/<slug>.<ext> altında tutulur.
+            "image": local_image(p["slug"], images),
             "sourcePriceUsd": round(int(price) / 100, 2) if price else None,
             "specs": specs,
             "notes": notes,

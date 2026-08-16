@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { WhatsappCta } from "@/components/whatsapp-cta"
@@ -73,13 +74,11 @@ export default function UrunlerPage() {
                       >
                         <div>
                           {product.image && (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img
+                            <Image
                               src={product.image}
                               alt=""
                               width={300}
                               height={300}
-                              loading="lazy"
                               className="mb-6 aspect-square w-full rounded-sm bg-muted/30 object-contain"
                             />
                           )}

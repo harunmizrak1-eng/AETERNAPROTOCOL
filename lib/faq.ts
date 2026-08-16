@@ -7,14 +7,34 @@ export interface FaqItem {
 
 export const faqItems: FaqItem[] = [
   {
-    question: "ÆTERNA bir klinik mi, takviye mağazası mı?",
+    question: "ZPHC Türkiye nedir?",
     answer:
-      "Hiçbiri. ÆTERNA, seçili sayıda birey için kanıta dayalı, kişiye özel biyolojik optimizasyon protokolleri tasarlayan özel bir longevity danışmanlığıdır. Ürün satışı değil, süreç tasarımı ve yönlendirme sunar.",
+      "ZPHC (Zhengzhou Pharmaceutical Co. Ltd) peptid ve insan büyüme hormonu hattının Türkiye distribütörüyüz. Ürün kataloğunu, orijinallik doğrulamasını ve tedarik koşullarını tek yerde topluyoruz. Klinik veya danışmanlık hizmeti vermiyoruz.",
+  },
+  {
+    question: "Ürünler ne amaçla sunuluyor?",
+    answer:
+      "Katalogdaki ürünler üretici tarafından laboratuvar ve araştırma materyali olarak sunulur; insan kullanımı için tasarlanmamıştır. Bu çerçeveyi olduğu gibi aktarıyoruz — ürün sayfalarındaki 'yalnızca araştırma amaçlı' ibaresi üreticinin kendi beyanıdır.",
+  },
+  {
+    question: "Sitede neden fiyat görünmüyor?",
+    answer:
+      "Fiyat ve stok durumu ürüne, miktara ve tedarik koşullarına göre değişiyor. Bu yüzden liste fiyatı yayımlamak yerine doğrudan iletişimi tercih ediyoruz. Her ürün sayfasındaki WhatsApp butonu, ilgilendiğiniz ürünün adını mesaja otomatik taşır.",
+  },
+  {
+    question: "Ürünün orijinal olduğunu nasıl anlarım?",
+    answer:
+      "ZPHC her kutuya benzersiz bir kazı-kazan kodu basar. Kodu kazıyıp üreticinin resmi doğrulama sistemine girerek kontrol edebilirsiniz. Doğrulama üreticinin sunucusunda yapılır, sonucu biz üretmeyiz. Adım adım anlatım Doğrulama sayfamızda.",
   },
   {
     question: "Kanıt seviyesi sistemi ne anlama geliyor?",
     answer:
-      "Her bileşiği üç kademeye ayırıyoruz: Klinik Kanıt (randomize insan çalışmaları mevcut), Mekanistik/Teorik (mekanizma iyi tanımlı ama geniş insan verisi yok) ve Preklinik (kanıt büyük ölçüde hayvan çalışmalarına dayalı). Bu ayrımı popülerlik veya pazarlamadan tamamen bağımsız tutuyoruz. Detaylar metodoloji sayfamızda.",
+      "Kütüphanedeki her bileşiği üç kademeye ayırıyoruz: Klinik Kanıt (randomize insan çalışmaları mevcut), Mekanistik/Teorik (mekanizma iyi tanımlı ama geniş insan verisi yok) ve Preklinik (kanıt büyük ölçüde hayvan çalışmalarına dayalı). Bu ayrımı popülerlik, satış hacmi veya üreticinin pazarlama metninden tamamen bağımsız tutuyoruz.",
+  },
+  {
+    question: "Ürün sayfasındaki 'Üretici Beyanı' bölümü nedir?",
+    answer:
+      "Üreticinin kendi ürün açıklamasından alınan etkinlik, doz ve yan etki ifadeleridir. Bağımsız olarak doğrulanmamıştır ve bizim kanıt seviyesi değerlendirmemizle çelişebilir. Örneğin BPC-157'nin üretici açıklaması hızlı doku onarımından söz eder; kütüphanedeki kaydımız ise bu bileşiği Teorik kademede tutar, çünkü insan çalışması yoktur. İkisini de göstermeyi, birini gizlemeye tercih ediyoruz.",
   },
   {
     question: "Sitedeki kaynaklar gerçek mi?",
@@ -22,22 +42,17 @@ export const faqItems: FaqItem[] = [
       "Evet. Klinik Kanıt kademesindeki bileşiklerin sayfalarında gösterilen her PMID, DOI ve ClinicalTrials numarası gerçek ve doğrulanabilir kaynaklardan alınmıştır. Bir bileşik için doğrulanabilir kaynak yoksa, o bileşiğe uydurma referans eklemek yerine daha alt bir kanıt kademesinde tutulur.",
   },
   {
-    question: "Vaka analizleri gerçek hastalara mı ait?",
+    question: "Bayilik başvurusu nasıl yapılır?",
     answer:
-      "Hayır. Vaka analizleri, gerçek hasta verisi kullanmamak amacıyla, literatürdeki gözlenen etki büyüklükleriyle tutarlı olacak şekilde hazırlanmış eğitim amaçlı kurgusal örneklerdir. Her vakanın altında bu açıkça belirtilir.",
-  },
-  {
-    question: "Süreç nasıl işliyor?",
-    answer:
-      "Kısa bir ön değerlendirmeyle başlar. Sonuca göre size uygun danışmanlık seviyesi önerilir; ardından gizli bir görüşme, biyolojik profil çıkarımı ve kişiye özel protokol tasarımı gelir. Süreç boyunca birebir takip esastır.",
+      "Bayilik sayfasındaki formu doldurmanız yeterli. Kurumsal kimlik, faaliyet alanı, öngörülen hacim ve soğuk zincir kapasitesi sorulur. Vergi numarası olan işletmelerle çalışıyoruz; şahıs başvuruları değerlendirilmez.",
   },
   {
     question: "Bu bir tıbbi tavsiye mi?",
     answer:
-      "Hayır. Sitedeki hiçbir içerik ve değerlendirme tıbbi tavsiye, teşhis veya tedavi yerine geçmez. Herhangi bir protokole başlamadan önce bir hekime danışılmalıdır.",
+      "Hayır. Sitedeki hiçbir içerik ve değerlendirme tıbbi tavsiye, teşhis veya tedavi yerine geçmez. Sağlık kararlarınız için hekiminize danışın.",
   },
   {
     question: "Verilerim nasıl korunuyor?",
-    answer: `Paylaştığınız sağlık verileri KVKK kapsamında özel nitelikli kişisel veri olarak işlenir, gizli tutulur ve pazarlama amacıyla üçüncü taraflarla paylaşılmaz. Veri talepleriniz için ${contactEmail} adresine yazabilir, detaylar için Gizlilik & KVKK sayfamıza bakabilirsiniz.`,
+    answer: `Bayilik başvurusu ve iletişim sırasında paylaştığınız bilgiler KVKK kapsamında işlenir, gizli tutulur ve pazarlama amacıyla üçüncü taraflarla paylaşılmaz. Sitede sunucu tarafında form kaydı tutulmaz; başvurular doğrudan WhatsApp üzerinden iletilir. Veri talepleriniz için ${contactEmail} adresine yazabilir, detaylar için Gizlilik & KVKK sayfamıza bakabilirsiniz.`,
   },
 ]

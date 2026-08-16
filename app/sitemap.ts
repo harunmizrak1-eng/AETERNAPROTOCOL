@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/urunler",
+    "/dogrulama",
+    "/bayilik",
     "/peptidler",
     "/journal",
     "/longevity-skoru",

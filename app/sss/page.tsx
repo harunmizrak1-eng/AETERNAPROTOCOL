@@ -5,14 +5,14 @@ import { Footer } from "@/components/footer"
 import { faqItems } from "@/lib/faq"
 
 const description =
-  "ÆTERNA hakkında sık sorulan sorular: kanıt seviyesi sistemi, kaynak politikası, vaka analizleri, süreç ve gizlilik."
+  "ZPHC Türkiye hakkında sık sorulan sorular: ürün çerçevesi, orijinallik doğrulaması, kanıt seviyesi sistemi, kaynak politikası ve bayilik."
 
 export const metadata: Metadata = {
   title: "Sık Sorulan Sorular",
   description,
   alternates: { canonical: "/sss" },
   openGraph: {
-    title: "Sık Sorulan Sorular · ÆTERNA",
+    title: "Sık Sorulan Sorular · ZPHC Türkiye",
     description,
     url: "/sss",
   },

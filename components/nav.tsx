@@ -2,15 +2,16 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
+import { siteName } from "@/lib/site"
 
 const LINKS = [
   { href: "/urunler", label: "Ürünler" },
-  { href: "/#kategoriler", label: "Odak Alanları" },
-  { href: "/peptidler", label: "Peptid Kütüphanesi" },
+  { href: "/peptidler", label: "Kütüphane" },
+  { href: "/dogrulama", label: "Doğrulama" },
+  { href: "/bayilik", label: "Bayilik" },
   { href: "/journal", label: "Journal" },
-  { href: "/longevity-skoru", label: "Longevity Skoru" },
   { href: "/metodoloji", label: "Metodoloji" },
-  { href: "/#danismanlik", label: "Danışmanlık" },
 ]
 
 export function Nav() {
@@ -30,10 +31,17 @@ export function Nav() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
         <Link
           href="/"
-          className="font-serif text-lg tracking-wordmark text-foreground transition-opacity hover:opacity-70"
+          className="transition-opacity hover:opacity-70"
           onClick={() => setOpen(false)}
         >
-          ÆTERNA
+          <Image
+            src="/brand/zphc-logo.png"
+            alt={siteName}
+            width={250}
+            height={42}
+            priority
+            className="h-7 w-auto"
+          />
         </Link>
 
         <div className="hidden items-center gap-8 sm:flex">
@@ -42,7 +50,7 @@ export function Nav() {
               key={link.label}
               href={link.href}
               className={`text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground ${
-                link.label === "Longevity Skoru" || link.label === "Metodoloji"
+                link.label === "Journal" || link.label === "Metodoloji"
                   ? "hidden lg:inline"
                   : ""
               }`}

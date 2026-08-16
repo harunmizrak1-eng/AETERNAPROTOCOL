@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     canonical: "/biyobelirtecler",
   },
   openGraph: {
-    title: "Biyobelirteç Sözlüğü · ÆTERNA",
+    title: "Biyobelirteç Sözlüğü · ZPHC Türkiye",
     description,
     url: "/biyobelirtecler",
   },

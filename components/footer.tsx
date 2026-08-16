@@ -1,15 +1,18 @@
-import { contactEmail, instagramUrl } from "@/lib/contact"
+import Image from "next/image"
+import { contactEmail, instagramUrl, whatsappLink } from "@/lib/contact"
+import { siteName, siteTagline } from "@/lib/site"
 
 const EXPLORE_LINKS = [
-  { href: "/#kategoriler", label: "Odak Alanları" },
-  { href: "/peptidler", label: "Peptid Kütüphanesi" },
+  { href: "/urunler", label: "Ürünler" },
+  { href: "/peptidler", label: "Bileşik Kütüphanesi" },
   { href: "/biyobelirtecler", label: "Biyobelirteç Sözlüğü" },
   { href: "/journal", label: "Journal" },
-  { href: "/longevity-skoru", label: "Longevity Skoru" },
 ]
 
 const CONSULT_LINKS = [
-  { href: "/#danismanlik", label: "Danışmanlık" },
+  { href: "/dogrulama", label: "Orijinallik Doğrulama" },
+  { href: "/bayilik", label: "Bayilik Başvurusu" },
+  { href: whatsappLink(), label: "WhatsApp", external: true },
   { href: `mailto:${contactEmail}`, label: contactEmail, external: true },
   { href: instagramUrl, label: "Instagram", external: true },
 ]
@@ -65,11 +68,15 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-14">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 sm:gap-8">
           <div>
-            <p className="font-serif text-lg tracking-wordmark text-foreground">
-              ÆTERNA
-            </p>
-            <p className="mt-4 max-w-[16ch] text-[0.7rem] leading-relaxed text-muted-foreground">
-              Hassas Biyoloji. Özel Erişim.
+            <Image
+              src="/brand/zphc-logo.png"
+              alt={siteName}
+              width={250}
+              height={42}
+              className="h-8 w-auto"
+            />
+            <p className="mt-4 max-w-[20ch] text-[0.7rem] leading-relaxed text-muted-foreground">
+              {siteTagline}
             </p>
           </div>
 
@@ -80,17 +87,19 @@ export function Footer() {
 
         <div className="border-t border-hairline pt-8">
           <p className="mx-auto max-w-3xl text-center text-[0.7rem] leading-relaxed text-muted-foreground">
-            Bu sitedeki içerik yalnızca bilgilendirme amaçlıdır ve tıbbi tavsiye
-            yerine geçmez. Hiçbir ifade hastalık teşhis, tedavi veya önleme
-            iddiası taşımaz. Herhangi bir protokole başlamadan önce bir hekime
-            danışın. Paylaştığınız sağlık verileri gizli tutulur; işleme
-            koşulları için Gizlilik &amp; KVKK metnini inceleyin.
+            Bu sitedeki ürünler laboratuvar ve araştırma materyali olarak
+            sunulur; insan kullanımı için tasarlanmamıştır. İçerik yalnızca
+            bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez. Hiçbir
+            ifade hastalık teşhis, tedavi veya önleme iddiası taşımaz. Sağlık
+            kararlarınız için hekiminize danışın. Paylaştığınız veriler gizli
+            tutulur; işleme koşulları için Gizlilik &amp; KVKK metnini
+            inceleyin.
           </p>
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-hairline pt-6 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground sm:flex-row">
-          <p>© {year} ÆTERNA. Tüm hakları saklıdır.</p>
-          <p>Özel Biyolojik Optimizasyon · Türkiye</p>
+          <p>© {year} {siteName}. Tüm hakları saklıdır.</p>
+          <p>Zhengzhou Pharmaceutical · Yetkili Distribütör</p>
         </div>
       </div>
     </footer>

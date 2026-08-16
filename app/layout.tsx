@@ -28,8 +28,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'ÆTERNA · Hassas Biyoloji. Özel Erişim.',
-    template: '%s · ÆTERNA',
+    default: 'ZPHC Türkiye · Peptid ve İnsan Büyüme Hormonu Distribütörü',
+    template: '%s · ZPHC Türkiye',
   },
   description: siteDescription,
   alternates: {
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'tr_TR',
     siteName,
-    title: 'ÆTERNA · Hassas Biyoloji. Özel Erişim.',
+    title: 'ZPHC Türkiye · Peptid ve İnsan Büyüme Hormonu Distribütörü',
     description: siteDescription,
     url: siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ÆTERNA · Hassas Biyoloji. Özel Erişim.',
+    title: 'ZPHC Türkiye · Peptid ve İnsan Büyüme Hormonu Distribütörü',
     description: siteDescription,
   },
   robots: {

@@ -47,7 +47,7 @@ export default async function OpengraphImage() {
             fontWeight: 400,
           }}
         >
-          ÆTERNA
+          ZPHC TÜRKİYE
         </div>
         <div
           style={{

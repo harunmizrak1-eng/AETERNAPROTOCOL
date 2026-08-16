@@ -1,173 +1,143 @@
-# ÆTERNA — PROJECT VISION (Brand & Design Constitution)
+# ZPHC TÜRKİYE — PROJE ANAYASASI
 
-> This document is permanent. Every future change to this codebase — by a human
-> or by an AI agent — must be evaluated against the "THINGS CLAUDE MUST NEVER
-> DO" and "ZERO COMPROMISE PRINCIPLES" sections below. If a change does not
-> increase clarity, trust, or authority, do not make it.
+> Bu doküman, önceki ÆTERNA marka anayasasının yerine geçer. Proje bir
+> longevity danışmanlığı sitesinden ZPHC (Zhengzhou Pharmaceutical) Türkiye
+> distribütör kataloğuna dönüştürülmüştür. Bu dosyadaki kurallar, kod
+> tabanına dokunan her insan ve her yapay zekâ ajanı için bağlayıcıdır.
 
---- PROJECT VISION BAŞLANGICI ---
+---
 
-ÆTERNA is not a supplement store.
-ÆTERNA is not a telemedicine clinic.
-ÆTERNA is not a biotech startup.
-ÆTERNA should feel like a private longevity institute for a very small
-number of carefully selected clients.
+## PROJE NEDİR
 
-The experience should resemble:
-Apple (clarity)
-Vercel (precision)
-Linear (minimalism)
-Aesop (luxury)
-Private banking (exclusivity)
+ZPHC'nin **peptid ve insan büyüme hormonu** hattının Türkiye distribütör
+kataloğu. Ürün bilgisi, orijinallik doğrulaması, bayilik başvurusu ve
+literatür referanslı bir bileşik kütüphanesi sunar.
 
-Avoid startup clichés. Avoid crypto aesthetics. Avoid excessive gradients.
-Avoid gamification. Avoid anything that feels cheap. Everything should feel
-calm, deliberate and expensive.
+**Klinik değildir. Danışmanlık değildir. Eczane değildir.**
 
-DO NOT CHANGE — these are strengths, keep them:
-Dark luxury aesthetic, editorial typography, minimal layout, serif + sans
-pairing, black/gold palette, large whitespace, elegant reveal animations,
-quiet brand voice, premium positioning, exclusive feeling.
-Never redesign the visual identity. Only refine it.
+---
 
-PRIMARY GOAL: Increase trust. Increase conversion. Increase perceived
-authority. Without sacrificing minimalism.
+## KAPSAM SINIRI — DEĞİŞTİRİLEMEZ
 
-ZERO COMPROMISE PRINCIPLES: Every design decision must satisfy all three:
-increase clarity, increase trust, increase perceived expertise. If a change
-only makes the website "more modern" but does not improve one of these
-three, do not implement it. Luxury comes from restraint, not decoration.
+Katalog **yalnızca peptid ve HGH hattını** içerir.
 
-POSITIONING: Visitors should immediately understand — this is a longevity
-operating system, this is evidence-based, this is highly personalized,
-this is intentionally selective, this is not for everyone. Never create
-the impression of a supplement shop, online clinic, or wellness influencer
-brand.
+ZPHC'nin steroid hattı — testosteron esterleri, trenbolon, nandrolon,
+stanozolol, oksimetolon, metandienon, klenbuterol, oral steroidler, steroid
+karışımları — **bu projenin dışındadır ve eklenmez.**
 
-INFORMATION HIERARCHY (P0): Reorganize every page using this hierarchy —
-What is ÆTERNA? Why should I trust it? How does it work? What results can
-I expect? What evidence supports it? How do I apply? No section should
-exist without serving one of these questions.
+Bunlar Türkiye'de kontrole tabi maddelerdir; TİTCK ruhsatı bulunmayan bu
+ürünler için Türkçe bir perakende vitrini kurmak, işletmeciyi doğrudan
+hukuki riske sokar. Kapsamı genişletme talebi gelirse: talebi uygulamadan
+önce bu bölümü gerekçe göstererek itiraz et.
 
-HERO SECTION: Beautiful but visitors don't immediately understand what
-this is, who it's for, why it's different. Rewrite the hero. The value
-proposition should be understandable in under 5 seconds. Hierarchy:
-Headline, Supporting sentence, Scientific credibility, Primary CTA,
-Secondary CTA. Below that, research metrics (e.g. 22 Peptides, 1400+
-Papers Reviewed, 90+ Biomarkers, Weekly Updated) — these should feel
-editorial, not marketing.
+---
 
-SCIENTIFIC CREDIBILITY: The site needs to feel luxurious AND authoritative.
-Integrate visible scientific signals — Evidence Level, PubMed references,
-DOI links, ClinicalTrials links, last reviewed date, research methodology,
-literature reviewed count. This information should never overwhelm the
-interface. Keep it subtle.
+## ÜÇ TEMEL KURAL
 
-TRUST SIGNALS: Trust should come from evidence, not adjectives. Add
-research-backed methodology, anonymous case studies, timeline of client
-journey, before/after biomarkers, real dashboards, data visualization,
-scientific advisory section. Everything elegant. Avoid loud testimonials.
+### 1. Doz değeri türetilmez
 
-CONVERSION (P0): Current experience behaves more like a portfolio.
-Transform into a premium concierge experience. Improve CTA placement,
-wording, hierarchy, decision flow, scrolling narrative. Remove unnecessary
-friction. Never introduce aggressive marketing, urgency, fake scarcity,
-countdowns, or exit popups.
+mg, IU, flakon sayısı, konsantrasyon, saklama sıcaklığı — hepsi kaynaktan
+olduğu gibi taşınır. Hiçbiri tahmin edilmez, hesaplanmaz, "muhtemelen
+böyledir" diye doldurulmaz.
 
-APPLICATION FLOW (P0): Do NOT send users directly to WhatsApp. Instead:
-Landing → Qualification Assessment → Personalized Analysis → Application
-→ Acceptance → Private Consultation. Users should feel selected rather
-than sold to.
+Bir ürün sayfasındaki yanlış doz değeri doğrudan hasta güvenliği sorunudur.
+Verisi olmayan alan boş bırakılır; sayfa boş alanı hiç render etmez.
 
-RESEARCH METRICS (P0): Introduce editorial research metrics throughout
-the site (e.g. 1400+ Research Papers Reviewed, 22 Protocols, 90+
-Biomarkers, Updated Weekly). Display as quiet indicators of authority,
-never as marketing counters.
+### 2. Üretici beyanı, doğrulanmış veriden ayrı gösterilir
 
-CASE STUDIES (P0): Replace generic testimonials with structured case
-studies. Each should include initial biomarkers, goals, protocol,
-timeline, observed improvements, supporting laboratory data. Anonymous
-presentation. Editorial design. No exaggerated claims.
+Üreticinin pazarlama metni ile sitenin kendi kanıt sınıflandırması
+çelişebilir — ve çelişiyor. Örnek: ZPHC'nin BPC-157 açıklaması "hızlı doku
+onarımı" der; kütüphanedeki kaydımız aynı bileşiği **Teorik** kademede
+tutar, çünkü insan çalışması yoktur.
 
-RESEARCH SYSTEM (P0): Transform research into a visible product. Every
-protocol should eventually expose Evidence Level, Reviewed Papers,
-Mechanism, Primary Outcomes, Biomarkers, Clinical Status, Last Updated,
-PubMed, DOI, ClinicalTrials. Users should feel that recommendations
-originate from continuous literature review rather than opinion.
+Çözüm ikisini de göstermek, ama karıştırmamaktır:
 
-KNOWLEDGE PLATFORM (P1): Expand into Research Journal, Protocol Library,
-Evidence Reviews, Case Studies, Clinical Commentary, Biomarker Guides.
-Every article should include review date, evidence level, references,
-PubMed, DOI, ClinicalTrials.
+- **Ürün Bilgisi** → doğrulanabilir teknik veri (`kind: "spec"`)
+- **Üretici Beyanı** → etkinlik, doz, yan etki iddiaları (`kind: "claim"`),
+  ayrı blokta, doğrulanmamış olduğu açıkça belirtilerek
 
-INTERACTIVE AUTHORITY (P1): Interactions should educate, never entertain.
-Examples: Biological Age, Longevity Score, Biomarker Explorer, Peptide
-Explorer, Protocol Builder, Risk Assessment, Evidence Filters, Interactive
-Timeline. These should reduce uncertainty.
+Sınıflandırılamayan etiket varsayılan olarak **beyan** sayılır. Bilinmeyen
+bir ifadeyi teknik veri gibi sunmaktansa beyan olarak işaretlemek güvenli
+taraftır.
 
-DATA VISUALIZATION (P1): Replace decorative graphics with information.
-Blood Panels, Inflammation, Recovery, Sleep, HRV, Hormones, Biological
-Age, Progress Timeline. Visual style: editorial, minimal, monochrome,
-fine grid, gold accents only. Bloomberg Terminal, not fitness apps.
+### 3. Kanıt sınıflandırması ticaretten etkilenmez
 
-UNIQUE SIGNATURE: Every premium brand has one memorable interaction
-(Stripe's globe, Apple's scroll storytelling, Linear's infinite grid,
-Vercel's blur hero). ÆTERNA's signature: a barely-visible, slow-pulsing
-line chart in the background of the hero — evoking continuous biomarker
-monitoring without being literal data. Never interactive, never loud,
-almost subliminal. This is the ONE signature motion element for the
-brand — do not add competing signature elements elsewhere.
+Sattığımız bir bileşiğin kanıt kademesi, satış hacmi yüzünden yükseltilmez.
+Preklinik bir bileşik, ne kadar çok satarsa satsın preklinik kalır. Çıkar
+çatışması `/metodoloji` sayfasında açıkça beyan edilmiştir; oradan
+kaldırılmaz.
 
-MOTION DESIGN: Keep animations restrained. Reveal animation timing
-600–800ms. Do not add unnecessary parallax. Do not animate everything.
-Movement should feel almost invisible.
+Referanslar gerçektir. PMID, DOI ve NCT numaraları alınmadan önce
+doğrulanır. Doğrulanabilir kaynağı olmayan bileşiğe referans uydurulmaz —
+daha alt bir kanıt kademesinde tutulur.
 
-MICRO INTERACTIONS: Improve card hover, button hover, focus states,
-loading states, counters, transitions. Everything tactile, nothing flashy.
+---
 
-VISUAL LANGUAGE (P1): Refine, not redesign. Small improvements only —
-2–4px border radius, slightly heavier body typography, improved hover/
-loading/focus states, refined spacing consistency, animation timing
-around 600–800ms. No visual overhaul.
+## VERİ AKIŞI
 
-SEO (P1): Schema.org, MedicalBusiness, Article Schema, FAQ Schema,
-Canonical, OpenGraph, Twitter Cards, robots.txt, sitemap.xml, structured
-metadata, semantic HTML.
+`lib/products.ts` **elle düzenlenmez.** zphcstore.com WooCommerce Store
+API'sinden `scripts/gen-products.py` ile üretilir. Katalog güncellemesi =
+veriyi yeniden çek + script'i çalıştır. Ayrıntı: `scripts/README.md`.
 
-PERFORMANCE (P1): Maintain excellent Core Web Vitals. Optimize images,
-fonts, bundle size, code splitting, lazy loading, preloading. Avoid
-unnecessary JavaScript.
+Çeviriler `scripts/translations.json`'da tutulur; sözlükte karşılığı olmayan
+metin sessizce siteye sızmaz, üreteç tarafından raporlanır.
 
-ACCESSIBILITY (P1): Heading hierarchy, ARIA, keyboard navigation, focus
-states, contrast, reduced motion, semantic landmarks. WCAG AA compliance.
+Ürün kayıtları `peptideSlug` ile `lib/peptides.ts`'teki bileşik kaydına
+bağlanır. Ürün sayfası mekanizmayı, kanıt seviyesini ve literatür
+referanslarını oradan çeker. **Bu, projenin ayırt edici özelliğidir** —
+rakip bayilerde pazarlama metni vardır, burada PubMed referansı vardır.
+Ticari veri ile bilimsel veri ayrı dosyalarda kalır.
 
-BRAND VOICE: Quiet, confident, scientific, reserved, sophisticated. Never
-sound like marketing. Never exaggerate claims. Never use hype language.
+---
 
-THINGS CLAUDE MUST NEVER DO:
-Never redesign the visual identity. Never replace typography. Never
-introduce colorful gradients or neon colors. Never add glassmorphism.
-Never add unnecessary parallax, cursor effects, or flashy particle
-systems. Never make the site resemble a supplement store, crypto landing
-page, generic SaaS template, hospital website, or wellness influencer
-brand. Do not sacrifice whitespace. Do not increase visual noise. Do not
-prioritize trends over timelessness. Every change must improve clarity,
-trust, or authority — otherwise, do not implement it.
+## GÖRSEL KİMLİK
 
-LONG TERM DIRECTION: ÆTERNA should evolve from "beautiful website" into
-"a digital longevity institution." Visitors should leave believing these
-people understand longevity at a deeper level than anyone else — not
-because they say it, but because every detail of the experience
-communicates it. Optimize for timelessness, not trends. The website
-should still feel premium five years from now.
+ZPHC kurumsal mavi/beyaz. Renkler `app/globals.css` içinde token olarak
+tanımlıdır; bileşenlerde sabit renk yazılmaz.
 
---- PROJECT VISION SONU ---
+- Birincil: `#0072bc` · Koyu: `#014673` · Derin: `#00314c`
+- Zemin beyaz, metin `#0d1b2a`
+- Logo: `public/brand/zphc-logo.png`
 
-## Not: Case Study İstisnası
+`--gold` değişkeni **adıyla** korunmuştur; kod tabanında ~200 yerde vurgu
+rengi olarak kullanılır ve adını değiştirmek geniş, riskli bir diff üretir.
+Değeri artık ZPHC mavisidir. Yeni kodda da `text-gold` / `bg-gold` kullan.
 
-Case study bölümü bilinçli bir istisna içerir — yukarıdaki "trust should
-come from evidence, not adjectives" ilkesine rağmen, marka sahibi gerçek
-hasta verilerini paylaşmak istemediği için kurgusal ama gerçekçi (literatürle
-tutarlı) bir vaka kullanılmasına karar verilmiştir. Bu, kodda bir yorumla
-işaretlenmiştir (`simulated data, not a real patient case`). Bunu hata
-sanıp gerçek veriyle değiştirmeye çalışma — bu kasıtlı bir tasarım kararıdır.
+Tipografi editoryal kalır: başlıklarda serif, gövdede sans. Bu, sıradan bir
+e-ticaret şablonundan ayrışmayı sağlar; korunur.
+
+Kaçınılacaklar: agresif pazarlama, sahte kıtlık, geri sayım, çıkış pop-up'ı,
+gamification. Bir ilaç üreticisinin distribütörü sakin ve kurumsal durur.
+
+---
+
+## SİPARİŞ AKIŞI
+
+Site üzerinde tamamlanan bir sipariş akışı **yoktur**. Sepet, ödeme,
+checkout eklenmez.
+
+Fiyat alanı şemada vardır ama boştur; yerini WhatsApp bilgi-talebi butonu
+tutar. Ön dolgulu mesaj her zaman ürün adını taşır. Numara tek kaynaktan
+gelir: `lib/contact.ts`.
+
+Buton metni **soru** kipindedir ("Fiyat Sor", "WhatsApp'tan Sor") — asla
+satın alma emri kipinde değil.
+
+---
+
+## YASAL ÇERÇEVE
+
+Kaynak, ürünleri laboratuvar/araştırma materyali olarak sunar ("for research
+use only; not intended for human use"). Bu çerçeve Türkçe sitede birebir
+korunur — yumuşatılmaz, kaldırılmaz, atlanmaz.
+
+Ürün sayfalarında ve footer'da bulunan bilgilendirme notu kaldırılmaz.
+Hiçbir metin hastalık teşhis, tedavi veya önleme iddiası taşımaz.
+
+---
+
+## DEĞİŞİKLİK ÖLÇÜTÜ
+
+Her değişiklik şunlardan en az birini artırmalıdır: **netlik, güven,
+doğrulanabilirlik.** Yalnızca "daha modern" görünmek için yapılan değişiklik
+yapılmaz.

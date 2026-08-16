@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
@@ -83,15 +84,12 @@ export default async function UrunPage({
             )}
 
             {product.image && (
-              // Remote host isn't configured for next/image optimisation, so
-              // this stays a plain img with explicit dimensions.
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
                 width={1000}
                 height={1000}
-                loading="lazy"
+                priority
                 className="mt-10 w-full rounded-sm border border-hairline bg-muted/30 object-contain"
               />
             )}

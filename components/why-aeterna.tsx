@@ -24,7 +24,7 @@ export function WhyAeterna() {
         <div className="flex items-center gap-4">
           <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
           <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-            Neden ÆTERNA
+            Neden ZPHC Türkiye
           </p>
         </div>
 

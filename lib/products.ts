@@ -52,22 +52,22 @@ export interface Product {
 export const products: Product[] = [
   {
     slug: "aicar-250mg-total-5x50mg-zphc",
-    name: "AICAR ZPHC — 250 mg (5 vials × 50 mg)",
+    name: "AICAR ZPHC — 250 mg (5 flakon × 50 mg)",
     sku: "AIC250-ZPHC",
     category: "peptid",
     peptideSlug: "aicar",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/aicar-50mg-vial-250mg-kit-zphc-1.jpg",
+    image: "/products/aicar-250mg-total-5x50mg-zphc.jpg",
     sourcePriceUsd: 79.0,
     specs: [],
     notes: [],
   },
   {
     slug: "aod-9604-5mg-with-bacteriostatic-water-zphc",
-    name: "AOD 9604 5mg ZPHC (Lyophilized Peptide + Bacteriostatic Water)",
+    name: "AOD 9604 5mg ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
     sku: "AOD9604-5-ZPHC",
     category: "peptid",
     peptideSlug: "aod-9604",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/aod-9604-5mg-vial-zphc-1.jpg",
+    image: "/products/aod-9604-5mg-with-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 31.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 5 mg liyofilize AOD 9604 peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -84,11 +84,11 @@ export const products: Product[] = [
   },
   {
     slug: "aod9604-2-5mg-5x2-5mg-zphc",
-    name: "AOD 9604 ZPHC — 12.5 mg (5 vials × 2.5 mg)",
+    name: "AOD 9604 ZPHC — 12.5 mg (5 flakon × 2.5 mg)",
     sku: "AOD125-ZPHC",
     category: "peptid",
     peptideSlug: "aod-9604",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/AOD-9604-12.5mg-kit-zphc-2.jpg",
+    image: "/products/aod9604-2-5mg-5x2-5mg-zphc.jpg",
     sourcePriceUsd: 59.0,
     specs: [
       { label: "Mekanizma", value: "IGF-1 veya kan glukozunu yükseltmeden lipolizi artırdığı ve lipogenezi engellediği belirtilen fragment 176-191 analoğu.", kind: "claim" },
@@ -105,11 +105,11 @@ export const products: Product[] = [
   },
   {
     slug: "aod9604-25mg-5x5mg-zphc",
-    name: "AOD 9604 ZPHC — 25 mg (5 vials × 5 mg)",
+    name: "AOD 9604 ZPHC — 25 mg (5 flakon × 5 mg)",
     sku: "AOD25-ZPHC",
     category: "peptid",
     peptideSlug: "aod-9604",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/AOD-9604-25mg-kit-zphc-1.jpg",
+    image: "/products/aod9604-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 125.0,
     specs: [
       { label: "Mekanizma", value: "Glukoz veya IGF-1'i yükseltmeden lipolizi artırdığı ve lipogenezi baskıladığı belirtilen fragment 176-191 analoğu.", kind: "claim" },
@@ -126,11 +126,11 @@ export const products: Product[] = [
   },
   {
     slug: "zphc-bpc-157-20mg-with-bacteriostatic-water",
-    name: "BPC-157 20mg ZPHC (Lyophilized Peptide + Bacteriostatic Water)",
+    name: "BPC-157 20mg ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
     sku: "BPC157-20-ZPHC",
     category: "peptid",
     peptideSlug: "bpc-157",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/bpc-157-20mg-vial-zphc-1.jpg",
+    image: "/products/zphc-bpc-157-20mg-with-bacteriostatic-water.jpg",
     sourcePriceUsd: 83.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize BPC-157 peptidi + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
@@ -147,11 +147,11 @@ export const products: Product[] = [
   },
   {
     slug: "bpc157-25mg-5x5mg-zphc",
-    name: "BPC-157 ZPHC — 25 mg (5 vials × 5 mg)",
+    name: "BPC-157 ZPHC — 25 mg (5 flakon × 5 mg)",
     sku: "BPC15725-ZPHC",
     category: "peptid",
     peptideSlug: "bpc-157",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/BPC-157-25mg-Kit-ZPHC-2.jpg",
+    image: "/products/bpc157-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 99.0,
     specs: [
       { label: "Hızlı doku onarımı", value: "Peptidin tendon, bağ, kas ve sindirim sistemi mukozasının iyileşmesini hızlandırdığı belirtilir.", kind: "claim" },
@@ -171,7 +171,7 @@ export const products: Product[] = [
     sku: "CAGRI25-ZPHC",
     category: "peptid",
     peptideSlug: "cagrilintide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/Cagrilintide-25mg-KIT-ZPHC-3.jpg",
+    image: "/products/cagrilintide-25mg-zphc.jpg",
     sourcePriceUsd: 299.0,
     specs: [
       { label: "Amilin reseptör analoğu", value: "Güçlü iştah baskılanması ve kalori alımının azaltılması üzerine araştırılmaktadır.", kind: "claim" },
@@ -188,10 +188,10 @@ export const products: Product[] = [
   },
   {
     slug: "double-burn-mix-5mg-5x5mg-zphc",
-    name: "Double Burn Mix ZPHC — 25 mg total (5 vials × 5 mg)",
+    name: "Double Burn Mix ZPHC — 25 mg toplam (5 flakon × 5 mg)",
     sku: "DOU25-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/double-burn-mix-25mg-kit-zphc-7.jpg",
+    image: "/products/double-burn-mix-5mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 129.0,
     specs: [
       { label: "Flakon Başına Formül", value: "AOD 9604 2,5 mg · FRAG 176-191 2,5 mg.", kind: "spec" },
@@ -209,11 +209,11 @@ export const products: Product[] = [
   },
   {
     slug: "epithalon-50mg-with-bacteriostatic-water-zphc",
-    name: "Epithalon 50mg ZPHC (Lyophilized Peptide + Bacteriostatic Water)",
+    name: "Epithalon 50mg ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
     sku: "EPITH50-ZPHC",
     category: "peptid",
     peptideSlug: "epithalon",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/EPITHALON-50MG-VIAL-ZPHC-8.jpg",
+    image: "/products/epithalon-50mg-with-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 129.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 50 mg liyofilize Epithalon + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
@@ -230,11 +230,11 @@ export const products: Product[] = [
   },
   {
     slug: "ghk-cu-60mg-with-bacteriostatic-water-zphc",
-    name: "GHK-Cu 60mg Kit ZPHC (Lyophilized Peptide + Bacteriostatic Water)",
+    name: "GHK-Cu 60mg Kit ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
     sku: "GHKCU60-ZPHC",
     category: "peptid",
     peptideSlug: "ghk-cu",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/GHK-CU-60MG-KIT-1VIAL-ZPHC-3.jpg",
+    image: "/products/ghk-cu-60mg-with-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 59.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize GHK-Cu (bakır peptidi) + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -251,11 +251,11 @@ export const products: Product[] = [
   },
   {
     slug: "ghk-cu-50mg-zphc",
-    name: "GHK-Cu ZPHC — 50 mg KIT (5 vials × 10 mg)",
+    name: "GHK-Cu ZPHC — 50 mg KIT (5 flakon × 10 mg)",
     sku: "GHKCU50-ZPHC",
     category: "peptid",
     peptideSlug: "ghk-cu",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/GHK-CU-50MG-KIT-5VIAL-ZPHC-1.jpg",
+    image: "/products/ghk-cu-50mg-zphc.jpg",
     sourcePriceUsd: 59.0,
     specs: [
       { label: "Rejeneratif bakır peptidi", value: "Cilt onarımının güçlendirilmesi, kolajen uyarımı ve dermal yapının iyileştirilmesi üzerine araştırılmaktadır.", kind: "claim" },
@@ -272,11 +272,11 @@ export const products: Product[] = [
   },
   {
     slug: "ghrp-2-25mg-5x5mg-zphc-2",
-    name: "GHRP-2 ZPHC — 25 mg (5 vials × 5 mg)",
+    name: "GHRP-2 ZPHC — 25 mg (5 flakon × 5 mg)",
     sku: "GHRP225-ZPHC",
     category: "peptid",
     peptideSlug: "ghrp-2",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/GHRP-2-25mg-Kit-ZPHC-1.jpg",
+    image: "/products/ghrp-2-25mg-5x5mg-zphc-2.jpg",
     sourcePriceUsd: 49.0,
     specs: [
       { label: "GH pulsu güçlendirici", value: "Güçlü grelin reseptör peptidinin hipofizden büyüme hormonu salınımını artırdığı belirtilir.", kind: "claim" },
@@ -292,11 +292,11 @@ export const products: Product[] = [
   },
   {
     slug: "ghrp-6-25mg-5x5mg-zphc",
-    name: "GHRP-6 ZPHC — 25 mg (5 vials × 5 mg)",
+    name: "GHRP-6 ZPHC — 25 mg (5 flakon × 5 mg)",
     sku: "GHRP625-ZPHC",
     category: "peptid",
     peptideSlug: "ghrp-6",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/GHRP-6-25mg-Kit-ZPHC-1.jpg",
+    image: "/products/ghrp-6-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 49.0,
     specs: [],
     notes: [],
@@ -307,7 +307,7 @@ export const products: Product[] = [
     sku: "GLOWMIX-60-ZPHC",
     category: "peptid",
     peptideSlug: "bpc-157",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/glow-pro-mix-60mg-zphc-1.jpg",
+    image: "/products/glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc.jpg",
     sourcePriceUsd: 129.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize peptid karışımı + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -327,7 +327,7 @@ export const products: Product[] = [
     name: "HGH FRAGMENT 176-191aa (50MG) ZPHC",
     sku: "HGHF50-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/hgh-fragment-10mg-vial-50mg-kit-ZPHC-7.jpg",
+    image: "/products/hgh-fragment-176-191-50mg-5x10mg-zphc.jpg",
     sourcePriceUsd: 147.0,
     specs: [
       { label: "Seçici yağ kaybı", value: "Fragment 176-191'in glukoz veya IGF-1'i yükseltmeden lipolizi artırdığı ve lipogenezi engellediği belirtilir.", kind: "claim" },
@@ -344,10 +344,10 @@ export const products: Product[] = [
   },
   {
     slug: "zphc-hgh-fragment-176-191-5mg",
-    name: "HGH Fragment 176-191 5mg ZPHC (Lyophilized Peptide + Bacteriostatic Water)",
+    name: "HGH Fragment 176-191 5mg ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
     sku: "HGHFRAG-5-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/HGH-fragment-5mg-vial-5mg-kit-ZPHC-3.jpg",
+    image: "/products/zphc-hgh-fragment-176-191-5mg.jpg",
     sourcePriceUsd: 29.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 5 mg liyofilize HGH Fragment 176-191 + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
@@ -364,10 +364,10 @@ export const products: Product[] = [
   },
   {
     slug: "hgh-fragment-176-191-12-5mg-5x2-5mg-zphc",
-    name: "HGH Fragment 176-191 ZPHC — 12.5 mg (5 vials × 2.5 mg)",
+    name: "HGH Fragment 176-191 ZPHC — 12.5 mg (5 flakon × 2.5 mg)",
     sku: "HGHF125-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/HGH-fragment-5mg-vial-25mg-kit-ZPHC-8.jpg",
+    image: "/products/hgh-fragment-176-191-12-5mg-5x2-5mg-zphc.jpg",
     sourcePriceUsd: 49.0,
     specs: [
       { label: "Hedefli yağ kaybı", value: "Fragment 176-191'in kan şekerini veya IGF-1'i yükseltmeden lipolizi tetiklediği belirtilir.", kind: "claim" },
@@ -384,10 +384,10 @@ export const products: Product[] = [
   },
   {
     slug: "hgh-fragment-176-191-25mg-5x5mg-zphc",
-    name: "HGH Fragment 176-191 ZPHC — 25 mg (5 vials × 5 mg)",
+    name: "HGH Fragment 176-191 ZPHC — 25 mg (5 flakon × 5 mg)",
     sku: "HGHF25-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/HGH-fragment-5mg-vial-25mg-kit-ZPHC-8-1.jpg",
+    image: "/products/hgh-fragment-176-191-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 125.0,
     specs: [
       { label: "Seçici yağ kaybı", value: "Fragment 176-191'in kan glukozunu veya IGF-1'i yükseltmeden lipolizi artırdığı ve lipogenezi baskıladığı belirtilir.", kind: "claim" },
@@ -404,10 +404,10 @@ export const products: Product[] = [
   },
   {
     slug: "hp-hcg-5000iu-vial-zphc",
-    name: "HP-hCG ZPHC — 5 000 IU (1 lyophilized vial)",
+    name: "HP-hCG ZPHC — 5 000 IU (1 liyofilize flakon)",
     sku: "HCG5000-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2023/05/hp-hcg.jpg",
+    image: "/products/hp-hcg-5000iu-vial-zphc.jpg",
     sourcePriceUsd: 55.0,
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
@@ -426,10 +426,10 @@ export const products: Product[] = [
   },
   {
     slug: "hp-hcg-1000iu-zphc",
-    name: "HP-hCG ZPHC — 5 000 IU kit (5 vials × 1 000 IU)",
+    name: "HP-hCG ZPHC — 5 000 IU kit (5 flakon × 1 000 IU)",
     sku: "HCG1000-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2023/12/hp-hcg-1000-1.jpg",
+    image: "/products/hp-hcg-1000iu-zphc.jpg",
     sourcePriceUsd: 49.0,
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
@@ -448,11 +448,11 @@ export const products: Product[] = [
   },
   {
     slug: "igf1-lr3-1mg-5x0p2mg-zphc",
-    name: "IGF-1 LR3 ZPHC — 1 mg (5 vials × 0.2 mg)",
+    name: "IGF-1 LR3 ZPHC — 1 mg (5 flakon × 0.2 mg)",
     sku: "IGF1-ZPHC",
     category: "peptid",
     peptideSlug: "igf-1-lr3",
-    image: "https://zphcstore.com/wp-content/uploads/2023/08/igf-1.jpg",
+    image: "/products/igf1-lr3-1mg-5x0p2mg-zphc.jpg",
     sourcePriceUsd: 89.0,
     specs: [
       { label: "Üretici", value: "ZPHC (Zhengzhou Pharmaceutical Co. Ltd)", kind: "spec" },
@@ -471,11 +471,11 @@ export const products: Product[] = [
   },
   {
     slug: "ipamorelin-25mg-5x5mg-zphc",
-    name: "Ipamorelin ZPHC — 25 mg (5 vials × 5 mg)",
+    name: "Ipamorelin ZPHC — 25 mg (5 flakon × 5 mg)",
     sku: "IPA25-ZPHC",
     category: "peptid",
     peptideSlug: "ipamorelin",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/Ipamorelin-25mg-Kit-ZPHC-3.jpg",
+    image: "/products/ipamorelin-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 118.0,
     specs: [
       { label: "Büyüme hormonu artışı", value: "Seçici grelin reseptör agonistinin kortizol yükselmesine yol açmadan GH ve IGF-1 düzeylerini artırdığı belirtilir.", kind: "claim" },
@@ -494,7 +494,7 @@ export const products: Product[] = [
     sku: "GLUT3000-ZPHC",
     category: "peptid",
     peptideSlug: "glutathione",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/L-GLUTATIONE-3000MG-KIT-ZPHC-5.jpg",
+    image: "/products/l-glutathione-3000mg-kit-zphc.jpg",
     sourcePriceUsd: 59.0,
     specs: [
       { label: "Hücresel yaşlanma karşıtı destek", value: "İndirgenmiş GSH'nin hücre içi antioksidan kapasiteyi yenilediği ve oksidatif stres belirteçlerine karşı koyduğu belirtilir.", kind: "claim" },
@@ -514,7 +514,7 @@ export const products: Product[] = [
     name: "LL-37 ZPHC - 25mg KIT (5×5 mg)",
     sku: "LL37-25-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/LL-37-25MG-KIT-ZPHC-3.jpg",
+    image: "/products/ll-37-zphc-25mg-kit.jpg",
     sourcePriceUsd: 299.0,
     specs: [
       { label: "Konak savunma peptidi", value: "LL-37'nin araştırma ortamlarında bağışıklık modellemesi, bariyer bütünlüğü ve antimikrobiyal yanıt çalışmalarında kullanıldığı belirtilir.", kind: "claim" },
@@ -529,11 +529,11 @@ export const products: Product[] = [
   },
   {
     slug: "mots-c-20mg-with-bacteriostatic-water-zphc",
-    name: "MOTS-c 20mg Kit ZPHC (Lyophilized Peptide + Bacteriostatic Water)",
+    name: "MOTS-c 20mg Kit ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
     sku: "MOTSC-20-ZPHC",
     category: "peptid",
     peptideSlug: "mots-c",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/mots-c-20mg-zphc-1.jpg",
+    image: "/products/mots-c-20mg-with-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 99.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize MOTS-c peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -550,10 +550,10 @@ export const products: Product[] = [
   },
   {
     slug: "mega-mass-mix-10mg-5x10mg-zphc",
-    name: "Mega Mass Mix ZPHC — 50 mg (5 vials × 10 mg)",
+    name: "Mega Mass Mix ZPHC — 50 mg (5 flakon × 10 mg)",
     sku: "MEG50-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/Mega-Mass-50mg-Kit-ZPHC-1.jpg",
+    image: "/products/mega-mass-mix-10mg-5x10mg-zphc.jpg",
     sourcePriceUsd: 89.0,
     specs: [
       { label: "Flakon Başına Formül", value: "GHRP-6 5 mg · CJC-1295 5 mg.", kind: "spec" },
@@ -571,10 +571,10 @@ export const products: Product[] = [
   },
   {
     slug: "melanotan-2-10mg-bacteriostatic-water-zphc",
-    name: "Melanotan-2 ZPHC — 10 mg (1 lyophilized vial)",
+    name: "Melanotan-2 ZPHC — 10 mg (1 liyofilize flakon)",
     sku: "MEL10-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2024/06/melanotan-2.jpg",
+    image: "/products/melanotan-2-10mg-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 20.0,
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
@@ -593,10 +593,10 @@ export const products: Product[] = [
   },
   {
     slug: "melanotan-2-30mg-aq-pen-zphc",
-    name: "Melanotan-II (AQ Pen) ZPHC — 30 mg Premixed",
+    name: "Melanotan-II (AQ Pen) ZPHC — 30 mg Hazır Karışım",
     sku: "MT2AQ30-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/mt2-30mg-aq-pen-ZPHC-1.jpg",
+    image: "/products/melanotan-2-30mg-aq-pen-zphc.jpg",
     sourcePriceUsd: 49.0,
     specs: [
       { label: "Kullanıma Hazır", value: "Su bazlı MT-2 önceden çözünmüş hâlde gelir — flakon, rekonstitüsyon ve enjektör gerekmez.", kind: "spec" },
@@ -613,10 +613,10 @@ export const products: Product[] = [
   },
   {
     slug: "multi-use-pen-36iu-cartridges-zphc",
-    name: "Multi-Use Pen ZPHC (For 36 IU Cartridges)",
+    name: "Multi-Use Pen ZPHC (36 IU Kartuşlar İçin)",
     sku: "PEN-MU-ZPHC",
     category: "aksesuar",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/multi-use-pen-for-36-iu-zphc-1.jpg",
+    image: "/products/multi-use-pen-36iu-cartridges-zphc.jpg",
     sourcePriceUsd: 30.0,
     specs: [
       { label: "Uyumluluk", value: "ZPTROP 36 IU tek hazneli kartuşlarla kullanım için tasarlanmıştır.", kind: "spec" },
@@ -633,11 +633,11 @@ export const products: Product[] = [
   },
   {
     slug: "nad-plus-2500mg-zphc",
-    name: "NAD+ ZPHC — 2500 mg KIT (5 vials × 500 mg)",
+    name: "NAD+ ZPHC — 2500 mg KIT (5 flakon × 500 mg)",
     sku: "NAD2500-ZPHC",
     category: "peptid",
     peptideSlug: "nad-nmn",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/NAD-2500MG-KIT-5VIAL-ZPHC-1.jpg",
+    image: "/products/nad-plus-2500mg-zphc.jpg",
     sourcePriceUsd: 139.0,
     specs: [
       { label: "Hücresel enerji desteği", value: "ATP üretimi, mitokondriyal verimlilik ve genel metabolik fonksiyon için temel kofaktör.", kind: "claim" },
@@ -654,11 +654,11 @@ export const products: Product[] = [
   },
   {
     slug: "reta-60mg-dual-cartridge-sterile-water-zphc",
-    name: "Reta 60mg PEN ZPHC - (Dual-Chamber Cartridge + Sterile Water)",
+    name: "Reta 60mg PEN ZPHC - (Çift Hazneli Kartuş + Steril Su)",
     sku: "RET60PEN-ZPHC",
     category: "peptid",
     peptideSlug: "retatrutide",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/reta-60mg-pen-dual-cartrige-zphc-1.jpg",
+    image: "/products/reta-60mg-dual-cartridge-sterile-water-zphc.jpg",
     sourcePriceUsd: 359.0,
     specs: [
       { label: "Çift hazneli kartuş (60 mg)", value: "Bir haznede 60 mg liyofilize toz, diğer haznede enjeksiyonluk steril su bulunur; bileşenler aktivasyona kadar ayrı kalır, karışım kullanımdan hemen önce gerçekleşir.", kind: "claim" },
@@ -668,11 +668,11 @@ export const products: Product[] = [
   },
   {
     slug: "retatrutide-30mg-aq-pen-zphc",
-    name: "Reta ZPHC (AQ pen) — 30 mg Premixed Pen",
+    name: "Reta ZPHC (AQ pen) — 30 mg Hazır Karışım Kalem",
     sku: "RET30B-ZPHC",
     category: "peptid",
     peptideSlug: "retatrutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/reta30mg.jpg",
+    image: "/products/retatrutide-30mg-aq-pen-zphc.jpg",
     sourcePriceUsd: 219.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -681,11 +681,11 @@ export const products: Product[] = [
   },
   {
     slug: "retatrutide-10mg-5x2mg-zphc-2",
-    name: "Reta ZPHC — 10 mg (5 vials × 2 mg)",
+    name: "Reta ZPHC — 10 mg (5 flakon × 2 mg)",
     sku: "RET10-ZPHC",
     category: "peptid",
     peptideSlug: "retatrutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/reta10mg.jpg",
+    image: "/products/retatrutide-10mg-5x2mg-zphc-2.jpg",
     sourcePriceUsd: 83.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -694,11 +694,11 @@ export const products: Product[] = [
   },
   {
     slug: "reta-zphc-120-mg-5-vials-x-24-mg",
-    name: "Reta ZPHC — 120 mg (5 vials × 24 mg)",
+    name: "Reta ZPHC — 120 mg (5 flakon × 24 mg)",
     sku: "RET120-ZPHC",
     category: "peptid",
     peptideSlug: "retatrutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/reta120mg.jpg",
+    image: "/products/reta-zphc-120-mg-5-vials-x-24-mg.jpg",
     sourcePriceUsd: 589.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -707,11 +707,11 @@ export const products: Product[] = [
   },
   {
     slug: "retatrutide-zphc-15-mg-1vial",
-    name: "Reta ZPHC — 15 mg (15 mg * 1 vial)",
+    name: "Reta ZPHC — 15 mg (15 mg * 1 flakon)",
     sku: "RET15-ZPHC",
     category: "peptid",
     peptideSlug: "retatrutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/reta15mg.jpg",
+    image: "/products/retatrutide-zphc-15-mg-1vial.jpg",
     sourcePriceUsd: 119.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -720,11 +720,11 @@ export const products: Product[] = [
   },
   {
     slug: "retatrutide-20mg-5x4mg-zphc",
-    name: "Reta ZPHC — 20 mg (5 vials × 4 mg)",
+    name: "Reta ZPHC — 20 mg (5 flakon × 4 mg)",
     sku: "RET20-ZPHC",
     category: "peptid",
     peptideSlug: "retatrutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/reta20mg.jpg",
+    image: "/products/retatrutide-20mg-5x4mg-zphc.jpg",
     sourcePriceUsd: 138.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -733,11 +733,11 @@ export const products: Product[] = [
   },
   {
     slug: "retatrutide-40mg-5x8mg-zphc",
-    name: "Reta ZPHC — 40 mg (5 vials × 8 mg)",
+    name: "Reta ZPHC — 40 mg (5 flakon × 8 mg)",
     sku: "RET40-ZPHC",
     category: "peptid",
     peptideSlug: "retatrutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/reta40mg.jpg",
+    image: "/products/retatrutide-40mg-5x8mg-zphc.jpg",
     sourcePriceUsd: 239.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -746,11 +746,11 @@ export const products: Product[] = [
   },
   {
     slug: "retatrutide-60mg-5x12mg-zphc",
-    name: "Reta ZPHC — 60 mg (5 vials × 12 mg)",
+    name: "Reta ZPHC — 60 mg (5 flakon × 12 mg)",
     sku: "RET60-ZPHC",
     category: "peptid",
     peptideSlug: "retatrutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/reta60mg.jpg",
+    image: "/products/retatrutide-60mg-5x12mg-zphc.jpg",
     sourcePriceUsd: 339.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -763,7 +763,7 @@ export const products: Product[] = [
     sku: "HGH140-SP",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2024/05/Spectros-140iu-SpectrumPharma.jpg",
+    image: "/products/spectros-140iu-hgh-spectrum-pharma.jpg",
     sourcePriceUsd: 239.0,
     specs: [
       { label: "Üretici", value: "Spectrum Pharma", kind: "spec" },
@@ -786,7 +786,7 @@ export const products: Product[] = [
     sku: "HGH150-SP",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2024/05/Spectros-150iu-SpectrumPharma.jpg",
+    image: "/products/spectros-150iu-hgh-spectrum-pharma.jpg",
     sourcePriceUsd: 229.0,
     specs: [
       { label: "Üretici", value: "Spectrum Pharma", kind: "spec" },
@@ -809,7 +809,7 @@ export const products: Product[] = [
     sku: "HGH280-SP",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2024/05/Spectros-280iu-SpectrumPharma.jpg",
+    image: "/products/spectros-280iu-hgh-spectrum-pharma.jpg",
     sourcePriceUsd: 399.0,
     specs: [
       { label: "Üretici", value: "Spectrum Pharma", kind: "spec" },
@@ -828,11 +828,11 @@ export const products: Product[] = [
   },
   {
     slug: "semaglutide-10mg-5x2mg-zphc",
-    name: "Semaglutide ZPHC — 10 mg (5 vials × 2 mg)",
+    name: "Semaglutide ZPHC — 10 mg (5 flakon × 2 mg)",
     sku: "SEM10-ZPHC",
     category: "peptid",
     peptideSlug: "semaglutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/Semaglutide-10mg-ZPHC-2.jpg",
+    image: "/products/semaglutide-10mg-5x2mg-zphc.jpg",
     sourcePriceUsd: 76.0,
     specs: [
       { label: "Araştırma Odağı", value: "İştah baskılanması, mide boşalmasının gecikmesi, insülin duyarlılığında iyileşme ve hızlı yağ kaybı.", kind: "claim" },
@@ -849,11 +849,11 @@ export const products: Product[] = [
   },
   {
     slug: "semaglutide-20mg-5x4mg-zphc",
-    name: "Semaglutide ZPHC — 20 mg (5 vials × 4 mg)",
+    name: "Semaglutide ZPHC — 20 mg (5 flakon × 4 mg)",
     sku: "SEM20-ZPHC",
     category: "peptid",
     peptideSlug: "semaglutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/Semaglutide-20mg-ZPHC-5.jpg",
+    image: "/products/semaglutide-20mg-5x4mg-zphc.jpg",
     sourcePriceUsd: 143.0,
     specs: [
       { label: "Araştırma Odağı", value: "Güçlü iştah baskılanması, mide boşalmasının gecikmesi, insülin duyarlılığında iyileşme ve hızlı yağ kaybı.", kind: "claim" },
@@ -870,11 +870,11 @@ export const products: Product[] = [
   },
   {
     slug: "semaglutide-5mg-kit-zphc",
-    name: "Semaglutide ZPHC — 5 mg (5 vials × 1 mg)",
+    name: "Semaglutide ZPHC — 5 mg (5 flakon × 1 mg)",
     sku: "SEM5-ZPHC",
     category: "peptid",
     peptideSlug: "semaglutide",
-    image: "https://zphcstore.com/wp-content/uploads/2024/02/semaglutide-zphc.jpg",
+    image: "/products/semaglutide-5mg-kit-zphc.jpg",
     sourcePriceUsd: 44.0,
     specs: [
       { label: "Yeni nesil GLP-1 agonisti", value: "Klinik çalışmalarda iştahı baskıladığı, glisemik kontrolü iyileştirdiği ve sürdürülebilir yağ kaybı sağladığı gösterilmiştir.", kind: "claim" },
@@ -890,11 +890,11 @@ export const products: Product[] = [
   },
   {
     slug: "semaglutide-zphc-50-mg-5-vials-x-10-mg",
-    name: "Semaglutide ZPHC — 50 mg (5 vials × 10 mg)",
+    name: "Semaglutide ZPHC — 50 mg (5 flakon × 10 mg)",
     sku: "SEM50-ZPHC",
     category: "peptid",
     peptideSlug: "semaglutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/SEMAGLUTIDE-50MG-KIT-ZPHC-2.jpg",
+    image: "/products/semaglutide-zphc-50-mg-5-vials-x-10-mg.jpg",
     sourcePriceUsd: 279.0,
     specs: [
       { label: "Araştırma Odağı", value: "Güçlü iştah baskılanması, mide boşalmasının gecikmesi, insülin duyarlılığında iyileşme ve hızlı yağ kaybı.", kind: "claim" },
@@ -911,11 +911,11 @@ export const products: Product[] = [
   },
   {
     slug: "semaglutide-6mg-aq-pen-zphc",
-    name: "Semaglutide ZPHC — 6 mg Premixed Pen",
+    name: "Semaglutide ZPHC — 6 mg Hazır Karışım Kalem",
     sku: "SEM6-ZPHC",
     category: "peptid",
     peptideSlug: "semaglutide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/SEMAGLUTIDE-6mg-pen-4.jpg",
+    image: "/products/semaglutide-6mg-aq-pen-zphc.jpg",
     sourcePriceUsd: 105.0,
     specs: [
       { label: "Karıştırma gerektirmez", value: "Tamamen çözünmüş peptid — dozu ayarlayıp deri altına uygulamanız yeterlidir.", kind: "claim" },
@@ -932,10 +932,10 @@ export const products: Product[] = [
   },
   {
     slug: "super-slim-mix-275mg-5x55mg-zphc",
-    name: "Super Slim Mix ZPHC — 27,5 mg (5 vials × 5,5 mg)",
+    name: "Super Slim Mix ZPHC — 27,5 mg (5 flakon × 5,5 mg)",
     sku: "SUP275-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/Super-slim-mix-5.5mg-vial-27.5mg-kit-ZPHC-1.jpg",
+    image: "/products/super-slim-mix-275mg-5x55mg-zphc.jpg",
     sourcePriceUsd: 149.0,
     specs: [
       { label: "Rekonstitüsyon", value: "1 ml bakteriyostatik su ekleyin → 5,5 mg/ml. 2–8 °C'de saklayın.", kind: "spec" },
@@ -952,10 +952,10 @@ export const products: Product[] = [
   },
   {
     slug: "super-slim-mix-55mg-5x11mg-zphc",
-    name: "Super Slim Mix ZPHC — 55 mg (5 vials × 11 mg)",
+    name: "Super Slim Mix ZPHC — 55 mg (5 flakon × 11 mg)",
     sku: "SUP55-ZPHC",
     category: "peptid",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/Super-slim-mix-11mg-55mg-kit-ZPHC-4.jpg",
+    image: "/products/super-slim-mix-55mg-5x11mg-zphc.jpg",
     sourcePriceUsd: 199.0,
     specs: [
       { label: "Flakon Başına Formül", value: "AOD 9604 5 mg · FRAG 176-191 5 mg · Adipotide 1 mg.", kind: "spec" },
@@ -972,11 +972,11 @@ export const products: Product[] = [
   },
   {
     slug: "zphc-tb500-20mg-with-bacteriostatic-water",
-    name: "TB-500 20mg Kit (Lyophilized Peptide + Bacteriostatic Water)",
+    name: "TB-500 20mg Kit (Liyofilize Peptid + Bakteriyostatik Su)",
     sku: "TB50020-ZPHC",
     category: "peptid",
     peptideSlug: "tb-500",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/Tb-500-20mg-Kit-ZPHC-1.jpg",
+    image: "/products/zphc-tb500-20mg-with-bacteriostatic-water.jpg",
     sourcePriceUsd: 109.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize TB-500 (toz) + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -993,11 +993,11 @@ export const products: Product[] = [
   },
   {
     slug: "tb500-25mg-5x5mg-zphc",
-    name: "TB-500 ZPHC — 25 mg (5 vials × 5 mg)",
+    name: "TB-500 ZPHC — 25 mg (5 flakon × 5 mg)",
     sku: "TB50025-ZPHC",
     category: "peptid",
     peptideSlug: "tb-500",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/Tb-500-25mg-Kit-ZPHC-8.jpg",
+    image: "/products/tb500-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 119.0,
     specs: [
       { label: "Antiinflamatuvar etki", value: "Şişliği ve yaralanma sonrası tutukluğu azaltmaya yardımcı olduğu belirtilir.", kind: "claim" },
@@ -1013,11 +1013,11 @@ export const products: Product[] = [
   },
   {
     slug: "tirze-zphc-75-mg-dual-cartridge-pen",
-    name: "Tirze 75mg Dual Cartridge Pen",
+    name: "Tirze 75mg Çift Kartuşlu Kalem",
     sku: "TIR75-ZPHC",
     category: "peptid",
     peptideSlug: "tirzepatide",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/t-75mg.jpg",
+    image: "/products/tirze-zphc-75-mg-dual-cartridge-pen.jpg",
     sourcePriceUsd: 339.0,
     specs: [
       { label: "Çift hazneli kartuş (75 mg)", value: "Bir haznede 75 mg liyofilize toz, diğer haznede enjeksiyonluk steril su bulunur; bileşenler aktivasyona kadar ayrı kalır, karışım kullanımdan hemen önce gerçekleşir.", kind: "claim" },
@@ -1027,11 +1027,11 @@ export const products: Product[] = [
   },
   {
     slug: "tirzepatide-zphc-150-mg-5-vials-x-30-mg",
-    name: "Tirze ZPHC — 150 mg (5 vials × 30 mg)",
+    name: "Tirze ZPHC — 150 mg (5 flakon × 30 mg)",
     sku: "TIRZEP150-ZPHC",
     category: "peptid",
     peptideSlug: "tirzepatide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/tirzepatide-150mg-zphc.jpg",
+    image: "/products/tirzepatide-zphc-150-mg-5-vials-x-30-mg.jpg",
     sourcePriceUsd: 699.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -1040,11 +1040,11 @@ export const products: Product[] = [
   },
   {
     slug: "tirzepatide-30mg-aq-pen-zphc",
-    name: "Tirze ZPHC — 30 mg Premixed Pen",
+    name: "Tirze ZPHC — 30 mg Hazır Karışım Kalem",
     sku: "TIR30-ZPHC",
     category: "peptid",
     peptideSlug: "tirzepatide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/terzipatide-pen-30mg-zphc.jpg",
+    image: "/products/tirzepatide-30mg-aq-pen-zphc.jpg",
     sourcePriceUsd: 189.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -1053,11 +1053,11 @@ export const products: Product[] = [
   },
   {
     slug: "tirzepatide-37p5mg-5x7p5mg-zphc",
-    name: "Tirze ZPHC — 37.5 mg (5 vials × 7.5 mg)",
+    name: "Tirze ZPHC — 37.5 mg (5 flakon × 7.5 mg)",
     sku: "TIRZEP75-ZPHC",
     category: "peptid",
     peptideSlug: "tirzepatide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/terzipatide-37-5-zphc.jpg",
+    image: "/products/tirzepatide-37p5mg-5x7p5mg-zphc.jpg",
     sourcePriceUsd: 199.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -1066,11 +1066,11 @@ export const products: Product[] = [
   },
   {
     slug: "tirzepatide-50mg-5x10mg-zphc",
-    name: "Tirze ZPHC — 50 mg (5 vials × 10 mg)",
+    name: "Tirze ZPHC — 50 mg (5 flakon × 10 mg)",
     sku: "TIRZEP10-ZPHC",
     category: "peptid",
     peptideSlug: "tirzepatide",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/tirzepatide-50mg-zphc.jpg",
+    image: "/products/tirzepatide-50mg-5x10mg-zphc.jpg",
     sourcePriceUsd: 259.0,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -1083,7 +1083,7 @@ export const products: Product[] = [
     sku: "URMIX25-ZPHC",
     category: "peptid",
     peptideSlug: "bpc-157",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/ultra-rehab-20mg-kit-zphc-1.jpg",
+    image: "/products/zphc-ultra-rehab-mix-20mg-bpc157-tb500.jpg",
     sourcePriceUsd: 89.0,
     specs: [
       { label: "Bileşim", value: "10 mg BPC-157 ve 10 mg TB-500 (Timozin Beta-4 fragmanı) içeren çift peptidli karışım.", kind: "claim" },
@@ -1101,11 +1101,11 @@ export const products: Product[] = [
   },
   {
     slug: "ultra-rehab-mix-50mg-5x10mg-zphc",
-    name: "Ultra Rehab Mix ZPHC — 50 mg (BPC-157 5 mg + TB-500 5 mg) — 5 vials × 10 mg",
+    name: "Ultra Rehab Mix ZPHC — 50 mg (BPC-157 5 mg + TB-500 5 mg) — 5 flakon × 10 mg",
     sku: "URMIX50-ZPHC",
     category: "peptid",
     peptideSlug: "bpc-157",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/Ultra-Rehab-50mg-Kit-ZPHC-3.jpg",
+    image: "/products/ultra-rehab-mix-50mg-5x10mg-zphc.jpg",
     sourcePriceUsd: 199.0,
     specs: [
       { label: "Liyofilize Saflık", value: "Her 10 mg flakonu 2 ml bakteriyostatik su ile sulandırarak toplam 5 mg/ml peptid elde edin (ml başına 2,5 mg BPC + 2,5 mg TB).", kind: "spec" },
@@ -1121,11 +1121,11 @@ export const products: Product[] = [
   },
   {
     slug: "wellness-mix-25mg-5x5mg-zphc",
-    name: "Wellness Mix ZPHC — 25 mg (Ipamorelin 2.5 mg + CJC-1295 2.5 mg) — 5 vials × 5 mg",
+    name: "Wellness Mix ZPHC — 25 mg (Ipamorelin 2.5 mg + CJC-1295 2.5 mg) — 5 flakon × 5 mg",
     sku: "WMIX25-ZPHC",
     category: "peptid",
     peptideSlug: "ipamorelin",
-    image: "https://zphcstore.com/wp-content/uploads/2025/06/Wellness-Mix-25mg-Kit-ZPHC-5.jpg",
+    image: "/products/wellness-mix-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 119.0,
     specs: [
       { label: "Çift etki", value: "Ipamorelin 2,5 mg + CJC-1295 2,5 mg, doğal GH ve IGF-1 salınımını güçlendirir.", kind: "claim" },
@@ -1140,11 +1140,11 @@ export const products: Product[] = [
   },
   {
     slug: "zphc-nad-plus-1000mg-with-bacteriostatic-water",
-    name: "ZPHC NAD+ 1000mg Kit (Lyophilized Powder + Bacteriostatic Water)",
+    name: "ZPHC NAD+ 1000mg Kit (Liyofilize Toz + Bakteriyostatik Su)",
     sku: "NAD1000-ZPHC",
     category: "peptid",
     peptideSlug: "nad-nmn",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/NAD-1000MG-KIT-ZPHC-1.jpg",
+    image: "/products/zphc-nad-plus-1000mg-with-bacteriostatic-water.jpg",
     sourcePriceUsd: 63.0,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 1000 mg liyofilize NAD+ + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -1161,11 +1161,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-144iu-2x72iu-two-chamber-cartridges-zphc",
-    name: "ZPTROP 144 IU Kit ZPHC (2×72 IU Two-Chamber Cartridges)",
+    name: "ZPTROP 144 IU Kit ZPHC (2×72 IU Çift Hazneli Kartuş)",
     sku: "HGH144-AQ-CART-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/zptrop-144iu-two-chamber-cartriges-zphc-2.jpg",
+    image: "/products/zptrop-144iu-2x72iu-two-chamber-cartridges-zphc.jpg",
     sourcePriceUsd: 229.0,
     specs: [
       { label: "Format", value: "2 adet hermetik kapalı çift hazneli cam kartuş.", kind: "spec" },
@@ -1183,11 +1183,11 @@ export const products: Product[] = [
   },
   {
     slug: "zphc-zptrop-72iu-dual-chamber-pen",
-    name: "ZPTROP 72 IU ZPHC Dual-Chamber Pen (24mg)",
+    name: "ZPTROP 72 IU ZPHC Çift Hazneli Kalem (24mg)",
     sku: "ZPTAQ72-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/Zptrop-AQ-72IU-pen-ZPHC-2.jpg",
+    image: "/products/zphc-zptrop-72iu-dual-chamber-pen.jpg",
     sourcePriceUsd: 159.0,
     specs: [
       { label: "Format", value: "Ayrı bölmeli steril çift hazneli kalem.", kind: "spec" },
@@ -1204,11 +1204,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-hgh-36iu-aq-pen-zphc",
-    name: "ZPtrop HGH (AQ pen) ZPHC — 36 IU Premixed Pen",
+    name: "ZPtrop HGH (AQ pen) ZPHC — 36 IU Hazır Karışım Kalem",
     sku: "ZPTAQ36-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/Zptrop-AQ-36IU-pen-ZPHC-1.jpg",
+    image: "/products/zptrop-hgh-36iu-aq-pen-zphc.jpg",
     sourcePriceUsd: 89.0,
     specs: [
       { label: "Kullanıma Hazır", value: "Tamamen çözünmüş somatropin çözeltisi — flakon veya bakteriyostatik su gerekmez.", kind: "spec" },
@@ -1229,7 +1229,7 @@ export const products: Product[] = [
     sku: "HGH320-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2023/07/zptrop-320-1.jpg",
+    image: "/products/zptropin-hgh-320iu-zphc.jpg",
     sourcePriceUsd: 449.0,
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
@@ -1248,11 +1248,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-hgh-80iu-zphc-bacteriostatic-water",
-    name: "ZPtrop HGH 80iu ZPHC + Bacteriostatic Water",
+    name: "ZPtrop HGH 80iu ZPHC + Bakteriyostatik Su",
     sku: "HGH80-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2023/07/zptrop-80-1.jpg",
+    image: "/products/zptrop-hgh-80iu-zphc-bacteriostatic-water.jpg",
     sourcePriceUsd: 179.0,
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
@@ -1271,11 +1271,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-100iu-zphc",
-    name: "ZPtrop HGH ZPHC — 100 IU (1 lyophilized vial)",
+    name: "ZPtrop HGH ZPHC — 100 IU (1 liyofilize flakon)",
     sku: "HGH100-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2024/10/zptrop-hgh-100iu-1.jpg",
+    image: "/products/zptrop-100iu-zphc.jpg",
     sourcePriceUsd: 189.0,
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
@@ -1294,11 +1294,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-hgh-100iu-aq-vial-zphc",
-    name: "ZPtrop HGH ZPHC — 100 IU Premixed Vial",
+    name: "ZPtrop HGH ZPHC — 100 IU Hazır Karışım Flakon",
     sku: "ZPTAQ100-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2025/07/Zptrop-100-aq-ZPHC-4.jpg",
+    image: "/products/zptrop-hgh-100iu-aq-vial-zphc.jpg",
     sourcePriceUsd: 199.0,
     specs: [
       { label: "Rekonstitüsyon gerekmez", value: "Tamamen çözünmüş somatropin çözeltisi — istenen IU'yu insülin enjektörüyle çekmeniz yeterlidir.", kind: "claim" },
@@ -1315,11 +1315,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-16iu-1vial-zphc",
-    name: "ZPtrop HGH ZPHC — 16 IU (1 lyophilized vial + bac water)",
+    name: "ZPtrop HGH ZPHC — 16 IU (1 liyofilize flakon + bac water)",
     sku: "HGH16-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/ZPTROP-16IU-1vial-1Bwater-ZPHC-4.jpg",
+    image: "/products/zptrop-16iu-1vial-zphc.jpg",
     sourcePriceUsd: 34.0,
     specs: [
       { label: "Standart rekonstitüsyon", value: "Ürünle verilen bakteriyostatik suyu ekleyin; somatropin berrak bir çözelti hâline gelene dek hafifçe çevirin.", kind: "spec" },
@@ -1336,11 +1336,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-hgh-160iu-zphc",
-    name: "ZPtrop HGH ZPHC — 160 IU (16 vials × 10 IU)",
+    name: "ZPtrop HGH ZPHC — 160 IU (16 flakon × 10 IU)",
     sku: "HGH160-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2019/03/zptrop-160-1.jpg",
+    image: "/products/zptrop-hgh-160iu-zphc.jpg",
     sourcePriceUsd: 279.0,
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
@@ -1359,11 +1359,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-hgh-200iu-2x100iu-zphc",
-    name: "ZPtrop HGH ZPHC — 200 IU (2 vials × 100 IU)",
+    name: "ZPtrop HGH ZPHC — 200 IU (2 flakon × 100 IU)",
     sku: "HGH200-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2025/01/zptrop-200iu-zphc-2-1.jpg",
+    image: "/products/zptrop-hgh-200iu-2x100iu-zphc.jpg",
     sourcePriceUsd: 299.0,
     specs: [
       { label: "Doz Rehberi", value: "Genel sağlık/yağ yakımı için günde 2–4 IU, kas kazanımı için 4–6 IU.", kind: "claim" },
@@ -1379,11 +1379,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-32iu-1vial-zphc",
-    name: "ZPtrop HGH ZPHC — 32 IU (1 lyophilized vial + bac water)",
+    name: "ZPtrop HGH ZPHC — 32 IU (1 liyofilize flakon + bac water)",
     sku: "HGH32-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/ZPTROP-32IU-1vial-1Bwater-ZPHC-2.jpg",
+    image: "/products/zptrop-32iu-1vial-zphc.jpg",
     sourcePriceUsd: 65.0,
     specs: [
       { label: "Standart rekonstitüsyon", value: "Ürünle verilen bakteriyostatik suyu ekleyin; berrak bir somatropin çözeltisi için hafifçe çevirin.", kind: "spec" },
@@ -1400,11 +1400,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-150-aq-zphc-premixed",
-    name: "Zptrop 150 AQ ZPHC - Premixed",
+    name: "Zptrop 150 AQ ZPHC - Hazır Karışım",
     sku: "HGH150-AQ-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/ZPTROP-150IU-AQ-15IU-10VIAL-ZPHC-7.jpg",
+    image: "/products/zptrop-150-aq-zphc-premixed.jpg",
     sourcePriceUsd: 237.0,
     specs: [
       { label: "Kullanıma hazır HGH", value: "Tutarlı etkinlik için steril sulu çözelti içinde tamamen hazır karışım rekombinant insan büyüme hormonu.", kind: "claim" },
@@ -1421,11 +1421,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-hgh-zphc-90-iu-premixed",
-    name: "Zptrop 90 AQ ZPHC - Premixed",
+    name: "Zptrop 90 AQ ZPHC - Hazır Karışım",
     sku: "HGH90-AQ-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2025/11/ZPTROP-90IU-KIT-ZPHC-2.jpg",
+    image: "/products/zptrop-hgh-zphc-90-iu-premixed.jpg",
     sourcePriceUsd: 149.0,
     specs: [
       { label: "Kullanıma hazır formül", value: "Tamamen hazır karışım somatropin çözeltisi — rekonstitüsyon gerekmez; IU'yu doğrudan insülin enjektörüyle çekin.", kind: "claim" },
@@ -1442,11 +1442,11 @@ export const products: Product[] = [
   },
   {
     slug: "zptrop-aq-180-iu-kit-5x36iu-pen-cartridges",
-    name: "Zptrop AQ 180 IU Kit (5×36 IU Cartridges for Multi-Use Pen)",
+    name: "Zptrop AQ 180 IU Kit (5×36 IU Çok Kullanımlık Kalem Kartuşu)",
     sku: "HGH180-AQ-CART-ZPHC",
     category: "hgh",
     peptideSlug: "hgh",
-    image: "https://zphcstore.com/wp-content/uploads/2026/02/zptrop-aq-180iu-5-36iu-pen-cartridges-1.jpg",
+    image: "/products/zptrop-aq-180-iu-kit-5x36iu-pen-cartridges.jpg",
     sourcePriceUsd: 299.0,
     specs: [
       { label: "Format", value: "Sıvı somatropin (191 aa, rDNA kaynaklı) içeren, uyumlu çok kullanımlık enjeksiyon kalemleri için tasarlanmış dolu tek hazneli kartuşlar.", kind: "spec" },

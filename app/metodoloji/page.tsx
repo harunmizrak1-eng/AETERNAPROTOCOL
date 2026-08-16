@@ -6,7 +6,7 @@ import { tierLabel, tierDots, tierColorVar } from "@/lib/peptides"
 import { lastContentReview } from "@/lib/site"
 
 const description =
-  "ÆTERNA'nın kanıt seviyesi sistemini nasıl kurduğu, protokolleri nasıl incelediği, neyi önermediği ve çıkar çatışmalarını nasıl ele aldığı ile editorial standartlarımız."
+  "ZPHC Türkiye'nin kanıt seviyesi sistemini nasıl kurduğu, üretici beyanlarını literatürden nasıl ayırdığı ve çıkar çatışmalarını nasıl ele aldığı ile editoryal standartlarımız."
 
 export const metadata: Metadata = {
   title: "Metodoloji",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     canonical: "/metodoloji",
   },
   openGraph: {
-    title: "Metodoloji · ÆTERNA",
+    title: "Metodoloji · ZPHC Türkiye",
     description,
     url: "/metodoloji",
   },
@@ -150,12 +150,15 @@ export default function MethodologyPage() {
                 Çıkar çatışması beyanı
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                ÆTERNA hem protokol danışmanlığı hem de tedarik yönlendirmesi
-                sunar. Bu, bir bileşiği önerme kararımızın ticari bir tarafı
-                da olduğu anlamına gelir. Bunu gizlemek yerine açıkça
+ZPHC Türkiye bir distribütördür: bu sayfada sınıflandırdığımız
+                bileşiklerin bir kısmını aynı zamanda satıyoruz. Bu doğrudan
+                bir çıkar çatışmasıdır ve gizlemek yerine açıkça
                 belirtiyoruz. Kanıt sınıflandırması bu ticari ilişkiden
-                etkilenmez: preklinik bir bileşik, iş modelimize ne kadar
-                uygun olursa olsun preklinik olarak kalır.
+                etkilenmez: preklinik bir bileşik, ne kadar çok satarsa
+                satsın preklinik olarak kalır. Aynı nedenle üreticinin
+                etkinlik beyanlarını kendi değerlendirmemizden ayrı bir
+                bölümde, doğrulanmamış olduklarını belirterek
+                gösteriyoruz.
               </p>
             </div>
 

@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ÆTERNA dark luxury theme */
+/* ZPHC Türkiye — kurumsal tema */
 
 @theme inline {
   --font-sans: var(--font-inter), 'Inter Fallback', sans-serif;
@@ -41,33 +41,41 @@
   --radius-lg: var(--radius);
 }
 
-:root {
-  color-scheme: dark;
-  --background: #0a0a0a;
-  --foreground: #f0ede8;
-  --surface: #212121;
-  --gold: #c4a882;
-  --hairline: rgba(255, 255, 255, 0.07);
-  --tier-proven: #6faa80;
-  --tier-theoretical: #c4a882;
-  --tier-preclinical: #9a8f7d;
+/* ZPHC Türkiye — kurumsal mavi / beyaz.
+   Marka renkleri zphcstore.com'dan alınmıştır: birincil #0072bc, koyu
+   #014673, derin lacivert #00314c. Bir ilaç üreticisinin distribütör
+   sitesi için beyaz zemin ve klinik mavi doğru registerdır.
 
-  --card: #212121;
-  --card-foreground: #f0ede8;
-  --popover: #212121;
-  --popover-foreground: #f0ede8;
-  --primary: #c4a882;
-  --primary-foreground: #0a0a0a;
-  --secondary: #212121;
-  --secondary-foreground: #f0ede8;
-  --muted: #212121;
-  --muted-foreground: rgba(240, 237, 232, 0.7);
-  --accent: #c4a882;
-  --accent-foreground: #0a0a0a;
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: rgba(255, 255, 255, 0.07);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: #c4a882;
+   NOT: --gold değişkeni adıyla korunuyor. Kod tabanında ~200 yerde vurgu
+   rengi olarak kullanılıyor; adı değiştirmek geniş ve riskli bir diff
+   üretirdi. Değeri artık ZPHC mavisidir. */
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #0d1b2a;
+  --surface: #f4f7fa;
+  --gold: #0072bc;
+  --hairline: rgba(13, 27, 42, 0.1);
+  --tier-proven: #1a7f4b;
+  --tier-theoretical: #b26a00;
+  --tier-preclinical: #64748b;
+
+  --card: #f4f7fa;
+  --card-foreground: #0d1b2a;
+  --popover: #ffffff;
+  --popover-foreground: #0d1b2a;
+  --primary: #0072bc;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f7fa;
+  --secondary-foreground: #0d1b2a;
+  --muted: #f4f7fa;
+  --muted-foreground: rgba(13, 27, 42, 0.65);
+  --accent: #014673;
+  --accent-foreground: #ffffff;
+  --destructive: #b20000;
+  --border: rgba(13, 27, 42, 0.1);
+  --input: rgba(13, 27, 42, 0.18);
+  --ring: #0072bc;
   --radius: 0.25rem;
 }
 
@@ -92,16 +100,6 @@
   }
 }
 
-/* Ultra-subtle film grain; lifts flat black into "printed catalogue" feel */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.0125;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
 
 /* Scroll-reveal: calm fade + slight rise (Apple-style) */
 @media (prefers-reduced-motion: no-preference) {
@@ -128,17 +126,15 @@ body::before {
   }
 }
 
-/* ÆTERNA signature motion: a barely-visible, slow-pulsing line chart in the
-   hero background, evoking continuous biomarker monitoring. Never literal
-   data, never interactive, never loud. This is the brand's ONE signature
-   motion element; do not replicate elsewhere. */
+/* Hero arka planındaki, zar zor görünen yavaş nabız hareketi. Tek imza
+   hareket öğesidir; başka yerde tekrarlanmaz. */
 @media (prefers-reduced-motion: no-preference) {
   .signature-pulse {
-    animation: aeterna-signature-pulse 9s ease-in-out infinite;
+    animation: zphc-signature-pulse 9s ease-in-out infinite;
   }
 }
 
-@keyframes aeterna-signature-pulse {
+@keyframes zphc-signature-pulse {
   0%,
   100% {
     opacity: 0.07;

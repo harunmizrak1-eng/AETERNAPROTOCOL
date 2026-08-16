@@ -76,23 +76,23 @@ export default async function PeptideDetailPage({
     <>
       <Nav />
       <main id="main-content" className="relative z-10 bg-background pt-32">
-        <article className="px-6 pb-28 sm:pb-36 md:px-10">
+        <article className="px-6 pb-20 md:px-10">
           <div className="mx-auto max-w-2xl">
             <Link
               href="/peptidler"
-              className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs tracking-normal text-muted-foreground transition-colors hover:text-foreground font-medium"
             >
               ← Peptid Kütüphanesi
             </Link>
 
-            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+            <p className="mt-10 text-xs tracking-normal text-muted-foreground font-medium">
               {peptide.category}
             </p>
-            <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-3 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl">
               {peptide.name}
             </h1>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.65rem] uppercase tracking-eyebrow">
+            <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-normal font-medium">
               <span
                 className={`font-mono ${tierColorVar[peptide.tier]}`}
                 aria-hidden="true"
@@ -115,7 +115,7 @@ export default async function PeptideDetailPage({
               <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-hairline pt-6 sm:grid-cols-4">
                 {peptide.molecular.weight && (
                   <div>
-                    <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                    <p className="text-xs tracking-normal text-muted-foreground font-medium">
                       Moleküler Ağırlık
                     </p>
                     <p className="mt-1 font-mono text-sm text-foreground/90">
@@ -125,7 +125,7 @@ export default async function PeptideDetailPage({
                 )}
                 {peptide.molecular.halfLife && (
                   <div>
-                    <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                    <p className="text-xs tracking-normal text-muted-foreground font-medium">
                       Yarı Ömür
                     </p>
                     <p className="mt-1 font-mono text-sm text-foreground/90">
@@ -135,7 +135,7 @@ export default async function PeptideDetailPage({
                 )}
                 {peptide.molecular.chain && (
                   <div>
-                    <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                    <p className="text-xs tracking-normal text-muted-foreground font-medium">
                       Zincir
                     </p>
                     <p className="mt-1 font-mono text-sm text-foreground/90">
@@ -145,7 +145,7 @@ export default async function PeptideDetailPage({
                 )}
                 {peptide.molecular.sequence && (
                   <div>
-                    <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                    <p className="text-xs tracking-normal text-muted-foreground font-medium">
                       Dizi
                     </p>
                     <p className="mt-1 font-mono text-sm text-foreground/90">
@@ -157,7 +157,7 @@ export default async function PeptideDetailPage({
             )}
 
             <div className="mt-14 border-t border-hairline pt-10">
-              <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+              <h2 className="text-foreground text-xl font-bold tracking-tight">
                 Mekanizma
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -166,7 +166,7 @@ export default async function PeptideDetailPage({
             </div>
 
             <div className="mt-10 border-t border-hairline pt-10">
-              <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+              <h2 className="text-foreground text-xl font-bold tracking-tight">
                 Birincil Sonuç Göstergeleri
               </h2>
               <ul className="mt-4 flex flex-col gap-3">
@@ -187,7 +187,7 @@ export default async function PeptideDetailPage({
 
             {peptide.evidenceMatrix && peptide.evidenceMatrix.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Kanıt Matrisi
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
@@ -207,7 +207,7 @@ export default async function PeptideDetailPage({
                           </th>
                           <td className={`py-3 text-right ${tierColorVar[row.tier]}`}>
                             {tierDots[row.tier]}{" "}
-                            <span className="uppercase tracking-eyebrow">
+                            <span className="tracking-normal font-medium">
                               {tierLabel[row.tier]}
                             </span>
                           </td>
@@ -221,7 +221,7 @@ export default async function PeptideDetailPage({
 
             {peptide.dosing && peptide.dosing.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Dozaj Protokolü
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
@@ -240,7 +240,7 @@ export default async function PeptideDetailPage({
 
             {peptide.reconstitutionSteps && peptide.reconstitutionSteps.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Hazırlama Adımları
                 </h2>
                 <ol className="mt-4 flex flex-col gap-3">
@@ -261,7 +261,7 @@ export default async function PeptideDetailPage({
 
             {peptide.secondaryDosing && peptide.secondaryDosing.steps.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Dozaj Protokolü — {peptide.secondaryDosing.routeLabel}
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
@@ -280,7 +280,7 @@ export default async function PeptideDetailPage({
 
             {halfLifeHours && lastDoseStep && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Birikim Hesaplayıcı
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
@@ -305,7 +305,7 @@ export default async function PeptideDetailPage({
 
             {peptide.expectedTimeline && peptide.expectedTimeline.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Beklenen Sonuçlar (Bildirilen Zaman Çizelgesi)
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
@@ -321,7 +321,7 @@ export default async function PeptideDetailPage({
                     <tbody>
                       {peptide.expectedTimeline.map((point) => (
                         <tr key={point.period} className="border-b border-hairline last:border-b-0">
-                          <th scope="row" className="py-3 pr-4 text-left font-mono text-xs uppercase tracking-eyebrow text-gold/80">
+                          <th scope="row" className="py-3 pr-4 text-left font-mono text-xs tracking-normal text-gold/80">
                             {point.period}
                           </th>
                           <td className="py-3 text-muted-foreground">{point.result}</td>
@@ -335,7 +335,7 @@ export default async function PeptideDetailPage({
 
             {peptide.qualityIndicators && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Kalite Kontrol İşaretleri
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
@@ -344,7 +344,7 @@ export default async function PeptideDetailPage({
                 </p>
                 <div className="mt-6 grid gap-8 sm:grid-cols-2">
                   <div>
-                    <p className="text-[0.65rem] uppercase tracking-eyebrow text-tier-proven">
+                    <p className="text-xs tracking-normal text-tier-proven font-medium">
                       İyi İşaretler
                     </p>
                     <ul className="mt-3 flex flex-col gap-2">
@@ -356,7 +356,7 @@ export default async function PeptideDetailPage({
                     </ul>
                   </div>
                   <div>
-                    <p className="text-[0.65rem] uppercase tracking-eyebrow text-tier-preclinical">
+                    <p className="text-xs tracking-normal text-tier-preclinical font-medium">
                       Kötü İşaretler
                     </p>
                     <ul className="mt-3 flex flex-col gap-2">
@@ -373,7 +373,7 @@ export default async function PeptideDetailPage({
 
             {peptide.warnings && peptide.warnings.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Uyarılar ve Kontrendikasyonlar
                 </h2>
                 <ul className="mt-4 flex flex-col gap-3">
@@ -395,7 +395,7 @@ export default async function PeptideDetailPage({
 
             {peptide.sideEffects && peptide.sideEffects.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Yan Etkiler
                 </h2>
                 <ul className="mt-4 flex flex-col gap-3">
@@ -417,7 +417,7 @@ export default async function PeptideDetailPage({
 
             {peptide.interactions && peptide.interactions.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   Bilinen Etkileşimler
                 </h2>
                 <div className="mt-4 flex flex-col gap-5">
@@ -453,20 +453,20 @@ export default async function PeptideDetailPage({
 
             {citationList && citationList.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   {citationList.length > 1 ? "Kaynaklar" : "Kaynak"}
                 </h2>
                 <div className="mt-4 flex flex-col gap-4">
                   {citationList.map((citation) => (
                     <div
                       key={citation.pmid}
-                      className="rounded-sm border border-hairline bg-surface p-6"
+                      className="rounded-lg border border-hairline shadow-sm bg-surface p-6"
                     >
-                      <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                      <p className="text-xs tracking-normal text-muted-foreground font-medium">
                         {citation.label}
                       </p>
                       <p className="mt-2 text-sm leading-relaxed text-foreground/90">
-                        {citation.authors}, <em className="font-serif italic">{citation.journal}</em>, {citation.year}
+                        {citation.authors}, <em className="italic">{citation.journal}</em>, {citation.year}
                       </p>
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                         {citation.note}
@@ -507,12 +507,12 @@ export default async function PeptideDetailPage({
 
             {relatedArticle && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   İlgili Journal Yazısı
                 </h2>
                 <Link
                   href={`/journal/${relatedArticle.slug}`}
-                  className="mt-4 inline-block font-serif text-lg font-light italic text-foreground/90 transition-colors hover:text-gold"
+                  className="mt-4 inline-block text-lg italic text-foreground/90 transition-colors hover:text-gold"
                 >
                   {relatedArticle.title} →
                 </Link>
@@ -522,7 +522,7 @@ export default async function PeptideDetailPage({
             <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-10 sm:flex-row sm:flex-wrap sm:items-center">
               <WhatsappCta product={peptide.name} />
               <PeptideCta goal={goal} />
-              <p className="text-[0.65rem] font-light leading-relaxed text-muted-foreground">
+              <p className="text-[0.65rem] leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}
               </p>
             </div>

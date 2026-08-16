@@ -19,7 +19,7 @@ export function WhatsappCta({
     : "Merhaba, ürünleriniz hakkında bilgi almak istiyorum."
 
   const base =
-    "inline-flex items-center gap-2.5 rounded-sm px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow font-medium transition-colors duration-300"
+    "inline-flex items-center gap-2.5 rounded-md px-6 py-3 text-sm font-semibold transition-colors duration-200"
 
   const styles =
     variant === "primary"

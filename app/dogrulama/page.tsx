@@ -46,17 +46,12 @@ export default function DogrulamaPage() {
   return (
     <>
       <Nav />
-      <main id="main-content" className="bg-background pt-32">
+      <main id="main-content" className="bg-background pt-28">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-3xl">
-            <div className="flex items-center gap-4">
-              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-                Orijinallik
-              </p>
-            </div>
+            <p className="text-sm font-semibold text-gold">Orijinallik</p>
 
-            <h1 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <h1 className="mt-10 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
               Ürününüzün Gerçek Olduğunu Doğrulayın
             </h1>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
@@ -72,7 +67,7 @@ export default function DogrulamaPage() {
                 href="https://validation.zphc.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 rounded-sm bg-gold px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow font-medium text-primary-foreground transition-colors duration-300 hover:bg-gold/85"
+                className="inline-flex items-center gap-2.5 rounded-sm bg-gold px-8 py-3.5 text-xs tracking-normal font-medium text-primary-foreground transition-colors duration-300 hover:bg-gold/85"
               >
                 validation.zphc.com Adresine Git
               </a>
@@ -82,7 +77,7 @@ export default function DogrulamaPage() {
 
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-3xl">
-            <h2 className="border-b border-hairline pb-4 text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+            <h2 className="border-b border-hairline pb-4 text-foreground text-xl font-bold tracking-tight">
               Nasıl Yapılır
             </h2>
 
@@ -96,10 +91,10 @@ export default function DogrulamaPage() {
                     {step.n}
                   </span>
                   <div>
-                    <h3 className="font-serif text-xl font-light tracking-wide text-foreground">
+                    <h3 className="text-xl font-bold tracking-tight text-foreground">
                       {step.title}
                     </h3>
-                    <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                       {step.body}
                     </p>
                   </div>
@@ -109,18 +104,18 @@ export default function DogrulamaPage() {
           </div>
         </section>
 
-        <section className="px-6 pb-28 md:px-10 sm:pb-36">
-          <div className="mx-auto max-w-3xl rounded-sm border border-hairline bg-muted/30 p-8 sm:p-10">
-            <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+        <section className="px-6 pb-20 md:px-10">
+          <div className="mx-auto max-w-3xl rounded-lg border border-hairline shadow-sm bg-muted/30 p-8 sm:p-10">
+            <h2 className="text-foreground text-xl font-bold tracking-tight">
               Doğrulama Başarısız Olduysa
             </h2>
-            <p className="mt-4 text-sm font-light leading-relaxed text-foreground/85">
+            <p className="mt-4 text-sm leading-relaxed text-foreground/85">
               Kod tanınmıyorsa, daha önce sorgulanmış görünüyorsa, mühür
               kırıksa veya gümüş bant önceden kazınmışsa ürünü kullanmayın.
               Kutunun ve etiketin fotoğrafıyla birlikte bize ulaşın, nereden
               temin edildiğini birlikte inceleyelim.
             </p>
-            <p className="mt-4 text-xs font-light leading-relaxed text-muted-foreground">
+            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
               Sahte ürün yalnızca etkisiz olmakla kalmaz; içeriği ve sterilitesi
               bilinmediği için gerçek bir sağlık riskidir.
             </p>

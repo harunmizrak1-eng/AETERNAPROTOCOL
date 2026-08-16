@@ -24,17 +24,12 @@ export default function PeptidlerPage() {
   return (
     <>
       <Nav />
-      <main id="main-content" className="bg-background pt-32">
+      <main id="main-content" className="bg-background pt-28">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-6xl">
-            <div className="flex items-center gap-4">
-              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-                Kütüphane
-              </p>
-            </div>
+            <p className="text-sm font-semibold text-gold">Kütüphane</p>
 
-            <h1 className="mt-10 max-w-3xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-10 max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl">
               Peptid Kütüphanesi
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
@@ -53,7 +48,7 @@ export default function PeptidlerPage() {
                   >
                     {tierDots[t]}
                   </span>
-                  <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+                  <span className="text-xs tracking-normal text-muted-foreground font-medium">
                     {tierLabel[t]}
                   </span>
                 </div>
@@ -66,12 +61,12 @@ export default function PeptidlerPage() {
 
         {/* CTA back to consulting */}
         <section className="px-6 pb-28 text-center sm:pb-36">
-          <p className="mx-auto max-w-lg text-pretty font-serif text-2xl font-light italic leading-relaxed text-foreground/90 sm:text-3xl">
+          <p className="mx-auto max-w-lg text-pretty text-2xl italic leading-relaxed text-foreground/90 sm:text-3xl">
             Hangi bileşiğin sizin için doğru olduğunu birlikte belirleriz.
           </p>
           <Link
             href="/#danismanlik"
-            className="mt-10 inline-block rounded-sm border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+            className="mt-10 inline-block rounded-sm border border-gold/60 px-10 py-4 text-xs tracking-normal font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
           >
             Danışmanlığı İncele
           </Link>

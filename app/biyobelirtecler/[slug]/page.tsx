@@ -53,24 +53,24 @@ export default async function BiomarkerDetailPage({
     <>
       <Nav />
       <main id="main-content" className="relative z-10 bg-background pt-32">
-        <article className="px-6 pb-28 sm:pb-36 md:px-10">
+        <article className="px-6 pb-20 md:px-10">
           <div className="mx-auto max-w-2xl">
             <Link
               href="/biyobelirtecler"
-              className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs tracking-normal text-muted-foreground transition-colors hover:text-foreground font-medium"
             >
               ← Biyobelirteç Sözlüğü
             </Link>
 
-            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+            <p className="mt-10 text-xs tracking-normal text-muted-foreground font-medium">
               {biomarker.category}
             </p>
-            <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-3 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl">
               {biomarker.name}
             </h1>
 
             <div className="mt-14 border-t border-hairline pt-10">
-              <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+              <h2 className="text-foreground text-xl font-bold tracking-tight">
                 Ne Ölçer
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -79,7 +79,7 @@ export default async function BiomarkerDetailPage({
             </div>
 
             <div className="mt-10 border-t border-hairline pt-10">
-              <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+              <h2 className="text-foreground text-xl font-bold tracking-tight">
                 Neden Önemli
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -88,14 +88,14 @@ export default async function BiomarkerDetailPage({
             </div>
 
             <div className="mt-10 border-t border-hairline pt-10">
-              <p className="text-[0.7rem] font-light leading-relaxed text-muted-foreground">
+              <p className="text-[0.7rem] leading-relaxed text-muted-foreground">
                 {biomarker.note}
               </p>
             </div>
 
             {(relatedPeptides.length > 0 || relatedCaseStudy) && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   İlgili
                 </h2>
                 <div className="mt-4 flex flex-col gap-3">
@@ -114,7 +114,7 @@ export default async function BiomarkerDetailPage({
                         <Link
                           key={p.slug}
                           href={`/peptidler/${p.slug}`}
-                          className="rounded-sm border border-hairline px-4 py-2 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:border-gold/60 hover:text-foreground"
+                          className="rounded-lg border border-hairline shadow-sm px-4 py-2 text-xs tracking-normal text-muted-foreground transition-colors hover:border-gold/60 hover:text-foreground font-medium"
                         >
                           {p.name}
                         </Link>

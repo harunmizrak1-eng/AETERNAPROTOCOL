@@ -48,7 +48,7 @@ export function Nav() {
             <Link
               key={link.label}
               href={link.href}
-              className={`text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground ${
+              className={`text-sm font-medium text-muted-foreground transition-colors hover:text-foreground ${
                 link.label === "Journal" || link.label === "Metodoloji"
                   ? "hidden lg:inline"
                   : ""
@@ -64,7 +64,7 @@ export function Nav() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-controls="mobile-nav-panel"
-          className="text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground sm:hidden"
+          className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:hidden"
         >
           {open ? "Kapat" : "Menü"}
         </button>
@@ -82,7 +82,7 @@ export function Nav() {
               <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="flex min-h-[44px] items-center text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground"
+                className="flex min-h-[44px] items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
               </Link>

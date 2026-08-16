@@ -23,30 +23,25 @@ const STEPS = [
 
 export function Process() {
   return (
-    <section className="px-6 py-28 sm:py-36 md:px-10">
+    <section className="px-6 py-20 md:px-10">
       <div className="mx-auto max-w-6xl">
-        <div className="flex items-center gap-4">
-          <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-          <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-            Süreç
-          </p>
-        </div>
+        <p className="text-sm font-semibold text-gold">Süreç</p>
 
         <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((step) => (
             <article
               key={step.numeral}
-              className="group relative overflow-hidden rounded-sm border border-hairline bg-surface px-8 py-12"
+              className="group relative overflow-hidden rounded-lg border border-hairline shadow-sm bg-surface px-8 py-12"
             >
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-2 -top-6 select-none font-serif text-[7rem] leading-none text-foreground/[0.04]"
+                className="pointer-events-none absolute -right-2 -top-6 select-none text-[7rem] leading-none text-foreground/[0.04]"
               >
                 {step.numeral}
               </span>
 
               <div className="relative">
-                <h3 className="font-serif text-2xl font-light tracking-wide text-foreground">
+                <h3 className="text-2xl font-bold tracking-tight text-foreground">
                   {step.title}
                 </h3>
                 <span

@@ -39,13 +39,8 @@ export default function MethodologyPage() {
       <main id="main-content" className="relative z-10 bg-background pt-32">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-2xl">
-            <div className="flex items-center gap-4">
-              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-                Metodoloji
-              </p>
-            </div>
-            <h1 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <p className="text-sm font-semibold text-gold">Metodoloji</p>
+            <h1 className="mt-10 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
               Kanıtı nasıl değerlendiriyoruz.
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
@@ -59,7 +54,7 @@ export default function MethodologyPage() {
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto flex max-w-2xl flex-col gap-16">
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
                 Kanıt nasıl sınıflandırılır
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -71,7 +66,7 @@ export default function MethodologyPage() {
                 {TIER_ROWS.map((row) => (
                   <div
                     key={row.tier}
-                    className="rounded-sm border border-hairline bg-surface p-5"
+                    className="rounded-lg border border-hairline shadow-sm bg-surface p-5"
                   >
                     <div className="flex items-center gap-3">
                       <span
@@ -81,7 +76,7 @@ export default function MethodologyPage() {
                         {row.dots}
                       </span>
                       <span
-                        className={`text-[0.7rem] uppercase tracking-eyebrow ${tierColorVar[row.tier]}`}
+                        className={`text-xs font-semibold ${tierColorVar[row.tier]}`}
                       >
                         {row.label}
                       </span>
@@ -113,7 +108,7 @@ export default function MethodologyPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
                 Protokoller nasıl incelenir
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -126,7 +121,7 @@ export default function MethodologyPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
                 Neyi önermiyoruz
               </h2>
               <ul className="mt-4 flex flex-col gap-3">
@@ -146,7 +141,7 @@ export default function MethodologyPage() {
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
                 Çıkar çatışması beyanı
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -163,7 +158,7 @@ ZPHC Türkiye bir distribütördür: bu sayfada sınıflandırdığımız
             </div>
 
             <div>
-              <h2 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
                 Güncelleme ve inceleme politikası
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -173,7 +168,7 @@ ZPHC Türkiye bir distribütördür: bu sayfada sınıflandırdığımız
                 fark edildiğinde, sessizce düzeltmek yerine neyin
                 değiştiğini kayıt altına alırız.
               </p>
-              <p className="mt-6 text-[0.7rem] font-light leading-relaxed text-muted-foreground">
+              <p className="mt-6 text-[0.7rem] leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}
               </p>
             </div>

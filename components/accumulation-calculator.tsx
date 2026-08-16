@@ -86,7 +86,7 @@ export function AccumulationCalculator({
     <div>
       <div className="flex flex-wrap gap-x-8 gap-y-4">
         <label className="flex flex-col gap-2">
-          <span className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+          <span className="text-xs tracking-normal text-muted-foreground font-medium">
             Doz ({defaultDoseUnit})
           </span>
           <input
@@ -99,7 +99,7 @@ export function AccumulationCalculator({
           />
         </label>
         <label className="flex flex-col gap-2">
-          <span className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+          <span className="text-xs tracking-normal text-muted-foreground font-medium">
             Sıklık
           </span>
           <select
@@ -151,25 +151,25 @@ export function AccumulationCalculator({
 
       <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
         <div>
-          <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">Zirve</p>
+          <p className="text-xs tracking-normal text-muted-foreground font-medium">Zirve</p>
           <p className="mt-1 font-mono text-sm text-foreground/90">
             {formatAmount(curve.peak, defaultDoseUnit)}
           </p>
         </div>
         <div>
-          <p className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">Çukur</p>
+          <p className="text-xs tracking-normal text-muted-foreground font-medium">Çukur</p>
           <p className="mt-1 font-mono text-sm text-foreground/90">
             {formatAmount(curve.trough, defaultDoseUnit)}
           </p>
         </div>
         <div>
-          <p className="text-[0.6rem] uppercase tracking-eyebrow text-gold/80">Kararlı Durum Zirvesi</p>
+          <p className="text-xs tracking-normal text-gold/80 font-medium">Kararlı Durum Zirvesi</p>
           <p className="mt-1 font-mono text-sm text-foreground/90">
             {formatAmount(curve.ssPeak, defaultDoseUnit)}
           </p>
         </div>
         <div>
-          <p className="text-[0.6rem] uppercase tracking-eyebrow text-gold/80">Kararlı Durum Çukuru</p>
+          <p className="text-xs tracking-normal text-gold/80 font-medium">Kararlı Durum Çukuru</p>
           <p className="mt-1 font-mono text-sm text-foreground/90">
             {formatAmount(curve.ssTrough, defaultDoseUnit)}
           </p>

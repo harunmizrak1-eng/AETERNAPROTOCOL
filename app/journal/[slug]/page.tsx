@@ -79,21 +79,21 @@ export default async function ArticlePage({
           <div className="mx-auto max-w-2xl">
             <Link
               href="/journal"
-              className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs tracking-normal text-muted-foreground transition-colors hover:text-foreground font-medium"
             >
               ← Journal
             </Link>
 
             <div className="mt-10 flex items-center gap-4">
-              <span className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
+              <span className="text-xs tracking-normal text-gold font-medium">
                 {article.category}
               </span>
-              <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+              <span className="text-xs tracking-normal text-muted-foreground font-medium">
                 {article.readMinutes} dk okuma
               </span>
             </div>
 
-            <h1 className="mt-6 text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <h1 className="mt-6 text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
               {article.title}
             </h1>
 
@@ -110,7 +110,7 @@ export default async function ArticlePage({
 
             {article.relatedLinks && article.relatedLinks.length > 0 && (
               <div className="mt-16 border-t border-hairline pt-8">
-                <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <p className="text-xs tracking-normal text-gold/90 font-medium">
                   İlgili
                 </p>
                 <div className="mt-4 flex flex-col gap-2">
@@ -129,7 +129,7 @@ export default async function ArticlePage({
 
             {relatedByCategory.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-8">
-                <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <p className="text-xs tracking-normal text-gold/90 font-medium">
                   {article.category} · İlgili Yazılar
                 </p>
                 <div className="mt-4 flex flex-col gap-2">

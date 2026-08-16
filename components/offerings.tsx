@@ -62,17 +62,12 @@ export function Offerings() {
   const { open } = useAssessment()
 
   return (
-    <section id="danismanlik" className="px-6 py-28 sm:py-36 md:px-10">
+    <section id="danismanlik" className="px-6 py-20 md:px-10">
       <div className="mx-auto max-w-6xl">
         {/* Section heading */}
-        <div className="flex items-center gap-4">
-          <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-          <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-            Danışmanlık
-          </p>
-        </div>
+        <p className="text-sm font-semibold text-gold">Danışmanlık</p>
 
-        <h2 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+        <h2 className="mt-10 max-w-2xl text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
           Her seviyede, aynı hassasiyet.
         </h2>
         <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -92,23 +87,23 @@ export function Offerings() {
               }`}
             >
               {t.featured && (
-                <span className="absolute right-0 top-0 bg-gold px-3 py-1 text-[0.6rem] uppercase tracking-eyebrow text-primary-foreground">
+                <span className="absolute right-0 top-0 bg-gold px-3 py-1 text-xs tracking-normal text-primary-foreground font-medium">
                   {t.positioning}
                 </span>
               )}
 
               <div className="flex items-baseline gap-4">
-                <span className="font-serif text-3xl font-light text-gold">
+                <span className="text-3xl text-gold">
                   {t.tier}
                 </span>
                 {!t.featured && (
-                  <span className="text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                  <span className="text-xs tracking-normal text-muted-foreground font-medium">
                     {t.positioning}
                   </span>
                 )}
               </div>
 
-              <h3 className="mt-6 font-serif text-2xl font-light tracking-wide text-foreground sm:text-[1.7rem]">
+              <h3 className="mt-6 text-2xl font-bold tracking-tight text-foreground sm:text-[1.7rem]">
                 {t.name}
               </h3>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -136,7 +131,7 @@ export function Offerings() {
                   onClick={() =>
                     open({ tier: t.tier as "I" | "II" | "III" })
                   }
-                  className={`inline-block rounded-sm border px-7 py-3 text-[0.65rem] uppercase tracking-eyebrow font-medium transition-colors duration-300 hover:bg-gold hover:text-primary-foreground ${
+                  className={`inline-block rounded-sm border px-7 py-3 text-xs font-semibold font-medium transition-colors duration-300 hover:bg-gold hover:text-primary-foreground ${
                     t.featured
                       ? "border-gold/60 text-gold"
                       : "border-hairline text-foreground/80 hover:border-gold/60"
@@ -151,8 +146,7 @@ export function Offerings() {
 
         {/* Protocol packages */}
         <div className="mt-24 flex items-center gap-4">
-          <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-          <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
+          <p className="text-xs tracking-normal text-gold font-medium">
             Hazır Protokoller
           </p>
         </div>
@@ -162,15 +156,15 @@ export function Offerings() {
             <Link
               key={p.name}
               href={`/protokoller/${p.slug}`}
-              className="group flex flex-col rounded-sm border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
+              className="group flex flex-col rounded-lg border border-hairline shadow-sm bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
             >
-              <h3 className="font-serif text-xl font-light tracking-wide text-foreground">
+              <h3 className="text-xl font-bold tracking-tight text-foreground">
                 {p.name}
               </h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {p.line}
               </p>
-              <span className="mt-8 text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-opacity duration-300 group-hover:opacity-70">
+              <span className="mt-8 text-xs tracking-normal font-medium text-gold transition-opacity duration-300 group-hover:opacity-70">
                 Protokolü İncele →
               </span>
             </Link>

@@ -134,7 +134,7 @@ export default async function UrunPage({
                 overstate what the evidence supports. The tier badge below,
                 drawn from the library, is the site's own assessment. */}
             {claims.length > 0 && (
-              <div className="mt-12 rounded-sm border border-hairline bg-muted/20 p-6 sm:p-8">
+              <div className="mt-12 rounded-lg border border-hairline shadow-sm bg-muted/20 p-6 sm:p-8">
                 <h2 className="text-xl font-bold tracking-tight text-foreground">
                   Üretici beyanı
                 </h2>

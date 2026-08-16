@@ -43,19 +43,14 @@ export default function FaqPage() {
       <main id="main-content" className="relative z-10 bg-background pt-32">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-2xl">
-            <div className="flex items-center gap-4">
-              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-                Sık Sorulan Sorular
-              </p>
-            </div>
-            <h1 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <p className="text-sm font-semibold text-gold">Sık Sorulan Sorular</p>
+            <h1 className="mt-10 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
               Açık sorular, açık cevaplar.
             </h1>
           </div>
         </section>
 
-        <section className="px-6 pb-28 sm:pb-36 md:px-10">
+        <section className="px-6 pb-20 md:px-10">
           <div className="mx-auto max-w-2xl">
             <dl className="flex flex-col">
               {faqItems.map((item) => (
@@ -63,7 +58,7 @@ export default function FaqPage() {
                   key={item.question}
                   className="border-t border-hairline py-8 last:border-b"
                 >
-                  <dt className="font-serif text-xl font-light tracking-wide text-foreground">
+                  <dt className="text-xl tracking-wide text-foreground">
                     {item.question}
                   </dt>
                   <dd className="mt-4 text-sm leading-relaxed text-muted-foreground">

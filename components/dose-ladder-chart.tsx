@@ -23,7 +23,7 @@ export function DoseLadderChart({ steps }: { steps: DoseStep[] }) {
             key={step.label}
             className="grid grid-cols-[minmax(88px,auto)_1fr_auto] items-center gap-4 sm:grid-cols-[120px_1fr_auto]"
           >
-            <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+            <span className="text-xs tracking-normal text-muted-foreground font-medium">
               {step.label}
             </span>
             <span

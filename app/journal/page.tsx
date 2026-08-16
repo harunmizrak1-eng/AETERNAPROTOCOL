@@ -26,13 +26,8 @@ export default function JournalPage() {
       <main id="main-content" className="relative z-10 bg-background pt-32">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-4xl">
-            <div className="flex items-center gap-4">
-              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-                Journal
-              </p>
-            </div>
-            <h1 className="mt-10 max-w-2xl text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <p className="text-sm font-semibold text-gold">Journal</p>
+            <h1 className="mt-10 max-w-2xl text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl">
               Yazılar
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
@@ -43,7 +38,7 @@ export default function JournalPage() {
           </div>
         </section>
 
-        <section className="px-6 pb-28 sm:pb-36 md:px-10">
+        <section className="px-6 pb-20 md:px-10">
           <div className="mx-auto max-w-4xl">
             <JournalList articles={articles} />
           </div>

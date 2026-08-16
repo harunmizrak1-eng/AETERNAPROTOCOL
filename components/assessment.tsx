@@ -263,15 +263,15 @@ function AssessmentDialog({
           {!isResult && (
             <>
               <div className="flex items-center justify-between">
-                <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
+                <p className="text-xs tracking-normal text-gold font-medium">
                   Ön Değerlendirme
                 </p>
-                <p className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+                <p className="text-xs tracking-normal text-muted-foreground font-medium">
                   {step + 1} / {QUESTION_COUNT}
                 </p>
               </div>
 
-              <Dialog.Title className="mt-8 text-balance font-serif text-2xl font-light leading-snug tracking-wide text-foreground sm:text-3xl">
+              <Dialog.Title className="mt-8 text-balance text-2xl leading-snug tracking-wide text-foreground sm:text-3xl">
                 {current.label}
               </Dialog.Title>
 
@@ -285,7 +285,7 @@ function AssessmentDialog({
                 <button
                   type="button"
                   onClick={() => setStep((s) => Math.max(0, s - 1))}
-                  className={`text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-opacity hover:opacity-70 ${
+                  className={`text-xs font-semibold text-muted-foreground transition-opacity hover:opacity-70 ${
                     step === 0 ? "invisible" : ""
                   }`}
                 >
@@ -297,7 +297,7 @@ function AssessmentDialog({
                   onClick={() =>
                     setStep((s) => Math.min(QUESTION_COUNT, s + 1))
                   }
-                  className="border border-gold/60 px-8 py-3 text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gold rounded-sm"
+                  className="border border-gold/60 px-8 py-3 text-xs font-semibold font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gold rounded-sm"
                 >
                   {step === QUESTION_COUNT - 1 ? "Sonucu Gör" : "İleri"}
                 </button>
@@ -307,18 +307,18 @@ function AssessmentDialog({
 
           {isResult && (
             <>
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
+              <p className="text-xs tracking-normal text-gold font-medium">
                 Kişisel Analiziniz
               </p>
-              <Dialog.Title className="mt-6 text-balance font-serif text-2xl font-light leading-snug tracking-wide text-foreground sm:text-3xl">
+              <Dialog.Title className="mt-6 text-balance text-2xl leading-snug tracking-wide text-foreground sm:text-3xl">
                 Önerilen başlangıç noktanız
               </Dialog.Title>
 
               <div className="mt-8 flex items-baseline gap-4 border border-gold/40 bg-gold/5 px-6 py-5 rounded-sm">
-                <span className="font-serif text-3xl font-light text-gold">
+                <span className="text-3xl text-gold">
                   {recommendedTier}
                 </span>
-                <span className="font-serif text-xl font-light text-foreground">
+                <span className="text-xl text-foreground">
                   {TIER_NAMES[recommendedTier]}
                 </span>
               </div>
@@ -363,11 +363,11 @@ function AssessmentDialog({
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={onClose}
-                  className="w-full rounded-sm border border-gold/60 px-8 py-4 text-center text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground sm:w-auto"
+                  className="w-full rounded-sm border border-gold/60 px-8 py-4 text-center text-xs tracking-normal font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground sm:w-auto"
                 >
                   Başvuruyu Gönder
                 </a>
-                <Dialog.Close className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-opacity hover:opacity-70">
+                <Dialog.Close className="text-xs tracking-normal text-muted-foreground transition-opacity hover:opacity-70 font-medium">
                   Kapat
                 </Dialog.Close>
               </div>

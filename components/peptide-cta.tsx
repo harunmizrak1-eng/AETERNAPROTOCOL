@@ -15,7 +15,7 @@ export function PeptideCta({
     <button
       type="button"
       onClick={() => open(goal ? { goal } : undefined)}
-      className="rounded-sm border border-gold/60 px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+      className="rounded-md border border-gold px-6 py-3 text-sm font-semibold text-gold transition-colors duration-200 hover:bg-gold hover:text-primary-foreground"
     >
       {label}
     </button>

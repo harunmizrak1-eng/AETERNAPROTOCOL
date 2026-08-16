@@ -24,27 +24,22 @@ const QUOTES = [
 
 export function Trust() {
   return (
-    <section className="px-6 py-28 sm:py-36 md:px-10">
+    <section className="px-6 py-20 md:px-10">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
         <div>
-          <div className="flex items-center gap-4">
-            <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-            <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-              Güven
-            </p>
-          </div>
+          <p className="text-sm font-semibold text-gold">Güven</p>
 
-          <h2 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+          <h2 className="mt-10 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
             Sessizce kazanılmış bir itibar.
           </h2>
 
           <div className="mt-14 flex gap-16">
             {STATS.map((s) => (
               <div key={s.label}>
-                <p className="font-serif text-5xl font-light text-foreground sm:text-6xl">
+                <p className="text-5xl text-foreground sm:text-6xl">
                   {s.value}
                 </p>
-                <p className="mt-3 text-[0.7rem] uppercase tracking-eyebrow text-muted-foreground">
+                <p className="mt-3 text-[0.7rem] tracking-normal text-muted-foreground font-medium">
                   {s.label}
                 </p>
               </div>
@@ -56,12 +51,12 @@ export function Trust() {
           {QUOTES.map((q) => (
             <figure
               key={q.label}
-              className="rounded-sm border border-hairline bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
+              className="rounded-lg border border-hairline shadow-sm bg-surface p-8 transition-colors duration-500 hover:border-gold/60"
             >
-              <blockquote className="font-serif text-xl font-light italic leading-relaxed text-foreground/90">
+              <blockquote className="text-xl italic leading-relaxed text-foreground/90">
                 {`“${q.quote}”`}
               </blockquote>
-              <figcaption className="mt-6 text-[0.65rem] uppercase tracking-eyebrow text-gold">
+              <figcaption className="mt-6 text-xs tracking-normal text-gold font-medium">
                 {q.label}
               </figcaption>
             </figure>

@@ -16,7 +16,7 @@ export function Hero() {
       <HeroSignature />
 
       <Reveal className="relative z-10 flex flex-col items-center">
-        <p className="font-serif text-sm tracking-wordmark text-foreground/60">
+        <p className="text-sm tracking-wordmark text-foreground/60">
           ZPHC TÜRKİYE
         </p>
 

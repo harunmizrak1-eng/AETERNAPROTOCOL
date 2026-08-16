@@ -31,7 +31,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <p className="text-[0.6rem] uppercase tracking-eyebrow text-foreground/80">
+      <p className="text-xs tracking-normal text-foreground/80 font-medium">
         {heading}
       </p>
       <ul className="mt-4 flex flex-col gap-3">
@@ -43,10 +43,10 @@ function FooterColumn({
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className={`text-[0.65rem] text-muted-foreground transition-colors hover:text-foreground ${
+                className={`text-sm text-muted-foreground transition-colors hover:text-foreground ${
                   isEmail
                     ? "break-all lowercase"
-                    : "uppercase tracking-eyebrow"
+                    : "tracking-normal"
                 }`}
               >
                 {link.label}
@@ -96,7 +96,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-hairline pt-6 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-hairline pt-6 text-xs tracking-normal text-muted-foreground sm:flex-row font-medium">
           <p>© {year} {siteName}. Tüm hakları saklıdır.</p>
           <p>Zhengzhou Pharmaceutical · Yetkili Distribütör</p>
         </div>

@@ -30,7 +30,7 @@ export function JournalList({ articles }: { articles: Article[] }) {
             type="button"
             onClick={() => setActive(c)}
             aria-pressed={active === c}
-            className={`rounded-sm border px-4 py-2 text-[0.65rem] uppercase tracking-eyebrow transition-colors duration-300 ${
+            className={`rounded-full border px-4 py-2 text-sm transition-colors duration-200 ${
               active === c
                 ? "border-gold/60 text-gold"
                 : "border-hairline text-muted-foreground hover:border-gold/40 hover:text-foreground"
@@ -49,20 +49,20 @@ export function JournalList({ articles }: { articles: Article[] }) {
               className="group flex flex-col border-t border-hairline py-10 transition-colors last:border-b hover:border-gold/40"
             >
               <div className="flex items-center gap-4">
-                <span className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
+                <span className="text-xs tracking-normal text-gold font-medium">
                   {a.category}
                 </span>
-                <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+                <span className="text-xs tracking-normal text-muted-foreground font-medium">
                   {a.readMinutes} dk okuma
                 </span>
               </div>
-              <h2 className="mt-4 font-serif text-2xl font-light tracking-wide text-foreground transition-colors group-hover:text-gold sm:text-3xl">
+              <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-gold sm:text-3xl">
                 {a.title}
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 {a.excerpt}
               </p>
-              <span className="mt-6 text-[0.65rem] uppercase tracking-eyebrow text-foreground/70 transition-opacity group-hover:opacity-70">
+              <span className="mt-6 text-xs tracking-normal text-foreground/70 transition-opacity group-hover:opacity-70 font-medium">
                 Oku →
               </span>
             </Link>

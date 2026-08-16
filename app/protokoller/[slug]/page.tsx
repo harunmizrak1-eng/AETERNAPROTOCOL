@@ -57,23 +57,23 @@ export default async function ProtocolDetailPage({
     <>
       <Nav />
       <main id="main-content" className="relative z-10 bg-background pt-32">
-        <article className="px-6 pb-28 sm:pb-36 md:px-10">
+        <article className="px-6 pb-20 md:px-10">
           <div className="mx-auto max-w-2xl">
             <Link
               href="/#danismanlik"
-              className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs tracking-normal text-muted-foreground transition-colors hover:text-foreground font-medium"
             >
               ← Danışmanlık
             </Link>
 
-            <p className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+            <p className="mt-10 text-xs tracking-normal text-muted-foreground font-medium">
               {protocol.tagline}
             </p>
-            <h1 className="mt-3 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-6xl">
+            <h1 className="mt-3 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl">
               {protocol.name}
             </h1>
 
-            <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.65rem] uppercase tracking-eyebrow">
+            <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-normal font-medium">
               <span className={`font-mono ${tierColorVar[protocol.tier]}`} aria-hidden="true">
                 {tierDots[protocol.tier]}
               </span>
@@ -86,8 +86,8 @@ export default async function ProtocolDetailPage({
               {protocol.summary}
             </p>
 
-            <div className="mt-6 rounded-sm border border-hairline bg-surface p-6">
-              <p className="text-[0.6rem] uppercase tracking-eyebrow text-gold/90">
+            <div className="mt-6 rounded-lg border border-hairline shadow-sm bg-surface p-6">
+              <p className="text-xs tracking-normal text-gold/90 font-medium">
                 Kanıt Notu
               </p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -102,7 +102,7 @@ export default async function ProtocolDetailPage({
             </div>
 
             <div className="mt-10 border-t border-hairline pt-10">
-              <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+              <h2 className="text-foreground text-xl font-bold tracking-tight">
                 İçerdiği Bileşikler
               </h2>
               <div className="mt-4 flex flex-col gap-3">
@@ -110,13 +110,13 @@ export default async function ProtocolDetailPage({
                   <Link
                     key={p.slug}
                     href={`/peptidler/${p.slug}`}
-                    className="group flex items-center justify-between gap-4 rounded-sm border border-hairline bg-surface p-5 transition-colors hover:border-gold/60"
+                    className="group flex items-center justify-between gap-4 rounded-lg border border-hairline shadow-sm bg-surface p-5 transition-colors hover:border-gold/60"
                   >
                     <div>
-                      <p className="font-serif text-lg font-light tracking-wide text-foreground">
+                      <p className="text-lg tracking-wide text-foreground">
                         {p.name}
                       </p>
-                      <p className="mt-1 text-[0.6rem] uppercase tracking-eyebrow text-muted-foreground">
+                      <p className="mt-1 text-xs tracking-normal text-muted-foreground font-medium">
                         {p.category}
                       </p>
                     </div>
@@ -133,7 +133,7 @@ export default async function ProtocolDetailPage({
 
             {caseStudy && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   İlgili Vaka Analizi
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -146,7 +146,7 @@ export default async function ProtocolDetailPage({
 
             {articles.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
+                <h2 className="text-foreground text-xl font-bold tracking-tight">
                   İlgili Yazılar
                 </h2>
                 <div className="mt-4 flex flex-col gap-2">
@@ -168,7 +168,7 @@ export default async function ProtocolDetailPage({
                 goal={protocol.goal}
                 label="Bu Protokol İçin Değerlendirme Başlat"
               />
-              <p className="text-[0.65rem] font-light leading-relaxed text-muted-foreground">
+              <p className="text-[0.65rem] leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}
               </p>
             </div>

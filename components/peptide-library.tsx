@@ -33,7 +33,7 @@ function FilterPill({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`rounded-sm border px-4 py-2 text-[0.65rem] uppercase tracking-eyebrow transition-colors duration-300 ${
+      className={`rounded-full border px-4 py-2 text-sm transition-colors duration-200 ${
         active
           ? "border-gold/60 text-gold"
           : "border-hairline text-muted-foreground hover:border-gold/40 hover:text-foreground"
@@ -79,7 +79,7 @@ export function PeptideLibrary() {
         </div>
       </section>
 
-      <section className="px-6 pb-28 sm:pb-36 md:px-10">
+      <section className="px-6 pb-20 md:px-10">
         <div className="mx-auto max-w-6xl">
           {filtered.length === 0 ? (
             <p className="text-sm leading-relaxed text-muted-foreground">
@@ -93,11 +93,11 @@ export function PeptideLibrary() {
                   href={`/peptidler/${p.slug}`}
                   className={`group flex flex-col rounded-sm border bg-surface p-8 transition-colors duration-500 hover:border-gold/60 ${tierBorderVar[p.tier]}`}
                 >
-                  <h2 className="font-serif text-2xl font-light tracking-wide text-foreground">
+                  <h2 className="text-2xl font-bold tracking-tight text-foreground">
                     {p.name}
                   </h2>
 
-                  <p className="mt-2 text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+                  <p className="mt-2 text-xs tracking-normal text-muted-foreground font-medium">
                     {p.category}
                   </p>
 
@@ -114,12 +114,12 @@ export function PeptideLibrary() {
                         {tierDots[p.tier]}
                       </span>
                       <span
-                        className={`text-[0.65rem] uppercase tracking-eyebrow ${tierColorVar[p.tier]}`}
+                        className={`text-xs font-semibold ${tierColorVar[p.tier]}`}
                       >
                         {tierLabel[p.tier]}
                       </span>
                     </div>
-                    <span className="text-[0.65rem] uppercase tracking-eyebrow text-foreground/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span className="text-xs tracking-normal text-foreground/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100 font-medium">
                       İncele →
                     </span>
                   </div>

@@ -29,10 +29,12 @@ function fold(s: string) {
 /** Catalogue grid with search and a goal filter. The active filter lives in
  * the URL (?kategori=...) so a category card on the homepage can link
  * straight into a filtered view, and a filtered catalogue stays shareable. */
-export function ProductCatalog() {
+export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
   const router = useRouter()
   const params = useSearchParams()
-  const active = params.get(PARAM) ?? ALL
+  // initialGoal sunucudan gelir ve ilk render'da kullanılır; useSearchParams
+  // client tarafında geri/ileri tuşuyla gelen değişimi yakalar.
+  const active = params.get(PARAM) ?? initialGoal ?? ALL
   const [query, setQuery] = useState("")
 
   // Only offer goals that actually have products behind them, so the filter

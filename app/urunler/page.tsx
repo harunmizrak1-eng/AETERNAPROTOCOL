@@ -20,7 +20,16 @@ export const metadata: Metadata = {
   },
 }
 
-export default function UrunlerPage() {
+export default async function UrunlerPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ kategori?: string }>
+}) {
+  // searchParams okumak rotayı dinamik yapar. Bu bilinçli: katalog daha önce
+  // statikti ve filtre client tarafında olduğu için sunucu HTML'i bomboş
+  // çıkıyordu — arama motoru da ilk boyama da ürünsüz bir sayfa görüyordu.
+  const { kategori } = await searchParams
+
   return (
     <>
       <Nav />
@@ -41,9 +50,8 @@ export default function UrunlerPage() {
 
         <section className="px-6 pb-20 md:px-10">
           <div className="mx-auto max-w-6xl">
-            {/* useSearchParams needs a Suspense boundary on a static route. */}
             <Suspense fallback={null}>
-              <ProductCatalog />
+              <ProductCatalog initialGoal={kategori} />
             </Suspense>
           </div>
         </section>

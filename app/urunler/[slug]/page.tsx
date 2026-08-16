@@ -21,9 +21,7 @@ export async function generateMetadata({
   const product = getProduct(slug)
   if (!product) return {}
 
-  const description =
-    product.description ??
-    `${product.name} — ${product.activeIngredient}. Ürün bilgisi ve stok durumu için iletişime geçin.`
+  const description = `${product.name} — ürün bilgisi, içerik ve stok durumu için iletişime geçin.`
 
   return {
     title: product.name,
@@ -33,6 +31,7 @@ export async function generateMetadata({
       title: product.name,
       description,
       url: `/urunler/${product.slug}`,
+      images: product.image ? [product.image] : undefined,
     },
   }
 }
@@ -48,18 +47,11 @@ export default async function UrunPage({
 
   // Linked encyclopedia entry, when this product maps to one. It supplies the
   // scientific half of the page (mechanism, evidence tier, citations) so the
-  // product record itself only has to carry commercial/presentation data.
-  const peptide = product.peptideSlug ? getPeptide(product.peptideSlug) : undefined
+  // product record itself only carries commercial/presentation data.
+  const peptide = product.peptideSlug
+    ? getPeptide(product.peptideSlug)
+    : undefined
   const citationList = peptide ? citations[peptide.slug] : undefined
-
-  // Only render the spec table when at least one field was actually supplied
-  // from official data; a table of empty rows is worse than no table.
-  const specs = [
-    { label: "Etkin Madde", value: product.activeIngredient },
-    { label: "Miktar", value: product.strength },
-    { label: "Sunum", value: product.presentation },
-    { label: "Form", value: product.form },
-  ].filter((s): s is { label: string; value: string } => Boolean(s.value))
 
   return (
     <>
@@ -77,13 +69,29 @@ export default async function UrunPage({
               </Link>
             </div>
 
-            <h1 className="mt-10 text-balance font-serif text-4xl font-light leading-tight tracking-wide text-foreground sm:text-5xl">
+            <h1 className="mt-10 text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
               {product.name}
             </h1>
 
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              {product.description ?? product.activeIngredient}
-            </p>
+            {product.sku && (
+              <p className="mt-4 font-mono text-[0.7rem] text-muted-foreground">
+                SKU: {product.sku}
+              </p>
+            )}
+
+            {product.image && (
+              // Remote host isn't configured for next/image optimisation, so
+              // this stays a plain img with explicit dimensions.
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={product.image}
+                alt={product.name}
+                width={1000}
+                height={1000}
+                loading="lazy"
+                className="mt-10 w-full rounded-sm border border-hairline bg-muted/30 object-contain"
+              />
+            )}
 
             {/* Price slot. Deliberately empty until real pricing is supplied;
                 the enquiry button carries the action in the meantime. */}
@@ -98,27 +106,43 @@ export default async function UrunPage({
               <WhatsappCta product={product.name} label="Fiyat Sor" />
             </div>
 
-            {specs.length > 0 && (
+            {product.specs.length > 0 && (
               <div className="mt-12">
                 <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
                   Ürün Bilgisi
                 </h2>
                 <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
-                  {specs.map((spec) => (
+                  {product.specs.map((spec) => (
                     <div
                       key={spec.label}
                       className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
                     >
-                      <dt className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground sm:w-40 sm:shrink-0">
+                      <dt className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground sm:w-44 sm:shrink-0">
                         {spec.label}
                       </dt>
-                      <dd className="text-sm font-light text-foreground/90">
+                      <dd className="text-sm font-light leading-relaxed text-foreground/90">
                         {spec.value}
                       </dd>
                     </div>
                   ))}
                 </dl>
               </div>
+            )}
+
+            {product.notes.length > 0 && (
+              <ul className="mt-10 space-y-2">
+                {product.notes.map((note) => (
+                  <li
+                    key={note}
+                    className="flex gap-3 text-sm font-light leading-relaxed text-foreground/80"
+                  >
+                    <span aria-hidden="true" className="text-gold/70">
+                      —
+                    </span>
+                    {note}
+                  </li>
+                ))}
+              </ul>
             )}
 
             {peptide && (
@@ -178,6 +202,12 @@ export default async function UrunPage({
                 </Link>
               </div>
             )}
+
+            <p className="mt-12 border-t border-hairline pt-8 text-xs font-light leading-relaxed text-muted-foreground">
+              Bu ürünler laboratuvar ve araştırma materyali olarak sunulur;
+              insan kullanımı için tasarlanmamıştır. Sağlık kararlarınız için
+              hekiminize danışın.
+            </p>
           </div>
         </article>
       </main>

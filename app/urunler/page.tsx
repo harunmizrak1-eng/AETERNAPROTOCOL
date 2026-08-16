@@ -72,15 +72,23 @@ export default function UrunlerPage() {
                         className="group flex h-full flex-col justify-between gap-6 p-8 transition-colors hover:bg-muted/40"
                       >
                         <div>
-                          <h3 className="font-serif text-xl font-light tracking-wide text-foreground transition-colors group-hover:text-gold">
+                          {product.image && (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={product.image}
+                              alt=""
+                              width={300}
+                              height={300}
+                              loading="lazy"
+                              className="mb-6 aspect-square w-full rounded-sm bg-muted/30 object-contain"
+                            />
+                          )}
+                          <h3 className="font-serif text-lg font-light leading-snug tracking-wide text-foreground transition-colors group-hover:text-gold">
                             {product.name}
                           </h3>
-                          <p className="mt-3 text-xs font-light leading-relaxed text-muted-foreground">
-                            {product.activeIngredient}
-                          </p>
-                          {product.strength && (
-                            <p className="mt-2 font-mono text-[0.7rem] text-foreground/70">
-                              {product.strength}
+                          {product.sku && (
+                            <p className="mt-3 font-mono text-[0.7rem] text-muted-foreground">
+                              {product.sku}
                             </p>
                           )}
                         </div>

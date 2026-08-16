@@ -53,6 +53,9 @@ export default async function UrunPage({
     : undefined
   const citationList = peptide ? citations[peptide.slug] : undefined
 
+  const technical = product.specs.filter((s) => s.kind === "spec")
+  const claims = product.specs.filter((s) => s.kind === "claim")
+
   return (
     <>
       <Nav />
@@ -106,13 +109,13 @@ export default async function UrunPage({
               <WhatsappCta product={product.name} label="Fiyat Sor" />
             </div>
 
-            {product.specs.length > 0 && (
+            {technical.length > 0 && (
               <div className="mt-12">
                 <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
                   Ürün Bilgisi
                 </h2>
                 <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
-                  {product.specs.map((spec) => (
+                  {technical.map((spec) => (
                     <div
                       key={spec.label}
                       className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
@@ -121,6 +124,40 @@ export default async function UrunPage({
                         {spec.label}
                       </dt>
                       <dd className="text-sm font-light leading-relaxed text-foreground/90">
+                        {spec.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
+
+            {/* Manufacturer claims are kept visually distinct from verified
+                product data: they are ZPHC's own marketing copy and can
+                overstate what the evidence supports. The tier badge below,
+                drawn from the library, is the site's own assessment. */}
+            {claims.length > 0 && (
+              <div className="mt-12 rounded-sm border border-hairline bg-muted/20 p-6 sm:p-8">
+                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+                  Üretici Beyanı
+                </h2>
+                <p className="mt-3 text-xs font-light leading-relaxed text-muted-foreground">
+                  Aşağıdaki ifadeler üreticinin (ZPHC) kendi ürün
+                  açıklamasından alınmıştır. Bağımsız olarak doğrulanmamıştır
+                  ve bu sayfadaki kanıt seviyesi değerlendirmesiyle
+                  çelişebilir.
+                </p>
+
+                <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
+                  {claims.map((spec) => (
+                    <div
+                      key={spec.label}
+                      className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
+                    >
+                      <dt className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground sm:w-44 sm:shrink-0">
+                        {spec.label}
+                      </dt>
+                      <dd className="text-sm font-light leading-relaxed text-foreground/75">
                         {spec.value}
                       </dd>
                     </div>

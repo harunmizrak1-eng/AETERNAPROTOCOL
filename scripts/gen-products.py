@@ -4,8 +4,20 @@ Teknik değerler (mg, IU, flakon sayısı, sıcaklık) kaynaktan olduğu gibi
 taşınır; hiçbir doz değeri türetilmez veya tahmin edilmez.
 """
 import json
+import os
 import re
 import html
+import unicodedata
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(HERE)
+
+# Kaynak metin -> Türkçe karşılığı. Ayrı dosyada tutulur ki katalog yeniden
+# çekildiğinde çeviriler kaybolmasın.
+with open(os.path.join(HERE, "translations.json")) as _f:
+    TRANSLATIONS = json.load(_f)
+
+MISSING: set = set()
 
 FILES = [
     "prod_523.json", "prod_15.json", "prod_561.json",
@@ -54,6 +66,27 @@ LABELS = {
     "Diluent": "Çözücü",
 }
 
+# Etiketin hangi bölüme düşeceği. "spec" teknik/sunum verisidir ve Ürün
+# Bilgisi tablosunda gösterilir. "claim" üreticinin etkinlik, kullanım
+# amacı, doz ve yan etki beyanıdır; ayrı bir "Üretici Beyanı" bloğunda,
+# kaynağı açıkça belirtilerek gösterilir — çünkü bu ifadeler sitenin kendi
+# kanıt sınıflandırmasıyla çelişebiliyor (ör. BPC-157 "hızlı doku onarımı"
+# diyor, kütüphanedeki kaydı "Teorik" seviyede).
+# Listede olmayan etiket varsayılan olarak "claim" sayılır: bilinmeyen bir
+# ifadeyi teknik veri gibi sunmaktansa beyan olarak işaretlemek güvenli
+# taraftır.
+SPEC_LABELS = {
+    "Storage", "Reconstitution", "Concentration", "Kit includes", "Volume",
+    "Form", "Active Ingredient", "Manufacturer", "Handling", "Quality control",
+    "Research-grade QC", "Pharma-grade QC", "Lyophilized purity",
+    "Per vial formula", "Format", "Total content",
+    "High-purity formulation", "Instant readiness", "Standard reconstitution",
+    "Compatibility", "Administration Route", "Peptide profile",
+    "For research use only", "Notice", "Dual-chamber cartridge",
+    "Presentation", "Packaging", "Purity", "Batch", "Shelf life",
+    "Solvent", "Diluent",
+}
+
 # Ürün adındaki bileşikten kütüphanedeki ansiklopedi kaydına eşleme.
 # Sıra önemli: daha uzun/özgül desenler önce denenir.
 PEPTIDE_MAP = [
@@ -92,8 +125,33 @@ def clean_name(s: str) -> str:
     return html.unescape(s or "").replace("–", "-").strip()
 
 
+def norm(text: str) -> str:
+    """Sözlük araması için anahtarı normalize eder. Kaynak metin aynı cümleyi
+    farklı Unicode tire (-, –, —), boşluk (NBSP, ince boşluk) ve çarpı (x, ×)
+    varyantlarıyla tekrar ediyor; normalize etmezsek her varyant ayrı bir
+    sözlük girdisi ister."""
+    t = unicodedata.normalize("NFKC", text)
+    t = re.sub(r"[‐-―−]", "-", t)
+    t = re.sub(r"\s+", " ", t)
+    return t.strip()
+
+
+def tr(text: str) -> str:
+    """Sözlükte karşılığı varsa Türkçesini döndürür. Yoksa kaynağı olduğu
+    gibi bırakır ve eksik listesine yazar; böylece katalog büyüdüğünde
+    çevrilmemiş metin sessizce siteye sızmaz, raporlanır."""
+    key = norm(text)
+    if not key:
+        return text
+    hit = TRANSLATIONS.get(key)
+    if hit:
+        return hit
+    MISSING.add(key)
+    return text
+
+
 def parse_specs(short_desc: str):
-    """short_description'ı {label, value} çiftlerine ayırır. Etiketsiz
+    """short_description'ı {label, value, kind} üçlülerine ayırır. Etiketsiz
     satırlar serbest metin olarak ayrı döner."""
     specs, notes = [], []
     for raw in strip_tags(short_desc).split("\n"):
@@ -103,9 +161,13 @@ def parse_specs(short_desc: str):
         m = re.match(r"^([A-Za-z][A-Za-z0-9 /+()-]{2,34}):\s*(.+)$", line)
         if m:
             label, value = m.group(1).strip(), m.group(2).strip()
-            specs.append({"label": LABELS.get(label, label), "value": value})
+            specs.append({
+                "label": LABELS.get(label, tr(label)),
+                "value": tr(value),
+                "kind": "spec" if label in SPEC_LABELS else "claim",
+            })
         else:
-            notes.append(line)
+            notes.append(tr(line))
     return specs, notes
 
 
@@ -186,9 +248,13 @@ def main():
         "",
         "export const categoryOrder: ProductCategory[] = [\"peptid\", \"hgh\", \"aksesuar\"]",
         "",
+        "/** kind: \"spec\" teknik/sunum verisidir. \"claim\" üreticinin",
+        " *  etkinlik, kullanım amacı, doz veya yan etki beyanıdır ve sayfada",
+        " *  ayrı bir bölümde, kaynağı belirtilerek gösterilir. */",
         "export interface ProductSpec {",
         "  label: string",
         "  value: string",
+        '  kind: "spec" | "claim"',
         "}",
         "",
         "export interface Product {",
@@ -228,7 +294,8 @@ def main():
             lines.append("    specs: [")
             for s in p["specs"]:
                 lines.append(
-                    f"      {{ label: {ts(s['label'])}, value: {ts(s['value'])} }},"
+                    f"      {{ label: {ts(s['label'])}, "
+                    f"value: {ts(s['value'])}, kind: {ts(s['kind'])} }},"
                 )
             lines.append("    ],")
         else:
@@ -255,13 +322,21 @@ def main():
         "",
     ]
 
-    with open("/home/user/AETERNAPROTOCOL/lib/products.ts", "w") as f:
+    with open(os.path.join(REPO, "lib", "products.ts"), "w") as f:
         f.write("\n".join(lines))
 
     print(f"{len(out)} ürün yazıldı")
     from collections import Counter
     print(Counter(p["category"] for p in out))
     print("ansiklopediye bağlı:", sum(1 for p in out if p["peptideSlug"]))
+
+    if MISSING:
+        path = os.path.join(HERE, "missing-translations.json")
+        with open(path, "w") as f:
+            json.dump(sorted(MISSING), f, ensure_ascii=False, indent=2)
+        print(f"ÇEVRİLMEMİŞ: {len(MISSING)} metin -> {path}")
+    else:
+        print("çevrilmemiş metin yok")
 
 
 main()

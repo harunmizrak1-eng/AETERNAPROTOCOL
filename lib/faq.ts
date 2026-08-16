@@ -42,9 +42,9 @@ export const faqItems: FaqItem[] = [
       "Evet. Klinik Kanıt kademesindeki bileşiklerin sayfalarında gösterilen her PMID, DOI ve ClinicalTrials numarası gerçek ve doğrulanabilir kaynaklardan alınmıştır. Bir bileşik için doğrulanabilir kaynak yoksa, o bileşiğe uydurma referans eklemek yerine daha alt bir kanıt kademesinde tutulur.",
   },
   {
-    question: "Bayilik başvurusu nasıl yapılır?",
+    question: "Toplu alım ve tedarik koşulları nedir?",
     answer:
-      "Bayilik sayfasındaki formu doldurmanız yeterli. Kurumsal kimlik, faaliyet alanı, öngörülen hacim ve soğuk zincir kapasitesi sorulur. Vergi numarası olan işletmelerle çalışıyoruz; şahıs başvuruları değerlendirilmez.",
+      "Toplu alım, süreklilik gösteren sipariş ve soğuk zincir gerektiren sevkiyatlar için koşullar ürüne ve miktara göre değişiyor. WhatsApp üzerinden yazın, ihtiyacınıza göre konuşalım.",
   },
   {
     question: "Bu bir tıbbi tavsiye mi?",
@@ -53,6 +53,6 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Verilerim nasıl korunuyor?",
-    answer: `Bayilik başvurusu ve iletişim sırasında paylaştığınız bilgiler KVKK kapsamında işlenir, gizli tutulur ve pazarlama amacıyla üçüncü taraflarla paylaşılmaz. Sitede sunucu tarafında form kaydı tutulmaz; başvurular doğrudan WhatsApp üzerinden iletilir. Veri talepleriniz için ${contactEmail} adresine yazabilir, detaylar için Gizlilik & KVKK sayfamıza bakabilirsiniz.`,
+    answer: `İletişim sırasında paylaştığınız bilgiler KVKK kapsamında işlenir, gizli tutulur ve pazarlama amacıyla üçüncü taraflarla paylaşılmaz. Sitede sunucu tarafında form kaydı tutulmaz; talepler doğrudan WhatsApp üzerinden iletilir. Veri talepleriniz için ${contactEmail} adresine yazabilir, detaylar için Gizlilik & KVKK sayfamıza bakabilirsiniz.`,
   },
 ]

@@ -1,26 +1,20 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import Image from "next/image"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { WhatsappCta } from "@/components/whatsapp-cta"
-import {
-  categoryLabels,
-  categoryOrder,
-  productsByCategory,
-} from "@/lib/products"
+import { ProductCatalog } from "@/components/product-catalog"
 
 export const metadata: Metadata = {
   title: "Ürünler",
   description:
-    "ZPHC peptid ve insan büyüme hormonu ürün kataloğu. Ürün bilgisi ve stok durumu için doğrudan iletişime geçin.",
+    "ZPHC peptid ve insan büyüme hormonu ürün kataloğu. Kilo kaybı, toparlanma, büyüme hormonu ve anti-aging başlıklarına göre filtreleyin.",
   alternates: {
     canonical: "/urunler",
   },
   openGraph: {
     title: "Ürünler",
     description:
-      "ZPHC peptid ve insan büyüme hormonu ürün kataloğu. Ürün bilgisi ve stok durumu için doğrudan iletişime geçin.",
+      "ZPHC peptid ve insan büyüme hormonu ürün kataloğu. Kilo kaybı, toparlanma, büyüme hormonu ve anti-aging başlıklarına göre filtreleyin.",
     url: "/urunler",
   },
 }
@@ -54,58 +48,14 @@ export default function UrunlerPage() {
           </div>
         </section>
 
-        {categoryOrder.map((category) => {
-          const items = productsByCategory(category)
-          if (items.length === 0) return null
-
-          return (
-            <section key={category} className="px-6 pb-16 md:px-10">
-              <div className="mx-auto max-w-6xl">
-                <h2 className="border-b border-hairline pb-4 text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
-                  {categoryLabels[category]}
-                </h2>
-
-                <ul className="mt-8 grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
-                  {items.map((product) => (
-                    <li key={product.slug} className="bg-background">
-                      <Link
-                        href={`/urunler/${product.slug}`}
-                        className="group flex h-full flex-col justify-between gap-6 p-8 transition-colors hover:bg-muted/40"
-                      >
-                        <div>
-                          {product.image && (
-                            <Image
-                              src={product.image}
-                              alt=""
-                              width={300}
-                              height={300}
-                              className="mb-6 aspect-square w-full rounded-sm bg-muted/30 object-contain"
-                            />
-                          )}
-                          <h3 className="font-serif text-lg font-light leading-snug tracking-wide text-foreground transition-colors group-hover:text-gold">
-                            {product.name}
-                          </h3>
-                          {product.sku && (
-                            <p className="mt-3 font-mono text-[0.7rem] text-muted-foreground">
-                              {product.sku}
-                            </p>
-                          )}
-                        </div>
-
-                        <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors group-hover:text-gold">
-                          {product.price ?? "Fiyat için iletişime geçin"} →
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          )
-        })}
+        <section className="px-6 pb-28 md:px-10 sm:pb-36">
+          <div className="mx-auto max-w-6xl">
+            <ProductCatalog />
+          </div>
+        </section>
 
         <section className="px-6 pb-28 text-center sm:pb-36">
-          <p className="mx-auto max-w-lg text-pretty font-serif text-2xl font-light italic leading-relaxed text-foreground/90 sm:text-3xl">
+          <p className="mx-auto max-w-lg text-pretty text-xl font-light leading-relaxed text-foreground/90 sm:text-2xl">
             Stok durumu ve tedarik koşulları için doğrudan yazın.
           </p>
           <div className="mt-10 flex justify-center">

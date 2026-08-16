@@ -9,8 +9,7 @@ export function FinalCta() {
       </h2>
 
       <p className="mt-8 max-w-lg text-pretty text-sm leading-relaxed text-muted-foreground">
-        Fiyat, stok durumu ve tedarik koşulları için doğrudan yazın. Kurumsal
-        alıcılar bayilik programı üzerinden başvurabilir.
+        Fiyat, stok durumu ve tedarik koşulları için doğrudan yazın.
       </p>
 
       <div aria-hidden="true" className="mt-10 h-px w-16 bg-gold/60" />
@@ -18,10 +17,10 @@ export function FinalCta() {
       <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">
         <WhatsappCta label="Fiyat ve Stok Sor" />
         <Link
-          href="/bayilik"
+          href="/urunler"
           className="rounded-sm border border-gold/60 px-10 py-4 text-xs uppercase tracking-eyebrow font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
         >
-          Bayilik Başvurusu
+          Ürün Kataloğu
         </Link>
       </div>
     </section>

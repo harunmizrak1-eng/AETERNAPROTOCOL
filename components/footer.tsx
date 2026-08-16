@@ -11,7 +11,6 @@ const EXPLORE_LINKS = [
 
 const CONSULT_LINKS = [
   { href: "/dogrulama", label: "Orijinallik Doğrulama" },
-  { href: "/bayilik", label: "Bayilik Başvurusu" },
   { href: whatsappLink(), label: "WhatsApp", external: true },
   { href: `mailto:${contactEmail}`, label: contactEmail, external: true },
   { href: instagramUrl, label: "Instagram", external: true },

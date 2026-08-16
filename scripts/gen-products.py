@@ -87,6 +87,53 @@ SPEC_LABELS = {
     "Solvent", "Diluent",
 }
 
+# Kullanım hedefi. Kataloğu "peptid / HGH" ayrımının yanında amaca göre de
+# gezilebilir yapar: ziyaretçi bileşik adını bilmeden "kilo kaybı" veya
+# "toparlanma" diye arıyor.
+#
+# Hedef öncelikle bileşiğin kütüphanedeki kategorisinden türetilir
+# (PEPTIDE_CATEGORY_GOAL). Kütüphanede karşılığı olmayan ürünler ve birden
+# fazla amaca hizmet eden karışımlar için GOAL_OVERRIDES devreye girer.
+GOALS = [
+    "Kilo Kaybı",
+    "Toparlanma & Doku Onarımı",
+    "Büyüme Hormonu",
+    "Anti-Aging & Cilt",
+    "Longevity",
+    "Kognitif",
+    "Diğer",
+]
+
+PEPTIDE_CATEGORY_GOAL = {
+    "Metabolik": "Kilo Kaybı",
+    "Doku Onarımı": "Toparlanma & Doku Onarımı",
+    "Büyüme / GH": "Büyüme Hormonu",
+    "Estetik / Onarım": "Anti-Aging & Cilt",
+    "Longevity": "Longevity",
+    "Kognitif": "Kognitif",
+    "Performans": "Toparlanma & Doku Onarımı",
+}
+
+# Ürün slug'ında geçen desen -> hedefler. Kütüphaneye bağlanmayan ürünler ve
+# çok amaçlı karışımlar burada elle tanımlanır. Sıra önemli: ilk eşleşen
+# desen kazanır.
+GOAL_OVERRIDES = [
+    (r"glow-pro-mix", ["Toparlanma & Doku Onarımı", "Anti-Aging & Cilt"]),
+    (r"ultra-rehab-mix", ["Toparlanma & Doku Onarımı"]),
+    (r"wellness-mix", ["Büyüme Hormonu", "Toparlanma & Doku Onarımı"]),
+    (r"mega-mass-mix", ["Büyüme Hormonu"]),
+    (r"double-burn-mix|super-slim-mix", ["Kilo Kaybı"]),
+    (r"hgh-?frag|fragment", ["Kilo Kaybı"]),
+    (r"melanotan", ["Diğer"]),
+    (r"hcg|hp-hcg", ["Diğer"]),
+    (r"ll-?37", ["Diğer"]),
+    (r"multi-use-pen|^pen-", ["Diğer"]),
+    (r"nad", ["Longevity"]),
+    (r"glutathione|glutatyon", ["Longevity", "Anti-Aging & Cilt"]),
+    (r"aicar", ["Kilo Kaybı"]),
+]
+
+
 # Ürün adındaki bileşikten kütüphanedeki ansiklopedi kaydına eşleme.
 # Sıra önemli: daha uzun/özgül desenler önce denenir.
 PEPTIDE_MAP = [
@@ -237,6 +284,30 @@ def local_image(slug: str, images):
     return None
 
 
+def goals_for(slug: str, pep_slug, peptide_categories) -> list:
+    """Ürünün kullanım hedefleri. Önce elle tanımlı istisnalar, sonra
+    kütüphanedeki bileşik kategorisi. Hiçbiri tutmazsa "Diğer"."""
+    for pattern, goals in GOAL_OVERRIDES:
+        if re.search(pattern, slug, re.I):
+            return goals
+    if pep_slug:
+        cat = peptide_categories.get(pep_slug)
+        hit = PEPTIDE_CATEGORY_GOAL.get(cat)
+        if hit:
+            return [hit]
+    return ["Diğer"]
+
+
+def read_peptide_categories() -> dict:
+    """lib/peptides.ts'ten slug -> category eşlemesini okur. Kategoriyi orada
+    tek kaynakta tutup burada tekrar tanımlamamak için."""
+    src = open(os.path.join(REPO, "lib", "peptides.ts")).read()
+    pairs = re.findall(
+        r'slug: "([^"]+)",(?:.*?\n)*?    category: "([^"]+)"', src
+    )
+    return dict(pairs)
+
+
 def ts(value) -> str:
     if value is None:
         return "undefined"
@@ -248,6 +319,8 @@ def main():
     for f in FILES:
         for p in json.load(open(f)):
             seen[p["id"]] = p
+
+    peptide_categories = read_peptide_categories()
 
     out = []
     for p in sorted(seen.values(), key=lambda x: clean_name(x["name"])):
@@ -267,6 +340,7 @@ def main():
             # public/products/<slug>.<ext> altında tutulur.
             "image": local_image(p["slug"], images),
             "sourcePriceUsd": round(int(price) / 100, 2) if price else None,
+            "goals": goals_for(p["slug"], peptide_slug(name), peptide_categories),
             "specs": specs,
             "notes": notes,
         })
@@ -300,6 +374,9 @@ def main():
         "/** kind: \"spec\" teknik/sunum verisidir. \"claim\" üreticinin",
         " *  etkinlik, kullanım amacı, doz veya yan etki beyanıdır ve sayfada",
         " *  ayrı bir bölümde, kaynağı belirtilerek gösterilir. */",
+        "/** Katalogdaki amaç filtresinin sırası. */",
+        "export const goalOrder: string[] = " + json.dumps(GOALS, ensure_ascii=False),
+        "",
         "export interface ProductSpec {",
         "  label: string",
         "  value: string",
@@ -319,6 +396,8 @@ def main():
         "  sourcePriceUsd?: number",
         "  /** Sitede gösterilecek fiyat. Şimdilik boş. */",
         "  price?: string",
+        "  /** Kullanım hedefleri; katalogda amaca göre filtreleme için. */",
+        "  goals: string[]",
         "  specs: ProductSpec[]",
         "  notes: string[]",
         "}",
@@ -339,6 +418,7 @@ def main():
             lines.append(f"    image: {ts(p['image'])},")
         if p["sourcePriceUsd"] is not None:
             lines.append(f"    sourcePriceUsd: {p['sourcePriceUsd']},")
+        lines.append(f"    goals: {ts(p['goals'])},")
         if p["specs"]:
             lines.append("    specs: [")
             for s in p["specs"]:

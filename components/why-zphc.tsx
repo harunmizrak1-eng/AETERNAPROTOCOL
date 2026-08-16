@@ -15,8 +15,8 @@ const PILLARS = [
   },
   {
     title: "Doğrudan Tedarik",
-    line: "Üreticinin peptid ve insan büyüme hormonu hattı için Türkiye distribütörüyüz. Soğuk zincir koşullarına uygun sevkiyat, kurumsal alıcılar için bayilik programı.",
-    link: { href: "/bayilik", label: "Bayilik başvurusu" },
+    line: "Üreticinin peptid ve insan büyüme hormonu hattı için Türkiye distribütörüyüz. Soğuk zincir koşullarına uygun sevkiyat ve doğrudan tedarik.",
+    link: { href: "/urunler", label: "Ürün kataloğu" },
   },
 ]
 

@@ -26,6 +26,9 @@ export const categoryOrder: ProductCategory[] = ["peptid", "hgh", "aksesuar"]
 /** kind: "spec" teknik/sunum verisidir. "claim" üreticinin
  *  etkinlik, kullanım amacı, doz veya yan etki beyanıdır ve sayfada
  *  ayrı bir bölümde, kaynağı belirtilerek gösterilir. */
+/** Katalogdaki amaç filtresinin sırası. */
+export const goalOrder: string[] = ["Kilo Kaybı", "Toparlanma & Doku Onarımı", "Büyüme Hormonu", "Anti-Aging & Cilt", "Longevity", "Kognitif", "Diğer"]
+
 export interface ProductSpec {
   label: string
   value: string
@@ -45,6 +48,8 @@ export interface Product {
   sourcePriceUsd?: number
   /** Sitede gösterilecek fiyat. Şimdilik boş. */
   price?: string
+  /** Kullanım hedefleri; katalogda amaca göre filtreleme için. */
+  goals: string[]
   specs: ProductSpec[]
   notes: string[]
 }
@@ -58,6 +63,7 @@ export const products: Product[] = [
     peptideSlug: "aicar",
     image: "/products/aicar-250mg-total-5x50mg-zphc.jpg",
     sourcePriceUsd: 79.0,
+    goals: ["Kilo Kaybı"],
     specs: [],
     notes: [],
   },
@@ -69,6 +75,7 @@ export const products: Product[] = [
     peptideSlug: "aod-9604",
     image: "/products/aod-9604-5mg-with-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 31.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 5 mg liyofilize AOD 9604 peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "İnsan büyüme hormonunun modifiye fragmanı (HGH 176-191), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
@@ -90,6 +97,7 @@ export const products: Product[] = [
     peptideSlug: "aod-9604",
     image: "/products/aod9604-2-5mg-5x2-5mg-zphc.jpg",
     sourcePriceUsd: 59.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Mekanizma", value: "IGF-1 veya kan glukozunu yükseltmeden lipolizi artırdığı ve lipogenezi engellediği belirtilen fragment 176-191 analoğu.", kind: "claim" },
       { label: "Rekonstitüsyon", value: "1 ml bakteriyostatik su ekleyin → 2,5 mg/ml; hafifçe çevirin, çalkalamayın.", kind: "spec" },
@@ -111,6 +119,7 @@ export const products: Product[] = [
     peptideSlug: "aod-9604",
     image: "/products/aod9604-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 125.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Mekanizma", value: "Glukoz veya IGF-1'i yükseltmeden lipolizi artırdığı ve lipogenezi baskıladığı belirtilen fragment 176-191 analoğu.", kind: "claim" },
       { label: "Rekonstitüsyon", value: "1 ml bakteriyostatik su ekleyin → 5 mg/ml; hafifçe çevirin, çalkalamayın.", kind: "spec" },
@@ -132,6 +141,7 @@ export const products: Product[] = [
     peptideSlug: "bpc-157",
     image: "/products/zphc-bpc-157-20mg-with-bacteriostatic-water.jpg",
     sourcePriceUsd: 83.0,
+    goals: ["Toparlanma & Doku Onarımı"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize BPC-157 peptidi + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
       { label: "Peptid Profili", value: "BPC-157 (Body Protection Compound), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
@@ -153,6 +163,7 @@ export const products: Product[] = [
     peptideSlug: "bpc-157",
     image: "/products/bpc157-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 99.0,
+    goals: ["Toparlanma & Doku Onarımı"],
     specs: [
       { label: "Hızlı doku onarımı", value: "Peptidin tendon, bağ, kas ve sindirim sistemi mukozasının iyileşmesini hızlandırdığı belirtilir.", kind: "claim" },
       { label: "Antiinflamatuvar destek", value: "Ağrı ve şişliği azaltmaya yardımcı olurken kolajen sentezini artırdığı belirtilir.", kind: "claim" },
@@ -173,6 +184,7 @@ export const products: Product[] = [
     peptideSlug: "cagrilintide",
     image: "/products/cagrilintide-25mg-zphc.jpg",
     sourcePriceUsd: 299.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Amilin reseptör analoğu", value: "Güçlü iştah baskılanması ve kalori alımının azaltılması üzerine araştırılmaktadır.", kind: "claim" },
       { label: "Yüksek Saflıkta Formülasyon", value: "≥%98,9 saflık (HPLC); GMP ve ISO 17034:2016 standartlarında üretilir, ZPHC doğrulama kodu içerir.", kind: "spec" },
@@ -193,6 +205,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/double-burn-mix-5mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 129.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Flakon Başına Formül", value: "AOD 9604 2,5 mg · FRAG 176-191 2,5 mg.", kind: "spec" },
       { label: "Sinerjik etki", value: "Her iki fragmanın da yağ dokusunu hedeflediği, lipolizi hızlandırırken yeni yağ depolanmasını engellediği ve IGF-1 ya da glukoz yükselmesine yol açmadığı belirtilir.", kind: "claim" },
@@ -215,6 +228,7 @@ export const products: Product[] = [
     peptideSlug: "epithalon",
     image: "/products/epithalon-50mg-with-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 129.0,
+    goals: ["Longevity"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 50 mg liyofilize Epithalon + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
       { label: "Peptid Profili", value: "Epithalon (Epitalon), sentetik tetrapeptid (Ala-Glu-Asp-Gly), laboratuvar sınıfı materyal.", kind: "spec" },
@@ -236,6 +250,7 @@ export const products: Product[] = [
     peptideSlug: "ghk-cu",
     image: "/products/ghk-cu-60mg-with-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 59.0,
+    goals: ["Anti-Aging & Cilt"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize GHK-Cu (bakır peptidi) + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "GHK-Cu (glisil-L-histidil-L-lizin bakır kompleksi), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
@@ -257,6 +272,7 @@ export const products: Product[] = [
     peptideSlug: "ghk-cu",
     image: "/products/ghk-cu-50mg-zphc.jpg",
     sourcePriceUsd: 59.0,
+    goals: ["Anti-Aging & Cilt"],
     specs: [
       { label: "Rejeneratif bakır peptidi", value: "Cilt onarımının güçlendirilmesi, kolajen uyarımı ve dermal yapının iyileştirilmesi üzerine araştırılmaktadır.", kind: "claim" },
       { label: "Yaşlanma karşıtı etki", value: "Hücresel yenilenmeyi, elastikiyetin geri kazanılmasını ve görünür yaşlanma belirtilerinin azalmasını desteklediği belirtilir.", kind: "claim" },
@@ -278,6 +294,7 @@ export const products: Product[] = [
     peptideSlug: "ghrp-2",
     image: "/products/ghrp-2-25mg-5x5mg-zphc-2.jpg",
     sourcePriceUsd: 49.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "GH pulsu güçlendirici", value: "Güçlü grelin reseptör peptidinin hipofizden büyüme hormonu salınımını artırdığı belirtilir.", kind: "claim" },
       { label: "Doz Rehberi", value: "6–8 hafta boyunca günde 2–3 kez (yatmadan önce ve antrenman sonrası) deri altı 100–300 mcg; sulandırılmış flakonu buzdolabında saklayın.", kind: "claim" },
@@ -298,6 +315,7 @@ export const products: Product[] = [
     peptideSlug: "ghrp-6",
     image: "/products/ghrp-6-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 49.0,
+    goals: ["Büyüme Hormonu"],
     specs: [],
     notes: [],
   },
@@ -309,6 +327,7 @@ export const products: Product[] = [
     peptideSlug: "bpc-157",
     image: "/products/glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc.jpg",
     sourcePriceUsd: 129.0,
+    goals: ["Toparlanma & Doku Onarımı", "Anti-Aging & Cilt"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize peptid karışımı + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "BPC-157, TB-500 (Timozin Beta-4 fragmanı) ve GHK-Cu (bakır peptidi) kombinasyonu.", kind: "spec" },
@@ -329,6 +348,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/hgh-fragment-176-191-50mg-5x10mg-zphc.jpg",
     sourcePriceUsd: 147.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Seçici yağ kaybı", value: "Fragment 176-191'in glukoz veya IGF-1'i yükseltmeden lipolizi artırdığı ve lipogenezi engellediği belirtilir.", kind: "claim" },
       { label: "Rekonstitüsyon", value: "2 ml bakteriyostatik su ekleyin → 5 mg/ml; hafifçe çevirin, çalkalamayın.", kind: "spec" },
@@ -349,6 +369,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/zphc-hgh-fragment-176-191-5mg.jpg",
     sourcePriceUsd: 29.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 5 mg liyofilize HGH Fragment 176-191 + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
       { label: "Peptid Profili", value: "İnsan büyüme hormonunun sentetik fragmanı (176-191 amino asitleri), laboratuvar sınıfı materyal.", kind: "spec" },
@@ -369,6 +390,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/hgh-fragment-176-191-12-5mg-5x2-5mg-zphc.jpg",
     sourcePriceUsd: 49.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Hedefli yağ kaybı", value: "Fragment 176-191'in kan şekerini veya IGF-1'i yükseltmeden lipolizi tetiklediği belirtilir.", kind: "claim" },
       { label: "Rekonstitüsyon", value: "1 ml bakteriyostatik su ekleyin → 2,5 mg/ml; hafifçe çevirin, çalkalamayın.", kind: "spec" },
@@ -389,6 +411,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/hgh-fragment-176-191-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 125.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Seçici yağ kaybı", value: "Fragment 176-191'in kan glukozunu veya IGF-1'i yükseltmeden lipolizi artırdığı ve lipogenezi baskıladığı belirtilir.", kind: "claim" },
       { label: "Rekonstitüsyon", value: "2 ml bakteriyostatik su ekleyin → 2,5 mg/ml; hafifçe çevirin, çalkalamayın.", kind: "spec" },
@@ -409,6 +432,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/hp-hcg-5000iu-vial-zphc.jpg",
     sourcePriceUsd: 55.0,
+    goals: ["Diğer"],
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
       { label: "Etkin Madde", value: "İnsan koryonik gonadotropini (hCG)", kind: "spec" },
@@ -431,6 +455,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/hp-hcg-1000iu-zphc.jpg",
     sourcePriceUsd: 49.0,
+    goals: ["Diğer"],
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
       { label: "Etkin Madde", value: "İnsan koryonik gonadotropini (hCG)", kind: "spec" },
@@ -454,6 +479,7 @@ export const products: Product[] = [
     peptideSlug: "igf-1-lr3",
     image: "/products/igf1-lr3-1mg-5x0p2mg-zphc.jpg",
     sourcePriceUsd: 89.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Üretici", value: "ZPHC (Zhengzhou Pharmaceutical Co. Ltd)", kind: "spec" },
       { label: "Etkin Madde", value: "IGF-1 LR3 (İnsülin benzeri büyüme faktörü 1, Long R3)", kind: "spec" },
@@ -477,6 +503,7 @@ export const products: Product[] = [
     peptideSlug: "ipamorelin",
     image: "/products/ipamorelin-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 118.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Büyüme hormonu artışı", value: "Seçici grelin reseptör agonistinin kortizol yükselmesine yol açmadan GH ve IGF-1 düzeylerini artırdığı belirtilir.", kind: "claim" },
       { label: "Araştırma Sınıfı Kalite Kontrolü", value: "ZPHC partileri: ≥%99 saflık, endotoksinsiz, mikro filtrelenmiş.", kind: "spec" },
@@ -496,6 +523,7 @@ export const products: Product[] = [
     peptideSlug: "glutathione",
     image: "/products/l-glutathione-3000mg-kit-zphc.jpg",
     sourcePriceUsd: 59.0,
+    goals: ["Longevity", "Anti-Aging & Cilt"],
     specs: [
       { label: "Hücresel yaşlanma karşıtı destek", value: "İndirgenmiş GSH'nin hücre içi antioksidan kapasiteyi yenilediği ve oksidatif stres belirteçlerine karşı koyduğu belirtilir.", kind: "claim" },
       { label: "Esnek rekonstitüsyon", value: "Her 600 mg flakon, ürünle verilen çözücüyle eşleşerek araştırma modelleri için özel konsantrasyon ayarına imkân tanır.", kind: "claim" },
@@ -516,6 +544,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/ll-37-zphc-25mg-kit.jpg",
     sourcePriceUsd: 299.0,
+    goals: ["Diğer"],
     specs: [
       { label: "Konak savunma peptidi", value: "LL-37'nin araştırma ortamlarında bağışıklık modellemesi, bariyer bütünlüğü ve antimikrobiyal yanıt çalışmalarında kullanıldığı belirtilir.", kind: "claim" },
       { label: "Liyofilize Saflık", value: "5 mg dondurularak kurutulmuş flakonlar, hassas peptid dozlaması için kontrollü rekonstitüsyon sağlar.", kind: "spec" },
@@ -535,6 +564,7 @@ export const products: Product[] = [
     peptideSlug: "mots-c",
     image: "/products/mots-c-20mg-with-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 99.0,
+    goals: ["Longevity"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize MOTS-c peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "MOTS-c (12S rRNA mitokondriyal açık okuma çerçevesi), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
@@ -555,6 +585,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/mega-mass-mix-10mg-5x10mg-zphc.jpg",
     sourcePriceUsd: 89.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Flakon Başına Formül", value: "GHRP-6 5 mg · CJC-1295 5 mg.", kind: "spec" },
       { label: "Çift etki", value: "GHRP-6 grelin reseptörlerini tetikleyerek keskin bir GH pulsu ve açlık artışı oluşturur; CJC-1295 ise GHRH sinyalini uzatarak GH salınımını sürdürür.", kind: "claim" },
@@ -576,6 +607,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/melanotan-2-10mg-bacteriostatic-water-zphc.jpg",
     sourcePriceUsd: 20.0,
+    goals: ["Diğer"],
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
       { label: "Etkin Madde", value: "Melanotan-2", kind: "spec" },
@@ -598,6 +630,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/melanotan-2-30mg-aq-pen-zphc.jpg",
     sourcePriceUsd: 49.0,
+    goals: ["Diğer"],
     specs: [
       { label: "Kullanıma Hazır", value: "Su bazlı MT-2 önceden çözünmüş hâlde gelir; flakon, rekonstitüsyon ve enjektör gerekmez.", kind: "spec" },
       { label: "Ayarlanabilir doz", value: "Her tık 150 µg verir; 10 tık = 1,5 mg. Dereceli pencere kalan hacmi gösterir.", kind: "claim" },
@@ -618,6 +651,7 @@ export const products: Product[] = [
     category: "aksesuar",
     image: "/products/multi-use-pen-36iu-cartridges-zphc.jpg",
     sourcePriceUsd: 30.0,
+    goals: ["Diğer"],
     specs: [
       { label: "Uyumluluk", value: "ZPTROP 36 IU tek hazneli kartuşlarla kullanım için tasarlanmıştır.", kind: "spec" },
       { label: "Cihaz tipi", value: "Yeniden kullanılabilir hassas dozlama kalemi (klinik olmayan cihaz).", kind: "claim" },
@@ -639,6 +673,7 @@ export const products: Product[] = [
     peptideSlug: "nad-nmn",
     image: "/products/nad-plus-2500mg-zphc.jpg",
     sourcePriceUsd: 139.0,
+    goals: ["Longevity"],
     specs: [
       { label: "Hücresel enerji desteği", value: "ATP üretimi, mitokondriyal verimlilik ve genel metabolik fonksiyon için temel kofaktör.", kind: "claim" },
       { label: "Longevity yolakları", value: "Sirtuin aktivasyonu (SIRT1-7), DNA onarım mekanizmaları ve sağlıklı yaşlanma araştırma modellerinde rol alır.", kind: "claim" },
@@ -660,6 +695,7 @@ export const products: Product[] = [
     peptideSlug: "retatrutide",
     image: "/products/reta-60mg-dual-cartridge-sterile-water-zphc.jpg",
     sourcePriceUsd: 359.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Çift hazneli kartuş (60 mg)", value: "Bir haznede 60 mg liyofilize toz, diğer haznede enjeksiyonluk steril su bulunur; bileşenler aktivasyona kadar ayrı kalır, karışım kullanımdan hemen önce gerçekleşir.", kind: "claim" },
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -674,6 +710,7 @@ export const products: Product[] = [
     peptideSlug: "retatrutide",
     image: "/products/retatrutide-30mg-aq-pen-zphc.jpg",
     sourcePriceUsd: 219.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -687,6 +724,7 @@ export const products: Product[] = [
     peptideSlug: "retatrutide",
     image: "/products/retatrutide-10mg-5x2mg-zphc-2.jpg",
     sourcePriceUsd: 83.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -700,6 +738,7 @@ export const products: Product[] = [
     peptideSlug: "retatrutide",
     image: "/products/reta-zphc-120-mg-5-vials-x-24-mg.jpg",
     sourcePriceUsd: 589.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -713,6 +752,7 @@ export const products: Product[] = [
     peptideSlug: "retatrutide",
     image: "/products/retatrutide-zphc-15-mg-1vial.jpg",
     sourcePriceUsd: 119.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -726,6 +766,7 @@ export const products: Product[] = [
     peptideSlug: "retatrutide",
     image: "/products/retatrutide-20mg-5x4mg-zphc.jpg",
     sourcePriceUsd: 138.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -739,6 +780,7 @@ export const products: Product[] = [
     peptideSlug: "retatrutide",
     image: "/products/retatrutide-40mg-5x8mg-zphc.jpg",
     sourcePriceUsd: 239.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -752,6 +794,7 @@ export const products: Product[] = [
     peptideSlug: "retatrutide",
     image: "/products/retatrutide-60mg-5x12mg-zphc.jpg",
     sourcePriceUsd: 339.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -765,6 +808,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/spectros-140iu-hgh-spectrum-pharma.jpg",
     sourcePriceUsd: 239.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Üretici", value: "Spectrum Pharma", kind: "spec" },
       { label: "Etkin Madde", value: "Somatropin", kind: "spec" },
@@ -788,6 +832,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/spectros-150iu-hgh-spectrum-pharma.jpg",
     sourcePriceUsd: 229.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Üretici", value: "Spectrum Pharma", kind: "spec" },
       { label: "Etkin Madde", value: "Somatropin", kind: "spec" },
@@ -811,6 +856,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/spectros-280iu-hgh-spectrum-pharma.jpg",
     sourcePriceUsd: 399.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Üretici", value: "Spectrum Pharma", kind: "spec" },
       { label: "Etkin Madde", value: "Somatropin", kind: "spec" },
@@ -834,6 +880,7 @@ export const products: Product[] = [
     peptideSlug: "semaglutide",
     image: "/products/semaglutide-10mg-5x2mg-zphc.jpg",
     sourcePriceUsd: 76.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Araştırma Odağı", value: "İştah baskılanması, mide boşalmasının gecikmesi, insülin duyarlılığında iyileşme ve hızlı yağ kaybı.", kind: "claim" },
       { label: "Haftada Tek Doz Protokolü", value: "Uzun yarı ömrü, haftada tek bir deri altı doza imkân tanır.", kind: "claim" },
@@ -855,6 +902,7 @@ export const products: Product[] = [
     peptideSlug: "semaglutide",
     image: "/products/semaglutide-20mg-5x4mg-zphc.jpg",
     sourcePriceUsd: 143.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Araştırma Odağı", value: "Güçlü iştah baskılanması, mide boşalmasının gecikmesi, insülin duyarlılığında iyileşme ve hızlı yağ kaybı.", kind: "claim" },
       { label: "Haftada Tek Doz Protokolü", value: "Uzun yarı ömrü, haftada tek bir deri altı enjeksiyona imkân tanır.", kind: "claim" },
@@ -876,6 +924,7 @@ export const products: Product[] = [
     peptideSlug: "semaglutide",
     image: "/products/semaglutide-5mg-kit-zphc.jpg",
     sourcePriceUsd: 44.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yeni nesil GLP-1 agonisti", value: "Klinik çalışmalarda iştahı baskıladığı, glisemik kontrolü iyileştirdiği ve sürdürülebilir yağ kaybı sağladığı gösterilmiştir.", kind: "claim" },
       { label: "Haftalık dozlama kolaylığı", value: "Uzun yarı ömrü, haftada bir deri altı enjeksiyona imkân tanır.", kind: "claim" },
@@ -896,6 +945,7 @@ export const products: Product[] = [
     peptideSlug: "semaglutide",
     image: "/products/semaglutide-zphc-50-mg-5-vials-x-10-mg.jpg",
     sourcePriceUsd: 279.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Araştırma Odağı", value: "Güçlü iştah baskılanması, mide boşalmasının gecikmesi, insülin duyarlılığında iyileşme ve hızlı yağ kaybı.", kind: "claim" },
       { label: "Haftada Tek Doz Protokolü", value: "Uzun yarı ömrü, haftada tek bir deri altı enjeksiyona imkân tanır.", kind: "claim" },
@@ -917,6 +967,7 @@ export const products: Product[] = [
     peptideSlug: "semaglutide",
     image: "/products/semaglutide-6mg-aq-pen-zphc.jpg",
     sourcePriceUsd: 105.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Karıştırma gerektirmez", value: "Tamamen çözünmüş peptid; dozu ayarlayıp deri altına uygulamanız yeterlidir.", kind: "claim" },
       { label: "Metabolik etki", value: "Mide boşalmasını yavaşlattığı, iştahı baskıladığı ve insülin duyarlılığını iyileştirdiği belirtilir.", kind: "claim" },
@@ -937,6 +988,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/super-slim-mix-275mg-5x55mg-zphc.jpg",
     sourcePriceUsd: 149.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Rekonstitüsyon", value: "1 ml bakteriyostatik su ekleyin → 5,5 mg/ml. 2–8 °C'de saklayın.", kind: "spec" },
       { label: "Örnek Araştırma Dozu", value: "4–6 hafta boyunca günde bir, deri altı 0,25 – 0,5 ml (≈ 1,4 – 2,8 mg).", kind: "claim" },
@@ -957,6 +1009,7 @@ export const products: Product[] = [
     category: "peptid",
     image: "/products/super-slim-mix-55mg-5x11mg-zphc.jpg",
     sourcePriceUsd: 199.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Flakon Başına Formül", value: "AOD 9604 5 mg · FRAG 176-191 5 mg · Adipotide 1 mg.", kind: "spec" },
       { label: "Sinerjik etki", value: "AOD ve FRAG lipolizi hızlandırır; Adipotide yağ hücresi damarlanmasını seçici olarak azaltır.", kind: "claim" },
@@ -978,6 +1031,7 @@ export const products: Product[] = [
     peptideSlug: "tb-500",
     image: "/products/zphc-tb500-20mg-with-bacteriostatic-water.jpg",
     sourcePriceUsd: 109.0,
+    goals: ["Toparlanma & Doku Onarımı"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize TB-500 (toz) + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "TB-500 (Timozin Beta-4 fragmanı), yüksek saflıkta laboratuvar sınıfı materyal.", kind: "spec" },
@@ -999,6 +1053,7 @@ export const products: Product[] = [
     peptideSlug: "tb-500",
     image: "/products/tb500-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 119.0,
+    goals: ["Toparlanma & Doku Onarımı"],
     specs: [
       { label: "Antiinflamatuvar etki", value: "Şişliği ve yaralanma sonrası tutukluğu azaltmaya yardımcı olduğu belirtilir.", kind: "claim" },
       { label: "Doz Rehberi", value: "4–6 hafta boyunca haftada 2–5 mg (2–3 enjeksiyona bölünerek); ardından idame için 10–14 günde bir 2 mg.", kind: "claim" },
@@ -1019,6 +1074,7 @@ export const products: Product[] = [
     peptideSlug: "tirzepatide",
     image: "/products/tirze-zphc-75-mg-dual-cartridge-pen.jpg",
     sourcePriceUsd: 339.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Çift hazneli kartuş (75 mg)", value: "Bir haznede 75 mg liyofilize toz, diğer haznede enjeksiyonluk steril su bulunur; bileşenler aktivasyona kadar ayrı kalır, karışım kullanımdan hemen önce gerçekleşir.", kind: "claim" },
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
@@ -1033,6 +1089,7 @@ export const products: Product[] = [
     peptideSlug: "tirzepatide",
     image: "/products/tirzepatide-zphc-150-mg-5-vials-x-30-mg.jpg",
     sourcePriceUsd: 699.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -1046,6 +1103,7 @@ export const products: Product[] = [
     peptideSlug: "tirzepatide",
     image: "/products/tirzepatide-30mg-aq-pen-zphc.jpg",
     sourcePriceUsd: 189.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -1059,6 +1117,7 @@ export const products: Product[] = [
     peptideSlug: "tirzepatide",
     image: "/products/tirzepatide-37p5mg-5x7p5mg-zphc.jpg",
     sourcePriceUsd: 199.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -1072,6 +1131,7 @@ export const products: Product[] = [
     peptideSlug: "tirzepatide",
     image: "/products/tirzepatide-50mg-5x10mg-zphc.jpg",
     sourcePriceUsd: 259.0,
+    goals: ["Kilo Kaybı"],
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -1085,6 +1145,7 @@ export const products: Product[] = [
     peptideSlug: "bpc-157",
     image: "/products/zphc-ultra-rehab-mix-20mg-bpc157-tb500.jpg",
     sourcePriceUsd: 89.0,
+    goals: ["Toparlanma & Doku Onarımı"],
     specs: [
       { label: "Bileşim", value: "10 mg BPC-157 ve 10 mg TB-500 (Timozin Beta-4 fragmanı) içeren çift peptidli karışım.", kind: "claim" },
       { label: "Toplam İçerik", value: "Flakon başına 20 mg; hermetik kapalı steril cam kap.", kind: "spec" },
@@ -1107,6 +1168,7 @@ export const products: Product[] = [
     peptideSlug: "bpc-157",
     image: "/products/ultra-rehab-mix-50mg-5x10mg-zphc.jpg",
     sourcePriceUsd: 199.0,
+    goals: ["Toparlanma & Doku Onarımı"],
     specs: [
       { label: "Liyofilize Saflık", value: "Her 10 mg flakonu 2 ml bakteriyostatik su ile sulandırarak toplam 5 mg/ml peptid elde edin (ml başına 2,5 mg BPC + 2,5 mg TB).", kind: "spec" },
       { label: "Doz Rehberi", value: "4–6 hafta boyunca haftada 2–5 mg (1–2 ml), 2–3 deri altı enjeksiyona bölünerek; ardından idame için 10–14 günde bir 2 mg.", kind: "claim" },
@@ -1127,6 +1189,7 @@ export const products: Product[] = [
     peptideSlug: "ipamorelin",
     image: "/products/wellness-mix-25mg-5x5mg-zphc.jpg",
     sourcePriceUsd: 119.0,
+    goals: ["Büyüme Hormonu", "Toparlanma & Doku Onarımı"],
     specs: [
       { label: "Çift etki", value: "Ipamorelin 2,5 mg + CJC-1295 2,5 mg, doğal GH ve IGF-1 salınımını güçlendirir.", kind: "claim" },
       { label: "Faydalar", value: "Yağsız kas kütlesinin korunması, yağ oksidasyonu, daha derin uyku ve daha hızlı toparlanma.", kind: "claim" },
@@ -1146,6 +1209,7 @@ export const products: Product[] = [
     peptideSlug: "nad-nmn",
     image: "/products/zphc-nad-plus-1000mg-with-bacteriostatic-water.jpg",
     sourcePriceUsd: 63.0,
+    goals: ["Longevity"],
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 1000 mg liyofilize NAD+ + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Bileşik Profili", value: "β-Nikotinamid Adenin Dinükleotid (okside form), yüksek saflıkta laboratuvar sınıfı materyal.", kind: "claim" },
@@ -1167,6 +1231,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-144iu-2x72iu-two-chamber-cartridges-zphc.jpg",
     sourcePriceUsd: 229.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Format", value: "2 adet hermetik kapalı çift hazneli cam kartuş.", kind: "spec" },
       { label: "Kartuş başına içerik", value: "72 IU (24 mg) somatropin 191aa (rDNA kaynaklı).", kind: "claim" },
@@ -1189,6 +1254,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zphc-zptrop-72iu-dual-chamber-pen.jpg",
     sourcePriceUsd: 159.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Format", value: "Ayrı bölmeli steril çift hazneli kalem.", kind: "spec" },
       { label: "İçerik", value: "24 mg (72 IU) liyofilize somatropin 191aa (rDNA kaynaklı) + steril çözücü.", kind: "claim" },
@@ -1210,6 +1276,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-hgh-36iu-aq-pen-zphc.jpg",
     sourcePriceUsd: 89.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Kullanıma Hazır", value: "Tamamen çözünmüş somatropin çözeltisi; flakon veya bakteriyostatik su gerekmez.", kind: "spec" },
       { label: "Mikro hassasiyetli doz ayarı", value: "Her tık ≈0,6 IU (0,2 mg) verir. 60 tık = tam 36 IU.", kind: "claim" },
@@ -1231,6 +1298,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptropin-hgh-320iu-zphc.jpg",
     sourcePriceUsd: 449.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
       { label: "Etkin Madde", value: "Somatropin", kind: "spec" },
@@ -1254,6 +1322,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-hgh-80iu-zphc-bacteriostatic-water.jpg",
     sourcePriceUsd: 179.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
       { label: "Etkin Madde", value: "Somatropin", kind: "spec" },
@@ -1277,6 +1346,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-100iu-zphc.jpg",
     sourcePriceUsd: 189.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
       { label: "Etkin Madde", value: "Somatropin", kind: "spec" },
@@ -1300,6 +1370,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-hgh-100iu-aq-vial-zphc.jpg",
     sourcePriceUsd: 199.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Rekonstitüsyon gerekmez", value: "Tamamen çözünmüş somatropin çözeltisi; istenen IU'yu insülin enjektörüyle çekmeniz yeterlidir.", kind: "claim" },
       { label: "Dereceli tıpa", value: "Hassas dozlama için etikette 3 IU (≈ 1 mg) aralıklarla işaretleme; flakon başına 33 tam çekim.", kind: "claim" },
@@ -1321,6 +1392,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-16iu-1vial-zphc.jpg",
     sourcePriceUsd: 34.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Standart rekonstitüsyon", value: "Ürünle verilen bakteriyostatik suyu ekleyin; somatropin berrak bir çözelti hâline gelene dek hafifçe çevirin.", kind: "spec" },
       { label: "Konsantrasyon", value: "Rekonstitüsyon sonrası flakon başına 16 IU (≈ toplam 5,3 mg); insülin enjektörleri ve mikro dozlama için uygundur.", kind: "spec" },
@@ -1342,6 +1414,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-hgh-160iu-zphc.jpg",
     sourcePriceUsd: 279.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Üretici", value: "ZPHC", kind: "spec" },
       { label: "Etkin Madde", value: "Somatropin", kind: "spec" },
@@ -1365,6 +1438,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-hgh-200iu-2x100iu-zphc.jpg",
     sourcePriceUsd: 299.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Doz Rehberi", value: "Genel sağlık/yağ yakımı için günde 2–4 IU, kas kazanımı için 4–6 IU.", kind: "claim" },
       { label: "Soğuk zincirle taşınır", value: "Sıcaklık göstergeli yalıtımlı ambalajda 2–8 °C'de gönderilir.", kind: "claim" },
@@ -1385,6 +1459,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-32iu-1vial-zphc.jpg",
     sourcePriceUsd: 65.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Standart rekonstitüsyon", value: "Ürünle verilen bakteriyostatik suyu ekleyin; berrak bir somatropin çözeltisi için hafifçe çevirin.", kind: "spec" },
       { label: "Konsantrasyon", value: "Rekonstitüsyon sonrası flakon başına 32 IU (≈ toplam 10,7 mg); insülin enjektörleriyle uyumludur.", kind: "spec" },
@@ -1406,6 +1481,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-150-aq-zphc-premixed.jpg",
     sourcePriceUsd: 237.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Kullanıma hazır HGH", value: "Tutarlı etkinlik için steril sulu çözelti içinde tamamen hazır karışım rekombinant insan büyüme hormonu.", kind: "claim" },
       { label: "Somatotropik destek", value: "Kas onarımı, toparlanmanın iyileştirilmesi, yağ metabolizmasının güçlendirilmesi ve performans optimizasyonu üzerine araştırılmaktadır.", kind: "claim" },
@@ -1427,6 +1503,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-hgh-zphc-90-iu-premixed.jpg",
     sourcePriceUsd: 149.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Kullanıma hazır formül", value: "Tamamen hazır karışım somatropin çözeltisi; rekonstitüsyon gerekmez; IU'yu doğrudan insülin enjektörüyle çekin.", kind: "claim" },
       { label: "Pratik dozlama", value: "Flakon başına 45 IU (≈ toplam 15 mg); sorunsuz çekim, tüm dozlarda tutarlı konsantrasyon.", kind: "claim" },
@@ -1448,6 +1525,7 @@ export const products: Product[] = [
     peptideSlug: "hgh",
     image: "/products/zptrop-aq-180-iu-kit-5x36iu-pen-cartridges.jpg",
     sourcePriceUsd: 299.0,
+    goals: ["Büyüme Hormonu"],
     specs: [
       { label: "Format", value: "Sıvı somatropin (191 aa, rDNA kaynaklı) içeren, uyumlu çok kullanımlık enjeksiyon kalemleri için tasarlanmış dolu tek hazneli kartuşlar.", kind: "spec" },
       { label: "Toplam İçerik", value: "Kit başına 180 IU (5 kartuş × 36 IU / her biri 12 mg).", kind: "spec" },

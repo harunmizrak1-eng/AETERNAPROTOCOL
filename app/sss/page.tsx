@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer"
 import { faqItems } from "@/lib/faq"
 
 const description =
-  "ZPHC Türkiye hakkında sık sorulan sorular: ürün çerçevesi, orijinallik doğrulaması, kanıt seviyesi sistemi, kaynak politikası ve bayilik."
+  "ZPHC Türkiye hakkında sık sorulan sorular: ürün çerçevesi, orijinallik doğrulaması, kanıt seviyesi sistemi, kaynak politikası ve tedarik koşulları."
 
 export const metadata: Metadata = {
   title: "Sık Sorulan Sorular",

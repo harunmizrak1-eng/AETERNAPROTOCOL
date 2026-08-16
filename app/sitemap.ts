@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/urunler",
     "/dogrulama",
-    "/bayilik",
     "/peptidler",
     "/journal",
     "/longevity-skoru",

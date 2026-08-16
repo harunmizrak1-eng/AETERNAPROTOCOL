@@ -9,7 +9,6 @@ const LINKS = [
   { href: "/urunler", label: "Ürünler" },
   { href: "/peptidler", label: "Kütüphane" },
   { href: "/dogrulama", label: "Doğrulama" },
-  { href: "/bayilik", label: "Bayilik" },
   { href: "/journal", label: "Journal" },
   { href: "/metodoloji", label: "Metodoloji" },
 ]

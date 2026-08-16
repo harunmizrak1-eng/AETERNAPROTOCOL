@@ -1,20 +1,22 @@
 import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
 import { ResearchMetrics } from "@/components/research-metrics"
+import { ProductCategories } from "@/components/product-categories"
 import { FeaturedProducts } from "@/components/featured-products"
 import { WhyZphc } from "@/components/why-zphc"
-import { Categories } from "@/components/categories"
 import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
-import { Reveal } from "@/components/reveal"
 
-/* Distribütör ana sayfası: katalog → neden biz → odak alanları → iletişim.
+/* Mağaza ana sayfası: hero → güven sayıları → kategoriler → öne çıkan
+ * ürünler → neden biz → iletişim.
  *
- * Danışmanlık dönemine ait dört bölüm buradan kaldırıldı:
- * Offerings ve Process (danışmanlık paketleri ve başvuru akışı — artık
- * satılan bir hizmet değil), Idea (danışmanlık felsefesi) ve Trust (kurgusal
- * danışan yorumları — bir ürün kataloğunda bunlar sahte müşteri yorumu
- * anlamına gelirdi). Bileşenler silinmedi, yalnızca ana sayfadan çıkarıldı.
+ * Kategoriler ürünlerden önce geliyor: ziyaretçinin ilk sorusu "ne
+ * arıyorum" değil, "burada ne var". Katalogla ilk temas kategori kartları.
+ *
+ * Danışmanlık dönemine ait bölümler (Offerings, Process, Idea, Trust) ve
+ * eski Categories bileşeni ana sayfadan çıkarıldı; sonuncusu tıklanamayan,
+ * yalnızca peptid adı listeleyen bir metin bloğuydu ve kataloğa
+ * bağlanmıyordu. Yerini ProductCategories aldı.
  */
 export default function Page() {
   return (
@@ -22,18 +24,10 @@ export default function Page() {
       <Nav />
       <Hero />
       <ResearchMetrics />
-      <Reveal>
-        <FeaturedProducts />
-      </Reveal>
-      <Reveal>
-        <WhyZphc />
-      </Reveal>
-      <Reveal>
-        <Categories />
-      </Reveal>
-      <Reveal>
-        <FinalCta />
-      </Reveal>
+      <ProductCategories />
+      <FeaturedProducts />
+      <WhyZphc />
+      <FinalCta />
       <Footer />
     </main>
   )

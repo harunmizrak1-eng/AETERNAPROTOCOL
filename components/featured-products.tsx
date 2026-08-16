@@ -14,6 +14,8 @@ const FEATURED = [
   "semaglutide-5mg-kit-zphc",
   "zptrop-100iu-zphc",
   "ghk-cu-50mg-zphc",
+  "tirzepatide-30mg-aq-pen-zphc",
+  "ipamorelin-25mg-5x5mg-zphc",
 ]
 
 export function FeaturedProducts() {
@@ -23,54 +25,51 @@ export function FeaturedProducts() {
 
   // Fall back to the head of the catalogue if the curated slugs have all
   // drifted, so the section never renders empty.
-  const shown = items.length > 0 ? items : products.slice(0, 6)
+  const shown = items.length > 0 ? items : products.slice(0, 8)
 
   return (
-    <section className="px-6 py-28 sm:py-36 md:px-10">
+    <section className="border-t border-hairline px-6 py-20 md:px-10">
       <div className="mx-auto max-w-6xl">
-        <div className="flex items-center gap-4">
-          <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-          <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-            Katalogdan
-          </p>
-        </div>
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+              Öne çıkan ürünler
+            </h2>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              Peptid ve insan büyüme hormonu hattından bir seçki.
+            </p>
+          </div>
 
-        <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="max-w-2xl text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
-            Peptid ve insan büyüme hormonu hattı.
-          </h2>
           <Link
             href="/urunler"
-            className="shrink-0 text-[0.65rem] uppercase tracking-eyebrow text-gold transition-opacity hover:opacity-70"
+            className="rounded-md border border-gold px-6 py-3 text-sm font-medium text-gold transition-colors hover:bg-gold hover:text-primary-foreground"
           >
-            Tüm ürünler →
+            Tüm ürünleri gör ({products.length})
           </Link>
         </div>
 
-        <ul className="mt-14 grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {shown.map((product) => (
-            <li key={product.slug} className="bg-background">
+            <li key={product.slug}>
               <Link
                 href={`/urunler/${product.slug}`}
-                className="group flex h-full flex-col justify-between gap-6 p-8 transition-colors hover:bg-muted/40"
+                className="group flex h-full flex-col rounded-md border border-hairline bg-card p-4 transition-colors hover:border-gold/60 hover:bg-muted/60"
               >
-                <div>
-                  {product.image && (
-                    <Image
-                      src={product.image}
-                      alt=""
-                      width={300}
-                      height={300}
-                      className="mb-6 aspect-square w-full rounded-sm bg-muted/30 object-contain"
-                    />
-                  )}
-                  <h3 className="font-serif text-lg font-light leading-snug tracking-wide text-foreground transition-colors group-hover:text-gold">
-                    {product.name}
-                  </h3>
-                </div>
-                <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground transition-colors group-hover:text-gold">
-                  İncele →
-                </span>
+                {product.image && (
+                  <Image
+                    src={product.image}
+                    alt=""
+                    width={400}
+                    height={400}
+                    className="aspect-square w-full rounded-sm bg-background object-contain"
+                  />
+                )}
+                <h3 className="mt-4 flex-1 text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-gold">
+                  {product.name}
+                </h3>
+                <p className="mt-3 text-xs font-medium text-gold">
+                  Fiyat sor →
+                </p>
               </Link>
             </li>
           ))}

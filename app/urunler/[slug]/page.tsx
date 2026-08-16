@@ -70,12 +70,12 @@ export default async function UrunPage({
               ← {categoryLabels[product.category]}
             </Link>
 
-            <h1 className="mt-6 text-balance text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl">
+            <h1 className="mt-6 text-balance text-3xl font-bold leading-snug tracking-tight text-foreground sm:text-4xl">
               {product.name}
             </h1>
 
             {product.sku && (
-              <p className="mt-4 font-mono text-[0.7rem] text-muted-foreground">
+              <p className="mt-4 font-mono text-sm text-muted-foreground">
                 SKU: {product.sku}
               </p>
             )}
@@ -94,9 +94,9 @@ export default async function UrunPage({
             {/* Price slot. Deliberately empty until real pricing is supplied;
                 the enquiry button carries the action in the meantime. */}
             <div className="mt-10 flex flex-col gap-4 border-y border-hairline py-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-2xl font-semibold text-foreground">
+              <p className="text-3xl font-bold text-foreground">
                 {product.price ?? (
-                  <span className="text-muted-foreground">
+                  <span className="text-xl font-semibold text-muted-foreground">
                     Fiyat için yazın
                   </span>
                 )}
@@ -106,7 +106,7 @@ export default async function UrunPage({
 
             {technical.length > 0 && (
               <div className="mt-12">
-                <h2 className="text-lg font-semibold tracking-tight text-foreground">
+                <h2 className="text-xl font-bold tracking-tight text-foreground">
                   Ürün bilgisi
                 </h2>
                 <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
@@ -115,10 +115,10 @@ export default async function UrunPage({
                       key={spec.label}
                       className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
                     >
-                      <dt className="text-xs font-medium text-muted-foreground sm:w-44 sm:shrink-0">
+                      <dt className="text-sm font-semibold text-foreground sm:w-48 sm:shrink-0">
                         {spec.label}
                       </dt>
-                      <dd className="text-sm font-light leading-relaxed text-foreground/90">
+                      <dd className="text-base leading-relaxed text-muted-foreground">
                         {spec.value}
                       </dd>
                     </div>
@@ -133,26 +133,22 @@ export default async function UrunPage({
                 drawn from the library, is the site's own assessment. */}
             {claims.length > 0 && (
               <div className="mt-12 rounded-sm border border-hairline bg-muted/20 p-6 sm:p-8">
-                <h2 className="text-lg font-semibold tracking-tight text-foreground">
+                <h2 className="text-xl font-bold tracking-tight text-foreground">
                   Üretici beyanı
                 </h2>
-                <p className="mt-3 text-xs font-light leading-relaxed text-muted-foreground">
-                  Aşağıdaki ifadeler üreticinin (ZPHC) kendi ürün
-                  açıklamasından alınmıştır. Bağımsız olarak doğrulanmamıştır
-                  ve bu sayfadaki kanıt seviyesi değerlendirmesiyle
-                  çelişebilir.
+                <p className="mt-2 text-sm text-muted-foreground">
+                  ZPHC&apos;nin kendi ürün açıklamasından.
                 </p>
-
                 <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
                   {claims.map((spec) => (
                     <div
                       key={spec.label}
                       className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
                     >
-                      <dt className="text-xs font-medium text-muted-foreground sm:w-44 sm:shrink-0">
+                      <dt className="text-sm font-semibold text-foreground sm:w-48 sm:shrink-0">
                         {spec.label}
                       </dt>
-                      <dd className="text-sm font-light leading-relaxed text-foreground/75">
+                      <dd className="text-base leading-relaxed text-muted-foreground">
                         {spec.value}
                       </dd>
                     </div>
@@ -166,7 +162,7 @@ export default async function UrunPage({
                 {product.notes.map((note) => (
                   <li
                     key={note}
-                    className="flex gap-3 text-sm font-light leading-relaxed text-foreground/80"
+                    className="flex gap-3 text-base leading-relaxed text-muted-foreground"
                   >
                     <span aria-hidden="true" className="text-gold/70">
                       ·
@@ -182,32 +178,32 @@ export default async function UrunPage({
                 <div className="flex items-center gap-3">
                   <span
                     aria-hidden="true"
-                    className={`font-mono text-xs ${tierColorVar[peptide.tier]}`}
+                    className={`font-mono text-sm ${tierColorVar[peptide.tier]}`}
                   >
                     {tierDots[peptide.tier]}
                   </span>
-                  <span className="text-xs font-medium text-muted-foreground">
+                  <span className="text-sm font-semibold text-foreground">
                     {tierLabel[peptide.tier]}
                   </span>
                 </div>
 
-                <h2 className="mt-8 text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
-                  Etki Mekanizması
+                <h2 className="mt-8 text-xl font-bold tracking-tight text-foreground">
+                  Etki mekanizması
                 </h2>
-                <p className="mt-4 text-sm font-light leading-relaxed text-foreground/85">
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   {peptide.mechanism}
                 </p>
 
                 {peptide.primaryOutcomes.length > 0 && (
                   <>
-                    <h2 className="mt-10 text-lg font-semibold tracking-tight text-foreground">
+                    <h2 className="mt-10 text-xl font-bold tracking-tight text-foreground">
                       Birincil sonuçlar
                     </h2>
                     <ul className="mt-4 space-y-2">
                       {peptide.primaryOutcomes.map((outcome) => (
                         <li
                           key={outcome}
-                          className="flex gap-3 text-sm font-light leading-relaxed text-foreground/85"
+                          className="flex gap-3 text-base leading-relaxed text-muted-foreground"
                         >
                           <span aria-hidden="true" className="text-gold/70">
                             ·
@@ -220,7 +216,7 @@ export default async function UrunPage({
                 )}
 
                 {citationList && citationList.length > 0 && (
-                  <p className="mt-8 text-xs font-light leading-relaxed text-muted-foreground">
+                  <p className="mt-8 text-sm leading-relaxed text-muted-foreground">
                     Bu bileşik için {citationList.length} doğrulanmış literatür
                     referansı mevcut.
                   </p>
@@ -228,14 +224,14 @@ export default async function UrunPage({
 
                 <Link
                   href={`/peptidler/${peptide.slug}`}
-                  className="mt-8 inline-block font-serif text-lg font-light italic text-foreground/90 transition-colors hover:text-gold"
+                  className="mt-8 inline-block text-base font-semibold text-gold transition-opacity hover:opacity-70"
                 >
                   Bileşiğin tam kaydını gör →
                 </Link>
               </div>
             )}
 
-            <p className="mt-12 border-t border-hairline pt-8 text-xs font-light leading-relaxed text-muted-foreground">
+            <p className="mt-12 border-t border-hairline pt-8 text-sm leading-relaxed text-muted-foreground">
               Bu ürünler laboratuvar ve araştırma materyali olarak sunulur;
               insan kullanımı için tasarlanmamıştır. Sağlık kararlarınız için
               hekiminize danışın.

@@ -14,7 +14,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Ürünler ne amaçla sunuluyor?",
     answer:
-      "Katalogdaki ürünler üretici tarafından laboratuvar ve araştırma materyali olarak sunulur; insan kullanımı için tasarlanmamıştır. Bu çerçeveyi olduğu gibi aktarıyoruz — ürün sayfalarındaki 'yalnızca araştırma amaçlı' ibaresi üreticinin kendi beyanıdır.",
+      "Katalogdaki ürünler üretici tarafından laboratuvar ve araştırma materyali olarak sunulur; insan kullanımı için tasarlanmamıştır. Bu çerçeveyi olduğu gibi aktarıyoruz; ürün sayfalarındaki 'yalnızca araştırma amaçlı' ibaresi üreticinin kendi beyanıdır.",
   },
   {
     question: "Sitede neden fiyat görünmüyor?",
@@ -24,7 +24,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Ürünün orijinal olduğunu nasıl anlarım?",
     answer:
-      "ZPHC her kutuya benzersiz bir kazı-kazan kodu basar. Kodu kazıyıp üreticinin resmi doğrulama sistemine girerek kontrol edebilirsiniz. Doğrulama üreticinin sunucusunda yapılır, sonucu biz üretmeyiz. Adım adım anlatım Doğrulama sayfamızda.",
+      "ZPHC her kutuya benzersiz bir doğrulama kodu basar. Kutunun arkasındaki gümüş tabakayı kazıyıp altındaki kodu üreticinin resmi sistemine girerek kontrol edebilirsiniz. Sorgulama üreticinin sunucusunda yapılır, sonucu biz üretmiyoruz. Adım adım anlatım Doğrulama sayfamızda.",
   },
   {
     question: "Kanıt seviyesi sistemi ne anlama geliyor?",

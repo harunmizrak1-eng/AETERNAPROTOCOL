@@ -22,7 +22,7 @@ export async function generateMetadata({
   const product = getProduct(slug)
   if (!product) return {}
 
-  const description = `${product.name} — ürün bilgisi, içerik ve stok durumu için iletişime geçin.`
+  const description = `${product.name} ürün bilgisi, içerik ve stok durumu için iletişime geçin.`
 
   return {
     title: product.name,
@@ -172,7 +172,7 @@ export default async function UrunPage({
                     className="flex gap-3 text-sm font-light leading-relaxed text-foreground/80"
                   >
                     <span aria-hidden="true" className="text-gold/70">
-                      —
+                      ·
                     </span>
                     {note}
                   </li>
@@ -213,7 +213,7 @@ export default async function UrunPage({
                           className="flex gap-3 text-sm font-light leading-relaxed text-foreground/85"
                         >
                           <span aria-hidden="true" className="text-gold/70">
-                            —
+                            ·
                           </span>
                           {outcome}
                         </li>

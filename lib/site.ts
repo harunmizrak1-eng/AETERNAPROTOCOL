@@ -6,7 +6,7 @@ export const siteUrl =
 
 export const siteName = "ZPHC Türkiye"
 
-export const siteTagline = "Zhengzhou Pharmaceutical — Türkiye Distribütörü"
+export const siteTagline = "Zhengzhou Pharmaceutical Türkiye Distribütörü"
 
 export const siteDescription =
   "ZPHC (Zhengzhou Pharmaceutical) peptid ve insan büyüme hormonu ürünlerinin Türkiye distribütörü. Orijinallik doğrulaması, tam ürün kataloğu ve literatür referanslı bileşik kütüphanesi."

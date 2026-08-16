@@ -26,7 +26,7 @@ export function Hero() {
 
         <p className="mt-8 max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
           ZPHC peptid ve insan büyüme hormonu hattının tamamı. Her ürün, kutu
-          üzerindeki kazı-kazan koduyla üreticinin sisteminden doğrulanabilir;
+          üzerindeki doğrulama koduyla üreticinin sisteminden teyit edilebilir;
           her bileşik, literatür referanslarıyla birlikte kütüphanemizde
           kayıtlıdır.
         </p>

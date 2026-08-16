@@ -44,8 +44,8 @@ export default function UrunlerPage() {
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">
               Peptid ve insan büyüme hormonu hattı. Her ürün, kütüphanedeki
-              bileşik kaydına bağlıdır — mekanizma, kanıt seviyesi ve
-              literatür referansları ürün sayfasından görülebilir.
+              bileşik kaydına bağlıdır; mekanizma, kanıt seviyesi ve literatür
+              referansları ürün sayfasından görülebilir.
             </p>
 
             <div className="mt-10">

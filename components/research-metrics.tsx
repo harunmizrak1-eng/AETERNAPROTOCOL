@@ -4,7 +4,7 @@ import { products } from "@/lib/products"
 
 const METRICS = [
   { value: "90+", label: "Biyobelirteç" },
-  { value: "Kazı-Kazan", label: "Orijinallik Kodu" },
+  { value: "Kod", label: "Orijinallik Doğrulaması" },
 ]
 
 export function ResearchMetrics() {

@@ -5,7 +5,7 @@ import { products } from "@/lib/products"
 const PILLARS = [
   {
     title: "Doğrulanabilir Orijinallik",
-    line: "ZPHC her kutuya benzersiz bir kazı-kazan kodu basar. Doğrulama üreticinin kendi sunucusunda yapılır — sonucu biz üretmeyiz, yalnızca yönlendiririz. Sahte ürünü ayıran tek şey budur.",
+    line: "ZPHC her kutuya benzersiz bir doğrulama kodu basar. Sorgulama üreticinin kendi sunucusunda yapılır; sonucu biz üretmiyoruz, yalnızca yönlendiriyoruz. Sahte ürünü ayıran tek şey bu koddur.",
     link: { href: "/dogrulama", label: "Nasıl doğrulanır" },
   },
   {
@@ -15,7 +15,7 @@ const PILLARS = [
   },
   {
     title: "Doğrudan Tedarik",
-    line: "Üreticinin peptid ve insan büyüme hormonu hattı için Türkiye distribütörüyüz. Soğuk zincir koşullarına uygun sevkiyat ve kurumsal alıcılar için bayilik programı.",
+    line: "Üreticinin peptid ve insan büyüme hormonu hattı için Türkiye distribütörüyüz. Soğuk zincir koşullarına uygun sevkiyat, kurumsal alıcılar için bayilik programı.",
     link: { href: "/bayilik", label: "Bayilik başvurusu" },
   },
 ]

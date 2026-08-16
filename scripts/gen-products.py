@@ -152,7 +152,11 @@ def clean_name(s: str) -> str:
     n = html.unescape(s or "").replace("–", "-").strip()
     for src, dst in NAME_PHRASES:
         n = re.sub(re.escape(src), dst, n)
-    return n
+    # Kaynak ürün adlarında " — " ayırıcı olarak kullanılıyor
+    # ("BPC-157 ZPHC — 25 mg"). Türkçede uzun tire bu şekilde yaygın değil ve
+    # metne yapay bir hava veriyor; sade boşlukla değiştiriliyor.
+    n = re.sub(r"\s*[—–]\s*", " ", n)
+    return re.sub(r"\s{2,}", " ", n).strip()
 
 
 def norm(text: str) -> str:

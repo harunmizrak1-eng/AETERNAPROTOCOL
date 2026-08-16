@@ -6,12 +6,12 @@ import { WhatsappCta } from "@/components/whatsapp-cta"
 export const metadata: Metadata = {
   title: "Orijinallik Doğrulama",
   description:
-    "ZPHC ürünlerindeki kazı-kazan kodu ile orijinallik doğrulaması. Kutunuzdaki kodu üreticinin resmi doğrulama sistemine girerek ürünün gerçekliğini kontrol edin.",
+    "ZPHC ürünlerindeki doğrulama kodu ile orijinallik kontrolü. Kutunuzdaki kodu üreticinin resmi sistemine girerek ürünün gerçekliğini teyit edin.",
   alternates: { canonical: "/dogrulama" },
   openGraph: {
     title: "Orijinallik Doğrulama",
     description:
-      "ZPHC ürünlerindeki kazı-kazan kodu ile orijinallik doğrulaması.",
+      "ZPHC ürünlerindeki doğrulama kodu ile orijinallik kontrolü.",
     url: "/dogrulama",
   },
 }
@@ -20,7 +20,7 @@ const STEPS = [
   {
     n: "01",
     title: "Kodu bulun",
-    body: "Kazı-kazan etiketi ZPHC kutusunun arka yüzündedir. Etiket zedelenmiş, önceden kazınmış veya hiç yoksa ürünü kullanmayın — bize bildirin.",
+    body: "Güvenlik etiketi ZPHC kutusunun arka yüzündedir. Etiket zedelenmişse, önceden kazınmışsa veya hiç yoksa ürünü kullanmayın; bize bildirin.",
   },
   {
     n: "02",
@@ -57,9 +57,9 @@ export default function DogrulamaPage() {
               Ürününüzün Gerçek Olduğunu Doğrulayın
             </h1>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              ZPHC her kutuya benzersiz bir kazı-kazan kodu basar. Bu kod,
+              ZPHC her kutuya benzersiz bir doğrulama kodu basar. Bu kod,
               ürünün üreticinin kendi üretim hattından çıktığını gösteren tek
-              kanıttır. Doğrulama üreticinin sunucusunda yapılır — sonucu biz
+              kanıttır. Sorgulama üreticinin sunucusunda yapılır; sonucu biz
               üretmiyoruz, yalnızca yönlendiriyoruz.
             </p>
 
@@ -70,7 +70,7 @@ export default function DogrulamaPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 rounded-sm bg-gold px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow font-medium text-primary-foreground transition-colors duration-300 hover:bg-gold/85"
               >
-                ZPHC Doğrulama Sayfasına Git →
+                ZPHC Doğrulama Sayfasına Git
               </a>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function DogrulamaPage() {
             <p className="mt-4 text-sm font-light leading-relaxed text-foreground/85">
               Kod tanınmıyorsa, daha önce sorgulanmış görünüyorsa veya etiket
               zedelenmişse ürünü kullanmayın. Kutunun ve etiketin fotoğrafıyla
-              birlikte bize ulaşın — nereden temin edildiğini birlikte
+              birlikte bize ulaşın, nereden temin edildiğini birlikte
               inceleyelim.
             </p>
             <p className="mt-4 text-xs font-light leading-relaxed text-muted-foreground">

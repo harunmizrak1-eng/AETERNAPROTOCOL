@@ -8,6 +8,8 @@ import { WhatsappCta } from "@/components/whatsapp-cta"
 import { products, getProduct, categoryLabels } from "@/lib/products"
 import { getPeptide, tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 import { citations } from "@/lib/citations"
+import { siteUrl } from "@/lib/site"
+import { RelatedProducts, StockBadge } from "@/components/related-products"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -57,18 +59,59 @@ export default async function UrunPage({
   const technical = product.specs.filter((s) => s.kind === "spec")
   const claims = product.specs.filter((s) => s.kind === "claim")
 
+  // schema.org Product: arama sonuçlarında görsel, stok ve marka görünsün.
+  // Fiyat yayımlanmadığı için offers yalnızca stok durumu taşır; uydurma
+  // fiyat vermek yerine alanı hiç eklemiyoruz.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    sku: product.sku,
+    brand: { "@type": "Brand", name: "ZPHC" },
+    image: product.image ? [`${siteUrl}${product.image}`] : undefined,
+    description: peptide?.short ?? product.name,
+    offers: {
+      "@type": "Offer",
+      url: `${siteUrl}/urunler/${product.slug}`,
+      availability: product.inStock
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      priceCurrency: "TRY",
+    },
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <main id="main-content" className="bg-background pt-28">
         <article className="px-6 pb-28 md:px-10">
           <div className="mx-auto max-w-3xl">
-            <Link
-              href="/urunler"
-              className="text-sm font-medium text-gold transition-opacity hover:opacity-70"
-            >
-              ← {categoryLabels[product.category]}
-            </Link>
+            <nav aria-label="Konum" className="text-sm text-muted-foreground">
+              <ol className="flex flex-wrap items-center gap-1.5">
+                <li>
+                  <Link href="/" className="transition-colors hover:text-foreground">
+                    Ana sayfa
+                  </Link>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li>
+                  <Link
+                    href="/urunler"
+                    className="transition-colors hover:text-foreground"
+                  >
+                    Ürünler
+                  </Link>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li className="font-medium text-foreground">
+                  {categoryLabels[product.category]}
+                </li>
+              </ol>
+            </nav>
 
             <h1 className="mt-6 text-balance text-3xl font-bold leading-snug tracking-tight text-foreground sm:text-4xl">
               {product.name}
@@ -96,13 +139,16 @@ export default async function UrunPage({
             {/* Price slot. Deliberately empty until real pricing is supplied;
                 the enquiry button carries the action in the meantime. */}
             <div className="mt-10 flex flex-col gap-4 border-y border-hairline py-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-3xl font-bold text-foreground">
-                {product.price ?? (
-                  <span className="text-xl font-semibold text-muted-foreground">
-                    Fiyat için yazın
-                  </span>
-                )}
-              </p>
+              <div className="flex items-center gap-4">
+                <p className="text-3xl font-bold text-foreground">
+                  {product.price ?? (
+                    <span className="text-xl font-semibold text-muted-foreground">
+                      Fiyat için yazın
+                    </span>
+                  )}
+                </p>
+                <StockBadge inStock={product.inStock} />
+              </div>
               <WhatsappCta product={product.name} label="Fiyat Sor" />
             </div>
 
@@ -231,6 +277,14 @@ export default async function UrunPage({
                   Bileşiğin tam kaydını gör →
                 </Link>
               </div>
+            )}
+
+            {product.peptideSlug && (
+              <RelatedProducts
+                peptideSlug={product.peptideSlug}
+                excludeSlug={product.slug}
+                title="Aynı bileşiğin diğer ürünleri"
+              />
             )}
 
             <p className="mt-12 border-t border-hairline pt-8 text-sm leading-relaxed text-muted-foreground">

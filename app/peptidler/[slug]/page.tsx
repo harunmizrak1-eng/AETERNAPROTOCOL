@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { PeptideCta } from "@/components/peptide-cta"
 import { WhatsappCta } from "@/components/whatsapp-cta"
+import { RelatedProducts } from "@/components/related-products"
 import { DoseLadderChart } from "@/components/dose-ladder-chart"
 import { AccumulationCalculator } from "@/components/accumulation-calculator"
 import {
@@ -518,6 +519,11 @@ export default async function PeptideDetailPage({
                 </Link>
               </div>
             )}
+
+            <RelatedProducts
+              peptideSlug={peptide.slug}
+              emptyNote="Bu bileşik için şu an katalogda ürün bulunmuyor."
+            />
 
             <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-10 sm:flex-row sm:flex-wrap sm:items-center">
               <WhatsappCta product={peptide.name} />

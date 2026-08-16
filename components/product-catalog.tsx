@@ -10,6 +10,7 @@ import {
   categoryLabels,
   type Product,
 } from "@/lib/products"
+import { StockBadge } from "@/components/related-products"
 
 const ALL = "Tümü"
 const PARAM = "kategori"
@@ -71,14 +72,14 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
           reachable while scrolling a 70-plus item grid. */}
       <div className="sticky top-[73px] z-30 -mx-6 border-b border-hairline bg-background/95 px-6 py-4 backdrop-blur md:-mx-10 md:px-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap gap-2">
+          <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 lg:flex-wrap lg:overflow-visible lg:pb-0">
             {goals.map((g) => (
               <button
                 key={g}
                 type="button"
                 onClick={() => select(g)}
                 aria-pressed={active === g}
-                className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+                className={`shrink-0 rounded-full border px-4 py-2 text-sm transition-colors ${
                   active === g
                     ? "border-gold bg-gold font-semibold text-primary-foreground"
                     : "border-hairline text-muted-foreground hover:border-gold/60 hover:text-foreground"
@@ -157,15 +158,11 @@ function ProductCard({ product }: { product: Product }) {
           <h3 className="flex-1 text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-gold">
             {product.name}
           </h3>
-          <div className="mt-3 flex items-baseline justify-between gap-2">
+          <div className="mt-3 flex items-center justify-between gap-2">
             <span className="text-sm font-semibold text-gold">
               {product.price ?? "Fiyat sor"}
             </span>
-            {product.sku && (
-              <span className="font-mono text-[0.7rem] text-muted-foreground">
-                {product.sku}
-              </span>
-            )}
+            <StockBadge inStock={product.inStock} />
           </div>
         </div>
       </Link>

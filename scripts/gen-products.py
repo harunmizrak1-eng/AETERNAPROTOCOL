@@ -274,13 +274,17 @@ def peptide_slug(name: str):
 
 def local_image(slug: str, images):
     """public/products altındaki yerel görselin yolunu döndürür. Dosya
-    yoksa None döner ve sayfa görsel bloğunu hiç render etmez."""
+    yoksa None döner ve sayfa görsel bloğunu hiç render etmez.
+
+    Görseller WebP'ye çevrilip 900px'e küçültülüyor (scripts/optimize-images.mjs);
+    kaynak uzantısı ne olursa olsun önce .webp aranır."""
     if not images:
         return None
-    ext = os.path.splitext(images[0]["src"].split("?")[0])[1] or ".jpg"
-    rel = f"/products/{slug}{ext}"
-    if os.path.exists(os.path.join(REPO, "public", rel.lstrip("/"))):
-        return rel
+    src_ext = os.path.splitext(images[0]["src"].split("?")[0])[1] or ".jpg"
+    for ext in (".webp", src_ext):
+        rel = f"/products/{slug}{ext}"
+        if os.path.exists(os.path.join(REPO, "public", rel.lstrip("/"))):
+            return rel
     return None
 
 
@@ -341,6 +345,9 @@ def main():
             "image": local_image(p["slug"], images),
             "sourcePriceUsd": round(int(price) / 100, 2) if price else None,
             "goals": goals_for(p["slug"], peptide_slug(name), peptide_categories),
+            # Üreticinin kendi stok durumu. Bizim depomuzu değil kaynağın
+            # stoğunu gösterir; sayfada bu şekilde ifade edilir.
+            "inStock": bool(p.get("is_in_stock", True)),
             "specs": specs,
             "notes": notes,
         })
@@ -398,6 +405,8 @@ def main():
         "  price?: string",
         "  /** Kullanım hedefleri; katalogda amaca göre filtreleme için. */",
         "  goals: string[]",
+        "  /** Üreticinin stok durumu (kaynak katalogdan). */",
+        "  inStock: boolean",
         "  specs: ProductSpec[]",
         "  notes: string[]",
         "}",
@@ -419,6 +428,7 @@ def main():
         if p["sourcePriceUsd"] is not None:
             lines.append(f"    sourcePriceUsd: {p['sourcePriceUsd']},")
         lines.append(f"    goals: {ts(p['goals'])},")
+        lines.append(f"    inStock: {'true' if p['inStock'] else 'false'},")
         if p["specs"]:
             lines.append("    specs: [")
             for s in p["specs"]:

@@ -5,7 +5,6 @@ import { siteName, siteTagline } from "@/lib/site"
 const EXPLORE_LINKS = [
   { href: "/urunler", label: "Ürünler" },
   { href: "/peptidler", label: "Bileşik Kütüphanesi" },
-  { href: "/biyobelirtecler", label: "Biyobelirteç Sözlüğü" },
   { href: "/journal", label: "Journal" },
 ]
 

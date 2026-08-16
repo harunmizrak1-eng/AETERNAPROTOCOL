@@ -5,11 +5,11 @@ export function FinalCta() {
   return (
     <section className="border-t border-hairline px-6 py-24 text-center">
       <h2 className="mx-auto max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl">
-        Orijinal ürün, doğrulanabilir kaynak.
+        Aldığınız ürünün orijinal olduğunu kendiniz doğrulayın.
       </h2>
 
       <p className="mx-auto mt-5 max-w-lg text-pretty text-base leading-relaxed text-muted-foreground">
-        Fiyat, stok durumu ve tedarik koşulları için doğrudan yazın.
+        Fiyat ve stok için bize yazın, hemen dönüş yapalım.
       </p>
 
       <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

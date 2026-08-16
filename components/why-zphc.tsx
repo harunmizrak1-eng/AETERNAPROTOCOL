@@ -4,18 +4,18 @@ import { products } from "@/lib/products"
 
 const PILLARS = [
   {
-    title: "Doğrulanabilir Orijinallik",
-    line: "ZPHC her kutuya, gümüş kaplamanın altına benzersiz bir doğrulama kodu basar. Sorgulama üreticinin resmi sistemi validation.zphc.com üzerinde yapılır; sonucu biz üretmiyoruz, yalnızca yönlendiriyoruz. Sahte ürünü ayıran tek şey bu koddur.",
+    title: "Orijinalliği kendiniz doğrulayın",
+    line: "ZPHC her kutuya, gümüş kaplamanın altına benzersiz bir kod basıyor. Kodu üreticinin kendi sitesinde (validation.zphc.com) sorguluyorsunuz; sonucu biz üretmiyoruz. Sahte ürünü ayıran tek şey bu.",
     link: { href: "/dogrulama", label: "Nasıl doğrulanır" },
   },
   {
-    title: "Literatüre Bağlı Katalog",
-    line: `${products.length} ürünün her biri, kanıt seviyesine göre sınıflandırılmış ${peptides.length} bileşiklik kütüphaneye bağlıdır. Üreticinin pazarlama metnini kendi değerlendirmemizden ayrı gösteriyoruz.`,
+    title: "Her ürünün bilimsel kaydı var",
+    line: `Her ürün, ${peptides.length} bileşiklik kütüphanemizdeki kaydına bağlı. Üreticinin pazarlama metnini kendi kanıt değerlendirmemizden ayrı gösteriyoruz.`,
     link: { href: "/metodoloji", label: "Metodolojimizi inceleyin" },
   },
   {
-    title: "Doğrudan Tedarik",
-    line: "Üreticinin peptid ve insan büyüme hormonu hattı için Türkiye distribütörüyüz. Soğuk zincir koşullarına uygun sevkiyat ve doğrudan tedarik.",
+    title: "Aradan kimse geçmiyor",
+    line: "ZPHC'nin peptid ve büyüme hormonu ürünleri için Türkiye distribütörüyüz. Ürünler soğuk zincire uygun şekilde, doğrudan bizden çıkıyor.",
     link: { href: "/urunler", label: "Ürün kataloğu" },
   },
 ]
@@ -28,7 +28,7 @@ export function WhyZphc() {
           Neden ZPHC Türkiye
         </h2>
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Bu sistemi güvenilir kılan üç şey.
+          Üç noktada net olalım.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">

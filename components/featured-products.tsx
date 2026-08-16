@@ -36,7 +36,7 @@ export function FeaturedProducts() {
               Öne çıkan ürünler
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Peptid ve insan büyüme hormonu hattından bir seçki.
+              Katalogdan bir seçki.
             </p>
           </div>
 

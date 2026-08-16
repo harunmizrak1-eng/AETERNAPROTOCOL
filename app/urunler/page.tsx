@@ -8,14 +8,14 @@ import { ProductCatalog } from "@/components/product-catalog"
 export const metadata: Metadata = {
   title: "Ürünler",
   description:
-    "ZPHC peptid ve insan büyüme hormonu ürün kataloğu. Kilo kaybı, toparlanma, büyüme hormonu ve anti-aging başlıklarına göre filtreleyin.",
+    "ZPHC peptid ve büyüme hormonu ürünleri. Kilo kaybı, toparlanma, büyüme hormonu ve cilt başlıklarına göre filtreleyin.",
   alternates: {
     canonical: "/urunler",
   },
   openGraph: {
     title: "Ürünler",
     description:
-      "ZPHC peptid ve insan büyüme hormonu ürün kataloğu. Kilo kaybı, toparlanma, büyüme hormonu ve anti-aging başlıklarına göre filtreleyin.",
+      "ZPHC peptid ve büyüme hormonu ürünleri. Kilo kaybı, toparlanma, büyüme hormonu ve cilt başlıklarına göre filtreleyin.",
     url: "/urunler",
   },
 }
@@ -38,9 +38,9 @@ export default function UrunlerPage() {
               Ürünler
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Peptid ve insan büyüme hormonu hattı. Her ürün, kütüphanedeki
-              bileşik kaydına bağlıdır; mekanizma, kanıt seviyesi ve literatür
-              referansları ürün sayfasından görülebilir.
+              ZPHC peptid ve büyüme hormonu ürünlerinin tamamı. Her ürünün
+              sayfasında etki mekanizması, kanıt seviyesi ve bilimsel
+              kaynaklar yer alıyor.
             </p>
 
             <div className="mt-8">

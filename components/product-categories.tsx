@@ -20,12 +20,12 @@ const COVER: Record<string, string> = {
 }
 
 const BLURB: Record<string, string> = {
-  "Kilo Kaybı": "GLP-1 agonistleri ve lipolitik peptidler",
+  "Kilo Kaybı": "Semaglutid, tirzepatid, retatrutid ve yağ yakım peptidleri",
   "Toparlanma & Doku Onarımı": "Tendon, bağ ve kas onarımı",
-  "Büyüme Hormonu": "Somatropin ve GH salgılatıcılar",
+  "Büyüme Hormonu": "Büyüme hormonu ve salgılanmasını artıran peptidler",
   "Anti-Aging & Cilt": "Kolajen sentezi ve cilt yenilenmesi",
-  Longevity: "Hücresel enerji ve yaşlanma yolakları",
-  Diğer: "Hormon desteği ve diğer bileşikler",
+  Longevity: "Hücresel enerji ve yaşlanma karşıtı bileşikler",
+  Diğer: "Hormon desteği, bronzlaşma ve diğerleri",
 }
 
 export function ProductCategories() {
@@ -47,8 +47,7 @@ export function ProductCategories() {
           Kategoriler
         </h2>
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Aradığınız bileşiğin adını bilmenize gerek yok. Hedefinize göre
-          seçin.
+          Bileşik adı bilmenize gerek yok. Ne için aradığınızı seçin.
         </p>
 
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -60,20 +60,17 @@ export default async function UrunPage({
   return (
     <>
       <Nav />
-      <main id="main-content" className="bg-background pt-32">
+      <main id="main-content" className="bg-background pt-28">
         <article className="px-6 pb-28 md:px-10">
           <div className="mx-auto max-w-3xl">
-            <div className="flex items-center gap-4">
-              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-              <Link
-                href="/urunler"
-                className="text-[0.65rem] uppercase tracking-eyebrow text-gold transition-opacity hover:opacity-70"
-              >
-                {categoryLabels[product.category]}
-              </Link>
-            </div>
+            <Link
+              href="/urunler"
+              className="text-sm font-medium text-gold transition-opacity hover:opacity-70"
+            >
+              ← {categoryLabels[product.category]}
+            </Link>
 
-            <h1 className="mt-10 text-balance font-serif text-3xl font-light leading-tight tracking-wide text-foreground sm:text-4xl">
+            <h1 className="mt-6 text-balance text-2xl font-semibold leading-snug tracking-tight text-foreground sm:text-3xl">
               {product.name}
             </h1>
 
@@ -97,10 +94,10 @@ export default async function UrunPage({
             {/* Price slot. Deliberately empty until real pricing is supplied;
                 the enquiry button carries the action in the meantime. */}
             <div className="mt-10 flex flex-col gap-4 border-y border-hairline py-8 sm:flex-row sm:items-center sm:justify-between">
-              <p className="font-serif text-2xl font-light text-foreground">
+              <p className="text-2xl font-semibold text-foreground">
                 {product.price ?? (
                   <span className="text-muted-foreground">
-                    Fiyat için iletişime geçin
+                    Fiyat için yazın
                   </span>
                 )}
               </p>
@@ -109,8 +106,8 @@ export default async function UrunPage({
 
             {technical.length > 0 && (
               <div className="mt-12">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
-                  Ürün Bilgisi
+                <h2 className="text-lg font-semibold tracking-tight text-foreground">
+                  Ürün bilgisi
                 </h2>
                 <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
                   {technical.map((spec) => (
@@ -118,7 +115,7 @@ export default async function UrunPage({
                       key={spec.label}
                       className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
                     >
-                      <dt className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground sm:w-44 sm:shrink-0">
+                      <dt className="text-xs font-medium text-muted-foreground sm:w-44 sm:shrink-0">
                         {spec.label}
                       </dt>
                       <dd className="text-sm font-light leading-relaxed text-foreground/90">
@@ -136,8 +133,8 @@ export default async function UrunPage({
                 drawn from the library, is the site's own assessment. */}
             {claims.length > 0 && (
               <div className="mt-12 rounded-sm border border-hairline bg-muted/20 p-6 sm:p-8">
-                <h2 className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
-                  Üretici Beyanı
+                <h2 className="text-lg font-semibold tracking-tight text-foreground">
+                  Üretici beyanı
                 </h2>
                 <p className="mt-3 text-xs font-light leading-relaxed text-muted-foreground">
                   Aşağıdaki ifadeler üreticinin (ZPHC) kendi ürün
@@ -152,7 +149,7 @@ export default async function UrunPage({
                       key={spec.label}
                       className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
                     >
-                      <dt className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground sm:w-44 sm:shrink-0">
+                      <dt className="text-xs font-medium text-muted-foreground sm:w-44 sm:shrink-0">
                         {spec.label}
                       </dt>
                       <dd className="text-sm font-light leading-relaxed text-foreground/75">
@@ -189,7 +186,7 @@ export default async function UrunPage({
                   >
                     {tierDots[peptide.tier]}
                   </span>
-                  <span className="text-[0.65rem] uppercase tracking-eyebrow text-muted-foreground">
+                  <span className="text-xs font-medium text-muted-foreground">
                     {tierLabel[peptide.tier]}
                   </span>
                 </div>
@@ -203,8 +200,8 @@ export default async function UrunPage({
 
                 {peptide.primaryOutcomes.length > 0 && (
                   <>
-                    <h2 className="mt-10 text-[0.65rem] uppercase tracking-eyebrow text-gold/90">
-                      Birincil Sonuçlar
+                    <h2 className="mt-10 text-lg font-semibold tracking-tight text-foreground">
+                      Birincil sonuçlar
                     </h2>
                     <ul className="mt-4 space-y-2">
                       {peptide.primaryOutcomes.map((outcome) => (
@@ -233,7 +230,7 @@ export default async function UrunPage({
                   href={`/peptidler/${peptide.slug}`}
                   className="mt-8 inline-block font-serif text-lg font-light italic text-foreground/90 transition-colors hover:text-gold"
                 >
-                  Kütüphanedeki tam kaydı görüntüle →
+                  Bileşiğin tam kaydını gör →
                 </Link>
               </div>
             )}

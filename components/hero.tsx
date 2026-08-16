@@ -25,13 +25,12 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
-          Zhengzhou Pharmaceutical Türkiye distribütörü. Her ürün kutu
-          üzerindeki kodla üreticinin sisteminden doğrulanabilir, her bileşik
-          literatür referanslarıyla kayıtlıdır.
+          Zhengzhou Pharmaceutical Türkiye distribütörü. Kutudaki kodla
+          ürününüzün orijinal olduğunu üreticinin sitesinden doğrulayın.
         </p>
 
         <p className="mt-5 text-xs text-muted-foreground">
-          Son içerik incelemesi: {lastContentReview}
+          İçerik son güncelleme: {lastContentReview}
         </p>
 
         <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row">

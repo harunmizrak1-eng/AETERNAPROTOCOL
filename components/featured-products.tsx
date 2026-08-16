@@ -53,23 +53,27 @@ export function FeaturedProducts() {
             <li key={product.slug}>
               <Link
                 href={`/urunler/${product.slug}`}
-                className="group flex h-full flex-col rounded-md border border-hairline bg-card p-4 transition-colors hover:border-gold/60 hover:bg-muted/60"
+                className="group flex h-full flex-col overflow-hidden rounded-lg border border-hairline bg-background shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md"
               >
                 {product.image && (
-                  <Image
-                    src={product.image}
-                    alt=""
-                    width={400}
-                    height={400}
-                    className="aspect-square w-full rounded-sm bg-background object-contain"
-                  />
+                  <div className="bg-surface p-4">
+                    <Image
+                      src={product.image}
+                      alt=""
+                      width={400}
+                      height={400}
+                      className="aspect-[4/3] w-full object-contain mix-blend-multiply"
+                    />
+                  </div>
                 )}
-                <h3 className="mt-4 flex-1 text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-gold">
-                  {product.name}
-                </h3>
-                <p className="mt-3 text-xs font-medium text-gold">
-                  Fiyat sor →
-                </p>
+                <div className="flex flex-1 flex-col p-4">
+                  <h3 className="flex-1 text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-gold">
+                    {product.name}
+                  </h3>
+                  <p className="mt-3 text-sm font-semibold text-gold">
+                    Fiyat sor →
+                  </p>
+                </div>
               </Link>
             </li>
           ))}

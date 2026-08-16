@@ -81,14 +81,16 @@ export default async function UrunPage({
             )}
 
             {product.image && (
-              <Image
-                src={product.image}
-                alt={product.name}
-                width={1000}
-                height={1000}
-                priority
-                className="mt-10 w-full rounded-sm border border-hairline bg-muted/30 object-contain"
-              />
+              <div className="mt-8 rounded-lg border border-hairline bg-surface p-8">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={1000}
+                  height={1000}
+                  priority
+                  className="mx-auto w-full max-w-lg object-contain mix-blend-multiply"
+                />
+              </div>
             )}
 
             {/* Price slot. Deliberately empty until real pricing is supplied;

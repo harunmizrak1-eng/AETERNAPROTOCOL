@@ -14,8 +14,8 @@ const PILLARS = [
     link: { href: "/metodoloji", label: "Metodolojimizi inceleyin" },
   },
   {
-    title: "Aradan kimse geçmiyor",
-    line: "ZPHC'nin peptid ve büyüme hormonu ürünleri için Türkiye distribütörüyüz. Ürünler soğuk zincire uygun şekilde, doğrudan bizden çıkıyor.",
+    title: "Aracısız tedarik",
+    line: "ZPHC'nin peptid ve büyüme hormonu ürünleri için Türkiye distribütörüyüz. Ürünler soğuk zincire uygun şekilde doğrudan bizden çıkıyor, arada başka bir satıcı yok.",
     link: { href: "/urunler", label: "Ürün kataloğu" },
   },
 ]
@@ -28,14 +28,14 @@ export function WhyZphc() {
           Neden ZPHC Türkiye
         </h2>
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Üç noktada net olalım.
+          Üç konuda net olalım.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {PILLARS.map((p) => (
             <div
               key={p.title}
-              className="flex flex-col rounded-md border border-hairline bg-card p-6"
+              className="flex flex-col rounded-lg border border-hairline bg-background p-6 shadow-sm"
             >
               <h3 className="text-lg font-semibold tracking-tight text-foreground">
                 {p.title}

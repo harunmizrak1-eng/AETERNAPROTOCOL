@@ -25,27 +25,17 @@ export default function UrunlerPage() {
     <>
       <Nav />
       <main id="main-content" className="bg-background pt-28">
-        <section className="px-6 pb-16 md:px-10">
-          <div className="mx-auto max-w-6xl">
-            <div className="flex items-center gap-4">
-              <span aria-hidden="true" className="h-px w-10 bg-gold/70" />
-              <p className="text-[0.65rem] uppercase tracking-eyebrow text-gold">
-                Katalog
+        <section className="px-6 pb-8 md:px-10">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Ürünler
+              </h1>
+              <p className="mt-2 max-w-xl text-base leading-relaxed text-muted-foreground">
+                ZPHC peptid ve büyüme hormonu ürünlerinin tamamı.
               </p>
             </div>
-
-            <h1 className="mt-8 max-w-3xl text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
-              Ürünler
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              ZPHC peptid ve büyüme hormonu ürünlerinin tamamı. Her ürünün
-              sayfasında etki mekanizması, kanıt seviyesi ve bilimsel
-              kaynaklar yer alıyor.
-            </p>
-
-            <div className="mt-8">
-              <WhatsappCta label="Fiyat ve stok için yazın" />
-            </div>
+            <WhatsappCta label="Fiyat ve stok için yazın" />
           </div>
         </section>
 

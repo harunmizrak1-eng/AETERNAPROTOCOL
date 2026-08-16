@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Görsel kimlik zphcstore.com'dan alınmıştır: birincil mavi #0072bc, koyu
+ * lacivert başlık bandı ve Verdana/Tahoma gövde tipografisi. */
+
+@theme {
+  --color-zphc-blue: #0072bc;
+  --color-zphc-blue-light: #0a7ce0;
+  --color-zphc-blue-dark: #014673;
+  --color-zphc-navy: #011935;
+  --color-zphc-navy-soft: #00314c;
+
+  --color-ink: #10202e;
+  --color-ink-soft: #53687a;
+  --color-line: #dfe6ec;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1f5f9;
+  --color-danger: #b20000;
+
+  --font-sans: Verdana, Geneva, Tahoma, sans-serif;
+
+  --tracking-eyebrow: 0.14em;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Uzun içerik tabloları dar ekranda sayfayı yatay kaydırmasın. */
+.scroll-x {
+  overflow-x: auto;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}

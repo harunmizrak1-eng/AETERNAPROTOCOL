@@ -1,23 +1,26 @@
 import Link from "next/link"
 import { peptides } from "@/lib/peptides"
+import { products } from "@/lib/products"
 
 const PILLARS = [
   {
-    title: "Kanıta Dayalı",
-    line: `Her protokol, kanıt seviyesine göre sınıflandırılmış ${peptides.length}+ bileşiğin literatür taramasına dayanır. Klinik, mekanistik ve preklinik ayrımı hiçbir zaman bulanıklaştırılmaz.`,
+    title: "Doğrulanabilir Orijinallik",
+    line: "ZPHC her kutuya benzersiz bir kazı-kazan kodu basar. Doğrulama üreticinin kendi sunucusunda yapılır — sonucu biz üretmeyiz, yalnızca yönlendiririz. Sahte ürünü ayıran tek şey budur.",
+    link: { href: "/dogrulama", label: "Nasıl doğrulanır" },
+  },
+  {
+    title: "Literatüre Bağlı Katalog",
+    line: `${products.length} ürünün her biri, kanıt seviyesine göre sınıflandırılmış ${peptides.length} bileşiklik kütüphaneye bağlıdır. Üreticinin pazarlama metnini kendi değerlendirmemizden ayrı gösteriyoruz.`,
     link: { href: "/metodoloji", label: "Metodolojimizi inceleyin" },
   },
   {
-    title: "Kişiye Özel",
-    line: "Standart protokol yok. Ön değerlendirmeden çıkan biyolojik profile ve hedefe göre her danışan için ayrı bir yol haritası çıkarıyoruz.",
-  },
-  {
-    title: "Seçici ve Gizli",
-    line: "Her başvuru değerlendirilir. Kabul edilen profiller için tam gizlilik, birebir takip ve öncelikli erişim esastır.",
+    title: "Doğrudan Tedarik",
+    line: "Üreticinin peptid ve insan büyüme hormonu hattı için Türkiye distribütörüyüz. Soğuk zincir koşullarına uygun sevkiyat ve kurumsal alıcılar için bayilik programı.",
+    link: { href: "/bayilik", label: "Bayilik başvurusu" },
   },
 ]
 
-export function WhyAeterna() {
+export function WhyZphc() {
   return (
     <section className="px-6 py-28 sm:py-36 md:px-10">
       <div className="mx-auto max-w-6xl">

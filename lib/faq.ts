@@ -24,7 +24,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Ürünün orijinal olduğunu nasıl anlarım?",
     answer:
-      "ZPHC her kutuya benzersiz bir doğrulama kodu basar. Kutunun arkasındaki gümüş tabakayı kazıyıp altındaki kodu üreticinin resmi sistemine girerek kontrol edebilirsiniz. Sorgulama üreticinin sunucusunda yapılır, sonucu biz üretmiyoruz. Adım adım anlatım Doğrulama sayfamızda.",
+      "ZPHC her kutuya, gümüş bir kaplamanın altına benzersiz bir doğrulama kodu basar. Kaplamayı kazıyıp altındaki kodu üreticinin resmi doğrulama sistemine (validation.zphc.com) girerek kontrol edebilirsiniz. Sorgulama üreticinin sunucusunda yapılır, sonucu biz üretmiyoruz. Adım adım anlatım Doğrulama sayfamızda.",
   },
   {
     question: "Kanıt seviyesi sistemi ne anlama geliyor?",

@@ -16,26 +16,29 @@ export const metadata: Metadata = {
   },
 }
 
+/* Adımlar üreticinin kendi prosedürünü (validation.zphc.com) birebir
+   izler. Sırayı veya içeriği kendimizden değiştirmiyoruz: yanlış anlatılan
+   bir doğrulama adımı, sahte ürünün orijinal sanılmasına yol açar. */
 const STEPS = [
   {
     n: "01",
-    title: "Kodu bulun",
-    body: "Güvenlik etiketi ZPHC kutusunun arka yüzündedir. Etiket zedelenmişse, önceden kazınmışsa veya hiç yoksa ürünü kullanmayın; bize bildirin.",
+    title: "Ambalajı açmadan inceleyin",
+    body: "Kutu sağlam olmalı ve hiçbir mühür kırılmamış olmalı. ZPHC ambalajı kurcalamaya karşı korumalı teknolojiyle mühürlenir; açılmış veya zedelenmiş bir kutu tek başına uyarı işaretidir.",
   },
   {
     n: "02",
-    title: "Yüzeyi kazıyın",
-    body: "Gümüş tabakayı bir madeni paranın kenarıyla nazikçe kazıyın. Altındaki benzersiz doğrulama kodu görünür hâle gelir.",
+    title: "Holografik bandı çıkarın",
+    body: "Soyulabilir holografik bandı çıkarın. Bu bant ürüne göre bulunmayabilir. Soyulduğunda geri döndürülemez bir iz bırakır; kurcalamaya karşı koruma bu şekilde çalışır.",
   },
   {
     n: "03",
-    title: "Üreticinin sistemine girin",
-    body: "Kodu ZPHC'nin resmi doğrulama sayfasına girin. Doğrulama üreticinin kendi sunucusunda yapılır; sonucu biz üretmeyiz.",
+    title: "Gümüş bandı kazıyın",
+    body: "Ürünün arka yüzünde düz bir gümüş bant veya üzerinde “Scratch Coating For Validation Code” yazan bir alan bulunur. Bu kaplamayı nazikçe kazıyın. Altındaki doğrulama kodu harf, rakam ve özel karakterlerden oluşur; “8@MNZ8X@8DW” biçimindedir.",
   },
   {
     n: "04",
-    title: "Sonucu okuyun",
-    body: "İlk sorguda ürün orijinal olarak görünmelidir. Kod daha önce sorgulanmış görünüyorsa ve ürünü yeni aldıysanız, bu bir uyarı işaretidir.",
+    title: "Kodu sisteme girin",
+    body: "Kodu validation.zphc.com adresindeki forma girip “Check” düğmesine basın. Sorgulama üreticinin kendi sunucusunda yapılır; sonucu biz üretmiyoruz.",
   },
 ]
 
@@ -57,20 +60,21 @@ export default function DogrulamaPage() {
               Ürününüzün Gerçek Olduğunu Doğrulayın
             </h1>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              ZPHC her kutuya benzersiz bir doğrulama kodu basar. Bu kod,
-              ürünün üreticinin kendi üretim hattından çıktığını gösteren tek
-              kanıttır. Sorgulama üreticinin sunucusunda yapılır; sonucu biz
-              üretmiyoruz, yalnızca yönlendiriyoruz.
+              ZPHC her kutuya, gümüş bir kaplamanın altına benzersiz bir
+              doğrulama kodu basar. Bu kod, ürünün üreticinin kendi üretim
+              hattından çıktığını gösteren tek kanıttır. Sorgulama
+              üreticinin resmi sistemi olan validation.zphc.com üzerinde
+              yapılır; sonucu biz üretmiyoruz, yalnızca yönlendiriyoruz.
             </p>
 
             <div className="mt-10">
               <a
-                href="https://zphcstore.com/zphc/"
+                href="https://validation.zphc.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 rounded-sm bg-gold px-8 py-3.5 text-[0.65rem] uppercase tracking-eyebrow font-medium text-primary-foreground transition-colors duration-300 hover:bg-gold/85"
               >
-                ZPHC Doğrulama Sayfasına Git
+                validation.zphc.com Adresine Git
               </a>
             </div>
           </div>
@@ -111,10 +115,10 @@ export default function DogrulamaPage() {
               Doğrulama Başarısız Olduysa
             </h2>
             <p className="mt-4 text-sm font-light leading-relaxed text-foreground/85">
-              Kod tanınmıyorsa, daha önce sorgulanmış görünüyorsa veya etiket
-              zedelenmişse ürünü kullanmayın. Kutunun ve etiketin fotoğrafıyla
-              birlikte bize ulaşın, nereden temin edildiğini birlikte
-              inceleyelim.
+              Kod tanınmıyorsa, daha önce sorgulanmış görünüyorsa, mühür
+              kırıksa veya gümüş bant önceden kazınmışsa ürünü kullanmayın.
+              Kutunun ve etiketin fotoğrafıyla birlikte bize ulaşın, nereden
+              temin edildiğini birlikte inceleyelim.
             </p>
             <p className="mt-4 text-xs font-light leading-relaxed text-muted-foreground">
               Sahte ürün yalnızca etkisiz olmakla kalmaz; içeriği ve sterilitesi

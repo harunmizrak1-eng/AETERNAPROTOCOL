@@ -5,7 +5,7 @@ import { products } from "@/lib/products"
 const PILLARS = [
   {
     title: "Doğrulanabilir Orijinallik",
-    line: "ZPHC her kutuya benzersiz bir doğrulama kodu basar. Sorgulama üreticinin kendi sunucusunda yapılır; sonucu biz üretmiyoruz, yalnızca yönlendiriyoruz. Sahte ürünü ayıran tek şey bu koddur.",
+    line: "ZPHC her kutuya, gümüş kaplamanın altına benzersiz bir doğrulama kodu basar. Sorgulama üreticinin resmi sistemi validation.zphc.com üzerinde yapılır; sonucu biz üretmiyoruz, yalnızca yönlendiriyoruz. Sahte ürünü ayıran tek şey bu koddur.",
     link: { href: "/dogrulama", label: "Nasıl doğrulanır" },
   },
   {

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { PeptideCta } from "@/components/peptide-cta"
+import { WhatsappCta } from "@/components/whatsapp-cta"
 import { DoseLadderChart } from "@/components/dose-ladder-chart"
 import { AccumulationCalculator } from "@/components/accumulation-calculator"
 import {
@@ -518,7 +519,8 @@ export default async function PeptideDetailPage({
               </div>
             )}
 
-            <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-10 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-10 sm:flex-row sm:flex-wrap sm:items-center">
+              <WhatsappCta product={peptide.name} />
               <PeptideCta goal={goal} />
               <p className="text-[0.65rem] font-light leading-relaxed text-muted-foreground">
                 Son inceleme: {lastContentReview}

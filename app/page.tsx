@@ -4,6 +4,7 @@ import { ResearchMetrics } from "@/components/research-metrics"
 import { ProductCategories } from "@/components/product-categories"
 import { FeaturedProducts } from "@/components/featured-products"
 import { WhyZphc } from "@/components/why-zphc"
+import { HowItWorks } from "@/components/how-it-works"
 import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
@@ -33,6 +34,7 @@ export default function Page() {
       <ProductCategories />
       <FeaturedProducts />
       <WhyZphc />
+      <HowItWorks />
       <FinalCta />
       <Footer />
     </main>

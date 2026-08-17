@@ -1,0 +1,57 @@
+import { WhatsappCta } from "@/components/whatsapp-cta"
+
+/** Bir sepeti ve fiyatı olmayan bir mağazada, ziyaretçinin en büyük tereddüdü
+ * "buraya tıklarsam ne olacak?" sorusudur. Bu bölüm süreci üç adımda
+ * gösterip son CTA'dan hemen önce bu tereddüdü ortadan kaldırır. */
+const STEPS = [
+  {
+    n: "01",
+    title: "Ürünü seçin",
+    text: "Kataloğu inceleyin, ilgilendiğiniz ürünü veya bileşiği bulun.",
+  },
+  {
+    n: "02",
+    title: "WhatsApp'tan sorun",
+    text: "Fiyat sor butonuna basın; ürün adı otomatik olarak mesaja eklenir, güncel fiyat ve stok bilginizi dakikalar içinde alırsınız.",
+  },
+  {
+    n: "03",
+    title: "Soğuk zincirle teslim alın",
+    text: "Onayladığınız sipariş, soğuk zincire uygun şekilde doğrudan depomuzdan gönderilir.",
+  },
+]
+
+export function HowItWorks() {
+  return (
+    <section className="border-b border-hairline px-6 py-10 md:px-10">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="text-lg font-bold tracking-tight text-foreground">
+          Nasıl çalışır
+        </h2>
+
+        <div className="mt-6 grid grid-cols-1 gap-px bg-hairline sm:grid-cols-3">
+          {STEPS.map((s) => (
+            <div key={s.n} className="flex flex-col bg-background p-6">
+              <span
+                aria-hidden="true"
+                className="font-mono text-xs text-muted-foreground"
+              >
+                {s.n}
+              </span>
+              <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground">
+                {s.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {s.text}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8">
+          <WhatsappCta label="Şimdi sorun" />
+        </div>
+      </div>
+    </section>
+  )
+}

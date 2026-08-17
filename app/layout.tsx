@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Geist_Mono, Inter } from 'next/font/google'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { contactEmail } from '@/lib/contact'
+import { WhatsappFloat } from '@/components/whatsapp-float'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -54,8 +55,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#0A0A0A',
+  colorScheme: 'light',
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({
@@ -91,6 +92,7 @@ export default function RootLayout({
           İçeriğe geç
         </a>
         {children}
+        <WhatsappFloat />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

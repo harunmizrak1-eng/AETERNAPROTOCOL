@@ -8,12 +8,12 @@ import { ProductCard } from "@/components/product-card"
  * the source is simply skipped, so a catalogue update can never break the
  * homepage. */
 const FEATURED = [
+  "retatrutide-60mg-5x12mg-zphc",
   "bpc157-25mg-5x5mg-zphc",
   "tb500-25mg-5x5mg-zphc",
-  "retatrutide-10mg-5x2mg-zphc-2",
+  "ghk-cu-50mg-zphc",
   "semaglutide-5mg-kit-zphc",
   "zptrop-100iu-zphc",
-  "ghk-cu-50mg-zphc",
   "tirzepatide-30mg-aq-pen-zphc",
   "ipamorelin-25mg-5x5mg-zphc",
 ]

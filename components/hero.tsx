@@ -11,18 +11,15 @@ export function Hero() {
     <section className="border-b border-hairline bg-surface">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-4 md:px-10">
         <p className="text-sm text-foreground">
-          <span aria-hidden="true" className="mr-1.5">
-            ⚠️
-          </span>
-          <strong className="font-semibold">Yalnızca resmi kaynak:</strong>{" "}
-          Ürünlerinizi kutudaki kodla{" "}
+          <strong className="font-bold">ZPHC Türkiye Resmi Distribütörü.</strong>{" "}
+          Kutunuzdaki kodu{" "}
           <Link
             href="/dogrulama"
             className="font-semibold text-gold underline underline-offset-2 hover:no-underline"
           >
             validation.zphc.com
           </Link>{" "}
-          üzerinden doğrulayın.
+          üzerinden doğrudan üreticiden doğrulayın.
         </p>
         <Link
           href="/urunler"

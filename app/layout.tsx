@@ -28,7 +28,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'ZPHC Türkiye · Peptid ve İnsan Büyüme Hormonu Distribütörü',
+    default: 'ZPHC Türkiye · Resmi Peptid ve İnsan Büyüme Hormonu Distribütörü',
     template: '%s · ZPHC Türkiye',
   },
   description: siteDescription,
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'tr_TR',
     siteName,
-    title: 'ZPHC Türkiye · Peptid ve İnsan Büyüme Hormonu Distribütörü',
+    title: 'ZPHC Türkiye · Resmi Peptid ve İnsan Büyüme Hormonu Distribütörü',
     description: siteDescription,
     url: siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZPHC Türkiye · Peptid ve İnsan Büyüme Hormonu Distribütörü',
+    title: 'ZPHC Türkiye · Resmi Peptid ve İnsan Büyüme Hormonu Distribütörü',
     description: siteDescription,
   },
   robots: {

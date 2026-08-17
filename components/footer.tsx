@@ -73,7 +73,7 @@ export function Footer() {
               height={42}
               className="h-8 w-auto"
             />
-            <p className="mt-4 max-w-[20ch] text-[0.7rem] leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-[22ch] text-xs font-semibold leading-relaxed text-foreground">
               {siteTagline}
             </p>
           </div>
@@ -97,7 +97,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-hairline pt-6 text-xs tracking-normal text-muted-foreground sm:flex-row font-medium">
           <p>© {year} {siteName}. Tüm hakları saklıdır.</p>
-          <p>Zhengzhou Pharmaceutical · Yetkili Distribütör</p>
+          <p>Zhengzhou Pharmaceutical · Resmi Distribütör</p>
         </div>
       </div>
     </footer>

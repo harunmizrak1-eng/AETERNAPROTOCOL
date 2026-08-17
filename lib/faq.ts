@@ -9,7 +9,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "ZPHC Türkiye nedir?",
     answer:
-      "ZPHC (Zhengzhou Pharmaceutical Co. Ltd) peptid ve insan büyüme hormonu hattının Türkiye distribütörüyüz. Ürün kataloğunu, orijinallik doğrulamasını ve tedarik koşullarını tek yerde topluyoruz. Klinik veya danışmanlık hizmeti vermiyoruz.",
+      "ZPHC (Zhengzhou Pharmaceutical Co. Ltd) peptid ve insan büyüme hormonu hattının resmi Türkiye distribütörüyüz. Ürün kataloğunu, orijinallik doğrulamasını ve tedarik koşullarını tek yerde topluyoruz. Klinik veya danışmanlık hizmeti vermiyoruz.",
   },
   {
     question: "Ürünler ne amaçla sunuluyor?",

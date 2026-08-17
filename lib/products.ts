@@ -148,7 +148,7 @@ export const products: Product[] = [
     image: "/products/zphc-bpc-157-20mg-with-bacteriostatic-water.webp",
     sourcePriceUsd: 83.0,
     goals: ["Toparlanma & Doku Onarımı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize BPC-157 peptidi + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
       { label: "Peptid Profili", value: "BPC-157 (Body Protection Compound), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
@@ -171,7 +171,7 @@ export const products: Product[] = [
     image: "/products/bpc157-25mg-5x5mg-zphc.webp",
     sourcePriceUsd: 99.0,
     goals: ["Toparlanma & Doku Onarımı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Hızlı doku onarımı", value: "Peptidin tendon, bağ, kas ve sindirim sistemi mukozasının iyileşmesini hızlandırdığı belirtilir.", kind: "claim" },
       { label: "Antiinflamatuvar destek", value: "Ağrı ve şişliği azaltmaya yardımcı olurken kolajen sentezini artırdığı belirtilir.", kind: "claim" },
@@ -239,7 +239,7 @@ export const products: Product[] = [
     image: "/products/epithalon-50mg-with-bacteriostatic-water-zphc.webp",
     sourcePriceUsd: 129.0,
     goals: ["Longevity"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 50 mg liyofilize Epithalon + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
       { label: "Peptid Profili", value: "Epithalon (Epitalon), sentetik tetrapeptid (Ala-Glu-Asp-Gly), laboratuvar sınıfı materyal.", kind: "spec" },
@@ -262,7 +262,7 @@ export const products: Product[] = [
     image: "/products/ghk-cu-60mg-with-bacteriostatic-water-zphc.webp",
     sourcePriceUsd: 59.0,
     goals: ["Anti-Aging & Cilt"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize GHK-Cu (bakır peptidi) + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "GHK-Cu (glisil-L-histidil-L-lizin bakır kompleksi), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
@@ -285,7 +285,7 @@ export const products: Product[] = [
     image: "/products/ghk-cu-50mg-zphc.webp",
     sourcePriceUsd: 59.0,
     goals: ["Anti-Aging & Cilt"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Rejeneratif bakır peptidi", value: "Cilt onarımının güçlendirilmesi, kolajen uyarımı ve dermal yapının iyileştirilmesi üzerine araştırılmaktadır.", kind: "claim" },
       { label: "Yaşlanma karşıtı etki", value: "Hücresel yenilenmeyi, elastikiyetin geri kazanılmasını ve görünür yaşlanma belirtilerinin azalmasını desteklediği belirtilir.", kind: "claim" },
@@ -343,7 +343,7 @@ export const products: Product[] = [
     image: "/products/glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc.webp",
     sourcePriceUsd: 129.0,
     goals: ["Toparlanma & Doku Onarımı", "Anti-Aging & Cilt"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize peptid karışımı + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "BPC-157, TB-500 (Timozin Beta-4 fragmanı) ve GHK-Cu (bakır peptidi) kombinasyonu.", kind: "spec" },
@@ -548,7 +548,7 @@ export const products: Product[] = [
     image: "/products/l-glutathione-3000mg-kit-zphc.webp",
     sourcePriceUsd: 59.0,
     goals: ["Longevity", "Anti-Aging & Cilt"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Hücresel yaşlanma karşıtı destek", value: "İndirgenmiş GSH'nin hücre içi antioksidan kapasiteyi yenilediği ve oksidatif stres belirteçlerine karşı koyduğu belirtilir.", kind: "claim" },
       { label: "Esnek rekonstitüsyon", value: "Her 600 mg flakon, ürünle verilen çözücüyle eşleşerek araştırma modelleri için özel konsantrasyon ayarına imkân tanır.", kind: "claim" },
@@ -591,7 +591,7 @@ export const products: Product[] = [
     image: "/products/mots-c-20mg-with-bacteriostatic-water-zphc.webp",
     sourcePriceUsd: 99.0,
     goals: ["Longevity"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize MOTS-c peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "MOTS-c (12S rRNA mitokondriyal açık okuma çerçevesi), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
@@ -682,7 +682,7 @@ export const products: Product[] = [
     image: "/products/multi-use-pen-36iu-cartridges-zphc.webp",
     sourcePriceUsd: 30.0,
     goals: ["Diğer"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Uyumluluk", value: "ZPTROP 36 IU tek hazneli kartuşlarla kullanım için tasarlanmıştır.", kind: "spec" },
       { label: "Cihaz tipi", value: "Yeniden kullanılabilir hassas dozlama kalemi (klinik olmayan cihaz).", kind: "claim" },
@@ -705,7 +705,7 @@ export const products: Product[] = [
     image: "/products/nad-plus-2500mg-zphc.webp",
     sourcePriceUsd: 139.0,
     goals: ["Longevity"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Hücresel enerji desteği", value: "ATP üretimi, mitokondriyal verimlilik ve genel metabolik fonksiyon için temel kofaktör.", kind: "claim" },
       { label: "Longevity yolakları", value: "Sirtuin aktivasyonu (SIRT1-7), DNA onarım mekanizmaları ve sağlıklı yaşlanma araştırma modellerinde rol alır.", kind: "claim" },
@@ -744,7 +744,7 @@ export const products: Product[] = [
     image: "/products/retatrutide-30mg-aq-pen-zphc.webp",
     sourcePriceUsd: 219.0,
     goals: ["Kilo Kaybı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -759,7 +759,7 @@ export const products: Product[] = [
     image: "/products/retatrutide-10mg-5x2mg-zphc-2.webp",
     sourcePriceUsd: 83.0,
     goals: ["Kilo Kaybı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -774,7 +774,7 @@ export const products: Product[] = [
     image: "/products/reta-zphc-120-mg-5-vials-x-24-mg.webp",
     sourcePriceUsd: 589.0,
     goals: ["Kilo Kaybı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -804,7 +804,7 @@ export const products: Product[] = [
     image: "/products/retatrutide-20mg-5x4mg-zphc.webp",
     sourcePriceUsd: 138.0,
     goals: ["Kilo Kaybı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -819,7 +819,7 @@ export const products: Product[] = [
     image: "/products/retatrutide-40mg-5x8mg-zphc.webp",
     sourcePriceUsd: 239.0,
     goals: ["Kilo Kaybı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Yalnızca Araştırma Amaçlı", value: "Analitik referans materyali; insan kullanımı için tasarlanmamıştır.", kind: "spec" },
     ],
@@ -1203,7 +1203,7 @@ export const products: Product[] = [
     image: "/products/zphc-ultra-rehab-mix-20mg-bpc157-tb500.webp",
     sourcePriceUsd: 89.0,
     goals: ["Toparlanma & Doku Onarımı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Bileşim", value: "10 mg BPC-157 ve 10 mg TB-500 (Timozin Beta-4 fragmanı) içeren çift peptidli karışım.", kind: "claim" },
       { label: "Toplam İçerik", value: "Flakon başına 20 mg; hermetik kapalı steril cam kap.", kind: "spec" },
@@ -1227,7 +1227,7 @@ export const products: Product[] = [
     image: "/products/ultra-rehab-mix-50mg-5x10mg-zphc.webp",
     sourcePriceUsd: 199.0,
     goals: ["Toparlanma & Doku Onarımı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Liyofilize Saflık", value: "Her 10 mg flakonu 2 ml bakteriyostatik su ile sulandırarak toplam 5 mg/ml peptid elde edin (ml başına 2,5 mg BPC + 2,5 mg TB).", kind: "spec" },
       { label: "Doz Rehberi", value: "4–6 hafta boyunca haftada 2–5 mg (1–2 ml), 2–3 deri altı enjeksiyona bölünerek; ardından idame için 10–14 günde bir 2 mg.", kind: "claim" },
@@ -1249,7 +1249,7 @@ export const products: Product[] = [
     image: "/products/wellness-mix-25mg-5x5mg-zphc.webp",
     sourcePriceUsd: 119.0,
     goals: ["Büyüme Hormonu", "Toparlanma & Doku Onarımı"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Çift etki", value: "Ipamorelin 2,5 mg + CJC-1295 2,5 mg, doğal GH ve IGF-1 salınımını güçlendirir.", kind: "claim" },
       { label: "Faydalar", value: "Yağsız kas kütlesinin korunması, yağ oksidasyonu, daha derin uyku ve daha hızlı toparlanma.", kind: "claim" },
@@ -1270,7 +1270,7 @@ export const products: Product[] = [
     image: "/products/zphc-nad-plus-1000mg-with-bacteriostatic-water.webp",
     sourcePriceUsd: 63.0,
     goals: ["Longevity"],
-    inStock: false,
+    inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 1000 mg liyofilize NAD+ + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Bileşik Profili", value: "β-Nikotinamid Adenin Dinükleotid (okside form), yüksek saflıkta laboratuvar sınıfı materyal.", kind: "claim" },

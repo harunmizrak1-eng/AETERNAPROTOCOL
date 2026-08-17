@@ -1,16 +1,9 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
 import { useRouter, useSearchParams } from "next/navigation"
-import {
-  products,
-  goalOrder,
-  categoryLabels,
-  type Product,
-} from "@/lib/products"
-import { StockBadge } from "@/components/related-products"
+import { products, goalOrder } from "@/lib/products"
+import { ProductCard } from "@/components/product-card"
 
 const ALL = "Tümü"
 const PARAM = "kategori"
@@ -120,52 +113,22 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
       </p>
 
       {shown.length === 0 ? (
-        <p className="mt-12 rounded-lg border border-hairline bg-card p-10 text-center text-base text-muted-foreground">
+        <p className="mt-12 border border-hairline bg-card p-10 text-center text-base text-muted-foreground">
           Aramanızla eşleşen ürün bulunamadı.
         </p>
       ) : (
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        // Filtrelenmiş/aranan ürün sayısı sabit değil; "seam" ızgarası
+        // (gap-px bg-hairline) sütun sayısına tam bölünmeyen durumlarda son
+        // sıradaki boş hücreyi gri renkle görünür bırakır. ProductCard
+        // kendi kenarlığını taşıyor, burada şeffaf boşluk yeterli.
+        <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {shown.map((product) => (
-            <ProductCard key={product.slug} product={product} />
+            <li key={product.slug}>
+              <ProductCard product={product} />
+            </li>
           ))}
         </ul>
       )}
     </>
-  )
-}
-
-function ProductCard({ product }: { product: Product }) {
-  return (
-    <li>
-      <Link
-        href={`/urunler/${product.slug}`}
-        className="group flex h-full flex-col overflow-hidden rounded-lg border border-hairline bg-background shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md"
-      >
-        {product.image && (
-          // Tinted panel behind the photo: ZPHC product shots are cut out on
-          // white, so on a white card they float with no grounding.
-          <div className="bg-surface p-3">
-            <Image
-              src={product.image}
-              alt=""
-              width={400}
-              height={400}
-              className="aspect-[5/4] w-full object-contain mix-blend-multiply"
-            />
-          </div>
-        )}
-        <div className="flex flex-1 flex-col p-4">
-          <h3 className="flex-1 text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-gold">
-            {product.name}
-          </h3>
-          <div className="mt-3 flex items-center justify-between gap-2">
-            <span className="text-sm font-semibold text-gold">
-              {product.price ?? "Fiyat sor"}
-            </span>
-            <StockBadge inStock={product.inStock} />
-          </div>
-        </div>
-      </Link>
-    </li>
   )
 }

@@ -12,22 +12,19 @@ export function WhatsappCta({
 }: {
   product?: string
   label?: string
-  variant?: "primary" | "outline" | "hero"
+  variant?: "primary" | "outline"
 }) {
   const message = product
     ? `Merhaba, ${product} hakkında bilgi almak istiyorum.`
     : "Merhaba, ürünleriniz hakkında bilgi almak istiyorum."
 
   const base =
-    "inline-flex items-center gap-2.5 rounded-md px-6 py-3 text-sm font-semibold transition-colors duration-200"
+    "inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200"
 
   const styles =
     variant === "primary"
       ? "bg-gold text-primary-foreground hover:bg-gold/85"
-      : variant === "hero"
-        // Koyu lacivert hero bandı üzerinde; altın/mavi buton orada okunmuyor.
-        ? "justify-center border border-white/30 text-white hover:bg-white/10"
-        : "border border-gold/60 text-gold hover:bg-gold hover:text-primary-foreground"
+      : "border border-gold/60 text-gold hover:bg-gold hover:text-primary-foreground"
 
   return (
     <a

@@ -22,37 +22,31 @@ const PILLARS = [
 
 export function WhyZphc() {
   return (
-    <section className="border-t border-hairline px-6 py-20 md:px-10">
+    <section className="border-b border-hairline px-6 py-10 md:px-10">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="text-lg font-bold tracking-tight text-foreground">
           Neden ZPHC Türkiye
         </h2>
-        <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          Üç konuda net olalım.
-        </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-px bg-hairline sm:grid-cols-3">
           {PILLARS.map((p, i) => (
-            <div
-              key={p.title}
-              className="flex flex-col rounded-lg border border-hairline bg-background p-6 shadow-sm"
-            >
+            <div key={p.title} className="flex flex-col bg-background p-6">
               <span
                 aria-hidden="true"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-surface font-mono text-sm font-semibold text-gold"
+                className="font-mono text-xs text-muted-foreground"
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 text-lg font-semibold tracking-tight text-foreground">
+              <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground">
                 {p.title}
               </h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {p.line}
               </p>
               {p.link && (
                 <Link
                   href={p.link.href}
-                  className="mt-5 text-sm font-medium text-gold transition-opacity hover:opacity-70"
+                  className="mt-4 text-sm font-medium text-gold transition-opacity hover:opacity-70"
                 >
                   {p.link.label} →
                 </Link>

@@ -9,7 +9,8 @@ import { products, getProduct, categoryLabels } from "@/lib/products"
 import { getPeptide, tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 import { citations } from "@/lib/citations"
 import { siteUrl } from "@/lib/site"
-import { RelatedProducts, StockBadge } from "@/components/related-products"
+import { RelatedProducts } from "@/components/related-products"
+import { StockBadge } from "@/components/product-card"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -124,7 +125,7 @@ export default async function UrunPage({
             )}
 
             {product.image && (
-              <div className="mt-8 rounded-lg border border-hairline bg-surface p-8">
+              <div className="mt-8 border border-hairline bg-surface p-8">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -180,7 +181,7 @@ export default async function UrunPage({
                 overstate what the evidence supports. The tier badge below,
                 drawn from the library, is the site's own assessment. */}
             {claims.length > 0 && (
-              <div className="mt-12 rounded-lg border border-hairline shadow-sm bg-muted/20 p-6 sm:p-8">
+              <div className="mt-12 border border-hairline bg-muted/20 p-6 sm:p-8">
                 <h2 className="text-xl font-bold tracking-tight text-foreground">
                   Üretici beyanı
                 </h2>

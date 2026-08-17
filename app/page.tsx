@@ -17,10 +17,16 @@ import { Footer } from "@/components/footer"
  * eski Categories bileşeni ana sayfadan çıkarıldı; sonuncusu tıklanamayan,
  * yalnızca peptid adı listeleyen bir metin bloğuydu ve kataloğa
  * bağlanmıyordu. Yerini ProductCategories aldı.
+ *
+ * pt-[69px]: Nav position:fixed, ~69px yüksekliğinde. Diğer her sayfanın
+ * <main>'i pt-28 taşıyor; burası unutulmuştu ve Hero'nun ilk render'da
+ * nav'ın arkasında kalmasına (görünmez/çakışık render) yol açmıştı. Değer
+ * ölçülerek verildi (Nav'ın gerçek yüksekliği); Nav'ın kendi boyutu
+ * değişirse burası da güncellenmeli.
  */
 export default function Page() {
   return (
-    <main id="main-content" className="bg-background">
+    <main id="main-content" className="bg-background pt-[69px]">
       <Nav />
       <Hero />
       <ResearchMetrics />

@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
-import { products, type Product } from "@/lib/products"
+import { products } from "@/lib/products"
+import { ProductCard } from "@/components/product-card"
 
 /** Bir bileşiğin satılan ürünleri.
  *
@@ -45,59 +45,18 @@ export function RelatedProducts({
         </Link>
       </div>
 
-      <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Bağlı ürün sayısı bileşiğe göre değişir (1'den fazla düzine boyuta
+          kadar); sabit sütunlu "seam" ızgarası (gap-px bg-hairline) tam
+          bölünmeyen sayılarda boş hücreyi gri renkle görünür bırakır.
+          ProductCard kendi kenarlığını zaten taşıyor; burada yalnızca
+          boşluklu (şeffaf) bir grid yeterli. */}
+      <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
         {items.map((product) => (
-          <RelatedCard key={product.slug} product={product} />
+          <li key={product.slug}>
+            <ProductCard product={product} />
+          </li>
         ))}
       </ul>
     </div>
-  )
-}
-
-function RelatedCard({ product }: { product: Product }) {
-  return (
-    <li>
-      <Link
-        href={`/urunler/${product.slug}`}
-        className="group flex h-full flex-col overflow-hidden rounded-lg border border-hairline bg-background shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-md"
-      >
-        {product.image && (
-          <div className="bg-surface p-3">
-            <Image
-              src={product.image}
-              alt=""
-              width={400}
-              height={400}
-              className="aspect-[5/4] w-full object-contain mix-blend-multiply"
-            />
-          </div>
-        )}
-        <div className="flex flex-1 flex-col p-4">
-          <h3 className="flex-1 text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-gold">
-            {product.name}
-          </h3>
-          <div className="mt-3 flex items-center justify-between gap-2">
-            <span className="text-sm font-semibold text-gold">
-              {product.price ?? "Fiyat sor"}
-            </span>
-            <StockBadge inStock={product.inStock} />
-          </div>
-        </div>
-      </Link>
-    </li>
-  )
-}
-
-export function StockBadge({ inStock }: { inStock: boolean }) {
-  return (
-    <span
-      className={`rounded-full px-2 py-0.5 text-[0.7rem] font-medium ${
-        inStock
-          ? "bg-tier-proven/10 text-tier-proven"
-          : "bg-muted text-muted-foreground"
-      }`}
-    >
-      {inStock ? "Stokta" : "Tükendi"}
-    </span>
   )
 }

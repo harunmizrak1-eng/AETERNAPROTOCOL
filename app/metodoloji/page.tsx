@@ -66,7 +66,7 @@ export default function MethodologyPage() {
                 {TIER_ROWS.map((row) => (
                   <div
                     key={row.tier}
-                    className="rounded-lg border border-hairline shadow-sm bg-surface p-5"
+                    className="border border-hairline bg-surface p-5"
                   >
                     <div className="flex items-center gap-3">
                       <span

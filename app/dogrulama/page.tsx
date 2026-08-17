@@ -105,7 +105,7 @@ export default function DogrulamaPage() {
         </section>
 
         <section className="px-6 pb-20 md:px-10">
-          <div className="mx-auto max-w-3xl rounded-lg border border-hairline shadow-sm bg-muted/30 p-8 sm:p-10">
+          <div className="mx-auto max-w-3xl border border-hairline bg-muted/30 p-8 sm:p-10">
             <h2 className="text-foreground text-xl font-bold tracking-tight">
               Doğrulama Başarısız Olduysa
             </h2>

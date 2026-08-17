@@ -6,14 +6,14 @@ import { contactEmail } from "@/lib/contact"
 export const metadata: Metadata = {
   title: "Gizlilik & KVKK",
   description:
-    "Kişisel verilerin korunması, sağlık verisi işleme ve gizlilik politikası.",
+    "Kişisel verilerin korunması ve gizlilik politikası.",
   alternates: {
     canonical: "/gizlilik",
   },
   openGraph: {
     title: "Gizlilik & KVKK",
     description:
-      "Kişisel verilerin korunması, sağlık verisi işleme ve gizlilik politikası.",
+      "Kişisel verilerin korunması ve gizlilik politikası.",
     url: "/gizlilik",
   },
 }
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
 const SECTIONS = [
   {
     h: "Hangi verileri topluyoruz",
-    p: "İletişim bilgileriniz (ad, e-posta, telefon) ve süreç kapsamında paylaştığınız sağlık verileri (kan değerleri, biyobelirteçler, geçmiş bilgisi). Sağlık verileri, KVKK kapsamında özel nitelikli kişisel veri sayılır ve yalnızca açık rızanızla işlenir.",
+    p: "Site üzerinden herhangi bir form doldurmuyorsunuz; iletişim, WhatsApp veya e-posta üzerinden siz başlattığınızda kurulur. Bu görüşmede paylaştığınız ad, telefon ve sipariş bilgileri WhatsApp/e-posta sağlayıcısında kalır, sitemizin veritabanına kaydedilmez. Ayrıca ziyaret istatistikleri için anonim, kişiyi tanımlamayan kullanım verisi toplanır.",
   },
   {
     h: "Neden işliyoruz",
-    p: "Verileriniz yalnızca size özel danışmanlık ve protokol tasarımı için kullanılır. Pazarlama amacıyla üçüncü taraflarla paylaşılmaz.",
+    p: "İletişime geçtiğinizde paylaştığınız bilgiler yalnızca ürün ve stok sorunuza yanıt vermek için kullanılır. Ziyaret istatistikleri siteyi iyileştirmek amacıyla toplanır. Verileriniz pazarlama amacıyla üçüncü taraflarla paylaşılmaz.",
   },
   {
     h: "Nasıl saklanıyor",
-    p: "Sağlık verileriniz gizli tutulur ve erişim sınırlıdır. Dilediğiniz zaman verilerinizin silinmesini talep edebilirsiniz.",
+    p: "WhatsApp veya e-posta üzerinden yazışmalarınız ilgili platformun kendi güvenlik ve saklama politikasına tabidir; site tarafımızca ayrıca bir müşteri veritabanında tutulmaz.",
   },
   {
     h: "Haklarınız",

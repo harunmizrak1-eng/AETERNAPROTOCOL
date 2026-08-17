@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Geist_Mono, Inter } from 'next/font/google'
-import { AssessmentProvider } from '@/components/assessment'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { contactEmail } from '@/lib/contact'
 import './globals.css'
@@ -91,7 +90,7 @@ export default function RootLayout({
         >
           İçeriğe geç
         </a>
-        <AssessmentProvider>{children}</AssessmentProvider>
+        {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

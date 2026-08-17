@@ -3,7 +3,6 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
-import { PeptideCta } from "@/components/peptide-cta"
 import { WhatsappCta } from "@/components/whatsapp-cta"
 import { RelatedProducts } from "@/components/related-products"
 import { DoseLadderChart } from "@/components/dose-ladder-chart"
@@ -15,11 +14,9 @@ import {
   tierColorVar,
   tierDots,
   tierDosingDisclaimer,
-  categoryGoalMap,
 } from "@/lib/peptides"
 import { getArticle } from "@/lib/articles"
 import { citations } from "@/lib/citations"
-import { lastContentReview } from "@/lib/site"
 
 /** Extracts a display unit from a dose step's amount string (e.g. "2mg" ->
  * "mg", "%0.5" -> "%") so the calculator's input field can be labeled
@@ -67,7 +64,6 @@ export default async function PeptideDetailPage({
   const relatedArticle = peptide.relatedArticleSlug
     ? getArticle(peptide.relatedArticleSlug)
     : undefined
-  const goal = categoryGoalMap[peptide.category]
   const citationList = citations[peptide.slug]
 
   const halfLifeHours = peptide.molecular?.halfLifeHours
@@ -461,7 +457,7 @@ export default async function PeptideDetailPage({
                   {citationList.map((citation) => (
                     <div
                       key={citation.pmid}
-                      className="rounded-lg border border-hairline shadow-sm bg-surface p-6"
+                      className="border border-hairline bg-surface p-6"
                     >
                       <p className="text-xs tracking-normal text-muted-foreground font-medium">
                         {citation.label}
@@ -525,12 +521,8 @@ export default async function PeptideDetailPage({
               emptyNote="Bu bileşik için şu an katalogda ürün bulunmuyor."
             />
 
-            <div className="mt-10 flex flex-col gap-4 border-t border-hairline pt-10 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-10 flex flex-wrap gap-4 border-t border-hairline pt-10">
               <WhatsappCta product={peptide.name} />
-              <PeptideCta goal={goal} />
-              <p className="text-[0.65rem] leading-relaxed text-muted-foreground">
-                Son inceleme: {lastContentReview}
-              </p>
             </div>
           </div>
         </article>

@@ -12,6 +12,68 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "bakteriyostatik-su-nedir",
+    title: "Bakteriyostatik su nedir, neden normal su olmuyor?",
+    category: "Kullanım",
+    excerpt:
+      "İçindeki benzil alkol ne işe yarıyor, neden 28 gün deniyor ve steril su ile arasındaki fark ne.",
+    readMinutes: 4,
+    date: "2026-08-21",
+    body: [
+      "Liyofilize peptidler toz halinde gelir ve kullanılabilmesi için sıvıyla buluşturulması gerekir. Bu iş için normal içme suyu ya da musluk suyu kullanılmaz. Standart çözücü bakteriyostatik sudur.",
+      "Bakteriyostatik su, içine yüzde 0,9 oranında benzil alkol eklenmiş steril sudur. Benzil alkolün görevi bakteri üremesini engellemektir. Bu sayede flakona birden fazla kez iğne girse bile içerik kısa sürede kontamine olmaz.",
+      "Steril su ile arasındaki fark tam olarak budur. Steril su da temizdir ama koruyucu içermez; bir kez iğne girdikten sonra içine bakteri karışma ihtimali başlar. Bakteriyostatik suyun koruyucusu, flakonun günler boyunca kullanılabilmesini sağlar.",
+      "Sık sorulan 28 gün meselesi de buradan geliyor. Benzil alkolün koruyucu etkisi sınırsız değil. Üreticiler, flakona ilk iğne girdikten sonra yaklaşık 28 günlük bir kullanım penceresi bildirir. Bu süre bir garanti değil, koruyucunun makul şekilde iş gördüğü aralıktır.",
+      "Sulandırılmış flakon buzdolabında, 2 ile 8 derece arasında saklanır. Dondurulmaz ve ışıktan korunur. Katalogdaki her ürünün kendi sayfasında, o ürüne ait sulandırma oranı ve saklama bilgisi üreticinin verdiği şekliyle yazılıdır.",
+      "Bir uyarı: çözelti bulanıklaştıysa, içinde parçacık göründüyse veya rengi değiştiyse kullanılmaz. Süre dolmamış olsa bile bu geçerlidir.",
+    ],
+    relatedLinks: [
+      { href: "/urunler", label: "Ürün kataloğu" },
+      { href: "/sss", label: "Sık sorulan sorular" },
+    ],
+  },
+  {
+    slug: "liyofilize-ne-demek",
+    title: "Liyofilize ne demek, ürün neden toz halinde geliyor?",
+    category: "Kullanım",
+    excerpt:
+      "Dondurarak kurutma nedir, peptidler neden bu şekilde saklanıyor ve kargoda bozulup bozulmadığı sorusunun cevabı.",
+    readMinutes: 3,
+    date: "2026-08-20",
+    body: [
+      "Kutuyu açtığınızda flakonun içinde sıvı değil, beyaz bir toz veya ince bir tabaka görürsünüz. Bu liyofilizasyon, yani dondurarak kurutma işleminin sonucudur.",
+      "İşlem şöyle çalışır: madde önce dondurulur, sonra vakum altında içindeki su buza dönüşmeden doğrudan buhara geçirilir. Geriye susuz, kuru bir yapı kalır. Peptidler suyun içinde zamanla bozulur; suyu almak onları çok daha uzun süre stabil tutar.",
+      "Pratikte en çok sorulan soru bununla ilgili: kargoda bozulur mu? Toz halindeyken peptid oda sıcaklığında taşınmaya dayanıklıdır. Soğuk zincir ihtiyacı sulandırdıktan sonra başlar. Biz de bu yüzden ürünleri normal kargoyla gönderiyoruz ve ertesi gün teslim ediyoruz.",
+      "Kutuyu aldığınızda, sulandırana kadar oda sıcaklığında ve güneş görmeyen bir yerde tutmanız yeterlidir. Buzdolabına koymanız gereken an, suyla buluşturduğunuz andır.",
+      "Tozun görüntüsü ürüne göre değişebilir. Bazı flakonlarda düzgün beyaz bir tabaka, bazılarında dağılmış ince toz görürsünüz. İkisi de normaldir. Anormal olan, tozun sararmış veya topaklanmış görünmesidir.",
+    ],
+    relatedLinks: [
+      { href: "/kargo", label: "Kargo ve teslimat koşulları" },
+      { href: "/urunler", label: "Ürün kataloğu" },
+    ],
+  },
+  {
+    slug: "hgh-iu-ne-demek",
+    title: "Büyüme hormonunda IU ne demek, kutular nasıl karşılaştırılır?",
+    category: "Büyüme Hormonu",
+    excerpt:
+      "16 IU ile 320 IU arasındaki fark, kalem ile flakon arasındaki fark ve hangi sunumun ne anlama geldiği.",
+    readMinutes: 4,
+    date: "2026-08-19",
+    body: [
+      "Peptidler miligram (mg) ile ölçülür ama büyüme hormonunda IU denen bir birim görürsünüz. IU, uluslararası ünite anlamına gelir ve maddenin ağırlığını değil biyolojik etkinliğini ifade eder. Bu yüzden büyüme hormonu kutularını mg ile değil IU ile karşılaştırmak gerekir.",
+      "Katalogda 16 IU'dan 320 IU'ya kadar farklı kutular var. Aradaki fark toplam üniteden ibaret. Yani 200 IU'luk bir kutu, 100 IU'luk kutunun iki katı içerik taşır. Ürün sayfalarındaki boyut karşılaştırma tablosu aynı ürünün tüm kutularını üniteye göre sıralar, oradan bakabilirsiniz.",
+      "İkinci fark sunum biçiminde. Üç tür var. Liyofilize flakon, toz halinde gelir ve kullanmadan önce sulandırmanız gerekir. Hazır karışım flakon, sulandırılmış olarak gelir. Kalem kartuşu ise doz ayarlı bir kalemin içine takılan hazır kartuştur.",
+      "Bu üçü arasındaki seçim etkinlikle değil kullanım kolaylığıyla ilgilidir. Liyofilize flakon en uzun raf ömrüne sahiptir çünkü henüz suyla buluşmamıştır. Hazır karışım ve kalem daha pratiktir ama sulandırılmış olduğu için soğuk saklama gerektirir.",
+      "Kutuların üzerinde ZPtrop, ZPtrop AQ gibi isimler görürsünüz. AQ ibaresi aqueous, yani sulu demektir ve o ürünün hazır karışım olduğunu gösterir.",
+      "Hangi kutunun size uygun olduğu kullanım planınıza bağlıdır ve bu site bir protokol önerisi vermez. Emin olamadığınız noktada WhatsApp'tan sorabilirsiniz.",
+    ],
+    relatedLinks: [
+      { href: "/urunler?kategori=B%C3%BCy%C3%BCme%20Hormonu", label: "Büyüme hormonu ürünleri" },
+      { href: "/peptidler/hgh", label: "Büyüme hormonu bileşik kaydı" },
+    ],
+  },
+  {
     slug: "zphc-orijinal-mi-nasil-anlarim",
     title: "Elimdeki ZPHC ürünü orijinal mi, nasıl anlarım?",
     category: "Doğrulama",

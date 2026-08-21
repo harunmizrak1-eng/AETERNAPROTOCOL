@@ -187,3 +187,14 @@
     transform: translateX(-50%);
   }
 }
+
+/* Yatay kayan ürün şeridinde tarayıcı kaydırma çubuğunu gizler. Şeridin
+ * kendisi ok tuşları, parmak hareketi ve klavye ile gezilebilir olduğu için
+ * görsel çubuk gerekli değil; gösterildiğinde kart hizasını bozuyor. */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

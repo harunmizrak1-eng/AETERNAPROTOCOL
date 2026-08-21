@@ -2,15 +2,15 @@ import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
 import { ResearchMetrics } from "@/components/research-metrics"
 import { ProductCategories } from "@/components/product-categories"
-import { FeaturedProducts } from "@/components/featured-products"
+import { BestSellers } from "@/components/best-sellers"
 import { WhyZphc } from "@/components/why-zphc"
 import { HowItWorks } from "@/components/how-it-works"
 import { Reviews } from "@/components/reviews"
 import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
-/* Mağaza ana sayfası: hero → güven sayıları → kategoriler → öne çıkan
- * ürünler → neden biz → iletişim.
+/* Mağaza ana sayfası: hero → güven sayıları → çok satanlar → kategoriler
+ * → neden biz → sipariş adımları → iletişim.
  *
  * Kategoriler ürünlerden önce geliyor: ziyaretçinin ilk sorusu "ne
  * arıyorum" değil, "burada ne var". Katalogla ilk temas kategori kartları.
@@ -30,8 +30,8 @@ export default function Page() {
       <Nav />
       <Hero />
       <ResearchMetrics />
+      <BestSellers />
       <ProductCategories />
-      <FeaturedProducts />
       <WhyZphc />
       <HowItWorks />
       <Reviews />

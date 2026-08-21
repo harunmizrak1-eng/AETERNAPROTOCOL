@@ -2,7 +2,8 @@ import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
 import { ResearchMetrics } from "@/components/research-metrics"
 import { ProductCategories } from "@/components/product-categories"
-import { BestSellers } from "@/components/best-sellers"
+import { ProductStrip } from "@/components/product-strip"
+import { bestSellers, bestSellingHgh, bestSellingFatLoss } from "@/lib/strips"
 import { WhyZphc } from "@/components/why-zphc"
 import { HowItWorks } from "@/components/how-it-works"
 import { Reviews } from "@/components/reviews"
@@ -30,8 +31,10 @@ export default function Page() {
       <Nav />
       <Hero />
       <ResearchMetrics />
-      <BestSellers />
+      <ProductStrip {...bestSellers} />
       <ProductCategories />
+      <ProductStrip {...bestSellingFatLoss} />
+      <ProductStrip {...bestSellingHgh} />
       <WhyZphc />
       <HowItWorks />
       <Reviews />

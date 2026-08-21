@@ -5,41 +5,39 @@ import Link from "next/link"
 import { products } from "@/lib/products"
 import { ProductCard } from "@/components/product-card"
 
-/** Çok satanlar — dönen ürün şeridi.
+/** Dönen ürün şeridi.
  *
  * zphcstore.com'un ana sayfasında "Best Selling products", "Best Selling
  * HGH" gibi kayan ürün şeritleri var; buradaki de aynı işi görüyor:
  * ziyaretçiyi kategori kategori gezdirmeden doğrudan en çok satan ürüne
  * yönlendirmek.
  *
- * Liste elle seçilir (BEST_SELLERS) çünkü sitede satış verisi tutulmuyor;
- * hangi ürünün çok sattığını yalnızca satıcı bilir. Katalogdan düşen bir
- * slug sessizce atlanır, böylece katalog güncellemesi ana sayfayı bozamaz.
+ * Listeler elle seçilir (bkz. lib/strips.ts) çünkü sitede satış verisi
+ * tutulmuyor; hangi ürünün çok sattığını yalnızca satıcı bilir.
  *
  * Kaydırma yerel scroll-snap ile yapılıyor: mobilde parmakla kaydırma
  * kendiliğinden çalışıyor, klavyeyle de erişilebilir kalıyor. Otomatik
  * dönüş; fareyle üzerine gelince, bir kart odaklanınca ve kullanıcı elle
  * kaydırırken durur — insan müdahale ettiğinde şerit onu zorlamaz.
  */
-const BEST_SELLERS = [
-  "retatrutide-60mg-5x12mg-zphc",
-  "ghk-cu-50mg-zphc",
-  "bpc157-25mg-5x5mg-zphc",
-  "tb500-25mg-5x5mg-zphc",
-  "zptrop-100iu-zphc",
-  "semaglutide-5mg-kit-zphc",
-  "tirzepatide-30mg-aq-pen-zphc",
-  "ipamorelin-25mg-5x5mg-zphc",
-]
-
 const AUTO_ADVANCE_MS = 3500
 
-export function BestSellers() {
-  const items = BEST_SELLERS.map((slug) =>
-    products.find((p) => p.slug === slug),
-  ).filter((p): p is NonNullable<typeof p> => Boolean(p))
-
-  const shown = items.length > 0 ? items : products.slice(0, 8)
+export function ProductStrip({
+  title,
+  slugs,
+  href = "/urunler",
+  linkLabel,
+}: {
+  title: string
+  /** Gösterilecek ürünler, istenen sırayla. Katalogdan düşen slug sessizce
+   * atlanır; böylece katalog güncellemesi ana sayfayı bozamaz. */
+  slugs: string[]
+  href?: string
+  linkLabel?: string
+}) {
+  const shown = slugs
+    .map((slug) => products.find((p) => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p))
 
   const trackRef = useRef<HTMLUListElement>(null)
   const [paused, setPaused] = useState(false)
@@ -96,15 +94,15 @@ export function BestSellers() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 className="text-lg font-bold tracking-tight text-foreground">
-            Çok satanlar
+            {title}
           </h2>
 
           <div className="flex items-center gap-3">
             <Link
-              href="/urunler"
+              href={href}
               className="text-sm font-semibold text-gold transition-opacity hover:opacity-70"
             >
-              Tüm ürünler ({products.length}) →
+              {linkLabel ?? `Tümü (${products.length})`} →
             </Link>
             <div className="flex gap-1.5">
               <ArrowButton label="Öncekiler" onClick={() => advance(-1)} back />

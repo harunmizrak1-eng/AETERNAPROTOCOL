@@ -10,6 +10,7 @@ import { getPeptide, tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 import { citations } from "@/lib/citations"
 import { siteUrl } from "@/lib/site"
 import { RelatedProducts } from "@/components/related-products"
+import { SizeComparison } from "@/components/size-comparison"
 import { StockBadge } from "@/components/product-card"
 
 export function generateStaticParams() {
@@ -279,6 +280,8 @@ export default async function UrunPage({
                 </Link>
               </div>
             )}
+
+            <SizeComparison product={product} />
 
             {product.peptideSlug && (
               <RelatedProducts

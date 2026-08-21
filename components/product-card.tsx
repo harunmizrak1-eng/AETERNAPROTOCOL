@@ -37,7 +37,7 @@ export function ProductCard({ product }: { product: Product }) {
 
       <div className="mt-3 flex items-center justify-center gap-2">
         <span className="text-sm font-semibold text-foreground">
-          {product.price ?? "Fiyat sor"}
+          {product.price ?? "Fiyat sorun"}
         </span>
         <StockBadge inStock={product.inStock} />
       </div>

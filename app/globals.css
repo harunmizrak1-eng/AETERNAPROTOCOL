@@ -147,3 +147,43 @@
     opacity: 0.14;
   }
 }
+
+/* Kayan uyarı şeridi (ticker).
+ *
+ * zphcstore.com'un üst şeridi yatay kayan bir "SCAM ALERT" bandı:
+ * .scam-advise { white-space:nowrap; animation: infiniteScroll 25s linear
+ * infinite } ve hover'da animation-play-state:paused. Aynı davranış burada
+ * yeniden kuruldu. Metin iki kez basılır; birinci kopya tam olarak kendi
+ * genişliği kadar (-100%) kaydığında ikincisi onun yerini almış olur, bu
+ * yüzden döngü dikişsiz görünür.
+ *
+ * Hareket prefers-reduced-motion ile devre dışı bırakılır: vestibüler
+ * rahatsızlığı olan kullanıcıda sürekli kayan metin sorun yaratır, o
+ * durumda şerit sabit durur ve metin yine tamamen okunur. */
+.ticker-track {
+  display: flex;
+  width: max-content;
+}
+
+.ticker-item {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ticker-track {
+    animation: zphc-ticker 30s linear infinite;
+  }
+  .ticker-mask:hover .ticker-track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes zphc-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -4,6 +4,7 @@ import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { WhatsappCta } from "@/components/whatsapp-cta"
 import { ProductCatalog } from "@/components/product-catalog"
+import { ShopSidebar } from "@/components/shop-sidebar"
 
 export const metadata: Metadata = {
   title: "Ürünler",
@@ -49,10 +50,16 @@ export default async function UrunlerPage({
         </section>
 
         <section className="px-6 pb-20 md:px-10">
-          <div className="mx-auto max-w-7xl">
-            <Suspense fallback={null}>
-              <ProductCatalog initialGoal={kategori} />
-            </Suspense>
+          {/* Mağaza düzeni: solda kategori kenar çubuğu, sağda ızgara —
+              zphcstore.com'un mağaza sayfasındaki yerleşimin aynısı.
+              Dar ekranda kenar çubuğu ızgaranın üstüne iner. */}
+          <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:gap-10">
+            <ShopSidebar active={kategori} />
+            <div className="min-w-0 flex-1">
+              <Suspense fallback={null}>
+                <ProductCatalog initialGoal={kategori} />
+              </Suspense>
+            </div>
           </div>
         </section>
 

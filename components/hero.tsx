@@ -19,13 +19,13 @@ export function Hero() {
           >
             validation.zphc.com
           </Link>{" "}
-          üzerinden doğrudan üreticiden doğrulayın.
+          adresinde üreticiye doğrulatın.
         </p>
         <Link
           href="/urunler"
           className="shrink-0 rounded-full bg-gold px-5 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-gold/90"
         >
-          {products.length} ürünü incele
+          {products.length} ürünü inceleyin
         </Link>
       </div>
     </section>

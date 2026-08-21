@@ -14,9 +14,9 @@ const PILLARS = [
     link: { href: "/dogrulama", label: "Nasıl doğrulanır" },
   },
   {
-    title: "Her ürünün bilimsel kaydı var",
+    title: "Her ürünün bilimsel arka planı var",
     line: `Her ürün, ${peptides.length} bileşiklik kütüphanemizdeki kaydına bağlı. Üreticinin pazarlama metnini kendi kanıt değerlendirmemizden ayrı gösteriyoruz.`,
-    link: { href: "/metodoloji", label: "Metodolojimizi inceleyin" },
+    link: { href: "/metodoloji", label: "Nasıl değerlendiriyoruz" },
   },
 ]
 

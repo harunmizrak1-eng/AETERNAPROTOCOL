@@ -7,17 +7,17 @@ const STEPS = [
   {
     n: "01",
     title: "Ürünü seçin",
-    text: "Kataloğu inceleyin, ilgilendiğiniz ürünü veya bileşiği bulun.",
+    text: "Kataloğu açın, aradığınız ürünü ya da bileşiği bulun.",
   },
   {
     n: "02",
     title: "WhatsApp'tan sorun",
-    text: "Fiyat sor butonuna basın; ürün adı otomatik olarak mesaja eklenir, güncel fiyat ve stok bilginizi dakikalar içinde alırsınız.",
+    text: "Fiyat sorun düğmesine basın; ürünün adı mesaja kendiliğinden eklenir. Güncel fiyatı ve stok durumunu kısa sürede iletiriz.",
   },
   {
     n: "03",
     title: "Soğuk zincirle teslim alın",
-    text: "Onayladığınız sipariş, soğuk zincire uygun şekilde doğrudan depomuzdan gönderilir.",
+    text: "Onayladığınız sipariş, soğuk zincir korunarak doğrudan depomuzdan çıkar.",
   },
 ]
 
@@ -26,7 +26,7 @@ export function HowItWorks() {
     <section className="border-b border-hairline px-6 py-10 md:px-10">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-lg font-bold tracking-tight text-foreground">
-          Nasıl çalışır
+          Sipariş nasıl veriliyor
         </h2>
 
         <div className="mt-6 grid grid-cols-1 gap-px bg-hairline sm:grid-cols-3">
@@ -49,7 +49,7 @@ export function HowItWorks() {
         </div>
 
         <div className="mt-8">
-          <WhatsappCta label="Şimdi sorun" />
+          <WhatsappCta label="WhatsApp’tan yazın" />
         </div>
       </div>
     </section>

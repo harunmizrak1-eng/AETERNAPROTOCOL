@@ -14,7 +14,7 @@ export function ResearchMetrics() {
   const metrics = [
     { href: "/urunler", value: products.length, label: "Ürün" },
     { href: "/urunler", value: categoryCount, label: "Kategori" },
-    { href: "/peptidler", value: peptides.length, label: "Bileşik kaydı" },
+    { href: "/peptidler", value: peptides.length, label: "Bileşik" },
   ]
 
   return (

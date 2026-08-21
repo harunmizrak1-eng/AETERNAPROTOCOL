@@ -6,6 +6,17 @@ import Image from "next/image"
 import { siteName } from "@/lib/site"
 import { HeaderSearch } from "@/components/header-search"
 
+/* Şeritte dönen uyarılar. Hepsi doğrulanabilir, gerçek bilgi: taklit
+ * ürünlere karşı üreticinin kendi doğrulama sistemi, tek resmi sipariş
+ * kanalımız ve resmi distribütörlük. Uydurma bir "sahte site" adı
+ * vermiyoruz — zphcstore.com kendi taklitçilerini ismen teşhir ediyor,
+ * ama bizim adımıza öyle bir tespit yapılmadı. */
+const TICKER_MESSAGES = [
+  "Sahte satıcılara dikkat: siparişinizi yalnızca resmi WhatsApp hattımızdan onaylayın.",
+  "Her kutudaki kodu validation.zphc.com adresinde üreticiye doğrulatın.",
+  "ZPHC Türkiye resmi distribütörüdür. Ürünler doğrudan depomuzdan çıkar.",
+]
+
 const LINKS = [
   { href: "/urunler", label: "Ürünler" },
   { href: "/peptidler", label: "Kütüphane" },
@@ -33,13 +44,22 @@ export function Nav() {
      * çakışmasına yol açtı. Normal akışta durunca kendi yerini kapladığı
      * için hiçbir sayfada telafi dolgusu gerekmiyor; kalıcı çözüm bu. */
     <header className="relative z-50 border-b border-hairline bg-background">
-      <div className="flex items-center justify-center gap-1.5 bg-[#ff5454] px-4 py-1.5 text-center text-[11px] font-medium leading-tight text-white sm:text-xs">
-        <span aria-hidden="true">⚠</span>
-        <span className="sm:hidden">Siparişi yalnızca WhatsApp&apos;tan onaylayın.</span>
-        <span className="hidden sm:inline">
-          Sahte satıcılara dikkat: Siparişinizi yalnızca resmi WhatsApp
-          hattımızdan onaylayın.
-        </span>
+      {/* Kayan uyarı şeridi. Metin iki kez basılır — animasyon birinci
+          kopyayı tam genişliği kadar kaydırdığında ikincisi yerine geçer,
+          böylece döngü dikişsiz görünür. */}
+      <div className="ticker-mask overflow-hidden bg-[#ff5454] py-1.5 text-[11px] font-medium text-white sm:text-xs">
+        <div className="ticker-track">
+          {[0, 1].map((copy) => (
+            <div key={copy} className="ticker-item" aria-hidden={copy === 1}>
+              {TICKER_MESSAGES.map((msg) => (
+                <span key={msg} className="mx-6 inline-flex items-center gap-1.5">
+                  <span aria-hidden="true">⚠</span>
+                  {msg}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
 
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">

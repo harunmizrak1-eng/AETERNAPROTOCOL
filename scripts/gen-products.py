@@ -98,9 +98,9 @@ GOALS = [
     "Kilo Kaybı",
     "Toparlanma & Doku Onarımı",
     "Büyüme Hormonu",
-    "Anti-Aging & Cilt",
-    "Longevity",
-    "Kognitif",
+    "Cilt & Yaşlanma Karşıtı",
+    "Uzun Yaşam",
+    "Bilişsel",
     "Diğer",
 ]
 
@@ -108,9 +108,9 @@ PEPTIDE_CATEGORY_GOAL = {
     "Metabolik": "Kilo Kaybı",
     "Doku Onarımı": "Toparlanma & Doku Onarımı",
     "Büyüme / GH": "Büyüme Hormonu",
-    "Estetik / Onarım": "Anti-Aging & Cilt",
-    "Longevity": "Longevity",
-    "Kognitif": "Kognitif",
+    "Estetik / Onarım": "Cilt & Yaşlanma Karşıtı",
+    "Longevity": "Uzun Yaşam",
+    "Kognitif": "Bilişsel",
     "Performans": "Toparlanma & Doku Onarımı",
 }
 
@@ -118,7 +118,7 @@ PEPTIDE_CATEGORY_GOAL = {
 # çok amaçlı karışımlar burada elle tanımlanır. Sıra önemli: ilk eşleşen
 # desen kazanır.
 GOAL_OVERRIDES = [
-    (r"glow-pro-mix", ["Toparlanma & Doku Onarımı", "Anti-Aging & Cilt"]),
+    (r"glow-pro-mix", ["Toparlanma & Doku Onarımı", "Cilt & Yaşlanma Karşıtı"]),
     (r"ultra-rehab-mix", ["Toparlanma & Doku Onarımı"]),
     (r"wellness-mix", ["Büyüme Hormonu", "Toparlanma & Doku Onarımı"]),
     (r"mega-mass-mix", ["Büyüme Hormonu"]),
@@ -128,8 +128,8 @@ GOAL_OVERRIDES = [
     (r"hcg|hp-hcg", ["Diğer"]),
     (r"ll-?37", ["Diğer"]),
     (r"multi-use-pen|^pen-", ["Diğer"]),
-    (r"nad", ["Longevity"]),
-    (r"glutathione|glutatyon", ["Longevity", "Anti-Aging & Cilt"]),
+    (r"nad", ["Uzun Yaşam"]),
+    (r"glutathione|glutatyon", ["Uzun Yaşam", "Cilt & Yaşlanma Karşıtı"]),
     (r"aicar", ["Kilo Kaybı"]),
 ]
 

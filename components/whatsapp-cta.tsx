@@ -7,7 +7,7 @@ import { whatsappLink } from "@/lib/contact"
  * order, and the copy must not imply otherwise. */
 export function WhatsappCta({
   product,
-  label = "WhatsApp'tan Sor",
+  label = "WhatsApp’tan yazın",
   variant = "primary",
 }: {
   product?: string

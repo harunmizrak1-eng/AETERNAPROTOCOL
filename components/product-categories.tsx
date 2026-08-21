@@ -11,8 +11,8 @@ const COVER: Record<string, string> = {
   "Kilo Kaybı": "retatrutide-10mg-5x2mg-zphc-2",
   "Toparlanma & Doku Onarımı": "bpc157-25mg-5x5mg-zphc",
   "Büyüme Hormonu": "zptrop-100iu-zphc",
-  "Anti-Aging & Cilt": "ghk-cu-50mg-zphc",
-  Longevity: "nad-plus-2500mg-zphc",
+  "Cilt & Yaşlanma Karşıtı": "ghk-cu-50mg-zphc",
+  "Uzun Yaşam": "nad-plus-2500mg-zphc",
   Diğer: "melanotan-2-10mg-bacteriostatic-water-zphc",
 }
 

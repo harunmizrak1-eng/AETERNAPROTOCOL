@@ -27,7 +27,7 @@ export const categoryOrder: ProductCategory[] = ["peptid", "hgh", "aksesuar"]
  *  etkinlik, kullanım amacı, doz veya yan etki beyanıdır ve sayfada
  *  ayrı bir bölümde, kaynağı belirtilerek gösterilir. */
 /** Katalogdaki amaç filtresinin sırası. */
-export const goalOrder: string[] = ["Kilo Kaybı", "Toparlanma & Doku Onarımı", "Büyüme Hormonu", "Anti-Aging & Cilt", "Longevity", "Kognitif", "Diğer"]
+export const goalOrder: string[] = ["Kilo Kaybı", "Toparlanma & Doku Onarımı", "Büyüme Hormonu", "Cilt & Yaşlanma Karşıtı", "Uzun Yaşam", "Bilişsel", "Diğer"]
 
 export interface ProductSpec {
   label: string
@@ -238,7 +238,7 @@ export const products: Product[] = [
     peptideSlug: "epithalon",
     image: "/products/epithalon-50mg-with-bacteriostatic-water-zphc.webp",
     sourcePriceUsd: 129.0,
-    goals: ["Longevity"],
+    goals: ["Uzun Yaşam"],
     inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 50 mg liyofilize Epithalon + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
@@ -261,7 +261,7 @@ export const products: Product[] = [
     peptideSlug: "ghk-cu",
     image: "/products/ghk-cu-60mg-with-bacteriostatic-water-zphc.webp",
     sourcePriceUsd: 59.0,
-    goals: ["Anti-Aging & Cilt"],
+    goals: ["Cilt & Yaşlanma Karşıtı"],
     inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize GHK-Cu (bakır peptidi) + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -284,7 +284,7 @@ export const products: Product[] = [
     peptideSlug: "ghk-cu",
     image: "/products/ghk-cu-50mg-zphc.webp",
     sourcePriceUsd: 59.0,
-    goals: ["Anti-Aging & Cilt"],
+    goals: ["Cilt & Yaşlanma Karşıtı"],
     inStock: true,
     specs: [
       { label: "Rejeneratif bakır peptidi", value: "Cilt onarımının güçlendirilmesi, kolajen uyarımı ve dermal yapının iyileştirilmesi üzerine araştırılmaktadır.", kind: "claim" },
@@ -342,7 +342,7 @@ export const products: Product[] = [
     peptideSlug: "bpc-157",
     image: "/products/glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc.webp",
     sourcePriceUsd: 129.0,
-    goals: ["Toparlanma & Doku Onarımı", "Anti-Aging & Cilt"],
+    goals: ["Toparlanma & Doku Onarımı", "Cilt & Yaşlanma Karşıtı"],
     inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize peptid karışımı + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -547,7 +547,7 @@ export const products: Product[] = [
     peptideSlug: "glutathione",
     image: "/products/l-glutathione-3000mg-kit-zphc.webp",
     sourcePriceUsd: 59.0,
-    goals: ["Longevity", "Anti-Aging & Cilt"],
+    goals: ["Uzun Yaşam", "Cilt & Yaşlanma Karşıtı"],
     inStock: true,
     specs: [
       { label: "Hücresel yaşlanma karşıtı destek", value: "İndirgenmiş GSH'nin hücre içi antioksidan kapasiteyi yenilediği ve oksidatif stres belirteçlerine karşı koyduğu belirtilir.", kind: "claim" },
@@ -590,7 +590,7 @@ export const products: Product[] = [
     peptideSlug: "mots-c",
     image: "/products/mots-c-20mg-with-bacteriostatic-water-zphc.webp",
     sourcePriceUsd: 99.0,
-    goals: ["Longevity"],
+    goals: ["Uzun Yaşam"],
     inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize MOTS-c peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
@@ -704,7 +704,7 @@ export const products: Product[] = [
     peptideSlug: "nad-nmn",
     image: "/products/nad-plus-2500mg-zphc.webp",
     sourcePriceUsd: 139.0,
-    goals: ["Longevity"],
+    goals: ["Uzun Yaşam"],
     inStock: true,
     specs: [
       { label: "Hücresel enerji desteği", value: "ATP üretimi, mitokondriyal verimlilik ve genel metabolik fonksiyon için temel kofaktör.", kind: "claim" },
@@ -1269,7 +1269,7 @@ export const products: Product[] = [
     peptideSlug: "nad-nmn",
     image: "/products/zphc-nad-plus-1000mg-with-bacteriostatic-water.webp",
     sourcePriceUsd: 63.0,
-    goals: ["Longevity"],
+    goals: ["Uzun Yaşam"],
     inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 1000 mg liyofilize NAD+ + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },

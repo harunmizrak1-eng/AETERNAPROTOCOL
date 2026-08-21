@@ -150,7 +150,7 @@ export default async function UrunPage({
                 </p>
                 <StockBadge inStock={product.inStock} />
               </div>
-              <WhatsappCta product={product.name} label="Fiyat Sor" />
+              <WhatsappCta product={product.name} label="Fiyat sorun" />
             </div>
 
             {technical.length > 0 && (

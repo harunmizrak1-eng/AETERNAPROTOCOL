@@ -1,30 +1,18 @@
 import { ImageResponse } from "next/og"
+import { products } from "@/lib/products"
 
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
-const CORMORANT_REGULAR =
-  "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_v86GnM.ttf"
-const CORMORANT_ITALIC =
-  "https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jDOjw.ttf"
-
-async function loadFont(url: string) {
-  try {
-    const res = await fetch(url)
-    if (!res.ok) return null
-    return await res.arrayBuffer()
-  } catch {
-    return null
-  }
-}
-
-export default async function OpengraphImage() {
-  const [regular, italic] = await Promise.all([
-    loadFont(CORMORANT_REGULAR),
-    loadFont(CORMORANT_ITALIC),
-  ])
-  const hasCormorant = Boolean(regular)
-
+/* WhatsApp, Instagram veya arama sonuçlarında link paylaşıldığında görünen
+ * kart görseli. Önceki hâli kapatılan ÆTERNA markasından kalmıştı: siyah
+ * zemin, Cormorant italik ve "Özel Longevity Enstitüsü" alt başlığı — yani
+ * paylaşılan her linkte yanlış marka görünüyordu. Sitenin kendi kimliğine
+ * (beyaz zemin, ZPHC mavisi #0072bc, Helvetica) göre yeniden yazıldı.
+ *
+ * Webfont yüklenmiyor: sistem sans yığını hem sitenin tipografisiyle aynı
+ * hem de görsel üretimini dış bir isteğe bağımlı olmaktan çıkarıyor. */
+export default function OpengraphImage() {
   return new ImageResponse(
     (
       <div
@@ -35,69 +23,78 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0a0a0a",
+          backgroundColor: "#ffffff",
+          fontFamily: "sans-serif",
         }}
       >
         <div
           style={{
-            fontSize: 88,
-            letterSpacing: 22,
-            color: "#f0ede8",
-            fontFamily: hasCormorant ? "Cormorant" : "serif",
-            fontWeight: 400,
+            display: "flex",
+            alignItems: "center",
+            gap: 18,
           }}
         >
-          ZPHC TÜRKİYE
+          <div
+            style={{
+              fontSize: 92,
+              fontWeight: 700,
+              color: "#0072bc",
+              letterSpacing: -2,
+            }}
+          >
+            ZPHC
+          </div>
+          <div
+            style={{
+              fontSize: 92,
+              fontWeight: 700,
+              color: "#0d1b2a",
+              letterSpacing: -2,
+            }}
+          >
+            TÜRKİYE
+          </div>
         </div>
+
         <div
           style={{
-            marginTop: 28,
-            height: 1,
-            width: 140,
-            backgroundColor: "rgba(196,168,130,0.6)",
-          }}
-        />
-        <div
-          style={{
-            marginTop: 36,
-            fontSize: 30,
-            color: "#c4a882",
-            fontFamily: hasCormorant ? "Cormorant" : "serif",
-            fontStyle: "italic",
+            marginTop: 26,
+            fontSize: 34,
+            fontWeight: 700,
+            color: "#0d1b2a",
           }}
         >
-          Hassas Biyoloji. Özel Erişim.
+          Resmi Distribütör
         </div>
+
         <div
           style={{
-            marginTop: 44,
-            fontSize: 15,
-            letterSpacing: 4,
-            textTransform: "uppercase",
-            color: "rgba(240,237,232,0.45)",
+            marginTop: 18,
+            fontSize: 26,
+            color: "rgba(13,27,42,0.65)",
+            textAlign: "center",
           }}
         >
-          Özel Longevity Enstitüsü
+          {`Peptid ve insan büyüme hormonu · ${products.length} ürün`}
+        </div>
+
+        <div
+          style={{
+            marginTop: 46,
+            display: "flex",
+            alignItems: "center",
+            backgroundColor: "#0072bc",
+            color: "#ffffff",
+            fontSize: 24,
+            fontWeight: 700,
+            padding: "14px 34px",
+            borderRadius: 99,
+          }}
+        >
+          zphctr.com
         </div>
       </div>
     ),
-    {
-      ...size,
-      fonts: hasCormorant
-        ? [
-            { name: "Cormorant", data: regular!, style: "normal", weight: 400 },
-            ...(italic
-              ? [
-                  {
-                    name: "Cormorant",
-                    data: italic,
-                    style: "italic" as const,
-                    weight: 400 as const,
-                  },
-                ]
-              : []),
-          ]
-        : undefined,
-    },
+    size,
   )
 }

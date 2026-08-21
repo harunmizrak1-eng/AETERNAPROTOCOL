@@ -1,29 +1,9 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Cormorant_Garamond, Geist_Mono, Inter } from 'next/font/google'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { contactEmail } from '@/lib/contact'
 import { WhatsappFloat } from '@/components/whatsapp-float'
 import './globals.css'
-
-const cormorant = Cormorant_Garamond({
-  variable: '--font-cormorant',
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
-})
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  weight: ['300', '400', '500'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-  weight: ['400', '500'],
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -65,10 +45,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="tr"
-      className={`${cormorant.variable} ${inter.variable} ${geistMono.variable} bg-background`}
-    >
+    <html lang="tr" className="bg-background">
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

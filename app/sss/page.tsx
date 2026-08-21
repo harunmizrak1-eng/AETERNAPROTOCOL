@@ -40,7 +40,7 @@ export default function FaqPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Nav />
-      <main id="main-content" className="relative z-10 bg-background pt-32">
+      <main id="main-content" className="relative z-10 bg-background">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-2xl">
             <p className="text-sm font-semibold text-gold">Sık Sorulan Sorular</p>

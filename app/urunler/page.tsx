@@ -33,7 +33,7 @@ export default async function UrunlerPage({
   return (
     <>
       <Nav />
-      <main id="main-content" className="bg-background pt-28">
+      <main id="main-content" className="bg-background">
         <section className="px-6 pb-8 md:px-10">
           <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-4">
             <div>

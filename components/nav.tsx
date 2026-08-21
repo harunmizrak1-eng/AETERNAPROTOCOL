@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { siteName } from "@/lib/site"
+import { HeaderSearch } from "@/components/header-search"
 
 const LINKS = [
   { href: "/urunler", label: "Ürünler" },
@@ -26,7 +27,12 @@ export function Nav() {
   }, [open])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-hairline bg-background/80 backdrop-blur-md">
+    /* Not: Bu başlık bilerek position:fixed DEĞİL. Sabitken yüksekliği her
+     * değiştiğinde (rozet, uyarı şeridi, arama satırı) her sayfanın <main>
+     * dolgusunu elle güncellemek gerekiyordu ve bu üç kez içerik-nav
+     * çakışmasına yol açtı. Normal akışta durunca kendi yerini kapladığı
+     * için hiçbir sayfada telafi dolgusu gerekmiyor; kalıcı çözüm bu. */
+    <header className="relative z-50 border-b border-hairline bg-background">
       <div className="flex items-center justify-center gap-1.5 bg-[#ff5454] px-4 py-1.5 text-center text-[11px] font-medium leading-tight text-white sm:text-xs">
         <span aria-hidden="true">⚠</span>
         <span className="sm:hidden">Siparişi yalnızca WhatsApp&apos;tan onaylayın.</span>
@@ -95,6 +101,13 @@ export function Nav() {
           {open ? "Kapat" : "Menü"}
         </button>
       </nav>
+
+      {/* Arama satırı: gerçek sitede logonun altında duran ürün araması. */}
+      <div className="border-t border-hairline px-6 py-2.5 md:px-10">
+        <div className="mx-auto max-w-6xl">
+          <HeaderSearch />
+        </div>
+      </div>
 
       <div
         id="mobile-nav-panel"

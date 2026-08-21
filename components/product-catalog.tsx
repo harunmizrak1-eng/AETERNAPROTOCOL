@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/product-card"
 
 const ALL = "Tümü"
 const PARAM = "kategori"
+const QUERY_PARAM = "q"
 
 /** Normalises Turkish text for search: case-folds and strips diacritics so
  * "buyume" finds "büyüme" and "IGF" finds "ıgf". Turkish dotted/dotless i
@@ -29,7 +30,10 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
   // initialGoal sunucudan gelir ve ilk render'da kullanılır; useSearchParams
   // client tarafında geri/ileri tuşuyla gelen değişimi yakalar.
   const active = params.get(PARAM) ?? initialGoal ?? ALL
-  const [query, setQuery] = useState("")
+  // Başlıktaki arama kutusu /urunler?q=... adresine gönderiyor; buradaki
+  // ilk değer o parametreden okunur, sonrasını kullanıcının yazdığı
+  // yerel state yönetir.
+  const [query, setQuery] = useState(params.get(QUERY_PARAM) ?? "")
 
   // Only offer goals that actually have products behind them, so the filter
   // never shows a tab that leads to an empty grid.
@@ -61,9 +65,9 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
 
   return (
     <>
-      {/* Filter bar sticks under the fixed header so category and search stay
-          reachable while scrolling a 70-plus item grid. */}
-      <div className="sticky top-[73px] z-30 -mx-6 border-b border-hairline bg-background/95 px-6 py-4 backdrop-blur md:-mx-10 md:px-10">
+      {/* Başlık artık sabit değil (normal akışta) — filtre çubuğu doğrudan
+          ekranın tepesine yapışabilir; sabit bir uzaklık değeri gerekmiyor. */}
+      <div className="sticky top-0 z-30 -mx-6 border-b border-hairline bg-background/95 px-6 py-4 backdrop-blur md:-mx-10 md:px-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 lg:flex-wrap lg:overflow-visible lg:pb-0">
             {goals.map((g) => (

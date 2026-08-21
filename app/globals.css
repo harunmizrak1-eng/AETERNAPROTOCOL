@@ -6,10 +6,14 @@
 /* ZPHC Türkiye — kurumsal tema */
 
 @theme inline {
-  --font-sans: var(--font-inter), 'Inter Fallback', sans-serif;
-  --font-serif: var(--font-inter), 'Inter Fallback', sans-serif;
-  --font-heading: var(--font-inter), 'Inter Fallback', sans-serif;
-  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  /* zphcstore.com hiç webfont yüklemiyor; gövde metni Flatsome temasının
+   * varsayılanı olan Helvetica/Arial sistem yığınını kullanıyor. Inter
+   * (Google Font) yerine aynı yığına geçildi: hem tipografi gerçek siteyle
+   * eşleşiyor hem de sayfa başına bir webfont indirmesi ortadan kalkıyor. */
+  --font-sans: Helvetica, Arial, sans-serif;
+  --font-serif: Helvetica, Arial, sans-serif;
+  --font-heading: Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'Courier New', monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

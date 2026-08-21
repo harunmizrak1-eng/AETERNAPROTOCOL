@@ -23,7 +23,7 @@ export default function JournalPage() {
   return (
     <>
       <Nav />
-      <main id="main-content" className="relative z-10 bg-background pt-32">
+      <main id="main-content" className="relative z-10 bg-background">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-4xl">
             <p className="text-sm font-semibold text-gold">Journal</p>

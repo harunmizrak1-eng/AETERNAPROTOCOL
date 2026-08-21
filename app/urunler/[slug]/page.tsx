@@ -88,7 +88,7 @@ export default async function UrunPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Nav />
-      <main id="main-content" className="bg-background pt-28">
+      <main id="main-content" className="bg-background">
         <article className="px-6 pb-28 md:px-10">
           <div className="mx-auto max-w-3xl">
             <nav aria-label="Konum" className="text-sm text-muted-foreground">

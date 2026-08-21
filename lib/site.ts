@@ -2,7 +2,7 @@
 // preview deployments); otherwise every canonical, sitemap entry and OG url
 // resolves against the real domain below.
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aeternaprotocol.net"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://zphctr.com"
 
 export const siteName = "ZPHC Türkiye"
 

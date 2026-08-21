@@ -113,7 +113,7 @@ export const products: Product[] = [
       "AOD 9604; hedefli yağ kaybı peptidi",
       "5 liyofilize flakon × 2,5 mg (toplam 12,5 mg)",
       "Kalite kontrolü: ≥%99 saflık (HPLC); endotoksin < 0,03 EU/mg; her kutuda doğrulama kodu.",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -136,7 +136,7 @@ export const products: Product[] = [
       "AOD 9604; hedefli yağ kaybı peptidi",
       "5 liyofilize flakon × 5 mg (toplam 25 mg)",
       "Kalite kontrolü: ≥%99 saflık (HPLC); endotoksin < 0,03 EU/mg; her kutuda orijinallik için doğrulama kodu bulunur.",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -204,7 +204,7 @@ export const products: Product[] = [
       "Cagrilintide; ZPHC Pro-Line",
       "5 liyofilize flakon × 5 mg (toplam 25 mg) + steril çözücü",
       "Tokluk ve mide boşalması: tokluk sinyallerini güçlendirdiği ve mide boşalmasını yavaşlatarak kilo yönetimi sonuçlarını iyileştirdiği belirtilir.",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -227,7 +227,7 @@ export const products: Product[] = [
       "Double Burn Mix; çift yolaklı yağ kaybı peptidi",
       "5 liyofilize flakon × 5 mg (toplam 25 mg)",
       "Kalite kontrolü: ≥%99 saflık (HPLC); endotoksin < 0,03 EU/mg; her kutuda doğrulama kodu.",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -296,7 +296,7 @@ export const products: Product[] = [
     notes: [
       "GHK-Cu (Bakır Tripeptid-1); ZPHC",
       "5 liyofilize flakon × 10 mg (toplam 50 mg) + steril çözücü",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -376,7 +376,7 @@ export const products: Product[] = [
       "HGH Fragment 176-191; hedefli lipolitik peptid",
       "5 liyofilize flakon × 10 mg (toplam 50 mg)",
       "Kalite kontrolü: ≥%99 saflık (HPLC); endotoksin < 0,03 EU/mg; her kutuda doğrulama kodu.",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -420,7 +420,7 @@ export const products: Product[] = [
       "HGH Fragment 176-191; seçici lipolitik peptid",
       "5 liyofilize flakon × 2,5 mg (toplam 12,5 mg)",
       "Kalite kontrolü: ≥%99 saflık (HPLC); endotoksin < 0,03 EU/mg; doğrulama kodu doğrulamalı kutu.",
-      "Soğuk zincir ambalaj · kurcalamaya karşı korumalı flakonlar · gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj · kurcalamaya karşı korumalı flakonlar · gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -442,7 +442,7 @@ export const products: Product[] = [
       "HGH Fragment 176-191; hedefli lipolitik peptid",
       "5 liyofilize flakon × 5 mg (toplam 25 mg)",
       "Kalite kontrolü: ≥%99 saflık (HPLC); endotoksin < 0,03 EU/mg; her kutuda doğrulama kodu.",
-      "Soğuk zincir ambalaj · kurcalamaya karşı korumalı flakonlar · gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj · kurcalamaya karşı korumalı flakonlar · gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -559,7 +559,7 @@ export const products: Product[] = [
     notes: [
       "L-Glutatyon (indirgenmiş); farma sınıfı antioksidan tripeptid",
       "5 × 600 mg liyofilize flakon + 1 × steril çözücü • toplam 3000 mg",
-      "Soğuk zincir sınıfı • kurcalamaya karşı korumalı kapaklar • yalnızca ihracata yönelik çok flakonlu sunum.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı kapaklar • yalnızca ihracata yönelik çok flakonlu sunum.",
     ],
   },
   {
@@ -625,7 +625,7 @@ export const products: Product[] = [
       "Mega Mass Mix; büyüme hormonu ve iştah güçlendirici",
       "5 liyofilize flakon × 10 mg (toplam 50 mg)",
       "Kalite kontrolü: ≥%99 saflık (HPLC); endotoksin < 0,03 EU/mg; her kutuda doğrulama kodu.",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -665,7 +665,7 @@ export const products: Product[] = [
       { label: "Kullanıma Hazır", value: "Su bazlı MT-2 önceden çözünmüş hâlde gelir; flakon, rekonstitüsyon ve enjektör gerekmez.", kind: "spec" },
       { label: "Ayarlanabilir doz", value: "Her tık 150 µg verir; 10 tık = 1,5 mg. Dereceli pencere kalan hacmi gösterir.", kind: "claim" },
       { label: "Önerilen araştırma programı", value: "5 gün boyunca günde 250 µg (≈ 2 tık) → ardından istenen tona ulaşana dek haftada iki kez 500 µg idame.", kind: "claim" },
-      { label: "Saklama", value: "Soğuk zincirle gönderilir; açıldıktan sonra 2–8 °C'de buzdolabında saklayın, 30 gün stabildir.", kind: "spec" },
+      { label: "Saklama", value: "Açıldıktan sonra 2–8 °C'de buzdolabında saklayın, 30 gün stabildir.", kind: "spec" },
     ],
     notes: [
       "Melanotan-II (MT-2); hazır sulu çözelti kalemi",
@@ -716,7 +716,7 @@ export const products: Product[] = [
     notes: [
       "NAD+ (Nikotinamid Adenin Dinükleotid); ZPHC Pro-Line",
       "5 liyofilize flakon × 500 mg (toplam 2500 mg) + steril çözücü",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -935,7 +935,7 @@ export const products: Product[] = [
     notes: [
       "Semaglutid; GLP-1 reseptör agonisti",
       "5 liyofilize flakon × 2 mg (toplam 10 mg)",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -958,7 +958,7 @@ export const products: Product[] = [
     notes: [
       "Semaglutid; GLP-1 reseptör agonisti",
       "5 liyofilize flakon × 4 mg (toplam 20 mg)",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -980,7 +980,7 @@ export const products: Product[] = [
     notes: [
       "Semaglutid; 5 liyofilize flakon × 1 mg (toplam 5 mg)",
       "Doz rehberi (araştırma): haftada bir 0,25 mg × 4 hafta → 0,5 mg × 4 hafta → 1 mg idame; yalnızca iyi tolere edilirse artırılır.",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı paket • gizlilik esaslı, takip edilebilir dünya çapında gönderim.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı paket • gizlilik esaslı, takip edilebilir dünya çapında gönderim.",
     ],
   },
   {
@@ -1003,7 +1003,7 @@ export const products: Product[] = [
     notes: [
       "Semaglutid; GLP-1 reseptör agonisti",
       "5 liyofilize flakon × 10 mg (toplam 50 mg)",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -1021,7 +1021,7 @@ export const products: Product[] = [
       { label: "Metabolik etki", value: "Mide boşalmasını yavaşlattığı, iştahı baskıladığı ve insülin duyarlılığını iyileştirdiği belirtilir.", kind: "claim" },
       { label: "Ayarlanabilir doz hassasiyeti", value: "Her tık 0,25 mg verir; kalem 24 tık sağlar (toplam 6 mg).", kind: "claim" },
       { label: "Önerilen araştırma titrasyonu", value: "Haftada 0,25 mg → tolere edildikçe her 4 haftada bir 0,25 mg artırılarak 1 mg'a kadar.", kind: "claim" },
-      { label: "Saklama", value: "Buzla gönderilir; açıldıktan sonra 2–8 °C'de buzdolabında saklayın; soğukta tutulduğunda çözelti 28 gün stabildir.", kind: "spec" },
+      { label: "Saklama", value: "Açıldıktan sonra 2–8 °C'de buzdolabında saklayın; soğukta tutulduğunda çözelti 28 gün stabildir.", kind: "spec" },
     ],
     notes: [
       "Semaglutid; GLP-1 reseptör agonisti",
@@ -1070,7 +1070,7 @@ export const products: Product[] = [
     notes: [
       "Super Slim Mix; üç yolaklı yağ kaybı karışımı",
       "5 liyofilize flakon × 11 mg (toplam 55 mg)",
-      "Soğuk zincir ambalaj · kurcalamaya karşı korumalı flakon · gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
+      "Kurcalamaya karşı korumalı ambalaj · kurcalamaya karşı korumalı flakon · gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },
   {
@@ -1346,7 +1346,7 @@ export const products: Product[] = [
       { label: "Mikro hassasiyetli doz ayarı", value: "Her tık ≈0,6 IU (0,2 mg) verir. 60 tık = tam 36 IU.", kind: "claim" },
       { label: "Araştırma Alanları", value: "Yağsız doku onarımı, yağ kaybı, uyku kalitesi, kolajen sentezi ve yaşlanma karşıtı modeller.", kind: "claim" },
       { label: "Önerilen araştırma dozu", value: "Toparlanma/yaşlanma karşıtı için yatmadan önce 2–4 IU • yağ kaybı için sabah/akşam bölünmüş 4–6 IU • hipertrofi protokolleri için 8–10 IU.", kind: "claim" },
-      { label: "Saklama", value: "Buzla gönderilir; açıldıktan sonra 2–8 °C'de buzdolabında saklayın. 2–8 °C'de 28 gün stabildir.", kind: "spec" },
+      { label: "Saklama", value: "Açıldıktan sonra 2–8 °C'de buzdolabında saklayın. 2–8 °C'de 28 gün stabildir.", kind: "spec" },
     ],
     notes: [
       "ZPtrop İnsan Büyüme Hormonu; 191 aa rhGH",
@@ -1444,7 +1444,7 @@ export const products: Product[] = [
       { label: "Dereceli tıpa", value: "Hassas dozlama için etikette 3 IU (≈ 1 mg) aralıklarla işaretleme; flakon başına 33 tam çekim.", kind: "claim" },
       { label: "Araştırma Alanları", value: "Yağsız doku onarımı, lipoliz, kolajen sentezi, daha derin uyku ve yaşlanma karşıtı modeller.", kind: "claim" },
       { label: "Örnek Araştırma Dozu", value: "Yatmadan önce 2–4 IU (toparlanma/yaşlanma karşıtı) • sabah/akşam bölünmüş 4–6 IU (yağ kaybı) • günde 8–10 IU (hipertrofi).", kind: "claim" },
-      { label: "Saklama", value: "Buzla gönderilir; açıldıktan sonra 2–8 °C'de buzdolabında saklayın; soğukta tutulduğunda 28 gün stabildir.", kind: "spec" },
+      { label: "Saklama", value: "Açıldıktan sonra 2–8 °C'de buzdolabında saklayın; soğukta tutulduğunda 28 gün stabildir.", kind: "spec" },
     ],
     notes: [
       "ZPtrop İnsan Büyüme Hormonu; 191 aa rhGH",
@@ -1512,7 +1512,6 @@ export const products: Product[] = [
     inStock: true,
     specs: [
       { label: "Doz Rehberi", value: "Genel sağlık/yağ yakımı için günde 2–4 IU, kas kazanımı için 4–6 IU.", kind: "claim" },
-      { label: "Soğuk zincirle taşınır", value: "Sıcaklık göstergeli yalıtımlı ambalajda 2–8 °C'de gönderilir.", kind: "claim" },
       { label: "Parti bazında test edilmiş kalite", value: "ZPHC kalite kontrolü: ≥%99 saflık, endotoksinsiz; orijinallik için doğrulama kodu.", kind: "claim" },
     ],
     notes: [
@@ -1565,7 +1564,7 @@ export const products: Product[] = [
     notes: [
       "ZPtrop 150 AQ; ZPHC Pro-Line",
       "Hazır karışım HGH • 10 flakon × 15 IU (toplam 150 IU)",
-      "Soğuk zincir ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında gönderim.",
+      "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında gönderim.",
     ],
   },
   {
@@ -1583,7 +1582,7 @@ export const products: Product[] = [
       { label: "Pratik dozlama", value: "Flakon başına 45 IU (≈ toplam 15 mg); sorunsuz çekim, tüm dozlarda tutarlı konsantrasyon.", kind: "claim" },
       { label: "Araştırma Alanları", value: "Doku onarımı, yağ metabolizması çalışmaları, kolajen sentezi, toparlanmanın güçlendirilmesi, uyku ve yaşlanma karşıtı modeller.", kind: "claim" },
       { label: "Örnek Araştırma Dozu", value: "Yatmadan önce 2–4 IU (toparlanma/yaşlanma karşıtı) • günde 4–6 IU (yağ kaybı) • günde 6–8 IU (hipertrofi).", kind: "claim" },
-      { label: "Saklama", value: "Soğuk zincirle gönderilir; açıldıktan sonra 2–8 °C'de buzdolabında saklayın; soğukta tutulduğunda 28 gün stabildir.", kind: "spec" },
+      { label: "Saklama", value: "Açıldıktan sonra 2–8 °C'de buzdolabında saklayın; soğukta tutulduğunda 28 gün stabildir.", kind: "spec" },
     ],
     notes: [
       "ZPtrop 90 AQ; 191 aa rhGH",

@@ -5,7 +5,7 @@ import { products } from "@/lib/products"
 const PILLARS = [
   {
     title: "ZPHC Türkiye Resmi Distribütörü",
-    line: "Zhengzhou Pharmaceutical'ın peptid ve insan büyüme hormonu hattı için Türkiye'deki resmi distribütörüyüz. Ürünler soğuk zincire uygun şekilde doğrudan depomuzdan gönderilir; aracı satıcı yoktur.",
+    line: "Zhengzhou Pharmaceutical'ın peptid ve insan büyüme hormonu hattı için Türkiye'deki resmi distribütörüyüz. Ürünler doğrudan depomuzdan, anlaşmalı kargoyla gönderilir; aracı satıcı yoktur.",
     link: { href: "/urunler", label: "Ürün kataloğu" },
   },
   {

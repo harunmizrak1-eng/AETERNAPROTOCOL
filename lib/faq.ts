@@ -21,6 +21,26 @@ export const faqItems: FaqItem[] = [
       "Fiyat ve stok durumu ürüne, miktara ve tedarik koşullarına göre değişiyor. Bu yüzden liste fiyatı yayımlamak yerine doğrudan iletişimi tercih ediyoruz. Her ürün sayfasındaki WhatsApp butonu, ilgilendiğiniz ürünün adını mesaja otomatik taşır.",
   },
   {
+    question: "Kargo ne kadar sürüyor, ücreti var mı?",
+    answer:
+      "Anlaşmalı olduğumuz Yurtiçi Kargo ile gönderiyoruz ve siparişler ertesi gün teslim ediliyor. Kargo ücreti almıyoruz, tüm siparişlerde ücretsiz. Ödemeniz ulaştığı gün kargoya veriyoruz.",
+  },
+  {
+    question: "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
+    answer:
+      "Havale/EFT ve kredi kartı kabul ediyoruz. Ödeme siparişten önce alınır; kapıda ödeme seçeneğimiz bulunmuyor.",
+  },
+  {
+    question: "Ürünler soğuk zincirle mi geliyor? Nasıl saklamalıyım?",
+    answer:
+      "Ürünler liyofilize, yani dondurularak kurutulmuş toz halinde gönderilir; bu formda taşıma sırasında soğutma gerektirmez, kargoda bozulmaz. Buzdolabı ihtiyacı sulandırdıktan sonra başlar: hazırlanan çözelti 2–8 °C'de buzdolabında saklanmalı, dondurulmamalı ve ışıktan korunmalıdır. Her ürünün kendi sayfasında o ürüne ait saklama ve stabilite süresi yazılıdır.",
+  },
+  {
+    question: "Hasarlı veya eksik ürün gelirse ne oluyor?",
+    answer:
+      "Teslim aldığınız gün içinde WhatsApp'tan bize bildirin; ürünü yeniliyor veya bedelini iade ediyoruz, tercihi siz yapıyorsunuz. Paketi açarken fotoğraf çekmeniz süreci hızlandırır.",
+  },
+  {
     question: "Ürünün orijinal olduğunu nasıl anlarım?",
     answer:
       "ZPHC her kutuya, gümüş bir kaplamanın altına benzersiz bir doğrulama kodu basar. Kaplamayı kazıyıp altındaki kodu üreticinin resmi doğrulama sistemine (validation.zphc.com) girerek kontrol edebilirsiniz. Sorgulama üreticinin sunucusunda yapılır, sonucu biz üretmiyoruz. Adım adım anlatım Doğrulama sayfamızda.",
@@ -43,7 +63,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Toplu alım ve tedarik koşulları nedir?",
     answer:
-      "Toplu alım, süreklilik gösteren sipariş ve soğuk zincir gerektiren sevkiyatlar için koşullar ürüne ve miktara göre değişiyor. WhatsApp üzerinden yazın, ihtiyacınıza göre konuşalım.",
+      "Toplu alım ve süreklilik gösteren siparişlerde koşullar ürüne ve miktara göre değişiyor. WhatsApp üzerinden yazın, ihtiyacınıza göre konuşalım.",
   },
   {
     question: "Bu bir tıbbi tavsiye mi?",

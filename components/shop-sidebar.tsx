@@ -65,7 +65,24 @@ export function ShopSidebar({ active }: { active?: string }) {
         </ul>
       </nav>
 
-      <div className="mt-8 border border-hairline bg-surface p-4">
+      {/* Kargo bilgisi satın alma kararını doğrudan etkiliyor; katalogda
+          gezerken görünmesi için kenar çubuğunun en üstünde. */}
+      <div className="mt-8 border border-gold/40 bg-gold/5 p-4">
+        <p className="text-sm font-bold text-foreground">Ertesi gün teslim</p>
+        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+          Anlaşmalı Yurtiçi Kargo ile gönderilir, <strong>kargo ücreti
+          yoktur</strong>. Ürünler liyofilize toz halinde olduğu için taşımada
+          soğutma gerekmez.
+        </p>
+        <Link
+          href="/kargo"
+          className="mt-3 inline-block text-xs font-semibold text-gold hover:underline"
+        >
+          Kargo koşulları →
+        </Link>
+      </div>
+
+      <div className="mt-6 border border-hairline bg-surface p-4">
         <h2 className="text-sm font-bold tracking-tight text-foreground">
           Orijinallik doğrulama
         </h2>

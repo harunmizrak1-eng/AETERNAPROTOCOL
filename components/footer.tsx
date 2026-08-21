@@ -11,6 +11,8 @@ const EXPLORE_LINKS = [
 
 const CONSULT_LINKS = [
   { href: "/dogrulama", label: "Orijinallik Doğrulama" },
+  { href: "/kargo", label: "Kargo & Teslimat" },
+  { href: "/iade", label: "İade & Değişim" },
   { href: whatsappLink(), label: "WhatsApp", external: true },
 ]
 

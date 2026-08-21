@@ -34,8 +34,8 @@ export default function HakkimizdaPage() {
             <p className="mt-6 text-base leading-relaxed text-foreground/85">
               Zhengzhou Pharmaceutical Co. Ltd (ZPHC) markasının peptid ve
               insan büyüme hormonu hattı için Türkiye&apos;deki resmi
-              distribütörüyüz. Ürünler soğuk zincire uygun şekilde doğrudan
-              depomuzdan çıkar; aradan başka bir satıcı geçmez.
+              distribütörüyüz. Ürünler doğrudan depomuzdan çıkar; aradan
+              başka bir satıcı geçmez.
             </p>
           </div>
         </section>

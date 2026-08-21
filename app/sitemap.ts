@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/metodoloji",
     "/sss",
     "/hakkimizda",
+    "/kargo",
+    "/iade",
     "/kosullar",
     "/gizlilik",
   ].map((path) => ({

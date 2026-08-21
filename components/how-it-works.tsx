@@ -16,8 +16,8 @@ const STEPS = [
   },
   {
     n: "03",
-    title: "Soğuk zincirle teslim alın",
-    text: "Onayladığınız sipariş, soğuk zincir korunarak doğrudan depomuzdan çıkar.",
+    title: "Ertesi gün teslim alın",
+    text: "Onayladığınız sipariş aynı gün kargoya verilir, ertesi gün adresinizde olur. Kargo ücreti yoktur.",
   },
 ]
 

@@ -258,6 +258,34 @@ export const articles: Article[] = [
       { href: "/peptidler/dsip", label: "DSIP bileşik sayfası" },
     ],
   },
+  {
+    slug: "sahte-peptid-nasil-anlasilir",
+    title: "Sahte peptid nasıl anlaşılır?",
+    category: "Orijinallik",
+    excerpt:
+      "Peptid piyasasının en büyük riski yanlış molekül değil, hiç molekül olmaması. Elinizdeki kutunun gerçek olduğunu kanıtlayan tek yöntem ve onu destekleyen kontroller.",
+    readMinutes: 5,
+    date: "2026-08-21",
+    body: [
+      "Peptid alırken tartışılan şey genellikle molekülün kendisi olur: hangi bileşik, hangi doz, hangi protokol. Oysa bu soruların hepsi, elinizdeki flakonun içinde gerçekten o molekülün bulunduğu varsayımına dayanır. Bu varsayım doğrulanmadığında geri kalan her tartışma anlamını yitirir.",
+      "Sahte üründe üç ayrı sorun iç içe geçer. Birincisi molekülün hiç olmaması ya da beyan edilenden az olması; bu durumda protokol işe yaramaz ve sebebi molekülde aranır. İkincisi yanlış molekül; benzer görünen, ucuz bir bileşiğin doğru etiketle satılması. Üçüncüsü ve en ciddisi sterilite: enjeksiyon amaçlı sunulan bir üründe içeriğin ne olduğu kadar, nasıl doldurulduğu da belirleyicidir. İlk iki sorun parayı, üçüncüsü sağlığı ilgilendirir.",
+      "Bunlardan hiçbiri gözle ayırt edilemez. Etiket kopyalanabilir, kutu basılabilir, hologram taklit edilebilir. Bu yüzden “iyi görünüyor” bir kanıt değildir. Doğrulanabilir tek şey, ürünün üreticinin üretim hattından çıkıp çıkmadığıdır — ve bunu üreticiden başka kimse söyleyemez.",
+      "ZPHC ürünlerinde bu, kutuya basılan benzersiz doğrulama koduyla çözülür. Kod, gümüş bir kaplamanın altında kapalı gelir; kaplamayı siz kazır, altındaki kodu üreticinin kendi sisteminde sorgularsınız. Sorgulama üreticinin sunucusunda yapılır, sonucu satıcı üretmez. Mekanizmanın bütün değeri buradadır: satıcının kendi ürünü hakkındaki beyanını devreden çıkarır. Bir satıcı size kendi sitesinde “doğrulandı” yazan bir ekran gösteriyorsa, doğrulama yapılmamış demektir.",
+      "Kod sorgusunu destekleyen, ama yerine geçmeyen kontroller de var. Kutu ile flakon üzerindeki parti numarası birbirini tutmalı. Gümüş kaplama siz kazımadan kazınmış olmamalı. Flakonun alüminyum kapağı sıkı oturmalı. Liyofilize peptid flakonun dibinde kuru ve beyaz durur; sararma, ıslaklık ya da erimiş görünüm genellikle soğuk zincirin kırıldığını gösterir. Buna karşılık “flakon boş görünüyor” yaygın bir yanlış alarmdır: birkaç miligramlık liyofilize toz, cidara dağıldığında gözle neredeyse görünmez.",
+      "Pratikte belirleyici olan şey ürün değil, kanal. Sahte ürünle karşılaşma ihtimalini en çok artıran durum, satıcının kim olduğunun belli olmaması: ticaret unvanı yok, yazılı sipariş kaydı yok, satış tamamen özel mesaj üzerinden yürüyor. Buna doğrulama kodu sorulduğunda gelen kaçamak cevaplar eklendiğinde — “o sistem artık çalışmıyor”, “bu partide kod yok”, “kodu biz sorgularız” — tablo yeterince nettir.",
+      "Fiyat da bir sinyaldir, ama tek başına değil. Orijinal ürünün maliyeti üretimden ibaret değildir; soğuk zincir, ithalat ve ambalaj bir maliyet üretir. Piyasanın belirgin altındaki fiyatın açıklanabilir bir sebebi olmalıdır. Bu sebep sorulduğunda net bir cevap gelmiyorsa, fiyat farkı bir kampanya değil, bir uyarıdır.",
+      "Doğrulama tutmadıysa ürünü kullanmayın, ambalajı atmayın ve kaydı yazılı hale getirin. Kutu, etiket ve doğrulama sonucunun ekran görüntüsü sonraki her adımın tek kanıtıdır. Sahte ürün aynı zamanda markanın kendisine karşı bir ihlaldir; üretici bu bildirimleri takip eder. Türkiye'de sahte tıbbi ürün şüphesi TİTCK'nın ihbar kanalına bildirilebilir.",
+      "Bu yazının amacı kimseyi işaret etmek değil. Sahte ürüne karşı kullanılabilir tek araç, alıcının doğrulamayı kendi eliyle yapabilmesidir. Satıcının sözü — bizimki de dahil — o doğrulamanın yerine geçmez.",
+    ],
+    relatedLinks: [
+      { href: "/dogrulama", label: "Adım adım orijinallik doğrulama" },
+      {
+        href: "/metodoloji",
+        label: "Metodoloji: Kanıtı nasıl değerlendiriyoruz",
+      },
+      { href: "/sss", label: "Sık sorulan sorular" },
+    ],
+  },
 ]
 
 export const getArticle = (slug: string) =>

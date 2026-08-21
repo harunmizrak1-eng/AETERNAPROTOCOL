@@ -1,17 +1,35 @@
 import Link from "next/link"
 import { peptides } from "@/lib/peptides"
 import { products } from "@/lib/products"
+import { distributorCertificate } from "@/lib/verification"
 
-const PILLARS = [
+interface Pillar {
+  title: string
+  line: string
+  link: { href: string; label: string }
+  /** İkincil bağlantı; yalnızca gerçekten bir hedefi varsa render edilir.
+   *  Distribütörlük belgesi siteye eklenene kadar birinci sütunda boş
+   *  kalır — olmayan belgeye bağlantı verilmez (bkz. lib/verification.ts). */
+  secondaryLink?: { href: string; label: string; external?: boolean }
+}
+
+const PILLARS: Pillar[] = [
   {
     title: "ZPHC Türkiye Resmi Distribütörü",
     line: "Zhengzhou Pharmaceutical'ın peptid ve insan büyüme hormonu hattı için Türkiye'deki resmi distribütörüyüz. Ürünler soğuk zincire uygun şekilde doğrudan depomuzdan gönderilir; aracı satıcı yoktur.",
     link: { href: "/urunler", label: "Ürün kataloğu" },
+    secondaryLink: distributorCertificate
+      ? { ...distributorCertificate, external: true }
+      : undefined,
   },
   {
     title: "Orijinalliği kendiniz doğrulayın",
     line: "ZPHC her kutuya, gümüş kaplamanın altına benzersiz bir kod basıyor. Kodu üreticinin kendi sitesinde (validation.zphc.com) sorguluyorsunuz; sonucu biz değil, üretici veriyor. Orijinal ile taklidi ayıran tek yöntem bu.",
     link: { href: "/dogrulama", label: "Nasıl doğrulanır" },
+    secondaryLink: {
+      href: "/journal/sahte-peptid-nasil-anlasilir",
+      label: "Sahte peptid nasıl anlaşılır",
+    },
   },
   {
     title: "Her ürünün bilimsel kaydı var",
@@ -43,14 +61,30 @@ export function WhyZphc() {
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {p.line}
               </p>
-              {p.link && (
-                <Link
-                  href={p.link.href}
-                  className="mt-4 text-sm font-medium text-gold transition-opacity hover:opacity-70"
-                >
-                  {p.link.label} →
-                </Link>
-              )}
+              <Link
+                href={p.link.href}
+                className="mt-4 text-sm font-medium text-gold transition-opacity hover:opacity-70"
+              >
+                {p.link.label} →
+              </Link>
+              {p.secondaryLink &&
+                (p.secondaryLink.external ? (
+                  <a
+                    href={p.secondaryLink.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {p.secondaryLink.label} →
+                  </a>
+                ) : (
+                  <Link
+                    href={p.secondaryLink.href}
+                    className="mt-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {p.secondaryLink.label} →
+                  </Link>
+                ))}
             </div>
           ))}
         </div>

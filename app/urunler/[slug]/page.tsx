@@ -11,6 +11,7 @@ import { citations } from "@/lib/citations"
 import { siteUrl } from "@/lib/site"
 import { RelatedProducts } from "@/components/related-products"
 import { StockBadge } from "@/components/product-card"
+import { VerificationStrip } from "@/components/verification-strip"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -205,6 +206,8 @@ export default async function UrunPage({
                 </dl>
               </div>
             )}
+
+            <VerificationStrip slug={product.slug} />
 
             {product.notes.length > 0 && (
               <ul className="mt-10 space-y-2">

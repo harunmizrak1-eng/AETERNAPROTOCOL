@@ -27,6 +27,16 @@ export const faqItems: FaqItem[] = [
       "ZPHC her kutuya, gümüş bir kaplamanın altına benzersiz bir doğrulama kodu basar. Kaplamayı kazıyıp altındaki kodu üreticinin resmi doğrulama sistemine (validation.zphc.com) girerek kontrol edebilirsiniz. Sorgulama üreticinin sunucusunda yapılır, sonucu biz üretmiyoruz. Adım adım anlatım Doğrulama sayfamızda.",
   },
   {
+    question: "Piyasada aynı ürünü çok daha ucuza gördüm, neden?",
+    answer:
+      "Orijinal ürünün maliyeti üretim fiyatından ibaret değil; soğuk zincir, ithalat ve orijinal ambalaj maliyet üretir. Piyasanın belirgin altındaki bir fiyatın açıklanabilir bir sebebi olmalıdır. Fiyat farkı tek başına sahtelik kanıtı değildir, ancak satıcının kimliği belirsizse ve doğrulama kodu sorulduğunda net cevap alınamıyorsa birlikte değerlendirilmelidir.",
+  },
+  {
+    question: "Doğrulama kodu tutmazsa ne yapmalıyım?",
+    answer:
+      "Ürünü kullanmayın ve ambalajı atmayın. Kutunun ön ve arka yüzünü, parti numarasını, kazınmış kod alanını ve doğrulama sonucunun ekran görüntüsünü fotoğraflayın; satıcıya yazılı olarak bildirin. Sahte ürün aynı zamanda markanın kendisine karşı bir ihlaldir, üretici bu bildirimleri takip eder. Türkiye'de sahte tıbbi ürün şüphesi TİTCK'nın ihbar kanalına bildirilebilir. Adım adım anlatım Doğrulama sayfamızda.",
+  },
+  {
     question: "Kanıt seviyesi sistemi ne anlama geliyor?",
     answer:
       "Kütüphanedeki her bileşiği üç kademeye ayırıyoruz: Klinik Kanıt (randomize insan çalışmaları mevcut), Mekanistik/Teorik (mekanizma iyi tanımlı ama geniş insan verisi yok) ve Preklinik (kanıt büyük ölçüde hayvan çalışmalarına dayalı). Bu ayrımı popülerlik, satış hacmi veya üreticinin pazarlama metninden tamamen bağımsız tutuyoruz.",

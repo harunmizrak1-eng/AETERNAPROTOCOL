@@ -33,9 +33,8 @@ export function SizeComparison({ product }: { product: Product }) {
         Boyut karşılaştırması
       </h2>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        Aynı bileşiğin katalogdaki diğer boyutları. Hangisinin size uygun
-        olduğu kullanım planınıza bağlıdır; emin değilseniz WhatsApp&apos;tan
-        sorun.
+        Aynı üründen katalogda bulunan diğer boyutlar. Hangisini almanız
+        gerektiğinden emin değilseniz WhatsApp&apos;tan sorun.
       </p>
 
       <div className="mt-6 overflow-x-auto">

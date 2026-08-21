@@ -70,9 +70,8 @@ export function ShopSidebar({ active }: { active?: string }) {
       <div className="mt-8 border border-gold/40 bg-gold/5 p-4">
         <p className="text-sm font-bold text-foreground">Ertesi gün teslim</p>
         <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-          Anlaşmalı Yurtiçi Kargo ile gönderilir, <strong>kargo ücreti
-          yoktur</strong>. Ürünler liyofilize toz halinde olduğu için taşımada
-          soğutma gerekmez.
+          Yurtiçi Kargo ile gönderiyoruz, <strong>kargo ücreti almıyoruz</strong>.
+          Ürünler toz halinde olduğu için yolda soğutma gerekmiyor.
         </p>
         <Link
           href="/kargo"
@@ -87,8 +86,8 @@ export function ShopSidebar({ active }: { active?: string }) {
           Orijinallik doğrulama
         </h2>
         <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-          Her ZPHC kutusunda gümüş kaplamanın altında benzersiz bir kod var.
-          Kodu üreticinin kendi sisteminde sorgulayın.
+          Her kutuda gümüş bandın altında bir kod var. Kazıyıp üreticinin
+          sitesinde sorgulayabilirsiniz.
         </p>
         <Link
           href="/dogrulama"
@@ -103,8 +102,8 @@ export function ShopSidebar({ active }: { active?: string }) {
           Bileşik kütüphanesi
         </h2>
         <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-          {peptides.length} bileşiğin etki mekanizması ve kanıt seviyesi,
-          literatür referanslarıyla birlikte.
+          {peptides.length} bileşiğin ne işe yaradığı, kanıt seviyesi ve
+          kaynakları.
         </p>
         <Link
           href="/peptidler"

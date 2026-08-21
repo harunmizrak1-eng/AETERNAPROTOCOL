@@ -166,7 +166,7 @@ export const peptides: Peptide[] = [
       "Flakonu oda sıcaklığına gelene kadar bekletin (15-20 dakika)",
       "Flakon kapağını alkollü mendille temizleyin ve tamamen kurumasını bekleyin",
       "Hesaplanan bakteriyostatik suyu flakon kenarından yavaşça ekleyin",
-      "Dairesel hareketlerle nazikçe çalkalayın — sert sallamaktan kaçının",
+      "Dairesel hareketlerle nazikçe çalkalayın, sert sallamaktan kaçının",
       "Tam çözünmeyi bekleyin (2-3 dakika); çözelti berrak ve renksiz olmalı",
       "Sulandırılmış çözeltiyi 2-8°C'de buzdolabında en fazla 28 gün saklayın",
       "Subkutan enjekte edin; bölgeleri haftalık rotasyonla değiştirin",
@@ -190,19 +190,19 @@ export const peptides: Peptide[] = [
       "Safra kesesi sorunları: sağ üst karında şiddetli ağrı",
     ],
     sideEffects: [
-      "Gastrointestinal etkiler (bulantı, kusma, ishal) — genellikle hafif-orta düzeyde",
-      "Kalp atış hızında artış — özellikle ilk 24 haftada yaygın",
+      "Gastrointestinal etkiler (bulantı, kusma, ishal), genellikle hafif-orta düzeyde",
+      "Kalp atış hızında artış, özellikle ilk 24 haftada yaygın",
       "İştah baskılanması",
       "Hafif dehidrasyon",
     ],
     interactions: [
       {
         compound: "Tirzepatide",
-        note: "Başka çift/üçlü agonistlerle birleştirilmemelidir — şiddetli hipoglisemi ve aşırı gastrointestinal etki riski.",
+        note: "Başka çift/üçlü agonistlerle birleştirilmemelidir, şiddetli hipoglisemi ve aşırı gastrointestinal etki riski.",
       },
       {
         compound: "Semaglutide",
-        note: "Birleştirilmemelidir — örtüşen GLP-1 agonist mekanizmaları şiddetli hipoglisemi riskini artırır.",
+        note: "Birleştirilmemelidir, örtüşen GLP-1 agonist mekanizmaları şiddetli hipoglisemi riskini artırır.",
       },
       {
         compound: "BPC-157",
@@ -274,7 +274,7 @@ export const peptides: Peptide[] = [
       "KRİTİK: Fibril oluşumunu önlemek için asidik pH (3.5-4.5) gereklidir",
       "Flakon kenarından yavaşça sulandırın; nazikçe çalkalayın (sallamayın)",
       "Sulandırma sonrası pH 3.5-4.5 olduğunu doğrulayın",
-      "Çözelti berrak olmalı — bulanık veya parçacıklıysa atın",
+      "Çözelti berrak olmalı, bulanık veya parçacıklıysa atın",
       "Buzdolabında saklayın (2-8°C); her enjeksiyondan önce kontrol edin",
       "Enjeksiyondan önce oda sıcaklığına gelmesi için 15-30 dakika bekleyin",
       "Enjeksiyon bölgelerini haftalık rotasyonla değiştirin",
@@ -477,7 +477,7 @@ export const peptides: Peptide[] = [
       "Bakteriyostatik suyu dikkatlice şırıngaya çekin",
       "İğneyi cam duvara karşı 45 derece açıyla yerleştirin",
       "Köpürmeyi önlemek için suyu flakon kenarından yavaşça enjekte edin",
-      "Nazikçe çalkalayın — asla sert sallamayın",
+      "Nazikçe çalkalayın, asla sert sallamayın",
       "Bulanıklık varsa berraklaşması için 2-3 dakika bekleyin",
       "Son çözelti tamamen berrak ve renksiz olmalı",
       "Tarih ve konsantrasyon ile etiketleyin",
@@ -507,7 +507,7 @@ export const peptides: Peptide[] = [
     interactions: [
       {
         compound: "Semaglutide",
-        note: "Her ikisi de GLP-1 agonistidir — birleştirmek hipoglisemi ve şiddetli gastrointestinal yan etki riskini artırır.",
+        note: "Her ikisi de GLP-1 agonistidir, birleştirmek hipoglisemi ve şiddetli gastrointestinal yan etki riskini artırır.",
       },
       {
         compound: "İnsülin",
@@ -523,7 +523,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "Liraglutide",
-        note: "Başka bir GLP-1 agonisti — ikili tedavi birikimli etkiler nedeniyle kontrendikedir.",
+        note: "Başka bir GLP-1 agonisti, ikili tedavi birikimli etkiler nedeniyle kontrendikedir.",
       },
       {
         compound: "5-Amino-1MQ",
@@ -690,7 +690,7 @@ export const peptides: Peptide[] = [
       "İsteğe bağlı: IV kullanım için steril filtrasyon",
       "Konsantrasyon ve tarih ile etiketleyin",
       "Hemen 2-8°C'de saklayın",
-      "Işıktan koruyun — mümkünse amber flakon kullanın",
+      "Işıktan koruyun, mümkünse amber flakon kullanın",
     ],
     dosing: [
       { label: "Genel Mitokondriyal Destek", amount: "5-10mg", amountValue: 10, frequency: "Günde 1 kez", route: "Subkutan" },
@@ -996,7 +996,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "Uyarıcılar",
-        note: "Uyarıcı etkileri güçlendirebilir — dikkatle izlenmeli, uyarıcı dozu azaltılmalı.",
+        note: "Uyarıcı etkileri güçlendirebilir, dikkatle izlenmeli, uyarıcı dozu azaltılmalı.",
       },
       {
         compound: "MAO İnhibitörleri",
@@ -1004,7 +1004,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "NA-Semax-Amidat",
-        note: "Aynı peptidin varyantlarıdır — eşzamanlı kullanılmamalı, ikisinden biri seçilmelidir.",
+        note: "Aynı peptidin varyantlarıdır, eşzamanlı kullanılmamalı, ikisinden biri seçilmelidir.",
       },
     ],
     expectedTimeline: [
@@ -1065,7 +1065,7 @@ export const peptides: Peptide[] = [
       "Süregelen enjeksiyon bölgesi reaksiyonu veya enfeksiyon belirtileri",
     ],
     sideEffects: [
-      "Minimal yan etki — güvenlik profili iyi",
+      "Minimal yan etki, güvenlik profili iyi",
       "Sedasyon veya bilişsel bozulma yok",
       "Tolerans, bağımlılık veya kesilme belirtisi bildirilmedi",
     ],
@@ -1192,7 +1192,7 @@ export const peptides: Peptide[] = [
     ],
     qualityIndicators: {
       good: [
-        "Beyaz liyofilize toz — ince, eşit dağılmış, hafif kabarık doku",
+        "Beyaz liyofilize toz, ince, eşit dağılmış, hafif kabarık doku",
         "Sulandırma sonrası parçacıksız, berrak renksiz çözelti",
         "Sağlam vakumlu mühür ve güvenli lastik tıpa",
       ],
@@ -1324,7 +1324,7 @@ export const peptides: Peptide[] = [
     interactions: [
       {
         compound: "Thymalin",
-        note: "Güçlendirilmiş immünomodülasyon — Rus protokollerinde sıklıkla birlikte kullanılır.",
+        note: "Güçlendirilmiş immünomodülasyon, Rus protokollerinde sıklıkla birlikte kullanılır.",
       },
       {
         compound: "Semax",
@@ -1363,7 +1363,7 @@ export const peptides: Peptide[] = [
       bad: [
         "Sarı veya renk değişimi göstermiş toz (bozulma)",
         "Karıştırma sonrası bulanık çözelti (kontaminasyon)",
-        "Yaygın doz yanlış bilgisi: birçok kaynak çeviri hatasına dayanarak 5-10mg önerir, oysa orijinal araştırma mikrogram düzeyinde etkinlik göstermiştir — tedarikçi bilgilerini dikkatle doğrulayın",
+        "Yaygın doz yanlış bilgisi: birçok kaynak çeviri hatasına dayanarak 5-10mg önerir, oysa orijinal araştırma mikrogram düzeyinde etkinlik göstermiştir, tedarikçi bilgilerini dikkatle doğrulayın",
       ],
     },
   },
@@ -1470,7 +1470,7 @@ export const peptides: Peptide[] = [
     ],
     warnings: [
       "Gebelik veya emzirme dönemi",
-      "WADA tarafından yasaklı — test edilen sporcular kaçınmalı",
+      "WADA tarafından yasaklı, test edilen sporcular kaçınmalı",
       "Şiddetli enjeksiyon bölgesi reaksiyonu veya enfeksiyon belirtisi",
       "Olağandışı şişlik veya süregelen kızarıklık",
     ],
@@ -1561,7 +1561,7 @@ export const peptides: Peptide[] = [
     interactions: [
       {
         compound: "İmmünosüpresif Ajanlar",
-        note: "Nakil hastalarında ölümcül greft reddi riski — kontrendikedir.",
+        note: "Nakil hastalarında ölümcül greft reddi riski, kontrendikedir.",
       },
       {
         compound: "Kortikosteroidler",
@@ -1642,15 +1642,15 @@ export const peptides: Peptide[] = [
     interactions: [
       {
         compound: "Sildenafil/Tadalafil",
-        note: "PT-141 merkezi, PDE5 inhibitörleri periferik etki gösterir — birikimli tansiyon etkisi izlenmeli.",
+        note: "PT-141 merkezi, PDE5 inhibitörleri periferik etki gösterir, birikimli tansiyon etkisi izlenmeli.",
       },
       {
         compound: "Nitratlar",
-        note: "Şiddetli hipotansiyon riski — kalp hastalığı ilaçlarıyla kontrendikedir.",
+        note: "Şiddetli hipotansiyon riski, kalp hastalığı ilaçlarıyla kontrendikedir.",
       },
       {
         compound: "Alkol",
-        note: "Her ikisi de tansiyonu düşürür ve yüz kızarmasına neden olur — aşırı hipotansiyondan kaçınmak için tüketim sınırlanmalı.",
+        note: "Her ikisi de tansiyonu düşürür ve yüz kızarmasına neden olur, aşırı hipotansiyondan kaçınmak için tüketim sınırlanmalı.",
       },
       {
         compound: "Melanotan II",
@@ -1658,7 +1658,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "Tansiyon İlaçları",
-        note: "PT-141 geçici olarak tansiyonu düşürebilir — yakından izlenmelidir.",
+        note: "PT-141 geçici olarak tansiyonu düşürebilir, yakından izlenmelidir.",
       },
       {
         compound: "BPC-157",
@@ -1671,8 +1671,8 @@ export const peptides: Peptide[] = [
     ],
     expectedTimeline: [
       { period: "0-30 Dakika", result: "Hafif bulantı veya yüz kızarması olası" },
-      { period: "45-90 Dakika", result: "Etki başlangıcı — artan uyarılma ve istek" },
-      { period: "2-4 Saat", result: "Zirve etki — güçlendirilmiş cinsel yanıt" },
+      { period: "45-90 Dakika", result: "Etki başlangıcı, artan uyarılma ve istek" },
+      { period: "2-4 Saat", result: "Zirve etki, güçlendirilmiş cinsel yanıt" },
       { period: "6-12 Saat", result: "Etkilerin kademeli azalması" },
     ],
     qualityIndicators: {
@@ -2102,7 +2102,7 @@ export const peptides: Peptide[] = [
       { label: "Yoğun Öğrenme Protokolü", amount: "10-15mg", amountValue: 15, frequency: "Günde 1 kez (sabah)", route: "Oral" },
     ],
     warnings: [
-      "FDA onaylı değil — yalnızca araştırma bileşiği",
+      "FDA onaylı değil, yalnızca araştırma bileşiği",
       "c-Met aktivasyonu üzerinden teorik kanser riski",
       "Kanser öyküsü (c-Met yolağı nedeniyle kaçınılmalı)",
       "Gebelik veya emzirme dönemi",
@@ -2227,7 +2227,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "Noopept",
-        note: "Her ikisi de nörotrofik faktörleri artırır; birikimli etkiler olası — düşük dozla başlanmalı.",
+        note: "Her ikisi de nörotrofik faktörleri artırır; birikimli etkiler olası, düşük dozla başlanmalı.",
       },
     ],
     expectedTimeline: [
@@ -2308,11 +2308,11 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "GHRP-2",
-        note: "Gereksiz GH yolları reseptör desensitizasyonuna neden olabilir — kaçının.",
+        note: "Gereksiz GH yolları reseptör desensitizasyonuna neden olabilir, kaçının.",
       },
       {
         compound: "GHRP-6",
-        note: "Benzer mekanizma, daha yüksek açlık etkisiyle; gereksiz — kaçının.",
+        note: "Benzer mekanizma, daha yüksek açlık etkisiyle; gereksiz, kaçının.",
       },
     ],
     expectedTimeline: [
@@ -2371,7 +2371,7 @@ export const peptides: Peptide[] = [
       "Kontrolsüz diyabet veya belirgin glukoz intoleransı",
     ],
     sideEffects: [
-      "Enjeksiyon bölgesi reaksiyonları (hastaların %16,7'sinde — genellikle hafif)",
+      "Enjeksiyon bölgesi reaksiyonları (hastaların %16,7'sinde, genellikle hafif)",
       "Burun tahrişi (intranazal yolda)",
     ],
     interactions: [
@@ -2381,7 +2381,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "CJC-1295",
-        note: "Çok etkili kombinasyon — CJC-1295 sürdürülebilir 6-8 günlük salınım sağlarken sermorelin ani pulsatil etki sunar.",
+        note: "Çok etkili kombinasyon, CJC-1295 sürdürülebilir 6-8 günlük salınım sağlarken sermorelin ani pulsatil etki sunar.",
       },
       {
         compound: "İnsülin",
@@ -2389,7 +2389,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "Octreotide/Lanreotide",
-        note: "Somatostatin analogları, inhibitör reseptörleri aktive ederek GH salınımını doğrudan bloke eder — kaçının.",
+        note: "Somatostatin analogları, inhibitör reseptörleri aktive ederek GH salınımını doğrudan bloke eder, kaçının.",
       },
       {
         compound: "Prednizon",
@@ -2547,7 +2547,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "GABA Agonistleri",
-        note: "DSIP GABA'yı güçlendirir — aşırı sedasyona dikkat edilmeli.",
+        note: "DSIP GABA'yı güçlendirir, aşırı sedasyona dikkat edilmeli.",
       },
       {
         compound: "Kortizol Düzenleyicileri",
@@ -2784,22 +2784,22 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Preklinik ağırlıklı, insan verisi yok",
     dosingNote:
-      "İnsan kullanımı için hiçbir zaman onaylanmamıştır — yalnızca araştırma kimyasalıdır. Kaynak protokoller, enjeksiyon sonrası hipoglisemiyi önlemek için hızlı karbonhidrat alımını zorunlu tutar; yatmadan önce asla enjekte edilmemesi belirtilir.",
+      "İnsan kullanımı için hiçbir zaman onaylanmamıştır, yalnızca araştırma kimyasalıdır. Kaynak protokoller, enjeksiyon sonrası hipoglisemiyi önlemek için hızlı karbonhidrat alımını zorunlu tutar; yatmadan önce asla enjekte edilmemesi belirtilir.",
     dosing: [
       { label: "Başlangıç Protokolü", amount: "20-30mcg", amountValue: 30, frequency: "Günde 1 kez, antrenman sonrası", route: "Subkutan/Kas içi" },
       { label: "Orta Düzey", amount: "40-60mcg", amountValue: 60, frequency: "Günde 1 kez", route: "Subkutan/Kas içi" },
       { label: "İleri Düzey", amount: "80-100mcg", amountValue: 100, frequency: "Günde 1 kez veya sabah/akşam bölünmüş", route: "Subkutan/Kas içi" },
     ],
     warnings: [
-      "İnsan kullanımı için ONAYLANMAMIŞTIR — yalnızca araştırma kimyasalı",
+      "İnsan kullanımı için ONAYLANMAMIŞTIR, yalnızca araştırma kimyasalı",
       "Kanser öyküsü veya tanı almamış büyümeler",
       "Organ hipertrofisine (kalp, bağırsak) neden olabilir",
-      "WADA tarafından yasaklı — pozitif dopingi testine yol açar",
+      "WADA tarafından yasaklı, pozitif dopingi testine yol açar",
       "Karbonhidrat alımına rağmen şiddetli veya tekrarlayan hipoglisemi",
       "Olağandışı büyüme, kitle veya hızlı ben değişimi",
     ],
     sideEffects: [
-      "Hipoglisemi (30 saate kadar sürebilir) — KRİTİK",
+      "Hipoglisemi (30 saate kadar sürebilir), KRİTİK",
       "Su tutulumu",
       "Eklem sertliği",
       "Kas ağrısı",
@@ -2859,7 +2859,7 @@ export const peptides: Peptide[] = [
       bad: [
         "İnsan kullanımı için hiçbir zaman onaylanmamış araştırma kimyasalı statüsü",
         "Sıfır insan klinik çalışması mevcut",
-        "Kayıt dışı piyasa kalitesi değişken — oksitlenmiş ve bozulmuş formlar yaygın",
+        "Kayıt dışı piyasa kalitesi değişken, oksitlenmiş ve bozulmuş formlar yaygın",
       ],
     },
   },
@@ -2885,7 +2885,7 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Sınırlı insan verisi, çoğunlukla mekanistik",
     dosingNote:
-      "Aç karnına subkutan uygulanmalıdır — yükselmiş kan şekeri veya insülin GH salınımını belirgin şekilde köreltir.",
+      "Aç karnına subkutan uygulanmalıdır, yükselmiş kan şekeri veya insülin GH salınımını belirgin şekilde köreltir.",
     dosing: [
       { label: "GH Optimizasyonu", amount: "100mcg", amountValue: 100, frequency: "Günde 2-3 kez", route: "Subkutan" },
       { label: "Güçlendirilmiş Sonuçlar", amount: "200-300mcg", amountValue: 300, frequency: "Günde 2-3 kez", route: "Subkutan" },
@@ -3057,7 +3057,7 @@ export const peptides: Peptide[] = [
       "Bilinen peptid alerjileri",
       "Aktif şiddetli enfeksiyonlar (teorik)",
       "Gebelik veya emzirme dönemi (sınırlı veri)",
-      "Enfeksiyon belirtileri (ateş, titreme) — çok nadir",
+      "Enfeksiyon belirtileri (ateş, titreme), çok nadir",
       "Paradoksal inflamasyon artışı",
     ],
     sideEffects: [
@@ -3282,7 +3282,7 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Tamamen preklinik, insan verisi yok",
     dosingNote:
-      "İnsan güvenlik verisi bulunmamaktadır — tüm protokoller preklinik/hayvan araştırmalarından tahmin edilmiştir.",
+      "İnsan güvenlik verisi bulunmamaktadır, tüm protokoller preklinik/hayvan araştırmalarından tahmin edilmiştir.",
     dosing: [
       { label: "Anti-Fibrotik / Kardiyovasküler Destek", amount: "100-250mcg", amountValue: 250, frequency: "Günde 1 kez", route: "Subkutan" },
     ],
@@ -3290,7 +3290,7 @@ export const peptides: Peptide[] = [
       "Önceden var olan hipotansiyon veya vazodilatasyonla kötüleşen durumlar",
       "Gebelik veya emzirme dönemi (güvenlik verisi yok)",
       "Güçlü antihipertansif ajanların tıbbi gözetim olmadan eşzamanlı kullanımı",
-      "İnsan güvenlik verisi bulunmuyor — tüm protokoller preklinik araştırmadan tahmin edilmiştir",
+      "İnsan güvenlik verisi bulunmuyor, tüm protokoller preklinik araştırmadan tahmin edilmiştir",
       "Süregelen veya semptomatik hipotansiyon (baş dönmesi, sersemlik, bayılma)",
     ],
     sideEffects: [
@@ -3350,13 +3350,13 @@ export const peptides: Peptide[] = [
       { outcome: "Methemoglobinemi Tedavisi", tier: "proven" },
     ],
     dosingNote:
-      "Oral yol, düşük doz nootropik/longevity kullanımı için standarttır (%72 civarı biyoyararlanım). Yalnızca eczacılık kalitesinde (USP) formlar kullanılmalıdır — endüstriyel/laboratuvar kalitesi ağır metal kontaminasyonu içerebilir.",
+      "Oral yol, düşük doz nootropik/longevity kullanımı için standarttır (%72 civarı biyoyararlanım). Yalnızca eczacılık kalitesinde (USP) formlar kullanılmalıdır, endüstriyel/laboratuvar kalitesi ağır metal kontaminasyonu içerebilir.",
     dosing: [
       { label: "Düşük Doz Nootropik", amount: "0.5-1 mg/kg", amountValue: 1, frequency: "Günde 1 kez (sabah)", route: "Oral (USP kalite)" },
       { label: "Orta Düzey Bilişsel Destek", amount: "1-2 mg/kg", amountValue: 2, frequency: "Günde 1 kez (sabah)", route: "Oral (USP kalite)" },
     ],
     warnings: [
-      "SSRI, SNRI veya MAO inhibitörü ile eşzamanlı kullanım (serotonin sendromu riski — KRİTİK)",
+      "SSRI, SNRI veya MAO inhibitörü ile eşzamanlı kullanım (serotonin sendromu riski, KRİTİK)",
       "Glukoz-6-fosfat dehidrogenaz (G6PD) eksikliği (şiddetli hemolitik anemi riski)",
       "Böbrek yetmezliği (esas olarak böbrekten atılır)",
       "Methylene blue veya fenotiazin bileşiklerine bilinen aşırı duyarlılık",
@@ -3372,7 +3372,7 @@ export const peptides: Peptide[] = [
     interactions: [
       {
         compound: "SSRI'lar",
-        note: "KRİTİK ETKİLEŞİM: Methylene blue güçlü bir MAO-A inhibitörüdür. SSRI'larla (fluoksetin, sertralin, paroksetin) birleştirilmesi hayatı tehdit edebilecek serotonin sendromuna yol açabilir. FDA bu kombinasyona karşı resmi uyarı yayınlamıştır — eşzamanlı kullanılmamalıdır.",
+        note: "KRİTİK ETKİLEŞİM: Methylene blue güçlü bir MAO-A inhibitörüdür. SSRI'larla (fluoksetin, sertralin, paroksetin) birleştirilmesi hayatı tehdit edebilecek serotonin sendromuna yol açabilir. FDA bu kombinasyona karşı resmi uyarı yayınlamıştır, eşzamanlı kullanılmamalıdır.",
       },
       {
         compound: "MAO İnhibitörleri",
@@ -3384,7 +3384,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "SNRI'lar",
-        note: "SSRI'larla aynı serotonin sendromu riski (venlafaksin, duloksetin) — MAO-A inhibisyonu nedeniyle birleştirilmemelidir.",
+        note: "SSRI'larla aynı serotonin sendromu riski (venlafaksin, duloksetin), MAO-A inhibisyonu nedeniyle birleştirilmemelidir.",
       },
       {
         compound: "Tramadol / Meperidin",
@@ -3512,7 +3512,7 @@ export const peptides: Peptide[] = [
     ],
     clinicalStatus: "Tamamen preklinik, yalnızca hayvan çalışmaları",
     dosingNote:
-      "Hiçbir insan dozaj protokolü doğrulanmamıştır. Aşağıdaki değer, 2017 fare çalışmasının (5mg/kg, İP, gün aşırı 3 doz) 60kg bir insana matematiksel ölçeklenmesidir — klinik bir doz önerisi değildir.",
+      "Hiçbir insan dozaj protokolü doğrulanmamıştır. Aşağıdaki değer, 2017 fare çalışmasının (5mg/kg, İP, gün aşırı 3 doz) 60kg bir insana matematiksel ölçeklenmesidir, klinik bir doz önerisi değildir.",
     dosing: [
       { label: "Fare Çalışması Ölçeklemesi (60kg insan için)", amount: "~25mg", amountValue: 25, frequency: "3 doz, gün aşırı", route: "İntraperitoneal (orijinal çalışma)" },
     ],
@@ -3520,7 +3520,7 @@ export const peptides: Peptide[] = [
       "İnsan kullanımı için henüz onaylanmamıştır",
       "Gebelik veya emzirme dönemi",
       "Bağışıklığı baskılanmış bireylerde güvenlik bilinmiyor",
-      "Aktif kanser (teorik — onkologla görüşülmeli)",
+      "Aktif kanser (teorik, onkologla görüşülmeli)",
       "Alerjik reaksiyonlar",
     ],
     sideEffects: [
@@ -3684,7 +3684,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "Vesugen",
-        note: "Tamamlayıcı kardiyovasküler biyoregülatörler — Cardiogen kalp için, Vesugen damarlar için.",
+        note: "Tamamlayıcı kardiyovasküler biyoregülatörler, Cardiogen kalp için, Vesugen damarlar için.",
       },
       {
         compound: "Pinealon",
@@ -3906,7 +3906,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "DNP/FCCP",
-        note: "Diğer mitokondriyal uncoupler'larla birleştirilmemelidir — tehlikeli birikimli etkiler mümkündür.",
+        note: "Diğer mitokondriyal uncoupler'larla birleştirilmemelidir, tehlikeli birikimli etkiler mümkündür.",
       },
       {
         compound: "MOTS-c",
@@ -4008,12 +4008,12 @@ export const peptides: Peptide[] = [
     ],
     qualityIndicators: {
       good: [
-        "Sağlam liyofilize kek — beyaz, homojen, uygun liyofilizasyona işaret eder",
-        "Berrak çözelti — sulandırma sonrası tam çözünmüş, parçacıksız",
+        "Sağlam liyofilize kek, beyaz, homojen, uygun liyofilizasyona işaret eder",
+        "Berrak çözelti, sulandırma sonrası tam çözünmüş, parçacıksız",
       ],
       bad: [
         "Çökmüş/nemli kek, sıcaklık sapmasına işaret eder; kalite kontrolü olmadan kullanılmamalı",
-        "Bulanıklık/çökelti bozulma veya kontaminasyona işaret eder — atılmalı",
+        "Bulanıklık/çökelti bozulma veya kontaminasyona işaret eder, atılmalı",
       ],
     },
   },

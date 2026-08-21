@@ -36,8 +36,8 @@ export default function IadePage() {
               </p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Siparişinizde hasar veya eksik varsa, teslim aldığınız gün
-                içinde WhatsApp&apos;tan bize yazın. Bu süre içinde bildirilen
-                sorunları telafi ediyoruz.
+                WhatsApp&apos;tan bize yazın. Aynı gün bildirilen sorunları
+                telafi ediyoruz.
               </p>
             </div>
           </div>
@@ -50,15 +50,14 @@ export default function IadePage() {
                 Hasarlı veya eksik ürün
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Kutu ezilmiş, flakon kırılmış ya da sipariş ettiğiniz ürünlerden
-                biri eksik geldiyse aynı gün içinde bize bildirin. Bu durumlarda
-                ürünü yeniliyor veya bedelini iade ediyoruz; hangisini
-                tercih ettiğinizi siz seçersiniz.
+                Kutu ezilmiş, flakon kırılmış veya sipariş ettiğiniz ürünlerden
+                biri eksik geldiyse aynı gün bize yazın. Ürünü yeniden
+                gönderiyoruz ya da parasını iade ediyoruz. Hangisini
+                istediğinize siz karar veriyorsunuz.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Bildirimi hızlandırmak için paketi açarken fotoğraf çekmeniz
-                işimizi kolaylaştırır: kargo kutusunun dış hâli, ürün kutusu ve
-                varsa hasarlı kısım.
+                Paketi açarken birkaç fotoğraf çekerseniz işimiz kolaylaşır:
+                kargo kutusunun dışı, ürün kutusu ve hasarlı kısım.
               </p>
             </div>
 
@@ -67,11 +66,10 @@ export default function IadePage() {
                 İade ve değişim
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                İade ve değişim taleplerinizi WhatsApp üzerinden iletebilir,
-                durumu birlikte değerlendirebiliriz. Ürünün açılmamış ve
-                doğrulama kodunun kazınmamış olması süreci hızlandırır: kodu
-                kazınmış bir kutu üreticinin sisteminde &quot;kullanılmış&quot;
-                görüneceği için yeniden satılamaz.
+                İade veya değişim istiyorsanız WhatsApp&apos;tan yazın, birlikte
+                bakalım. Ürün açılmamışsa ve gümüş bant kazınmamışsa işlem
+                daha kolay oluyor. Kazınmış bir kod üreticinin sisteminde
+                kullanılmış görünüyor, o kutuyu bir daha satamıyoruz.
               </p>
             </div>
 
@@ -80,12 +78,11 @@ export default function IadePage() {
                 Cayma hakkı
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Mesafeli Sözleşmeler Yönetmeliği kapsamındaki cayma hakkınız
-                saklıdır. Ancak sağlık ve hijyen açısından iadesi uygun olmayan,
-                ambalajı açılmış ürünlerde bu hak mevzuat gereği
-                kullanılamayabilir. Bu yüzden ürünü teslim alır almaz kontrol
-                etmenizi, açmadan önce bir tereddüdünüz varsa bize yazmanızı
-                öneriyoruz.
+                Mesafeli Sözleşmeler Yönetmeliği&apos;nden doğan cayma hakkınız
+                saklı. Ancak sağlık ve hijyen gerekçesiyle, ambalajı açılmış
+                ürünlerde bu hak mevzuat gereği kullanılamıyor. Bu yüzden ürünü
+                teslim alır almaz kontrol edin. Açmadan önce aklınıza takılan
+                bir şey varsa bize yazın.
               </p>
             </div>
 
@@ -94,12 +91,12 @@ export default function IadePage() {
                 Yanlış saklamadan doğan durumlar
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Ürünler liyofilize toz halinde gönderilir ve bu formda soğutma
-                gerektirmez. Sulandırdıktan sonra çözeltinin 2–8 °C&apos;de
-                buzdolabında saklanması, dondurulmaması ve ışıktan korunması
-                gerekir. Sulandırma sonrası yanlış saklamadan kaynaklanan
-                bozulmalar telafi kapsamı dışındadır. Ürüne özel saklama ve
-                stabilite bilgisi her ürünün kendi sayfasında yazılıdır.
+                Ürünler toz halinde gidiyor, bu haldeyken soğutma gerekmiyor.
+                Sulandırdıktan sonra çözeltiyi 2-8 °C&apos;de buzdolabında
+                saklamanız, dondurmamanız ve ışıktan korumanız gerekiyor.
+                Sulandırdıktan sonra yanlış saklamadan kaynaklanan bozulmaları
+                telafi edemiyoruz. Hangi üründe ne kadar dayandığı, o ürünün
+                kendi sayfasında yazıyor.
               </p>
               <Link
                 href="/kargo"

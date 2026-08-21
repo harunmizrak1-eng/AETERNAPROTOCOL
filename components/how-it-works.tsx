@@ -7,17 +7,17 @@ const STEPS = [
   {
     n: "01",
     title: "Ürünü seçin",
-    text: "Kataloğu açın, aradığınız ürünü ya da bileşiği bulun.",
+    text: "Kataloğa bakın, istediğiniz ürünü bulun.",
   },
   {
     n: "02",
     title: "WhatsApp'tan sorun",
-    text: "Fiyat sorun düğmesine basın; ürünün adı mesaja kendiliğinden eklenir. Güncel fiyatı ve stok durumunu kısa sürede iletiriz.",
+    text: "Fiyat sorun düğmesine basın. Ürünün adı mesaja hazır gelir, siz sadece gönderin. Fiyatı ve stok durumunu hemen yazıyoruz.",
   },
   {
     n: "03",
     title: "Ertesi gün teslim alın",
-    text: "Onayladığınız sipariş aynı gün kargoya verilir, ertesi gün adresinizde olur. Kargo ücreti yoktur.",
+    text: "Siparişinizi aynı gün kargoya veriyoruz, ertesi gün elinizde oluyor. Kargo ücreti almıyoruz.",
   },
 ]
 

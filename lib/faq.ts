@@ -8,7 +8,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "ZPHC Türkiye nedir?",
     answer:
-      "ZPHC (Zhengzhou Pharmaceutical Co. Ltd) peptid ve insan büyüme hormonu hattının resmi Türkiye distribütörüyüz. Ürün kataloğunu, orijinallik doğrulamasını ve tedarik koşullarını tek yerde topluyoruz. Klinik veya danışmanlık hizmeti vermiyoruz.",
+      "Zhengzhou Pharmaceutical (ZPHC) markasının peptid ve büyüme hormonu ürünlerini Türkiye'ye getiren resmi distribütörüz. Klinik değiliz, danışmanlık da vermiyoruz; sadece ürün satıyoruz.",
   },
   {
     question: "Ürünler ne amaçla sunuluyor?",
@@ -18,32 +18,32 @@ export const faqItems: FaqItem[] = [
   {
     question: "Sitede neden fiyat görünmüyor?",
     answer:
-      "Fiyat ve stok durumu ürüne, miktara ve tedarik koşullarına göre değişiyor. Bu yüzden liste fiyatı yayımlamak yerine doğrudan iletişimi tercih ediyoruz. Her ürün sayfasındaki WhatsApp butonu, ilgilendiğiniz ürünün adını mesaja otomatik taşır.",
+      "Fiyat ve stok sık değişiyor. Eski bir listeyi sitede tutmaktansa sorduğunuzda o günkü fiyatı söylemeyi tercih ediyoruz. Ürün sayfasındaki WhatsApp düğmesine bastığınızda ürünün adı mesaja hazır geliyor.",
   },
   {
     question: "Kargo ne kadar sürüyor, ücreti var mı?",
     answer:
-      "Anlaşmalı olduğumuz Yurtiçi Kargo ile gönderiyoruz ve siparişler ertesi gün teslim ediliyor. Kargo ücreti almıyoruz, tüm siparişlerde ücretsiz. Ödemeniz ulaştığı gün kargoya veriyoruz.",
+      "Yurtiçi Kargo ile gönderiyoruz, ertesi gün elinizde oluyor. Kargo ücreti almıyoruz. Ödemeniz geldiği gün kargoya veriyoruz.",
   },
   {
     question: "Hangi ödeme yöntemlerini kabul ediyorsunuz?",
     answer:
-      "Havale/EFT ve kredi kartı kabul ediyoruz. Ödeme siparişten önce alınır; kapıda ödeme seçeneğimiz bulunmuyor.",
+      "Havale, EFT ve kredi kartı kabul ediyoruz. Ödemeyi siparişten önce alıyoruz, kapıda ödeme yapmıyoruz.",
   },
   {
     question: "Ürünler soğuk zincirle mi geliyor? Nasıl saklamalıyım?",
     answer:
-      "Ürünler liyofilize, yani dondurularak kurutulmuş toz halinde gönderilir; bu formda taşıma sırasında soğutma gerektirmez, kargoda bozulmaz. Buzdolabı ihtiyacı sulandırdıktan sonra başlar: hazırlanan çözelti 2–8 °C'de buzdolabında saklanmalı, dondurulmamalı ve ışıktan korunmalıdır. Her ürünün kendi sayfasında o ürüne ait saklama ve stabilite süresi yazılıdır.",
+      "Ürünler toz halinde geliyor, bu haldeyken soğutma gerekmiyor ve kargoda bozulmuyor. Buzdolabı sulandırdıktan sonra gerekiyor: çözeltiyi 2-8 °C'de saklayın, dondurmayın, ışıktan koruyun. Hangi üründe ne kadar dayandığı o ürünün sayfasında yazıyor.",
   },
   {
     question: "Hasarlı veya eksik ürün gelirse ne oluyor?",
     answer:
-      "Teslim aldığınız gün içinde WhatsApp'tan bize bildirin; ürünü yeniliyor veya bedelini iade ediyoruz, tercihi siz yapıyorsunuz. Paketi açarken fotoğraf çekmeniz süreci hızlandırır.",
+      "Teslim aldığınız gün WhatsApp'tan yazın. Ürünü yeniden gönderiyoruz ya da parasını iade ediyoruz, kararı siz veriyorsunuz. Paketi açarken fotoğraf çekerseniz işimiz kolaylaşır.",
   },
   {
     question: "Ürünün orijinal olduğunu nasıl anlarım?",
     answer:
-      "ZPHC her kutuya, gümüş bir kaplamanın altına benzersiz bir doğrulama kodu basar. Kaplamayı kazıyıp altındaki kodu üreticinin resmi doğrulama sistemine (validation.zphc.com) girerek kontrol edebilirsiniz. Sorgulama üreticinin sunucusunda yapılır, sonucu biz üretmiyoruz. Adım adım anlatım Doğrulama sayfamızda.",
+      "Her kutuda gümüş bir bant var. Kazıyınca altından o ürüne özel bir kod çıkıyor. Kodu validation.zphc.com adresine girdiğinizde cevabı doğrudan üreticiden alıyorsunuz, sorgu bizim sitemizde yapılmıyor. Adım adım anlatımı Doğrulama sayfasında bulabilirsiniz.",
   },
   {
     question: "Kanıt seviyesi sistemi ne anlama geliyor?",
@@ -63,7 +63,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Toplu alım ve tedarik koşulları nedir?",
     answer:
-      "Toplu alım ve süreklilik gösteren siparişlerde koşullar ürüne ve miktara göre değişiyor. WhatsApp üzerinden yazın, ihtiyacınıza göre konuşalım.",
+      "Toplu alımda koşullar ürüne ve miktara göre değişiyor. WhatsApp'tan yazın, ihtiyacınıza göre konuşalım.",
   },
   {
     question: "Bu bir tıbbi tavsiye mi?",

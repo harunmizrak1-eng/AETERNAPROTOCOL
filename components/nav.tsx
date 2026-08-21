@@ -12,9 +12,9 @@ import { HeaderSearch } from "@/components/header-search"
  * vermiyoruz — zphcstore.com kendi taklitçilerini ismen teşhir ediyor,
  * ama bizim adımıza öyle bir tespit yapılmadı. */
 const TICKER_MESSAGES = [
-  "Sahte satıcılara dikkat: siparişinizi yalnızca resmi WhatsApp hattımızdan onaylayın.",
-  "Her kutudaki kodu validation.zphc.com adresinde üreticiye doğrulatın.",
-  "ZPHC Türkiye resmi distribütörüdür. Ürünler doğrudan depomuzdan çıkar.",
+  "Sahte satıcılara dikkat. Siparişinizi sadece bizim WhatsApp hattımızdan verin.",
+  "Aldığınız her kutunun kodunu validation.zphc.com adresinden doğrulayın.",
+  "ZPHC Türkiye resmi distribütörüyüz. Ürünler doğrudan depomuzdan çıkıyor.",
 ]
 
 const LINKS = [

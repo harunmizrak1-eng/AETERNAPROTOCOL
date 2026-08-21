@@ -17,7 +17,7 @@ export function Reviews() {
     <section className="border-b border-hairline px-6 py-10 md:px-10">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-lg font-bold tracking-tight text-foreground">
-          Müşterilerimiz ne diyor
+          Müşteri yorumları
         </h2>
 
         <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

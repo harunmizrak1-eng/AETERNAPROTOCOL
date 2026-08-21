@@ -32,10 +32,9 @@ export default function HakkimizdaPage() {
               ZPHC Türkiye
             </h1>
             <p className="mt-6 text-base leading-relaxed text-foreground/85">
-              Zhengzhou Pharmaceutical Co. Ltd (ZPHC) markasının peptid ve
-              insan büyüme hormonu hattı için Türkiye&apos;deki resmi
-              distribütörüyüz. Ürünler doğrudan depomuzdan çıkar; aradan
-              başka bir satıcı geçmez.
+              Zhengzhou Pharmaceutical (ZPHC) markasının peptid ve büyüme
+              hormonu ürünlerini Türkiye&apos;ye biz getiriyoruz. Siparişler
+              doğrudan bizim depomuzdan çıkıyor, arada başka bir satıcı yok.
             </p>
           </div>
         </section>
@@ -47,11 +46,11 @@ export default function HakkimizdaPage() {
                 Ne satıyoruz
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Katalogumuzda {products.length} ürün var ve tamamı ZPHC&apos;nin
-                peptid ve insan büyüme hormonu hattından geliyor. Her ürün,{" "}
-                {peptides.length} bileşiklik kütüphanemizdeki bilimsel kaydına
-                bağlı: etki mekanizması, kanıt seviyesi ve varsa literatür
-                referansları orada duruyor.
+                Katalogda {products.length} ürün var, hepsi ZPHC&apos;nin peptid
+                ve büyüme hormonu ürünleri. Her ürünün sayfasından{" "}
+                {peptides.length} bileşiklik kütüphanemize geçebilirsiniz;
+                orada bileşiğin ne işe yaradığı, kanıt seviyesi ve varsa
+                yayımlanmış çalışmalar yazıyor.
               </p>
             </div>
 
@@ -60,9 +59,9 @@ export default function HakkimizdaPage() {
                 Ne satmıyoruz
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                ZPHC dünya genelinde anabolik steroid de üretiyor. Biz o hattı
-                Türkiye&apos;de satmıyoruz ve katalogumuzda yer vermiyoruz.
-                Kapsamımız yalnızca peptid ve büyüme hormonu ürünleridir.
+                ZPHC anabolik steroid de üretiyor. Biz o ürünleri satmıyoruz,
+                katalogda da yer vermiyoruz. Sadece peptid ve büyüme hormonu
+                satıyoruz.
               </p>
             </div>
 
@@ -72,13 +71,12 @@ export default function HakkimizdaPage() {
                 doğrulayın
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                ZPHC her kutuya, gümüş kaplamanın altına benzersiz bir kod
-                basıyor. Bu kodu üreticinin kendi sistemine
-                (validation.zphc.com) girerek ürünün orijinal olup olmadığını
-                kendiniz görebilirsiniz. Sonucu biz üretmiyoruz; sorgu
-                üreticinin sunucusunda yapılıyor. Bir satıcının
-                &quot;orijinaldir&quot; demesiyle üreticinin doğrulaması aynı
-                şey değildir.
+                Her kutuda gümüş bir bant var, kazıyınca altından o ürüne özel
+                bir kod çıkıyor. Bu kodu validation.zphc.com adresine
+                girdiğinizde cevabı doğrudan üreticiden alıyorsunuz. Sorgu
+                bizim sitemizde değil, üreticinin sunucusunda yapılıyor. Bir
+                satıcının &quot;orijinaldir&quot; demesiyle üreticinin
+                onaylaması aynı şey değil.
               </p>
               <Link
                 href="/dogrulama"
@@ -93,10 +91,9 @@ export default function HakkimizdaPage() {
                 Neden fiyat listesi yayımlamıyoruz
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Fiyat ve stok; ürüne, miktara ve tedarik koşullarına göre
-                değişiyor. Güncelliğini yitirmiş bir liste yayımlamak yerine
-                fiyatı doğrudan soruyorsunuz, biz de o anki gerçek durumu
-                iletiyoruz.
+                Fiyat ve stok sık değişiyor. Eski bir listeyi sitede tutup
+                sonra &quot;o fiyat geçti&quot; demektense, sorduğunuzda o
+                günkü gerçek fiyatı söylemeyi tercih ediyoruz.
               </p>
             </div>
 
@@ -105,12 +102,11 @@ export default function HakkimizdaPage() {
                 Ticari ilişkimizi saklamıyoruz
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Kütüphanede sınıflandırdığımız bileşiklerin bir kısmını aynı
-                zamanda satıyoruz. Bu bir çıkar çatışmasıdır ve gizlemek yerine
-                açıkça belirtiyoruz. Kanıt sınıflandırması bundan etkilenmez:
-                preklinik bir bileşik, ne kadar satarsa satsın preklinik
-                kalır. Üreticinin kendi etkinlik iddialarını da her zaman ayrı
-                bir bölümde, doğrulanmamış olduklarını belirterek gösteriyoruz.
+                Kütüphanede değerlendirdiğimiz bileşiklerin bir kısmını aynı
+                zamanda satıyoruz. Bunu saklamıyoruz. Ama kanıt seviyesi satışa
+                göre değişmiyor: bir bileşiğin insan çalışması yoksa, ne kadar
+                satarsa satsın bunu yazıyoruz. Üreticinin kendi iddialarını da
+                ayrı bir başlıkta, doğrulanmadığını belirterek veriyoruz.
               </p>
               <Link
                 href="/metodoloji"

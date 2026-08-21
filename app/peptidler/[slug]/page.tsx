@@ -259,7 +259,7 @@ export default async function PeptideDetailPage({
             {peptide.secondaryDosing && peptide.secondaryDosing.steps.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Dozaj Protokolü — {peptide.secondaryDosing.routeLabel}
+                  Dozaj Protokolü, {peptide.secondaryDosing.routeLabel}
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   {tierDosingDisclaimer[peptide.tier]}
@@ -285,7 +285,7 @@ export default async function PeptideDetailPage({
                     ? `Yarı ömür (${peptide.molecular.halfLife}) baz alınarak hesaplanan matematiksel bir model.`
                     : "Yarı ömür baz alınarak hesaplanan matematiksel bir model."}{" "}
                   Gerçek vücuttaki birikim; emilim hızı, bireysel metabolizma
-                  ve enjeksiyon yoluna göre değişir — bu bir tıbbi tavsiye
+                  ve enjeksiyon yoluna göre değişir, bu bir tıbbi tavsiye
                   değildir, yalnızca standart çoklu doz farmakokinetiğinin
                   görselleştirmesidir.
                 </p>
@@ -307,7 +307,7 @@ export default async function PeptideDetailPage({
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   Kaynak literatür/topluluk raporlarına dayanan, bireysel yanıtın
-                  büyük ölçüde değişebildiği bir zaman çizelgesidir — bir garanti
+                  büyük ölçüde değişebildiği bir zaman çizelgesidir, bir garanti
                   değildir.
                 </p>
                 <div className="mt-6 overflow-x-auto">

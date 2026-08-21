@@ -12,14 +12,14 @@ export function Hero() {
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-4 md:px-10">
         <p className="text-sm text-foreground">
           <strong className="font-bold">ZPHC Türkiye Resmi Distribütörü.</strong>{" "}
-          Kutunuzdaki kodu{" "}
+          Aldığınız ürünün kodunu{" "}
           <Link
             href="/dogrulama"
             className="font-semibold text-gold underline underline-offset-2 hover:no-underline"
           >
             validation.zphc.com
           </Link>{" "}
-          adresinde üreticiye doğrulatın.
+          adresinden kendiniz doğrulayabilirsiniz.
         </p>
         <Link
           href="/urunler"

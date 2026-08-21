@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const FACTS = [
   { k: "Kargo firması", v: "Yurtiçi Kargo (anlaşmalı)" },
   { k: "Teslim süresi", v: "Ertesi gün" },
-  { k: "Kargo ücreti", v: "Yok — tüm siparişlerde ücretsiz" },
+  { k: "Kargo ücreti", v: "Yok, tüm siparişlerde ücretsiz" },
   { k: "Ödeme", v: "Havale/EFT veya kredi kartı, ön ödemeli" },
 ]
 
@@ -60,10 +60,10 @@ export default function KargoPage() {
                 Sipariş nasıl ilerliyor
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Sitede sepet ve çevrim içi ödeme yok. İstediğiniz ürünü
-                WhatsApp&apos;tan sorarsınız, güncel fiyatı ve stok durumunu
-                iletiriz. Ödemeniz ulaştıktan sonra sipariş aynı gün kargoya
-                verilir ve ertesi gün adresinizde olur.
+                Sitede sepet yok, ödeme almıyoruz. İstediğiniz ürünü
+                WhatsApp&apos;tan soruyorsunuz, fiyatı ve stok durumunu
+                yazıyoruz. Ödemeniz geldiği gün kargoya veriyoruz, ertesi gün
+                elinizde oluyor.
               </p>
             </div>
 
@@ -72,8 +72,8 @@ export default function KargoPage() {
                 Ödeme seçenekleri
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Havale/EFT ve kredi kartı kabul ediyoruz. Ödeme siparişten önce
-                alınır; kapıda ödeme seçeneğimiz yoktur.
+                Havale, EFT ve kredi kartı kabul ediyoruz. Ödemeyi siparişten
+                önce alıyoruz. Kapıda ödeme yapmıyoruz.
               </p>
             </div>
 
@@ -88,17 +88,16 @@ export default function KargoPage() {
                 Soğuk zincir gerekiyor mu?
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Hayır. Ürünler liyofilize, yani dondurularak kurutulmuş toz
-                halinde gönderilir; bu formda taşıma sırasında soğutma
-                gerektirmez. Kutuyu aldığınızda oda sıcaklığında, ışıktan uzak
-                bir yerde tutabilirsiniz.
+                Hayır. Ürünler toz halinde geliyor (liyofilize, yani
+                dondurularak kurutulmuş). Bu haldeyken yolda soğutulmaya
+                ihtiyacı yok. Kutuyu aldığınızda oda sıcaklığında, güneş
+                görmeyen bir yerde tutmanız yeterli.
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Buzdolabı ihtiyacı <strong>sulandırdıktan sonra</strong>{" "}
-                başlar: hazırlanan çözelti 2–8 °C&apos;de buzdolabında
-                saklanmalı, dondurulmamalı ve ışıktan korunmalıdır. Her ürünün
-                kendi sayfasında o ürüne ait saklama ve stabilite bilgisi
-                yazılıdır.
+                Buzdolabı <strong>sulandırdıktan sonra</strong> gerekiyor.
+                Hazırladığınız çözeltiyi 2-8 °C&apos;de buzdolabında saklayın,
+                dondurmayın ve ışıktan koruyun. Hangi üründe ne kadar
+                dayandığı, o ürünün kendi sayfasında yazıyor.
               </p>
             </div>
 
@@ -108,9 +107,9 @@ export default function KargoPage() {
               </h2>
               <ul className="mt-4 flex flex-col gap-3">
                 {[
-                  "Paketin dışında ezilme, yırtılma veya açılma izi var mı.",
-                  "Kutu sayısı ve ürünler sipariş ettiğinizle aynı mı.",
-                  "Kutudaki gümüş kaplamanın altındaki doğrulama kodu daha önce kazınmamış olmalı.",
+                  "Kutuda ezilme, yırtılma veya açılma izi var mı.",
+                  "Gelen ürünler sipariş ettiklerinizle aynı mı, eksik var mı.",
+                  "Gümüş bant kazınmamış olmalı. Kazınmışsa kod daha önce kullanılmış demektir.",
                 ].map((t) => (
                   <li
                     key={t}
@@ -124,7 +123,7 @@ export default function KargoPage() {
                 ))}
               </ul>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Bir sorun görürseniz{" "}
+                Bunlardan birinde sorun varsa{" "}
                 <Link
                   href="/iade"
                   className="text-gold underline-offset-4 hover:underline"

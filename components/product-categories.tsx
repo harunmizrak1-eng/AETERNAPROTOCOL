@@ -8,12 +8,12 @@ import { products, goalOrder } from "@/lib/products"
  * metin yoğun bir tanıtım bloğu değil. */
 
 const COVER: Record<string, string> = {
-  "Kilo Kaybı": "retatrutide-10mg-5x2mg-zphc-2",
+  "Kilo Kaybı": "retatrutide-60mg-5x12mg-zphc",
   "Toparlanma & Doku Onarımı": "bpc157-25mg-5x5mg-zphc",
-  "Büyüme Hormonu": "zptrop-100iu-zphc",
-  "Cilt & Yaşlanma Karşıtı": "ghk-cu-50mg-zphc",
+  "Büyüme Hormonu": "zptrop-hgh-200iu-2x100iu-zphc",
+  "Cilt & Yaşlanma Karşıtı": "ghk-cu-60mg-with-bacteriostatic-water-zphc",
   "Uzun Yaşam": "nad-plus-2500mg-zphc",
-  Diğer: "melanotan-2-10mg-bacteriostatic-water-zphc",
+  Diğer: "melanotan-2-30mg-aq-pen-zphc",
 }
 
 export function ProductCategories() {

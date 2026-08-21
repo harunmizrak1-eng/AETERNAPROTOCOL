@@ -29,13 +29,13 @@ export function Newsletter() {
             href="/journal"
             className="w-full border border-gold/60 px-8 py-3.5 text-center text-xs tracking-normal font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground sm:w-auto"
           >
-            Journal&apos;ı İncele
+            Journal&apos;ı inceleyin
           </Link>
           <Link
             href="/urunler"
             className="w-full border border-hairline px-8 py-3.5 text-center text-xs tracking-normal font-medium text-foreground/80 transition-colors duration-300 hover:border-gold/60 hover:bg-gold hover:text-primary-foreground sm:w-auto"
           >
-            Ürün Kataloğu
+            Ürün kataloğu
           </Link>
         </div>
       </div>

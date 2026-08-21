@@ -71,7 +71,7 @@ export function ShopSidebar({ active }: { active?: string }) {
         <p className="text-base font-bold text-foreground">Ertesi gün teslim</p>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           Yurtiçi Kargo ile gönderiyoruz, <strong>kargo ücreti almıyoruz</strong>.
-          Ürünler toz halinde olduğu için yolda soğutma gerekmiyor.
+          Ürünler toz halinde geliyor, kargoda bozulmaz.
         </p>
         <Link
           href="/kargo"

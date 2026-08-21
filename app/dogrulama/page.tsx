@@ -52,7 +52,7 @@ export default function DogrulamaPage() {
             <p className="text-sm font-semibold text-gold">Orijinallik</p>
 
             <h1 className="mt-10 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
-              Ürününüzün Gerçek Olduğunu Doğrulayın
+              Ürününüzün gerçek olduğunu doğrulayın
             </h1>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
               ZPHC her kutuya, gümüş bir kaplamanın altına benzersiz bir
@@ -69,7 +69,7 @@ export default function DogrulamaPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 rounded-sm bg-gold px-8 py-3.5 text-xs tracking-normal font-medium text-primary-foreground transition-colors duration-300 hover:bg-gold/85"
               >
-                validation.zphc.com Adresine Git
+                validation.zphc.com adresine gidin
               </a>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function DogrulamaPage() {
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-3xl">
             <h2 className="border-b border-hairline pb-4 text-foreground text-xl font-bold tracking-tight">
-              Nasıl Yapılır
+              Nasıl yapılır
             </h2>
 
             <ol className="mt-8 space-y-10">
@@ -107,7 +107,7 @@ export default function DogrulamaPage() {
         <section className="px-6 pb-20 md:px-10">
           <div className="mx-auto max-w-3xl border border-hairline bg-muted/30 p-8 sm:p-10">
             <h2 className="text-foreground text-xl font-bold tracking-tight">
-              Doğrulama Başarısız Olduysa
+              Doğrulama başarısız olduysa
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-foreground/85">
               Kod tanınmıyorsa, daha önce sorgulanmış görünüyorsa, mühür

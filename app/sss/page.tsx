@@ -8,11 +8,11 @@ const description =
   "ZPHC Türkiye hakkında sık sorulan sorular: ürün çerçevesi, orijinallik doğrulaması, kanıt seviyesi sistemi, kaynak politikası ve tedarik koşulları."
 
 export const metadata: Metadata = {
-  title: "Sık Sorulan Sorular",
+  title: "Sıkça sorulan sorular",
   description,
   alternates: { canonical: "/sss" },
   openGraph: {
-    title: "Sık Sorulan Sorular · ZPHC Türkiye",
+    title: "Sıkça sorulan sorular · ZPHC Türkiye",
     description,
     url: "/sss",
   },
@@ -43,7 +43,7 @@ export default function FaqPage() {
       <main id="main-content" className="relative z-10 bg-background">
         <section className="px-6 pb-16 md:px-10">
           <div className="mx-auto max-w-2xl">
-            <p className="text-sm font-semibold text-gold">Sık Sorulan Sorular</p>
+            <p className="text-sm font-semibold text-gold">Sıkça sorulan sorular</p>
             <h1 className="mt-10 text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
               Açık sorular, açık cevaplar.
             </h1>

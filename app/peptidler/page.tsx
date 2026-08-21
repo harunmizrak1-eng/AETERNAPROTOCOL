@@ -59,16 +59,21 @@ export default function PeptidlerPage() {
 
         <PeptideLibrary />
 
-        {/* CTA back to consulting */}
+        {/* Buradaki bölüm eski danışmanlık dönemine aitti: "Hangi bileşiğin
+            sizin için doğru olduğunu birlikte belirleriz" diyip artık var
+            olmayan /#danismanlik bağlantısına gidiyordu. Site danışmanlık
+            vermediğini açıkça yazarken bu doğrudan çelişkiydi ve bağlantı
+            da kırıktı. Yerine kataloğa yönlendiren bir kapanış kondu. */}
         <section className="px-6 pb-28 text-center sm:pb-36">
-          <p className="mx-auto max-w-lg text-pretty text-2xl italic leading-relaxed text-foreground/90 sm:text-3xl">
-            Hangi bileşiğin sizin için doğru olduğunu birlikte belirleriz.
+          <p className="mx-auto max-w-xl text-pretty text-xl leading-relaxed text-foreground sm:text-2xl">
+            Kütüphanedeki bileşiklerin satılan ürünlerini katalogda
+            bulabilirsiniz.
           </p>
           <Link
-            href="/#danismanlik"
-            className="mt-10 inline-block rounded-sm border border-gold/60 px-10 py-4 text-xs tracking-normal font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground"
+            href="/urunler"
+            className="mt-8 inline-block rounded-full bg-gold px-8 py-3 text-base font-bold text-primary-foreground transition-colors hover:bg-gold/90"
           >
-            Danışmanlığı İncele
+            Ürün kataloğu
           </Link>
         </section>
       </main>

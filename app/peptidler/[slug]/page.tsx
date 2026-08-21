@@ -37,7 +37,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const peptide = getPeptide(slug)
-  if (!peptide) return { title: "Peptid Kütüphanesi" }
+  if (!peptide) return { title: "Peptid kütüphanesi" }
   return {
     title: peptide.name,
     description: peptide.short,
@@ -79,7 +79,7 @@ export default async function PeptideDetailPage({
               href="/peptidler"
               className="text-xs tracking-normal text-muted-foreground transition-colors hover:text-foreground font-medium"
             >
-              ← Peptid Kütüphanesi
+              ← Peptid kütüphanesi
             </Link>
 
             <p className="mt-10 text-xs tracking-normal text-muted-foreground font-medium">
@@ -113,7 +113,7 @@ export default async function PeptideDetailPage({
                 {peptide.molecular.weight && (
                   <div>
                     <p className="text-xs tracking-normal text-muted-foreground font-medium">
-                      Moleküler Ağırlık
+                      Moleküler ağırlık
                     </p>
                     <p className="mt-1 font-mono text-sm text-foreground/90">
                       {peptide.molecular.weight}
@@ -123,7 +123,7 @@ export default async function PeptideDetailPage({
                 {peptide.molecular.halfLife && (
                   <div>
                     <p className="text-xs tracking-normal text-muted-foreground font-medium">
-                      Yarı Ömür
+                      Yarı ömür
                     </p>
                     <p className="mt-1 font-mono text-sm text-foreground/90">
                       {peptide.molecular.halfLife}
@@ -164,7 +164,7 @@ export default async function PeptideDetailPage({
 
             <div className="mt-10 border-t border-hairline pt-10">
               <h2 className="text-foreground text-xl font-bold tracking-tight">
-                Birincil Sonuç Göstergeleri
+                Birincil sonuçlar
               </h2>
               <ul className="mt-4 flex flex-col gap-3">
                 {peptide.primaryOutcomes.map((outcome) => (
@@ -185,7 +185,7 @@ export default async function PeptideDetailPage({
             {peptide.evidenceMatrix && peptide.evidenceMatrix.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Kanıt Matrisi
+                  Kanıt matrisi
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   Aşağıdaki her sonuç, kaynak bölümündeki çalışmada doğrudan
@@ -219,7 +219,7 @@ export default async function PeptideDetailPage({
             {peptide.dosing && peptide.dosing.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Dozaj Protokolü
+                  Dozaj protokolü
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   {tierDosingDisclaimer[peptide.tier]}
@@ -238,7 +238,7 @@ export default async function PeptideDetailPage({
             {peptide.reconstitutionSteps && peptide.reconstitutionSteps.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Hazırlama Adımları
+                  Hazırlama adımları
                 </h2>
                 <ol className="mt-4 flex flex-col gap-3">
                   {peptide.reconstitutionSteps.map((step, i) => (
@@ -259,7 +259,7 @@ export default async function PeptideDetailPage({
             {peptide.secondaryDosing && peptide.secondaryDosing.steps.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Dozaj Protokolü, {peptide.secondaryDosing.routeLabel}
+                  Dozaj protokolü, {peptide.secondaryDosing.routeLabel}
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   {tierDosingDisclaimer[peptide.tier]}
@@ -278,7 +278,7 @@ export default async function PeptideDetailPage({
             {halfLifeHours && lastDoseStep && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Birikim Hesaplayıcı
+                  Birikim hesaplayıcı
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   {peptide.molecular?.halfLife
@@ -303,7 +303,7 @@ export default async function PeptideDetailPage({
             {peptide.expectedTimeline && peptide.expectedTimeline.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Beklenen Sonuçlar (Bildirilen Zaman Çizelgesi)
+                  Beklenen sonuçlar (bildirilen zaman çizelgesi)
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   Kaynak literatür/topluluk raporlarına dayanan, bireysel yanıtın
@@ -333,7 +333,7 @@ export default async function PeptideDetailPage({
             {peptide.qualityIndicators && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Kalite Kontrol İşaretleri
+                  Kalite kontrol işaretleri
                 </h2>
                 <p className="mt-4 text-[0.7rem] leading-relaxed text-muted-foreground">
                   Yalnızca fiziksel bir ürün olarak temin edilen bileşikler için
@@ -342,7 +342,7 @@ export default async function PeptideDetailPage({
                 <div className="mt-6 grid gap-8 sm:grid-cols-2">
                   <div>
                     <p className="text-xs tracking-normal text-tier-proven font-medium">
-                      İyi İşaretler
+                      İyi işaretler
                     </p>
                     <ul className="mt-3 flex flex-col gap-2">
                       {peptide.qualityIndicators.good.map((item) => (
@@ -354,7 +354,7 @@ export default async function PeptideDetailPage({
                   </div>
                   <div>
                     <p className="text-xs tracking-normal text-tier-preclinical font-medium">
-                      Kötü İşaretler
+                      Kötü işaretler
                     </p>
                     <ul className="mt-3 flex flex-col gap-2">
                       {peptide.qualityIndicators.bad.map((item) => (
@@ -371,7 +371,7 @@ export default async function PeptideDetailPage({
             {peptide.warnings && peptide.warnings.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Uyarılar ve Kontrendikasyonlar
+                  Uyarılar ve kontrendikasyonlar
                 </h2>
                 <ul className="mt-4 flex flex-col gap-3">
                   {peptide.warnings.map((warning) => (
@@ -415,7 +415,7 @@ export default async function PeptideDetailPage({
             {peptide.interactions && peptide.interactions.length > 0 && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  Bilinen Etkileşimler
+                  Bilinen etkileşimler
                 </h2>
                 <div className="mt-4 flex flex-col gap-5">
                   {peptide.interactions.map((interaction) => {
@@ -505,7 +505,7 @@ export default async function PeptideDetailPage({
             {relatedArticle && (
               <div className="mt-10 border-t border-hairline pt-10">
                 <h2 className="text-foreground text-xl font-bold tracking-tight">
-                  İlgili Journal Yazısı
+                  İlgili Journal yazısı
                 </h2>
                 <Link
                   href={`/journal/${relatedArticle.slug}`}

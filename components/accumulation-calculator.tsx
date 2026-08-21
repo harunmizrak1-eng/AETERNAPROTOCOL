@@ -151,25 +151,25 @@ export function AccumulationCalculator({
 
       <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
         <div>
-          <p className="text-xs tracking-normal text-muted-foreground font-medium">Zirve</p>
+          <p className="text-xs tracking-normal text-muted-foreground font-medium">En yüksek</p>
           <p className="mt-1 font-mono text-sm text-foreground/90">
             {formatAmount(curve.peak, defaultDoseUnit)}
           </p>
         </div>
         <div>
-          <p className="text-xs tracking-normal text-muted-foreground font-medium">Çukur</p>
+          <p className="text-xs tracking-normal text-muted-foreground font-medium">En düşük</p>
           <p className="mt-1 font-mono text-sm text-foreground/90">
             {formatAmount(curve.trough, defaultDoseUnit)}
           </p>
         </div>
         <div>
-          <p className="text-xs tracking-normal text-gold/80 font-medium">Kararlı Durum Zirvesi</p>
+          <p className="text-xs tracking-normal text-gold/80 font-medium">Kararlı durumda en yüksek</p>
           <p className="mt-1 font-mono text-sm text-foreground/90">
             {formatAmount(curve.ssPeak, defaultDoseUnit)}
           </p>
         </div>
         <div>
-          <p className="text-xs tracking-normal text-gold/80 font-medium">Kararlı Durum Çukuru</p>
+          <p className="text-xs tracking-normal text-gold/80 font-medium">Kararlı durumda en düşük</p>
           <p className="mt-1 font-mono text-sm text-foreground/90">
             {formatAmount(curve.ssTrough, defaultDoseUnit)}
           </p>

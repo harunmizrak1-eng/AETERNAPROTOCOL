@@ -4,13 +4,13 @@ import { siteName, siteTagline } from "@/lib/site"
 
 const EXPLORE_LINKS = [
   { href: "/urunler", label: "Ürünler" },
-  { href: "/peptidler", label: "Bileşik Kütüphanesi" },
+  { href: "/peptidler", label: "Kütüphane" },
   { href: "/journal", label: "Journal" },
   { href: "/hakkimizda", label: "Hakkımızda" },
 ]
 
 const CONSULT_LINKS = [
-  { href: "/dogrulama", label: "Orijinallik Doğrulama" },
+  { href: "/dogrulama", label: "Doğrulama" },
   { href: "/kargo", label: "Kargo & Teslimat" },
   { href: "/iade", label: "İade & Değişim" },
   { href: whatsappLink(), label: "WhatsApp", external: true },
@@ -18,7 +18,7 @@ const CONSULT_LINKS = [
 
 const LEGAL_LINKS = [
   { href: "/metodoloji", label: "Metodoloji" },
-  { href: "/sss", label: "Sık Sorulan Sorular" },
+  { href: "/sss", label: "Sıkça sorulanlar" },
   { href: "/kosullar", label: "Kullanım Koşulları" },
   { href: "/gizlilik", label: "Gizlilik & KVKK" },
 ]

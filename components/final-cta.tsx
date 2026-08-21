@@ -8,7 +8,7 @@ export function FinalCta() {
   return (
     <section className="border-b border-hairline bg-surface px-6 py-10 md:px-10">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
-        <p className="text-base font-semibold text-foreground">
+        <p className="text-lg font-bold text-foreground">
           Fiyat ve stok için WhatsApp’tan yazın.
         </p>
         <div className="flex flex-wrap gap-3">

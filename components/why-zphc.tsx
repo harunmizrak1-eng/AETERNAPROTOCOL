@@ -24,7 +24,7 @@ export function WhyZphc() {
   return (
     <section className="border-b border-hairline px-6 py-10 md:px-10">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-lg font-bold tracking-tight text-foreground">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground">
           Neden ZPHC Türkiye
         </h2>
 
@@ -37,10 +37,10 @@ export function WhyZphc() {
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground">
+              <h3 className="mt-2 text-lg font-bold tracking-tight text-foreground">
                 {p.title}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2.5 flex-1 text-base leading-relaxed text-muted-foreground">
                 {p.line}
               </p>
               {p.link && (

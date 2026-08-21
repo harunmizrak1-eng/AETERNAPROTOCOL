@@ -57,7 +57,7 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
       {/* Kategori seçimi artık kenar çubuğunda (ShopSidebar) — burada
           tekrar edilmiyor. Kalan tek denetim ızgara içi arama. */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-base text-muted-foreground">
           <span className="font-semibold text-foreground">{shown.length}</span>{" "}
           ürün
           {active !== ALL && ` · ${active}`}

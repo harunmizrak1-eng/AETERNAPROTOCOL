@@ -25,7 +25,7 @@ export function HowItWorks() {
   return (
     <section className="border-b border-hairline px-6 py-10 md:px-10">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-lg font-bold tracking-tight text-foreground">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground">
           Sipariş nasıl veriliyor
         </h2>
 
@@ -38,10 +38,10 @@ export function HowItWorks() {
               >
                 {s.n}
               </span>
-              <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground">
+              <h3 className="mt-2 text-lg font-bold tracking-tight text-foreground">
                 {s.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2.5 text-base leading-relaxed text-muted-foreground">
                 {s.text}
               </p>
             </div>

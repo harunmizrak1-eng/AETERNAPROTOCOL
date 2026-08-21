@@ -48,10 +48,10 @@ export function ProductCategories() {
                   />
                 )}
                 <div>
-                  <h3 className="text-sm font-semibold leading-snug text-foreground">
+                  <h3 className="text-base font-bold leading-snug tracking-tight text-foreground">
                     {goal}
                   </h3>
-                  <p className="mt-0.5 text-xs text-muted-foreground">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     {count} ürün
                   </p>
                 </div>

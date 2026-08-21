@@ -17,7 +17,7 @@ export type ProductCategory = "peptid" | "hgh" | "aksesuar"
 
 export const categoryLabels: Record<ProductCategory, string> = {
   peptid: "Peptidler",
-  hgh: "İnsan Büyüme Hormonu",
+  hgh: "HGH",
   aksesuar: "Aksesuar",
 }
 

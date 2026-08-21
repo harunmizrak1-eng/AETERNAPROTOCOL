@@ -24,7 +24,7 @@ export function ShopSidebar({ active }: { active?: string }) {
   return (
     <aside className="w-full lg:w-56 lg:shrink-0">
       <nav aria-label="Ürün kategorileri">
-        <h2 className="border-b border-hairline pb-2 text-sm font-bold tracking-tight text-foreground">
+        <h2 className="border-b border-hairline pb-2 text-base font-bold tracking-tight text-foreground">
           Kategoriler
         </h2>
         <ul className="mt-1">
@@ -32,14 +32,14 @@ export function ShopSidebar({ active }: { active?: string }) {
             <Link
               href="/urunler"
               aria-current={!active ? "page" : undefined}
-              className={`flex items-center justify-between border-b border-hairline py-2.5 text-sm transition-colors hover:text-gold ${
+              className={`flex items-center justify-between border-b border-hairline py-3 text-base transition-colors hover:text-gold ${
                 !active
                   ? "font-semibold text-gold"
                   : "text-muted-foreground"
               }`}
             >
               Tüm ürünler
-              <span className="text-xs text-muted-foreground">
+              <span className="text-sm text-muted-foreground">
                 {products.length}
               </span>
             </Link>
@@ -49,14 +49,14 @@ export function ShopSidebar({ active }: { active?: string }) {
               <Link
                 href={`/urunler?kategori=${encodeURIComponent(goal)}`}
                 aria-current={active === goal ? "page" : undefined}
-                className={`flex items-center justify-between gap-2 border-b border-hairline py-2.5 text-sm transition-colors hover:text-gold ${
+                className={`flex items-center justify-between gap-2 border-b border-hairline py-3 text-base transition-colors hover:text-gold ${
                   active === goal
                     ? "font-semibold text-gold"
                     : "text-muted-foreground"
                 }`}
               >
                 <span className="min-w-0">{goal}</span>
-                <span className="shrink-0 text-xs text-muted-foreground">
+                <span className="shrink-0 text-sm text-muted-foreground">
                   {count}
                 </span>
               </Link>
@@ -68,46 +68,46 @@ export function ShopSidebar({ active }: { active?: string }) {
       {/* Kargo bilgisi satın alma kararını doğrudan etkiliyor; katalogda
           gezerken görünmesi için kenar çubuğunun en üstünde. */}
       <div className="mt-8 border border-gold/40 bg-gold/5 p-4">
-        <p className="text-sm font-bold text-foreground">Ertesi gün teslim</p>
-        <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+        <p className="text-base font-bold text-foreground">Ertesi gün teslim</p>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           Yurtiçi Kargo ile gönderiyoruz, <strong>kargo ücreti almıyoruz</strong>.
           Ürünler toz halinde olduğu için yolda soğutma gerekmiyor.
         </p>
         <Link
           href="/kargo"
-          className="mt-3 inline-block text-xs font-semibold text-gold hover:underline"
+          className="mt-3 inline-block text-sm font-semibold text-gold hover:underline"
         >
           Kargo koşulları →
         </Link>
       </div>
 
       <div className="mt-6 border border-hairline bg-surface p-4">
-        <h2 className="text-sm font-bold tracking-tight text-foreground">
+        <h2 className="text-base font-bold tracking-tight text-foreground">
           Orijinallik doğrulama
         </h2>
-        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           Her kutuda gümüş bandın altında bir kod var. Kazıyıp üreticinin
           sitesinde sorgulayabilirsiniz.
         </p>
         <Link
           href="/dogrulama"
-          className="mt-3 inline-block text-xs font-semibold text-gold hover:underline"
+          className="mt-3 inline-block text-sm font-semibold text-gold hover:underline"
         >
           Nasıl doğrulanır →
         </Link>
       </div>
 
       <div className="mt-6 border border-hairline p-4">
-        <h2 className="text-sm font-bold tracking-tight text-foreground">
+        <h2 className="text-base font-bold tracking-tight text-foreground">
           Bileşik kütüphanesi
         </h2>
-        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           {peptides.length} bileşiğin ne işe yaradığı, kanıt seviyesi ve
           kaynakları.
         </p>
         <Link
           href="/peptidler"
-          className="mt-3 inline-block text-xs font-semibold text-gold hover:underline"
+          className="mt-3 inline-block text-sm font-semibold text-gold hover:underline"
         >
           Kütüphaneyi açın →
         </Link>

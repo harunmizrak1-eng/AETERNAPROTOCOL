@@ -33,15 +33,15 @@ export function ProductCard({ product }: { product: Product }) {
         />
       )}
 
-      <p className="mt-4 text-xs uppercase tracking-wide text-muted-foreground">
+      <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
         {categoryLabels[product.category]}
       </p>
-      <h3 className="mt-1 text-sm font-medium leading-snug text-foreground transition-colors group-hover:text-gold">
+      <h3 className="mt-1.5 text-base font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-gold">
         {product.name}
       </h3>
 
       <div className="mt-3 flex items-center justify-center gap-2">
-        <span className="text-sm font-semibold text-foreground">
+        <span className="text-base font-bold text-foreground">
           {product.price ?? "Fiyat sorun"}
         </span>
         <StockBadge inStock={product.inStock} />
@@ -53,7 +53,7 @@ export function ProductCard({ product }: { product: Product }) {
 export function StockBadge({ inStock }: { inStock: boolean }) {
   return (
     <span
-      className={`rounded-full px-2 py-0.5 text-[0.7rem] font-medium ${
+      className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
         inStock
           ? "bg-tier-proven/10 text-tier-proven"
           : "bg-muted text-muted-foreground"

@@ -1,6 +1,5 @@
 import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
-import { ResearchMetrics } from "@/components/research-metrics"
 import { ProductCategories } from "@/components/product-categories"
 import { ProductStrip } from "@/components/product-strip"
 import { bestSellers, bestSellingHgh, bestSellingFatLoss } from "@/lib/strips"
@@ -10,7 +9,7 @@ import { Reviews } from "@/components/reviews"
 import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
-/* Mağaza ana sayfası: hero → güven sayıları → çok satanlar → kategoriler
+/* Mağaza ana sayfası: hero → çok satanlar → kategoriler
  * → neden biz → sipariş adımları → iletişim.
  *
  * Kategoriler ürünlerden önce geliyor: ziyaretçinin ilk sorusu "ne
@@ -30,7 +29,6 @@ export default function Page() {
     <main id="main-content" className="bg-background">
       <Nav />
       <Hero />
-      <ResearchMetrics />
       <ProductStrip {...bestSellers} />
       <ProductCategories />
       <ProductStrip {...bestSellingFatLoss} />

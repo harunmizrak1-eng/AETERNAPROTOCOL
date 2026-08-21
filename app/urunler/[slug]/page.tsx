@@ -12,6 +12,7 @@ import { siteUrl } from "@/lib/site"
 import { RelatedProducts } from "@/components/related-products"
 import { SizeComparison } from "@/components/size-comparison"
 import { StockBadge } from "@/components/product-card"
+import { getPlainSummary } from "@/lib/plain-summaries"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -57,6 +58,9 @@ export default async function UrunPage({
     ? getPeptide(product.peptideSlug)
     : undefined
   const citationList = peptide ? citations[peptide.slug] : undefined
+
+  const plainSummary =
+    getPlainSummary(product.peptideSlug) ?? peptide?.short
 
   const technical = product.specs.filter((s) => s.kind === "spec")
   const claims = product.specs.filter((s) => s.kind === "claim")
@@ -153,6 +157,45 @@ export default async function UrunPage({
               </div>
               <WhatsappCta product={product.name} label="Fiyat sorun" />
             </div>
+
+            {/* Kargo bilgisi fiyatın hemen altında. Siteyi ilk gösterdiğimiz
+                müşterinin ilk iki sorusundan biri "burdan alsam kaç güne
+                gelir" oldu; cevap ayrı bir sayfada duruyordu ve kimse oraya
+                gitmiyordu. Karar verilen yere taşındı. */}
+            <p className="mt-4 text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">
+                Ertesi gün kargo.
+              </span>{" "}
+              Yurtiçi Kargo ile gönderiyoruz, kargo ücreti almıyoruz.{" "}
+              <Link
+                href="/kargo"
+                className="text-gold underline-offset-4 hover:underline"
+              >
+                Kargo koşulları
+              </Link>
+            </p>
+
+            {/* Sade açıklama. Teknik özellikler aşağıda zaten var; buradaki
+                metin "bu ne işe yarıyor" sorusuna günlük dille cevap veriyor.
+                Karşılığı olmayan bileşiklerde kütüphanedeki özete düşer. */}
+            {plainSummary && (
+              <div className="mt-10 border border-hairline bg-surface p-6">
+                <h2 className="text-base font-bold tracking-tight text-foreground">
+                  Bu ürün ne işe yarıyor?
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-foreground/85">
+                  {plainSummary}
+                </p>
+                {peptide && (
+                  <Link
+                    href={`/peptidler/${peptide.slug}`}
+                    className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
+                  >
+                    Bileşiğin ayrıntılı kaydı ve kaynakları →
+                  </Link>
+                )}
+              </div>
+            )}
 
             {technical.length > 0 && (
               <div className="mt-12">

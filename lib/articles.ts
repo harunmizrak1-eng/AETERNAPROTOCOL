@@ -44,13 +44,13 @@ export const articles: Article[] = [
   {
     slug: "healthspan-vs-lifespan",
     title: "Uzun yaşamak mı, iyi yaşamak mı?",
-    category: "Longevity",
+    category: "Uzun Yaşam",
     excerpt:
-      "Longevity'nin asıl ölçüsü ömür değil healthspan. Sağlıklı ve fonksiyonel geçen yılların neden daha önemli olduğu.",
+      "Uzun yaşamanın asıl ölçüsü kaç yıl yaşadığınız değil, kaç yılı sağlıkla geçirdiğiniz. Bunun neden daha önemli olduğu.",
     readMinutes: 3,
     date: "2026-06-04",
     body: [
-      "Longevity denince akla uzun yaşamak geliyor. Oysa asıl mesele bu değil. Ortalama insan, ömrünün son yıllarının önemli bir kısmını düşük sağlıkla geçiriyor.",
+      "Uzun yaşam denince akla ömür uzunluğu geliyor. Oysa asıl mesele bu değil. Ortalama insan, ömrünün son yıllarının önemli bir kısmını düşük sağlıkla geçiriyor.",
       "Healthspan, kişinin güçlü, fonksiyonel ve bağımsız kaldığı süre. Amaç, toplam yaşı büyütmek değil, bu sağlıklı pencereyi olabildiğince uzatmak.",
       "Bu bakış her şeyi değiştirir. Hedef 90 yaşına ulaşmak değil, o yaşa dinç ulaşmak. Protokoller de bu mantıkla kurulur: bugünü değil, on yıl sonrasını düşünerek.",
     ],
@@ -73,7 +73,7 @@ export const articles: Article[] = [
   {
     slug: "kognitif-protokoller-semax-selank",
     title: "Kognitif protokollerde Rusya kaynaklı iki molekül",
-    category: "Kognitif",
+    category: "Bilişsel",
     excerpt:
       "Semax ve Selank, Rusya'da onlarca yıldır klinik kullanımda ama batı literatüründe hâlâ az tanınıyor. Aradaki fark neden önemli?",
     readMinutes: 3,
@@ -102,7 +102,7 @@ export const articles: Article[] = [
   {
     slug: "cilt-icin-icten-yaklasim",
     title: "Cilt için içten yaklaşım",
-    category: "Anti-Aging",
+    category: "Cilt & Yaşlanma",
     excerpt:
       "Topikal ürünlerin sınırı cildin yüzeyinde biter. GHK-Cu gibi moleküller, yenilenmeyi hücresel düzeyde tetiklemeyi hedefliyor.",
     readMinutes: 3,
@@ -132,13 +132,13 @@ export const articles: Article[] = [
   {
     slug: "hucresel-saglik-uzun-vade",
     title: "Hücresel sağlık, uzun vadeli bir proje",
-    category: "Longevity",
+    category: "Uzun Yaşam",
     excerpt:
-      "Longevity molekülleri hızlı sonuç vaat etmiyor. Mitokondriyal fonksiyon ve hücresel enerji üzerine kurulu, sabır isteyen bir yaklaşım.",
+      "Bu alandaki moleküller hızlı sonuç vaat etmiyor. Mitokondriyal fonksiyon ve hücresel enerji üzerine kurulu, sabır isteyen bir yaklaşım.",
     readMinutes: 4,
     date: "2026-04-05",
     body: [
-      "Longevity alanındaki moleküllerin çoğu, hızlı ve görünür bir etki vaat etmiyor. Hedef aldıkları şey, yani mitokondriyal fonksiyon ve hücresel enerji metabolizması, yıllar içinde birikimli olarak fark yaratan bir katman.",
+      "Uzun yaşam alanındaki moleküllerin çoğu hızlı ve görünür bir etki vaat etmiyor. Hedef aldıkları şey, yani mitokondriyal fonksiyon ve hücresel enerji metabolizması, yıllar içinde birikimli olarak fark yaratan bir katman.",
       "SS-31 gibi mitokondri koruyucu moleküller klinik olarak test edilirken, NAD+ öncülleri ve MOTS-c gibi bileşikler hâlâ insan verisinin olgunlaştığı bir aşamada. Kanıt seviyesi bu yüzden molekülden moleküle büyük farklılık gösteriyor.",
       "Bu alanda en büyük risk, sabırsızlık. Preklinik bir bileşiği klinik kanıtlıymış gibi sunmak, longevity pazarlamasının en yaygın hatası. Biz bu ayrımı hiç bulandırmıyoruz.",
       "Uzun vadeli bir stratejide, bugünün küçük ve doğrulanabilir kazanımları, yarının büyük iddialarından daha değerlidir.",
@@ -185,7 +185,7 @@ export const articles: Article[] = [
   {
     slug: "tesamorelin-viseral-yag-meta-analiz",
     title: "Tesamorelin: viseral yağ için en çok kanıtlanan büyüme hormonu analoğu",
-    category: "Büyüme / GH",
+    category: "Büyüme Hormonu",
     excerpt:
       "Beş randomize kontrollü çalışmanın meta-analizi, tesamorelinin vücut kompozisyonu üzerindeki etkilerini net şekilde ortaya koyuyor.",
     readMinutes: 3,
@@ -203,7 +203,7 @@ export const articles: Article[] = [
   {
     slug: "gh-salgilaticilar-ipamorelin-sermorelin",
     title: "Büyüme hormonu salgılatıcıları: Ipamorelin ve Sermorelin farkı",
-    category: "Büyüme / GH",
+    category: "Büyüme Hormonu",
     excerpt:
       "İkisi de doğal büyüme hormonu salınımını uyarır ama farklı reseptörler üzerinden. Aradaki mekanik fark neden önemli?",
     readMinutes: 3,
@@ -242,7 +242,7 @@ export const articles: Article[] = [
   {
     slug: "uyku-mimarisi-ve-toparlanma",
     title: "Uyku mimarisi: toparlanmanın görünmeyen altyapısı",
-    category: "Longevity",
+    category: "Uzun Yaşam",
     excerpt:
       "Derin uyku ve REM oranları, toparlanmanın ham süreden daha belirleyici bileşenleri. Neden uyku 'süresi' tek başına yeterli bir ölçüt değil?",
     readMinutes: 3,

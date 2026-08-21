@@ -64,3 +64,25 @@ export const bestSellingFatLoss: Strip = {
   href: "/urunler?kategori=Kilo%20Kayb%C4%B1",
   linkLabel: "Tüm kilo kaybı ürünleri",
 }
+
+/** ZPHC'nin hazır karışım ürünleri.
+ *
+ * Bunlar bizim oluşturduğumuz paketler değil, üreticinin tek flakonda
+ * birden fazla bileşik sunduğu kendi ürünleri (Ultra Rehab Mix = BPC-157 +
+ * TB-500 gibi). "Hangisini almalıyım" diye takılan ziyaretçi için doğrudan
+ * cevap oluyorlar: kombinasyon kararı zaten verilmiş halde geliyor.
+ */
+export const readyMixes: Strip = {
+  title: "Hazır karışımlar",
+  slugs: [
+    "zphc-ultra-rehab-mix-20mg-bpc157-tb500",
+    "ultra-rehab-mix-50mg-5x10mg-zphc",
+    "glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc",
+    "wellness-mix-25mg-5x5mg-zphc",
+    "super-slim-mix-275mg-5x55mg-zphc",
+    "super-slim-mix-55mg-5x11mg-zphc",
+    "double-burn-mix-5mg-5x5mg-zphc",
+    "mega-mass-mix-10mg-5x10mg-zphc",
+  ],
+  linkLabel: "Tüm ürünler",
+}

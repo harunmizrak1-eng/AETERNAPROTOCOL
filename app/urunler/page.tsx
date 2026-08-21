@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { WhatsappCta } from "@/components/whatsapp-cta"
 import { ProductCatalog } from "@/components/product-catalog"
 import { ShopSidebar } from "@/components/shop-sidebar"
+import { getCategoryInfo } from "@/lib/category-info"
 
 export const metadata: Metadata = {
   title: "Ürünler",
@@ -30,6 +31,7 @@ export default async function UrunlerPage({
   // statikti ve filtre client tarafında olduğu için sunucu HTML'i bomboş
   // çıkıyordu — arama motoru da ilk boyama da ürünsüz bir sayfa görüyordu.
   const { kategori } = await searchParams
+  const info = getCategoryInfo(kategori)
 
   return (
     <>
@@ -37,12 +39,17 @@ export default async function UrunlerPage({
       <main id="main-content" className="bg-background">
         <section className="px-6 pb-8 md:px-10">
           <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-4">
+            {/* Başlık ve açıklama kategoriye göre değişiyor. Kategori
+                sayfalarında daha önce sadece ürün ızgarası vardı; ne arama
+                motoruna ne de ilk kez bakan müşteriye o başlığın ne olduğunu
+                anlatan tek satır yoktu. */}
             <div>
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Ürünler
+                {info?.title ?? "Ürünler"}
               </h1>
-              <p className="mt-2 max-w-xl text-base leading-relaxed text-muted-foreground">
-                ZPHC peptid ve büyüme hormonu ürünlerinin tamamı.
+              <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                {info?.body ??
+                  "ZPHC peptid ve büyüme hormonu ürünlerinin tamamı."}
               </p>
             </div>
             <WhatsappCta label="Fiyat ve stok için yazın" />

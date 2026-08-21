@@ -132,7 +132,7 @@ export default async function UrunPage({
                   width={1000}
                   height={1000}
                   priority
-                  className="mx-auto w-full max-w-lg object-contain mix-blend-multiply"
+                  className="mx-auto w-full max-w-lg object-contain"
                 />
               </div>
             )}

@@ -18,13 +18,18 @@ export function ProductCard({ product }: { product: Product }) {
       href={`/urunler/${product.slug}`}
       className="group flex h-full flex-col items-center border border-hairline bg-background p-5 text-center transition-colors hover:border-gold/50"
     >
+      {/* mix-blend-multiply bilerek YOK. Beyaz pikselleri saydamlaştırdığı
+          için, kutusu beyaz olan ZPHC ürünleri (AICAR, AOD 9604, BPC-157...)
+          beyaz kart zemininde tamamen kayboluyor ve kart boş görünüyordu.
+          Gerçek zphcstore.com da görselleri hiçbir karışım kipi uygulamadan,
+          olduğu gibi basıyor. */}
       {product.image && (
         <Image
           src={product.image}
           alt=""
           width={400}
           height={400}
-          className="aspect-square w-full object-contain mix-blend-multiply"
+          className="aspect-square w-full object-contain"
         />
       )}
 

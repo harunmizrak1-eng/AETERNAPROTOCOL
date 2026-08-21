@@ -44,7 +44,7 @@ export function ProductCategories() {
                     alt=""
                     width={140}
                     height={140}
-                    className="h-20 w-20 object-contain mix-blend-multiply"
+                    className="h-20 w-20 object-contain"
                   />
                 )}
                 <div>

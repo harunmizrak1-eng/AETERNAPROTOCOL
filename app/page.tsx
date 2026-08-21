@@ -5,6 +5,7 @@ import { ProductCategories } from "@/components/product-categories"
 import { FeaturedProducts } from "@/components/featured-products"
 import { WhyZphc } from "@/components/why-zphc"
 import { HowItWorks } from "@/components/how-it-works"
+import { Reviews } from "@/components/reviews"
 import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
@@ -33,6 +34,7 @@ export default function Page() {
       <FeaturedProducts />
       <WhyZphc />
       <HowItWorks />
+      <Reviews />
       <FinalCta />
       <Footer />
     </main>

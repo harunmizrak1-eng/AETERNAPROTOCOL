@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/journal",
     "/metodoloji",
     "/sss",
+    "/hakkimizda",
+    "/kosullar",
     "/gizlilik",
   ].map((path) => ({
     url: `${siteUrl}${path}`,

@@ -6,6 +6,7 @@ const EXPLORE_LINKS = [
   { href: "/urunler", label: "Ürünler" },
   { href: "/peptidler", label: "Bileşik Kütüphanesi" },
   { href: "/journal", label: "Journal" },
+  { href: "/hakkimizda", label: "Hakkımızda" },
 ]
 
 const CONSULT_LINKS = [
@@ -16,6 +17,7 @@ const CONSULT_LINKS = [
 const LEGAL_LINKS = [
   { href: "/metodoloji", label: "Metodoloji" },
   { href: "/sss", label: "Sık Sorulan Sorular" },
+  { href: "/kosullar", label: "Kullanım Koşulları" },
   { href: "/gizlilik", label: "Gizlilik & KVKK" },
 ]
 

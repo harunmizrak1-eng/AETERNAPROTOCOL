@@ -42,7 +42,13 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
     const q = fold(query.trim())
     if (!q) return byGoal
     return byGoal.filter((p) =>
-      fold(`${p.name} ${p.sku ?? ""} ${p.goals.join(" ")}`).includes(q),
+      // peptideSlug bileşiğin tam adını taşıyor ("retatrutide",
+      // "tirzepatide"). Katalogdaki adlar kutunun üstündeki kısaltmayı
+      // kullanıyor ("Reta ZPHC 60 mg") ama müşteri tam adı aratıyor;
+      // slug'ı arama metnine katmak ikisini de bulunur yapıyor.
+      fold(
+        `${p.name} ${p.sku ?? ""} ${p.peptideSlug ?? ""} ${p.goals.join(" ")}`,
+      ).includes(q),
     )
   }, [active, query])
 

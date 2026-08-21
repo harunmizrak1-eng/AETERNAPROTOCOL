@@ -27,14 +27,38 @@ export async function generateMetadata({
   const product = getProduct(slug)
   if (!product) return {}
 
-  const description = `${product.name} ürün bilgisi, içerik ve stok durumu için iletişime geçin.`
+  /* Katalogdaki adlar kutunun üstündeki kısaltmayı kullanıyor ("Reta ZPHC
+   * 60 mg", "Tirze ZPHC 50 mg"). Müşteri ise arama motoruna bileşiğin tam
+   * adını yazıyor: "retatrutide", "tirzepatide". Ad kutuyla eşleşsin diye
+   * değiştirilmiyor, ama tam ad başlığa ekleniyor ki arama sonuçlarında
+   * bulunabilsin. */
+  const peptide = product.peptideSlug
+    ? getPeptide(product.peptideSlug)
+    : undefined
+
+  const fullName =
+    peptide && !product.name.toLowerCase().includes(peptide.name.toLowerCase())
+      ? `${product.name} (${peptide.name})`
+      : product.name
+
+  /* Önceki açıklama 75 ürünün hepsinde aynıydı ("ürün bilgisi, içerik ve
+   * stok durumu için iletişime geçin"). Arama motoru için değersiz, üstelik
+   * tıklamaya da davet etmiyordu. Artık her ürün kendi bileşiğinin sade
+   * özetini ve gerçek teslimat bilgisini taşıyor. */
+  const summary = getPlainSummary(product.peptideSlug) ?? peptide?.short
+  const description = summary
+    ? `${product.name}. ${summary} Ertesi gün kargo, kargo ücreti yok.`.slice(
+        0,
+        300,
+      )
+    : `${product.name}. ZPHC resmi distribütöründen. Ertesi gün kargo, kargo ücreti yok.`
 
   return {
-    title: product.name,
+    title: fullName,
     description,
     alternates: { canonical: `/urunler/${product.slug}` },
     openGraph: {
-      title: product.name,
+      title: fullName,
       description,
       url: `/urunler/${product.slug}`,
       images: product.image ? [product.image] : undefined,

@@ -1,11 +1,12 @@
-// Single source of truth for outbound contact channels. Keep every WhatsApp,
-// Instagram and e-mail reference pointed here so they can be changed in one
-// place and never drift out of sync across the site.
-
-export const contactEmail = "info@aeternaprotocol.net"
-
-export const instagramUrl =
-  "https://www.instagram.com/aeterna.protocol?igsh=anVvbGp3bGV5MXQ1"
+// Single source of truth for outbound contact channels. Keep every WhatsApp
+// reference pointed here so it can be changed in one place and never drift
+// out of sync across the site.
+//
+// E-posta ve Instagram bilerek kaldırıldı: ikisi de kapatılan ÆTERNA
+// markasına aitti (info@aeternaprotocol.net, instagram.com/aeterna.protocol).
+// Çalışmayan bir kutuya veya eski marka hesabına link vermek, doğru adres
+// hiç göstermemekten daha kötü. ZPHC Türkiye adına yeni kanallar açıldığında
+// buraya eklenip footer'a bağlanabilir. Şu an tüm iletişim WhatsApp üzerinden.
 
 const whatsappNumber = "905359184587"
 

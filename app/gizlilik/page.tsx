@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
-import { contactEmail } from "@/lib/contact"
 
 export const metadata: Metadata = {
   title: "Gizlilik & KVKK",
@@ -33,7 +32,7 @@ const SECTIONS = [
   },
   {
     h: "Haklarınız",
-    p: `KVKK kapsamında verilerinize erişme, düzeltme, silme ve işlemeyi durdurma haklarına sahipsiniz. Talepleriniz için ${contactEmail} adresine yazabilirsiniz.`,
+    p: "KVKK kapsamında verilerinize erişme, düzeltme, silme ve işlemeyi durdurma haklarına sahipsiniz. Talepleriniz için WhatsApp hattımızdan bize yazabilirsiniz.",
   },
 ]
 

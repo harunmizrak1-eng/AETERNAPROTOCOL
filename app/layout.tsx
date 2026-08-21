@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
-import { contactEmail } from '@/lib/contact'
 import { WhatsappFloat } from '@/components/whatsapp-float'
 import './globals.css'
 
@@ -57,7 +56,6 @@ export default function RootLayout({
               name: siteName,
               description: siteDescription,
               url: siteUrl,
-              email: contactEmail,
               areaServed: 'TR',
             }),
           }}

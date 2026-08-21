@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { instagramUrl } from "@/lib/contact"
 
 // Note: an email newsletter was intentionally removed until a real provider
 // is wired up. A form that silently captures nothing is worse than none in a
@@ -21,8 +20,8 @@ export function Newsletter() {
         </h2>
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
           Yeni bileşik değerlendirmeleri ve kanıt seviyesi güncellemeleri
-          Journal'da yayımlanır; yalnızca paylaşmaya değer bir şey
-          olduğunda. Ürün ve stok duyuruları için Instagram'ı takip edin.
+          Journal&apos;da yayımlanır; yalnızca paylaşmaya değer bir şey
+          olduğunda. Ürün ve stok bilgisi için WhatsApp&apos;tan yazın.
         </p>
 
         <div className="mx-auto mt-10 flex max-w-md flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -30,16 +29,14 @@ export function Newsletter() {
             href="/journal"
             className="w-full border border-gold/60 px-8 py-3.5 text-center text-xs tracking-normal font-medium text-gold transition-colors duration-300 hover:bg-gold hover:text-primary-foreground sm:w-auto"
           >
-            Journal'ı İncele
+            Journal&apos;ı İncele
           </Link>
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/urunler"
             className="w-full border border-hairline px-8 py-3.5 text-center text-xs tracking-normal font-medium text-foreground/80 transition-colors duration-300 hover:border-gold/60 hover:bg-gold hover:text-primary-foreground sm:w-auto"
           >
-            Instagram'da Takip Et
-          </a>
+            Ürün Kataloğu
+          </Link>
         </div>
       </div>
     </section>

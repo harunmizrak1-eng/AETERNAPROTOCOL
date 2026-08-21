@@ -1,4 +1,3 @@
-import { contactEmail } from "@/lib/contact"
 
 export interface FaqItem {
   question: string
@@ -53,6 +52,7 @@ export const faqItems: FaqItem[] = [
   },
   {
     question: "Verilerim nasıl korunuyor?",
-    answer: `İletişim sırasında paylaştığınız bilgiler KVKK kapsamında işlenir, gizli tutulur ve pazarlama amacıyla üçüncü taraflarla paylaşılmaz. Sitede sunucu tarafında form kaydı tutulmaz; talepler doğrudan WhatsApp üzerinden iletilir. Veri talepleriniz için ${contactEmail} adresine yazabilir, detaylar için Gizlilik & KVKK sayfamıza bakabilirsiniz.`,
+    answer:
+      "İletişim sırasında paylaştığınız bilgiler KVKK kapsamında işlenir, gizli tutulur ve pazarlama amacıyla üçüncü taraflarla paylaşılmaz. Sitede sunucu tarafında form kaydı tutulmaz; talepler doğrudan WhatsApp üzerinden iletilir. Veri talepleriniz için WhatsApp hattımızdan yazabilir, detaylar için Gizlilik & KVKK sayfamıza bakabilirsiniz.",
   },
 ]

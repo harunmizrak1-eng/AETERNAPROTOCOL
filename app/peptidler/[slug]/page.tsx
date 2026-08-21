@@ -141,11 +141,11 @@ export default async function PeptideDetailPage({
                   </div>
                 )}
                 {peptide.molecular.sequence && (
-                  <div>
+                  <div className="col-span-2 sm:col-span-4">
                     <p className="text-xs tracking-normal text-muted-foreground font-medium">
                       Dizi
                     </p>
-                    <p className="mt-1 font-mono text-sm text-foreground/90">
+                    <p className="mt-1 break-all font-mono text-sm text-foreground/90">
                       {peptide.molecular.sequence}
                     </p>
                   </div>

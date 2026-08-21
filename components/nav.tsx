@@ -27,6 +27,15 @@ export function Nav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-hairline bg-background/80 backdrop-blur-md">
+      <div className="flex items-center justify-center gap-1.5 bg-[#ff5454] px-4 py-1.5 text-center text-[11px] font-medium leading-tight text-white sm:text-xs">
+        <span aria-hidden="true">⚠</span>
+        <span className="sm:hidden">Siparişi yalnızca WhatsApp&apos;tan onaylayın.</span>
+        <span className="hidden sm:inline">
+          Sahte satıcılara dikkat: Siparişinizi yalnızca resmi WhatsApp
+          hattımızdan onaylayın.
+        </span>
+      </div>
+
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
         <div className="flex min-w-0 items-center gap-2.5">
           <Link

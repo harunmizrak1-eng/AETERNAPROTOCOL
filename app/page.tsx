@@ -19,15 +19,16 @@ import { Footer } from "@/components/footer"
  * yalnızca peptid adı listeleyen bir metin bloğuydu ve kataloğa
  * bağlanmıyordu. Yerini ProductCategories aldı.
  *
- * pt-[69px]: Nav position:fixed, ~69px yüksekliğinde. Diğer her sayfanın
- * <main>'i pt-28 taşıyor; burası unutulmuştu ve Hero'nun ilk render'da
- * nav'ın arkasında kalmasına (görünmez/çakışık render) yol açmıştı. Değer
- * ölçülerek verildi (Nav'ın gerçek yüksekliği); Nav'ın kendi boyutu
- * değişirse burası da güncellenmeli.
+ * pt-[96px]: Nav position:fixed, kırmızı uyarı şeridi + logo satırıyla
+ * birlikte ~96px yüksekliğinde. Diğer her sayfanın <main>'i pt-28/pt-32
+ * taşıyor (Nav'ın gerçek yüksekliğinden daha fazla, güvenli pay bırakır);
+ * burası tek istisna, unutulup Hero'nun nav'ın arkasında kalmasına yol
+ * açmıştı. Değer ölçülerek verildi; Nav'ın kendi boyutu değişirse burası
+ * da güncellenmeli.
  */
 export default function Page() {
   return (
-    <main id="main-content" className="bg-background pt-[69px]">
+    <main id="main-content" className="bg-background pt-[96px]">
       <Nav />
       <Hero />
       <ResearchMetrics />

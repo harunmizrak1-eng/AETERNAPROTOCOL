@@ -121,8 +121,8 @@ export default function DogrulamaPage() {
             </p>
             <div className="mt-8">
               <WhatsappCta
-                product="doğrulama sonucu"
-                label="Doğrulama İçin Yazın"
+                label="Doğrulama için yazın"
+                message="Merhaba, aldığım ürünün doğrulama sonucuyla ilgili bir sorun var. Yardımcı olabilir misiniz?"
               />
             </div>
           </div>

@@ -113,7 +113,10 @@ export default function IadePage() {
             Siparişinizde bir sorun mu var? Hemen yazın.
           </p>
           <div className="mt-8 flex justify-center">
-            <WhatsappCta product="siparişimde sorun var" />
+            <WhatsappCta
+              label="Sorunu bildirin"
+              message="Merhaba, siparişimde bir sorun var (hasarlı veya eksik ürün). Yardımcı olabilir misiniz?"
+            />
           </div>
         </section>
       </main>

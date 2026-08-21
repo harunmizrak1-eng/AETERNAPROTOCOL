@@ -1,22 +1,35 @@
 import { whatsappLink } from "@/lib/contact"
 
-/** Product-level WhatsApp enquiry button. The pre-filled message always names
- * the compound the visitor was looking at, so an incoming chat arrives with
- * enough context to answer without a round-trip. Keep the wording an enquiry
- * ("sor"), never a purchase instruction — nothing on this site completes an
- * order, and the copy must not imply otherwise. */
+/** WhatsApp iletişim düğmesi.
+ *
+ * Hazır mesaj, ziyaretçinin baktığı ürünün adını taşır ki gelen konuşma
+ * bağlamıyla birlikte gelsin. Metin bir soru olarak kalır ("sor"), sipariş
+ * talimatı olarak değil: bu sitede sipariş tamamlanmıyor, kopya bunun
+ * aksini ima etmemeli.
+ *
+ * Mesaj bilerek "fiyat ve stok" diyor, genel "bilgi almak istiyorum"
+ * demiyor. Düğmelerin üstünde zaten "Fiyat sorun" yazıyordu ama mesaj
+ * genel gidiyordu; satıcı ne sorulduğunu anlamayıp geri soruyor, bu da
+ * bir tur kaybettiriyordu. Artık ilk mesaj tek cevapla kapanabiliyor.
+ */
 export function WhatsappCta({
   product,
   label = "WhatsApp’tan yazın",
   variant = "primary",
+  message: customMessage,
 }: {
   product?: string
   label?: string
   variant?: "primary" | "outline"
+  /** Fiyat sorusu dışındaki durumlar için hazır mesajı tamamen değiştirir
+   * (bozuk sipariş bildirimi, doğrulama sorunu gibi). */
+  message?: string
 }) {
-  const message = product
-    ? `Merhaba, ${product} hakkında bilgi almak istiyorum.`
-    : "Merhaba, ürünleriniz hakkında bilgi almak istiyorum."
+  const message =
+    customMessage ??
+    (product
+      ? `Merhaba, ${product} için fiyat ve stok bilgisi alabilir miyim?`
+      : "Merhaba, ürün fiyatlarınız ve stok durumu hakkında bilgi alabilir miyim?")
 
   const base =
     "inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200"

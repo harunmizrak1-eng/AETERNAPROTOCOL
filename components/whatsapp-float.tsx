@@ -8,7 +8,9 @@ import { whatsappLink } from "@/lib/contact"
 export function WhatsappFloat() {
   return (
     <a
-      href={whatsappLink("Merhaba, ürünleriniz hakkında bilgi almak istiyorum.")}
+      href={whatsappLink(
+        "Merhaba, ürün fiyatlarınız ve stok durumu hakkında bilgi alabilir miyim?",
+      )}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp'tan yazın"

@@ -12,6 +12,27 @@ export interface Article {
 
 export const articles: Article[] = [
   {
+    slug: "zphc-orijinal-mi-nasil-anlarim",
+    title: "Elimdeki ZPHC ürünü orijinal mi, nasıl anlarım?",
+    category: "Doğrulama",
+    excerpt:
+      "Kutudaki doğrulama kodu neyi kanıtlar, neyi kanıtlamaz. Koda bakmadan önce fark edebileceğiniz işaretler ve sonuç olumsuz çıkarsa ne yapmalısınız.",
+    readMinutes: 5,
+    date: "2026-08-21",
+    body: [
+      "Bu soru forumlarda sürekli soruluyor ve haklı bir soru. ZPHC bilinen bir marka olduğu için taklidi de yapılıyor. İyi haber şu: ZPHC ürünlerinde orijinalliği satıcıya güvenmeden, doğrudan üreticiye sorarak kontrol edebileceğiniz bir sistem var.",
+      "Her ZPHC kutusunda gümüş bir kaplama bulunur. Kazıdığınızda altından harf, rakam ve özel karakterlerden oluşan bir kod çıkar. Bu kodu validation.zphc.com adresine girdiğinizde sorgu üreticinin kendi sunucusunda yapılır. Cevabı size satıcı değil, ZPHC verir. Aradaki fark önemli: bir satıcının orijinal demesiyle üreticinin onaylaması aynı şey değildir.",
+      "Kodu girdiğinizde alabileceğiniz üç sonuç var. Kod tanınır ve ilk kez sorgulanmışsa ürün orijinaldir. Kod hiç tanınmıyorsa ürün ZPHC üretimi değildir. Kod tanınıyor ama daha önce sorgulanmış görünüyorsa dikkatli olun: ya sizden önce biri kontrol etmiştir, ya da orijinal bir kutunun kodu kopyalanıp taklit ürüne basılmıştır.",
+      "Koda bakmadan önce de fark edebileceğiniz şeyler var. Kutunun mühürü kırılmış veya açılıp kapatılmış görünüyorsa, gümüş bant siz kazımadan önce kazınmışsa, baskı kalitesi düşükse veya yazı fontları tuhaf duruyorsa kodu sorgulamaya bile gerek kalmadan şüphelenmelisiniz. Gümüş bandın önceden kazınmış olması özellikle kötü bir işaret, çünkü kodu başkası zaten görmüş demektir.",
+      "Şunu da açıkça söylemek gerekir: doğrulama kodu ambalajın gerçekliğini kanıtlar, flakonun içindekini kanıtlamaz. Orijinal bir kutunun içeriği sonradan değiştirilmiş olabilir. Kod sorgusu bu ihtimali ortadan kaldırmaz. Bu yüzden kodun yanında ürünü nereden aldığınız da önemlidir. Tedarik zinciri ne kadar kısaysa, arada müdahale ihtimali o kadar azalır.",
+      "Sonuç olumsuz çıkarsa ürünü kullanmayın. Aldığınız yere durumu bildirin ve elinizdeki kutunun fotoğraflarını saklayın. Sorgu ekranının görüntüsünü de alın; iade veya şikayet sürecinde işinize yarar.",
+    ],
+    relatedLinks: [
+      { href: "/dogrulama", label: "Adım adım doğrulama anlatımı" },
+      { href: "/urunler", label: "Ürün kataloğu" },
+    ],
+  },
+  {
     slug: "retatrutide-nedir",
     title: "Retatrutide neden farklı bir nesil?",
     category: "Metabolik",

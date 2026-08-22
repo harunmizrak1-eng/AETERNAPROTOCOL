@@ -12,34 +12,34 @@ konuşup sitede başka türlü konuşmak güveni bitirir.
 
 ## 1. BPC-157 (`out/bpc157/`, 12 slayt)
 
-Kırık bir kemik altı haftada kaynar. Aynı kişide tendon yaralanması
-aylarca sürebilir. Fark dokunun kanlanmasında: kemik yoğun bir damar
-ağıyla beslenirken tendon ve bağ dokusunda damarlanma azdır, onarım
-hücreleri bölgeye yeterince ulaşamaz.
+Kırık bir kemik altı haftada kaynar. Aynı kişide tendon yaralanmasının
+iyileşmesi aylar alabilir. Fark dokunun kanlanmasında: kemik yoğun bir
+damar ağıyla beslenirken tendon ve bağ dokusunda damarlanma azdır,
+onarım hücreleri bölgeye yeterince ulaşamaz.
 
-BPC-157 araştırmaları tam da buraya bakıyor.
+BPC-157 araştırmaları tam olarak buraya bakıyor.
 
-Bileşiğin açılımı Body Protection Compound. Mide suyunda doğal olarak
+Bileşiğin açılımı Body Protection Compound. Mide özsuyunda doğal olarak
 bulunan bir proteinin 15 aminoasitlik parçası, 1990'larda Zagreb
 Üniversitesi'nde tanımlandı. Peptidlerin çoğu mide asidinde parçalanır,
 bunun ayırt edici özelliği o ortamda bozulmadan kalması.
 
 Araştırmalar en çok Aşil tendonu kesisi, diz iç yan bağı hasarı, kas
-ezilmesi ve mide bağırsak mukozası üzerinde yapıldı. Ölçülen şeyler
-somut: onarım süresi, bağın kopmadan taşıdığı yük, ezilen kasın
+ezilmesi ve mide bağırsak mukoza hasarı üzerinde yapıldı. Ölçülen
+değerler somut: onarım süresi, bağın kopmadan taşıdığı yük, ezilen kasın
 toparlanma derecesi.
 
 Mekanizma tarafında öne çıkan açıklama anjiyogenez, yani yaralı bölgede
 yeni kılcal damar oluşumu. BPC-157'nin damar endotel büyüme faktörü
 (VEGF) reseptör yolağını harekete geçirdiği bildirildi. İkinci basamak
-hücre göçü: tendonu yeniden ören fibroblastların yara yerine ulaşması ve
-yüzeye tutunması. Hücre kültürü çalışmalarında bu iki adımda da artış
-gözlendi.
+hücre göçü: tendon dokusunu yeniden üreten fibroblastların yara yerine
+ulaşması ve yüzeye tutunması. Hücre kültürü çalışmalarında bu iki adımda
+da artış gözlendi.
 
 BPC-157 ile TB-500 sık sık birlikte anılır. İkisi de doku onarımı
 üzerine araştırılıyor ama farklı yollardan: BPC-157'de damarlanma öne
 çıkarken TB-500 timosin beta-4 proteininin bir parçası ve aktin
-bağlayarak hücre hareketini etkiliyor.
+proteinine bağlanarak hücre hareketini etkiliyor.
 
 Kanıt tarafı şöyle: yayınların büyük çoğunluğu sıçan ve fare
 modellerinde, insanda yapılmış geniş ölçekli çalışma yok. BPC-157 bu

@@ -50,24 +50,24 @@ export const sets = {
       {
         type: "hook",
         kicker: "BPC-157",
-        title: "Kırık 6 haftada kaynar. Tendon neden aylarca sürer?",
-        sub: "BPC-157 araştırmalarının çıkış noktası tam olarak bu soru.",
+        title: "Kırık kemik altı haftada kaynıyor. Tendon iyileşmesi neden aylar alıyor?",
+        sub: "BPC-157 araştırmaları tam olarak bu soruya bakıyor.",
       },
       {
         type: "text",
         heading: "Cevap kanlanmada",
-        body: "Kemik yoğun bir damar ağıyla beslenir, onarım hücreleri bölgeye hızla ulaşır. Tendon ve bağ dokusunda ise damarlanma azdır. Gerekli hücreler ve besin yeterince gidemediği için iyileşme uzar.",
+        body: "Kemik yoğun bir damar ağıyla beslenir, onarım hücreleri bölgeye hızla ulaşır. Tendon ve bağ dokusunda ise damarlanma azdır. Gerekli hücreler ve besin bölgeye yeterince ulaşamadığı için iyileşme uzar.",
       },
       {
         type: "text",
         heading: "BPC-157 nedir",
-        body: "Açılımı Body Protection Compound. Mide suyunda doğal olarak bulunan bir proteinin 15 aminoasitlik parçası. 1990'larda Zagreb Üniversitesi'nde tanımlandı.",
+        body: "Açılımı Body Protection Compound. Mide özsuyunda doğal olarak bulunan bir proteinin 15 aminoasitlik parçası. 1990'larda Zagreb Üniversitesi'nde tanımlandı.",
       },
       {
         type: "stat",
         big: "15",
         unit: "aminoasit",
-        body: "Kısa bir zincir. Peptidlerin çoğu mide asidinde parçalanırken BPC-157 bu ortamda bozulmadan kalıyor. Literatürdeki adı da bu yüzden stabil gastrik pentadekapeptid.",
+        body: "Kısa bir zincir. Peptidlerin çoğu mide asidinde parçalanırken BPC-157 bu ortamda bozulmadan kalıyor. Literatürde “stabil gastrik pentadekapeptid” olarak geçmesinin nedeni bu.",
       },
       {
         type: "list",
@@ -76,33 +76,33 @@ export const sets = {
           "Aşil tendonu kesisi",
           "Diz iç yan bağı (MCL) hasarı",
           "Kas ezilmesi ve yırtığı",
-          "Mide ve bağırsak mukozası",
+          "Mide ve bağırsak mukoza hasarı",
         ],
       },
       {
         type: "text",
         heading: "Ne ölçüldü",
-        body: "Hayvan modellerinde kesilen tendonun onarım süresi, bağ dokusunun kopmadan taşıdığı yük ve ezilen kasın toparlanma derecesi ölçüldü. Kontrol gruplarına göre fark bildirildi.",
+        body: "Hayvan modellerinde kesilen tendonun onarım süresi, bağ dokusunun kopmadan taşıdığı yük ve ezilen kasın toparlanma derecesi ölçüldü. Kontrol gruplarıyla karşılaştırıldığında fark bildirildi.",
       },
       {
         type: "text",
         heading: "Mekanizma: yeni damar",
-        body: "Öne çıkan açıklama anjiyogenez, yani yaralı bölgede yeni kılcal damar oluşumu. BPC-157'nin damar endotel büyüme faktörü (VEGF) reseptör yolağını harekete geçirdiği bildirildi. Az damarlanan bir dokuda bu, eksik olanı doğrudan hedefliyor.",
+        body: "Öne çıkan açıklama anjiyogenez, yani yaralı bölgede yeni kılcal damar oluşumu. BPC-157'nin damar endotel büyüme faktörü (VEGF) reseptör yolağını harekete geçirdiği bildirildi. Damarlanması zaten az olan bir dokuda bu yol doğrudan sorunun kaynağına denk geliyor.",
       },
       {
         type: "text",
         heading: "İkinci basamak: hücre göçü",
-        body: "Damar tek başına yetmez, tendonu yeniden ören fibroblastların yara yerine ulaşması gerekir. Hücre kültürü çalışmalarında BPC-157'nin bu göçü ve hücrelerin yüzeye tutunmasını artırdığı gözlendi.",
+        body: "Damar tek başına yetmez, tendon dokusunu yeniden üreten fibroblastların yara yerine ulaşması gerekir. Hücre kültürü çalışmalarında BPC-157'nin bu göçü ve hücrelerin yüzeye tutunmasını artırdığı gözlendi.",
       },
       {
         type: "text",
         heading: "BPC-157 ile TB-500 farkı",
-        body: "İkisi de doku onarımı üzerine araştırılıyor ama farklı yollardan. BPC-157'de öne çıkan yol damarlanma. TB-500 ise timosin beta-4 proteininin bir parçası ve aktin bağlayarak hücre hareketini etkiliyor. Literatürde sık sık yan yana anılmalarının nedeni bu.",
+        body: "İkisi de doku onarımı üzerine araştırılıyor ama farklı yollardan. BPC-157'de öne çıkan yol damarlanma. TB-500 ise timosin beta-4 proteininin bir parçası ve aktin proteinine bağlanarak hücre hareketini etkiliyor. Literatürde sık sık yan yana anılmalarının nedeni bu.",
       },
       {
         type: "evidence",
         heading: "İnsan verisi var mı",
-        body: "Yayınların büyük çoğunluğu sıçan ve fare modellerinde. İnsanda yapılmış geniş ölçekli çalışma yok. BPC-157 bu nedenle onaylı bir ilaç değil, araştırma materyali olarak sınıflandırılıyor.",
+        body: "Yayınların büyük çoğunluğu sıçan ve fare modelleri üzerinde yapıldı. İnsanda yapılmış geniş ölçekli çalışma yok. BPC-157 bu nedenle onaylı bir ilaç değil, araştırma materyali olarak sınıflandırılıyor.",
       },
       {
         type: "verify",
@@ -136,9 +136,9 @@ export const sets = {
         type: "list",
         heading: "Üç sonuç çıkabilir",
         items: [
-          "Tanındı, ilk sorgu: ürün orijinal",
-          "Hiç tanınmadı: ZPHC üretimi değil",
-          "Tanındı ama daha önce sorulmuş: dikkat",
+          "Kod tanındı ve ilk sorgu: orijinal",
+          "Kod tanınmadı: ZPHC üretimi değil",
+          "Daha önce sorgulanmış: dikkatli olun",
         ],
       },
       {
@@ -200,7 +200,7 @@ function render(slide, i, total, productImg) {
       <img class="logo" src="${LOGO}">
       <div style="margin-top:40px">
         <div class="kicker">${slide.kicker}</div>
-        <h1 style="margin-top:16px;font-size:80px">${slide.title}</h1>
+        <h1 style="margin-top:16px;font-size:70px">${slide.title}</h1>
         ${slide.sub ? `<p class="sub" style="margin-top:22px">${slide.sub}</p>` : ""}
       </div>
       <div class="shot" style="margin-top:8px;max-height:330px"><img src="${productImg}"></div>

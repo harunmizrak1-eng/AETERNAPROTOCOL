@@ -1,8 +1,8 @@
 /**
  * Instagram carousel üreticisi.
  *
- * Bir ürün için 1080x1080 slayt seti üretir. Tasarım siteyle aynı kimliği
- * kullanır: beyaz zemin, ZPHC mavisi (#0072bc), Helvetica/Arial.
+ * Bir konu için 1080x1080 slayt seti üretir. Tasarım: üstte ZPHC mavisi
+ * blok, altında beyaz içerik alanı, yazı tipi Manrope.
  *
  * KURAL: Slayt metinleri sitedeki kurallara tabidir. Doz, kullanım şekli,
  * süre veya "şunu alın" yönlendirmesi YOK. Etkinlik ifadeleri kanıt
@@ -49,14 +49,16 @@ const FONT_EXT = font("manrope-latinext.woff2")
 
 /* ---------------------------------------------------------------- setler */
 
+/* KURAL: Slayt başına en fazla iki kısa cümle. Karusel telefonda ve
+   parmakla okunuyor; paragraf koyarsak kimse okumuyor, kaydırıp geçiyor.
+   Uzun anlatım gönderi açıklamasında (aciklamalar.md) duruyor.
+
+   Set başına 5-7 slayt. Daha fazlası kaydırma sırasında terk ediliyor. */
+
 export const sets = {
   bpc157: {
     product: "products/bpc157-25mg-5x5mg-zphc.webp",
     slides: [
-      /* Kurgu: önce merak uyandıran bir soru, sonra ne için araştırıldığı,
-         sonra mekanizma. Kapak sorusu bilerek mekanizmayı hazırlıyor;
-         tendonun yavaş iyileşme nedeni de, BPC-157 araştırmalarının
-         odaklandığı yol da aynı yere, damarlanmaya çıkıyor. */
       {
         type: "hook",
         kicker: "BPC-157",
@@ -65,96 +67,185 @@ export const sets = {
       },
       {
         type: "text",
-        heading: "Sebep damar sayısı",
-        body: "Kemiğin içi damarla doludur. Kanla gelen onarım hücreleri yaralı yere hemen ulaşır. Tendonda ve bağda ise damar çok azdır. Hücreler oraya zor gider, iyileşme de bu yüzden uzar.",
+        heading: "Sebep damar",
+        body: "Kemiğin içi damarla doludur. Tendonda damar çok azdır, onarım hücreleri oraya zor gider.",
       },
       {
         type: "text",
         heading: "BPC-157 nedir?",
-        body: "Midenin salgıladığı sıvıda doğal olarak bulunan bir proteinin küçük bir parçasıdır. 15 aminoasitten oluşur. İlk kez 1990'larda Zagreb Üniversitesi'ndeki bir ekip ayırıp inceledi.",
-      },
-      {
-        type: "stat",
-        big: "15",
-        unit: "aminoasit",
-        body: "Peptidlerin çoğu mide asidine dayanamaz, parçalanır. BPC-157 parçalanmaz. Zaten midede bulunan bir proteinden geldiği için oranın şartlarına dayanıklıdır.",
+        body: "Midede doğal olarak bulunan bir proteinin 15 aminoasitlik parçasıdır.",
       },
       {
         type: "list",
-        heading: "Hangi sakatlıklarda denendi?",
+        heading: "Nerede denendi?",
         items: [
           "Aşil tendonu kesikleri",
-          "Diz iç yan bağı yırtıkları",
-          "Ezilmiş ve yırtılmış kaslar",
+          "Diz bağı yırtıkları",
+          "Ezilmiş kaslar",
           "Mide ve bağırsak yaraları",
         ],
       },
       {
         type: "text",
-        heading: "Peki ne sonuç aldılar?",
-        body: "Kesilen tendonun kaç günde onarıldığına, bağın kopmadan ne kadar yük taşıdığına ve ezilen kasın ne kadar düzeldiğine baktılar. Hiçbir şey verilmeyen gruplara göre daha iyi sonuçlar bildirdiler.",
-      },
-      {
-        type: "text",
-        heading: "Nasıl işe yarıyor olabilir?",
-        body: "En çok kabul gören açıklama şu: BPC-157 yaralı bölgede yeni kılcal damarlar oluşmasını tetikliyor. Buna anjiyogenez deniyor. Damarı zaten az olan tendon için tam da eksik olan şey bu.",
-      },
-      {
-        type: "text",
-        heading: "Tek başına damar yetmiyor",
-        body: "Tendonu onaran hücrelere fibroblast deniyor. Bunların yara yerine gidip oraya tutunması gerekiyor. Laboratuvar çalışmalarında BPC-157'nin bu iki işi de hızlandırdığı görüldü.",
-      },
-      {
-        type: "text",
-        heading: "BPC-157 mi, TB-500 mü?",
-        body: "İkisi de iyileşme üzerine çalışılıyor ama işleyişleri farklı. BPC-157 damar yapımını öne çıkarıyor. TB-500 ise hücrelerin hareket etmesini kolaylaştırıyor. Yani birbirinin yerine geçen değil, ayrı iki bileşik.",
+        heading: "Nasıl?",
+        body: "Yaralı bölgede yeni kılcal damar oluşumunu tetiklediği bildirildi. Tendonun eksiği tam da bu.",
       },
       {
         type: "evidence",
         heading: "İnsanlarda denendi mi?",
-        body: "Çalışmaların neredeyse hepsi fare ve sıçanlarda yapıldı. İnsanlar üzerinde geniş çaplı bir araştırma yok. BPC-157 bu yüzden ilaç sayılmıyor, araştırma ürünü olarak satılıyor.",
-      },
-      {
-        type: "verify",
-        heading: "Ürünün gerçek olduğu nasıl anlaşılır?",
-        body: "Kutunun üstündeki gümüş bant kazınır, altından çıkan kod validation.zphc.com adresine yazılır. Cevabı biz değil, ürünü üreten firma verir.",
+        body: "Çalışmaların neredeyse hepsi fare ve sıçanlarda. İnsanda geniş çaplı araştırma yok.",
       },
       { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
     ],
   },
 
-  dogrulama: {
+  tb500: {
     product: "products/tb500-25mg-5x5mg-zphc.webp",
+    slides: [
+      {
+        type: "hook",
+        kicker: "TB-500",
+        title: "TB-500 neden hep BPC-157 ile birlikte anılıyor?",
+        sub: "İkisi de onarım üzerine, ama ayrı yollardan.",
+      },
+      {
+        type: "text",
+        heading: "Nereden geliyor?",
+        body: "Timosin beta-4 adlı proteinin bir parçasıdır. Bu protein vücutta yara iyileşmesinde rol alır.",
+      },
+      {
+        type: "text",
+        heading: "Nasıl çalışıyor?",
+        body: "Aktine bağlanıyor. Aktin, hücrenin hareket etmesini sağlayan iskelet gibi düşünülebilir.",
+      },
+      {
+        type: "list",
+        heading: "Nerede araştırıldı?",
+        items: [
+          "Kas ve tendon yaralanmaları",
+          "Kalp dokusu hasarı",
+          "Kornea yaralanmaları",
+          "Deride yara kapanması",
+        ],
+      },
+      {
+        type: "text",
+        heading: "BPC-157'den farkı",
+        body: "BPC-157 damar yapımını öne çıkarıyor, TB-500 hücre hareketini. Farklı iki yol.",
+      },
+      {
+        type: "evidence",
+        heading: "Kanıt nerede?",
+        body: "Araştırmaların çoğu hayvan ve hücre çalışması. İnsanda geniş çaplı veri yok.",
+      },
+      { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
+    ],
+  },
+
+  peptidnedir: {
+    product: "products/ghk-cu-60mg-with-bacteriostatic-water-zphc.webp",
+    slides: [
+      {
+        type: "hook",
+        kicker: "TEMEL",
+        title: "Peptid nedir?",
+        sub: "Proteinden farkı sadece uzunluk.",
+      },
+      {
+        type: "stat",
+        big: "2-50",
+        unit: "aminoasit",
+        body: "Peptid, bu kadar aminoasitin zincir halinde bağlanmasıdır. Zincir uzarsa protein denir.",
+      },
+      {
+        type: "text",
+        heading: "Vücutta zaten var",
+        body: "İnsülin de bir peptiddir. Vücut bunları kendisi üretir.",
+      },
+      {
+        type: "text",
+        heading: "Neden hap değil?",
+        body: "Peptidlerin çoğu mide asidinde parçalanır. Ağızdan alındığında bağırsağa sağlam ulaşamaz.",
+      },
+      {
+        type: "text",
+        heading: "Neden toz halinde?",
+        body: "Sıvı halde çabuk bozulurlar. Dondurularak kurutulmuş toz çok daha uzun dayanır.",
+      },
+      {
+        type: "evidence",
+        heading: "Hepsi aynı değil",
+        body: "Bazı peptidler onaylı ilaçtır, bazıları hâlâ araştırma aşamasında. İkisi bir tutulmamalı.",
+      },
+      { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
+    ],
+  },
+
+  bilesikler: {
+    product: "products/glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc.webp",
+    slides: [
+      {
+        type: "hook",
+        kicker: "KÜTÜPHANE",
+        title: "Hangi bileşiği merak ediyorsanız sitede yazıyor",
+        sub: "Doz yok, bilgi var.",
+      },
+      {
+        type: "list",
+        heading: "Her bileşikte ne var?",
+        items: [
+          "Ne olduğu",
+          "Ne için araştırıldığı",
+          "Araştırmanın hangi aşamada olduğu",
+          "Nasıl saklanacağı",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Aşama yazıyor",
+        body: "Bir bileşik insanda mı yoksa sadece hayvanda mı denenmiş, sayfasında açıkça belirtiliyor.",
+      },
+      {
+        type: "evidence",
+        heading: "Doz bulamazsınız",
+        body: "Sitede doz, kür veya kullanım şeması yoktur. Bu bilgi bir satıcıdan alınmaz.",
+      },
+      { type: "cta", heading: "zphctr.com", body: "Bileşik kütüphanesi" },
+    ],
+  },
+
+  dogrulama: {
+    product: "products/retatrutide-60mg-5x12mg-zphc.webp",
     slides: [
       {
         type: "hook",
         kicker: "ORİJİNALLİK",
         title: "Elinizdeki ZPHC gerçek mi?",
-        sub: "Satıcıya sormadan kendiniz kontrol edebilirsiniz.",
+        sub: "Satıcıya sormadan anlaşılıyor.",
       },
       {
         type: "text",
-        heading: "Kutunun üstünde ne var?",
-        body: "Her ZPHC kutusunda gümüş renkli bir bant vardır. Kazıdığınızda altından o ürüne ait bir kod çıkar. Kod harflerden, rakamlardan ve işaretlerden oluşur.",
+        heading: "Kutuda gümüş bant",
+        body: "Kazıdığınızda altından o ürüne ait bir kod çıkar.",
       },
       {
         type: "verify",
-        heading: "Kod nereye yazılıyor?",
-        body: "Kod validation.zphc.com adresindeki kutuya yazılır ve Check düğmesine basılır. Bu sorgu bizim sitemizde değil, ZPHC'nin kendi sisteminde yapılır.",
+        heading: "Kod nereye yazılır?",
+        body: "validation.zphc.com adresine. Sorgu bizde değil, ZPHC'nin kendi sisteminde yapılır.",
       },
       {
         type: "list",
-        heading: "Karşınıza üç sonuç çıkabilir",
+        heading: "Üç sonuç çıkabilir",
         items: [
           "Tanındı, ilk kez soruluyor: gerçek",
           "Hiç tanınmadı: ürün ZPHC değil",
-          "Daha önce sorulmuş: dikkat edin",
+          "Daha önce sorulmuş: dikkat",
         ],
       },
       {
         type: "evidence",
         heading: "Bant zaten kazınmışsa?",
-        body: "Bu kötüye işarettir, kodu sizden önce başkası görmüş demektir. Kutunun mührü kırıksa da ürün kullanılmamalı.",
+        body: "Kötüye işarettir, kodu sizden önce başkası görmüş demektir.",
       },
       { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
     ],
@@ -199,9 +290,11 @@ const base = `
   .kicker { font-size:28px; font-weight:800; letter-spacing:.16em;
             text-transform:uppercase; color:rgba(255,255,255,.82); }
   h1 { font-size:70px; line-height:1.1; letter-spacing:-.025em; font-weight:800; }
-  h2 { font-size:62px; line-height:1.1; letter-spacing:-.025em; font-weight:800; }
-  p  { font-size:42px; line-height:1.5; font-weight:500; color:${MUTED}; }
-  .sub { font-size:32px; font-weight:600; color:rgba(255,255,255,.85); }
+  h2 { font-size:70px; line-height:1.08; letter-spacing:-.03em; font-weight:800; }
+  /* Metin kısaldığı için punto büyüdü. Telefonda karusel kol mesafesinden
+     okunuyor, 42 punto o mesafede küçük kalıyordu. */
+  p  { font-size:50px; line-height:1.45; font-weight:500; color:${MUTED}; }
+  .sub { font-size:34px; font-weight:600; color:rgba(255,255,255,.85); }
   .rule { width:110px; height:9px; border-radius:99px; background:${BLUE}; }
 
   .foot { position:absolute; left:80px; right:80px; bottom:60px; display:flex;
@@ -226,9 +319,9 @@ const base = `
   .unit { font-size:46px; font-weight:800; letter-spacing:-.02em; color:${INK}; }
 
   ul { list-style:none; }
-  li { display:flex; align-items:flex-start; gap:26px; padding:28px 0;
-       border-top:2px solid rgba(13,27,42,.12); font-size:42px;
-       line-height:1.25; font-weight:600; color:${INK}; }
+  li { display:flex; align-items:flex-start; gap:26px; padding:30px 0;
+       border-top:2px solid rgba(13,27,42,.12); font-size:48px;
+       line-height:1.2; font-weight:600; color:${INK}; }
   li:last-child { border-bottom:2px solid rgba(13,27,42,.12); }
   .dot { flex:none; width:18px; height:18px; border-radius:99px;
          background:${BLUE}; margin-top:16px; }
@@ -295,7 +388,7 @@ function render(slide, i, total, productImg) {
     <div class="body-area">
       <div class="rule" style="background:${accent}"></div>
       <h2 style="margin-top:30px;color:${accent === BLUE ? INK : accent}">${slide.heading}</h2>
-      <p style="margin-top:28px">${slide.body}</p>
+      <p style="margin-top:34px">${slide.body}</p>
     </div>
     ${foot}</div>`
 }

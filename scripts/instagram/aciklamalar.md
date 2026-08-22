@@ -36,12 +36,15 @@ hücre göçü: tendonu yeniden ören fibroblastların yara yerine ulaşması ve
 yüzeye tutunması. Hücre kültürü çalışmalarında bu iki adımda da artış
 gözlendi.
 
-Kanıt tarafını olduğu gibi yazalım. Bu sonuçların neredeyse tamamı
-kemirgen çalışmalarından geliyor, insanda yapılmış geniş ölçekli çalışma
-bulunmuyor. Mekanizma tutarlı görünüyor ama kanıt henüz o seviyede
-değil. Onaylı bir ilaç değil, araştırma materyali.
+BPC-157 ile TB-500 sık sık birlikte anılır. İkisi de doku onarımı
+üzerine araştırılıyor ama farklı yollardan: BPC-157'de damarlanma öne
+çıkarken TB-500 timosin beta-4 proteininin bir parçası ve aktin
+bağlayarak hücre hareketini etkiliyor.
 
-Sporculara ayrı bir not: BPC-157 WADA'nın yasaklı maddeler listesinde.
+Kanıt tarafı şöyle: yayınların büyük çoğunluğu sıçan ve fare
+modellerinde, insanda yapılmış geniş ölçekli çalışma yok. BPC-157 bu
+nedenle onaylı bir ilaç değil, araştırma materyali olarak
+sınıflandırılıyor.
 
 Elinizdeki ürünün orijinal olup olmadığını bize sormadan kontrol
 edebilirsiniz. Kutudaki gümüş bandı kazıyın, altından çıkan kodu
@@ -103,8 +106,7 @@ Kullanabileceğiniz slayt tipleri:
 | `text` | Başlık ve paragraf |
 | `stat` | Tek büyük sayı. Karuselin ritmini kırmak için |
 | `list` | Maddeli liste, en fazla 4 madde |
-| `evidence` | Kanıt uyarısı, amber renkli |
-| `warn` | Uyarı, amber renkli |
+| `evidence` | Kanıt seviyesi, amber renkli |
 | `verify` | Orijinallik doğrulama |
 | `cta` | Mavi kapanış |
 

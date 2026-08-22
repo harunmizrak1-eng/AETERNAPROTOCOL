@@ -95,14 +95,14 @@ export const sets = {
         body: "Damar tek başına yetmez, tendonu yeniden ören fibroblastların yara yerine ulaşması gerekir. Hücre kültürü çalışmalarında BPC-157'nin bu göçü ve hücrelerin yüzeye tutunmasını artırdığı gözlendi.",
       },
       {
-        type: "evidence",
-        heading: "Kanıt nerede duruyor",
-        body: "Bu sonuçların neredeyse tamamı kemirgen çalışmalarından geliyor. İnsanda yapılmış geniş ölçekli çalışma bulunmuyor. Mekanizma tutarlı görünse de kanıt henüz o seviyede değil. Onaylı bir ilaç değil, araştırma materyali.",
+        type: "text",
+        heading: "BPC-157 ile TB-500 farkı",
+        body: "İkisi de doku onarımı üzerine araştırılıyor ama farklı yollardan. BPC-157'de öne çıkan yol damarlanma. TB-500 ise timosin beta-4 proteininin bir parçası ve aktin bağlayarak hücre hareketini etkiliyor. Literatürde sık sık yan yana anılmalarının nedeni bu.",
       },
       {
-        type: "warn",
-        heading: "Sporcular için",
-        body: "BPC-157 WADA'nın yasaklı maddeler listesinde yer alıyor. Lisanslı yarışan sporcularda doping kontrolünde sorun oluşturur.",
+        type: "evidence",
+        heading: "İnsan verisi var mı",
+        body: "Yayınların büyük çoğunluğu sıçan ve fare modellerinde. İnsanda yapılmış geniş ölçekli çalışma yok. BPC-157 bu nedenle onaylı bir ilaç değil, araştırma materyali olarak sınıflandırılıyor.",
       },
       {
         type: "verify",
@@ -245,10 +245,9 @@ function render(slide, i, total, productImg) {
       </div>`
   }
 
-  /* Renk, slaydın ne söylediğini önceden haber veriyor: kanıt uyarıları ve
-     doping uyarısı amber, geri kalanı marka mavisi. */
-  const accent =
-    slide.type === "evidence" || slide.type === "warn" ? "#b26a00" : BLUE
+  /* Renk, slaydın ne söylediğini önceden haber veriyor: kanıt seviyesi
+     amber, geri kalanı marka mavisi. */
+  const accent = slide.type === "evidence" ? "#b26a00" : BLUE
 
   return `<div class="slide">
     <img class="logo" src="${LOGO}">

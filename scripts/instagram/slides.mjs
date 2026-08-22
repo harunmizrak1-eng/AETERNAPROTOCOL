@@ -43,26 +43,71 @@ export const sets = {
   bpc157: {
     product: "products/bpc157-25mg-5x5mg-zphc.webp",
     slides: [
-      { type: "hook", kicker: "BPC-157", title: "Nedir, ne için araştırılıyor?" },
+      /* Kurgu: önce merak uyandıran bir soru, sonra ne için araştırıldığı,
+         sonra mekanizma. Kapak sorusu bilerek mekanizmayı hazırlıyor;
+         tendonun yavaş iyileşme nedeni de, BPC-157 araştırmalarının
+         odaklandığı yol da aynı yere, damarlanmaya çıkıyor. */
       {
-        type: "text",
-        heading: "Nereden geliyor",
-        body: "Mide salgısında doğal olarak bulunan bir proteinden türetilmiş, 15 aminoasitlik bir peptid.",
+        type: "hook",
+        kicker: "BPC-157",
+        title: "Kırık 6 haftada kaynar. Tendon neden aylarca sürer?",
+        sub: "BPC-157 araştırmalarının çıkış noktası tam olarak bu soru.",
       },
       {
         type: "text",
-        heading: "Ne üzerine çalışılıyor",
-        body: "Tendon, bağ ve kas dokusunun onarımı. Hayvan çalışmalarında damarlanma ve doku iyileşmesi üzerinde olumlu sonuçlar alındı.",
+        heading: "Cevap kanlanmada",
+        body: "Kemik yoğun bir damar ağıyla beslenir, onarım hücreleri bölgeye hızla ulaşır. Tendon ve bağ dokusunda ise damarlanma azdır. Gerekli hücreler ve besin yeterince gidemediği için iyileşme uzar.",
+      },
+      {
+        type: "text",
+        heading: "BPC-157 nedir",
+        body: "Açılımı Body Protection Compound. Mide suyunda doğal olarak bulunan bir proteinin 15 aminoasitlik parçası. 1990'larda Zagreb Üniversitesi'nde tanımlandı.",
+      },
+      {
+        type: "stat",
+        big: "15",
+        unit: "aminoasit",
+        body: "Kısa bir zincir. Peptidlerin çoğu mide asidinde parçalanırken BPC-157 bu ortamda bozulmadan kalıyor. Literatürdeki adı da bu yüzden stabil gastrik pentadekapeptid.",
+      },
+      {
+        type: "list",
+        heading: "Hangi yaralanmalarda araştırıldı",
+        items: [
+          "Aşil tendonu kesisi",
+          "Diz iç yan bağı (MCL) hasarı",
+          "Kas ezilmesi ve yırtığı",
+          "Mide ve bağırsak mukozası",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Ne ölçüldü",
+        body: "Hayvan modellerinde kesilen tendonun onarım süresi, bağ dokusunun kopmadan taşıdığı yük ve ezilen kasın toparlanma derecesi ölçüldü. Kontrol gruplarına göre fark bildirildi.",
+      },
+      {
+        type: "text",
+        heading: "Mekanizma: yeni damar",
+        body: "Öne çıkan açıklama anjiyogenez, yani yaralı bölgede yeni kılcal damar oluşumu. BPC-157'nin damar endotel büyüme faktörü (VEGF) reseptör yolağını harekete geçirdiği bildirildi. Az damarlanan bir dokuda bu, eksik olanı doğrudan hedefliyor.",
+      },
+      {
+        type: "text",
+        heading: "İkinci basamak: hücre göçü",
+        body: "Damar tek başına yetmez, tendonu yeniden ören fibroblastların yara yerine ulaşması gerekir. Hücre kültürü çalışmalarında BPC-157'nin bu göçü ve hücrelerin yüzeye tutunmasını artırdığı gözlendi.",
       },
       {
         type: "evidence",
-        heading: "Kanıt seviyesi",
-        body: "Mekanizması iyi tanımlı, ancak geniş ölçekli insan çalışması henüz yapılmadı. Bunu saklamıyoruz; sitede her bileşiğin kanıt kademesi açıkça yazılı.",
+        heading: "Kanıt nerede duruyor",
+        body: "Bu sonuçların neredeyse tamamı kemirgen çalışmalarından geliyor. İnsanda yapılmış geniş ölçekli çalışma bulunmuyor. Mekanizma tutarlı görünse de kanıt henüz o seviyede değil. Onaylı bir ilaç değil, araştırma materyali.",
+      },
+      {
+        type: "warn",
+        heading: "Sporcular için",
+        body: "BPC-157 WADA'nın yasaklı maddeler listesinde yer alıyor. Lisanslı yarışan sporcularda doping kontrolünde sorun oluşturur.",
       },
       {
         type: "verify",
-        heading: "Aldığınız ürün orijinal mi?",
-        body: "Kutudaki gümüş bandı kazıyın, çıkan kodu validation.zphc.com adresine girin. Cevabı satıcıdan değil, doğrudan üreticiden alırsınız.",
+        heading: "Elinizdeki ürün orijinal mi",
+        body: "Kutudaki gümüş bandı kazıyın, altından çıkan kodu validation.zphc.com adresine girin. Sonucu biz vermiyoruz, doğrudan üretici veriyor.",
       },
       { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
     ],
@@ -71,26 +116,35 @@ export const sets = {
   dogrulama: {
     product: "products/tb500-25mg-5x5mg-zphc.webp",
     slides: [
-      { type: "hook", kicker: "ORİJİNALLİK", title: "Elinizdeki ZPHC gerçek mi?" },
+      {
+        type: "hook",
+        kicker: "ORİJİNALLİK",
+        title: "Elinizdeki ZPHC gerçek mi?",
+        sub: "Satıcıya sormadan kendiniz kontrol edebilirsiniz.",
+      },
       {
         type: "text",
         heading: "Kutuda ne var",
-        body: "Her ZPHC kutusunda gümüş bir bant bulunur. Kazıdığınızda altından o ürüne özel bir kod çıkar.",
+        body: "Her ZPHC kutusunda gümüş bir bant bulunur. Kazıdığınızda altından o ürüne özel bir doğrulama kodu çıkar. Kod harf, rakam ve özel karakterlerden oluşur.",
       },
       {
         type: "verify",
         heading: "Kodu üreticiye sorun",
-        body: "Kodu validation.zphc.com adresine girin. Sorgu bizim sitemizde değil, üreticinin sunucusunda yapılır.",
+        body: "Kodu validation.zphc.com adresine yazıp Check düğmesine basın. Sorgu bizim sitemizde değil, ZPHC'nin kendi sunucusunda yapılır.",
       },
       {
-        type: "text",
-        heading: "Sonuç ne diyor",
-        body: "Kod tanınmıyorsa ürün ZPHC değildir. Tanınıyor ama daha önce sorgulanmış görünüyorsa dikkatli olun.",
+        type: "list",
+        heading: "Üç sonuç çıkabilir",
+        items: [
+          "Tanındı, ilk sorgu: ürün orijinal",
+          "Hiç tanınmadı: ZPHC üretimi değil",
+          "Tanındı ama daha önce sorulmuş: dikkat",
+        ],
       },
       {
         type: "evidence",
-        heading: "Kodu kazımadan önce",
-        body: "Bant zaten kazınmışsa kötü işarettir; kodu sizden önce biri görmüş demektir. Mühür kırıksa ürünü kullanmayın.",
+        heading: "Kazımadan önce bakın",
+        body: "Bant zaten kazınmışsa bu kötü bir işarettir, kodu sizden önce biri görmüş demektir. Mühür kırık veya ambalaj zedelenmişse ürünü kullanmayın.",
       },
       { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
     ],
@@ -122,7 +176,20 @@ const base = `
   .pill { display:inline-block; background:${BLUE}; color:#fff; font-size:30px;
           font-weight:700; padding:16px 34px; border-radius:99px; }
   .shot { flex:1; display:flex; align-items:center; justify-content:center; }
-  .shot img { max-width:100%; max-height:100%; object-fit:contain; }
+  /* width:100% şart. Sadece max-width verilince görsel kendi piksel
+     boyutunda kalıyor ve 1080'lik karede kaybolacak kadar küçük duruyordu. */
+  .shot img { width:100%; max-height:100%; object-fit:contain; }
+  .sub { font-size:34px; color:${MUTED}; font-weight:500; }
+  .big { font-size:280px; line-height:.9; font-weight:700; letter-spacing:-.04em;
+         color:${BLUE}; }
+  .unit { font-size:44px; font-weight:700; color:${INK}; letter-spacing:-.01em; }
+  ul { list-style:none; }
+  li { display:flex; align-items:flex-start; gap:26px; padding:26px 0;
+       border-top:2px solid rgba(13,27,42,.10); font-size:40px;
+       line-height:1.3; font-weight:500; }
+  li:last-child { border-bottom:2px solid rgba(13,27,42,.10); }
+  .dot { flex:none; width:18px; height:18px; border-radius:99px;
+         background:${BLUE}; margin-top:16px; }
 `
 
 function render(slide, i, total, productImg) {
@@ -131,12 +198,40 @@ function render(slide, i, total, productImg) {
   if (slide.type === "hook") {
     return `<div class="slide">
       <img class="logo" src="${LOGO}">
-      <div style="margin-top:46px">
+      <div style="margin-top:40px">
         <div class="kicker">${slide.kicker}</div>
-        <h1 style="margin-top:16px">${slide.title}</h1>
-        <div class="rule" style="margin-top:32px"></div>
+        <h1 style="margin-top:16px;font-size:80px">${slide.title}</h1>
+        ${slide.sub ? `<p class="sub" style="margin-top:22px">${slide.sub}</p>` : ""}
       </div>
-      <div class="shot" style="margin-top:24px;max-height:430px"><img src="${productImg}"></div>
+      <div class="shot" style="margin-top:8px;max-height:330px"><img src="${productImg}"></div>
+      ${foot}</div>`
+  }
+
+  /* Sayı slaydı. Karusel boyunca hep aynı düzen aktığında insan kaydırmayı
+     bırakıyor; ritmi kıran tek bir görsel duraklama işe yarıyor. */
+  if (slide.type === "stat") {
+    return `<div class="slide">
+      <img class="logo" src="${LOGO}">
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:60px">
+        <div class="big">${slide.big}</div>
+        <div class="unit" style="margin-top:10px">${slide.unit}</div>
+        <p style="margin-top:36px">${slide.body}</p>
+      </div>
+      ${foot}</div>`
+  }
+
+  if (slide.type === "list") {
+    return `<div class="slide">
+      <img class="logo" src="${LOGO}">
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:60px">
+        <div class="rule"></div>
+        <h2 style="margin-top:34px">${slide.heading}</h2>
+        <ul style="margin-top:38px">
+          ${slide.items
+            .map((it) => `<li><span class="dot"></span><span>${it}</span></li>`)
+            .join("")}
+        </ul>
+      </div>
       ${foot}</div>`
   }
 
@@ -150,8 +245,10 @@ function render(slide, i, total, productImg) {
       </div>`
   }
 
+  /* Renk, slaydın ne söylediğini önceden haber veriyor: kanıt uyarıları ve
+     doping uyarısı amber, geri kalanı marka mavisi. */
   const accent =
-    slide.type === "verify" ? BLUE : slide.type === "evidence" ? "#b26a00" : BLUE
+    slide.type === "evidence" || slide.type === "warn" ? "#b26a00" : BLUE
 
   return `<div class="slide">
     <img class="logo" src="${LOGO}">
@@ -165,10 +262,61 @@ function render(slide, i, total, productImg) {
 
 /* ----------------------------------------------------------------- çalış */
 
+/**
+ * Görselin çevresindeki beyaz boşluğu kırpar.
+ *
+ * Katalog görselleri 900x900 karede duruyor ama ürünün kendisi o karenin
+ * ortasındaki küçük bir alanı kaplıyor (BPC-157'de 704x409). Kırpmadan
+ * bastığımızda slaytta ürün minicik kalıyordu, çünkü kutuyu değil kutunun
+ * içinde durduğu boşluğu ölçeklendiriyorduk.
+ */
+async function trim(page, dataUri) {
+  return page.evaluate(async (src) => {
+    const im = new Image()
+    im.src = src
+    await im.decode()
+    const c = document.createElement("canvas")
+    c.width = im.naturalWidth
+    c.height = im.naturalHeight
+    const ctx = c.getContext("2d")
+    ctx.fillStyle = "#fff"
+    ctx.fillRect(0, 0, c.width, c.height)
+    ctx.drawImage(im, 0, 0)
+    const d = ctx.getImageData(0, 0, c.width, c.height).data
+    let x0 = c.width, y0 = c.height, x1 = 0, y1 = 0
+    for (let y = 0; y < c.height; y++) {
+      for (let x = 0; x < c.width; x++) {
+        const o = (y * c.width + x) * 4
+        if (d[o] < 245 || d[o + 1] < 245 || d[o + 2] < 245) {
+          if (x < x0) x0 = x
+          if (x > x1) x1 = x
+          if (y < y0) y0 = y
+          if (y > y1) y1 = y
+        }
+      }
+    }
+    if (x1 <= x0 || y1 <= y0) return src
+    const pad = 8
+    x0 = Math.max(0, x0 - pad)
+    y0 = Math.max(0, y0 - pad)
+    x1 = Math.min(c.width - 1, x1 + pad)
+    y1 = Math.min(c.height - 1, y1 + pad)
+    const w = x1 - x0 + 1
+    const h = y1 - y0 + 1
+    const out = document.createElement("canvas")
+    out.width = w
+    out.height = h
+    const o2 = out.getContext("2d")
+    o2.fillStyle = "#fff"
+    o2.fillRect(0, 0, w, h)
+    o2.drawImage(im, x0, y0, w, h, 0, 0, w, h)
+    return out.toDataURL("image/png")
+  }, dataUri)
+}
+
 async function build(name) {
   const set = sets[name]
   if (!set) throw new Error(`Set yok: ${name}`)
-  const productImg = img(set.product)
   const outDir = resolve(HERE, "out", name)
   mkdirSync(outDir, { recursive: true })
 
@@ -178,6 +326,9 @@ async function build(name) {
   const page = await (
     await browser.newContext({ viewport: { width: 1080, height: 1080 } })
   ).newPage()
+
+  await page.setContent("<html><body></body></html>")
+  const productImg = await trim(page, img(set.product))
 
   for (let i = 0; i < set.slides.length; i++) {
     const html = `<html><head><style>${base}</style></head><body>${render(

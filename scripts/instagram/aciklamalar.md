@@ -1,59 +1,83 @@
 # Instagram gönderi açıklamaları
 
-Slaytlar `scripts/instagram/out/<set>/` klasöründe, sırayla yüklenecek.
+Slaytlar `scripts/instagram/out/<set>/` klasöründe, numara sırasıyla
+yüklenecek.
 
 **Kural:** Bu metinlerde doz, kullanım şekli, süre veya "şunu alın"
-yönlendirmesi yok. Etkinlik ifadeleri kanıt düzeyini yansıtan fiillerle
-veriliyor. Sitedeki çizgiyle aynı, çünkü Instagram'da farklı konuşup
-sitede farklı konuşmak güveni bitirir.
+yönlendirmesi yok. Ne işe yaradığı anlatılıyor, ne yapılacağı
+söylenmiyor. Sitedeki çizgiyle aynı, çünkü Instagram'da başka türlü
+konuşup sitede başka türlü konuşmak güveni bitirir.
 
 ---
 
-## 1. BPC-157 (`out/bpc157/`)
+## 1. BPC-157 (`out/bpc157/`, 12 slayt)
 
-BPC-157, peptid tarafında en çok sorulan bileşiklerden biri.
+Kırık bir kemik altı haftada kaynar. Aynı kişide tendon yaralanması
+aylarca sürebilir. Fark dokunun kanlanmasında: kemik yoğun bir damar
+ağıyla beslenirken tendon ve bağ dokusunda damarlanma azdır, onarım
+hücreleri bölgeye yeterince ulaşamaz.
 
-Mide salgısında doğal olarak bulunan bir proteinden türetilmiş, 15
-aminoasitlik küçük bir peptid. Araştırmalar ağırlıklı olarak tendon, bağ
-ve kas dokusunun onarımı üzerine yoğunlaşıyor.
+BPC-157 araştırmaları tam da buraya bakıyor.
 
-Şunu net söyleyelim: mekanizması iyi tanımlı ama geniş ölçekli insan
-çalışması henüz yapılmadı. Bunu saklamıyoruz. Sitemizde her bileşiğin
-kanıt kademesi açıkça yazıyor, satıyor olmamız o kademeyi değiştirmiyor.
+Bileşiğin açılımı Body Protection Compound. Mide suyunda doğal olarak
+bulunan bir proteinin 15 aminoasitlik parçası, 1990'larda Zagreb
+Üniversitesi'nde tanımlandı. Peptidlerin çoğu mide asidinde parçalanır,
+bunun ayırt edici özelliği o ortamda bozulmadan kalması.
 
-Aldığınız ürünün orijinal olduğundan emin olmak istiyorsanız: kutudaki
-gümüş bandı kazıyın, çıkan kodu validation.zphc.com adresine girin.
-Cevabı satıcıdan değil, doğrudan üreticiden alırsınız.
+Araştırmalar en çok Aşil tendonu kesisi, diz iç yan bağı hasarı, kas
+ezilmesi ve mide bağırsak mukozası üzerinde yapıldı. Ölçülen şeyler
+somut: onarım süresi, bağın kopmadan taşıdığı yük, ezilen kasın
+toparlanma derecesi.
 
-Katalog ve bileşik kütüphanesi profildeki bağlantıda.
+Mekanizma tarafında öne çıkan açıklama anjiyogenez, yani yaralı bölgede
+yeni kılcal damar oluşumu. BPC-157'nin damar endotel büyüme faktörü
+(VEGF) reseptör yolağını harekete geçirdiği bildirildi. İkinci basamak
+hücre göçü: tendonu yeniden ören fibroblastların yara yerine ulaşması ve
+yüzeye tutunması. Hücre kültürü çalışmalarında bu iki adımda da artış
+gözlendi.
+
+Kanıt tarafını olduğu gibi yazalım. Bu sonuçların neredeyse tamamı
+kemirgen çalışmalarından geliyor, insanda yapılmış geniş ölçekli çalışma
+bulunmuyor. Mekanizma tutarlı görünüyor ama kanıt henüz o seviyede
+değil. Onaylı bir ilaç değil, araştırma materyali.
+
+Sporculara ayrı bir not: BPC-157 WADA'nın yasaklı maddeler listesinde.
+
+Elinizdeki ürünün orijinal olup olmadığını bize sormadan kontrol
+edebilirsiniz. Kutudaki gümüş bandı kazıyın, altından çıkan kodu
+validation.zphc.com adresine girin.
+
+Katalog profildeki bağlantıda.
 
 .
 .
-#zphc #bpc157 #peptid #peptidturkiye #toparlanma #dokuonarımı
+#zphc #bpc157 #peptid #peptidturkiye #sakatlık #tendon #toparlanma
 #zphcturkiye #büyümehormonu
 
 ---
 
-## 2. Orijinallik doğrulama (`out/dogrulama/`)
+## 2. Orijinallik doğrulama (`out/dogrulama/`, 6 slayt)
 
-"Elimdeki ZPHC gerçek mi?" Forumlarda en çok sorulan soru bu ve haklı bir
-soru, çünkü bilinen markaların taklidi de yapılıyor.
+"Elimdeki ZPHC gerçek mi?" Forumlarda en çok sorulan soru bu ve haklı
+bir soru, çünkü bilinen markaların taklidi de yapılıyor.
 
-İyi haber: ZPHC ürünlerinde bunu satıcıya güvenmeden kontrol edebilirsiniz.
+ZPHC ürünlerinde bunu satıcıya güvenmek zorunda kalmadan kendiniz
+kontrol edebilirsiniz.
 
-Her kutuda gümüş bir bant var. Kazıdığınızda altından o ürüne özel bir kod
-çıkıyor. Kodu validation.zphc.com adresine girdiğinizde sorgu üreticinin
-kendi sunucusunda yapılıyor. Yani cevabı biz vermiyoruz, ZPHC veriyor.
+Her kutuda gümüş bir bant bulunur. Kazıdığınızda altından o ürüne özel
+bir doğrulama kodu çıkar. Kodu validation.zphc.com adresine
+girdiğinizde sorgu bizim sitemizde değil, ZPHC'nin kendi sunucusunda
+yapılır. Sonucu biz vermiyoruz.
 
-Üç sonuç alabilirsiniz. Kod tanınır ve ilk kez sorgulanmışsa ürün
-orijinaldir. Kod hiç tanınmıyorsa ZPHC üretimi değildir. Tanınıyor ama
-"daha önce sorgulanmış" diyorsa dikkatli olun: ya sizden önce biri kontrol
+Üç sonuç çıkabilir. Kod tanınır ve ilk kez sorgulanıyorsa ürün
+orijinaldir. Hiç tanınmıyorsa ZPHC üretimi değildir. Tanınıyor ama daha
+önce sorgulanmış görünüyorsa dikkatli olun: ya sizden önce biri kontrol
 etmiştir, ya da kod kopyalanıp taklit ürüne basılmıştır.
 
-Kodu kazımadan önce de bakın: bant zaten kazınmışsa bu kötü bir işaret,
-kodu sizden önce biri görmüş demektir.
+Kazımadan önce bandın durumuna da bakın. Bant zaten kazınmışsa bu kötü
+bir işarettir, kodu sizden önce biri görmüş demektir.
 
-Adım adım anlatım sitede.
+Adım adım anlatımı sitede bulabilirsiniz.
 
 .
 .
@@ -64,25 +88,38 @@ Adım adım anlatım sitede.
 
 ## Yayın önerisi
 
-Haftada iki gönderi yeterli. Bir ürün anlatımı, bir bilgi/doğrulama
-gönderisi şeklinde dönüşümlü gidin.
+Haftada iki gönderi yeterli. Biri ürün anlatımı, biri bilgi veya
+doğrulama gönderisi olacak şekilde dönüşümlü gidin.
 
 Yeni set eklemek için `scripts/instagram/slides.mjs` içindeki `sets`
 nesnesine yeni bir kayıt yazıp `node scripts/instagram/slides.mjs <ad>`
-çalıştırmak yeterli.
+çalıştırın.
 
-**Yapmayın:** Yorumlara fiyat yazmayın, doz sormalarına doz cevabı
+Kullanabileceğiniz slayt tipleri:
+
+| Tip | Ne işe yarar |
+| --- | --- |
+| `hook` | Kapak. Başlık, alt başlık ve ürün görseli |
+| `text` | Başlık ve paragraf |
+| `stat` | Tek büyük sayı. Karuselin ritmini kırmak için |
+| `list` | Maddeli liste, en fazla 4 madde |
+| `evidence` | Kanıt uyarısı, amber renkli |
+| `warn` | Uyarı, amber renkli |
+| `verify` | Orijinallik doğrulama |
+| `cta` | Mavi kapanış |
+
+**Yapmayın:** Yorumlara fiyat yazmayın, doz soranlara doz cevabı
 vermeyin (WhatsApp'a yönlendirin), rakip kötülemeyin. Instagram bu
-kategoride hesap kapatabiliyor; ürünü "araştırma materyali" çerçevesinin
-dışında anlatmak riski artırır.
+kategoride hesap kapatabiliyor, ürünü "araştırma materyali"
+çerçevesinin dışında anlatmak riski artırıyor.
 
 ---
 
 ## Çalıştırma notu
 
-Üretici Playwright kullanıyor ve bu paket projenin bağımlılıklarında yok
-(siteyi çalıştırmak için gerekmiyor, boşuna yüklemiyoruz). Slayt üretmeden
-önce bir kez kurun:
+Üretici Playwright kullanıyor, bu paket projenin bağımlılıklarında yok
+(siteyi çalıştırmak için gerekmiyor, boşuna yüklemiyoruz). Slayt
+üretmeden önce bir kez kurun:
 
 ```
 npm i -D playwright

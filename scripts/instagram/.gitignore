@@ -1,0 +1,3 @@
+# Üretilen slaytlar depoda tutulmuyor; script'ten her an yeniden
+# üretilebiliyorlar ve ikili dosya olarak diff'i anlamsız.
+out/

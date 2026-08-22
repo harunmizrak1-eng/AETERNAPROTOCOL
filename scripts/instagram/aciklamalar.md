@@ -12,43 +12,45 @@ konuşup sitede başka türlü konuşmak güveni bitirir.
 
 ## 1. BPC-157 (`out/bpc157/`, 12 slayt)
 
-Kırık bir kemik altı haftada kaynar. Aynı kişide tendon yaralanmasının
-iyileşmesi aylar alabilir. Fark dokunun kanlanmasında: kemik yoğun bir
-damar ağıyla beslenirken tendon ve bağ dokusunda damarlanma azdır,
-onarım hücreleri bölgeye yeterince ulaşamaz.
+Kırılan bir kemik altı haftada iyileşir. Ama aynı kişinin tendon
+yırtığı aylarca geçmez. Sebebi damar.
 
-BPC-157 araştırmaları tam olarak buraya bakıyor.
+Kemiğin içi damarla doludur, kanla gelen onarım hücreleri yaralı yere
+hemen ulaşır. Tendonda ve bağda ise damar çok azdır. Hücreler oraya zor
+gider, iyileşme de bu yüzden uzar.
 
-Bileşiğin açılımı Body Protection Compound. Mide özsuyunda doğal olarak
-bulunan bir proteinin 15 aminoasitlik parçası, 1990'larda Zagreb
-Üniversitesi'nde tanımlandı. Peptidlerin çoğu mide asidinde parçalanır,
-bunun ayırt edici özelliği o ortamda bozulmadan kalması.
+BPC-157 araştırmaları işte burayı hedefliyor.
 
-Araştırmalar en çok Aşil tendonu kesisi, diz iç yan bağı hasarı, kas
-ezilmesi ve mide bağırsak mukoza hasarı üzerinde yapıldı. Ölçülen
-değerler somut: onarım süresi, bağın kopmadan taşıdığı yük, ezilen kasın
-toparlanma derecesi.
+Midenin salgıladığı sıvıda doğal olarak bulunan bir proteinin küçük bir
+parçasıdır, 15 aminoasitten oluşur. İlk kez 1990'larda Zagreb
+Üniversitesi'ndeki bir ekip ayırıp inceledi. Peptidlerin çoğu mide
+asidine dayanamaz ve parçalanır, bu parçalanmaz.
 
-Mekanizma tarafında öne çıkan açıklama anjiyogenez, yani yaralı bölgede
-yeni kılcal damar oluşumu. BPC-157'nin damar endotel büyüme faktörü
-(VEGF) reseptör yolağını harekete geçirdiği bildirildi. İkinci basamak
-hücre göçü: tendon dokusunu yeniden üreten fibroblastların yara yerine
-ulaşması ve yüzeye tutunması. Hücre kültürü çalışmalarında bu iki adımda
-da artış gözlendi.
+En çok Aşil tendonu kesikleri, diz iç yan bağı yırtıkları, ezilmiş
+kaslar ve mide bağırsak yaraları üzerinde denendi. Kesilen tendonun kaç
+günde onarıldığına, bağın kopmadan ne kadar yük taşıdığına ve ezilen
+kasın ne kadar düzeldiğine baktılar. Hiçbir şey verilmeyen gruplara göre
+daha iyi sonuçlar bildirdiler.
 
-BPC-157 ile TB-500 sık sık birlikte anılır. İkisi de doku onarımı
-üzerine araştırılıyor ama farklı yollardan: BPC-157'de damarlanma öne
-çıkarken TB-500 timosin beta-4 proteininin bir parçası ve aktin
-proteinine bağlanarak hücre hareketini etkiliyor.
+Nasıl işe yaradığına gelince, en çok kabul gören açıklama şu: BPC-157
+yaralı bölgede yeni kılcal damarlar oluşmasını tetikliyor, buna
+anjiyogenez deniyor. Damarı zaten az olan tendon için tam da eksik olan
+şey bu. Ama damar tek başına yetmiyor. Tendonu onaran fibroblast
+hücrelerinin de yara yerine gidip oraya tutunması gerekiyor, laboratuvar
+çalışmalarında BPC-157'nin bu iki işi de hızlandırdığı görüldü.
 
-Kanıt tarafı şöyle: yayınların büyük çoğunluğu sıçan ve fare
-modellerinde, insanda yapılmış geniş ölçekli çalışma yok. BPC-157 bu
-nedenle onaylı bir ilaç değil, araştırma materyali olarak
-sınıflandırılıyor.
+BPC-157 ile TB-500 sık sık birlikte anılır ama işleyişleri farklıdır.
+BPC-157 damar yapımını öne çıkarır, TB-500 ise hücrelerin hareket
+etmesini kolaylaştırır. Yani birbirinin yerine geçen değil, ayrı iki
+bileşiktir.
 
-Elinizdeki ürünün orijinal olup olmadığını bize sormadan kontrol
-edebilirsiniz. Kutudaki gümüş bandı kazıyın, altından çıkan kodu
-validation.zphc.com adresine girin.
+Şunu da yazalım: çalışmaların neredeyse hepsi fare ve sıçanlarda
+yapıldı. İnsanlar üzerinde geniş çaplı bir araştırma yok. BPC-157 bu
+yüzden ilaç sayılmıyor, araştırma ürünü olarak satılıyor.
+
+Aldığınız ürünün sahte olup olmadığını bize sormadan anlayabilirsiniz.
+Kutunun üstündeki gümüş bandı kazıyın, altından çıkan kodu
+validation.zphc.com adresine yazın.
 
 Katalog profildeki bağlantıda.
 
@@ -61,24 +63,23 @@ Katalog profildeki bağlantıda.
 
 ## 2. Orijinallik doğrulama (`out/dogrulama/`, 6 slayt)
 
-"Elimdeki ZPHC gerçek mi?" Forumlarda en çok sorulan soru bu ve haklı
-bir soru, çünkü bilinen markaların taklidi de yapılıyor.
+"Elimdeki ZPHC gerçek mi?" Forumlarda en çok bu soruluyor. Haklı bir
+soru, çünkü bilinen markaların taklidi de yapılıyor.
 
-ZPHC ürünlerinde bunu satıcıya güvenmek zorunda kalmadan kendiniz
-kontrol edebilirsiniz.
+İyi tarafı, bunu anlamak için satıcıya güvenmeniz gerekmiyor.
 
-Her kutuda gümüş bir bant bulunur. Kazıdığınızda altından o ürüne özel
-bir doğrulama kodu çıkar. Kodu validation.zphc.com adresine
-girdiğinizde sorgu bizim sitemizde değil, ZPHC'nin kendi sunucusunda
-yapılır. Sonucu biz vermiyoruz.
+Her kutuda gümüş renkli bir bant vardır. Kazıdığınızda altından o ürüne
+ait bir kod çıkar. Kodu validation.zphc.com adresine yazdığınızda sorgu
+bizim sitemizde değil, ZPHC'nin kendi sisteminde yapılır. Yani cevabı
+biz vermiyoruz.
 
-Üç sonuç çıkabilir. Kod tanınır ve ilk kez sorgulanıyorsa ürün
-orijinaldir. Hiç tanınmıyorsa ZPHC üretimi değildir. Tanınıyor ama daha
-önce sorgulanmış görünüyorsa dikkatli olun: ya sizden önce biri kontrol
-etmiştir, ya da kod kopyalanıp taklit ürüne basılmıştır.
+Karşınıza üç sonuç çıkabilir. Kod tanınır ve ilk kez soruluyorsa ürün
+gerçektir. Hiç tanınmıyorsa ürün ZPHC değildir. Tanınıyor ama daha önce
+sorulmuş diyorsa dikkat edin: ya sizden önce biri bakmıştır, ya da kod
+kopyalanıp taklit ürünün üstüne basılmıştır.
 
-Kazımadan önce bandın durumuna da bakın. Bant zaten kazınmışsa bu kötü
-bir işarettir, kodu sizden önce biri görmüş demektir.
+Kazımadan önce bandın haline de bakın. Bant sizden önce kazınmışsa bu
+kötüye işarettir, kodu başkası görmüş demektir.
 
 Adım adım anlatımı sitede bulabilirsiniz.
 

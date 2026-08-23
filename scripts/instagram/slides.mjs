@@ -172,9 +172,15 @@ function compoundSet({
   return { product, slides }
 }
 
-export const sets = {
-  ...metinSetleri,
+/* Basılan setler yalnızca sets-metin.mjs'ten geliyor.
+ *
+ * Aşağıdaki kutuphaneSetleri kütüphaneden üretiliyor ve BASILMIYOR.
+ * Daha önce ikisi tek nesnede birleştirilmişti ve aynı ada sahip setler
+ * (peptidnedir) çakışıyordu; sonda tanımlanan kazandığı için elle
+ * yazılan metnin yerine kütüphane versiyonu basılmıştı. */
+export const sets = metinSetleri
 
+export const kutuphaneSetleri = {
   bpc157: compoundSet({
     slug: "bpc-157",
     product: "products/bpc157-25mg-5x5mg-zphc.webp",

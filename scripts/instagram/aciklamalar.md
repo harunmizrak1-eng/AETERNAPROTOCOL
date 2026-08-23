@@ -128,10 +128,18 @@ Kütüphanedeki en alt kademe bu ve sayfasında öyle yazıyor.
 
 ---
 
-## 5. GHK-Cu (`out/ghkcu/`, 10 slayt)
+## 5. GHK-Cu (`out/ghkcu/`, 13 slayt)
 
-Üç aminoasit ve bir bakır iyonu. Kütüphanedeki en kısa bileşiklerden
-biri.
+Yaşla birlikte kolajen üretimi düşer. Cilt incelir, elastikiyetini
+kaybeder, ton eşitsizleşir. Kırışıklığın altındaki asıl olay bu.
+
+GHK-Cu tam burada devreye giriyor. Kolajen ve elastin üretimini
+uyardığı hücre ve hayvan çalışmalarında gösterildi. Yani cildi
+dışarıdan kapatmak yerine üretimi tetiklemeyi hedefliyor.
+
+Saç tarafı da var: bakır peptidlerin saç folikülü ve saçlı deri
+üzerindeki etkisi ayrıca araştırılıyor. Kütüphanedeki seyre göre saç
+için ilk sonuçlar 6-12 haftada bekleniyor.
 
 Tripeptid, yani üç aminoasitlik zincir. Bu zincir bir bakır iyonu
 tutuyor, adındaki Cu zaten bakırın simgesi.
@@ -151,19 +159,31 @@ Bağımsız ve büyük ölçekli insan çalışması ise sınırlı.
 
 ---
 
-## 6. Retatrutide (`out/retatrutide/`, 10 slayt)
+## 6. Retatrutide (`out/retatrutide/`, 12 slayt)
 
-Kütüphanedeki bileşiklerin çoğu araştırma aşamasında. Bu değil.
+Ozempic bir kol, Mounjaro iki kol, Retatrutide üç kol.
 
-Retatrutide, GLP-1, GIP ve glukagon reseptörlerine aynı anda etki eden
-üçlü agonist. Agonist, bir reseptörü çalıştıran molekül demek; burada
-üç ayrı reseptör aynı anda çalıştırıldığı için üçlü deniyor.
+Ozempic GLP-1 üzerinden çalışıyor. Mounjaro buna GIP'i ekliyor.
+Retatrutide ise üçüncü bir kol daha açıyor: glukagon.
 
-GLP-1 ve GIP, yemekten sonra bağırsakta salgılanan hormonlar, beyne
-tokluk sinyali gönderiyorlar. Glukagon ise vücudun harcadığı enerjiyi
-artırıyor. Üçü birden hedeflenince iştah baskılanması, enerji
-harcamasında artış ve karaciğer yağlanmasında azalma aynı anda
-amaçlanıyor.
+İlk iki kol iştahı kesiyor. GLP-1 ve GIP yemek sonrası bağırsakta
+salgılanan hormonlar, beyne tokluk sinyali gönderiyorlar, siz de daha
+az yiyorsunuz.
+
+Üçüncü kol farklı bir iş yapıyor. Glukagon iştahı kesmiyor, vücudun
+harcadığı enerjiyi artırıyor. Yani sadece girişi kısmak yerine çıkışı
+da açmayı hedefliyor.
+
+Bu neden önemli? Kilo verirken vücut enerji harcamasını düşürür, tartı
+bu yüzden bir yerde takılır. Glukagon kolu tam olarak bu düşüşü
+dengelemek üzerine kurulu.
+
+Bir de kaybedilenin ne olduğu meselesi var. Hızlı kilo kaybında asıl
+soru, kaybın ne kadarının yağdan geldiği. Çalışmalarda kaybın büyük
+bölümünün yağ dokusundan geldiği bildirildi.
+
+Yağlı karaciğeri olan katılımcılarda 48 hafta sonunda karaciğer yağında
+belirgin azalma bildirildi, büyük çoğunlukta normal aralığa indi.
 
 Bildirilenler: vücut ağırlığında klinik olarak anlamlı azalma, HbA1c ve
 açlık kan şekerinde iyileşme, karaciğer yağ oranında azalma.

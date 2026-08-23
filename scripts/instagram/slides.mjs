@@ -94,39 +94,55 @@ const tierGloss = {
 /**
  * Bir bileşik seti kurar.
  *
- * Kapak başlığı ve sade karşılıklar elle verilir, geri kalan her şey
- * kütüphaneden gelir. Kurgu şu: önce kütüphanenin kendi bilimsel cümlesi,
- * hemen ardından aynı şeyin günlük dildeki karşılığı. Terimi atarsak
- * gönderi sığlaşıyor, açıklamazsak kimse anlamıyor.
+ * Kütüphanenin kendi cümleleri iskeleti kuruyor, elle verilen parçalar
+ * araya giriyor:
  *
- * Aminoasit dizilimi ve molekül ağırlığı slaytları KALDIRILDI. Doğru
- * bilgilerdi ama kimsenin sorduğu şey değildi. Yerlerine kütüphanenin
- * insanların gerçekten merak ettiği iki alanı geldi: beklenen seyir ve
- * iyi ürünün nasıl göründüğü.
+ *   hook -> intro[] -> nedir + sade -> mekanizma + sade -> bildirilenler
+ *        -> extra[] -> beklenen seyir -> kanıt -> kalite -> kapanış
+ *
+ * intro, kütüphanenin kuru tanımından önce insanın anladığı dilde giriş
+ * yapmak için. Kütüphane "GLP-1, GIP ve glukagon reseptörlerine üçlü
+ * agonist" diyor; bu doğru ama kimseyi ürüne yaklaştırmıyor. Giriş
+ * slaytları o boşluğu dolduruyor.
+ *
+ * skipShort / skipMechanism, giriş slaytları zaten aynı işi yapıyorsa
+ * kütüphane cümlesini atlamak için. Aynı şeyi iki kez söyleyen karusel
+ * kaydırılıp geçiliyor.
  */
-function compoundSet({ slug, product, kicker, title, sub, gloss = {} }) {
+function compoundSet({
+  slug,
+  product,
+  kicker,
+  title,
+  sub,
+  gloss = {},
+  intro = [],
+  extra = [],
+  skipShort = false,
+  skipMechanism = false,
+}) {
   const p = peptide(slug)
+  const slides = [{ type: "hook", kicker, title, sub }, ...intro]
 
-  const slides = [
-    { type: "hook", kicker, title, sub },
-    { type: "text", heading: "Nedir?", body: p.short },
-  ]
-
-  if (gloss.nedir) {
-    slides.push({ type: "text", heading: "Sade haliyle", body: gloss.nedir })
+  if (!skipShort) {
+    slides.push({ type: "text", heading: "Nedir?", body: p.short })
+    if (gloss.nedir) {
+      slides.push({ type: "text", heading: "Sade haliyle", body: gloss.nedir })
+    }
   }
 
-  slides.push({ type: "text", heading: "Nasıl çalışıyor?", body: p.mechanism })
-
-  if (gloss.mekanizma) {
-    slides.push({ type: "text", heading: "Sade haliyle", body: gloss.mekanizma })
+  if (!skipMechanism) {
+    slides.push({ type: "text", heading: "Nasıl çalışıyor?", body: p.mechanism })
+    if (gloss.mekanizma) {
+      slides.push({ type: "text", heading: "Sade haliyle", body: gloss.mekanizma })
+    }
   }
 
   slides.push({ type: "list", heading: "Ne bildiriliyor?", items: p.primaryOutcomes })
+  slides.push(...extra)
 
   /* Beklenen seyir. Gelen ilk soru neredeyse her zaman "ne zaman etkisini
-     gösterir" oluyor. Dördü geçince slayt okunmaz hale geliyor, o yüzden
-     ilk dört dönem alınıyor. */
+     gösterir" oluyor. */
   if (p.expectedTimeline?.length) {
     slides.push({
       type: "timeline",
@@ -141,8 +157,7 @@ function compoundSet({ slug, product, kicker, title, sub, gloss = {} }) {
     body: `${p.clinicalStatus}. ${tierGloss[p.tier]}`,
   })
 
-  /* Kalite işaretleri. Sahte ürün endişesi bu pazarda birinci sırada ve
-     bu slayt onu doğrudan karşılıyor. */
+  /* Kalite işaretleri. Sahte ürün endişesi bu pazarda birinci sırada. */
   if (p.qualityIndicators?.good?.length) {
     slides.push({
       type: "list",
@@ -189,13 +204,30 @@ export const sets = {
     slug: "ghk-cu",
     product: "products/ghk-cu-60mg-with-bacteriostatic-water-zphc.webp",
     kicker: "GHK-Cu",
-    title: "Üç aminoasit ve bir bakır iyonu",
-    sub: "Kütüphanedeki en kısa bileşiklerden biri.",
+    title: "Cildi toparlayan, saç köküne çalışan peptid",
+    sub: "Tamamı üç aminoasit ve bir bakır iyonu.",
+    intro: [
+      {
+        type: "text",
+        heading: "Cilt neden donuklaşıyor?",
+        body: "Yaşla birlikte kolajen üretimi düşer. Cilt incelir, elastikiyetini kaybeder, ton eşitsizleşir. Kırışıklığın altındaki asıl olay bu.",
+      },
+      {
+        type: "text",
+        heading: "GHK-Cu burada devreye giriyor",
+        body: "Kolajen ve elastin üretimini uyardığı hücre ve hayvan çalışmalarında gösterildi. Yani cildi dışarıdan kapatmak yerine üretimi tetiklemeyi hedefliyor.",
+      },
+      {
+        type: "text",
+        heading: "Saç tarafı",
+        body: "Bakır peptidlerin saç folikülü ve saçlı deri üzerindeki etkisi ayrıca araştırılıyor. Kütüphanedeki seyre göre saç için ilk sonuçlar 6-12 haftada bekleniyor.",
+      },
+    ],
     gloss: {
       nedir:
         "Tripeptid, üç aminoasitlik zincir demek. Bu zincir bir bakır iyonunu tutuyor; adındaki Cu zaten bakırın simgesi.",
       mekanizma:
-        "Kolajen, cildin ve bağ dokusunun taşıyıcı proteini. Elastin ise dokunun gerilip eski haline dönmesini sağlıyor. İkisi birlikte cildin diriliğini belirliyor.",
+        "Kolajen, cildin taşıyıcı proteini. Elastin ise gerildikten sonra eski haline dönmesini sağlıyor. Cildin diriliğini bu ikisi belirliyor.",
     },
   }),
 
@@ -203,14 +235,52 @@ export const sets = {
     slug: "retatrutide",
     product: "products/retatrutide-60mg-5x12mg-zphc.webp",
     kicker: "RETATRUTIDE",
-    title: "Kütüphanedeki bileşiklerin çoğu araştırma aşamasında. Bu değil.",
-    sub: "Faz 3 çalışmaları tamamlandı.",
-    gloss: {
-      nedir:
-        "Agonist, bir reseptörü çalıştıran molekül demek. Retatrutide üç ayrı reseptörü aynı anda çalıştırdığı için üçlü agonist deniyor.",
-      mekanizma:
-        "GLP-1 ve GIP, yemekten sonra bağırsakta salgılanan hormonlar; beyne tokluk sinyali gönderiyorlar. Glukagon ise vücudun harcadığı enerjiyi artırıyor.",
-    },
+    title: "Ozempic bir kol, Mounjaro iki kol. Retatrutide üç kol.",
+    sub: "Farkı tek kelimeyle: glukagon.",
+    /* Kütüphanenin "üçlü agonist" tanımı doğru ama kimseye bir şey
+       anlatmıyor. Giriş slaytları bilinen iki ilaç üzerinden kuruluyor,
+       çünkü insanlar retatrutide'i zaten onlarla karşılaştırarak
+       soruyor. */
+    intro: [
+      {
+        type: "list",
+        heading: "Üç ilaç, üç kuşak",
+        items: [
+          "Ozempic: GLP-1",
+          "Mounjaro: GLP-1 + GIP",
+          "Retatrutide: GLP-1 + GIP + glukagon",
+        ],
+      },
+      {
+        type: "text",
+        heading: "İlk iki kol iştahı kesiyor",
+        body: "GLP-1 ve GIP, yemek sonrası bağırsakta salgılanan hormonlar. Beyne tokluk sinyali gönderiyorlar, siz de daha az yiyorsunuz.",
+      },
+      {
+        type: "text",
+        heading: "Üçüncü kol farklı iş yapıyor",
+        body: "Glukagon iştahı kesmiyor, vücudun harcadığı enerjiyi artırıyor. Yani sadece girişi kısmak yerine çıkışı da açmayı hedefliyor.",
+      },
+      {
+        type: "text",
+        heading: "Bu neden önemli?",
+        body: "Kilo verirken vücut enerji harcamasını düşürür, tartı bu yüzden bir yerde takılır. Glukagon kolu tam olarak bu düşüşü dengelemek üzerine kurulu.",
+      },
+      {
+        type: "text",
+        heading: "Kaybedilen ne?",
+        body: "Hızlı kilo kaybında asıl soru, kaybedilenin ne kadarının yağ olduğu. Çalışmalarda kaybın büyük bölümünün yağ dokusundan geldiği bildirildi.",
+      },
+    ],
+    skipShort: true,
+    skipMechanism: true,
+    extra: [
+      {
+        type: "text",
+        heading: "Karaciğer yağlanması",
+        body: "Yağlı karaciğeri olan katılımcılarda 48 hafta sonunda karaciğer yağında belirgin azalma bildirildi. Katılımcıların büyük çoğunluğunda normal aralığa indi.",
+      },
+    ],
   }),
 
   peptidnedir: {

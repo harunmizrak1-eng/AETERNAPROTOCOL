@@ -531,7 +531,7 @@ const base = `
 const esc = (t) =>
   String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
 
-function render(slide, i, total, productImg) {
+function render(slide, i, total, productImg, set_marka = false) {
   const foot = `<div class="foot"><span>zphctr.com</span><span class="num">${i + 1}/${total}</span></div>`
   const strip = `<div class="strip"><img class="logo" src="${LOGO}"></div>`
 
@@ -543,7 +543,13 @@ function render(slide, i, total, productImg) {
         <h1 style="margin-top:14px">${esc(slide.title)}</h1>
         ${slide.sub ? `<div class="sub" style="margin-top:18px">${esc(slide.sub)}</div>` : ""}
       </div>
-      ${productImg ? `<div class="shelf"><div class="card"><img src="${productImg}"></div></div>` : ""}
+      ${
+        productImg
+          ? `<div class="shelf"><div class="card"><img src="${productImg}" style="${
+              set_marka ? "width:56%;margin:0 auto" : ""
+            }"></div></div>`
+          : ""
+      }
       ${foot}</div>`
   }
 
@@ -698,9 +704,15 @@ async function build(name) {
   ).newPage()
 
   await page.setContent("<html><body></body></html>")
-  /* Bazı setlerde ürün görseli yok (katalogda fotoğrafı bulunmayan
-     bileşikler). Kapak o zaman görselsiz basılıyor. */
-  const productImg = set.product ? await trim(page, img(set.product)) : null
+  /* Ürün fotoğrafı olmayan bileşikler için "marka" kapağı: kartın
+     içinde ZPHC logosu duruyor. Başka bir bileşiğin kutusunu koymak
+     yanlış ürün istenmesine yol açardı. */
+  const productImg =
+    set.product === "marka"
+      ? LOGO
+      : set.product
+        ? await trim(page, img(set.product))
+        : null
 
   for (let i = 0; i < set.slides.length; i++) {
     const html = `<html><head><style>${base}</style></head><body>${render(
@@ -708,6 +720,7 @@ async function build(name) {
       i,
       set.slides.length,
       productImg,
+      set.product === "marka",
     )}</body></html>`
     await page.setContent(html, { waitUntil: "load" })
     /* Gömülü yazı tipi çözülmeden ekran görüntüsü alınırsa slaytlar yedek

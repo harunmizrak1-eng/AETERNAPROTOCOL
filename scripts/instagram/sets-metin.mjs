@@ -8,8 +8,10 @@
  * Metinler üzerinde yapılan düzeltmeler ilgili setin başında yorumla
  * belirtildi. Sessizce değiştirilmiş tek bir cümle yok.
  *
- * product: null verilirse kapak slaydı ürün görselsiz, tam sayfa mavi
- * basılır. Tesamorelin ve SS-31'in katalogda görseli yok.
+ * product: "marka" verilirse kapak, ürün fotoğrafı yerine ZPHC logosunu
+ * taşıyan nötr bir kartla basılır. Tesamorelin ve SS-31'in katalogda
+ * kendi fotoğrafı yok; başka bir bileşiğin kutusunu koymak yanlış ürün
+ * istenmesine yol açardı.
  */
 
 const KAPANIS = {
@@ -160,7 +162,7 @@ export const metinSetleri = {
      ama sattığımız ürün Egrifta değil. Bu ayrımı slaytta belirtmek
      gerekti, yoksa onaylı ilaç sattığımız anlaşılır. */
   tesamorelin: {
-    product: null,
+    product: "marka",
     slides: [
       {
         type: "hook",
@@ -213,9 +215,11 @@ export const metinSetleri = {
     ],
   },
 
-  /* SS-31 de katalogda YOK, ürün görseli de yok. */
+  /* SS-31 katalogda YOK ve kendi ürün fotoğrafı da yok. Kapakta başka
+     bir bileşiğin kutusu gösterilmedi; o kutu SS-31 değil ve gören
+     kişi yanlış ürünü ister. Yerine marka kapağı basılıyor. */
   ss31: {
-    product: null,
+    product: "marka",
     slides: [
       {
         type: "hook",
@@ -433,7 +437,7 @@ export const metinSetleri = {
   },
 
   wolverine: {
-    product: "products/glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc.webp",
+    product: "products/ultra-rehab-mix-50mg-5x10mg-zphc.webp",
     slides: [
       {
         type: "hook",
@@ -660,6 +664,55 @@ export const metinSetleri = {
         type: "evidence",
         heading: "Kanıt durumu ve onay süreci",
         body: "Faz 3 sonuçları açıklandı ama retatrutide henüz hiçbir ülkede onaylanmadı. Lilly, FDA başvurusunu 2026'nın son çeyreğinde yapmayı planlıyor.",
+      },
+      KALITE,
+      KAPANIS,
+    ],
+  },
+
+  cjcipamorelin: {
+    product: "products/wellness-mix-25mg-5x5mg-zphc.webp",
+    slides: [
+      {
+        type: "hook",
+        kicker: "CJC-1295 + IPAMORELIN",
+        title: "Büyüme hormonu ekseninde doğal optimizasyon",
+        sub: "İki peptid, tek hedef: daha iyi hissetmek.",
+      },
+      {
+        type: "text",
+        heading: "Nedir?",
+        body: "CJC-1295, büyüme hormonu salgılatıcı hormonun (GHRH) sentetik bir analoğudur. Ipamorelin ise ghrelin reseptörünü hedefleyen sentetik bir pentapeptid büyüme hormonu salgılatıcısıdır (GHS).",
+      },
+      {
+        type: "text",
+        heading: "Sade haliyle",
+        body: "CJC-1295, beynin büyüme hormonu siparişini uzatır. Ipamorelin ise bu siparişin daha güçlü gelmesini sağlar.",
+      },
+      {
+        type: "text",
+        heading: "Nasıl çalışıyor?",
+        body: "CJC-1295, hipofizdeki GHRH reseptörlerini aktive ederek büyüme hormonu salınımını uzatır. Ipamorelin, ghrelin reseptörüne bağlanarak somatostatin inhibisyonunu azaltır ve ek GH salınımı tetikler.",
+      },
+      {
+        type: "text",
+        heading: "Sade haliyle",
+        body: "İkisi birlikte vücudun kendi büyüme hormonunu doğal ve dalgalı bir şekilde salgılamasını sağlar. Sentetik büyüme hormonunun ani iniş çıkışları olmadan çalışır.",
+      },
+      {
+        type: "list",
+        heading: "Ne bildiriliyor?",
+        items: [
+          "Artan yağsız kas kütlesi ve protein sentezi",
+          "Gelişmiş toparlanma ve doku onarımı",
+          "İyileşen uyku kalitesi ve enerji seviyeleri",
+          "Hayvan çalışmalarında kas gücünde iyileşme",
+        ],
+      },
+      {
+        type: "evidence",
+        heading: "Kanıt durumu",
+        body: "Kombinasyon, glukokortikoid kaynaklı kas kaybında fare modellerinde kas gücünde iyileşme gösterdi. Bu bulgular hayvan çalışmalarıyla sınırlı, insan verileri sınırlı ve FDA onayı yok.",
       },
       KALITE,
       KAPANIS,

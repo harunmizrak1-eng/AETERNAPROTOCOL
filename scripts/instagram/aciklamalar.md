@@ -3,88 +3,43 @@
 Slaytlar `scripts/instagram/out/<set>/` klasöründe, numara sırasıyla
 yüklenecek.
 
-**İki kural:**
+## Nasıl kuruldu
 
-1. Slaytta en fazla iki kısa cümle. Uzun anlatım buradaki açıklamada
-   durur, karuselde durmaz. Kimse telefonda paragraf okumuyor.
-2. Doz, kür, kullanım şeması veya "şunu alın" yönlendirmesi yok. Ne işe
-   yaradığı anlatılır, ne yapılacağı söylenmez.
+Bileşik bilgisi elle yazılmıyor. Slaytlar `lib/peptides.ts` dosyasından,
+yani sitedeki kütüphanenin kaynağından besleniyor. Kütüphaneyi
+güncellediğinizde slaytlar da güncelleniyor. Site bir şey, Instagram
+başka bir şey söylemesin diye böyle.
 
----
+Her bileşik setinde sıra şu: kütüphanenin kendi bilimsel cümlesi, hemen
+ardından aynı şeyin günlük dildeki karşılığı ("Sade haliyle" slaytları).
+Terimi atarsak gönderi sığlaşıyor, açıklamazsak kimse anlamıyor.
 
-## 1. BPC-157 (`out/bpc157/`, 7 slayt)
-
-Kırılan bir kemik altı haftada iyileşir. Ama aynı kişinin tendon yırtığı
-aylarca geçmez. Sebebi damar.
-
-Kemiğin içi damarla doludur, kanla gelen onarım hücreleri yaralı yere
-hemen ulaşır. Tendonda ve bağda ise damar çok azdır, hücreler oraya zor
-gider.
-
-BPC-157 araştırmaları işte burayı hedefliyor. Midede doğal olarak
-bulunan bir proteinin 15 aminoasitlik parçası. En çok Aşil tendonu
-kesikleri, diz bağı yırtıkları, ezilmiş kaslar ve mide bağırsak yaraları
-üzerinde denendi. Yaralı bölgede yeni kılcal damar oluşumunu tetiklediği
-bildirildi, ki tendonun eksiği tam da bu.
-
-Şunu da yazalım: çalışmaların neredeyse hepsi fare ve sıçanlarda
-yapıldı. İnsanlar üzerinde geniş çaplı bir araştırma yok. BPC-157 bu
-yüzden ilaç sayılmıyor, araştırma ürünü olarak satılıyor.
-
-Katalog profildeki bağlantıda.
-
-.
-.
-#zphc #bpc157 #peptid #peptidturkiye #sakatlık #tendon #toparlanma
-#zphcturkiye
+**Doz slayta girmiyor.** Kütüphanede doz tabloları var ama Instagram bu
+kategoride doz paylaşan hesapları kapatıyor. Yorumlara da yazmayın,
+WhatsApp'a yönlendirin.
 
 ---
 
-## 2. TB-500 (`out/tb500/`, 7 slayt)
-
-TB-500 neden hep BPC-157 ile birlikte anılıyor? İkisi de onarım üzerine
-çalışılıyor ama ayrı yollardan gidiyorlar.
-
-TB-500, timosin beta-4 adlı proteinin bir parçası. Bu protein vücutta
-yara iyileşmesinde rol alıyor. Aktine bağlanarak çalıştığı düşünülüyor,
-aktin de hücrenin hareket etmesini sağlayan iskelet gibi bir şey.
-
-Araştırmalar kas ve tendon yaralanmaları, kalp dokusu hasarı, kornea
-yaralanmaları ve deride yara kapanması üzerinde yoğunlaşmış.
-
-Aradaki fark şu: BPC-157 damar yapımını öne çıkarıyor, TB-500 hücre
-hareketini. Yani birbirinin yerine geçen değil, ayrı iki bileşik.
-
-Kanıt tarafı BPC-157 ile aynı yerde. Araştırmaların çoğu hayvan ve hücre
-çalışması, insanda geniş çaplı veri yok.
-
-.
-.
-#zphc #tb500 #peptid #peptidturkiye #timosin #toparlanma #zphcturkiye
-
----
-
-## 3. Peptid nedir (`out/peptidnedir/`, 7 slayt)
+## 1. Peptid nedir (`out/peptidnedir/`, 7 slayt)
 
 Peptid nedir? Proteinden farkı aslında sadece uzunluk.
 
 Aminoasitler zincir halinde bağlanır. Zincir kısaysa peptid, uzarsa
-protein denir. Sınır kesin değil ama genelde elli aminoasit civarında
-kabul edilir.
+protein denir. Kütüphanemizdeki en kısa bileşik iki aminoasit, en uzunu
+191 aminoasitle büyüme hormonu.
 
 Bunlar vücuda yabancı şeyler değil. İnsülin de bir peptid, vücut onu
 kendisi üretiyor.
 
-Peki neden hap halinde satılmıyorlar? Çünkü peptidlerin çoğu mide
-asidinde parçalanır, ağızdan alındığında sağlam kalmaz.
+Peki neden hap halinde satılmıyorlar? Peptidlerin çoğu mide asidinde
+parçalanır, ağızdan alındığında sağlam kalmaz.
 
 Neden toz halinde geliyorlar? Sıvı halde çabuk bozuluyorlar.
-Dondurularak kurutulmuş toz çok daha uzun dayanıyor, o yüzden kutudan
-toz çıkıyor.
+Dondurularak kurutulmuş toz çok daha uzun dayanıyor.
 
-Son olarak: hepsi aynı kefeye konmamalı. Bazı peptidler onaylı ilaç,
-bazıları hâlâ araştırma aşamasında. Sitede her bileşiğin hangi aşamada
-olduğu yazıyor.
+Son olarak: hepsi aynı kefeye konmamalı. Bazısının faz 3 verisi var,
+bazısı sadece hayvan çalışmasında kaldı. Sitede her bileşiğin hangi
+kademede olduğu yazıyor.
 
 .
 .
@@ -92,27 +47,7 @@ olduğu yazıyor.
 
 ---
 
-## 4. Bileşik kütüphanesi (`out/bilesikler/`, 5 slayt)
-
-Hangi bileşiği merak ediyorsanız sitede sayfası var.
-
-Her bileşikte dört şey yazıyor: ne olduğu, ne için araştırıldığı,
-araştırmanın hangi aşamada olduğu ve nasıl saklanacağı.
-
-Aşama kısmı önemli. Bir bileşik insanda mı denenmiş yoksa sadece hayvan
-çalışmalarında mı kalmış, sayfasında açıkça belirtiliyor.
-
-Bulamayacağınız tek şey doz. Sitede doz, kür veya kullanım şeması yok.
-
-zphctr.com
-
-.
-.
-#zphc #peptid #peptidturkiye #zphcturkiye #bileşik
-
----
-
-## 5. Orijinallik doğrulama (`out/dogrulama/`, 6 slayt)
+## 2. Orijinallik doğrulama (`out/dogrulama/`, 6 slayt)
 
 "Elimdeki ZPHC gerçek mi?" Forumlarda en çok bu soruluyor. Haklı bir
 soru, çünkü bilinen markaların taklidi de yapılıyor.
@@ -136,53 +71,176 @@ başkası görmüş demektir.
 
 ---
 
+## 3. BPC-157 (`out/bpc157/`, 11 slayt)
+
+Kırılan bir kemik altı haftada iyileşir. Ama aynı kişinin tendon yırtığı
+aylarca geçmez. Sebebi damar: kemiğin içi damarla doludur, tendonda ise
+damar çok azdır, onarım hücreleri oraya zor gider.
+
+BPC-157 araştırmaları işte burayı hedefliyor.
+
+Gastrik mukozadan izole edilmiş bir pentadekapeptid. Yani midenin iç
+yüzeyinde doğal olarak bulunan, on beş aminoasitlik bir zincir.
+Dizilimi GKPPPGKPADDAGLV, molekül ağırlığı 1.419 Da, kandaki yarı ömrü
+otuz dakikadan kısa.
+
+Anjiyogenezi ve büyüme faktörü sinyalini desteklediği düşünülüyor.
+Anjiyogenez, yaralı bölgede yeni kılcal damar oluşması demek. Tendonun
+eksiği tam da bu.
+
+Bildirilenler: hayvan modellerinde tendon ve ligament iyileşme hızında
+artış. İnsan verisi büyük ölçüde anekdotal düzeyde.
+
+Kanıt kademesi mekanistik. Nasıl çalıştığı biliniyor ama insanlarda
+kontrollü çalışma yapılmamış. Sitedeki sayfasında da böyle yazıyor.
+
+.
+.
+#zphc #bpc157 #peptid #peptidturkiye #tendon #sakatlık #zphcturkiye
+
+---
+
+## 4. TB-500 (`out/tb500/`, 10 slayt)
+
+TB-500 neden hep BPC-157 ile birlikte anılıyor? İkisi de doku onarımı
+üzerine çalışılıyor ama ayrı yollardan gidiyorlar.
+
+TB-500, Thymosin Beta-4 adlı proteinin aktif fragmanı. Yani vücutta
+zaten bulunan bir proteinin küçük bir parçası, tamamı değil. Kırk üç
+aminoasit uzunluğunda, yarı ömrü iki saat civarında.
+
+Aktin bağlanması yoluyla hücre göçünü desteklediği düşünülüyor. Aktin,
+hücrenin içindeki iskelet gibi bir protein; hücrenin şekil değiştirip
+yer değiştirmesini o sağlıyor. Yara yerine hücre taşınması bu yüzden
+ona bağlı.
+
+Bildirilenler: hayvan modellerinde doku iyileşme hızında artış. İnsan
+RCT verisi yok.
+
+Kanıt kademesi preklinik, yani henüz hücre ve hayvan aşamasında.
+Kütüphanedeki en alt kademe bu ve sayfasında öyle yazıyor.
+
+.
+.
+#zphc #tb500 #peptid #peptidturkiye #timosin #zphcturkiye
+
+---
+
+## 5. GHK-Cu (`out/ghkcu/`, 11 slayt)
+
+Üç aminoasit ve bir bakır iyonu. Kütüphanedeki en kısa bileşiklerden
+biri.
+
+Dizilimi tek kelime kadar kısa: GHK. Tripeptid, yani üç aminoasitlik
+zincir. Bu zincir bir bakır iyonu tutuyor, adındaki Cu zaten bakırın
+simgesi.
+
+Kolajen ve elastin sentezini uyardığı, antioksidan ve anti-inflamatuar
+yollarla doku yenilenmesini desteklediği hücre kültürü ve hayvan
+modellerinde gösterilmiş. Kolajen cildin taşıyıcı proteini, elastin ise
+dokunun gerilip eski haline dönmesini sağlıyor.
+
+Bildirilenler: hücre kültüründe elastaz inhibisyonu ve kolajen
+sentezinde artış, hayvan modellerinde yara iyileşme hızında artış.
+Bağımsız ve büyük ölçekli insan çalışması ise sınırlı.
+
+.
+.
+#zphc #ghkcu #bakırpeptid #peptid #peptidturkiye #cilt #zphcturkiye
+
+---
+
+## 6. Retatrutide (`out/retatrutide/`, 11 slayt)
+
+Kütüphanedeki bileşiklerin çoğu araştırma aşamasında. Bu değil.
+
+Retatrutide, GLP-1, GIP ve glukagon reseptörlerine aynı anda etki eden
+üçlü agonist. Agonist, bir reseptörü çalıştıran molekül demek; burada
+üç ayrı reseptör aynı anda çalıştırıldığı için üçlü deniyor.
+
+GLP-1 ve GIP, yemekten sonra bağırsakta salgılanan hormonlar, beyne
+tokluk sinyali gönderiyorlar. Glukagon ise vücudun harcadığı enerjiyi
+artırıyor. Üçü birden hedeflenince iştah baskılanması, enerji
+harcamasında artış ve karaciğer yağlanmasında azalma aynı anda
+amaçlanıyor.
+
+Bildirilenler: vücut ağırlığında klinik olarak anlamlı azalma, HbA1c ve
+açlık kan şekerinde iyileşme, karaciğer yağ oranında azalma.
+
+Kanıt kademesi klinik. Faz 3 çalışmaları tamamlandı. Kütüphanedeki en
+üst kademe bu.
+
+.
+.
+#zphc #retatrutide #glp1 #peptid #peptidturkiye #zphcturkiye
+
+---
+
+## 7. Bileşik kütüphanesi (`out/bilesikler/`, 5 slayt)
+
+Hangi bileşiği merak ediyorsanız sitede sayfası var.
+
+Kırk sekiz bileşik. Her birinin ne olduğu, nasıl çalıştığı ve kanıtın
+hangi aşamada olduğu ayrı ayrı yazılı.
+
+Kanıt üç kademede veriliyor. Klinik kanıt: insanda kontrollü çalışma
+var. Mekanistik: nasıl çalıştığı biliniyor ama insan verisi zayıf.
+Preklinik: hücre ve hayvan aşamasında.
+
+Sattığımız bileşiklerin bir kısmı en alt kademede ve sayfalarında öyle
+yazıyor.
+
+zphctr.com
+
+.
+.
+#zphc #peptid #peptidturkiye #zphcturkiye #bileşik
+
+---
+
 ## Yayın sırası
 
-Haftada iki gönderi yeterli. Önerilen sıra:
-
-1. Peptid nedir (giriş, en geniş kitleye hitap eden)
-2. Orijinallik doğrulama (güven kurar)
-3. BPC-157
-4. Bileşik kütüphanesi (siteye yönlendirir)
-5. TB-500
-
-Sonra baştan, yeni setler ekleyerek devam.
+Haftada iki gönderi yeterli. Önerilen sıra yukarıdaki numaralandırma.
+Peptid nedir ile başlamak mantıklı, en geniş kitleye hitap eden o.
+Doğrulama ikinci sırada güveni erken kuruyor.
 
 ---
 
 ## Yeni set eklemek
 
-`scripts/instagram/slides.mjs` içindeki `sets` nesnesine yeni bir kayıt
-yazıp çalıştırın:
+Kütüphanede olan herhangi bir bileşik için tek bir kayıt yeterli:
+
+```js
+semaglutide: compoundSet({
+  slug: "semaglutide",                       // lib/peptides.ts içindeki slug
+  product: "products/....webp",
+  kicker: "SEMAGLUTIDE",
+  title: "Kapak başlığı",
+  sub: "Alt başlık",
+  gloss: {
+    nedir: "Terimlerin sade karşılığı",
+    mekanizma: "Mekanizmanın sade karşılığı",
+  },
+}),
+```
+
+Geri kalan slaytlar (nedir, aminoasit sayısı, dizilim, mekanizma,
+bildirilenler, kanıt kademesi) kütüphaneden kendiliğinden geliyor.
 
 ```
-node scripts/instagram/slides.mjs retatrutide
+node scripts/instagram/slides.mjs semaglutide
 node scripts/instagram/slides.mjs            (tüm setler)
 ```
 
-Slayt tipleri:
-
-| Tip | Ne işe yarar |
-| --- | --- |
-| `hook` | Kapak. Başlık, alt başlık ve ürün görseli |
-| `text` | Başlık ve en fazla iki cümle |
-| `stat` | Tek büyük sayı. Karuselin ritmini kırmak için |
-| `list` | Maddeli liste, en fazla 4 madde |
-| `evidence` | Kanıt seviyesi uyarısı, amber renkli |
-| `verify` | Orijinallik doğrulama |
-| `cta` | Mavi kapanış |
-
-**Yapmayın:** Yorumlara fiyat yazmayın, doz soranlara doz cevabı
-vermeyin (WhatsApp'a yönlendirin), rakip kötülemeyin. Instagram bu
-kategoride hesap kapatabiliyor.
+Slayt tipleri: `hook`, `text`, `stat`, `seq`, `list`, `evidence`,
+`verify`, `cta`.
 
 ---
 
 ## Çalıştırma notu
 
-Üretici Playwright kullanıyor, bu paket projenin bağımlılıklarında yok
-(siteyi çalıştırmak için gerekmiyor). Slayt üretmeden önce bir kez
-kurun:
+Playwright projenin bağımlılıklarında yok (siteyi çalıştırmak için
+gerekmiyor). Bir kez kurun:
 
 ```
 npm i -D playwright

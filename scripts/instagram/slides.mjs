@@ -20,6 +20,10 @@ import { chromium } from "playwright"
 import { readFileSync, mkdirSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
+/* Sitedeki bileşik kütüphanesinin ta kendisi. Node 22 tip bildirimlerini
+   çalıştırma anında sıyırdığı için .ts dosyası doğrudan içe aktarılabiliyor,
+   ayrı bir derleme adımına gerek yok. */
+import { peptides, tierLabel } from "../../lib/peptides.ts"
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(HERE, "../..")
@@ -49,98 +53,168 @@ const FONT_EXT = font("manrope-latinext.woff2")
 
 /* ---------------------------------------------------------------- setler */
 
-/* KURAL: Slayt başına en fazla iki kısa cümle. Karusel telefonda ve
-   parmakla okunuyor; paragraf koyarsak kimse okumuyor, kaydırıp geçiyor.
-   Uzun anlatım gönderi açıklamasında (aciklamalar.md) duruyor.
+/* KURAL 1: Bileşik bilgisi buraya elle yazılmaz. lib/peptides.ts sitedeki
+   kütüphanenin kaynağıdır ve slaytlar oradan beslenir. Elle yazılsaydı
+   site bir şey, Instagram başka bir şey söylerdi; kütüphane güncellenince
+   slaytlar sessizce yanlışa düşerdi.
 
-   Set başına 5-7 slayt. Daha fazlası kaydırma sırasında terk ediliyor. */
+   KURAL 2: Slayt başına en fazla iki kısa cümle. Karusel telefonda ve
+   parmakla okunuyor, paragraf koyunca kimse okumuyor. Uzun anlatım
+   gönderi açıklamasında (aciklamalar.md) durur.
+
+   KURAL 3: Doz slayta girmez. Kütüphanede doz tabloları var ama Instagram
+   bu kategoride doz paylaşan hesapları kapatıyor. */
+
+const peptide = (slug) => {
+  const p = peptides.find((x) => x.slug === slug)
+  if (!p) throw new Error(`Kütüphanede yok: ${slug}`)
+  return p
+}
+
+/* Zincir uzunlukları. "En kısa peptid GHK-Cu" diye elle yazmıştım ve
+   yanlıştı: kütüphanede iki aminoasitlik CGP var. Bu yüzden uç değerler
+   artık kütüphaneden hesaplanıyor. */
+const chains = peptides
+  .map((p) => ({ name: p.name, n: parseInt(p.molecular?.chain ?? "", 10) }))
+  .filter((x) => Number.isFinite(x.n))
+  .sort((a, b) => a.n - b.n)
+const shortest = chains[0]
+const longest = chains[chains.length - 1]
+
+/* Kanıt kademesinin sade karşılığı. Kütüphane kademeyi etiketliyor ama
+   "Mekanistik / Teorik" ifadesi tek başına kimseye bir şey anlatmıyor. */
+const tierGloss = {
+  proven: "İnsanlarda kontrollü çalışma yapılmış. Kütüphanedeki en üst kademe bu.",
+  theoretical:
+    "Nasıl çalıştığı biliniyor ama insanlarda geniş çaplı çalışma yapılmamış.",
+  preclinical:
+    "Henüz hücre ve hayvan aşamasında. İnsan verisi yok denecek kadar az.",
+}
+
+/**
+ * Bir bileşik seti kurar.
+ *
+ * Kapak başlığı ve sade karşılıklar elle verilir, geri kalan her şey
+ * kütüphaneden gelir. Kurgu şu: önce kütüphanenin kendi bilimsel cümlesi,
+ * hemen ardından aynı şeyin günlük dildeki karşılığı. Terimi atarsak
+ * gönderi sığlaşıyor, açıklamazsak kimse anlamıyor; ikisi yan yana
+ * durunca hem ciddi hem okunur oluyor.
+ */
+function compoundSet({ slug, product, kicker, title, sub, gloss = {} }) {
+  const p = peptide(slug)
+  const m = p.molecular ?? {}
+  const chain = /^(\d+)\s*aminoasit/.exec(m.chain ?? "")
+
+  const facts = [
+    m.halfLife && `Yarı ömrü ${m.halfLife}.`,
+    m.weight && `Molekül ağırlığı ${m.weight}.`,
+  ].filter(Boolean)
+
+  const slides = [
+    { type: "hook", kicker, title, sub },
+    { type: "text", heading: "Nedir?", body: p.short },
+  ]
+
+  if (gloss.nedir) {
+    slides.push({ type: "text", heading: "Sade haliyle", body: gloss.nedir })
+  }
+
+  if (chain && facts.length) {
+    slides.push({
+      type: "stat",
+      big: chain[1],
+      unit: "aminoasit",
+      body: facts.join(" "),
+    })
+  }
+
+  /* Dizilim slaydı. Her harf bir aminoasit; molekülün gerçekten ne
+     olduğunu tek bakışta gösteren en somut veri bu. */
+  if (m.sequence) {
+    slides.push({
+      type: "seq",
+      heading: "Aminoasit dizilimi",
+      seq: m.sequence,
+      body: "Her harf bir aminoasidi gösteriyor. Molekülün tamamı bu kadar.",
+    })
+  }
+
+  slides.push({ type: "text", heading: "Nasıl çalışıyor?", body: p.mechanism })
+
+  if (gloss.mekanizma) {
+    slides.push({ type: "text", heading: "Sade haliyle", body: gloss.mekanizma })
+  }
+
+  slides.push(
+    { type: "list", heading: "Ne bildiriliyor?", items: p.primaryOutcomes },
+    {
+      type: "evidence",
+      heading: "Kanıt durumu",
+      body: `${tierLabel[p.tier]}. ${p.clinicalStatus}.`,
+    },
+    { type: "evidence", heading: "Bu ne demek?", body: tierGloss[p.tier] },
+    { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
+  )
+
+  return { product, slides }
+}
 
 export const sets = {
-  bpc157: {
+  bpc157: compoundSet({
+    slug: "bpc-157",
     product: "products/bpc157-25mg-5x5mg-zphc.webp",
-    slides: [
-      {
-        type: "hook",
-        kicker: "BPC-157",
-        title: "Kemik altı haftada iyileşir. Tendon yırtığı neden aylarca geçmez?",
-        sub: "Sebebi damarlarla ilgili.",
-      },
-      {
-        type: "text",
-        heading: "Sebep damar",
-        body: "Kemiğin içi damarla doludur. Tendonda damar çok azdır, onarım hücreleri oraya zor gider.",
-      },
-      {
-        type: "text",
-        heading: "BPC-157 nedir?",
-        body: "Midede doğal olarak bulunan bir proteinin 15 aminoasitlik parçasıdır.",
-      },
-      {
-        type: "list",
-        heading: "Nerede denendi?",
-        items: [
-          "Aşil tendonu kesikleri",
-          "Diz bağı yırtıkları",
-          "Ezilmiş kaslar",
-          "Mide ve bağırsak yaraları",
-        ],
-      },
-      {
-        type: "text",
-        heading: "Nasıl?",
-        body: "Yaralı bölgede yeni kılcal damar oluşumunu tetiklediği bildirildi. Tendonun eksiği tam da bu.",
-      },
-      {
-        type: "evidence",
-        heading: "İnsanlarda denendi mi?",
-        body: "Çalışmaların neredeyse hepsi fare ve sıçanlarda. İnsanda geniş çaplı araştırma yok.",
-      },
-      { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
-    ],
-  },
+    kicker: "BPC-157",
+    title: "Kemik altı haftada iyileşir. Tendon yırtığı neden aylarca geçmez?",
+    sub: "Sebebi damarlarla ilgili.",
+    gloss: {
+      nedir:
+        "Pentadekapeptid, on beş aminoasitlik zincir demek. Gastrik mukoza da midenin iç yüzeyi. Yani bu molekül midede zaten bulunuyor.",
+      mekanizma:
+        "Anjiyogenez, yaralı bölgede yeni kılcal damar oluşması demek. Tendonda damar az olduğu için iyileşme yavaştır, buradaki fikir o eksiği kapatmak.",
+    },
+  }),
 
-  tb500: {
+  tb500: compoundSet({
+    slug: "tb-500",
     product: "products/tb500-25mg-5x5mg-zphc.webp",
-    slides: [
-      {
-        type: "hook",
-        kicker: "TB-500",
-        title: "TB-500 neden hep BPC-157 ile birlikte anılıyor?",
-        sub: "İkisi de onarım üzerine, ama ayrı yollardan.",
-      },
-      {
-        type: "text",
-        heading: "Nereden geliyor?",
-        body: "Timosin beta-4 adlı proteinin bir parçasıdır. Bu protein vücutta yara iyileşmesinde rol alır.",
-      },
-      {
-        type: "text",
-        heading: "Nasıl çalışıyor?",
-        body: "Aktine bağlanıyor. Aktin, hücrenin hareket etmesini sağlayan iskelet gibi düşünülebilir.",
-      },
-      {
-        type: "list",
-        heading: "Nerede araştırıldı?",
-        items: [
-          "Kas ve tendon yaralanmaları",
-          "Kalp dokusu hasarı",
-          "Kornea yaralanmaları",
-          "Deride yara kapanması",
-        ],
-      },
-      {
-        type: "text",
-        heading: "BPC-157'den farkı",
-        body: "BPC-157 damar yapımını öne çıkarıyor, TB-500 hücre hareketini. Farklı iki yol.",
-      },
-      {
-        type: "evidence",
-        heading: "Kanıt nerede?",
-        body: "Araştırmaların çoğu hayvan ve hücre çalışması. İnsanda geniş çaplı veri yok.",
-      },
-      { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
-    ],
-  },
+    kicker: "TB-500",
+    title: "TB-500 neden hep BPC-157 ile birlikte anılıyor?",
+    sub: "İkisi de onarım üzerine, ama ayrı yollardan.",
+    gloss: {
+      nedir:
+        "Thymosin Beta-4 vücutta zaten bulunan bir protein. TB-500 onun küçük bir parçası, tamamı değil.",
+      mekanizma:
+        "Aktin, hücrenin içindeki iskelet gibi bir protein. Hücrenin şekil değiştirip yer değiştirmesini o sağlıyor. Yara yerine hücre taşınması bu yüzden ona bağlı.",
+    },
+  }),
+
+  ghkcu: compoundSet({
+    slug: "ghk-cu",
+    product: "products/ghk-cu-60mg-with-bacteriostatic-water-zphc.webp",
+    kicker: "GHK-Cu",
+    title: "Üç aminoasit ve bir bakır iyonu",
+    sub: "Kütüphanedeki en kısa bileşiklerden biri.",
+    gloss: {
+      nedir:
+        "Tripeptid, üç aminoasitlik zincir demek. Bu zincir bir bakır iyonunu tutuyor; adındaki Cu zaten bakırın simgesi.",
+      mekanizma:
+        "Kolajen, cildin ve bağ dokusunun taşıyıcı proteini. Elastin ise dokunun gerilip eski haline dönmesini sağlıyor. İkisi birlikte cildin diriliğini belirliyor.",
+    },
+  }),
+
+  retatrutide: compoundSet({
+    slug: "retatrutide",
+    product: "products/retatrutide-60mg-5x12mg-zphc.webp",
+    kicker: "RETATRUTIDE",
+    title: "Kütüphanedeki bileşiklerin çoğu araştırma aşamasında. Bu değil.",
+    sub: "Faz 3 çalışmaları tamamlandı.",
+    gloss: {
+      nedir:
+        "Agonist, bir reseptörü çalıştıran molekül demek. Retatrutide üç ayrı reseptörü aynı anda çalıştırdığı için üçlü agonist deniyor.",
+      mekanizma:
+        "GLP-1 ve GIP, yemekten sonra bağırsakta salgılanan hormonlar; beyne tokluk sinyali gönderiyorlar. Glukagon ise vücudun harcadığı enerjiyi artırıyor.",
+    },
+  }),
 
   peptidnedir: {
     product: "products/ghk-cu-60mg-with-bacteriostatic-water-zphc.webp",
@@ -153,9 +227,9 @@ export const sets = {
       },
       {
         type: "stat",
-        big: "2-50",
+        big: String(shortest.n),
         unit: "aminoasit",
-        body: "Peptid, bu kadar aminoasitin zincir halinde bağlanmasıdır. Zincir uzarsa protein denir.",
+        body: `Kütüphanedeki en kısa peptid bu kadar. En uzunu ${longest.n} aminoasitle ${longest.name}.`,
       },
       {
         type: "text",
@@ -165,7 +239,7 @@ export const sets = {
       {
         type: "text",
         heading: "Neden hap değil?",
-        body: "Peptidlerin çoğu mide asidinde parçalanır. Ağızdan alındığında bağırsağa sağlam ulaşamaz.",
+        body: "Peptidlerin çoğu mide asidinde parçalanır. Ağızdan alındığında sağlam kalmaz.",
       },
       {
         type: "text",
@@ -175,7 +249,7 @@ export const sets = {
       {
         type: "evidence",
         heading: "Hepsi aynı değil",
-        body: "Bazı peptidler onaylı ilaçtır, bazıları hâlâ araştırma aşamasında. İkisi bir tutulmamalı.",
+        body: "Bazısının faz 3 verisi var, bazısı sadece hayvan çalışmasında kaldı. İkisi bir tutulmamalı.",
       },
       { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
     ],
@@ -187,28 +261,28 @@ export const sets = {
       {
         type: "hook",
         kicker: "KÜTÜPHANE",
-        title: "Hangi bileşiği merak ediyorsanız sitede yazıyor",
-        sub: "Doz yok, bilgi var.",
+        title: "Hangi bileşiği merak ediyorsanız sayfası var",
+        sub: "zphctr.com",
+      },
+      {
+        type: "stat",
+        big: String(peptides.length),
+        unit: "bileşik",
+        body: "Her birinin ne olduğu, nasıl çalıştığı ve kanıtın hangi aşamada olduğu ayrı ayrı yazılı.",
       },
       {
         type: "list",
-        heading: "Her bileşikte ne var?",
+        heading: "Kanıt üç kademede",
         items: [
-          "Ne olduğu",
-          "Ne için araştırıldığı",
-          "Araştırmanın hangi aşamada olduğu",
-          "Nasıl saklanacağı",
+          `${tierLabel.proven}: insanda kontrollü çalışma var`,
+          `${tierLabel.theoretical}: mekanizma tanımlı, insan verisi zayıf`,
+          `${tierLabel.preclinical}: hücre ve hayvan aşamasında`,
         ],
       },
       {
         type: "text",
-        heading: "Aşama yazıyor",
-        body: "Bir bileşik insanda mı yoksa sadece hayvanda mı denenmiş, sayfasında açıkça belirtiliyor.",
-      },
-      {
-        type: "evidence",
-        heading: "Doz bulamazsınız",
-        body: "Sitede doz, kür veya kullanım şeması yoktur. Bu bilgi bir satıcıdan alınmaz.",
+        heading: "Kademe gizlenmiyor",
+        body: "Sattığımız bileşiklerin bir kısmı en alt kademede. Sayfalarında öyle yazıyor.",
       },
       { type: "cta", heading: "zphctr.com", body: "Bileşik kütüphanesi" },
     ],
@@ -325,7 +399,18 @@ const base = `
   li:last-child { border-bottom:2px solid rgba(13,27,42,.12); }
   .dot { flex:none; width:18px; height:18px; border-radius:99px;
          background:${BLUE}; margin-top:16px; }
+
+  /* Dizilim. Tek boşluklu değil ama harf aralığı açık: uzun dizilimler
+     (retatrutide 40 harf) tek blok halinde okunamaz hale geliyordu. */
+  .seq { margin-top:30px; font-size:56px; font-weight:800; color:${BLUE};
+         letter-spacing:.06em; line-height:1.3; word-break:break-all; }
 `
+
+/* Metin artık kütüphaneden geliyor ve orada "<30 dakika" gibi değerler
+   var. Kaçışlanmazsa tarayıcı bunu etiket başlangıcı sanıp slaydın geri
+   kalanını yutuyor. */
+const esc = (t) =>
+  String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
 
 function render(slide, i, total, productImg) {
   const foot = `<div class="foot"><span>zphctr.com</span><span class="num">${i + 1}/${total}</span></div>`
@@ -335,9 +420,9 @@ function render(slide, i, total, productImg) {
     return `<div class="slide">
       <div class="band">
         <img class="logo" src="${LOGO}">
-        <div class="kicker" style="margin-top:34px">${slide.kicker}</div>
-        <h1 style="margin-top:14px">${slide.title}</h1>
-        ${slide.sub ? `<div class="sub" style="margin-top:18px">${slide.sub}</div>` : ""}
+        <div class="kicker" style="margin-top:34px">${esc(slide.kicker)}</div>
+        <h1 style="margin-top:14px">${esc(slide.title)}</h1>
+        ${slide.sub ? `<div class="sub" style="margin-top:18px">${esc(slide.sub)}</div>` : ""}
       </div>
       <div class="shelf"><div class="card"><img src="${productImg}"></div></div>
       ${foot}</div>`
@@ -346,8 +431,8 @@ function render(slide, i, total, productImg) {
   if (slide.type === "cta") {
     return `<div class="slide band" style="justify-content:center">
       <img class="logo" src="${LOGO}" style="position:absolute;top:80px;left:80px">
-      <h1>${slide.heading}</h1>
-      <div class="sub" style="margin-top:20px;font-size:42px">${slide.body}</div>
+      <h1>${esc(slide.heading)}</h1>
+      <div class="sub" style="margin-top:20px;font-size:42px">${esc(slide.body)}</div>
       <div style="margin-top:52px;align-self:flex-start;background:#fff;color:${BLUE};
                   font-size:34px;font-weight:800;padding:20px 44px;border-radius:99px">zphctr.com</div>
       <div class="sub" style="margin-top:38px;font-size:30px">Fiyat ve stok için WhatsApp&#39;tan yazabilirsiniz.</div>
@@ -359,9 +444,22 @@ function render(slide, i, total, productImg) {
   if (slide.type === "stat") {
     return `<div class="slide">${strip}
       <div class="body-area">
-        <div class="big">${slide.big}</div>
-        <div class="unit" style="margin-top:8px">${slide.unit}</div>
-        <p style="margin-top:34px">${slide.body}</p>
+        <div class="big">${esc(slide.big)}</div>
+        <div class="unit" style="margin-top:8px">${esc(slide.unit)}</div>
+        <p style="margin-top:34px">${esc(slide.body)}</p>
+      </div>
+      ${foot}</div>`
+  }
+
+  /* Dizilim slaydı. Harfler tek tek okunacak diye değil, molekülün
+     gerçekten ne kadar küçük olduğu tek bakışta görünsün diye var. */
+  if (slide.type === "seq") {
+    return `<div class="slide">${strip}
+      <div class="body-area">
+        <div class="rule"></div>
+        <h2 style="margin-top:30px">${esc(slide.heading)}</h2>
+        <div class="seq">${esc(slide.seq)}</div>
+        <p style="margin-top:30px;font-size:40px">${esc(slide.body)}</p>
       </div>
       ${foot}</div>`
   }
@@ -370,10 +468,10 @@ function render(slide, i, total, productImg) {
     return `<div class="slide">${strip}
       <div class="body-area">
         <div class="rule"></div>
-        <h2 style="margin-top:30px">${slide.heading}</h2>
+        <h2 style="margin-top:30px">${esc(slide.heading)}</h2>
         <ul style="margin-top:34px">
           ${slide.items
-            .map((it) => `<li><span class="dot"></span><span>${it}</span></li>`)
+            .map((it) => `<li><span class="dot"></span><span>${esc(it)}</span></li>`)
             .join("")}
         </ul>
       </div>
@@ -387,8 +485,8 @@ function render(slide, i, total, productImg) {
   return `<div class="slide">${strip}
     <div class="body-area">
       <div class="rule" style="background:${accent}"></div>
-      <h2 style="margin-top:30px;color:${accent === BLUE ? INK : accent}">${slide.heading}</h2>
-      <p style="margin-top:34px">${slide.body}</p>
+      <h2 style="margin-top:30px;color:${accent === BLUE ? INK : accent}">${esc(slide.heading)}</h2>
+      <p style="margin-top:34px">${esc(slide.body)}</p>
     </div>
     ${foot}</div>`
 }

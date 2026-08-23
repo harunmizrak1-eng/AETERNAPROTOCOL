@@ -48,6 +48,13 @@ metni bitiriyor. Örnekler:
 | mekanizma tarafında | nasıl çalıştığına gelince |
 | araştırma materyali olarak sınıflandırılıyor | araştırma ürünü olarak satılıyor |
 | kanıt henüz o seviyede değil | insanlarda çalışma yapılmamış |
+| ilacın üç kolu var | ilaç üç hormona etki ediyor |
+| girişi kısmak, çıkışı açmak | daha az yemek, daha çok yakmak |
+
+Türkçede olmayan bir benzetmeyi İngilizceden alıp çevirme. "Kol" (arm),
+"hedefe kilitlenmek", "oyunun kurallarını değiştirmek" gibi kalıplar
+Türkçe metinde yamalı duruyor. Anlatacağın şeyi Türkçe düşün, benzetmeye
+ihtiyacın yoksa hiç kullanma.
 
 Özneyi doğru kur. "Kırık kaynar" değil, kaynayan kemiktir. "Tendon
 aylarca sürer" değil, süren iyileşmedir. Bu tür hatalar metni anında

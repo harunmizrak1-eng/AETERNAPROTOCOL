@@ -159,24 +159,26 @@ Bağımsız ve büyük ölçekli insan çalışması ise sınırlı.
 
 ---
 
-## 6. Retatrutide (`out/retatrutide/`, 15 slayt)
+## 6. Retatrutide (`out/retatrutide/`, 17 slayt)
 
-Ozempic bir kol, Mounjaro iki kol, Retatrutide üç kol.
+Ozempic tek hormon üzerinden çalışıyor, Mounjaro iki, Retatrutide üç.
 
-Ozempic GLP-1 üzerinden çalışıyor. Mounjaro buna GIP'i ekliyor.
-Retatrutide ise üçüncü bir kol daha açıyor: glukagon.
+Ozempic GLP-1'e etki ediyor. Mounjaro buna GIP'i ekliyor. Retatrutide
+ise üçüncü bir hormonu daha hedefliyor: glukagon. Literatürdeki adı da
+buradan geliyor, üçlü agonist. Agonist, bir reseptörü çalıştıran
+molekül demek.
 
-İlk iki kol iştahı kesiyor. GLP-1 ve GIP yemek sonrası bağırsakta
+İlk ikisi iştahı kesiyor. GLP-1 ve GIP yemek sonrası bağırsakta
 salgılanan hormonlar, beyne tokluk sinyali gönderiyorlar, siz de daha
 az yiyorsunuz.
 
-Üçüncü kol farklı bir iş yapıyor. Glukagon iştahı kesmiyor, vücudun
-harcadığı enerjiyi artırıyor. Yani sadece girişi kısmak yerine çıkışı
-da açmayı hedefliyor.
+Üçüncüsü başka bir iş yapıyor. Glukagon iştahı kesmiyor, vücudun
+harcadığı enerjiyi artırıyor. Yani sadece daha az yemenizi değil, daha
+çok yakmanızı da hedefliyor.
 
-Bu neden önemli? Kilo verirken vücut enerji harcamasını düşürür, tartı
-bu yüzden bir yerde takılır. Glukagon kolu tam olarak bu düşüşü
-dengelemek üzerine kurulu.
+Bu neden önemli? Kilo verirken vücut harcadığı enerjiyi düşürür, tartı
+bu yüzden bir yerde takılır. Glukagonun işi tam olarak bu düşüşü
+dengelemek.
 
 Bir de kaybedilenin ne olduğu meselesi var. Hızlı kilo kaybında asıl
 soru, kaybın ne kadarının yağdan geldiği. Çalışmalarda kaybın büyük

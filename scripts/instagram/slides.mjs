@@ -204,7 +204,7 @@ export const sets = {
     slug: "ghk-cu",
     product: "products/ghk-cu-60mg-with-bacteriostatic-water-zphc.webp",
     kicker: "GHK-Cu",
-    title: "Cildi toparlayan, saç köküne çalışan peptid",
+    title: "Cildi toparlayan, saç dökülmesinde araştırılan peptid",
     sub: "Tamamı üç aminoasit ve bir bakır iyonu.",
     intro: [
       {
@@ -235,16 +235,17 @@ export const sets = {
     slug: "retatrutide",
     product: "products/retatrutide-60mg-5x12mg-zphc.webp",
     kicker: "RETATRUTIDE",
-    title: "Ozempic bir kol, Mounjaro iki kol. Retatrutide üç kol.",
-    sub: "Farkı tek kelimeyle: glukagon.",
-    /* Kütüphanenin "üçlü agonist" tanımı doğru ama kimseye bir şey
-       anlatmıyor. Giriş slaytları bilinen iki ilaç üzerinden kuruluyor,
-       çünkü insanlar retatrutide'i zaten onlarla karşılaştırarak
-       soruyor. */
+    title: "Ozempic tek hormon, Mounjaro iki. Retatrutide üç.",
+    sub: "Üçüncüsü glukagon ve işi diğerlerinden farklı.",
+    /* Giriş slaytları bilinen iki ilaç üzerinden kuruluyor, çünkü
+       insanlar retatrutide'i zaten onlarla karşılaştırarak soruyor.
+       Kütüphanenin "üçlü agonist" tanımı bunların ardından geliyor:
+       önce anlaşılsın, sonra doğru adı konsun. Terimi hiç kullanmamak
+       da olmaz, bileşiğin literatürdeki adı bu. */
     intro: [
       {
         type: "list",
-        heading: "Üç ilaç, üç kuşak",
+        heading: "Hangisi hangi hormona etki ediyor?",
         items: [
           "Ozempic: GLP-1",
           "Mounjaro: GLP-1 + GIP",
@@ -253,18 +254,18 @@ export const sets = {
       },
       {
         type: "text",
-        heading: "İlk iki kol iştahı kesiyor",
+        heading: "İlk ikisi iştahı kesiyor",
         body: "GLP-1 ve GIP, yemek sonrası bağırsakta salgılanan hormonlar. Beyne tokluk sinyali gönderiyorlar, siz de daha az yiyorsunuz.",
       },
       {
         type: "text",
-        heading: "Üçüncü kol farklı iş yapıyor",
-        body: "Glukagon iştahı kesmiyor, vücudun harcadığı enerjiyi artırıyor. Yani sadece girişi kısmak yerine çıkışı da açmayı hedefliyor.",
+        heading: "Üçüncüsü başka bir iş yapıyor",
+        body: "Glukagon iştahı kesmiyor, vücudun harcadığı enerjiyi artırıyor. Yani sadece daha az yemenizi değil, daha çok yakmanızı da hedefliyor.",
       },
       {
         type: "text",
         heading: "Bu neden önemli?",
-        body: "Kilo verirken vücut enerji harcamasını düşürür, tartı bu yüzden bir yerde takılır. Glukagon kolu tam olarak bu düşüşü dengelemek üzerine kurulu.",
+        body: "Kilo verirken vücut harcadığı enerjiyi düşürür, tartı bu yüzden bir yerde takılır. Glukagonun işi tam olarak bu düşüşü dengelemek.",
       },
       {
         type: "text",
@@ -272,8 +273,11 @@ export const sets = {
         body: "Hızlı kilo kaybında asıl soru, kaybedilenin ne kadarının yağ olduğu. Çalışmalarda kaybın büyük bölümünün yağ dokusundan geldiği bildirildi.",
       },
     ],
-    skipShort: true,
     skipMechanism: true,
+    gloss: {
+      nedir:
+        "Agonist, bir reseptörü çalıştıran molekül demek. Retatrutide üç ayrı reseptörü aynı anda çalıştırdığı için üçlü agonist deniyor.",
+    },
     /* Karaciğer ve kullanıcı deneyimi slaytları kütüphanede yok, iki
        yayımlanmış kaynaktan geliyor:
 

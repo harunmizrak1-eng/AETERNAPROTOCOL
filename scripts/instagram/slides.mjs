@@ -274,11 +274,47 @@ export const sets = {
     ],
     skipShort: true,
     skipMechanism: true,
+    /* Karaciğer ve kullanıcı deneyimi slaytları kütüphanede yok, iki
+       yayımlanmış kaynaktan geliyor:
+
+       Karaciğer: Nature Medicine 2024, faz 2a MASLD çalışması (n=98).
+       48. haftada karaciğer yağında ortalama %86 azalma, katılımcıların
+       %93'ünde normal eşiğin altına inme. Doz yazılmıyor ama sonucun en
+       yüksek dozdan geldiği belirtiliyor; belirtilmezse rakam olduğundan
+       büyük görünür.
+
+       Kullanıcı deneyimi: medRxiv 2026, Reddit paylaşımlarının derlemesi
+       (7.823 kullanıcı). Tek tek gönderi kopyalanmadı; başkasının
+       anlattığını izinsiz alıntılamak yerine derlemeye atıf yapıldı.
+       Listede iştah artışı da var ve bir zayıflama ürünü için ters bir
+       veri; yine de duruyor, çünkü ayıklanmış bir liste kullanıcı
+       deneyimi değil reklam olur. */
     extra: [
       {
+        type: "stat",
+        big: "%86",
+        unit: "karaciğer yağında azalma",
+        body: "48 haftalık faz 2a çalışmasında en yüksek dozda ölçülen ortalama. Katılımcıların %93'ünde karaciğer yağı normal sayılan eşiğin altına indi.",
+      },
+      {
+        type: "list",
+        heading: "Kullananlar ne anlatıyor?",
+        items: [
+          "İştahta artış",
+          "Yorgunluk",
+          "Enerjide artış",
+          "Bulantı ve uykusuzluk",
+        ],
+      },
+      {
+        type: "evidence",
+        heading: "Bu liste klinik veri değil",
+        body: "7.800'den fazla kullanıcının kendi paylaşımlarından derlendi. Kontrollü çalışmalarda öne çıkan yan etkiler ise ağırlıklı olarak mide bağırsak tarafındaydı.",
+      },
+      {
         type: "text",
-        heading: "Karaciğer yağlanması",
-        body: "Yağlı karaciğeri olan katılımcılarda 48 hafta sonunda karaciğer yağında belirgin azalma bildirildi. Katılımcıların büyük çoğunluğunda normal aralığa indi.",
+        heading: "Aradaki fark neden?",
+        body: "Derlemeyi yapan araştırmacılar, kaynağı belirsiz ürünlerin bu tabloyu değiştirebileceğine dikkat çekiyor. Aynı molekülün nereden geldiği bu yüzden önemli.",
       },
     ],
   }),

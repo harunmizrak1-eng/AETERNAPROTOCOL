@@ -159,7 +159,7 @@ Bağımsız ve büyük ölçekli insan çalışması ise sınırlı.
 
 ---
 
-## 6. Retatrutide (`out/retatrutide/`, 12 slayt)
+## 6. Retatrutide (`out/retatrutide/`, 15 slayt)
 
 Ozempic bir kol, Mounjaro iki kol, Retatrutide üç kol.
 
@@ -182,8 +182,20 @@ Bir de kaybedilenin ne olduğu meselesi var. Hızlı kilo kaybında asıl
 soru, kaybın ne kadarının yağdan geldiği. Çalışmalarda kaybın büyük
 bölümünün yağ dokusundan geldiği bildirildi.
 
-Yağlı karaciğeri olan katılımcılarda 48 hafta sonunda karaciğer yağında
-belirgin azalma bildirildi, büyük çoğunlukta normal aralığa indi.
+Karaciğer tarafı en çarpıcı sonucun çıktığı yer. 48 haftalık faz 2a
+çalışmasında en yüksek dozda karaciğer yağında ortalama %86 azalma
+ölçüldü. Katılımcıların %93'ünde karaciğer yağı normal sayılan eşiğin
+altına indi.
+
+Peki kullananlar ne anlatıyor? Yayımlanmış bir derleme, 7.800'den fazla
+kullanıcının kendi paylaşımlarını taradı. En çok bildirilenler: iştahta
+artış, yorgunluk, enerjide artış, bulantı ve uykusuzluk.
+
+Şunu da yazalım, bu liste klinik veri değil. Kontrollü çalışmalarda öne
+çıkan yan etkiler ağırlıklı olarak mide bağırsak tarafındaydı.
+Derlemeyi yapan araştırmacılar farkın sebebi olarak kaynağı belirsiz
+ürünlere dikkat çekiyor. Aynı molekülün nereden geldiği bu yüzden
+önemli.
 
 Bildirilenler: vücut ağırlığında klinik olarak anlamlı azalma, HbA1c ve
 açlık kan şekerinde iyileşme, karaciğer yağ oranında azalma.
@@ -216,6 +228,23 @@ zphctr.com
 .
 .
 #zphc #peptid #peptidturkiye #zphcturkiye #bileşik
+
+---
+
+## Kaynaklar
+
+Kütüphane dışından gelen iki veri ve kaynakları:
+
+- Karaciğer yağı sonuçları: Nature Medicine, 2024, faz 2a MASLD
+  çalışması (n=98).
+  https://www.nature.com/articles/s41591-024-03018-2
+- Kullanıcı bildirimleri: medRxiv, 2026, Reddit paylaşımlarının
+  derlemesi (7.823 kullanıcı).
+  https://www.medrxiv.org/content/10.64898/2026.05.28.26352819v1
+
+Kullanıcı bildirimlerinde tek tek gönderi kopyalanmadı, derlemeye atıf
+yapıldı. Listede iştah artışı da duruyor; bir zayıflama ürünü için ters
+bir veri ama ayıklanmış liste kullanıcı deneyimi değil reklam olur.
 
 ---
 

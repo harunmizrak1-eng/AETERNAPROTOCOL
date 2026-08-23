@@ -24,6 +24,7 @@ import { fileURLToPath } from "node:url"
    çalıştırma anında sıyırdığı için .ts dosyası doğrudan içe aktarılabiliyor,
    ayrı bir derleme adımına gerek yok. */
 import { peptides, tierLabel } from "../../lib/peptides.ts"
+import { metinSetleri } from "./sets-metin.mjs"
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(HERE, "../..")
@@ -172,6 +173,8 @@ function compoundSet({
 }
 
 export const sets = {
+  ...metinSetleri,
+
   bpc157: compoundSet({
     slug: "bpc-157",
     product: "products/bpc157-25mg-5x5mg-zphc.webp",
@@ -534,7 +537,7 @@ function render(slide, i, total, productImg) {
         <h1 style="margin-top:14px">${esc(slide.title)}</h1>
         ${slide.sub ? `<div class="sub" style="margin-top:18px">${esc(slide.sub)}</div>` : ""}
       </div>
-      <div class="shelf"><div class="card"><img src="${productImg}"></div></div>
+      ${productImg ? `<div class="shelf"><div class="card"><img src="${productImg}"></div></div>` : ""}
       ${foot}</div>`
   }
 
@@ -689,7 +692,9 @@ async function build(name) {
   ).newPage()
 
   await page.setContent("<html><body></body></html>")
-  const productImg = await trim(page, img(set.product))
+  /* Bazı setlerde ürün görseli yok (katalogda fotoğrafı bulunmayan
+     bileşikler). Kapak o zaman görselsiz basılıyor. */
+  const productImg = set.product ? await trim(page, img(set.product)) : null
 
   for (let i = 0; i < set.slides.length; i++) {
     const html = `<html><head><style>${base}</style></head><body>${render(

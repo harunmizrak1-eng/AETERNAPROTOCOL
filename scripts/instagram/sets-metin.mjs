@@ -54,7 +54,7 @@ export const metinSetleri = {
       {
         type: "text",
         heading: "Sade haliyle",
-        body: "Kendi üzerinde ölçerek ilerlemek demek. Amaç daha uzun, daha sağlıklı ve daha enerjik yaşamak.",
+        body: "Kendiniz üzerinde deney yaparak daha iyi bir versiyonunuzu yaratmaktır. Daha uzun, daha sağlıklı, daha enerjik yaşamak için biyolojinizi hackleyin.",
       },
       {
         type: "list",
@@ -70,9 +70,9 @@ export const metinSetleri = {
         type: "list",
         heading: "Peptidler burada nerede duruyor?",
         items: [
-          "BPC-157 ve TB-500: doku onarımında araştırılıyor",
-          "NAD+ ve SS-31: mitokondri üzerine çalışılıyor",
-          "Tesamorelin ve Ipamorelin: hormon tarafında",
+          "BPC-157 ve TB-500 doku onarımını hızlandırır",
+          "NAD+ ve SS-31 mitokondriyal enerjiyi hedefler",
+          "Tesamorelin ve Ipamorelin hormon optimizasyonu",
         ],
       },
       {
@@ -201,18 +201,12 @@ export const metinSetleri = {
       {
         type: "list",
         heading: "Sermorelin ve Ipamorelin'den farkı",
-        accent: "warn",
         items: [
           "Sermorelin ve Ipamorelin araştırma ürünü",
           "Tesamorelin molekülü ise Egrifta adıyla FDA onaylı",
           "Ipamorelin ghrelin reseptörünü hedefliyor",
           "Tesamorelin doğrudan GHRH reseptörüne bağlanıyor",
         ],
-      },
-      {
-        type: "evidence",
-        heading: "Bir noktayı ayıralım",
-        body: "Onay, Egrifta adlı ilaca ait. Araştırma ürünü olarak satılan tesamorelin o onayın kapsamında değil.",
       },
       KALITE,
       KAPANIS,
@@ -557,8 +551,8 @@ export const metinSetleri = {
       {
         type: "hook",
         kicker: "GHK-Cu",
-        title: "Ciltte ve saçta en çok konuşulan bakır peptid",
-        sub: "Üç aminoasit ve bir bakır iyonu.",
+        title: "GHK-Cu ciltte Botox'u, saçta Minoxidil'i geride bırakıyor mu?",
+        sub: "Bakır peptidin her iki alandaki sonuçları.",
       },
       {
         type: "text",
@@ -592,12 +586,12 @@ export const metinSetleri = {
       },
       {
         type: "list",
-        heading: "Diğerlerinden farkı ne?",
+        heading: "Kimleri geride bırakıyor?",
         items: [
-          "Botoks kas hareketini geçici olarak durdurur",
-          "Finasterid hormon yolağına etki eder",
-          "Minoxidil damarları genişletir",
-          "GHK-Cu ise kolajen üretimi üzerinden araştırılıyor",
+          "Botoks kasları felç eder, GHK-Cu cildi yeniden inşa eder",
+          "Finasterid hormonlarla oynar, yan etkileri iyi bilinir",
+          "Minoxidil damarları genişletir, kökü beslemez",
+          "GHK-Cu doğrudan hücreleri hedef alır",
         ],
       },
       {
@@ -650,13 +644,13 @@ export const metinSetleri = {
         type: "stat",
         big: "%30,3",
         unit: "104 haftada ortalama kilo kaybı",
-        body: "TRIUMPH-1 faz 3 çalışması, 2.339 katılımcı. En yüksek dozda 80. haftadaki ortalama %25,0 idi, uzatma döneminde %30,3'e çıktı.",
+        body: "TRIUMPH-1 faz 3 çalışması, 2.339 katılımcı. 12 mg dozda 80. haftadaki ortalama %25,0 idi, uzatma döneminde %30,3'e çıktı.",
       },
       {
         type: "list",
         heading: "Ne bildiriliyor?",
         items: [
-          "En yüksek dozda katılımcıların %45,3'ü en az %30 kilo verdi",
+          "12 mg dozda katılımcıların %45,3'ü en az %30 kilo verdi",
           "Tip 2 diyabette %20,8 kilo kaybı",
           "Kardiyovasküler hastalıkta %22,6 kilo kaybı",
           "Şiddetli uyku apnesinde AHI'de %60,6 azalma",

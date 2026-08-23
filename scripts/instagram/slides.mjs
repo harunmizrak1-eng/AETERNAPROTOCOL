@@ -97,18 +97,15 @@ const tierGloss = {
  * Kapak başlığı ve sade karşılıklar elle verilir, geri kalan her şey
  * kütüphaneden gelir. Kurgu şu: önce kütüphanenin kendi bilimsel cümlesi,
  * hemen ardından aynı şeyin günlük dildeki karşılığı. Terimi atarsak
- * gönderi sığlaşıyor, açıklamazsak kimse anlamıyor; ikisi yan yana
- * durunca hem ciddi hem okunur oluyor.
+ * gönderi sığlaşıyor, açıklamazsak kimse anlamıyor.
+ *
+ * Aminoasit dizilimi ve molekül ağırlığı slaytları KALDIRILDI. Doğru
+ * bilgilerdi ama kimsenin sorduğu şey değildi. Yerlerine kütüphanenin
+ * insanların gerçekten merak ettiği iki alanı geldi: beklenen seyir ve
+ * iyi ürünün nasıl göründüğü.
  */
 function compoundSet({ slug, product, kicker, title, sub, gloss = {} }) {
   const p = peptide(slug)
-  const m = p.molecular ?? {}
-  const chain = /^(\d+)\s*aminoasit/.exec(m.chain ?? "")
-
-  const facts = [
-    m.halfLife && `Yarı ömrü ${m.halfLife}.`,
-    m.weight && `Molekül ağırlığı ${m.weight}.`,
-  ].filter(Boolean)
 
   const slides = [
     { type: "hook", kicker, title, sub },
@@ -119,42 +116,42 @@ function compoundSet({ slug, product, kicker, title, sub, gloss = {} }) {
     slides.push({ type: "text", heading: "Sade haliyle", body: gloss.nedir })
   }
 
-  if (chain && facts.length) {
-    slides.push({
-      type: "stat",
-      big: chain[1],
-      unit: "aminoasit",
-      body: facts.join(" "),
-    })
-  }
-
-  /* Dizilim slaydı. Her harf bir aminoasit; molekülün gerçekten ne
-     olduğunu tek bakışta gösteren en somut veri bu. */
-  if (m.sequence) {
-    slides.push({
-      type: "seq",
-      heading: "Aminoasit dizilimi",
-      seq: m.sequence,
-      body: "Her harf bir aminoasidi gösteriyor. Molekülün tamamı bu kadar.",
-    })
-  }
-
   slides.push({ type: "text", heading: "Nasıl çalışıyor?", body: p.mechanism })
 
   if (gloss.mekanizma) {
     slides.push({ type: "text", heading: "Sade haliyle", body: gloss.mekanizma })
   }
 
-  slides.push(
-    { type: "list", heading: "Ne bildiriliyor?", items: p.primaryOutcomes },
-    {
-      type: "evidence",
-      heading: "Kanıt durumu",
-      body: `${tierLabel[p.tier]}. ${p.clinicalStatus}.`,
-    },
-    { type: "evidence", heading: "Bu ne demek?", body: tierGloss[p.tier] },
-    { type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" },
-  )
+  slides.push({ type: "list", heading: "Ne bildiriliyor?", items: p.primaryOutcomes })
+
+  /* Beklenen seyir. Gelen ilk soru neredeyse her zaman "ne zaman etkisini
+     gösterir" oluyor. Dördü geçince slayt okunmaz hale geliyor, o yüzden
+     ilk dört dönem alınıyor. */
+  if (p.expectedTimeline?.length) {
+    slides.push({
+      type: "timeline",
+      heading: "Ne zaman ne bekleniyor?",
+      rows: p.expectedTimeline.slice(0, 4),
+    })
+  }
+
+  slides.push({
+    type: "evidence",
+    heading: "Kanıt durumu",
+    body: `${p.clinicalStatus}. ${tierGloss[p.tier]}`,
+  })
+
+  /* Kalite işaretleri. Sahte ürün endişesi bu pazarda birinci sırada ve
+     bu slayt onu doğrudan karşılıyor. */
+  if (p.qualityIndicators?.good?.length) {
+    slides.push({
+      type: "list",
+      heading: "İyi ürün nasıl görünür?",
+      items: p.qualityIndicators.good.slice(0, 4),
+    })
+  }
+
+  slides.push({ type: "cta", heading: "ZPHC Türkiye", body: "Resmi distribütör" })
 
   return { product, slides }
 }
@@ -400,10 +397,13 @@ const base = `
   .dot { flex:none; width:18px; height:18px; border-radius:99px;
          background:${BLUE}; margin-top:16px; }
 
-  /* Dizilim. Tek boşluklu değil ama harf aralığı açık: uzun dizilimler
-     (retatrutide 40 harf) tek blok halinde okunamaz hale geliyordu. */
-  .seq { margin-top:30px; font-size:56px; font-weight:800; color:${BLUE};
-         letter-spacing:.06em; line-height:1.3; word-break:break-all; }
+  /* Beklenen seyir satırı. Sonuç metinleri kütüphanede uzun olabiliyor
+     (retatrutide), o yüzden gövdeden küçük punto. */
+  li.tl { display:block; padding:24px 0; }
+  .per { display:block; font-size:32px; font-weight:800; color:${BLUE};
+         letter-spacing:.02em; }
+  .res { display:block; margin-top:8px; font-size:36px; font-weight:500;
+         line-height:1.3; color:${MUTED}; }
 `
 
 /* Metin artık kütüphaneden geliyor ve orada "<30 dakika" gibi değerler
@@ -451,15 +451,35 @@ function render(slide, i, total, productImg) {
       ${foot}</div>`
   }
 
-  /* Dizilim slaydı. Harfler tek tek okunacak diye değil, molekülün
-     gerçekten ne kadar küçük olduğu tek bakışta görünsün diye var. */
-  if (slide.type === "seq") {
+  /* Beklenen seyir. Dönem solda kalın, sonuç altında; göz dönemleri
+     tarayıp ilgilendiği satırda duruyor. */
+  if (slide.type === "timeline") {
+    /* Kütüphanedeki sonuç metinleri bileşikten bileşiğe çok farklı
+       uzunlukta. Retatrutide'in satırları sabit puntoda slaydı taşırıp
+       başlığın ve alt bilginin üstüne biniyordu; satır sayısı ve punto
+       artık içeriğin uzunluğuna göre seçiliyor. */
+    const len = slide.rows.reduce((n, r) => n + r.result.length, 0)
+    const rows = len > 200 ? slide.rows.slice(0, 3) : slide.rows
+    const dense = rows.reduce((n, r) => n + r.result.length, 0) > 150
+    const res = dense ? 32 : 36
+    const per = dense ? 28 : 32
+    const pad = dense ? 18 : 24
+
     return `<div class="slide">${strip}
       <div class="body-area">
         <div class="rule"></div>
         <h2 style="margin-top:30px">${esc(slide.heading)}</h2>
-        <div class="seq">${esc(slide.seq)}</div>
-        <p style="margin-top:30px;font-size:40px">${esc(slide.body)}</p>
+        <ul style="margin-top:26px">
+          ${rows
+            .map(
+              (r) =>
+                `<li class="tl" style="padding:${pad}px 0">
+                   <span class="per" style="font-size:${per}px">${esc(r.period)}</span>
+                   <span class="res" style="font-size:${res}px">${esc(r.result)}</span>
+                 </li>`,
+            )
+            .join("")}
+        </ul>
       </div>
       ${foot}</div>`
   }

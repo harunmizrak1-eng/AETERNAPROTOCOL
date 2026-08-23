@@ -14,6 +14,11 @@ Her bileşik setinde sıra şu: kütüphanenin kendi bilimsel cümlesi, hemen
 ardından aynı şeyin günlük dildeki karşılığı ("Sade haliyle" slaytları).
 Terimi atarsak gönderi sığlaşıyor, açıklamazsak kimse anlamıyor.
 
+Sonra kütüphanenin insanların gerçekten sorduğu iki alanı geliyor:
+beklenen seyir ("ne zaman etkisini gösterir") ve iyi ürünün nasıl
+göründüğü. Aminoasit dizilimi ve molekül ağırlığı slaytları kaldırıldı;
+doğru bilgilerdi ama kimsenin sorduğu şey değildi.
+
 **Doz slayta girmiyor.** Kütüphanede doz tabloları var ama Instagram bu
 kategoride doz paylaşan hesapları kapatıyor. Yorumlara da yazmayın,
 WhatsApp'a yönlendirin.
@@ -71,7 +76,7 @@ başkası görmüş demektir.
 
 ---
 
-## 3. BPC-157 (`out/bpc157/`, 11 slayt)
+## 3. BPC-157 (`out/bpc157/`, 10 slayt)
 
 Kırılan bir kemik altı haftada iyileşir. Ama aynı kişinin tendon yırtığı
 aylarca geçmez. Sebebi damar: kemiğin içi damarla doludur, tendonda ise
@@ -81,8 +86,6 @@ BPC-157 araştırmaları işte burayı hedefliyor.
 
 Gastrik mukozadan izole edilmiş bir pentadekapeptid. Yani midenin iç
 yüzeyinde doğal olarak bulunan, on beş aminoasitlik bir zincir.
-Dizilimi GKPPPGKPADDAGLV, molekül ağırlığı 1.419 Da, kandaki yarı ömrü
-otuz dakikadan kısa.
 
 Anjiyogenezi ve büyüme faktörü sinyalini desteklediği düşünülüyor.
 Anjiyogenez, yaralı bölgede yeni kılcal damar oluşması demek. Tendonun
@@ -106,8 +109,7 @@ TB-500 neden hep BPC-157 ile birlikte anılıyor? İkisi de doku onarımı
 üzerine çalışılıyor ama ayrı yollardan gidiyorlar.
 
 TB-500, Thymosin Beta-4 adlı proteinin aktif fragmanı. Yani vücutta
-zaten bulunan bir proteinin küçük bir parçası, tamamı değil. Kırk üç
-aminoasit uzunluğunda, yarı ömrü iki saat civarında.
+zaten bulunan bir proteinin küçük bir parçası, tamamı değil.
 
 Aktin bağlanması yoluyla hücre göçünü desteklediği düşünülüyor. Aktin,
 hücrenin içindeki iskelet gibi bir protein; hücrenin şekil değiştirip
@@ -126,14 +128,13 @@ Kütüphanedeki en alt kademe bu ve sayfasında öyle yazıyor.
 
 ---
 
-## 5. GHK-Cu (`out/ghkcu/`, 11 slayt)
+## 5. GHK-Cu (`out/ghkcu/`, 10 slayt)
 
 Üç aminoasit ve bir bakır iyonu. Kütüphanedeki en kısa bileşiklerden
 biri.
 
-Dizilimi tek kelime kadar kısa: GHK. Tripeptid, yani üç aminoasitlik
-zincir. Bu zincir bir bakır iyonu tutuyor, adındaki Cu zaten bakırın
-simgesi.
+Tripeptid, yani üç aminoasitlik zincir. Bu zincir bir bakır iyonu
+tutuyor, adındaki Cu zaten bakırın simgesi.
 
 Kolajen ve elastin sentezini uyardığı, antioksidan ve anti-inflamatuar
 yollarla doku yenilenmesini desteklediği hücre kültürü ve hayvan
@@ -150,7 +151,7 @@ Bağımsız ve büyük ölçekli insan çalışması ise sınırlı.
 
 ---
 
-## 6. Retatrutide (`out/retatrutide/`, 11 slayt)
+## 6. Retatrutide (`out/retatrutide/`, 10 slayt)
 
 Kütüphanedeki bileşiklerin çoğu araştırma aşamasında. Bu değil.
 
@@ -224,15 +225,15 @@ semaglutide: compoundSet({
 }),
 ```
 
-Geri kalan slaytlar (nedir, aminoasit sayısı, dizilim, mekanizma,
-bildirilenler, kanıt kademesi) kütüphaneden kendiliğinden geliyor.
+Geri kalan slaytlar (nedir, mekanizma, bildirilenler, beklenen seyir,
+kanıt kademesi, kalite işaretleri) kütüphaneden kendiliğinden geliyor.
 
 ```
 node scripts/instagram/slides.mjs semaglutide
 node scripts/instagram/slides.mjs            (tüm setler)
 ```
 
-Slayt tipleri: `hook`, `text`, `stat`, `seq`, `list`, `evidence`,
+Slayt tipleri: `hook`, `text`, `stat`, `timeline`, `list`, `evidence`,
 `verify`, `cta`.
 
 ---

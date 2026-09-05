@@ -28,6 +28,26 @@ export default function ZphcBpcPage() {
       libraryHref="/peptidler/bpc-157"
       libraryLabel="BPC-157 bilgi kaydı"
       bullets={["Güncel fiyat", "Türkiye stoğu", "Üretici koduyla doğrulama"]}
+      resources={[
+        {
+          href: "/peptidler/bpc-157",
+          eyebrow: "Bileşik kütüphanesi",
+          title: "BPC-157 bilgi kaydı",
+          description: "Bileşiğin kanıt seviyesini, kaynaklarını ve ürünlerden bağımsız değerlendirmesini okuyun.",
+        },
+        {
+          href: "/journal/doku-onarimi-bpc157-tb500",
+          eyebrow: "Journal",
+          title: "BPC-157 ve TB-500 neden birlikte anılıyor?",
+          description: "İki bileşiğin mekanistik ayrımını ve kanıt sınırlarını karşılaştırmalı inceleyin.",
+        },
+        {
+          href: "/journal/zphc-orijinal-mi-nasil-anlarim",
+          eyebrow: "Doğrulama rehberi",
+          title: "ZPHC orijinalliği nasıl doğrulanır?",
+          description: "Kutu üzerindeki kodun üretici doğrulama ekranında nasıl kontrol edildiğini görün.",
+        },
+      ]}
     />
   )
 }

@@ -31,6 +31,26 @@ export default function ZphcRetaPage() {
       libraryHref="/peptidler/retatrutide"
       libraryLabel="Retatrutide bilgi kaydı"
       bullets={["Türkiye stoğu", "Üretici doğrulama kodu", "Ücretsiz kargo"]}
+      resources={[
+        {
+          href: "/peptidler/retatrutide",
+          eyebrow: "Bileşik kütüphanesi",
+          title: "Retatrutide bilgi kaydı",
+          description: "Bileşiğin mekanizmasını, kanıt seviyesini ve kaynaklarını tek kayıtta inceleyin.",
+        },
+        {
+          href: "/journal/retatrutide-nedir",
+          eyebrow: "Journal",
+          title: "Retatrutide neden farklı bir nesil?",
+          description: "Üçlü agonist yaklaşımını ve mevcut araştırma çerçevesini sade biçimde okuyun.",
+        },
+        {
+          href: "/journal/zphc-orijinal-mi-nasil-anlarim",
+          eyebrow: "Doğrulama rehberi",
+          title: "ZPHC orijinalliği nasıl doğrulanır?",
+          description: "Kutu üzerindeki kodun üretici doğrulama ekranında nasıl kontrol edildiğini görün.",
+        },
+      ]}
     />
   )
 }

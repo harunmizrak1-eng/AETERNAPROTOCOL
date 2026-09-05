@@ -27,7 +27,12 @@ export function ProductPurchaseBar({
         </div>
         <WhatsappCta
           product={name}
-          label="WhatsApp’tan sor"
+          label={price ? "Sipariş ver" : "WhatsApp’tan sor"}
+          message={
+            price
+              ? `Merhaba, ${name} ürününü ${formatProductPrice(price)} fiyatıyla sipariş vermek istiyorum. Stok durumunu teyit eder misiniz?`
+              : undefined
+          }
           size="compact"
           source="product_sticky_bar"
         />

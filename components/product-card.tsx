@@ -56,7 +56,12 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="mt-3 flex flex-wrap gap-2">
           <WhatsappCta
             product={product.name}
-            label="Fiyat sor"
+            label={price ? "Sipariş ver" : "Fiyat sor"}
+            message={
+              price
+                ? `Merhaba, ${product.name} ürününü ${formatProductPrice(price)} fiyatıyla sipariş vermek istiyorum. Stok durumunu teyit eder misiniz?`
+                : undefined
+            }
             size="compact"
             source="product_card"
           />

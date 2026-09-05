@@ -184,7 +184,15 @@ export default async function UrunPage({
                 <StockBadge inStock={product.inStock} />
               </div>
               <div>
-                <WhatsappCta product={product.name} label="WhatsApp’tan fiyat sorun" />
+                <WhatsappCta
+                  product={product.name}
+                  label={productPrice ? "WhatsApp’tan sipariş ver" : "WhatsApp’tan fiyat sorun"}
+                  message={
+                    productPrice
+                      ? `Merhaba, ${product.name} ürününü ${formatProductPrice(productPrice)} fiyatıyla sipariş vermek istiyorum. Stok durumunu teyit eder misiniz?`
+                      : undefined
+                  }
+                />
                 <p className="mt-2 text-center text-xs text-muted-foreground">
                   Resmî WhatsApp hattı · Ürün adı mesaja hazır eklenir
                 </p>

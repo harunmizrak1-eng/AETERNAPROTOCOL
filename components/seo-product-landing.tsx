@@ -12,6 +12,7 @@ export function SeoProductLanding({
   libraryHref,
   libraryLabel,
   bullets,
+  resources,
 }: {
   eyebrow: string
   title: string
@@ -20,6 +21,12 @@ export function SeoProductLanding({
   libraryHref: string
   libraryLabel: string
   bullets: string[]
+  resources: Array<{
+    href: string
+    eyebrow: string
+    title: string
+    description: string
+  }>
 }) {
   const shown = slugs
     .map((slug) => products.find((product) => product.slug === slug))
@@ -56,6 +63,37 @@ export function SeoProductLanding({
                 <li key={product.slug}><ProductCard product={product} /></li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section className="border-t border-hairline bg-surface px-6 py-12 md:px-10 md:py-16">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-2xl">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">ZPHC Bilgi Merkezi</p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Ürünü yalnızca kutusuyla değil, bilgisiyle değerlendirin
+              </h2>
+              <p className="mt-3 text-base leading-7 text-muted-foreground">
+                Bileşik kaydı, karşılaştırmalı rehberler ve doğrulama adımları aynı bilgi mimarisinde birbirine bağlanır.
+              </p>
+            </div>
+
+            <div className="mt-7 grid gap-3 md:grid-cols-3">
+              {resources.map((resource) => (
+                <Link
+                  key={resource.href}
+                  href={resource.href}
+                  className="group rounded-2xl border border-hairline bg-background p-5 shadow-[0_10px_30px_rgba(13,27,42,0.04)] transition hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_16px_40px_rgba(0,114,188,0.08)]"
+                >
+                  <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-gold">{resource.eyebrow}</p>
+                  <h3 className="mt-2 text-xl font-bold leading-snug text-foreground transition-colors group-hover:text-gold">
+                    {resource.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{resource.description}</p>
+                  <span className="mt-4 inline-flex text-sm font-bold text-gold">İncele →</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       </main>

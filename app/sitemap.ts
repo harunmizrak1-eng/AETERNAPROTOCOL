@@ -6,6 +6,12 @@ import { products } from "@/lib/catalog"
 import { localizedTopicPath, seoLocales, seoTopicIds } from "@/lib/international-seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // lastModified bir dağıtım zamanı değildir. Her build'de `new Date()`
+  // kullanmak değişmeyen 140 URL'yi Google'a sürekli güncellenmiş gibi
+  // gösterirdi. İçerik gerçekten değiştiğinde bu tarih elle ilerletilir.
+  const storefrontUpdatedAt = new Date("2026-09-06T00:00:00+03:00")
+  const libraryUpdatedAt = new Date("2026-08-28T00:00:00+03:00")
+
   const staticRoutes = [
     "",
     "/urunler",
@@ -30,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...seoLocales.flatMap((locale) => seoTopicIds.map((topicId) => localizedTopicPath(locale, topicId))),
   ].map((path) => ({
     url: `${siteUrl}${path}`,
-    lastModified: new Date(),
+    lastModified: storefrontUpdatedAt,
   }))
 
   const articleRoutes = articles.map((a) => ({
@@ -40,12 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const peptideRoutes = peptides.map((p) => ({
     url: `${siteUrl}/peptidler/${p.slug}`,
-    lastModified: new Date(),
+    lastModified: libraryUpdatedAt,
   }))
 
   const productRoutes = products.map((p) => ({
     url: `${siteUrl}/urunler/${p.slug}`,
-    lastModified: new Date(),
+    lastModified: storefrontUpdatedAt,
     images: p.image ? [`${siteUrl}${p.image}`] : undefined,
   }))
 

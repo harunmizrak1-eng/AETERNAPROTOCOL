@@ -289,6 +289,39 @@ Slayt tipleri: `hook`, `text`, `stat`, `timeline`, `list`, `evidence`,
 
 ---
 
+## Ek setler (12 yeni bileşik)
+
+Aşağıdaki setler kullanıcı tarafından hazır metin olarak verildi ve
+aynen basıldı, üç düzeltme dışında:
+
+- `bpc157wolverine`, `hghfragment`, `cagrilintide`, `melanotan2`,
+  `doubleburn`, `aod9604`, `megamass`, `ghrp6`, `tb500detay`,
+  `epithalon`, `igf1lr3`, `superslim`
+
+Yapılan düzeltmeler:
+
+1. **GHRP-6 etiketi**: kaynak metinde `#kas kütlesi` boşluk içeriyordu,
+   Instagram boşlukta etiketi keser. `#kaskütlesi` yapıldı.
+2. **IGF-1 LR3 slayt numaralandırması**: kaynakta "3. pozisyonda
+   arginin..." cümlesi ayrı slayt gibi numaralanmıştı, aslında Nedir
+   slaydının ikinci cümlesiydi (LR3'ün kendi "3. pozisyon" ifadesiyle
+   slayt numarası çakışmış). O cümle Nedir slaydına katlandı.
+3. **Melanotan-II**: aynı bileşik için üç farklı versiyon geldi. En
+   kapsamlı ve güncel düzenleyici bilgiyi taşıyanı (FDA Kategori 2,
+   Cilt Kanseri Vakfı uyarısı, melanom vaka raporları) kullanıldı.
+
+Düzeltilmeyen, olduğu gibi bırakılan bir tutarsızlık var: BPC-157
+setinin gönderi açıklamasında "36 çalışmanın 35'i preklinik, 1'i
+klinik" deniyor, aynı setin kanıt slaydında ise "insanda yalnızca 3
+küçük pilot çalışma var" yazıyor (1 mi 3 mü). Kaynak metnin kendi
+içindeki bu çelişki değiştirilmedi, yayınlamadan önce kontrol edilmeli.
+
+TB-500 için iki ayrı set var: `tb500` (BPC-157 ile karşılaştırma
+açısı) ve `tb500detay` (Timozin Beta-4 ile farkı açan, daha detaylı
+versiyon). Biri diğerinin üzerine yazılmadı.
+
+---
+
 ## Çalıştırma notu
 
 Playwright projenin bağımlılıklarında yok (siteyi çalıştırmak için

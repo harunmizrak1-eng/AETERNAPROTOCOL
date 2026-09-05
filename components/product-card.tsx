@@ -1,8 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { categoryLabels, type Product } from "@/lib/products"
-import { whatsappLink } from "@/lib/contact"
-import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 
 /** Tek, paylaşılan ürün kartı. Katalog, çok satan şeritleri ve ilgili
  * ürünler bölümlerinin hepsi bunu kullanır.
@@ -11,18 +9,15 @@ import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
  * doğrudan beyaz zeminde, kategori etiketi başlığın üstünde küçük ve soluk,
  * içerik ortalanmış.
  *
- * YAPI NOTU: Kart eskiden baştan sona tek bir <Link>'ti. WhatsApp düğmesi
- * eklenince bu bozuldu, çünkü bir bağlantının içine başka bir bağlantı
- * konulamaz (geçersiz HTML, ekran okuyucularda ve tıklamada sorun çıkarır).
- * Kart artık bir <div>; görsel ve başlık ürün sayfasına giden bağlantı,
- * WhatsApp düğmesi ise onun dışında ayrı bir bağlantı.
+ * Mobil katalogda kartın tamamı ürün detayına gider. Satış aksiyonu detay
+ * sayfasında kalır; böylece her kartta tekrarlanan CTA ızgarayı boğmaz.
  */
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="group flex h-full gap-4 border border-hairline bg-background p-4 text-left transition-colors hover:border-gold/50 sm:flex-col sm:p-5 sm:text-center">
+    <div className="group flex h-full flex-col border border-hairline bg-background p-3 text-left transition-colors hover:border-gold/50 sm:p-5 sm:text-center">
       <Link
         href={`/urunler/${product.slug}`}
-        className="flex shrink-0 items-center sm:w-full sm:flex-1 sm:flex-col"
+        className="flex w-full flex-1 flex-col"
       >
         {/* mix-blend-multiply bilerek YOK. Beyaz pikselleri saydamlaştırdığı
             için, kutusu beyaz olan ZPHC ürünleri (AICAR, AOD 9604, BPC-157...)
@@ -35,41 +30,27 @@ export function ProductCard({ product }: { product: Product }) {
             alt={product.name}
             width={400}
             height={400}
-            sizes="(max-width: 639px) 112px, (max-width: 1023px) 33vw, 25vw"
-            className="h-28 w-28 object-contain sm:aspect-square sm:h-auto sm:w-full"
+            sizes="(max-width: 639px) 44vw, (max-width: 1023px) 33vw, 25vw"
+            className="aspect-square w-full object-contain"
           />
         )}
-      </Link>
-
-      <div className="flex min-w-0 flex-1 flex-col sm:items-center">
-        <p className="text-[0.65rem] font-semibold uppercase tracking-wide text-muted-foreground sm:mt-4 sm:text-[0.7rem]">
+        <p className="mt-2 text-[0.6rem] font-semibold uppercase tracking-wide text-muted-foreground sm:mt-4 sm:text-[0.7rem]">
           {categoryLabels[product.category]}
         </p>
-        <Link href={`/urunler/${product.slug}`} className="block">
-          <h3 className="mt-1.5 text-sm font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-gold sm:text-base">
-            {product.name}
-          </h3>
-        </Link>
+        <h3 className="mt-1 line-clamp-2 text-xs font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-gold sm:mt-1.5 sm:text-base">
+          {product.name}
+        </h3>
 
-        <div className="mt-2 flex flex-wrap items-center gap-2 sm:mt-3 sm:justify-center">
-          <span className="text-sm font-bold text-foreground sm:text-base">
+        <div className="mt-2 flex flex-wrap items-center gap-1.5 sm:mt-3 sm:justify-center sm:gap-2">
+          <span className="text-xs font-bold text-foreground sm:text-base">
             {product.price ?? "Fiyat sorun"}
           </span>
           <StockBadge inStock={product.inStock} />
         </div>
-
-        <TrackedOutboundLink
-          href={whatsappLink(
-            `Merhaba, ${product.name} için fiyat ve stok bilgisi alabilir miyim?`,
-          )}
-          eventName="WhatsApp Click"
-          properties={{ source: "product_card", product: product.slug }}
-          ariaLabel={`${product.name} için WhatsApp'tan fiyat ve stok sorun`}
-          className="mt-auto inline-flex min-h-10 items-center justify-center rounded-full bg-[#25D366] px-4 text-xs font-bold text-white transition-colors hover:bg-[#1eb855] sm:mt-4 sm:w-full sm:text-sm"
-        >
-          Fiyat ve stok sorun
-        </TrackedOutboundLink>
-      </div>
+        <span className="mt-auto pt-3 text-xs font-semibold text-gold sm:pt-4 sm:text-sm">
+          Ürünü incele →
+        </span>
+      </Link>
     </div>
   )
 }
@@ -77,7 +58,7 @@ export function ProductCard({ product }: { product: Product }) {
 export function StockBadge({ inStock }: { inStock: boolean }) {
   return (
     <span
-      className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+      className={`rounded-full px-1.5 py-0.5 text-[0.65rem] font-semibold sm:px-2 sm:text-xs ${
         inStock
           ? "bg-tier-proven/10 text-tier-proven"
           : "bg-muted text-muted-foreground"

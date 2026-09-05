@@ -52,7 +52,9 @@ export default async function UrunlerPage({
                   "ZPHC peptid ve büyüme hormonu ürünlerinin tamamı."}
               </p>
             </div>
-            <WhatsappCta label="Fiyat ve stok için yazın" />
+            <div className="hidden sm:block">
+              <WhatsappCta label="Fiyat ve stok için yazın" />
+            </div>
           </div>
         </section>
 

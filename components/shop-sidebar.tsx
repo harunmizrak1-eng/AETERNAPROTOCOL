@@ -24,18 +24,18 @@ export function ShopSidebar({ active }: { active?: string }) {
   return (
     <aside className="w-full lg:w-56 lg:shrink-0">
       <nav aria-label="Ürün kategorileri">
-        <h2 className="border-b border-hairline pb-2 text-base font-bold tracking-tight text-foreground">
+        <h2 className="text-sm font-bold tracking-tight text-foreground lg:border-b lg:border-hairline lg:pb-2 lg:text-base">
           Kategoriler
         </h2>
-        <ul className="mt-1">
-          <li>
+        <ul className="scrollbar-none mt-3 flex gap-2 overflow-x-auto pb-2 lg:mt-1 lg:block lg:overflow-visible lg:pb-0">
+          <li className="shrink-0">
             <Link
               href="/urunler"
               aria-current={!active ? "page" : undefined}
-              className={`flex items-center justify-between border-b border-hairline py-3 text-base transition-colors hover:text-gold ${
+              className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm whitespace-nowrap transition-colors hover:border-gold hover:text-gold lg:justify-between lg:rounded-none lg:border-x-0 lg:border-t-0 lg:border-b-hairline lg:px-0 lg:py-3 lg:text-base ${
                 !active
-                  ? "font-semibold text-gold"
-                  : "text-muted-foreground"
+                  ? "border-gold bg-gold/5 font-semibold text-gold"
+                  : "border-hairline text-muted-foreground"
               }`}
             >
               Tüm ürünler
@@ -45,14 +45,14 @@ export function ShopSidebar({ active }: { active?: string }) {
             </Link>
           </li>
           {groups.map(({ goal, count }) => (
-            <li key={goal}>
+            <li key={goal} className="shrink-0">
               <Link
                 href={`/urunler?kategori=${encodeURIComponent(goal)}`}
                 aria-current={active === goal ? "page" : undefined}
-                className={`flex items-center justify-between gap-2 border-b border-hairline py-3 text-base transition-colors hover:text-gold ${
+                className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm whitespace-nowrap transition-colors hover:border-gold hover:text-gold lg:justify-between lg:rounded-none lg:border-x-0 lg:border-t-0 lg:border-b-hairline lg:px-0 lg:py-3 lg:text-base ${
                   active === goal
-                    ? "font-semibold text-gold"
-                    : "text-muted-foreground"
+                    ? "border-gold bg-gold/5 font-semibold text-gold"
+                    : "border-hairline text-muted-foreground"
                 }`}
               >
                 <span className="min-w-0">{goal}</span>
@@ -65,9 +65,10 @@ export function ShopSidebar({ active }: { active?: string }) {
         </ul>
       </nav>
 
-      {/* Kargo bilgisi satın alma kararını doğrudan etkiliyor; katalogda
-          gezerken görünmesi için kenar çubuğunun en üstünde. */}
-      <div className="mt-8 border border-gold/40 bg-gold/5 p-4">
+      {/* Kargo bilgisi satın alma kararını doğrudan etkiliyor. Masaüstünde
+          kenar çubuğunda kalır; mobilde ürün ızgarasını aşağı itmemesi için
+          alt sayfalara bırakılır. */}
+      <div className="mt-8 hidden border border-gold/40 bg-gold/5 p-4 lg:block">
         <p className="text-base font-bold text-foreground">Ertesi gün teslim</p>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
           Yurtiçi Kargo ile gönderiyoruz, <strong>kargo ücreti almıyoruz</strong>.
@@ -81,7 +82,7 @@ export function ShopSidebar({ active }: { active?: string }) {
         </Link>
       </div>
 
-      <div className="mt-6 border border-hairline bg-surface p-4">
+      <div className="mt-6 hidden border border-hairline bg-surface p-4 lg:block">
         <h2 className="text-base font-bold tracking-tight text-foreground">
           Orijinallik doğrulama
         </h2>
@@ -97,7 +98,7 @@ export function ShopSidebar({ active }: { active?: string }) {
         </Link>
       </div>
 
-      <div className="mt-6 border border-hairline p-4">
+      <div className="mt-6 hidden border border-hairline p-4 lg:block">
         <h2 className="text-base font-bold tracking-tight text-foreground">
           Bileşik kütüphanesi
         </h2>

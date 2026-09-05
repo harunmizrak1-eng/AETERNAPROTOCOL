@@ -96,7 +96,7 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
         // (gap-px bg-hairline) sütun sayısına tam bölünmeyen durumlarda son
         // sıradaki boş hücreyi gri renkle görünür bırakır. ProductCard
         // kendi kenarlığını taşıyor, burada şeffaf boşluk yeterli.
-        <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <ul className="mt-5 grid grid-cols-2 gap-2 sm:mt-6 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
           {shown.map((product) => (
             <li key={product.slug}>
               <ProductCard product={product} />

@@ -32,8 +32,9 @@ export function Hero() {
             Orijinal ZPHC ürünleri, Türkiye’den hızlı gönderim.
           </h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
-            {products.length} ürün, üretici doğrulama kodu ve ücretsiz kargo.
-            Fiyat ile güncel stok bilgisini resmî WhatsApp hattımızdan alın.
+            ZPHC Pharma (Zhengzhou Pharmaceutical) Türkiye kataloğunda {products.length} ürün,
+            üretici doğrulama kodu ve ücretsiz kargo. Fiyat ile güncel stok
+            bilgisini resmî WhatsApp hattımızdan alın.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">

@@ -1,6 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Footer } from "@/components/footer"
 import { getProductForm } from "@/components/product-card"
 import { products } from "@/lib/catalog"
 import {
@@ -13,7 +12,7 @@ import {
   type SeoLocale,
   type SeoTopicId,
 } from "@/lib/international-seo"
-import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
+import { featuredProductSlugs, formatProductPrice, getProductPrice } from "@/lib/product-prices"
 import { siteName, siteUrl } from "@/lib/site"
 
 const localeLabels = { tr: "Türkçe", en: "English", es: "Español", ar: "العربية" }
@@ -31,7 +30,9 @@ export function InternationalSeoPage({
     ? topicProducts[topicId]
         .map((slug) => products.find((product) => product.slug === slug))
         .filter((product): product is NonNullable<typeof product> => Boolean(product))
-    : []
+    : featuredProductSlugs
+        .map((slug) => products.find((product) => product.slug === slug))
+        .filter((product): product is NonNullable<typeof product> => Boolean(product))
 
   const jsonLd = topic
     ? {
@@ -102,8 +103,7 @@ export function InternationalSeoPage({
           </div>
         </section>
 
-        {topic ? (
-          <section className="px-6 py-12 md:px-10 md:py-16">
+        <section className="px-6 py-12 md:px-10 md:py-16">
             <div className="mx-auto max-w-7xl">
               <h2 className="text-3xl font-bold">{ui.products}</h2>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">{ui.currentSelection}</p>
@@ -130,8 +130,7 @@ export function InternationalSeoPage({
                 })}
               </ul>
             </div>
-          </section>
-        ) : null}
+        </section>
 
         <section className={`${topic ? "border-t" : ""} border-hairline px-6 py-12 md:px-10 md:py-16`}>
           <div className="mx-auto max-w-7xl">
@@ -164,7 +163,16 @@ export function InternationalSeoPage({
         </section>
         <p className="mx-auto max-w-4xl px-6 py-8 text-center text-xs leading-5 text-muted-foreground">{ui.researchOnly}</p>
       </main>
-      <Footer />
+      <footer className="border-t border-hairline px-6 py-10 md:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-start">
+          <Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-7 w-auto" />
+          <div className="flex flex-wrap justify-center gap-3 text-sm font-semibold">
+            <Link href="/">{localeLabels.tr}</Link>
+            {seoLocales.map((language) => <Link key={language} href={`/${language}`} hrefLang={language}>{localeLabels[language]}</Link>)}
+          </div>
+          <p className="text-xs text-muted-foreground">{ui.officialDomain}</p>
+        </div>
+      </footer>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
     </div>
   )

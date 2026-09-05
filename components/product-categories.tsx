@@ -21,6 +21,8 @@ const PRODUCT_FAMILY_LINKS = [
   { href: "/zphc-zptrop", label: "ZPHC ZPtrop" },
   { href: "/zphc-tirze", label: "ZPHC Tirze" },
   { href: "/zphc-peptid-karisimlari", label: "ZPHC Karışımlar" },
+  { href: "/peptidler/ipamorelin", label: "ZPHC Ipamorelin" },
+  { href: "/peptidler/tesamorelin", label: "ZPHC Tesamorelin" },
 ]
 
 export function ProductCategories() {

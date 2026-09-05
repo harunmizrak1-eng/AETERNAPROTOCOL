@@ -30,6 +30,13 @@ export function generateStaticParams() {
   return peptides.map((p) => ({ slug: p.slug }))
 }
 
+const searchTitleOverrides: Record<string, string> = {
+  ipamorelin: "ZPHC Ipamorelin Türkiye | Peptid Bilgi Kaydı",
+  tesamorelin: "ZPHC Tesamorelin Türkiye | Araştırma ve Kaynaklar",
+  semaglutide: "ZPHC Semaglutide Türkiye | Peptid Bilgi Kaydı",
+  hgh: "ZPHC HGH Türkiye | Büyüme Hormonu Bilgi Kaydı",
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -38,14 +45,15 @@ export async function generateMetadata({
   const { slug } = await params
   const peptide = getPeptide(slug)
   if (!peptide) return { title: "Peptid kütüphanesi" }
+  const title = searchTitleOverrides[peptide.slug] ?? peptide.name
   return {
-    title: peptide.name,
-    description: peptide.short,
+    title,
+    description: `${peptide.name} için ZPHC Türkiye bilgi kaydı: araştırma çerçevesi, kanıt seviyesi ve kaynaklar. ${peptide.short}`.slice(0, 300),
     alternates: {
       canonical: `/peptidler/${peptide.slug}`,
     },
     openGraph: {
-      title: peptide.name,
+      title,
       description: peptide.short,
       url: `/peptidler/${peptide.slug}`,
     },

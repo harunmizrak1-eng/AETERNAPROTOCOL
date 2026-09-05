@@ -1,17 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { WhatsappCta } from "@/components/whatsapp-cta"
-import { InstagramCta } from "@/components/instagram-cta"
 import { products } from "@/lib/catalog"
-import { instagramHandle, instagramUrl, whatsappDisplay, whatsappLink } from "@/lib/contact"
 
 const TRUST_POINTS = [
   { label: "Resmî alan adı: zphctr.com" },
   { label: "Üretici koduyla doğrulama", href: "/dogrulama" },
   { label: "Türkiye stoğu" },
   { label: "Ücretsiz kargo", href: "/kargo" },
-  { label: `WhatsApp ${whatsappDisplay}`, href: whatsappLink(), external: true },
-  { label: `Instagram ${instagramHandle}`, href: instagramUrl, external: true },
 ]
 
 const FEATURED_SLUGS = [
@@ -53,7 +49,6 @@ export function Hero() {
               size="compact"
               source="home_hero"
             />
-            <InstagramCta compact />
           </div>
         </div>
 
@@ -92,7 +87,7 @@ export function Hero() {
       </div>
 
       <div className="border-t border-hairline bg-background">
-        <ul className="mx-auto grid max-w-7xl grid-cols-2 px-6 sm:grid-cols-3 md:grid-cols-6 md:px-10">
+        <ul className="mx-auto grid max-w-7xl grid-cols-2 px-6 md:grid-cols-4 md:px-10">
           {TRUST_POINTS.map((point) => (
             <li
               key={point.label}

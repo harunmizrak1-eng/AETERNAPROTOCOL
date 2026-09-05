@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { siteName } from "@/lib/site"
 import { HeaderSearch } from "@/components/header-search"
-import { instagramHandle, whatsappDisplay } from "@/lib/contact"
 
 /* Şeritte dönen uyarılar. Hepsi doğrulanabilir, gerçek bilgi: taklit
  * ürünlere karşı üreticinin kendi doğrulama sistemi, tek resmi sipariş
@@ -17,7 +16,6 @@ const TICKER_MESSAGES = [
   "Resmî Türkiye alan adımız zphctr.com — benzer alan adları bize ait değildir.",
   "Aldığınız her kutunun kodunu validation.zphc.com adresinden doğrulayın.",
   "ZPHC Türkiye resmi distribütörüyüz. Ürünler doğrudan depomuzdan çıkıyor.",
-  `Resmî WhatsApp: ${whatsappDisplay} · Instagram: ${instagramHandle}`,
 ]
 
 const LINKS = [

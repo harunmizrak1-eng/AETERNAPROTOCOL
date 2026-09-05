@@ -14,7 +14,7 @@ import {
 } from "@/lib/international-seo"
 import { featuredProductSlugs, formatProductPrice, getProductPrice } from "@/lib/product-prices"
 import { siteName, siteUrl } from "@/lib/site"
-import { instagramHandle, instagramUrl, whatsappDisplay, whatsappLink } from "@/lib/contact"
+import { instagramHandle, instagramUrl, whatsappLink } from "@/lib/contact"
 
 const localeLabels = { tr: "Türkçe", en: "English", es: "Español", ar: "العربية" }
 
@@ -178,7 +178,7 @@ export function InternationalSeoPage({
           </div>
           <div className="text-xs leading-5 text-muted-foreground sm:text-end">
             <p>{ui.officialDomain}</p>
-            <p><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp {whatsappDisplay}</a> · <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram {instagramHandle}</a></p>
+            <p><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram {instagramHandle}</a></p>
           </div>
         </div>
       </footer>

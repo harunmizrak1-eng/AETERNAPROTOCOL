@@ -6,7 +6,7 @@ import { useMemo, useState } from "react"
 import { products } from "@/lib/catalog"
 import { localeUi, localizedProductForm, type SeoLocale } from "@/lib/international-seo"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
-import { instagramHandle, instagramUrl, whatsappDisplay, whatsappLink } from "@/lib/contact"
+import { instagramHandle, instagramUrl, whatsappLink } from "@/lib/contact"
 
 export function LocalizedCatalog({ locale }: { locale: SeoLocale }) {
   const ui = localeUi[locale]
@@ -59,7 +59,7 @@ export function LocalizedCatalog({ locale }: { locale: SeoLocale }) {
       </main>
       <footer className="border-t border-hairline bg-surface px-6 py-8 text-center text-xs leading-6 text-muted-foreground">
         <p>{ui.officialDomain}</p>
-        <p><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp {whatsappDisplay}</a> · <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram {instagramHandle}</a></p>
+        <p><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram {instagramHandle}</a></p>
         <p className="mt-2">{ui.researchOnly}</p>
       </footer>
     </div>

@@ -1,5 +1,5 @@
 import { reviews } from "@/lib/reviews"
-import { ReviewSubmission } from "@/components/review-submission"
+import Link from "next/link"
 
 /** Müşteri yorumları bölümü.
  *
@@ -14,12 +14,13 @@ import { ReviewSubmission } from "@/components/review-submission"
 export function Reviews() {
   return (
     <section className="border-b border-hairline bg-surface px-6 py-12 md:px-10 md:py-16">
-      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid min-w-0 gap-6 rounded-2xl border border-hairline bg-background p-6 shadow-[0_14px_45px_rgba(0,49,76,0.06)] sm:grid-cols-[1fr_auto] sm:items-center sm:p-8">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">Doğrulanmış alışverişler</p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Gerçek müşteri deneyimleri</h2>
           <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground">Yorumları başka sitelerden kopyalamıyoruz. Her gönderiyi sipariş kaydıyla eşleştiriyor, yalnızca müşterinin açıkça yayın izni verdiği metinleri gösteriyoruz.</p>
-          {reviews.length > 0 ? <ul className="mt-7 grid gap-4">
+          {reviews.length > 0 ? <ul className="mt-7 grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {reviews.map((r) => (
             <li
               key={`${r.name}-${r.text.slice(0, 24)}`}
@@ -39,11 +40,9 @@ export function Reviews() {
               {r.date && <time className="mt-2 text-xs text-muted-foreground" dateTime={r.date}>{new Intl.DateTimeFormat("tr-TR", { dateStyle: "long" }).format(new Date(r.date))}</time>}
             </li>
             ))}
-          </ul> : <div className="mt-7 rounded-xl border border-dashed border-gold/30 bg-background p-5 text-sm leading-6 text-muted-foreground">İlk doğrulanmış yorumlar moderasyon sonrası burada yayımlanacak. Sahte yıldız, uydurma isim veya başka mağazadan alınmış yorum göstermiyoruz.</div>}
+          </ul> : <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">Yorumlar siparişle eşleştirildikten ve yayın izni alındıktan sonra burada gösterilir.</p>}
         </div>
-        <div>
-          <h3 className="mb-3 text-lg font-bold text-foreground">Alışverişinizi değerlendirin</h3>
-          <ReviewSubmission />
+        <Link href="/yorum" className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-gold/40 px-5 text-sm font-bold text-gold transition-colors hover:bg-gold hover:text-white">Yorum bırak →</Link>
         </div>
       </div>
     </section>

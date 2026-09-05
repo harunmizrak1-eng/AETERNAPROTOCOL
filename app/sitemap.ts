@@ -3,6 +3,7 @@ import { siteUrl } from "@/lib/site"
 import { articles } from "@/lib/articles"
 import { peptides } from "@/lib/peptides"
 import { products } from "@/lib/catalog"
+import { localizedTopicPath, seoLocales, seoTopicIds } from "@/lib/international-seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -20,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/gizlilik",
     "/zphc-reta",
     "/zphc-bpc-157",
+    "/zphc-ghk-cu",
+    "/zphc-zptrop",
+    "/zphc-peptid-karisimlari",
+    "/zphc-tirze",
+    ...seoLocales.map((locale) => `/${locale}`),
+    ...seoLocales.flatMap((locale) => seoTopicIds.map((topicId) => localizedTopicPath(locale, topicId))),
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),

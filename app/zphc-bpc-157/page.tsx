@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { SeoProductLanding } from "@/components/seo-product-landing"
+import { topicLanguageAlternates } from "@/lib/international-seo"
 
 export const metadata: Metadata = {
   title: "ZPHC BPC-157 Türkiye | 25 mg BPC-157 Fiyatı",
   description: "BPC-157 ZPHC 25 mg ve BPC-157 içeren ZPHC karışımlarını fiyat, ürün formu ve kutu içeriğine göre karşılaştırın. Türkiye stoğu ve üretici doğrulaması.",
-  alternates: { canonical: "/zphc-bpc-157" },
+  alternates: { canonical: "/zphc-bpc-157", languages: topicLanguageAlternates("bpc157") },
   openGraph: {
     title: "ZPHC BPC-157 Türkiye | Ürünler ve Fiyatlar",
     description: "ZPHC BPC-157 25 mg ve BPC-157 içeren ürünleri karşılaştırın.",

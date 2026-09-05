@@ -23,6 +23,13 @@ const LEGAL_LINKS = [
   { href: "/gizlilik", label: "Gizlilik & KVKK" },
 ]
 
+const LANGUAGE_LINKS = [
+  { href: "/", label: "Türkçe" },
+  { href: "/en", label: "English" },
+  { href: "/es", label: "Español" },
+  { href: "/ar", label: "العربية" },
+]
+
 function FooterColumn({
   heading,
   links,
@@ -66,7 +73,7 @@ export function Footer() {
   return (
     <footer className="relative z-10 border-t border-hairline px-6 py-16 md:px-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-14">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-4 sm:gap-8">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-5 sm:gap-8">
           <div>
             <Image
               src="/brand/zphc-logo.png"
@@ -83,6 +90,7 @@ export function Footer() {
           <FooterColumn heading="Keşfet" links={EXPLORE_LINKS} />
           <FooterColumn heading="İletişim" links={CONSULT_LINKS} />
           <FooterColumn heading="Yasal" links={LEGAL_LINKS} />
+          <FooterColumn heading="Dil / Language" links={LANGUAGE_LINKS} />
         </div>
 
         <div className="border-t border-hairline pt-8">

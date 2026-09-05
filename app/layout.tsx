@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { WhatsappFloat } from '@/components/whatsapp-float'
 import { ProductCompareProvider } from '@/components/product-compare'
+import { homeLanguageAlternates } from '@/lib/international-seo'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   publisher: siteName,
   alternates: {
     canonical: '/',
+    languages: homeLanguageAlternates(),
   },
   openGraph: {
     type: 'website',

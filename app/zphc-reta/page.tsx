@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { SeoProductLanding } from "@/components/seo-product-landing"
+import { topicLanguageAlternates } from "@/lib/international-seo"
 
 export const metadata: Metadata = {
   title: "ZPHC Reta Türkiye | Retatrutide Ürünleri ve Fiyatları",
   description: "ZPHC Reta ürünlerini 20 mg, 40 mg, 60 mg, 120 mg ve 30 mg hazır kalem seçenekleriyle karşılaştırın. Türkiye stoğu, üretici doğrulama kodu ve güncel fiyatlar.",
-  alternates: { canonical: "/zphc-reta" },
+  alternates: { canonical: "/zphc-reta", languages: topicLanguageAlternates("retatrutide") },
   openGraph: {
     title: "ZPHC Reta Türkiye | Retatrutide Ürünleri",
     description: "ZPHC Reta ürünleri, güncel fiyatlar, stok bilgisi ve ürün formatları.",

@@ -84,7 +84,7 @@ export function ProductStrip({
 
   return (
     <section
-      className="border-b border-hairline px-6 py-10 md:px-10"
+      className="border-b border-hairline px-4 py-9 sm:px-6 md:px-10 md:py-10"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -118,7 +118,7 @@ export function ProductStrip({
           {shown.map((product) => (
             <li
               key={product.slug}
-              className="w-[calc(50%-0.5rem)] shrink-0 snap-start md:w-[calc(33.333%-0.667rem)] lg:w-[calc(25%-0.75rem)]"
+              className="w-[78%] shrink-0 snap-start sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(25%-0.75rem)]"
             >
               <ProductCard product={product} />
             </li>

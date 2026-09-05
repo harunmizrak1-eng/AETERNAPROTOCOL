@@ -2,13 +2,10 @@
 // reference pointed here so it can be changed in one place and never drift
 // out of sync across the site.
 //
-// E-posta ve Instagram bilerek kaldırıldı: ikisi de kapatılan ÆTERNA
-// markasına aitti (info@aeternaprotocol.net, instagram.com/aeterna.protocol).
-// Çalışmayan bir kutuya veya eski marka hesabına link vermek, doğru adres
-// hiç göstermemekten daha kötü. ZPHC Türkiye adına yeni kanallar açıldığında
-// buraya eklenip footer'a bağlanabilir. Şu an tüm iletişim WhatsApp üzerinden.
-
-const whatsappNumber = "905359184587"
+export const whatsappNumber = "905365799647"
+export const whatsappDisplay = "+90 536 579 96 47"
+export const instagramHandle = "@zphc.tr"
+export const instagramUrl = "https://www.instagram.com/zphc.tr/"
 
 /** Build a wa.me link with an optional pre-filled message. */
 export function whatsappLink(message?: string) {

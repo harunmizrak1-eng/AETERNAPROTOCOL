@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/zphc-peptid-karisimlari",
     "/zphc-tirze",
     ...seoLocales.map((locale) => `/${locale}`),
+    ...seoLocales.map((locale) => `/${locale}/products`),
     ...seoLocales.flatMap((locale) => seoTopicIds.map((topicId) => localizedTopicPath(locale, topicId))),
   ].map((path) => ({
     url: `${siteUrl}${path}`,

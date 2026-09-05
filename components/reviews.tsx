@@ -1,4 +1,5 @@
 import { reviews } from "@/lib/reviews"
+import { ReviewSubmission } from "@/components/review-submission"
 
 /** Müşteri yorumları bölümü.
  *
@@ -11,17 +12,15 @@ import { reviews } from "@/lib/reviews"
  * uydurma bir sayı olurdu.
  */
 export function Reviews() {
-  if (reviews.length === 0) return null
-
   return (
-    <section className="border-b border-hairline px-6 py-10 md:px-10">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground">
-          Müşteri yorumları
-        </h2>
-
-        <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((r) => (
+    <section className="border-b border-hairline bg-surface px-6 py-12 md:px-10 md:py-16">
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div>
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">Doğrulanmış alışverişler</p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Gerçek müşteri deneyimleri</h2>
+          <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground">Yorumları başka sitelerden kopyalamıyoruz. Her gönderiyi sipariş kaydıyla eşleştiriyor, yalnızca müşterinin açıkça yayın izni verdiği metinleri gösteriyoruz.</p>
+          {reviews.length > 0 ? <ul className="mt-7 grid gap-4">
+            {reviews.map((r) => (
             <li
               key={`${r.name}-${r.text.slice(0, 24)}`}
               className="flex flex-col border border-hairline p-6"
@@ -37,9 +36,15 @@ export function Reviews() {
                   {r.product}
                 </p>
               )}
+              {r.date && <time className="mt-2 text-xs text-muted-foreground" dateTime={r.date}>{new Intl.DateTimeFormat("tr-TR", { dateStyle: "long" }).format(new Date(r.date))}</time>}
             </li>
-          ))}
-        </ul>
+            ))}
+          </ul> : <div className="mt-7 rounded-xl border border-dashed border-gold/30 bg-background p-5 text-sm leading-6 text-muted-foreground">İlk doğrulanmış yorumlar moderasyon sonrası burada yayımlanacak. Sahte yıldız, uydurma isim veya başka mağazadan alınmış yorum göstermiyoruz.</div>}
+        </div>
+        <div>
+          <h3 className="mb-3 text-lg font-bold text-foreground">Alışverişinizi değerlendirin</h3>
+          <ReviewSubmission />
+        </div>
       </div>
     </section>
   )

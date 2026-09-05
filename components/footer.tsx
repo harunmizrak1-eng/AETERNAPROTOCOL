@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { whatsappLink } from "@/lib/contact"
+import { instagramHandle, instagramUrl, whatsappDisplay, whatsappLink } from "@/lib/contact"
 import { siteName, siteTagline } from "@/lib/site"
 
 const EXPLORE_LINKS = [
@@ -13,7 +13,8 @@ const CONSULT_LINKS = [
   { href: "/dogrulama", label: "Doğrulama" },
   { href: "/kargo", label: "Kargo & Teslimat" },
   { href: "/iade", label: "İade & Değişim" },
-  { href: whatsappLink(), label: "WhatsApp", external: true },
+  { href: whatsappLink(), label: `WhatsApp ${whatsappDisplay}`, external: true },
+  { href: instagramUrl, label: `Instagram ${instagramHandle}`, external: true },
 ]
 
 const LEGAL_LINKS = [

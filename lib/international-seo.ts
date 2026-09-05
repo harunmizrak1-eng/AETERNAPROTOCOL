@@ -62,6 +62,10 @@ type LocaleUi = {
   hubIntro: string
   eyebrow: string
   products: string
+  allProducts: string
+  catalogueTitle: string
+  catalogueDescription: string
+  searchHint: string
   currentSelection: string
   priceOnRequest: string
   viewProduct: string
@@ -82,6 +86,10 @@ export const localeUi: Record<SeoLocale, LocaleUi> = {
     hubIntro: "A focused catalogue for comparing active ZPHC product families supplied from Turkey. Every box can be checked through the manufacturer's validation system.",
     eyebrow: "ZPHC Turkey catalogue",
     products: "Available products",
+    allProducts: "View the full catalogue",
+    catalogueTitle: "ZPHC Turkey — Full Product Catalogue",
+    catalogueDescription: "Browse all active ZPHC Turkey products with package format, total content, current price and manufacturer verification.",
+    searchHint: "Search products by name or ingredient",
     currentSelection: "Compare the active formats and total content listed for this product family.",
     priceOnRequest: "Ask for price",
     viewProduct: "View product",
@@ -100,6 +108,10 @@ export const localeUi: Record<SeoLocale, LocaleUi> = {
     hubIntro: "Un catálogo claro para comparar las familias de productos ZPHC disponibles desde Turquía. Cada caja puede verificarse en el sistema oficial del fabricante.",
     eyebrow: "Catálogo ZPHC Turquía",
     products: "Productos disponibles",
+    allProducts: "Ver el catálogo completo",
+    catalogueTitle: "ZPHC Turquía — Catálogo completo",
+    catalogueDescription: "Explora todos los productos ZPHC activos en Turquía con formato, contenido total, precio actual y verificación del fabricante.",
+    searchHint: "Buscar por producto o ingrediente",
     currentSelection: "Compara los formatos activos y el contenido total de esta familia de productos.",
     priceOnRequest: "Consultar precio",
     viewProduct: "Ver producto",
@@ -118,6 +130,10 @@ export const localeUi: Record<SeoLocale, LocaleUi> = {
     hubIntro: "كتالوج واضح لمقارنة عائلات منتجات ZPHC المتوفرة من تركيا. يمكن التحقق من كل عبوة عبر نظام التحقق الرسمي للشركة المصنّعة.",
     eyebrow: "كتالوج ZPHC تركيا",
     products: "المنتجات المتوفرة",
+    allProducts: "عرض الكتالوج الكامل",
+    catalogueTitle: "ZPHC تركيا — كتالوج المنتجات الكامل",
+    catalogueDescription: "استعرض جميع منتجات ZPHC النشطة في تركيا مع شكل العبوة والمحتوى الإجمالي والسعر الحالي والتحقق من الشركة المصنّعة.",
+    searchHint: "ابحث باسم المنتج أو المكوّن",
     currentSelection: "قارن بين الأشكال المتوفرة والمحتوى الإجمالي ضمن عائلة المنتج هذه.",
     priceOnRequest: "اسأل عن السعر",
     viewProduct: "عرض المنتج",

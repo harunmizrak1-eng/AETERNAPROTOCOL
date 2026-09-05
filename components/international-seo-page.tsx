@@ -14,6 +14,7 @@ import {
 } from "@/lib/international-seo"
 import { featuredProductSlugs, formatProductPrice, getProductPrice } from "@/lib/product-prices"
 import { siteName, siteUrl } from "@/lib/site"
+import { instagramHandle, instagramUrl, whatsappDisplay, whatsappLink } from "@/lib/contact"
 
 const localeLabels = { tr: "Türkçe", en: "English", es: "Español", ar: "العربية" }
 
@@ -129,6 +130,11 @@ export function InternationalSeoPage({
                   )
                 })}
               </ul>
+              {!topic && (
+                <div className="mt-8 text-center">
+                  <Link href={`/${locale}/products`} className="inline-flex min-h-11 items-center rounded-full bg-gold px-6 text-sm font-bold text-white transition hover:opacity-90">{ui.allProducts} →</Link>
+                </div>
+              )}
             </div>
         </section>
 
@@ -170,7 +176,10 @@ export function InternationalSeoPage({
             <Link href="/">{localeLabels.tr}</Link>
             {seoLocales.map((language) => <Link key={language} href={`/${language}`} hrefLang={language}>{localeLabels[language]}</Link>)}
           </div>
-          <p className="text-xs text-muted-foreground">{ui.officialDomain}</p>
+          <div className="text-xs leading-5 text-muted-foreground sm:text-end">
+            <p>{ui.officialDomain}</p>
+            <p><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp {whatsappDisplay}</a> · <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram {instagramHandle}</a></p>
+          </div>
         </div>
       </footer>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />

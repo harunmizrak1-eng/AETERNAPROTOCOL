@@ -2,7 +2,6 @@
 
 import { useMemo, useState } from "react"
 import Link from "next/link"
-import { Reveal } from "@/components/reveal"
 import type { Article } from "@/lib/articles"
 
 export function JournalList({ articles }: { articles: Article[] }) {
@@ -41,14 +40,15 @@ export function JournalList({ articles }: { articles: Article[] }) {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-col">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((a, i) => (
-          <Reveal key={a.slug} delay={i * 80}>
-            <Link
+          <Link
+              key={a.slug}
               href={`/journal/${a.slug}`}
-              className="group flex flex-col border-t border-hairline py-10 transition-colors last:border-b hover:border-gold/40"
+              className={`group flex min-h-72 flex-col rounded-2xl border border-hairline bg-white p-6 shadow-[0_12px_36px_rgba(0,49,76,0.05)] transition hover:-translate-y-0.5 hover:border-gold/40 ${i === 0 ? "sm:col-span-2 lg:grid lg:grid-cols-[1fr_auto] lg:gap-8" : ""}`}
             >
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col">
+              <div className="flex flex-wrap items-center gap-3">
                 <span className="text-xs tracking-normal text-gold font-medium">
                   {a.category}
                 </span>
@@ -62,11 +62,12 @@ export function JournalList({ articles }: { articles: Article[] }) {
               <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 {a.excerpt}
               </p>
-              <span className="mt-6 text-xs tracking-normal text-foreground/70 transition-opacity group-hover:opacity-70 font-medium">
+              <span className="mt-auto pt-6 text-sm tracking-normal text-gold transition-opacity group-hover:opacity-70 font-bold">
                 Oku →
               </span>
+              </div>
+              {i === 0 && <div className="mt-6 hidden min-w-36 items-center justify-center rounded-xl bg-[linear-gradient(145deg,#0072bc,#00314c)] px-6 text-center text-sm font-bold text-white lg:flex">Öne çıkan rehber</div>}
             </Link>
-          </Reveal>
         ))}
       </div>
     </>

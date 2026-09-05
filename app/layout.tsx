@@ -4,6 +4,7 @@ import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { WhatsappFloat } from '@/components/whatsapp-float'
 import { ProductCompareProvider } from '@/components/product-compare'
 import { homeLanguageAlternates } from '@/lib/international-seo'
+import { instagramUrl, whatsappLink } from '@/lib/contact'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -67,6 +68,13 @@ export default function RootLayout({
                   url: siteUrl,
                   logo: `${siteUrl}/brand/zphc-logo.png`,
                   areaServed: 'TR',
+                  sameAs: [instagramUrl, whatsappLink()],
+                  contactPoint: {
+                    '@type': 'ContactPoint',
+                    contactType: 'sales',
+                    telephone: '+90-536-579-96-47',
+                    availableLanguage: ['Turkish', 'English', 'Spanish', 'Arabic'],
+                  },
                 },
                 {
                   '@type': 'WebSite',

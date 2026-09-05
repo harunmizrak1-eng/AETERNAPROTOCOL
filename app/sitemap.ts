@@ -45,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const productRoutes = products.map((p) => ({
     url: `${siteUrl}/urunler/${p.slug}`,
     lastModified: new Date(),
+    images: p.image ? [`${siteUrl}${p.image}`] : undefined,
   }))
 
   return [

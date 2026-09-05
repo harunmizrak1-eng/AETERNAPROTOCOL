@@ -14,6 +14,15 @@ const COVER: Record<string, string> = {
   Diğer: "melanotan-2-30mg-aq-pen-zphc",
 }
 
+const PRODUCT_FAMILY_LINKS = [
+  { href: "/zphc-reta", label: "ZPHC Reta" },
+  { href: "/zphc-bpc-157", label: "ZPHC BPC-157" },
+  { href: "/zphc-ghk-cu", label: "ZPHC GHK-Cu" },
+  { href: "/zphc-zptrop", label: "ZPHC ZPtrop" },
+  { href: "/zphc-tirze", label: "ZPHC Tirze" },
+  { href: "/zphc-peptid-karisimlari", label: "ZPHC Karışımlar" },
+]
+
 export function ProductCategories() {
   const groups = goalOrder
     .map((goal) => {
@@ -37,9 +46,12 @@ export function ProductCategories() {
               Tüm kataloğu taramak yerine ilgili ürün grubundan başlayın.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 text-sm font-semibold">
-            <Link href="/zphc-reta" className="rounded-full border border-gold/30 bg-background px-4 py-2 text-gold transition-colors hover:bg-gold hover:text-white">ZPHC Reta</Link>
-            <Link href="/zphc-bpc-157" className="rounded-full border border-gold/30 bg-background px-4 py-2 text-gold transition-colors hover:bg-gold hover:text-white">ZPHC BPC-157</Link>
+          <div className="flex max-w-full gap-2 overflow-x-auto pb-1 text-sm font-semibold md:flex-wrap md:justify-end md:overflow-visible">
+            {PRODUCT_FAMILY_LINKS.map((item) => (
+              <Link key={item.href} href={item.href} className="shrink-0 rounded-full border border-gold/30 bg-background px-4 py-2 text-gold transition-colors hover:bg-gold hover:text-white">
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

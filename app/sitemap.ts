@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/iade",
     "/kosullar",
     "/gizlilik",
+    "/zphc-reta",
+    "/zphc-bpc-157",
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),

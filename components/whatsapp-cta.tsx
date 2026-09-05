@@ -19,6 +19,7 @@ export function WhatsappCta({
   variant = "primary",
   message: customMessage,
   source = "general_cta",
+  size = "default",
 }: {
   product?: string
   label?: string
@@ -27,6 +28,7 @@ export function WhatsappCta({
    * (bozuk sipariş bildirimi, doğrulama sorunu gibi). */
   message?: string
   source?: string
+  size?: "default" | "compact"
 }) {
   const message =
     customMessage ??
@@ -34,12 +36,15 @@ export function WhatsappCta({
       ? `Merhaba, ${product} için fiyat ve stok bilgisi alabilir miyim?`
       : "Merhaba, ürün fiyatlarınız ve stok durumu hakkında bilgi alabilir miyim?")
 
-  const base =
-    "inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200"
+  const base = `inline-flex items-center justify-center rounded-full font-semibold transition-colors duration-200 ${
+    size === "compact"
+      ? "min-h-9 gap-1.5 px-3 py-2 text-xs"
+      : "gap-2.5 px-6 py-3 text-sm"
+  }`
 
   const styles =
     variant === "primary"
-      ? "bg-gold text-primary-foreground hover:bg-gold/85"
+      ? "bg-whatsapp text-white hover:bg-whatsapp/85"
       : "border border-gold/60 text-gold hover:bg-gold hover:text-primary-foreground"
 
   return (

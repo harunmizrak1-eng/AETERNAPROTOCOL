@@ -25,7 +25,7 @@ export function ShopSidebar({ active }: { active?: string }) {
     <aside className="w-full lg:w-56 lg:shrink-0">
       <nav aria-label="Ürün kategorileri">
         <h2 className="text-sm font-bold tracking-tight text-foreground lg:border-b lg:border-hairline lg:pb-2 lg:text-base">
-          Kategoriler
+          1 · Ne arıyorsunuz?
         </h2>
         <ul className="scrollbar-none mt-3 flex gap-2 overflow-x-auto pb-2 lg:mt-1 lg:block lg:overflow-visible lg:pb-0">
           <li className="shrink-0">

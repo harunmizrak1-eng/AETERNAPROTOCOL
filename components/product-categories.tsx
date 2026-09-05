@@ -31,6 +31,16 @@ export function ProductCategories() {
   return (
     <section className="border-b border-hairline px-6 py-10 md:px-10">
       <div className="mx-auto max-w-7xl">
+        <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">Kataloğu daraltın</p>
+            <h2 className="mt-1 text-2xl font-bold tracking-tight text-foreground">Ne arıyorsunuz?</h2>
+          </div>
+          <div className="flex flex-wrap gap-3 text-sm font-semibold">
+            <Link href="/zphc-reta" className="text-gold hover:underline">ZPHC Reta</Link>
+            <Link href="/zphc-bpc-157" className="text-gold hover:underline">ZPHC BPC-157</Link>
+          </div>
+        </div>
         <ul className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-3 lg:grid-cols-6">
           {groups.map(({ goal, count, image }) => (
             <li key={goal} className="bg-background">

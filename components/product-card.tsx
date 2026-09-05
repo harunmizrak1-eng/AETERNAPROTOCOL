@@ -1,64 +1,76 @@
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
+import { CompareButton } from "@/components/product-compare"
+import { WhatsappCta } from "@/components/whatsapp-cta"
 import { categoryLabels, type Product } from "@/lib/products"
+import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 
-/** Tek, paylaşılan ürün kartı. Katalog, çok satan şeritleri ve ilgili
- * ürünler bölümlerinin hepsi bunu kullanır.
- *
- * Düzen zphcstore.com'un gerçek WooCommerce kart yapısını izliyor: görsel
- * doğrudan beyaz zeminde, kategori etiketi başlığın üstünde küçük ve soluk,
- * içerik ortalanmış.
- *
- * Mobil katalogda kartın tamamı ürün detayına gider. Satış aksiyonu detay
- * sayfasında kalır; böylece her kartta tekrarlanan CTA ızgarayı boğmaz.
- */
+export function getProductForm(product: Product) {
+  if (product.category === "aksesuar") return "Aksesuar"
+  if (/hazır karışım|aq pen/i.test(product.name)) return "Hazır kalem"
+  if (/çift hazne|dual|kartuş/i.test(product.name)) return "Çift hazne / kartuş"
+  return "Flakon seti"
+}
+
 export function ProductCard({ product }: { product: Product }) {
+  const price = getProductPrice(product.slug)
+
   return (
-    <div className="group flex h-full flex-col border border-hairline bg-background p-3 text-left transition-colors hover:border-gold/50 sm:p-5 sm:text-center">
-      <Link
-        href={`/urunler/${product.slug}`}
-        className="flex w-full flex-1 flex-col"
-      >
-        {/* mix-blend-multiply bilerek YOK. Beyaz pikselleri saydamlaştırdığı
-            için, kutusu beyaz olan ZPHC ürünleri (AICAR, AOD 9604, BPC-157...)
-            beyaz kart zemininde tamamen kayboluyor ve kart boş görünüyordu.
-            Gerçek zphcstore.com da görselleri hiçbir karışım kipi
-            uygulamadan, olduğu gibi basıyor. */}
+    <article className="group flex h-full flex-col rounded-2xl border border-hairline bg-background p-3 text-left shadow-[0_8px_30px_rgba(13,27,42,0.04)] transition hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_14px_40px_rgba(0,114,188,0.10)] sm:p-4">
+      <Link href={`/urunler/${product.slug}`} className="block">
         {product.image && (
-          <Image
-            src={product.image}
-            alt={product.name}
-            width={400}
-            height={400}
-            sizes="(max-width: 639px) 44vw, (max-width: 1023px) 33vw, 25vw"
-            className="aspect-square w-full object-contain"
-          />
+          <div className="rounded-xl bg-surface p-2 sm:p-3">
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={400}
+              height={400}
+              sizes="(max-width: 639px) 44vw, (max-width: 1023px) 33vw, 25vw"
+              className="aspect-square w-full object-contain"
+            />
+          </div>
         )}
-        <p className="mt-2 text-[0.6rem] font-semibold uppercase tracking-wide text-muted-foreground sm:mt-4 sm:text-[0.7rem]">
-          {categoryLabels[product.category]}
-        </p>
-        <h3 className="mt-1 line-clamp-2 text-xs font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-gold sm:mt-1.5 sm:text-base">
+
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          <span className="rounded-full bg-gold/8 px-2 py-1 text-[0.6rem] font-bold uppercase tracking-wide text-gold sm:text-[0.68rem]">
+            {categoryLabels[product.category]}
+          </span>
+          <span className="rounded-full bg-surface px-2 py-1 text-[0.6rem] font-semibold text-muted-foreground sm:text-[0.68rem]">
+            {getProductForm(product)}
+          </span>
+        </div>
+
+        <h3 className="mt-2 line-clamp-3 min-h-[3.8rem] text-sm font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-gold sm:min-h-[3rem] sm:text-base">
           {product.name}
         </h3>
+      </Link>
 
-        <div className="mt-2 flex flex-wrap items-center gap-1.5 sm:mt-3 sm:justify-center sm:gap-2">
-          <span className="text-xs font-bold text-foreground sm:text-base">
-            {product.price ?? "Fiyat sorun"}
-          </span>
+      <div className="mt-auto pt-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-hairline pt-3">
+          <p className="text-sm font-extrabold text-foreground sm:text-base">
+            {price ? formatProductPrice(price) : "Fiyat için yazın"}
+          </p>
           <StockBadge inStock={product.inStock} />
         </div>
-        <span className="mt-auto pt-3 text-xs font-semibold text-gold sm:pt-4 sm:text-sm">
-          Ürünü incele →
-        </span>
-      </Link>
-    </div>
+
+        <div className="mt-3 flex flex-wrap gap-2">
+          <WhatsappCta
+            product={product.name}
+            label="Fiyat sor"
+            size="compact"
+            source="product_card"
+          />
+          <CompareButton slug={product.slug} name={product.name} />
+        </div>
+      </div>
+    </article>
   )
 }
 
 export function StockBadge({ inStock }: { inStock: boolean }) {
   return (
     <span
-      className={`rounded-full px-1.5 py-0.5 text-[0.65rem] font-semibold sm:px-2 sm:text-xs ${
+      className={`rounded-full px-2 py-1 text-[0.65rem] font-semibold sm:text-xs ${
         inStock
           ? "bg-tier-proven/10 text-tier-proven"
           : "bg-muted text-muted-foreground"

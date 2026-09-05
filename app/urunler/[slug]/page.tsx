@@ -13,6 +13,8 @@ import { RelatedProducts } from "@/components/related-products"
 import { SizeComparison } from "@/components/size-comparison"
 import { StockBadge } from "@/components/product-card"
 import { getPlainSummary } from "@/lib/plain-summaries"
+import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
+import { ProductPurchaseBar } from "@/components/product-purchase-bar"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -88,6 +90,7 @@ export default async function UrunPage({
 
   const technical = product.specs.filter((s) => s.kind === "spec")
   const claims = product.specs.filter((s) => s.kind === "claim")
+  const productPrice = getProductPrice(product.slug)
 
   // schema.org Product: arama sonuçlarında görsel, stok ve marka görünsün.
   // Fiyat yayımlanmadığı için offers yalnızca stok durumu taşır; uydurma
@@ -107,6 +110,7 @@ export default async function UrunPage({
         ? "https://schema.org/InStock"
         : "https://schema.org/OutOfStock",
       priceCurrency: "TRY",
+      price: productPrice,
     },
   }
 
@@ -171,7 +175,7 @@ export default async function UrunPage({
             <div className="mt-10 flex flex-col gap-4 border-y border-hairline py-8 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-4">
                 <p className="text-3xl font-bold text-foreground">
-                  {product.price ?? (
+                  {productPrice ? formatProductPrice(productPrice) : product.price ?? (
                     <span className="text-xl font-semibold text-muted-foreground">
                       Fiyat için yazın
                     </span>
@@ -179,7 +183,12 @@ export default async function UrunPage({
                 </p>
                 <StockBadge inStock={product.inStock} />
               </div>
-              <WhatsappCta product={product.name} label="Fiyat sorun" />
+              <div>
+                <WhatsappCta product={product.name} label="WhatsApp’tan fiyat sorun" />
+                <p className="mt-2 text-center text-xs text-muted-foreground">
+                  Resmî WhatsApp hattı · Ürün adı mesaja hazır eklenir
+                </p>
+              </div>
             </div>
 
             {/* Kargo bilgisi fiyatın hemen altında. Siteyi ilk gösterdiğimiz
@@ -366,6 +375,11 @@ export default async function UrunPage({
           </div>
         </article>
       </main>
+      <ProductPurchaseBar
+        slug={product.slug}
+        name={product.name}
+        inStock={product.inStock}
+      />
       <Footer />
     </>
   )

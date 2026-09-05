@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { WhatsappFloat } from '@/components/whatsapp-float'
+import { ProductCompareProvider } from '@/components/product-compare'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -66,8 +67,10 @@ export default function RootLayout({
         >
           İçeriğe geç
         </a>
-        {children}
-        <WhatsappFloat />
+        <ProductCompareProvider>
+          {children}
+          <WhatsappFloat />
+        </ProductCompareProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

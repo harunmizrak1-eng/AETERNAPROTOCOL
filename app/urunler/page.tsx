@@ -45,11 +45,11 @@ export default async function UrunlerPage({
                 anlatan tek satır yoktu. */}
             <div>
               <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                {info?.title ?? "Ürünler"}
+                {info?.title ?? "Doğru ürünü daha hızlı bulun"}
               </h1>
               <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
                 {info?.body ??
-                  "ZPHC peptid ve büyüme hormonu ürünlerinin tamamı."}
+                  "Önce aradığınız alanı, sonra ürün formunu seçin. Benzer görünen ürünlerin farkını karşılaştırma aracıyla yan yana görün."}
               </p>
             </div>
             <div className="hidden sm:block">

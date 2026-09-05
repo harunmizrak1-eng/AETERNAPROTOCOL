@@ -1,71 +1,86 @@
+import Image from "next/image"
 import Link from "next/link"
+import { WhatsappCta } from "@/components/whatsapp-cta"
 import { products } from "@/lib/products"
 
 const TRUST_POINTS = [
-  "Resmi distribütör",
-  "Üreticiden doğrulama",
-  "Türkiye deposu",
+  "Resmî distribütör",
+  "Üretici koduyla doğrulama",
+  "Türkiye stoğu",
   "Ücretsiz kargo",
 ]
 
+const FEATURED_SLUGS = [
+  "retatrutide-60mg-5x12mg-zphc",
+  "bpc157-25mg-5x5mg-zphc",
+  "zptrop-hgh-36iu-aq-pen-zphc",
+]
+
 export function Hero() {
+  const featured = FEATURED_SLUGS.map((slug) =>
+    products.find((product) => product.slug === slug),
+  ).filter((product) => product?.image)
+
   return (
-    <section className="overflow-hidden border-b border-hairline bg-surface">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-[1.2fr_0.8fr] md:items-center md:px-10 md:py-16 lg:gap-16 lg:py-20">
+    <section className="overflow-hidden border-b border-hairline bg-[linear-gradient(135deg,var(--surface),var(--background))]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-9 md:grid-cols-[1.05fr_0.95fr] md:items-center md:px-10 md:py-12 lg:gap-14 lg:py-14">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
-            ZPHC Türkiye Resmi Distribütörü
+            ZPHC Türkiye Resmî Distribütörü
           </p>
-          <h1 className="mt-4 max-w-3xl text-balance text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Orijinalliği üreticinin kendi sisteminden doğrulayın.
+          <h1 className="mt-3 max-w-3xl text-balance text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl">
+            Orijinal ZPHC ürünleri, Türkiye’den hızlı gönderim.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            ZPHC peptid ve büyüme hormonu ürünleri Türkiye depomuzdan
-            gönderilir. Her kutudaki benzersiz kodun sonucunu doğrudan
-            üreticinin doğrulama sisteminde görebilirsiniz.
+          <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+            {products.length} ürün, üretici doğrulama kodu ve ücretsiz kargo.
+            Fiyat ile güncel stok bilgisini resmî WhatsApp hattımızdan alın.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/urunler"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-7 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold/85"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-gold px-6 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold/85"
             >
-              {products.length} ürünü inceleyin
+              Ürünleri keşfedin
             </Link>
-            <Link
-              href="/dogrulama"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-gold/50 bg-background px-7 text-sm font-bold text-gold transition-colors hover:border-gold hover:bg-gold/5"
-            >
-              Orijinallik nasıl doğrulanır?
-            </Link>
+            <WhatsappCta
+              label="WhatsApp’tan fiyat sorun"
+              size="compact"
+              source="home_hero"
+            />
           </div>
         </div>
 
-        <div className="border border-gold/20 bg-background p-6 shadow-[0_20px_60px_rgba(0,49,76,0.08)] sm:p-8">
-          <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">
-            Üç adımda kontrol
-          </p>
-          <ol className="mt-6 space-y-5">
-            {[
-              "Kutudaki gümüş doğrulama alanını bulun.",
-              "Kaplamayı kazıyıp benzersiz kodu alın.",
-              "Kodu ZPHC'nin kendi sisteminde sorgulayın.",
-            ].map((step, index) => (
-              <li key={step} className="flex items-start gap-4">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-bold text-gold">
-                  {index + 1}
+        <div className="relative min-h-64 sm:min-h-72">
+          <div className="absolute inset-x-0 bottom-0 top-8 rounded-[2rem] bg-gold/8" />
+          <div className="relative grid grid-cols-3 items-end gap-2 px-2 pt-2 sm:gap-4 sm:px-6">
+            {featured.map((product, index) => (
+              <Link
+                key={product!.slug}
+                href={`/urunler/${product!.slug}`}
+                className={`group relative overflow-hidden rounded-2xl border border-hairline bg-background p-2 shadow-[0_18px_45px_rgba(0,49,76,0.10)] transition-transform hover:-translate-y-1 sm:p-3 ${
+                  index === 1 ? "mb-8" : ""
+                }`}
+              >
+                <Image
+                  src={product!.image!}
+                  alt={product!.name}
+                  width={320}
+                  height={320}
+                  sizes="(max-width: 767px) 28vw, 14vw"
+                  className="aspect-square w-full object-contain"
+                />
+                <span className="mt-1 block truncate text-center text-[0.65rem] font-semibold text-foreground sm:text-xs">
+                  {product!.name}
                 </span>
-                <span className="pt-1 text-sm leading-relaxed text-foreground">
-                  {step}
-                </span>
-              </li>
+              </Link>
             ))}
-          </ol>
+          </div>
           <Link
             href="/dogrulama"
-            className="mt-7 inline-flex text-sm font-bold text-gold transition-opacity hover:opacity-70"
+            className="relative mx-auto mt-4 flex w-fit items-center gap-2 rounded-full bg-background px-4 py-2 text-xs font-bold text-gold shadow-sm transition-opacity hover:opacity-70"
           >
-            Doğrulama rehberini açın →
+            Üretici koduyla doğrulama →
           </Link>
         </div>
       </div>
@@ -75,15 +90,9 @@ export function Hero() {
           {TRUST_POINTS.map((point) => (
             <li
               key={point}
-              className="flex min-h-14 items-center justify-center gap-2 border-hairline px-3 text-center text-xs font-semibold text-foreground odd:border-r md:border-r md:last:border-r-0"
+              className="flex min-h-12 items-center justify-center gap-2 border-hairline px-3 text-center text-xs font-semibold text-foreground odd:border-r md:border-r md:last:border-r-0"
             >
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 20 20"
-                className="h-4 w-4 shrink-0 fill-gold"
-              >
-                <path fillRule="evenodd" d="M10 1.5 3 4.6v5.1c0 4.4 3 8.4 7 9.3 4-.9 7-4.9 7-9.3V4.6L10 1.5Zm3.6 6.4-4.2 4.2a.75.75 0 0 1-1.06 0L6.4 10.15a.75.75 0 1 1 1.06-1.06l1.42 1.42 3.67-3.67a.75.75 0 1 1 1.06 1.06Z" clipRule="evenodd" />
-              </svg>
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold" />
               {point}
             </li>
           ))}

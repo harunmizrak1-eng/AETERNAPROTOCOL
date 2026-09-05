@@ -3,10 +3,7 @@ import { Nav } from "@/components/nav"
 import { ProductCategories } from "@/components/product-categories"
 import { ProductStrip } from "@/components/product-strip"
 import { bestSellers } from "@/lib/strips"
-import { WhyZphc } from "@/components/why-zphc"
-import { HowItWorks } from "@/components/how-it-works"
 import { Reviews } from "@/components/reviews"
-import { FinalCta } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
 /* Mağaza ana sayfası: hero → çok satanlar → kategoriler
@@ -29,12 +26,9 @@ export default function Page() {
     <main id="main-content" className="bg-background">
       <Nav />
       <Hero />
-      <ProductCategories />
       <ProductStrip {...bestSellers} title="En çok incelenen ürünler" />
-      <WhyZphc />
-      <HowItWorks />
+      <ProductCategories />
       <Reviews />
-      <FinalCta />
       <Footer />
     </main>
   )

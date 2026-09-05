@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { products } from "@/lib/products"
+import { products } from "@/lib/catalog"
 import { ProductCard } from "@/components/product-card"
 
 /** Bir bileşiğin satılan ürünleri.

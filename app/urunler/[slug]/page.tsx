@@ -5,7 +5,7 @@ import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { WhatsappCta } from "@/components/whatsapp-cta"
-import { products, getProduct, categoryLabels } from "@/lib/products"
+import { products, getProduct, categoryLabels } from "@/lib/catalog"
 import { getPeptide, tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 import { citations } from "@/lib/citations"
 import { siteUrl } from "@/lib/site"
@@ -165,7 +165,11 @@ export default async function UrunPage({
                   width={1000}
                   height={1000}
                   priority
-                  className="mx-auto w-full max-w-lg object-contain"
+                  className={`mx-auto w-full max-w-lg ${
+                    product.slug === "ghk-cu-200mg-zphc"
+                      ? "aspect-square object-cover"
+                      : "object-contain"
+                  }`}
                 />
               </div>
             )}

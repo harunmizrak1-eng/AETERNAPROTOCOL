@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Footer } from "@/components/footer"
 import { Nav } from "@/components/nav"
 import { ProductCard } from "@/components/product-card"
-import { products } from "@/lib/products"
+import { products } from "@/lib/catalog"
 
 export function SeoProductLanding({
   eyebrow,

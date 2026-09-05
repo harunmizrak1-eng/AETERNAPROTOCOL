@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { products, type Product } from "@/lib/products"
+import { products, type Product } from "@/lib/catalog"
 import { comparableSizes } from "@/lib/product-size"
 import { StockBadge } from "@/components/product-card"
 

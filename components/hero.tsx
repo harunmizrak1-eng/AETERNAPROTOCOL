@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { WhatsappCta } from "@/components/whatsapp-cta"
-import { products } from "@/lib/products"
+import { products } from "@/lib/catalog"
 
 const TRUST_POINTS = [
-  "Resmî distribütör",
+  "Resmî alan adı: zphctr.com",
   "Üretici koduyla doğrulama",
   "Türkiye stoğu",
   "Ücretsiz kargo",
@@ -13,7 +13,7 @@ const TRUST_POINTS = [
 const FEATURED_SLUGS = [
   "retatrutide-60mg-5x12mg-zphc",
   "bpc157-25mg-5x5mg-zphc",
-  "zptrop-hgh-36iu-aq-pen-zphc",
+  "zptrop-hgh-100iu-aq-vial-zphc",
 ]
 
 export function Hero() {

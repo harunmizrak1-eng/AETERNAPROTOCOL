@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
-import { products } from "@/lib/products"
+import { products } from "@/lib/catalog"
 import { ProductCard, getProductForm } from "@/components/product-card"
 import { featuredProductSlugs } from "@/lib/product-prices"
 

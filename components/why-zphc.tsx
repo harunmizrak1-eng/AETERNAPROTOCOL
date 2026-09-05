@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { peptides } from "@/lib/peptides"
-import { products } from "@/lib/products"
+import { products } from "@/lib/catalog"
 
 const PILLARS = [
   {

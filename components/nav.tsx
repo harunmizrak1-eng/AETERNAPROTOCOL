@@ -13,6 +13,7 @@ import { HeaderSearch } from "@/components/header-search"
  * ama bizim adımıza öyle bir tespit yapılmadı. */
 const TICKER_MESSAGES = [
   "Sahte satıcılara dikkat. Siparişinizi sadece bizim WhatsApp hattımızdan verin.",
+  "Resmî Türkiye alan adımız zphctr.com — benzer alan adları bize ait değildir.",
   "Aldığınız her kutunun kodunu validation.zphc.com adresinden doğrulayın.",
   "ZPHC Türkiye resmi distribütörüyüz. Ürünler doğrudan depomuzdan çıkıyor.",
 ]

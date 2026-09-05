@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { products, goalOrder } from "@/lib/products"
+import { products, goalOrder } from "@/lib/catalog"
 import { peptides } from "@/lib/peptides"
 
 /** Mağaza kenar çubuğu.

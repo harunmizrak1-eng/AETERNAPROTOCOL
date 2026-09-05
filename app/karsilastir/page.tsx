@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Nav } from "@/components/nav"
 import { getProductForm, StockBadge } from "@/components/product-card"
 import { WhatsappCta } from "@/components/whatsapp-cta"
-import { categoryLabels, getProduct } from "@/lib/products"
+import { categoryLabels, getProduct } from "@/lib/catalog"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 
 export const metadata: Metadata = {

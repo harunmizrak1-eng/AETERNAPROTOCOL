@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { WhatsappCta } from "@/components/whatsapp-cta"
-import { products } from "@/lib/products"
+import { products } from "@/lib/catalog"
 import { peptides } from "@/lib/peptides"
 
 const description =

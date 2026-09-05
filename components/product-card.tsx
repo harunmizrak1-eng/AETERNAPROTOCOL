@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { CompareButton } from "@/components/product-compare"
 import { WhatsappCta } from "@/components/whatsapp-cta"
-import { categoryLabels, type Product } from "@/lib/products"
+import { categoryLabels, type Product } from "@/lib/catalog"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 
 export function getProductForm(product: Product) {
@@ -26,7 +26,9 @@ export function ProductCard({ product }: { product: Product }) {
               width={400}
               height={400}
               sizes="(max-width: 639px) 44vw, (max-width: 1023px) 33vw, 25vw"
-              className="aspect-square w-full object-contain"
+              className={`aspect-square w-full ${
+                product.slug === "ghk-cu-200mg-zphc" ? "object-cover" : "object-contain"
+              }`}
             />
           </div>
         )}

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { siteUrl } from "@/lib/site"
 import { articles } from "@/lib/articles"
 import { peptides } from "@/lib/peptides"
-import { products } from "@/lib/products"
+import { products } from "@/lib/catalog"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [

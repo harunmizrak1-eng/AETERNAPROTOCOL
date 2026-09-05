@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     template: '%s · ZPHC Türkiye',
   },
   description: siteDescription,
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
+  publisher: siteName,
   alternates: {
     canonical: '/',
   },
@@ -53,11 +56,26 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'MedicalBusiness',
-              name: siteName,
-              description: siteDescription,
-              url: siteUrl,
-              areaServed: 'TR',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': `${siteUrl}/#organization`,
+                  name: siteName,
+                  description: siteDescription,
+                  url: siteUrl,
+                  logo: `${siteUrl}/brand/zphc-logo.png`,
+                  areaServed: 'TR',
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': `${siteUrl}/#website`,
+                  name: siteName,
+                  alternateName: 'ZPHC TR',
+                  url: siteUrl,
+                  inLanguage: 'tr-TR',
+                  publisher: { '@id': `${siteUrl}/#organization` },
+                },
+              ],
             }),
           }}
         />

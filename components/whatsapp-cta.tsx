@@ -1,4 +1,5 @@
 import { whatsappLink } from "@/lib/contact"
+import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 
 /** WhatsApp iletişim düğmesi.
  *
@@ -17,6 +18,7 @@ export function WhatsappCta({
   label = "WhatsApp’tan yazın",
   variant = "primary",
   message: customMessage,
+  source = "general_cta",
 }: {
   product?: string
   label?: string
@@ -24,6 +26,7 @@ export function WhatsappCta({
   /** Fiyat sorusu dışındaki durumlar için hazır mesajı tamamen değiştirir
    * (bozuk sipariş bildirimi, doğrulama sorunu gibi). */
   message?: string
+  source?: string
 }) {
   const message =
     customMessage ??
@@ -40,15 +43,15 @@ export function WhatsappCta({
       : "border border-gold/60 text-gold hover:bg-gold hover:text-primary-foreground"
 
   return (
-    <a
+    <TrackedOutboundLink
       href={whatsappLink(message)}
-      target="_blank"
-      rel="noopener noreferrer"
+      eventName="WhatsApp Click"
+      properties={{ source, ...(product ? { product } : {}) }}
       className={`${base} ${styles}`}
     >
       <WhatsappGlyph />
       {label}
-    </a>
+    </TrackedOutboundLink>
   )
 }
 

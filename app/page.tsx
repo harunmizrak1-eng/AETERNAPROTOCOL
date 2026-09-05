@@ -2,12 +2,7 @@ import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
 import { ProductCategories } from "@/components/product-categories"
 import { ProductStrip } from "@/components/product-strip"
-import {
-  bestSellers,
-  bestSellingHgh,
-  bestSellingFatLoss,
-  readyMixes,
-} from "@/lib/strips"
+import { bestSellers } from "@/lib/strips"
 import { WhyZphc } from "@/components/why-zphc"
 import { HowItWorks } from "@/components/how-it-works"
 import { Reviews } from "@/components/reviews"
@@ -34,11 +29,8 @@ export default function Page() {
     <main id="main-content" className="bg-background">
       <Nav />
       <Hero />
-      <ProductStrip {...bestSellers} />
       <ProductCategories />
-      <ProductStrip {...bestSellingFatLoss} />
-      <ProductStrip {...bestSellingHgh} />
-      <ProductStrip {...readyMixes} />
+      <ProductStrip {...bestSellers} title="En çok incelenen ürünler" />
       <WhyZphc />
       <HowItWorks />
       <Reviews />

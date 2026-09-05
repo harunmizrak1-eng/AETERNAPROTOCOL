@@ -85,7 +85,28 @@ Examples of identical text:
  - My product naming format, including the "×" multiplication sign and
    the parenthetical composition notes.
 
-4. PROOF THE COPY WAS TAKEN FROM MY PUBLISHED PAGE
+4. THE INFRINGING SITE STILL NAMES MY DOMAIN IN ITS OWN SOURCE CODE
+This can be verified in seconds. Open https://zphchumaxtr.com/, view the
+page source, and search for "zphctr.com". You will find:
+
+  <meta property="og:url" content="https://zphctr.com">
+
+and, immediately after the <body> tag, this structured-data block:
+
+  {"@context":"https://schema.org","@type":"MedicalBusiness",
+   "name":"ZPHC Türkiye","description":"...","url":"https://zphctr.com",
+   "areaServed":"TR"}
+
+The infringing site declares my domain as the business URL in its own
+machine-readable metadata. They failed to strip these fields when they
+copied my pages. The site also still loads its preview image from my
+server: https://zphctr.com/opengraph-image?8d62ad3f63d398ec
+
+Google currently displays my meta description as the snippet for their
+result, because they do not have a description tag of their own and the
+text is taken from the copied block above.
+
+5. FURTHER PROOF FROM A COMPUTED NUMBER
 One sentence on my site reads "Sattığımız 48 bileşiğin her biri için..."
 The number 48 is not written in my source. It is generated at build time
 from the length of a data file in my repository:
@@ -96,7 +117,7 @@ The infringing page shows the same number, 48. That value only exists in
 the rendered output of my site. It could not appear in independently
 written text.
 
-5. DATES
+6. DATES
 My text was written and committed on these dates (Git commit hashes from
 my repository, available for inspection on request):
 
@@ -109,7 +130,7 @@ my repository, available for inspection on request):
 The domain zphchumaxtr.com was registered on 26 August 2026 (source:
 Verisign RDAP record). Every copied sentence predates that registration.
 
-6. STATEMENTS
+7. STATEMENTS
 I have a good faith belief that the use of the material described above
 is not authorized by the copyright owner, its agent, or the law.
 
@@ -117,7 +138,7 @@ The information in this notification is accurate, and under penalty of
 perjury, I am the owner, or authorized to act on behalf of the owner, of
 an exclusive right that is allegedly infringed.
 
-7. CONTACT
+8. CONTACT
 Name: [AD SOYAD]
 Address: [ADRES]
 Phone: [TELEFON]
@@ -210,7 +231,24 @@ düşüktür; kütüphane ve diğer iç sayfalar olduğu gibi durmaktadır.
 - Alt bilgideki yasal uyarı paragrafının tamamı, kelimesi kelimesine.
 - Menü ve alt bilgi başlıkları aynı sırada.
 
-Kopyanın benim yayımlanmış sayfamdan alındığının kesin delili:
+EN KOLAY DOĞRULANABİLİR DELİL: Karşı tarafın sayfa kaynağında hâlâ
+benim alan adım yazıyor. zphchumaxtr.com adresini açıp sayfa kaynağını
+görüntüleyin ve "zphctr.com" araması yapın. Şunları göreceksiniz:
+
+  <meta property="og:url" content="https://zphctr.com">
+
+  {"@context":"https://schema.org","@type":"MedicalBusiness",
+   "name":"ZPHC Türkiye","url":"https://zphctr.com","areaServed":"TR"}
+
+Kendi sitesini yazan hiç kimse, kendi sayfasına başkasının alan adını
+yazmaz. Sayfayı kopyalarken bu alanları silmeyi unutmuşlar. Önizleme
+görselini de hâlâ benim sunucumdan çekiyorlar:
+https://zphctr.com/opengraph-image?8d62ad3f63d398ec
+
+Arama sonucunda onların sayfası için gösterdiğiniz açıklama metni de
+benim meta açıklamamdır; kendi açıklama etiketleri yoktur.
+
+İkinci delil, hesaplanan bir sayı:
 Sayfamdaki "Sattığımız 48 bileşiğin her biri için..." cümlesindeki 48
 sayısı kaynak kodda yazılı değildir; sitenin veri dosyasının uzunluğundan
 site derlenirken hesaplanır. Karşı tarafın sayfasında da aynı sayı, 48

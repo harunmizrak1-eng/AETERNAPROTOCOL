@@ -71,7 +71,44 @@ eklenmemiş.
    işleme koşulları için Gizlilik & KVKK metnini inceleyin.`
 9. Alt bilgi imzası: `Zhengzhou Pharmaceutical · Resmi Distribütör`
 
-## 3. En güçlü delil: 48 sayısı
+## 3. En güçlü delil: kendi sayfalarında bizim alan adımız yazıyor
+
+zphchumaxtr.com ana sayfasının kaynak kodunda, `<body>` etiketinin hemen
+altında şu blok duruyor:
+
+```json
+{"@context":"https://schema.org","@type":"MedicalBusiness",
+ "name":"ZPHC Türkiye",
+ "description":"ZPHC (Zhengzhou Pharmaceutical) peptid ve insan büyüme
+ hormonu ürünlerinin resmi Türkiye distribütörü. Orijinallik doğrulaması,
+ tam ürün kataloğu ve literatür referanslı bileşik kütüphanesi.",
+ "url":"https://zphctr.com","areaServed":"TR"}
+```
+
+Aynı sayfanın `<head>` bölümünde de şu satır var:
+
+```html
+<meta property="og:url" content="https://zphctr.com">
+```
+
+Bu iki satır, arama motorlarının okuduğu makine verisidir. Karşı taraf kendi
+sitesinde, işletmenin adresi olarak **bizim alan adımızı** ilan ediyor.
+Sayfayı kopyalarken bu alanları temizlemeyi unutmuşlar.
+
+Bunun başka bir açıklaması yok. Kendi sitesini yazan hiç kimse, kendi
+sayfasına başkasının alan adını yazmaz.
+
+Ayrıca sayfanın önizleme görselini hâlâ bizim sunucumuzdan çekiyorlar:
+`https://zphctr.com/opengraph-image?8d62ad3f63d398ec`
+
+Google'ın arama sonucunda onların sayfası için gösterdiği açıklama metni de
+bizim meta açıklamamızdır. Kendi açıklama etiketleri yok; Google o metni
+yukarıdaki kopyalanmış veri bloğundan alıyor.
+
+**İnceleyen kişi bunu kendi doğrulayabilir:** zphchumaxtr.com adresine girip
+sayfa kaynağını görüntülemesi ve `zphctr.com` araması yapması yeterli.
+
+## 4. İkinci delil: 48 sayısı
 
 `components/why-zphc.tsx` dosyasının 18. satırı şöyle yazılmış:
 
@@ -86,7 +123,7 @@ yazıyor.
 Bunun tek açıklaması, bizim yayımlanmış sayfamızın çıktısının olduğu gibi
 alınmasıdır. Aynı cümleyi bağımsız yazan biri o sayıyı bilemez.
 
-## 4. Menü ve alt bilgi yapısı
+## 5. Menü ve alt bilgi yapısı
 
 Üst menü aynı sırada: Ürünler, Kütüphane, Doğrulama, Journal, Metodoloji.
 "Kütüphane" ve "Metodoloji" bu sektörde standart başlıklar değil, bize ait
@@ -96,7 +133,7 @@ Alt bilgi de aynı sırada: Keşfet / Ürünler, Kütüphane, Journal, Hakkımı
 İletişim, Doğrulama, Kargo & Teslimat, İade & Değişim, WhatsApp / Yasal /
 Metodoloji, Sıkça sorulanlar, Kullanım Koşulları, Gizlilik & KVKK.
 
-## 5. Ürün adları
+## 6. Ürün adları
 
 Katalogdaki 43 ürünün adları bizim yazdığımız biçimde alınmış:
 
@@ -111,7 +148,7 @@ karışım adlarının içeriğini parantezde açma biçimi. Hepsi aynı.
 
 Klon sayfada da `Tümü (43)` yazıyor. Bizim katalogda o tarihte 43 ürün vardı.
 
-## 6. Bizim metinlerin tarihleri
+## 7. Bizim metinlerin tarihleri
 
 Git deposundaki kayıtlar (`harunmizrak1-eng/AETERNAPROTOCOL`):
 
@@ -126,7 +163,7 @@ Git deposundaki kayıtlar (`harunmizrak1-eng/AETERNAPROTOCOL`):
 En yeni metin 21 Ağustos'ta yazıldı. Karşı taraf alan adını 26 Ağustos'ta
 aldı. Yani kopyalanan her cümle, o alan adı var olmadan önce bizde yazılıydı.
 
-## 7. Şikayette yazılmaması gerekenler
+## 8. Şikayette yazılmaması gerekenler
 
 Önceki taslakta iki riskli nokta vardı, çıkarıldı:
 

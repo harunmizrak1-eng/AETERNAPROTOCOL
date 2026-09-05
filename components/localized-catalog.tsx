@@ -3,9 +3,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useMemo, useState } from "react"
-import { getProductForm } from "@/components/product-card"
 import { products } from "@/lib/catalog"
-import { localeUi, type SeoLocale } from "@/lib/international-seo"
+import { localeUi, localizedProductForm, type SeoLocale } from "@/lib/international-seo"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 import { instagramHandle, instagramUrl, whatsappDisplay, whatsappLink } from "@/lib/contact"
 
@@ -47,7 +46,7 @@ export function LocalizedCatalog({ locale }: { locale: SeoLocale }) {
                 return <li key={product.slug}>
                   <Link href={`/urunler/${product.slug}`} className="group flex h-full flex-col rounded-2xl border border-hairline bg-white p-3 shadow-[0_8px_28px_rgba(0,49,76,0.05)] transition hover:-translate-y-0.5 hover:border-gold/40">
                     {product.image && <div className="rounded-xl bg-surface p-2"><Image src={product.image} alt={product.name} width={360} height={360} className="aspect-square w-full object-contain" /></div>}
-                    <p className="mt-3 text-[0.65rem] font-bold uppercase tracking-wide text-gold">{getProductForm(product)}</p>
+                    <p className="mt-3 text-[0.65rem] font-bold uppercase tracking-wide text-gold">{localizedProductForm(locale, product)}</p>
                     <h2 className="mt-1 text-sm font-bold leading-snug">{product.name}</h2>
                     <p className="mt-auto border-t border-hairline pt-3 text-base font-extrabold">{price ? formatProductPrice(price) : ui.priceOnRequest}</p>
                     <span className="mt-2 text-xs font-bold text-gold">{ui.viewProduct} →</span>

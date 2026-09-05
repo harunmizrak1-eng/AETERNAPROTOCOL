@@ -1,9 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import { getProductForm } from "@/components/product-card"
 import { products } from "@/lib/catalog"
 import {
   localeUi,
+  localizedProductForm,
   localizedTopicPath,
   seoLocales,
   seoTopicIds,
@@ -119,7 +119,7 @@ export function InternationalSeoPage({
                             <Image src={product.image} alt={product.name} width={400} height={400} className="aspect-square w-full object-contain" />
                           </div>
                         )}
-                        <p className="mt-3 text-[0.68rem] font-bold uppercase tracking-wide text-gold">{getProductForm(product)}</p>
+                        <p className="mt-3 text-[0.68rem] font-bold uppercase tracking-wide text-gold">{localizedProductForm(locale, product)}</p>
                         <h3 className="mt-1 text-sm font-bold leading-snug sm:text-base">{product.name}</h3>
                         <div className="mt-auto pt-4">
                           <p className="border-t border-hairline pt-3 text-base font-extrabold">{price ? formatProductPrice(price) : ui.priceOnRequest}</p>

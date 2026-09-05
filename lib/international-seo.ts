@@ -1,3 +1,5 @@
+import type { Product } from "@/lib/catalog"
+
 export const seoLocales = ["en", "es", "ar"] as const
 export type SeoLocale = (typeof seoLocales)[number]
 
@@ -205,4 +207,18 @@ export function topicLanguageAlternates(topicId: SeoTopicId) {
 
 export function homeLanguageAlternates() {
   return { "tr-TR": "/", en: "/en", es: "/es", ar: "/ar", "x-default": "/" }
+}
+
+const productFormLabels: Record<SeoLocale, { accessory: string; pen: string; cartridge: string; vial: string }> = {
+  en: { accessory: "Accessory", pen: "Premixed pen", cartridge: "Dual chamber / cartridge", vial: "Vial set" },
+  es: { accessory: "Accesorio", pen: "Pluma premezclada", cartridge: "Doble cámara / cartucho", vial: "Set de viales" },
+  ar: { accessory: "ملحق", pen: "قلم جاهز", cartridge: "حجرة مزدوجة / خرطوشة", vial: "مجموعة قوارير" },
+}
+
+export function localizedProductForm(locale: SeoLocale, product: Product) {
+  const labels = productFormLabels[locale]
+  if (product.category === "aksesuar") return labels.accessory
+  if (/hazır karışım|aq pen/i.test(product.name)) return labels.pen
+  if (/çift hazne|dual|kartuş/i.test(product.name)) return labels.cartridge
+  return labels.vial
 }

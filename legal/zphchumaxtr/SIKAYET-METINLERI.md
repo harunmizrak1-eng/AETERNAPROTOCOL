@@ -42,9 +42,35 @@ repository under my control. Commit records establish the authorship
 dates listed below.
 
 3. WHAT WAS COPIED
-The infringing site reproduces my homepage text verbatim. Of the 29
-sentences on its homepage, 12 are character-for-character identical to
-mine. Examples:
+The infringing site is a complete verbatim copy of my site. I measured
+the overlap page by page:
+
+  Compound library   116 of 117 sentences identical  (99%)
+  Methodology         37 of  38 sentences identical  (97%)
+  About us            23 of  24 sentences identical  (96%)
+  FAQ                 54 of  56 sentences identical  (96%)
+  Verification        25 of  27 sentences identical  (93%)
+  Total              255 of 262 sentences identical  (97%)
+
+Additional infringing URLs, all copied from the corresponding page on
+my site:
+
+  https://zphchumaxtr.com/peptidler.html
+  https://zphchumaxtr.com/metodoloji.html
+  https://zphchumaxtr.com/sss.html
+  https://zphchumaxtr.com/hakkimizda.html
+  https://zphchumaxtr.com/dogrulama.html
+  https://zphchumaxtr.com/urunler.html
+  https://zphchumaxtr.com/journal.html
+  https://zphchumaxtr.com/kargo.html
+  https://zphchumaxtr.com/iade.html
+  https://zphchumaxtr.com/kosullar.html
+  https://zphchumaxtr.com/gizlilik.html
+
+The copy was taken on 31 August 2026 and has not been updated since,
+as shown by the last-modified header your servers return for it.
+
+Examples of identical text:
 
  - Page title: "ZPHC Türkiye · Resmi Peptid ve İnsan Büyüme Hormonu
    Distribütörü" (identical including the middle-dot separator)
@@ -118,9 +144,32 @@ Formda istenen alanlar ve ne yazılacağı:
 https://zphctr.com/
 ```
 
-**İhlal eden URL:**
+**İhlal eden URL'ler** (formda hepsi ayrı ayrı eklenecek, her biri için "URL
+ekle" düğmesi kullanılır — sadece ana sayfayı yazarsan diğer sayfalar aramada
+kalmaya devam eder):
 ```
 https://zphchumaxtr.com/
+https://zphchumaxtr.com/peptidler.html
+https://zphchumaxtr.com/metodoloji.html
+https://zphchumaxtr.com/sss.html
+https://zphchumaxtr.com/hakkimizda.html
+https://zphchumaxtr.com/dogrulama.html
+https://zphchumaxtr.com/urunler.html
+https://zphchumaxtr.com/journal.html
+https://zphchumaxtr.com/kargo.html
+https://zphchumaxtr.com/iade.html
+https://zphchumaxtr.com/kosullar.html
+https://zphchumaxtr.com/gizlilik.html
+```
+
+Karşılık gelen kendi sayfalarımız:
+```
+https://zphctr.com/            https://zphctr.com/peptidler
+https://zphctr.com/metodoloji  https://zphctr.com/sss
+https://zphctr.com/hakkimizda  https://zphctr.com/dogrulama
+https://zphctr.com/urunler     https://zphctr.com/journal
+https://zphctr.com/kargo       https://zphctr.com/iade
+https://zphctr.com/kosullar    https://zphctr.com/gizlilik
 ```
 
 **Eserin tanımı:**
@@ -133,9 +182,22 @@ tarihleri arasında yayımlandı.
 
 **İhlalin tanımı (en önemli alan, buraya somut kanıt yazılacak):**
 ```
-zphchumaxtr.com ana sayfası, zphctr.com ana sayfasının metnini birebir
-kopyalamıştır. Karşı tarafın ana sayfasındaki 29 cümlenin 12'si benim
-sayfamla harf harf aynıdır. Örnekler:
+zphchumaxtr.com, zphctr.com sitesinin tamamının birebir kopyasıdır.
+Sayfa sayfa ölçtüm:
+
+  Peptid kütüphanesi   117 cümlenin 116'sı aynı  (%99)
+  Metodoloji            38 cümlenin  37'si aynı  (%97)
+  Hakkımızda            24 cümlenin  23'ü aynı   (%96)
+  Sıkça sorulanlar      56 cümlenin  54'ü aynı   (%96)
+  Doğrulama             27 cümlenin  25'i aynı   (%93)
+  Toplam               262 cümlenin 255'i aynı   (%97)
+
+Karşı taraf sayfayı 31 Ağustos 2026'da kopyalayıp dondurmuş ve o günden
+beri güncellememiştir (sunucusunun gönderdiği last-modified başlığı).
+Bizim ana sayfamızı sonradan değiştirdiğimiz için orada oran daha
+düşüktür; kütüphane ve diğer iç sayfalar olduğu gibi durmaktadır.
+
+Örnekler:
 
 - Sayfa başlığı: "ZPHC Türkiye · Resmi Peptid ve İnsan Büyüme Hormonu
   Distribütörü" (aradaki nokta işareti dahil aynı)

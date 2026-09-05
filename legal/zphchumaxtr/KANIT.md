@@ -24,11 +24,32 @@ muhatabı Hostinger, Cloudflare değil.
 
 ## 2. Birebir aynı olan cümleler
 
-Ana sayfadaki 29 cümlenin 12'si bizim sayfamızla harf harf aynı. Değişiklik
-yapılmamış, yeniden yazılmamış, kelime bile eklenmemiş.
+Sitenin tamamı kopyalanmış. Beş iç sayfa ölçüldü, sonuç:
+
+| Sayfa | Klondaki cümle | Bizimkiyle harf harf aynı | Oran |
+|---|---|---|---|
+| Peptid kütüphanesi | 117 | 116 | %99 |
+| Metodoloji | 38 | 37 | %97 |
+| Hakkımızda | 24 | 23 | %96 |
+| Sıkça sorulanlar | 56 | 54 | %96 |
+| Doğrulama | 27 | 25 | %93 |
+| **Toplam** | **262** | **255** | **%97** |
+
+Ana sayfada oran daha düşük (29 cümlenin 12'si), çünkü kopya alındıktan sonra
+bizim ana sayfamız değiştirildi. Klon sayfa 31 Ağustos 2026'da dondurulmuş
+(sunucunun gönderdiği `last-modified` başlığı) ve o günden beri güncellenmemiş.
+Yani ana sayfadaki fark, onların yazdığı bir şeyden değil, bizim sonradan
+eklediğimiz metinlerden kaynaklanıyor.
+
+Kütüphane sayfasındaki 117 cümlenin 116'sının aynı olması, tek tek bakılması
+gereken asıl delildir. Değişiklik yapılmamış, yeniden yazılmamış, kelime bile
+eklenmemiş.
+
+Örnekler:
 
 1. Sayfa başlığı: `ZPHC Türkiye · Resmi Peptid ve İnsan Büyüme Hormonu Distribütörü`
-   Ortadaki nokta işareti dahil aynı.
+   Ortadaki nokta işareti dahil aynı. Kütüphane sayfasının başlığı da aynı:
+   `Peptid Kütüphanesi · ZPHC Türkiye`
 2. `Sahte satıcılara dikkat. Siparişinizi sadece bizim WhatsApp hattımızdan verin.`
 3. `Aldığınız her kutunun kodunu validation.zphc.com adresinden doğrulayın.`
 4. `ZPHC Türkiye resmi distribütörüyüz. Ürünler doğrudan depomuzdan çıkıyor.`

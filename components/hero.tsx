@@ -1,13 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
 import { WhatsappCta } from "@/components/whatsapp-cta"
+import { InstagramCta } from "@/components/instagram-cta"
 import { products } from "@/lib/catalog"
+import { instagramHandle, instagramUrl, whatsappDisplay, whatsappLink } from "@/lib/contact"
 
 const TRUST_POINTS = [
-  "Resmî alan adı: zphctr.com",
-  "Üretici koduyla doğrulama",
-  "Türkiye stoğu",
-  "Ücretsiz kargo",
+  { label: "Resmî alan adı: zphctr.com" },
+  { label: "Üretici koduyla doğrulama", href: "/dogrulama" },
+  { label: "Türkiye stoğu" },
+  { label: "Ücretsiz kargo", href: "/kargo" },
+  { label: `WhatsApp ${whatsappDisplay}`, href: whatsappLink(), external: true },
+  { label: `Instagram ${instagramHandle}`, href: instagramUrl, external: true },
 ]
 
 const FEATURED_SLUGS = [
@@ -49,6 +53,7 @@ export function Hero() {
               size="compact"
               source="home_hero"
             />
+            <InstagramCta compact />
           </div>
         </div>
 
@@ -87,14 +92,18 @@ export function Hero() {
       </div>
 
       <div className="border-t border-hairline bg-background">
-        <ul className="mx-auto grid max-w-7xl grid-cols-2 px-6 md:grid-cols-4 md:px-10">
+        <ul className="mx-auto grid max-w-7xl grid-cols-2 px-6 sm:grid-cols-3 md:grid-cols-6 md:px-10">
           {TRUST_POINTS.map((point) => (
             <li
-              key={point}
-              className="flex min-h-12 items-center justify-center gap-2 border-hairline px-3 text-center text-xs font-semibold text-foreground odd:border-r md:border-r md:last:border-r-0"
+              key={point.label}
+              className="flex min-h-12 items-center justify-center border-r border-hairline px-2 text-center text-[0.68rem] font-semibold text-foreground last:border-r-0 sm:text-xs"
             >
-              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold" />
-              {point}
+              {point.href ? (
+                <a href={point.href} target={point.external ? "_blank" : undefined} rel={point.external ? "noopener noreferrer" : undefined} className="inline-flex items-center gap-1.5 transition-colors hover:text-gold">
+                  <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                  {point.label}
+                </a>
+              ) : <><span aria-hidden="true" className="mr-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />{point.label}</>}
             </li>
           ))}
         </ul>

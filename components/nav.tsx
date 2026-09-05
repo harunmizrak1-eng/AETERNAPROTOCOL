@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { siteName } from "@/lib/site"
 import { HeaderSearch } from "@/components/header-search"
-import { instagramHandle, instagramUrl, whatsappDisplay } from "@/lib/contact"
+import { instagramHandle, whatsappDisplay } from "@/lib/contact"
 
 /* Şeritte dönen uyarılar. Hepsi doğrulanabilir, gerçek bilgi: taklit
  * ürünlere karşı üreticinin kendi doğrulama sistemi, tek resmi sipariş

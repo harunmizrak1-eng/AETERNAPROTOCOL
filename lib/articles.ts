@@ -261,7 +261,6 @@ export const articles: Article[] = [
       "Biyobelirteç sözlüğümüzde ApoB'yi bu bağlamda detaylandırdık.",
     ],
     relatedLinks: [
-      { href: "/biyobelirtecler/apob", label: "Biyobelirteç: ApoB" },
       { href: "/peptidler/retatrutide", label: "Retatrutide bileşik sayfası" },
     ],
   },
@@ -300,7 +299,6 @@ export const articles: Article[] = [
     relatedLinks: [
       { href: "/peptidler/ipamorelin", label: "Ipamorelin bileşik sayfası" },
       { href: "/peptidler/sermorelin", label: "Sermorelin bileşik sayfası" },
-      { href: "/biyobelirtecler/igf-1", label: "Biyobelirteç: IGF-1" },
     ],
   },
   {
@@ -337,7 +335,6 @@ export const articles: Article[] = [
       "Toparlanmayı bir sayıya değil, bir yapıya bakarak değerlendirmek. Yaklaşımımızın temel farklarından biri bu.",
     ],
     relatedLinks: [
-      { href: "/biyobelirtecler/hrv", label: "Biyobelirteç: HRV" },
       { href: "/peptidler/dsip", label: "DSIP bileşik sayfası" },
     ],
   },

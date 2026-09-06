@@ -68,7 +68,7 @@ export function InternationalSeoPage({
     <div lang={locale} dir={ui.dir} className="min-h-screen bg-background text-foreground">
       <header className="border-b border-hairline bg-background px-6 py-4 md:px-10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
-          <Link href={`/${locale}`} aria-label={ui.hubTitle}>
+          <Link href="/" aria-label={ui.hubTitle}>
             <Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-8 w-auto" priority />
           </Link>
           <nav aria-label="Language" className="flex flex-wrap gap-2 text-xs font-semibold">
@@ -171,7 +171,7 @@ export function InternationalSeoPage({
       </main>
       <footer className="border-t border-hairline px-6 py-10 md:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-start">
-          <Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-7 w-auto" />
+          <Link href="/" aria-label="ZPHC Türkiye ana sayfası"><Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-7 w-auto" /></Link>
           <div className="flex flex-wrap justify-center gap-3 text-sm font-semibold">
             <Link href="/">{localeLabels.tr}</Link>
             {seoLocales.map((language) => <Link key={language} href={`/${language}`} hrefLang={language}>{localeLabels[language]}</Link>)}

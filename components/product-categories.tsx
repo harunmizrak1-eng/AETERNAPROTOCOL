@@ -44,9 +44,6 @@ export function ProductCategories() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">Ürününüzü bulun</p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">İhtiyacınıza göre keşfedin</h2>
-            <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base">
-              Tüm kataloğu taramak yerine ilgili ürün grubundan başlayın.
-            </p>
           </div>
           <div className="flex max-w-full gap-2 overflow-x-auto pb-1 text-sm font-semibold md:flex-wrap md:justify-end md:overflow-visible">
             {PRODUCT_FAMILY_LINKS.map((item) => (

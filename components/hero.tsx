@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import { WhatsappCta } from "@/components/whatsapp-cta"
+import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
+import { instagramUrl } from "@/lib/contact"
 import { products } from "@/lib/catalog"
 
 const TRUST_POINTS = [
@@ -32,9 +34,7 @@ export function Hero() {
             Orijinal ZPHC ürünleri, Türkiye’den hızlı gönderim.
           </h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
-            ZPHC Pharma (Zhengzhou Pharmaceutical) Türkiye kataloğunda {products.length} ürün,
-            üretici doğrulama kodu ve ücretsiz kargo. Fiyat ile güncel stok
-            bilgisini resmî WhatsApp hattımızdan alın.
+            Türkiye stoğu, doğrulanabilir kutu kodu ve ücretsiz kargo.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -45,10 +45,19 @@ export function Hero() {
               Ürünleri keşfedin
             </Link>
             <WhatsappCta
-              label="WhatsApp’tan fiyat sorun"
+              label="WhatsApp’tan sipariş verin"
               size="compact"
               source="home_hero"
             />
+            <TrackedOutboundLink
+              href={instagramUrl}
+              eventName="Instagram Click"
+              properties={{ source: "home_hero" }}
+              ariaLabel="ZPHC Türkiye Instagram hesabını takip et"
+              className="inline-flex min-h-11 items-center justify-center rounded-full border border-gold/35 bg-background px-5 text-sm font-bold text-gold transition-colors hover:border-gold hover:bg-gold/5"
+            >
+              Instagram’dan takip edin
+            </TrackedOutboundLink>
           </div>
         </div>
 

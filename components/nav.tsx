@@ -83,7 +83,7 @@ export function Nav() {
         </div>
       </div>
 
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-4 sm:px-6 sm:py-5 md:px-10">
         <div className="flex min-w-0 items-center gap-2.5">
           <Link
             href="/"
@@ -99,7 +99,7 @@ export function Nav() {
               className="h-7 w-auto"
             />
           </Link>
-          <span className="hidden shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-semibold text-gold min-[380px]:inline-flex">
+          <span className="hidden shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-gold/40 bg-gold/10 px-2 py-0.5 text-[10px] font-semibold text-gold lg:inline-flex">
             <svg
               aria-hidden="true"
               viewBox="0 0 20 20"
@@ -132,7 +132,7 @@ export function Nav() {
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <CartButton compact />
           <button
             type="button"

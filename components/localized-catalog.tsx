@@ -21,7 +21,7 @@ export function LocalizedCatalog({ locale }: { locale: SeoLocale }) {
     <div lang={locale} dir={ui.dir} className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 border-b border-hairline bg-white/95 px-6 py-4 backdrop-blur md:px-10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
-          <Link href={`/${locale}`}><Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-8 w-auto" priority /></Link>
+          <Link href="/"><Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-8 w-auto" priority /></Link>
           <div className="flex items-center gap-3 text-xs font-bold">
             <Link href={`/${locale}`}>{ui.languageName}</Link>
             <a href={instagramUrl} target="_blank" rel="noopener noreferrer">{instagramHandle}</a>

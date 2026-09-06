@@ -1,15 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { WhatsappCta } from "@/components/whatsapp-cta"
-import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
-import { instagramUrl } from "@/lib/contact"
 import { products } from "@/lib/catalog"
 
 const TRUST_POINTS = [
-  { label: "Resmî alan adı: zphctr.com" },
-  { label: "Üretici koduyla doğrulama", href: "/dogrulama" },
-  { label: "Türkiye stoğu" },
-  { label: "Ücretsiz kargo", href: "/kargo" },
+  { icon: "✓", title: "Orijinallik kontrolü", detail: "Üretici koduyla doğrulayın", href: "/dogrulama" },
+  { icon: "▣", title: "Türkiye stoğu", detail: "Ürünler yerel depodan çıkar" },
+  { icon: "→", title: "Ücretsiz kargo", detail: "Hızlı ve takip edilebilir", href: "/kargo" },
 ]
 
 const FEATURED_SLUGS = [
@@ -28,13 +25,13 @@ export function Hero() {
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-9 md:grid-cols-[1.05fr_0.95fr] md:items-center md:px-10 md:py-12 lg:gap-14 lg:py-14">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
-            ZPHC Türkiye Resmî Distribütörü
+            ZPHC Türkiye
           </p>
           <h1 className="mt-3 max-w-3xl text-balance text-4xl font-bold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl">
-            Orijinal ZPHC ürünleri, Türkiye’den hızlı gönderim.
+            Kutuyu görün.<br />Kodu doğrulayın.<br />Sonra karar verin.
           </h1>
           <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
-            Türkiye stoğu, doğrulanabilir kutu kodu ve ücretsiz kargo.
+            Orijinal ZPHC ürünleri, Türkiye stoğu ve üreticinin kendi doğrulama sistemi. Fiyat, stok ve gönderim bilgisi ürün sayfasında.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -42,22 +39,13 @@ export function Hero() {
               href="/urunler"
               className="inline-flex min-h-11 items-center justify-center rounded-full bg-gold px-6 text-sm font-bold text-primary-foreground transition-colors hover:bg-gold/85"
             >
-              Ürünleri keşfedin
+              Mağazaya gir →
             </Link>
             <WhatsappCta
-              label="WhatsApp’tan sipariş verin"
+              label="WhatsApp’tan yazın"
               size="compact"
               source="home_hero"
             />
-            <TrackedOutboundLink
-              href={instagramUrl}
-              eventName="Instagram Click"
-              properties={{ source: "home_hero" }}
-              ariaLabel="ZPHC Türkiye Instagram hesabını takip et"
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-gold/35 bg-background px-5 text-sm font-bold text-gold transition-colors hover:border-gold hover:bg-gold/5"
-            >
-              Instagram’dan takip edin
-            </TrackedOutboundLink>
           </div>
         </div>
 
@@ -95,19 +83,16 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="border-t border-hairline bg-background">
-        <ul className="mx-auto grid max-w-7xl grid-cols-2 px-6 md:grid-cols-4 md:px-10">
+      <div className="border-t border-hairline bg-background px-6 py-5 md:px-10">
+        <ul className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-3">
           {TRUST_POINTS.map((point) => (
             <li
-              key={point.label}
-              className="flex min-h-12 items-center justify-center border-r border-hairline px-2 text-center text-[0.68rem] font-semibold text-foreground last:border-r-0 sm:text-xs"
+              key={point.title}
+              className="relative flex min-h-20 items-center gap-3 rounded-xl border border-hairline bg-surface px-4 py-3 transition-colors hover:border-gold/35"
             >
-              {point.href ? (
-                <a href={point.href} target={point.external ? "_blank" : undefined} rel={point.external ? "noopener noreferrer" : undefined} className="inline-flex items-center gap-1.5 transition-colors hover:text-gold">
-                  <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                  {point.label}
-                </a>
-              ) : <><span aria-hidden="true" className="mr-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />{point.label}</>}
+              <span aria-hidden="true" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 text-lg font-bold text-gold">{point.icon}</span>
+              <div><strong className="block text-sm text-foreground">{point.title}</strong><span className="mt-0.5 block text-xs text-muted-foreground">{point.detail}</span></div>
+              {point.href && <Link href={point.href} aria-label={point.title} className="absolute inset-0" />}
             </li>
           ))}
         </ul>

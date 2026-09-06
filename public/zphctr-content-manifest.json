@@ -1,7 +1,7 @@
 {
   "canonicalDomain": "https://zphctr.com",
   "publisher": "ZPHC Türkiye",
-  "generatedAt": "2026-09-06T01:37:31.593Z",
+  "generatedAt": "2026-09-06T01:47:45.593Z",
   "algorithm": "SHA-256",
   "purpose": "Original-content provenance and clone complaint evidence",
   "files": [
@@ -191,7 +191,7 @@
     },
     {
       "path": "components/nav.tsx",
-      "sha256": "0c6fe49c72f3e286aab3e1ca34cef3011d5c9539e844d13c4a7ec287140c0c73"
+      "sha256": "d6134b2c20dccbeeaaf17b18628589fd8c805c923a4a6df6ad6eb1dfd7306123"
     },
     {
       "path": "components/newsletter.tsx",

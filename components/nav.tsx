@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { siteName } from "@/lib/site"
 import { HeaderSearch } from "@/components/header-search"
-import { instagramHandle, instagramUrl } from "@/lib/contact"
 
 /* Şeritte dönen uyarılar. Hepsi doğrulanabilir, gerçek bilgi: taklit
  * ürünlere karşı üreticinin kendi doğrulama sistemi, tek resmi sipariş
@@ -72,10 +71,7 @@ export function Nav() {
       </div>
 
       <div className="border-b border-hairline bg-surface/70 px-4 py-2 sm:px-6 md:px-10">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3">
-          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="min-w-0 truncate text-xs font-semibold text-muted-foreground transition-colors hover:text-gold">
-            Instagram {instagramHandle}
-          </a>
+        <div className="mx-auto flex max-w-6xl items-center justify-end">
           <nav aria-label="Dil seçimi" className="flex shrink-0 items-center gap-1">
             {LANGUAGE_LINKS.map((language) => (
               <Link key={language.label} href={language.href} hrefLang={language.label.toLowerCase()} lang={language.label.toLowerCase()} title={language.name} aria-label={language.name} className={`inline-flex min-h-8 min-w-8 items-center justify-center rounded-full border px-2 text-[11px] font-bold transition-colors ${language.label === "TR" ? "border-gold/50 bg-gold/10 text-gold" : "border-hairline bg-background text-muted-foreground hover:border-gold/50 hover:text-gold"}`}>

@@ -16,6 +16,7 @@ import { getPlainSummary } from "@/lib/plain-summaries"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 import { ProductPurchaseBar } from "@/components/product-purchase-bar"
 import { ProductReviews } from "@/components/product-reviews"
+import { getApprovedReviews } from "@/lib/review-store"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -92,6 +93,10 @@ export default async function UrunPage({
   const technical = product.specs.filter((s) => s.kind === "spec")
   const claims = product.specs.filter((s) => s.kind === "claim")
   const productPrice = getProductPrice(product.slug)
+  const reviews = await getApprovedReviews(product.slug, 100)
+  const averageRating = reviews.length
+    ? reviews.reduce((total, review) => total + review.rating, 0) / reviews.length
+    : 0
 
   // schema.org Product: arama sonuçlarında görsel, stok ve marka görünsün.
   // Fiyat yayımlanmadığı için offers yalnızca stok durumu taşır; uydurma
@@ -113,6 +118,13 @@ export default async function UrunPage({
       priceCurrency: "TRY",
       price: productPrice,
     },
+    aggregateRating: reviews.length
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: averageRating.toFixed(1),
+          reviewCount: reviews.length,
+        }
+      : undefined,
   }
 
   return (
@@ -124,7 +136,7 @@ export default async function UrunPage({
       <Nav />
       <main id="main-content" className="bg-background">
         <article className="px-6 pb-28 md:px-10">
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-7xl">
             <nav aria-label="Konum" className="text-sm text-muted-foreground">
               <ol className="flex flex-wrap items-center gap-1.5">
                 <li>
@@ -148,116 +160,65 @@ export default async function UrunPage({
               </ol>
             </nav>
 
-            <h1 className="mt-6 text-balance text-3xl font-bold leading-snug tracking-tight text-foreground sm:text-4xl">
-              {product.name}
-            </h1>
-
-            {product.sku && (
-              <p className="mt-4 font-mono text-sm text-muted-foreground">
-                SKU: {product.sku}
-              </p>
-            )}
-
-            {product.image && (
-              <div className="mt-8 border border-hairline bg-surface p-8">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={1000}
-                  height={1000}
-                  priority
-                  className={`mx-auto w-full max-w-lg ${
-                    product.slug === "ghk-cu-200mg-zphc"
-                      ? "aspect-square object-cover"
-                      : "object-contain"
-                  }`}
-                />
+            <div className="mt-6 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14">
+              <div className="relative overflow-hidden rounded-3xl border border-hairline bg-[radial-gradient(circle_at_50%_30%,#ffffff_0%,#eef6fa_72%)] p-5 sm:p-10">
+                <span className="absolute left-5 top-5 rounded-full border border-white/80 bg-white/85 px-3 py-1.5 text-xs font-bold text-gold shadow-sm backdrop-blur">Orijinal ZPHC</span>
+                {product.image && (
+                  <Image src={product.image} alt={product.name} width={1000} height={1000} priority sizes="(max-width: 1023px) 90vw, 48vw" className={`mx-auto aspect-square w-full max-w-xl ${product.slug === "ghk-cu-200mg-zphc" ? "object-cover" : "object-contain"}`} />
+                )}
               </div>
-            )}
 
-            {/* Price slot. Deliberately empty until real pricing is supplied;
-                the enquiry button carries the action in the meantime. */}
-            <div className="mt-10 flex flex-col gap-4 border-y border-hairline py-8 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-4">
-                <p className="text-3xl font-bold text-foreground">
-                  {productPrice ? formatProductPrice(productPrice) : product.price ?? (
-                    <span className="text-xl font-semibold text-muted-foreground">
-                      Fiyat için yazın
-                    </span>
-                  )}
-                </p>
-                <StockBadge inStock={product.inStock} />
-              </div>
-              <div>
-                <WhatsappCta
-                  product={product.name}
-                  label={productPrice ? "WhatsApp’tan sipariş ver" : "WhatsApp’tan fiyat sorun"}
-                  message={
-                    productPrice
-                      ? `Merhaba, ${product.name} ürününü ${formatProductPrice(productPrice)} fiyatıyla sipariş vermek istiyorum. Stok durumunu teyit eder misiniz?`
-                      : undefined
-                  }
-                />
-                <p className="mt-2 text-center text-xs text-muted-foreground">
-                  Resmî WhatsApp hattı · Ürün adı mesaja hazır eklenir
-                </p>
+              <div className="lg:pt-3">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">{categoryLabels[product.category]} · Türkiye stoğu</p>
+                <h1 className="mt-3 text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">{product.name}</h1>
+
+                <a href="#yorumlar" className="mt-4 inline-flex flex-wrap items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-70">
+                  <span className="tracking-[0.12em] text-gold" aria-label={reviews.length ? `${averageRating.toFixed(1)} yıldız` : "Henüz puan yok"}>{reviews.length ? "★".repeat(Math.round(averageRating)) : "☆☆☆☆☆"}<span className="text-slate-200">{reviews.length ? "★".repeat(5 - Math.round(averageRating)) : ""}</span></span>
+                  <span className="text-foreground">{reviews.length ? `${averageRating.toFixed(1)} · ${reviews.length} yorum` : "Henüz yorum yok"}</span>
+                  <span className="text-gold">Yorumları görün →</span>
+                </a>
+
+                {plainSummary && <p className="mt-6 text-base leading-7 text-foreground/75 sm:text-lg">{plainSummary}</p>}
+
+                <div className="mt-7 rounded-2xl border border-hairline bg-white p-5 shadow-[0_18px_45px_rgba(0,49,76,0.08)] sm:p-6">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">{productPrice ? formatProductPrice(productPrice) : product.price ?? <span className="text-xl font-semibold text-muted-foreground">Fiyat için yazın</span>}</p>
+                    <StockBadge inStock={product.inStock} />
+                  </div>
+                  <div className="mt-5 [&_a]:w-full [&_a]:min-h-12 [&_a]:text-base">
+                    <WhatsappCta product={product.name} label={productPrice ? "WhatsApp’tan sipariş ver" : "WhatsApp’tan fiyat sorun"} message={productPrice ? `Merhaba, ${product.name} ürününü ${formatProductPrice(productPrice)} fiyatıyla sipariş vermek istiyorum. Stok durumunu teyit eder misiniz?` : undefined} />
+                  </div>
+                  <p className="mt-3 text-center text-xs leading-5 text-muted-foreground">Ürün adı ve fiyat mesaja otomatik eklenir. Sipariş resmî WhatsApp hattında teyit edilir.</p>
+                </div>
+
+                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#eef8f2] px-4 py-3 text-sm text-foreground"><span aria-hidden="true" className="text-lg text-tier-proven">✓</span><p><strong>Ücretsiz, ertesi gün kargo.</strong> Yurtiçi Kargo ile gönderilir. <Link href="/kargo" className="font-semibold text-gold hover:underline">Koşulları görün</Link></p></div>
+                {product.sku && <p className="mt-4 font-mono text-[0.7rem] text-muted-foreground">Ürün kodu: {product.sku}</p>}
               </div>
             </div>
 
-            {/* Kargo bilgisi fiyatın hemen altında. Siteyi ilk gösterdiğimiz
-                müşterinin ilk iki sorusundan biri "burdan alsam kaç güne
-                gelir" oldu; cevap ayrı bir sayfada duruyordu ve kimse oraya
-                gitmiyordu. Karar verilen yere taşındı. */}
-            <p className="mt-4 text-sm text-muted-foreground">
-              <span className="font-semibold text-foreground">
-                Ertesi gün kargo.
-              </span>{" "}
-              Yurtiçi Kargo ile gönderiyoruz, kargo ücreti almıyoruz.{" "}
-              <Link
-                href="/kargo"
-                className="text-gold underline-offset-4 hover:underline"
-              >
-                Kargo koşulları
-              </Link>
-            </p>
+            <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-3">
+              <li className="bg-white p-5"><p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">01 · Doğrulama</p><p className="mt-2 text-sm leading-6 text-muted-foreground">Kutudaki kodu üreticinin sisteminde kendiniz kontrol edin.</p><Link href="/dogrulama" className="mt-3 inline-block text-xs font-bold text-gold">Nasıl doğrulanır? →</Link></li>
+              <li className="bg-white p-5"><p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">02 · Gönderim</p><p className="mt-2 text-sm leading-6 text-muted-foreground">Türkiye stoğundan, ücretsiz ve takip edilebilir kargo.</p><Link href="/kargo" className="mt-3 inline-block text-xs font-bold text-gold">Kargo bilgisi →</Link></li>
+              <li className="bg-white p-5"><p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">03 · Destek</p><p className="mt-2 text-sm leading-6 text-muted-foreground">Sipariş öncesi ve sonrasında aynı resmî WhatsApp hattı.</p><span className="mt-3 inline-block text-xs font-bold text-tier-proven">Çevrim içi destek</span></li>
+            </ul>
 
-            {/* Sade açıklama. Teknik özellikler aşağıda zaten var; buradaki
-                metin "bu ne işe yarıyor" sorusuna günlük dille cevap veriyor.
-                Karşılığı olmayan bileşiklerde kütüphanedeki özete düşer. */}
-            {plainSummary && (
-              <div className="mt-10 border border-hairline bg-surface p-6">
-                <h2 className="text-base font-bold tracking-tight text-foreground">
-                  Bu ürün ne işe yarıyor?
-                </h2>
-                <p className="mt-3 text-base leading-relaxed text-foreground/85">
-                  {plainSummary}
-                </p>
-                {peptide && (
-                  <Link
-                    href={`/peptidler/${peptide.slug}`}
-                    className="mt-4 inline-block text-sm font-semibold text-gold hover:underline"
-                  >
-                    Bileşiğin ayrıntılı kaydı ve kaynakları →
-                  </Link>
-                )}
-              </div>
-            )}
+            <ProductReviews productSlug={product.slug} productName={product.name} reviews={reviews.slice(0, 6)} reviewCount={reviews.length} averageRating={averageRating} />
 
             {technical.length > 0 && (
-              <div className="mt-12">
+              <div className="mt-12 rounded-2xl border border-hairline bg-white p-6 sm:p-8">
                 <h2 className="text-xl font-bold tracking-tight text-foreground">
                   Ürün bilgisi
                 </h2>
-                <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
+                <dl className="mt-6 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-2">
                   {technical.map((spec) => (
                     <div
                       key={spec.label}
-                      className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
+                      className="flex flex-col gap-1 bg-white p-4"
                     >
-                      <dt className="text-sm font-semibold text-foreground sm:w-48 sm:shrink-0">
+                      <dt className="text-xs font-bold uppercase tracking-[0.1em] text-gold">
                         {spec.label}
                       </dt>
-                      <dd className="text-base leading-relaxed text-muted-foreground">
+                      <dd className="mt-2 text-sm leading-6 text-muted-foreground">
                         {spec.value}
                       </dd>
                     </div>
@@ -271,29 +232,13 @@ export default async function UrunPage({
                 overstate what the evidence supports. The tier badge below,
                 drawn from the library, is the site's own assessment. */}
             {claims.length > 0 && (
-              <div className="mt-12 border border-hairline bg-muted/20 p-6 sm:p-8">
-                <h2 className="text-xl font-bold tracking-tight text-foreground">
-                  Üretici beyanı
-                </h2>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  ZPHC&apos;nin kendi ürün açıklamasından.
-                </p>
+              <details className="group mt-5 rounded-2xl border border-hairline bg-muted/20 p-6 sm:p-8">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4"><span><span className="block text-xs font-bold uppercase tracking-[0.14em] text-gold">Ayrıntılı bilgi</span><span className="mt-1 block text-xl font-bold tracking-tight text-foreground">Üretici beyanları</span></span><span aria-hidden="true" className="text-2xl text-gold transition group-open:rotate-45">+</span></summary>
+                <p className="mt-4 text-sm text-muted-foreground">Bu bölüm ZPHC&apos;nin kendi ürün açıklamasından aktarılmıştır.</p>
                 <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
-                  {claims.map((spec) => (
-                    <div
-                      key={spec.label}
-                      className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8"
-                    >
-                      <dt className="text-sm font-semibold text-foreground sm:w-48 sm:shrink-0">
-                        {spec.label}
-                      </dt>
-                      <dd className="text-base leading-relaxed text-muted-foreground">
-                        {spec.value}
-                      </dd>
-                    </div>
-                  ))}
+                  {claims.map((spec) => <div key={spec.label} className="py-4 sm:grid sm:grid-cols-[12rem_1fr] sm:gap-6"><dt className="text-sm font-semibold text-foreground">{spec.label}</dt><dd className="mt-1 text-sm leading-6 text-muted-foreground sm:mt-0">{spec.value}</dd></div>)}
                 </dl>
-              </div>
+              </details>
             )}
 
             {product.notes.length > 0 && (
@@ -313,8 +258,9 @@ export default async function UrunPage({
             )}
 
             {peptide && (
-              <div className="mt-12 border-t border-hairline pt-10">
-                <div className="flex items-center gap-3">
+              <details className="group mt-5 rounded-2xl border border-hairline bg-white p-6 sm:p-8">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4"><span><span className="block text-xs font-bold uppercase tracking-[0.14em] text-gold">Kaynaklı içerik</span><span className="mt-1 block text-xl font-bold tracking-tight text-foreground">Bilimsel arka plan</span></span><span aria-hidden="true" className="text-2xl text-gold transition group-open:rotate-45">+</span></summary>
+                <div className="mt-6 flex items-center gap-3">
                   <span
                     aria-hidden="true"
                     className={`font-mono text-sm ${tierColorVar[peptide.tier]}`}
@@ -367,7 +313,7 @@ export default async function UrunPage({
                 >
                   Bileşiğin tam kaydını gör →
                 </Link>
-              </div>
+              </details>
             )}
 
             <SizeComparison product={product} />
@@ -379,8 +325,6 @@ export default async function UrunPage({
                 title="Aynı bileşiğin diğer ürünleri"
               />
             )}
-
-            <ProductReviews productSlug={product.slug} productName={product.name} />
 
             <p className="mt-12 border-t border-hairline pt-8 text-sm leading-relaxed text-muted-foreground">
               Bu ürünler laboratuvar ve araştırma materyali olarak sunulur;

@@ -136,12 +136,25 @@ export default async function UrunPage({
         }
       : undefined,
   }
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Ana sayfa", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Ürünler", item: `${siteUrl}/urunler` },
+      { "@type": "ListItem", position: 3, name: product.name, item: `${siteUrl}/urunler/${product.slug}` },
+    ],
+  }
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <Nav />
       <main id="main-content" className="bg-background">

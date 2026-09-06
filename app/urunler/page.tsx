@@ -6,6 +6,8 @@ import { WhatsappCta } from "@/components/whatsapp-cta"
 import { ProductCatalog } from "@/components/product-catalog"
 import { ShopSidebar } from "@/components/shop-sidebar"
 import { getCategoryInfo } from "@/lib/category-info"
+import { products } from "@/lib/catalog"
+import { siteUrl } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Ürünler",
@@ -32,10 +34,27 @@ export default async function UrunlerPage({
   // çıkıyordu — arama motoru da ilk boyama da ürünsüz bir sayfa görüyordu.
   const { kategori } = await searchParams
   const info = getCategoryInfo(kategori)
+  const catalogueJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: info?.title ?? "ZPHC Türkiye ürün kataloğu",
+    url: `${siteUrl}/urunler`,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: products.length,
+      itemListElement: products.map((product, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: product.name,
+        url: `${siteUrl}/urunler/${product.slug}`,
+      })),
+    },
+  }
 
   return (
     <>
       <Nav />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogueJsonLd).replace(/</g, "\\u003c") }} />
       <main id="main-content" className="bg-background">
         <section className="px-6 pb-8 md:px-10">
           <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-4">

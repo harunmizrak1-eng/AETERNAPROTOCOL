@@ -22,11 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/sss",
     "/hakkimizda",
     "/kargo",
-    "/iade",
-    "/kosullar",
-    "/gizlilik",
-    "/yorum",
-    "/orijin",
+    // Form, legal and origin-record routes remain reachable from the site but
+    // are not useful search landing pages. Keeping them out of the sitemap
+    // leaves crawl capacity for products, categories and editorial pages.
     "/zphc-reta",
     "/zphc-bpc-157",
     "/zphc-ghk-cu",
@@ -39,21 +37,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: storefrontUpdatedAt,
+    changeFrequency: "weekly" as const,
+    priority: path === "" ? 1 : path === "/urunler" ? 0.9 : 0.7,
   }))
 
   const articleRoutes = articles.map((a) => ({
     url: `${siteUrl}/journal/${a.slug}`,
     lastModified: new Date(a.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
   }))
 
   const peptideRoutes = peptides.map((p) => ({
     url: `${siteUrl}/peptidler/${p.slug}`,
     lastModified: libraryUpdatedAt,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
   }))
 
   const productRoutes = products.map((p) => ({
     url: `${siteUrl}/urunler/${p.slug}`,
     lastModified: storefrontUpdatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
     images: p.image ? [`${siteUrl}${p.image}`] : undefined,
   }))
 

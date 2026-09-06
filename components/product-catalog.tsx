@@ -138,20 +138,6 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
         </ul>
       )}
 
-      {/* Google can discover every canonical product URL from this plain HTML
-          list even before a client-side filter is used. The collapsed view
-          keeps the catalogue focused for customers instead of adding another
-          wall of cards to the page. */}
-      <details className="mt-8 rounded-xl border border-hairline bg-surface px-4 py-3">
-        <summary className="cursor-pointer text-sm font-bold text-foreground">Tüm ürün bağlantıları</summary>
-        <nav aria-label="Tüm ürünler" className="mt-4 grid grid-cols-2 gap-x-5 gap-y-2 border-t border-hairline pt-4 sm:grid-cols-3 lg:grid-cols-4">
-          {products.map((product) => (
-            <Link key={product.slug} href={`/urunler/${product.slug}`} className="text-xs leading-5 text-muted-foreground transition-colors hover:text-gold">
-              {product.name}
-            </Link>
-          ))}
-        </nav>
-      </details>
     </>
   )
 }

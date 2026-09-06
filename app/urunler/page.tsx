@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Suspense } from "react"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
@@ -89,6 +90,16 @@ export default async function UrunlerPage({
               </Suspense>
             </div>
           </div>
+          <details className="mx-auto mt-10 max-w-7xl rounded-xl border border-hairline bg-surface px-4 py-3">
+            <summary className="cursor-pointer text-sm font-bold text-foreground">Tüm ürün bağlantıları</summary>
+            <nav aria-label="Tüm ürünler" className="mt-4 grid grid-cols-2 gap-x-5 gap-y-2 border-t border-hairline pt-4 sm:grid-cols-3 lg:grid-cols-4">
+              {products.map((product) => (
+                <Link key={product.slug} href={`/urunler/${product.slug}`} className="text-xs leading-5 text-muted-foreground transition-colors hover:text-gold">
+                  {product.name}
+                </Link>
+              ))}
+            </nav>
+          </details>
         </section>
 
         <section className="border-t border-hairline px-6 py-20 text-center">

@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   const response = await fetch(`${url}/rest/v1/reviews`, {
     method: "POST",
     headers: { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json", Prefer: "return=minimal" },
-    body: JSON.stringify({ display_name: displayName, body, rating, product_slug: product?.slug ?? null, product_name: product?.name ?? null }),
+    body: JSON.stringify({ display_name: displayName, body, rating, product_slug: product?.slug ?? null, product_name: product?.name ?? null, status: "approved" }),
   })
   if (!response.ok) return NextResponse.json({ error: "Yorum kaydedilemedi. Lütfen tekrar deneyin." }, { status: 502 })
   return NextResponse.json({ ok: true })

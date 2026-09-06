@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { notFound } from "next/navigation"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
@@ -10,13 +9,17 @@ import { getPeptide, tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 import { citations } from "@/lib/citations"
 import { siteUrl } from "@/lib/site"
 import { RelatedProducts } from "@/components/related-products"
-import { SizeComparison } from "@/components/size-comparison"
+import { comparableSizes } from "@/lib/product-size"
 import { StockBadge } from "@/components/product-card"
 import { getPlainSummary } from "@/lib/plain-summaries"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 import { ProductPurchaseBar } from "@/components/product-purchase-bar"
 import { ProductReviews } from "@/components/product-reviews"
 import { getApprovedReviews } from "@/lib/review-store"
+import { ProductGallery } from "@/components/product-gallery"
+import { ProductVariantSelector } from "@/components/product-variant-selector"
+import { ProductBuyActions } from "@/components/store-cart"
+import { RecentlyViewed } from "@/components/recently-viewed"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -93,6 +96,13 @@ export default async function UrunPage({
   const technical = product.specs.filter((s) => s.kind === "spec")
   const claims = product.specs.filter((s) => s.kind === "claim")
   const productPrice = getProductPrice(product.slug)
+  const variants = comparableSizes(product, products).map(({ product: variant, size }) => ({
+    slug: variant.slug,
+    label: `${size.amount} ${size.unit}`,
+    price: getProductPrice(variant.slug),
+    active: variant.slug === product.slug,
+    inStock: variant.inStock,
+  }))
   const reviews = await getApprovedReviews(product.slug, 100)
   const averageRating = reviews.length
     ? reviews.reduce((total, review) => total + review.rating, 0) / reviews.length
@@ -161,12 +171,7 @@ export default async function UrunPage({
             </nav>
 
             <div className="mt-6 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14">
-              <div className="relative overflow-hidden rounded-3xl border border-hairline bg-[radial-gradient(circle_at_50%_30%,#ffffff_0%,#eef6fa_72%)] p-5 sm:p-10">
-                <span className="absolute left-5 top-5 rounded-full border border-white/80 bg-white/85 px-3 py-1.5 text-xs font-bold text-gold shadow-sm backdrop-blur">Orijinal ZPHC</span>
-                {product.image && (
-                  <Image src={product.image} alt={product.name} width={1000} height={1000} priority sizes="(max-width: 1023px) 90vw, 48vw" className={`mx-auto aspect-square w-full max-w-xl ${product.slug === "ghk-cu-200mg-zphc" ? "object-cover" : "object-contain"}`} />
-                )}
-              </div>
+              <ProductGallery name={product.name} images={product.image ? [product.image] : []} crop={product.slug === "ghk-cu-200mg-zphc"} />
 
               <div className="lg:pt-3">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">{categoryLabels[product.category]} · Türkiye stoğu</p>
@@ -180,15 +185,17 @@ export default async function UrunPage({
 
                 {plainSummary && <p className="mt-6 text-base leading-7 text-foreground/75 sm:text-lg">{plainSummary}</p>}
 
+                <ProductVariantSelector variants={variants} />
+
                 <div className="mt-7 rounded-2xl border border-hairline bg-white p-5 shadow-[0_18px_45px_rgba(0,49,76,0.08)] sm:p-6">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">{productPrice ? formatProductPrice(productPrice) : product.price ?? <span className="text-xl font-semibold text-muted-foreground">Fiyat için yazın</span>}</p>
                     <StockBadge inStock={product.inStock} />
                   </div>
-                  <div className="mt-5 [&_a]:w-full [&_a]:min-h-12 [&_a]:text-base">
-                    <WhatsappCta product={product.name} label={productPrice ? "WhatsApp’tan sipariş ver" : "WhatsApp’tan fiyat sorun"} message={productPrice ? `Merhaba, ${product.name} ürününü ${formatProductPrice(productPrice)} fiyatıyla sipariş vermek istiyorum. Stok durumunu teyit eder misiniz?` : undefined} />
+                  <div className="mt-5">
+                    {productPrice ? <ProductBuyActions product={{ slug: product.slug, name: product.name, image: product.image, price: productPrice }} inStock={product.inStock} /> : <div className="[&_a]:w-full [&_a]:min-h-12"><WhatsappCta product={product.name} label="WhatsApp’tan fiyat sorun" source="product_detail" /></div>}
                   </div>
-                  <p className="mt-3 text-center text-xs leading-5 text-muted-foreground">Ürün adı ve fiyat mesaja otomatik eklenir. Sipariş resmî WhatsApp hattında teyit edilir.</p>
+                  <p className="mt-3 text-center text-xs leading-5 text-muted-foreground">Sepetiniz tek mesaj halinde resmî WhatsApp hattına aktarılır.</p>
                 </div>
 
                 <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#eef8f2] px-4 py-3 text-sm text-foreground"><span aria-hidden="true" className="text-lg text-tier-proven">✓</span><p><strong>Ücretsiz, ertesi gün kargo.</strong> Yurtiçi Kargo ile gönderilir. <Link href="/kargo" className="font-semibold text-gold hover:underline">Koşulları görün</Link></p></div>
@@ -202,13 +209,11 @@ export default async function UrunPage({
               <li className="bg-white p-5"><p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">03 · Destek</p><p className="mt-2 text-sm leading-6 text-muted-foreground">Sipariş öncesi ve sonrasında aynı resmî WhatsApp hattı.</p><span className="mt-3 inline-block text-xs font-bold text-tier-proven">Çevrim içi destek</span></li>
             </ul>
 
-            <ProductReviews productSlug={product.slug} productName={product.name} reviews={reviews.slice(0, 6)} reviewCount={reviews.length} averageRating={averageRating} />
+            <ProductReviews productSlug={product.slug} productName={product.name} reviews={reviews} reviewCount={reviews.length} averageRating={averageRating} />
 
             {technical.length > 0 && (
-              <div className="mt-12 rounded-2xl border border-hairline bg-white p-6 sm:p-8">
-                <h2 className="text-xl font-bold tracking-tight text-foreground">
-                  Ürün bilgisi
-                </h2>
+              <details className="group mt-5 rounded-2xl border border-hairline bg-white p-6 sm:p-8">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4"><span><span className="block text-xs font-bold uppercase tracking-[0.14em] text-gold">Ürün ayrıntıları</span><span className="mt-1 block text-xl font-bold tracking-tight text-foreground">İçerik ve kutu bilgisi</span></span><span aria-hidden="true" className="text-2xl text-gold transition group-open:rotate-45">+</span></summary>
                 <dl className="mt-6 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-2">
                   {technical.map((spec) => (
                     <div
@@ -224,7 +229,7 @@ export default async function UrunPage({
                     </div>
                   ))}
                 </dl>
-              </div>
+              </details>
             )}
 
             {/* Manufacturer claims are kept visually distinct from verified
@@ -239,22 +244,6 @@ export default async function UrunPage({
                   {claims.map((spec) => <div key={spec.label} className="py-4 sm:grid sm:grid-cols-[12rem_1fr] sm:gap-6"><dt className="text-sm font-semibold text-foreground">{spec.label}</dt><dd className="mt-1 text-sm leading-6 text-muted-foreground sm:mt-0">{spec.value}</dd></div>)}
                 </dl>
               </details>
-            )}
-
-            {product.notes.length > 0 && (
-              <ul className="mt-10 space-y-2">
-                {product.notes.map((note) => (
-                  <li
-                    key={note}
-                    className="flex gap-3 text-base leading-relaxed text-muted-foreground"
-                  >
-                    <span aria-hidden="true" className="text-gold/70">
-                      ·
-                    </span>
-                    {note}
-                  </li>
-                ))}
-              </ul>
             )}
 
             {peptide && (
@@ -316,15 +305,16 @@ export default async function UrunPage({
               </details>
             )}
 
-            <SizeComparison product={product} />
-
             {product.peptideSlug && (
               <RelatedProducts
                 peptideSlug={product.peptideSlug}
                 excludeSlug={product.slug}
                 title="Aynı bileşiğin diğer ürünleri"
+                compact
               />
             )}
+
+            <RecentlyViewed product={{ slug: product.slug, name: product.name, image: product.image, price: productPrice }} />
 
             <p className="mt-12 border-t border-hairline pt-8 text-sm leading-relaxed text-muted-foreground">
               Bu ürünler laboratuvar ve araştırma materyali olarak sunulur;

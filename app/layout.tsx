@@ -6,6 +6,7 @@ import { ProductCompareProvider } from '@/components/product-compare'
 import { homeLanguageAlternates } from '@/lib/international-seo'
 import { instagramUrl, whatsappLink } from '@/lib/contact'
 import { OriginGuard } from '@/components/origin-guard'
+import { StoreCartProvider } from '@/components/store-cart'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -101,10 +102,12 @@ export default function RootLayout({
         >
           İçeriğe geç
         </a>
-        <ProductCompareProvider>
-          {children}
-          <WhatsappFloat />
-        </ProductCompareProvider>
+        <StoreCartProvider>
+          <ProductCompareProvider>
+            {children}
+            <WhatsappFloat />
+          </ProductCompareProvider>
+        </StoreCartProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

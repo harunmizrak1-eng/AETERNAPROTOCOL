@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { siteName } from "@/lib/site"
 import { HeaderSearch } from "@/components/header-search"
+import { CartButton } from "@/components/store-cart"
 
 /* Şeritte dönen uyarılar. Hepsi doğrulanabilir, gerçek bilgi: taklit
  * ürünlere karşı üreticinin kendi doğrulama sistemi, tek resmi sipariş
@@ -131,15 +132,18 @@ export function Nav() {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-nav-panel"
-          className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:hidden"
-        >
-          {open ? "Kapat" : "Menü"}
-        </button>
+        <div className="flex items-center gap-2">
+          <CartButton compact />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-nav-panel"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground sm:hidden"
+          >
+            {open ? "Kapat" : "Menü"}
+          </button>
+        </div>
       </nav>
 
       {/* Arama satırı: gerçek sitede logonun altında duran ürün araması. */}

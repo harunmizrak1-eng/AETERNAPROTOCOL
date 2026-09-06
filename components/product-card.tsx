@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { CompareButton } from "@/components/product-compare"
 import { WhatsappCta } from "@/components/whatsapp-cta"
+import { AddToCartButton } from "@/components/store-cart"
 import { categoryLabels, type Product } from "@/lib/catalog"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 
@@ -56,17 +57,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="mt-3 flex flex-wrap gap-2">
-          <WhatsappCta
-            product={product.name}
-            label={price ? "Sipariş ver" : "Fiyat sor"}
-            message={
-              price
-                ? `Merhaba, ${product.name} ürününü ${formatProductPrice(price)} fiyatıyla sipariş vermek istiyorum. Stok durumunu teyit eder misiniz?`
-                : undefined
-            }
-            size="compact"
-            source="product_card"
-          />
+          {price ? <AddToCartButton product={{ slug: product.slug, name: product.name, image: product.image, price }} label="Sepete ekle" className="min-h-10 px-4" /> : <WhatsappCta product={product.name} label="Fiyat sor" size="compact" source="product_card" />}
           <CompareButton slug={product.slug} name={product.name} />
         </div>
       </div>

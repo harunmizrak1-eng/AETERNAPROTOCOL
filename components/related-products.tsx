@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { products } from "@/lib/catalog"
 import { ProductCard } from "@/components/product-card"
+import Image from "next/image"
+import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 
 /** Bir bileşiğin satılan ürünleri.
  *
@@ -14,12 +16,14 @@ export function RelatedProducts({
   excludeSlug,
   title = "Bu bileşiğin ürünleri",
   emptyNote,
+  compact = false,
 }: {
   peptideSlug: string
   /** Ürün sayfasında kendini listelememesi için. */
   excludeSlug?: string
   title?: string
   emptyNote?: string
+  compact?: boolean
 }) {
   const items = products.filter(
     (p) => p.peptideSlug === peptideSlug && p.slug !== excludeSlug,
@@ -50,13 +54,14 @@ export function RelatedProducts({
           bölünmeyen sayılarda boş hücreyi gri renkle görünür bırakır.
           ProductCard kendi kenarlığını zaten taşıyor; burada yalnızca
           boşluklu (şeffaf) bir grid yeterli. */}
-      <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
-        {items.map((product) => (
-          <li key={product.slug}>
-            <ProductCard product={product} />
-          </li>
-        ))}
-      </ul>
+      {compact ? <ul className="-mx-6 mt-6 flex snap-x gap-3 overflow-x-auto px-6 pb-3 sm:mx-0 sm:px-0">
+        {items.slice(0, 8).map((product) => {
+          const price = getProductPrice(product.slug)
+          return <li key={product.slug} className="w-48 shrink-0 snap-start"><Link href={`/urunler/${product.slug}`} className="block rounded-2xl border border-hairline bg-white p-3 transition hover:border-gold/50"><div className="rounded-xl bg-surface p-2">{product.image && <Image src={product.image} alt="" width={200} height={200} className="aspect-square w-full object-contain" />}</div><p className="mt-3 line-clamp-2 min-h-10 text-sm font-bold leading-5">{product.name}</p><p className="mt-2 text-sm font-extrabold text-gold">{price ? formatProductPrice(price) : "Fiyat için yazın"}</p></Link></li>
+        })}
+      </ul> : <ul className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
+        {items.map((product) => <li key={product.slug}><ProductCard product={product} /></li>)}
+      </ul>}
     </div>
   )
 }

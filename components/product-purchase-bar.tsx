@@ -1,5 +1,6 @@
 import { StockBadge } from "@/components/product-card"
 import { WhatsappCta } from "@/components/whatsapp-cta"
+import { AddToCartButton } from "@/components/store-cart"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 
 export function ProductPurchaseBar({
@@ -25,17 +26,7 @@ export function ProductPurchaseBar({
             <StockBadge inStock={inStock} />
           </div>
         </div>
-        <WhatsappCta
-          product={name}
-          label={price ? "Sipariş ver" : "WhatsApp’tan sor"}
-          message={
-            price
-              ? `Merhaba, ${name} ürününü ${formatProductPrice(price)} fiyatıyla sipariş vermek istiyorum. Stok durumunu teyit eder misiniz?`
-              : undefined
-          }
-          size="compact"
-          source="product_sticky_bar"
-        />
+        {price ? <AddToCartButton product={{ slug, name, price }} label="Sepete ekle" className="shrink-0 min-h-10 px-4" /> : <WhatsappCta product={name} label="WhatsApp’tan sor" size="compact" source="product_sticky_bar" />}
       </div>
     </div>
   )

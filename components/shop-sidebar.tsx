@@ -32,7 +32,7 @@ export function ShopSidebar({ active }: { active?: string }) {
             <Link
               href="/urunler"
               aria-current={!active ? "page" : undefined}
-              className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm whitespace-nowrap transition-colors hover:border-gold hover:text-gold lg:justify-between lg:rounded-none lg:border-x-0 lg:border-t-0 lg:border-b-hairline lg:px-0 lg:py-3 lg:text-base ${
+              className={`flex items-center gap-2 border px-3 py-2 text-sm whitespace-nowrap transition-colors hover:border-gold hover:text-gold lg:justify-between lg:border-x-0 lg:border-t-0 lg:border-b-hairline lg:px-0 lg:py-3 lg:text-base ${
                 !active
                   ? "border-gold bg-gold/5 font-semibold text-gold"
                   : "border-hairline text-muted-foreground"
@@ -49,7 +49,7 @@ export function ShopSidebar({ active }: { active?: string }) {
               <Link
                 href={`/urunler?kategori=${encodeURIComponent(goal)}`}
                 aria-current={active === goal ? "page" : undefined}
-                className={`flex items-center gap-2 rounded-full border px-3 py-2 text-sm whitespace-nowrap transition-colors hover:border-gold hover:text-gold lg:justify-between lg:rounded-none lg:border-x-0 lg:border-t-0 lg:border-b-hairline lg:px-0 lg:py-3 lg:text-base ${
+                className={`flex items-center gap-2 border px-3 py-2 text-sm whitespace-nowrap transition-colors hover:border-gold hover:text-gold lg:justify-between lg:border-x-0 lg:border-t-0 lg:border-b-hairline lg:px-0 lg:py-3 lg:text-base ${
                   active === goal
                     ? "border-gold bg-gold/5 font-semibold text-gold"
                     : "border-hairline text-muted-foreground"

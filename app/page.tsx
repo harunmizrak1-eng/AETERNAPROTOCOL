@@ -5,6 +5,7 @@ import { ProductStrip } from "@/components/product-strip"
 import { bestSellers } from "@/lib/strips"
 import { Reviews } from "@/components/reviews"
 import { Footer } from "@/components/footer"
+import { BrandProof } from "@/components/brand-proof"
 
 /* Mağaza ana sayfası: hero → çok satanlar → kategoriler
  * → neden biz → sipariş adımları → iletişim.
@@ -27,6 +28,7 @@ export default function Page() {
       <Nav />
       <Hero />
       <ProductStrip {...bestSellers} title="En çok incelenen ürünler" />
+      <BrandProof />
       <ProductCategories />
       <Reviews />
       <Footer />

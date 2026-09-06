@@ -68,7 +68,7 @@ export function InternationalSeoPage({
     <div lang={locale} dir={ui.dir} className="min-h-screen bg-background text-foreground">
       <header className="border-b border-hairline bg-background px-6 py-4 md:px-10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
-          <Link href={`/${locale}`} aria-label={ui.hubTitle}>
+          <Link href="/" aria-label="ZPHC Türkiye ana sayfa">
             <Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-8 w-auto" priority />
           </Link>
           <nav aria-label="Language" className="flex flex-wrap gap-2 text-xs font-semibold">
@@ -98,8 +98,8 @@ export function InternationalSeoPage({
               {topic?.intro ?? ui.hubIntro}
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="rounded-full border border-gold/25 bg-background px-3 py-2 text-sm font-semibold">{ui.officialDomain}</span>
-              <span className="rounded-full border border-gold/25 bg-background px-3 py-2 text-sm font-semibold">validation.zphc.com</span>
+              <span className="border-l-2 border-gold bg-background px-3 py-2 text-sm font-semibold">{ui.officialDomain}</span>
+              <span className="border-l-2 border-gold bg-background px-3 py-2 text-sm font-semibold">validation.zphc.com</span>
             </div>
           </div>
         </section>
@@ -113,9 +113,9 @@ export function InternationalSeoPage({
                   const price = getProductPrice(product.slug)
                   return (
                     <li key={product.slug}>
-                      <Link href={`/urunler/${product.slug}`} className="group flex h-full flex-col rounded-2xl border border-hairline bg-background p-3 shadow-[0_8px_30px_rgba(13,27,42,0.04)] transition hover:-translate-y-0.5 hover:border-gold/40 sm:p-4">
+                      <Link href={`/urunler/${product.slug}`} className="group flex h-full flex-col border border-hairline bg-background p-3 shadow-[0_8px_30px_rgba(13,27,42,0.04)] transition hover:-translate-y-0.5 hover:border-gold/40 sm:p-4">
                         {product.image && (
-                          <div className="rounded-xl bg-surface p-2">
+                          <div className="bg-surface p-2">
                             <Image src={product.image} alt={product.name} width={400} height={400} className="aspect-square w-full object-contain" />
                           </div>
                         )}
@@ -145,7 +145,7 @@ export function InternationalSeoPage({
               {seoTopicIds.map((id) => {
                 const item = topicTranslations[locale][id]
                 return (
-                  <Link key={id} href={localizedTopicPath(locale, id)} className="group rounded-2xl border border-hairline bg-surface p-5 transition hover:-translate-y-0.5 hover:border-gold/40">
+                    <Link key={id} href={localizedTopicPath(locale, id)} className="group border border-hairline bg-surface p-5 transition hover:-translate-y-0.5 hover:border-gold/40">
                     <h3 className="text-xl font-bold group-hover:text-gold">{item.title}</h3>
                     <p className="mt-2 line-clamp-3 text-sm leading-6 text-muted-foreground">{item.description}</p>
                     <span className="mt-4 inline-flex text-sm font-bold text-gold">{ui.viewProduct} →</span>
@@ -171,7 +171,7 @@ export function InternationalSeoPage({
       </main>
       <footer className="border-t border-hairline px-6 py-10 md:px-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-start">
-          <Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-7 w-auto" />
+          <Link href="/" aria-label="ZPHC Türkiye ana sayfa"><Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-7 w-auto" /></Link>
           <div className="flex flex-wrap justify-center gap-3 text-sm font-semibold">
             <Link href="/">{localeLabels.tr}</Link>
             {seoLocales.map((language) => <Link key={language} href={`/${language}`} hrefLang={language}>{localeLabels[language]}</Link>)}

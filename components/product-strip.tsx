@@ -84,7 +84,7 @@ export function ProductStrip({
 
   return (
     <section
-      className="border-b border-hairline px-4 py-9 sm:px-6 md:px-10 md:py-10"
+      className="border-b border-hairline px-4 py-10 sm:px-6 md:px-10 md:py-14"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -93,9 +93,7 @@ export function ProductStrip({
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            {title}
-          </h2>
+          <div><p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gold">Mağaza rafı · 01</p><h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">{title}</h2></div>
 
           <div className="flex items-center gap-3">
             <Link

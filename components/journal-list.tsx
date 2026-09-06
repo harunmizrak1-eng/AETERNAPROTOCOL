@@ -5,6 +5,7 @@ import Link from "next/link"
 import type { Article } from "@/lib/articles"
 
 const FEATURED_SLUG = "zphc-orijinal-mi-nasil-anlarim"
+const COVER_TONES = ["bg-[#071727] text-white", "bg-[#dff1f9] text-[#071727]", "bg-[#e9e5dc] text-[#071727]", "bg-[#006fab] text-white"]
 
 function articleDate(value: string) {
   return new Intl.DateTimeFormat("tr-TR", {
@@ -47,33 +48,29 @@ export function JournalList({ articles }: { articles: Article[] }) {
         </div>
         <label className="relative block w-full lg:max-w-sm">
           <span className="sr-only">Rehberlerde ara</span>
-          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Örn. doğrulama, Reta, saklama…" className="min-h-11 w-full rounded-full border border-hairline bg-white px-5 pr-12 text-sm outline-none transition focus:border-gold" />
+          <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Örn. doğrulama, Reta, saklama…" className="min-h-11 w-full border border-hairline bg-white px-5 pr-12 text-sm outline-none transition focus:border-gold" />
           <span aria-hidden="true" className="absolute right-4 top-1/2 -translate-y-1/2 text-gold">⌕</span>
         </label>
       </div>
 
       <div className="scrollbar-none -mx-1 mt-5 flex gap-2 overflow-x-auto px-1 pb-2">
         {categories.map((c) => (
-          <button key={c} type="button" onClick={() => setActive(c)} aria-pressed={active === c} className={`shrink-0 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${active === c ? "border-gold bg-gold text-white" : "border-hairline bg-white text-muted-foreground hover:border-gold/40 hover:text-foreground"}`}>
+          <button key={c} type="button" onClick={() => setActive(c)} aria-pressed={active === c} className={`shrink-0 border px-4 py-2 text-sm font-semibold transition-colors ${active === c ? "border-gold bg-gold text-white" : "border-hairline bg-white text-muted-foreground hover:border-gold/40 hover:text-foreground"}`}>
             {c}
           </button>
         ))}
       </div>
 
       {featured && (
-        <Link href={`/journal/${featured.slug}`} className="group mt-7 grid overflow-hidden rounded-2xl border border-[#b9dced] bg-[#eef7fc] shadow-[0_18px_50px_rgba(0,49,76,0.08)] transition hover:-translate-y-0.5 hover:border-gold/50 md:grid-cols-[1fr_0.58fr]">
+        <Link href={`/journal/${featured.slug}`} className="group mt-7 grid overflow-hidden border border-[#b9dced] bg-[#eef7fc] shadow-[12px_12px_0_#d8eaf3] transition hover:-translate-y-0.5 hover:border-gold/50 md:grid-cols-[1fr_0.48fr]">
           <div className="p-6 sm:p-8">
-            <div className="flex items-center gap-3 text-xs font-semibold"><span className="rounded-full bg-gold px-3 py-1.5 text-white">Önce bunu okuyun</span><span className="text-muted-foreground">{featured.readMinutes} dk</span></div>
+            <div className="flex items-center gap-3 text-xs font-semibold"><span className="border-l-2 border-gold pl-2 font-bold uppercase tracking-[0.13em] text-gold">Kapak dosyası</span><span className="text-muted-foreground">{featured.readMinutes} dk</span></div>
             <h2 className="mt-5 max-w-2xl text-2xl font-bold leading-tight tracking-tight text-foreground transition-colors group-hover:text-gold sm:text-4xl">{featured.title}</h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">{featured.excerpt}</p>
             <span className="mt-6 inline-block text-sm font-bold text-gold">Doğrulama rehberini açın →</span>
           </div>
-          <div className="relative hidden min-h-64 overflow-hidden border-l border-[#b9dced] md:block">
-            <div className="absolute -right-12 -top-12 h-52 w-52 rounded-full border-[28px] border-white/70" />
-            <div className="absolute bottom-8 left-8 right-8 rounded-xl border border-white/80 bg-white/80 p-5 backdrop-blur">
-              <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-gold">3 kontrol</p>
-              <p className="mt-2 text-sm font-bold text-foreground">Mühür · Gümüş bant · Üretici kodu</p>
-            </div>
+          <div className="relative hidden min-h-64 overflow-hidden border-l border-[#b9dced] bg-[#071727] p-8 text-white md:flex md:flex-col md:justify-between">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-sky-300">ZPHC / DOSYA</p><p className="text-[7rem] font-black leading-none text-white/10">01</p><p className="border-t border-white/20 pt-4 text-sm font-bold">Mühür<br />Gümüş bant<br />Üretici kodu</p>
           </div>
         </Link>
       )}
@@ -83,14 +80,14 @@ export function JournalList({ articles }: { articles: Article[] }) {
           <p className="font-bold text-foreground">Bu aramayla eşleşen bir yazı bulamadık.</p>
           <button type="button" onClick={() => { setQuery(""); setActive("Tümü") }} className="mt-3 text-sm font-bold text-gold">Tüm yazıları göster</button>
         </div>
-      ) : <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      ) : <div className="mt-9 grid border-l border-t border-hairline sm:grid-cols-2 lg:grid-cols-3">
         {list.map((a, i) => (
           <Link
             key={a.slug}
             href={`/journal/${a.slug}`}
-            className="group flex min-h-72 flex-col overflow-hidden rounded-2xl border border-hairline bg-white shadow-[0_12px_36px_rgba(0,49,76,0.05)] transition hover:-translate-y-0.5 hover:border-gold/40"
+            className="group flex min-h-[22rem] flex-col overflow-hidden border-b border-r border-hairline bg-white transition hover:bg-[#fafdff]"
           >
-            <div className="flex items-center justify-between border-b border-hairline bg-surface/70 px-5 py-3 text-xs font-semibold"><span className="text-gold">{a.category}</span><span className="text-muted-foreground">{String(i + 1).padStart(2, "0")}</span></div>
+            <div className={`relative flex h-32 items-end justify-between overflow-hidden p-5 ${COVER_TONES[i % COVER_TONES.length]}`}><span className="relative z-10 text-xs font-bold uppercase tracking-[0.18em]">{a.category}</span><span className="absolute -right-1 -top-5 font-mono text-[7rem] font-black leading-none opacity-10">{String(i + 1).padStart(2, "0")}</span><span className="relative z-10 font-mono text-xs opacity-60">ZPHC/J</span></div>
             <div className="flex flex-1 flex-col p-5 sm:p-6">
               <p className="text-xs text-muted-foreground">{articleDate(a.date)} · {a.readMinutes} dk</p>
               <h2 className="mt-3 font-sans text-xl font-bold leading-snug tracking-tight text-foreground transition-colors group-hover:text-gold">{a.title}</h2>

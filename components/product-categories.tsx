@@ -2,9 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { products, goalOrder } from "@/lib/catalog"
 
-/** Amaç bazlı geniş kategori kartları. Altı dar sütun ürünleri ve başlıkları
- * sıkıştırdığı için masaüstünde üç, telefonda tek sütun kullanılır. */
-
 const COVER: Record<string, string> = {
   "Kilo Kaybı": "retatrutide-60mg-5x12mg-zphc",
   "Toparlanma & Doku Onarımı": "bpc157-25mg-5x5mg-zphc",
@@ -14,80 +11,31 @@ const COVER: Record<string, string> = {
   Diğer: "melanotan-2-30mg-aq-pen-zphc",
 }
 
-const PRODUCT_FAMILY_LINKS = [
-  { href: "/zphc-reta", label: "ZPHC Reta" },
-  { href: "/zphc-bpc-157", label: "ZPHC BPC-157" },
-  { href: "/zphc-ghk-cu", label: "ZPHC GHK-Cu" },
-  { href: "/zphc-zptrop", label: "ZPHC ZPtrop" },
-  { href: "/zphc-tirze", label: "ZPHC Tirze" },
-  { href: "/zphc-peptid-karisimlari", label: "ZPHC Karışımlar" },
-  { href: "/peptidler/ipamorelin", label: "ZPHC Ipamorelin" },
-  { href: "/peptidler/tesamorelin", label: "ZPHC Tesamorelin" },
+const FAMILY_LINKS = [
+  { href: "/zphc-reta", label: "Reta" },
+  { href: "/zphc-bpc-157", label: "BPC-157" },
+  { href: "/zphc-ghk-cu", label: "GHK-Cu" },
+  { href: "/zphc-zptrop", label: "ZPtrop" },
+  { href: "/zphc-peptid-karisimlari", label: "Karışımlar" },
 ]
 
 export function ProductCategories() {
-  const groups = goalOrder
-    .map((goal) => {
-      const items = products.filter((p) => p.goals.includes(goal))
-      const cover =
-        items.find((p) => p.slug === COVER[goal]) ??
-        items.find((p) => p.image) ??
-        items[0]
-      return { goal, count: items.length, image: cover?.image }
-    })
-    .filter((g) => g.count > 0)
+  const groups = goalOrder.map((goal) => {
+    const items = products.filter((product) => product.goals.includes(goal))
+    const cover = items.find((product) => product.slug === COVER[goal]) ?? items.find((product) => product.image) ?? items[0]
+    return { goal, count: items.length, image: cover?.image }
+  }).filter((group) => group.count > 0)
 
-  return (
-    <section className="border-b border-hairline bg-surface px-6 py-12 md:px-10 md:py-16">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-7 flex flex-wrap items-end justify-between gap-5">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">Ürününüzü bulun</p>
-            <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">İhtiyacınıza göre keşfedin</h2>
-            <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground sm:text-base">
-              Tüm kataloğu taramak yerine ilgili ürün grubundan başlayın.
-            </p>
-          </div>
-          <div className="flex max-w-full gap-2 overflow-x-auto pb-1 text-sm font-semibold md:flex-wrap md:justify-end md:overflow-visible">
-            {PRODUCT_FAMILY_LINKS.map((item) => (
-              <Link key={item.href} href={item.href} className="shrink-0 rounded-full border border-gold/30 bg-background px-4 py-2 text-gold transition-colors hover:bg-gold hover:text-white">
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {groups.map(({ goal, count, image }) => (
-            <li key={goal}>
-              <Link
-                href={`/urunler?kategori=${encodeURIComponent(goal)}`}
-                className="group flex h-full min-h-36 items-center gap-5 rounded-2xl border border-hairline bg-background p-5 shadow-[0_10px_30px_rgba(13,27,42,0.04)] transition hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_16px_40px_rgba(0,114,188,0.08)]"
-              >
-                {image && (
-                  <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-xl bg-surface p-2 sm:h-28 sm:w-28">
-                    <Image
-                      src={image}
-                      alt=""
-                      width={160}
-                      height={160}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                )}
-                <div className="min-w-0 flex-1">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">{count} ürün</p>
-                  <h3 className="mt-1 text-lg font-bold leading-snug tracking-tight text-foreground sm:text-xl">
-                    {goal}
-                  </h3>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-gold">
-                    Ürünleri incele <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-                  </span>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+  return <section className="border-b border-hairline bg-[#f4f8fb] px-5 py-12 sm:px-6 md:px-10 md:py-16" aria-labelledby="category-title">
+    <div className="mx-auto max-w-7xl">
+      <div className="grid gap-6 border-b border-[#b9dced] pb-8 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div><p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-gold">Katalog dizini · 02</p><h2 id="category-title" className="mt-2 text-3xl font-bold tracking-[-0.025em] text-foreground sm:text-4xl">Ne aradığınızı seçin.</h2><p className="mt-3 max-w-xl text-sm leading-6 text-muted-foreground">Uzun ürün listesinde kaybolmayın. Önce ürün grubunu daraltın.</p></div>
+        <nav aria-label="Popüler ürün aileleri" className="flex max-w-full gap-0 overflow-x-auto border border-[#b9dced] bg-white">{FAMILY_LINKS.map((item) => <Link key={item.href} href={item.href} className="shrink-0 border-r border-[#b9dced] px-4 py-3 text-xs font-bold text-foreground transition last:border-r-0 hover:bg-gold hover:text-white">{item.label}</Link>)}</nav>
       </div>
-    </section>
-  )
+
+      <ol className="mt-8 grid border-l border-t border-[#c9dbe5] sm:grid-cols-2 lg:grid-cols-3">
+        {groups.map(({ goal, count, image }, index) => <li key={goal} className="border-b border-r border-[#c9dbe5] bg-white"><Link href={`/urunler?kategori=${encodeURIComponent(goal)}`} className="group grid min-h-44 grid-cols-[1fr_8rem] overflow-hidden transition hover:bg-[#fafdff] sm:min-h-48"><div className="flex flex-col p-5"><span className="font-mono text-[0.65rem] text-gold">{String(index + 1).padStart(2, "0")} / {String(groups.length).padStart(2, "0")}</span><h3 className="mt-4 text-lg font-bold leading-tight tracking-tight text-foreground sm:text-xl">{goal}</h3><p className="mt-2 text-xs font-semibold text-muted-foreground">{count} ürün</p><span className="mt-auto pt-4 text-sm font-bold text-gold">Rafı aç <span aria-hidden="true" className="inline-block transition group-hover:translate-x-1">→</span></span></div>{image && <div className="flex items-center border-l border-[#e0eaf0] bg-[#f4f8fb] p-2"><Image src={image} alt="" width={220} height={220} className="aspect-square w-full object-contain transition duration-300 group-hover:scale-105" /></div>}</Link></li>)}
+      </ol>
+    </div>
+  </section>
 }

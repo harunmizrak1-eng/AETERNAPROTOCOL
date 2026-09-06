@@ -20,6 +20,7 @@ import { ProductGallery } from "@/components/product-gallery"
 import { ProductVariantSelector } from "@/components/product-variant-selector"
 import { ProductBuyActions } from "@/components/store-cart"
 import { RecentlyViewed } from "@/components/recently-viewed"
+import { productImages } from "@/lib/product-media"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -171,7 +172,7 @@ export default async function UrunPage({
             </nav>
 
             <div className="mt-6 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-14">
-              <ProductGallery name={product.name} images={product.image ? [product.image] : []} crop={product.slug === "ghk-cu-200mg-zphc"} />
+              <ProductGallery name={product.name} images={productImages(product.slug, product.image)} crop={product.slug === "ghk-cu-200mg-zphc"} />
 
               <div className="lg:pt-3">
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold">{categoryLabels[product.category]} · Türkiye stoğu</p>
@@ -187,7 +188,7 @@ export default async function UrunPage({
 
                 <ProductVariantSelector variants={variants} />
 
-                <div className="mt-7 rounded-2xl border border-hairline bg-white p-5 shadow-[0_18px_45px_rgba(0,49,76,0.08)] sm:p-6">
+                <div className="mt-7 border-l-4 border-gold bg-white p-5 shadow-[0_18px_45px_rgba(0,49,76,0.08)] sm:p-6">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">{productPrice ? formatProductPrice(productPrice) : product.price ?? <span className="text-xl font-semibold text-muted-foreground">Fiyat için yazın</span>}</p>
                     <StockBadge inStock={product.inStock} />
@@ -203,7 +204,7 @@ export default async function UrunPage({
               </div>
             </div>
 
-            <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-3">
+            <ul className="mt-8 grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-3">
               <li className="bg-white p-5"><p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">01 · Doğrulama</p><p className="mt-2 text-sm leading-6 text-muted-foreground">Kutudaki kodu üreticinin sisteminde kendiniz kontrol edin.</p><Link href="/dogrulama" className="mt-3 inline-block text-xs font-bold text-gold">Nasıl doğrulanır? →</Link></li>
               <li className="bg-white p-5"><p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">02 · Gönderim</p><p className="mt-2 text-sm leading-6 text-muted-foreground">Türkiye stoğundan, ücretsiz ve takip edilebilir kargo.</p><Link href="/kargo" className="mt-3 inline-block text-xs font-bold text-gold">Kargo bilgisi →</Link></li>
               <li className="bg-white p-5"><p className="text-xs font-bold uppercase tracking-[0.14em] text-gold">03 · Destek</p><p className="mt-2 text-sm leading-6 text-muted-foreground">Sipariş öncesi ve sonrasında aynı resmî WhatsApp hattı.</p><span className="mt-3 inline-block text-xs font-bold text-tier-proven">Çevrim içi destek</span></li>
@@ -212,7 +213,7 @@ export default async function UrunPage({
             <ProductReviews productSlug={product.slug} productName={product.name} reviews={reviews} reviewCount={reviews.length} averageRating={averageRating} />
 
             {technical.length > 0 && (
-              <details className="group mt-5 rounded-2xl border border-hairline bg-white p-6 sm:p-8">
+              <details className="group mt-5 border border-hairline bg-white p-6 sm:p-8">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4"><span><span className="block text-xs font-bold uppercase tracking-[0.14em] text-gold">Ürün ayrıntıları</span><span className="mt-1 block text-xl font-bold tracking-tight text-foreground">İçerik ve kutu bilgisi</span></span><span aria-hidden="true" className="text-2xl text-gold transition group-open:rotate-45">+</span></summary>
                 <dl className="mt-6 grid gap-px overflow-hidden rounded-xl border border-hairline bg-hairline sm:grid-cols-2">
                   {technical.map((spec) => (
@@ -237,7 +238,7 @@ export default async function UrunPage({
                 overstate what the evidence supports. The tier badge below,
                 drawn from the library, is the site's own assessment. */}
             {claims.length > 0 && (
-              <details className="group mt-5 rounded-2xl border border-hairline bg-muted/20 p-6 sm:p-8">
+              <details className="group mt-5 border border-hairline bg-muted/20 p-6 sm:p-8">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4"><span><span className="block text-xs font-bold uppercase tracking-[0.14em] text-gold">Ayrıntılı bilgi</span><span className="mt-1 block text-xl font-bold tracking-tight text-foreground">Üretici beyanları</span></span><span aria-hidden="true" className="text-2xl text-gold transition group-open:rotate-45">+</span></summary>
                 <p className="mt-4 text-sm text-muted-foreground">Bu bölüm ZPHC&apos;nin kendi ürün açıklamasından aktarılmıştır.</p>
                 <dl className="mt-6 divide-y divide-hairline border-t border-hairline">
@@ -247,7 +248,7 @@ export default async function UrunPage({
             )}
 
             {peptide && (
-              <details className="group mt-5 rounded-2xl border border-hairline bg-white p-6 sm:p-8">
+              <details className="group mt-5 border border-hairline bg-white p-6 sm:p-8">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4"><span><span className="block text-xs font-bold uppercase tracking-[0.14em] text-gold">Kaynaklı içerik</span><span className="mt-1 block text-xl font-bold tracking-tight text-foreground">Bilimsel arka plan</span></span><span aria-hidden="true" className="text-2xl text-gold transition group-open:rotate-45">+</span></summary>
                 <div className="mt-6 flex items-center gap-3">
                   <span

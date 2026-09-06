@@ -17,10 +17,10 @@ export function ProductCard({ product }: { product: Product }) {
   const price = getProductPrice(product.slug)
 
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-hairline bg-background p-3 text-left shadow-[0_8px_30px_rgba(13,27,42,0.04)] transition hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_14px_40px_rgba(0,114,188,0.10)] sm:p-4">
+    <article className="group flex h-full flex-col border border-hairline bg-background p-3 text-left shadow-[0_8px_30px_rgba(13,27,42,0.04)] transition hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-[0_14px_40px_rgba(0,114,188,0.10)] sm:p-4">
       <Link href={`/urunler/${product.slug}`} className="block">
         {product.image && (
-          <div className="rounded-xl bg-surface p-2 sm:p-3">
+          <div className="border-b-2 border-transparent bg-surface p-2 transition-colors group-hover:border-gold sm:p-3">
             <Image
               src={product.image}
               alt={product.name}
@@ -35,10 +35,10 @@ export function ProductCard({ product }: { product: Product }) {
         )}
 
         <div className="mt-3 flex flex-wrap gap-1.5">
-          <span className="rounded-full bg-gold/8 px-2 py-1 text-[0.6rem] font-bold uppercase tracking-wide text-gold sm:text-[0.68rem]">
+          <span className="border-l-2 border-gold pl-2 text-[0.6rem] font-bold uppercase tracking-wide text-gold sm:text-[0.68rem]">
             {categoryLabels[product.category]}
           </span>
-          <span className="rounded-full bg-surface px-2 py-1 text-[0.6rem] font-semibold text-muted-foreground sm:text-[0.68rem]">
+          <span className="text-[0.6rem] font-semibold text-muted-foreground sm:text-[0.68rem]">
             {getProductForm(product)}
           </span>
         </div>
@@ -68,10 +68,10 @@ export function ProductCard({ product }: { product: Product }) {
 export function StockBadge({ inStock }: { inStock: boolean }) {
   return (
     <span
-      className={`rounded-full px-2 py-1 text-[0.65rem] font-semibold sm:text-xs ${
+      className={`border-l-2 px-2 py-0.5 text-[0.65rem] font-semibold sm:text-xs ${
         inStock
-          ? "bg-tier-proven/10 text-tier-proven"
-          : "bg-muted text-muted-foreground"
+          ? "border-tier-proven bg-tier-proven/5 text-tier-proven"
+          : "border-muted-foreground/30 bg-muted text-muted-foreground"
       }`}
     >
       {inStock ? "Stokta" : "Tükendi"}

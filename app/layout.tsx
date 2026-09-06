@@ -5,6 +5,7 @@ import { WhatsappFloat } from '@/components/whatsapp-float'
 import { ProductCompareProvider } from '@/components/product-compare'
 import { homeLanguageAlternates } from '@/lib/international-seo'
 import { instagramUrl, whatsappLink } from '@/lib/contact'
+import { OriginGuard } from '@/components/origin-guard'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className="bg-background">
       <body className="font-sans antialiased">
+        <OriginGuard />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
@@ -69,6 +71,10 @@ export default function RootLayout({
                   logo: `${siteUrl}/brand/zphc-logo.png`,
                   areaServed: 'TR',
                   sameAs: [instagramUrl, whatsappLink()],
+                  identifier: `${siteUrl}/.well-known/zphctr-origin`,
+                  foundingDate: '2026-08-21',
+                  copyrightHolder: { '@id': `${siteUrl}/#organization` },
+                  copyrightYear: 2026,
                   contactPoint: {
                     '@type': 'ContactPoint',
                     contactType: 'sales',

@@ -19,6 +19,8 @@ const CONSULT_LINKS = [
 
 const LEGAL_LINKS = [
   { href: "/metodoloji", label: "Metodoloji" },
+  { href: "/orijin", label: "Resmî Kanallar & Kaynak" },
+  { href: "/yorum", label: "Müşteri Yorumları" },
   { href: "/sss", label: "Sıkça sorulanlar" },
   { href: "/kosullar", label: "Kullanım Koşulları" },
   { href: "/gizlilik", label: "Gizlilik & KVKK" },

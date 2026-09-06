@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kosullar",
     "/gizlilik",
     "/yorum",
+    "/orijin",
     "/zphc-reta",
     "/zphc-bpc-157",
     "/zphc-ghk-cu",

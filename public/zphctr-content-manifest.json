@@ -1,0 +1,369 @@
+{
+  "canonicalDomain": "https://zphctr.com",
+  "publisher": "ZPHC Türkiye",
+  "generatedAt": "2026-09-06T01:37:31.593Z",
+  "algorithm": "SHA-256",
+  "purpose": "Original-content provenance and clone complaint evidence",
+  "files": [
+    {
+      "path": "app/.well-known/zphctr-origin/route.ts",
+      "sha256": "20697dc5a876282b185d30f2fa8ae9b5e4f06d7d5cddbd199bcf1161a7b0cf25"
+    },
+    {
+      "path": "app/[locale]/[topic]/page.tsx",
+      "sha256": "66d5bbcb874bb2edd234dd2582f0920a7083f3608043bfc1eb379cf8aa72a4bb"
+    },
+    {
+      "path": "app/[locale]/page.tsx",
+      "sha256": "3222e7e3e2902e6d397607cb8888a078a9244be44c35c9caca9045d647a17f57"
+    },
+    {
+      "path": "app/[locale]/products/page.tsx",
+      "sha256": "6463c88cd27c3a33ae65372a10ddba4e2db50f7d298d2f46805491c7ab80c0f5"
+    },
+    {
+      "path": "app/api/reviews/route.ts",
+      "sha256": "c82774e597e79c4c2744eb98ae0117e9a967bbde379f4b56f7c4ea740442eb8c"
+    },
+    {
+      "path": "app/dogrulama/page.tsx",
+      "sha256": "c2368d0b1ba7dd80d91574b1b5cc1a7bc81ba2173bd834bc13ea3b5d7999f31a"
+    },
+    {
+      "path": "app/gizlilik/page.tsx",
+      "sha256": "d8d4c7a1e5d3637c3f8d5571c0c58793b633969c9459d7a88e2db7b0c2926bee"
+    },
+    {
+      "path": "app/globals.css",
+      "sha256": "f693e99274d9f7afed88a3d0090d2b74c3799af9670e10ef60805d15955ae060"
+    },
+    {
+      "path": "app/hakkimizda/page.tsx",
+      "sha256": "99ab625e12a990edff018fa2e1a2e9afbc2909b05d05267eb2cf0b3fad553e88"
+    },
+    {
+      "path": "app/iade/page.tsx",
+      "sha256": "8738d84e9b3aaca9ff5b93e4509bde62fd5789d7635361917cef52ab9cae00f3"
+    },
+    {
+      "path": "app/journal/[slug]/page.tsx",
+      "sha256": "0b751f5f1c140656597450b74b7a5650fd51a6c94bd78f896676688644130ee3"
+    },
+    {
+      "path": "app/journal/page.tsx",
+      "sha256": "616cec8fc60132d12efb2141c7265552afa9f17b7f8872afba6d8389a13d3846"
+    },
+    {
+      "path": "app/kargo/page.tsx",
+      "sha256": "fc6f0e60405b2a22b91b3ee7884e0de983177507b63d0301a6e3280133fd43fd"
+    },
+    {
+      "path": "app/karsilastir/page.tsx",
+      "sha256": "c3687af91c26e3f9d2f1f57992427dcb195b32ffbea5e885f93ba7367e05ef5b"
+    },
+    {
+      "path": "app/kosullar/page.tsx",
+      "sha256": "3a20ac436433870030f2a88185289de6e438b2e49e0d835b87ba871bc6e29e2c"
+    },
+    {
+      "path": "app/layout.tsx",
+      "sha256": "e3b79a5308af7171e03958fa105b52a636442d14ebbb27447cbbaf790002130f"
+    },
+    {
+      "path": "app/metodoloji/page.tsx",
+      "sha256": "0efdd542138cdf050c6488f5226b94664e73037145d97d8eaa5fe0e68d533fec"
+    },
+    {
+      "path": "app/not-found.tsx",
+      "sha256": "bd41e2ae9b32b5ece615d24f55d2ecfda7e796ec45c6c6bc89a260a8c5d1d905"
+    },
+    {
+      "path": "app/opengraph-image.tsx",
+      "sha256": "4f0b24f76c76cdffadc2e5dd50cd14841035f57751763767bd357b376c22ae62"
+    },
+    {
+      "path": "app/orijin/page.tsx",
+      "sha256": "f1bbb8076471db7528c6f8ed7226b45b0351fb50352f0fc8044e92ad0a931b1c"
+    },
+    {
+      "path": "app/page.tsx",
+      "sha256": "3c908da84ab041902ffb15b64a94a7a50e7df56d7bcdbe73c7f5a1870b8acb7e"
+    },
+    {
+      "path": "app/peptidler/[slug]/page.tsx",
+      "sha256": "17c9bcd7e86d3de084fa5ca38c2c2c66acb5d5dd2bcf8475683d089dd7e1c612"
+    },
+    {
+      "path": "app/peptidler/page.tsx",
+      "sha256": "c7bcc2e3b7244cf509f6006721e0a78a44040334fcb27643d80780a51d85e923"
+    },
+    {
+      "path": "app/robots.ts",
+      "sha256": "18d8369fd212cc769f7639b69b99bc542b60565c7a970f3354f0cca1b76d00dc"
+    },
+    {
+      "path": "app/sitemap.ts",
+      "sha256": "676d6e2c6eccdf6b85907baffced2862440b3736af68c110e6896889801605a4"
+    },
+    {
+      "path": "app/sss/page.tsx",
+      "sha256": "4e6df3fff1668af835951f8d364a32def1391f3134d20c065f9f56d9bd82a873"
+    },
+    {
+      "path": "app/urunler/[slug]/page.tsx",
+      "sha256": "ec59dcc814a0e404c4d0aeb43f90ae2cabce1d79215ca820b71d3de063f1756a"
+    },
+    {
+      "path": "app/urunler/page.tsx",
+      "sha256": "f5401cc6c4602f8ef7a55d3c809ca9317cc60f7f7399f31b9d95b96b31afdeff"
+    },
+    {
+      "path": "app/yorum/page.tsx",
+      "sha256": "20886074ddae65e3c8c704c353bc03fd1aca534eec885269b6b2094d8a716630"
+    },
+    {
+      "path": "app/zphc-bpc-157/page.tsx",
+      "sha256": "4425120896d16c7225c7a16364200235a2f575b5522f03bcb4a887b63dff0aa9"
+    },
+    {
+      "path": "app/zphc-ghk-cu/page.tsx",
+      "sha256": "9ae9e79a244b1950025cfa5f7fa272156d2ada8b684fb47ed6b33022346b3b88"
+    },
+    {
+      "path": "app/zphc-peptid-karisimlari/page.tsx",
+      "sha256": "b8cbc5ffeeeda94f156e07df7426ddfd7d82b316fa0a23602210f6aa64963b7c"
+    },
+    {
+      "path": "app/zphc-reta/page.tsx",
+      "sha256": "5b6990b7774874cf45fda7a060d5c92982e792daf577bc08b761041091290caa"
+    },
+    {
+      "path": "app/zphc-tirze/page.tsx",
+      "sha256": "9a90d9fa4b1426db5255eb6b32cf7eefb2f66d338ec0bf2045c62ef6cb38a728"
+    },
+    {
+      "path": "app/zphc-zptrop/page.tsx",
+      "sha256": "548d392cc366736618ac76f700aab7846f381687300bbb3c11ff01063c9f122e"
+    },
+    {
+      "path": "components/accumulation-calculator.tsx",
+      "sha256": "1ee2939a2758094c94f18006f03ad6be8b37aa915cbf55ee520f7a0338db2921"
+    },
+    {
+      "path": "components/dose-ladder-chart.tsx",
+      "sha256": "2cb7c99924781e2b12a1fa0ca84eb085d3613830458bedf61e829790c20dc575"
+    },
+    {
+      "path": "components/final-cta.tsx",
+      "sha256": "a67a5974b67dc711511d5b6b21669bac751be32ca6da3e944a037c8c62aa8cdf"
+    },
+    {
+      "path": "components/footer.tsx",
+      "sha256": "cab9e5c650dbe256232f940b709932897f0c5cf6c46eac701f97fc671879211d"
+    },
+    {
+      "path": "components/header-search.tsx",
+      "sha256": "bd7ab971da66d2b3a56db4c43ab37b266da5283d76668923cdfc831bf87c6d5e"
+    },
+    {
+      "path": "components/hero-signature.tsx",
+      "sha256": "acd63a25b6fe9b02347465e8e74582a7c1711347b413b144d4a6f461797c84d9"
+    },
+    {
+      "path": "components/hero.tsx",
+      "sha256": "4b1bbc7f0e28cfdbf7934658d7dda6083b2b8de82f82d73763698aefa03ec72e"
+    },
+    {
+      "path": "components/how-it-works.tsx",
+      "sha256": "e252d59af7654aace9561c921565d2088ab014f8bd3e6be8cbf12947090bdbdf"
+    },
+    {
+      "path": "components/international-seo-page.tsx",
+      "sha256": "4e5ce517fcac43283891f4fe6c077d775d48d97d9c318aaed5774c7117bfd134"
+    },
+    {
+      "path": "components/journal-list.tsx",
+      "sha256": "bc73c9fd12c734668d9969c299be81ec16d0d950ecf87dd6b3d617923c2ec0f3"
+    },
+    {
+      "path": "components/localized-catalog.tsx",
+      "sha256": "9d50abc1b21f225b9caabb7ecc2bb0c144f685dc61a3c0861bc19af6cdc18470"
+    },
+    {
+      "path": "components/nav.tsx",
+      "sha256": "0c6fe49c72f3e286aab3e1ca34cef3011d5c9539e844d13c4a7ec287140c0c73"
+    },
+    {
+      "path": "components/newsletter.tsx",
+      "sha256": "ac39030e534f6130cadd42dd0aa988017878671a315b05733ddbcf8d7a635223"
+    },
+    {
+      "path": "components/origin-guard.tsx",
+      "sha256": "626cc5f799e0f0d8519ac84345ca1b5a0c0e86a3d21e2b459307b973d4a13ad0"
+    },
+    {
+      "path": "components/peptide-library.tsx",
+      "sha256": "56ba17b5ea50553b7e212e267eda9469ba1df1eec7e75ed77b913bdb0370a306"
+    },
+    {
+      "path": "components/product-card.tsx",
+      "sha256": "405b2147bff32a6ded9d8ab63f6fabcddfa488dd3e7aa956363aaf995e5416ab"
+    },
+    {
+      "path": "components/product-catalog.tsx",
+      "sha256": "3bc5cf07d0ee8281c2ee04eb6348e85e10550c7cd81979446c15054833e40ab6"
+    },
+    {
+      "path": "components/product-categories.tsx",
+      "sha256": "2ca6161fab9f9ded06a3ba6173d87a66b38d07c42083e6f80a9b644030fe0187"
+    },
+    {
+      "path": "components/product-compare.tsx",
+      "sha256": "845e334c964c9a3e6b2f454f2eb306ccf4e8da0073ad77c436c1b56cc576f718"
+    },
+    {
+      "path": "components/product-purchase-bar.tsx",
+      "sha256": "2ff0d680678bf0ead16c48d2a740bc839ab67aee2d356391d91f4001f76b6875"
+    },
+    {
+      "path": "components/product-reviews.tsx",
+      "sha256": "a613720435d9d181e996bc0672080db37f0f637908c9e2e324cce91b13cef1f7"
+    },
+    {
+      "path": "components/product-strip.tsx",
+      "sha256": "9026c2ea4e48aad0bba015ae5ee8b76a9e0ed94f17ab6bca4f644124a267a2c7"
+    },
+    {
+      "path": "components/related-products.tsx",
+      "sha256": "c25a8c680d464868c67ac889b207e341c652c43f9966e36d42ec7a2dd9d2d7e5"
+    },
+    {
+      "path": "components/reveal.tsx",
+      "sha256": "88eb00062c3c6e440d3291ed5c59a17944895e4e33a73a3aca18954fd080c38b"
+    },
+    {
+      "path": "components/review-cards.tsx",
+      "sha256": "d75b9329a519a4799b874a265dca08fb5137dbc9a16ceefc6cf85394b20659a9"
+    },
+    {
+      "path": "components/review-submission.tsx",
+      "sha256": "a86d74a783dc033e05b49aa204dd73082ac18246d1646c085e8b301e10bd4f36"
+    },
+    {
+      "path": "components/reviews.tsx",
+      "sha256": "48230152d7b8982fde88fbd324c608c5210c15b836eeb7aeeb29d888c06a4bac"
+    },
+    {
+      "path": "components/seo-product-landing.tsx",
+      "sha256": "709816229370b911ed3b6a55e91f7958fd350b6abb6e064f0676d02af45b190a"
+    },
+    {
+      "path": "components/shop-sidebar.tsx",
+      "sha256": "834d7b5a4d32b7d766474a71f4000220c841e77820ee18b70d361b279428b0d4"
+    },
+    {
+      "path": "components/size-comparison.tsx",
+      "sha256": "845a78e2651d28a1be03f4d891327df5050f32440478519fb034539bddc52e51"
+    },
+    {
+      "path": "components/tracked-outbound-link.tsx",
+      "sha256": "312d903a19fd7ff9319eb74943f6fa8382e77996f9f4fb7bdff55e5f02bb7765"
+    },
+    {
+      "path": "components/whatsapp-cta.tsx",
+      "sha256": "702c18b108b1ba0c9a673af8b7a8ee9addf4ca4ef0cc18a98a73747f3d3e570f"
+    },
+    {
+      "path": "components/whatsapp-float.tsx",
+      "sha256": "42d3288d3ee39d4249861c41c055d4413af32a85a92e71204cc3f68b84070447"
+    },
+    {
+      "path": "components/why-zphc.tsx",
+      "sha256": "9971b2806d172efe9459c49c6b9686eaaec20410a19820ce9e455f053551df57"
+    },
+    {
+      "path": "lib/articles.ts",
+      "sha256": "6f83dc3ff8ccd4ebd9608d2c3a85f9cd594458454f51e3d22cc27033bf8d2620"
+    },
+    {
+      "path": "lib/biomarkers.ts",
+      "sha256": "5ef2b155283d32e2d627d690d1538f35e5bc0f8c222a4453e1f2563a2e9ba2f5"
+    },
+    {
+      "path": "lib/case-studies.ts",
+      "sha256": "55021608c3fdacf74ef0bcac0ff53448b1271e83bdd1bf913916b15ffc7c6624"
+    },
+    {
+      "path": "lib/catalog.ts",
+      "sha256": "704aaeeb3aba1fa1c99af0b232ead29e7015ae0b6928c1a0d7da26f47e9d485d"
+    },
+    {
+      "path": "lib/category-info.ts",
+      "sha256": "6a07dc9e04d7ffd4462d06a1c8ea700c5427b3b11a21c193b5a7324f3ca3ea94"
+    },
+    {
+      "path": "lib/citations.ts",
+      "sha256": "f8bb3a166bdc50756463028cb39b324226cdaec6afb0e91ab9679e473af12457"
+    },
+    {
+      "path": "lib/contact.ts",
+      "sha256": "13b1b2f6ab5d6ef42e215ccacdd07ad6a2848d6d46bdc5601a7093c9df86c3c7"
+    },
+    {
+      "path": "lib/faq.ts",
+      "sha256": "c15bcbe0feb3ccfedadce869efd11f55d40ad6ead034fcab220450049420418d"
+    },
+    {
+      "path": "lib/international-seo.ts",
+      "sha256": "953d4b5071ac8f361854f2972d6502b4fc13c5ee10373ed46d0fe1123780be71"
+    },
+    {
+      "path": "lib/longevity-score.ts",
+      "sha256": "48f49a9d86dcb2f7f06f23a9d56cbb22f94fadbd9bb64844b94d85e65de49f17"
+    },
+    {
+      "path": "lib/peptides.ts",
+      "sha256": "b412112bb1d60c72afc6b1b0016619095b328cb68d35a60471daf6f02a119f53"
+    },
+    {
+      "path": "lib/plain-summaries.ts",
+      "sha256": "b2af618ee824215674a944d1ecb1e82c2ebd002adc88d0ac401f917a89b13f6c"
+    },
+    {
+      "path": "lib/product-prices.ts",
+      "sha256": "cb811ab27f29afa34aa5acd2bb3962b9f6c34ec8f711c18cb890aaf4c3813787"
+    },
+    {
+      "path": "lib/product-size.ts",
+      "sha256": "6343ac131afb534028b845a95a1a72df9045452e462e590c758041438a087b17"
+    },
+    {
+      "path": "lib/products.ts",
+      "sha256": "528121a8174478dd40f36905f004ea2ecb1c2e06f87abf9b2f8cad16db2b478d"
+    },
+    {
+      "path": "lib/protocols.ts",
+      "sha256": "43587a23a0f583d06502819c23f2b355ed96fdeabcd3085620a503358f21eb0b"
+    },
+    {
+      "path": "lib/review-store.ts",
+      "sha256": "6739dfb281e3f883a653f0787d6c8c81b26bbb1895e6fcc09ffbe878894cf8d8"
+    },
+    {
+      "path": "lib/reviews.ts",
+      "sha256": "5a3284dc4bc6d250ee11d1320906686e0e4e9cbb404699031b0d49c4c0fa9683"
+    },
+    {
+      "path": "lib/site.ts",
+      "sha256": "7e56eb3748f3510d24d985b16388ca63bbe1c4527c06f471a9c66e71d966a021"
+    },
+    {
+      "path": "lib/strips.ts",
+      "sha256": "47ec9fd5a6ed470f0069e8788c5275cc83072601debde80103f634d70c4fb338"
+    },
+    {
+      "path": "lib/utils.ts",
+      "sha256": "74a147991a119f1c4cdc25a4d9b22713632fa32eb136e55ab6939b006d71b9d6"
+    }
+  ]
+}

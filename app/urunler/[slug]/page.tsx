@@ -15,6 +15,7 @@ import { StockBadge } from "@/components/product-card"
 import { getPlainSummary } from "@/lib/plain-summaries"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
 import { ProductPurchaseBar } from "@/components/product-purchase-bar"
+import { ProductReviews } from "@/components/product-reviews"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -378,6 +379,8 @@ export default async function UrunPage({
                 title="Aynı bileşiğin diğer ürünleri"
               />
             )}
+
+            <ProductReviews productSlug={product.slug} productName={product.name} />
 
             <p className="mt-12 border-t border-hairline pt-8 text-sm leading-relaxed text-muted-foreground">
               Bu ürünler laboratuvar ve araştırma materyali olarak sunulur;

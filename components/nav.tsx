@@ -22,7 +22,7 @@ const LINKS = [
   { href: "/urunler", label: "Ürünler" },
   { href: "/peptidler", label: "Kütüphane" },
   { href: "/dogrulama", label: "Doğrulama" },
-  { href: "/journal", label: "Journal" },
+  { href: "/journal", label: "Bilgi Merkezi" },
   { href: "/metodoloji", label: "Metodoloji" },
 ]
 

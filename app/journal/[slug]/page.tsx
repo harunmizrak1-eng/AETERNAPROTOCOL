@@ -76,32 +76,31 @@ export default async function ArticlePage({
       <Nav />
       <main id="main-content" className="relative z-10 bg-background">
         <article className="px-6 pb-24 md:px-10">
-          <div className="mx-auto max-w-2xl">
+          <div className="mx-auto max-w-3xl">
             <Link
               href="/journal"
               className="text-xs tracking-normal text-muted-foreground transition-colors hover:text-foreground font-medium"
             >
-              ← Journal
+              ← Bilgi Merkezi
             </Link>
 
-            <div className="mt-10 flex items-center gap-4">
-              <span className="text-xs tracking-normal text-gold font-medium">
-                {article.category}
-              </span>
-              <span className="text-xs tracking-normal text-muted-foreground font-medium">
-                {article.readMinutes} dk okuma
-              </span>
+            <div className="mt-8 flex flex-wrap items-center gap-2 text-xs font-semibold">
+              <span className="rounded-full bg-[#eef7fc] px-3 py-1.5 text-gold">{article.category}</span>
+              <span className="rounded-full border border-hairline px-3 py-1.5 text-muted-foreground">{article.readMinutes} dk okuma</span>
+              <time dateTime={article.date} className="rounded-full border border-hairline px-3 py-1.5 text-muted-foreground">{new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${article.date}T12:00:00`))}</time>
             </div>
 
             <h1 className="mt-6 text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
               {article.title}
             </h1>
 
-            <div className="mt-12 flex flex-col gap-6">
+            <p className="mt-6 border-l-4 border-gold bg-[#f7fbfe] px-5 py-4 text-base font-medium leading-7 text-foreground/80 sm:text-lg">{article.excerpt}</p>
+
+            <div className="mt-10 flex flex-col gap-7">
               {article.body.map((para, i) => (
                 <p
                   key={i}
-                  className="text-base leading-relaxed text-foreground/85"
+                  className={`text-[1.03rem] leading-8 text-foreground/85 ${i === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-5xl first-letter:font-bold first-letter:leading-10 first-letter:text-gold" : ""}`}
                 >
                   {para}
                 </p>

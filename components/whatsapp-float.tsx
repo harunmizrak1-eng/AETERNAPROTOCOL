@@ -5,6 +5,7 @@ import { instagramUrl, whatsappLink } from "@/lib/contact"
 import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 
 export function WhatsappFloat() {
+  const [open, setOpen] = useState(false)
   const [footerVisible, setFooterVisible] = useState(false)
 
   useEffect(() => {
@@ -12,14 +13,22 @@ export function WhatsappFloat() {
     if (!footer) return
     const observer = new IntersectionObserver(([entry]) => {
       setFooterVisible(entry.isIntersecting)
+      if (entry.isIntersecting) setOpen(false)
     }, { threshold: 0.05 })
     observer.observe(footer)
     return () => observer.disconnect()
   }, [])
 
-  return <div className={`fixed bottom-20 right-3 z-40 flex items-center gap-2 transition-all duration-200 sm:bottom-6 sm:right-6 ${footerVisible ? "pointer-events-none translate-y-3 opacity-0" : "opacity-100"}`} aria-hidden={footerVisible} aria-label="Resmî iletişim kanalları">
-    <TrackedOutboundLink href={instagramUrl} eventName="Instagram Click" properties={{ source: "floating_button" }} ariaLabel="ZPHC Türkiye Instagram hesabını aç" className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-[radial-gradient(circle_at_30%_105%,#fdf497_0%,#fd5949_45%,#d6249f_60%,#285aeb_90%)] text-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-1 sm:h-14 sm:w-14"><InstagramIcon /></TrackedOutboundLink>
-    <TrackedOutboundLink href={whatsappLink("Merhaba, ürün fiyatları ve stok durumu hakkında bilgi alabilir miyim?")} eventName="WhatsApp Click" properties={{ source: "floating_button" }} ariaLabel="WhatsApp'tan yazın" className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-[#25D366] text-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-transform hover:-translate-y-1 sm:h-14 sm:w-14"><WhatsappIcon /></TrackedOutboundLink>
+  return <div className={`fixed bottom-20 right-3 z-40 flex flex-col items-end gap-2.5 transition-all duration-200 sm:bottom-6 sm:right-6 ${footerVisible ? "pointer-events-none translate-y-3 opacity-0" : "opacity-100"}`} aria-hidden={footerVisible} aria-label="Resmî iletişim kanalları">
+    <div className={`${open ? "flex" : "hidden"} flex-col items-end gap-2.5 sm:flex`}>
+      <TrackedOutboundLink href={instagramUrl} eventName="Instagram Click" properties={{ source: "floating_button" }} ariaLabel="ZPHC Türkiye Instagram hesabını aç" className="group flex items-center gap-2 rounded-full text-white sm:gap-0">
+        <span className="rounded-full bg-slate-900 px-3 py-2 text-xs font-bold shadow-lg sm:hidden">Instagram</span><span className="flex h-11 w-11 items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_105%,#fdf497_0%,#fd5949_45%,#d6249f_60%,#285aeb_90%)] shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-transform group-hover:scale-105 sm:h-14 sm:w-14"><InstagramIcon /></span>
+      </TrackedOutboundLink>
+      <TrackedOutboundLink href={whatsappLink("Merhaba, ürün fiyatları ve stok durumu hakkında bilgi alabilir miyim?")} eventName="WhatsApp Click" properties={{ source: "floating_button" }} ariaLabel="WhatsApp'tan yazın" className="group flex items-center gap-2 rounded-full text-white sm:gap-0">
+        <span className="rounded-full bg-slate-900 px-3 py-2 text-xs font-bold shadow-lg sm:hidden">WhatsApp</span><span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] shadow-[0_8px_24px_rgba(0,0,0,0.18)] transition-transform group-hover:scale-105 sm:h-14 sm:w-14"><WhatsappIcon /></span>
+      </TrackedOutboundLink>
+    </div>
+    <button type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-label={open ? "İletişim menüsünü kapat" : "İletişim menüsünü aç"} className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white bg-slate-900 text-white shadow-xl sm:hidden"><span className={`text-xl transition-transform ${open ? "rotate-45" : ""}`} aria-hidden="true">+</span></button>
   </div>
 }
 

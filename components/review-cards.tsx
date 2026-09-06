@@ -1,9 +1,9 @@
 import type { PublicReview } from "@/lib/review-store"
 
 export function ReviewCards({ reviews }: { reviews: PublicReview[] }) {
-  if (!reviews.length) return <div className="border border-dashed border-gold/30 bg-white p-5 text-sm leading-6 text-muted-foreground">Bu ürün için henüz yorum paylaşılmadı. Ürünü aldıysanız deneyiminizi birkaç cümleyle anlatabilirsiniz.</div>
-  return <ul className="grid gap-px border border-hairline bg-hairline sm:grid-cols-2 lg:grid-cols-3">
-    {reviews.map((review) => <li key={review.id} className="bg-white p-5">
+  if (!reviews.length) return <div className="rounded-xl border border-dashed border-gold/30 bg-white p-5 text-sm leading-6 text-muted-foreground">Bu ürün için henüz yorum paylaşılmadı. Ürünü aldıysanız deneyiminizi birkaç cümleyle anlatabilirsiniz.</div>
+  return <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {reviews.map((review) => <li key={review.id} className="rounded-xl border border-hairline bg-white p-5 shadow-[0_8px_24px_rgba(0,49,76,0.04)]">
       <p className="text-sm tracking-[0.18em] text-gold" aria-label={`${review.rating} yıldız`}>{"★".repeat(review.rating)}<span className="text-slate-200">{"★".repeat(5 - review.rating)}</span></p>
       <p className="mt-3 text-sm leading-6 text-muted-foreground">“{review.body}”</p>
       <p className="mt-4 text-sm font-bold text-foreground">{review.display_name}</p>

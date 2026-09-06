@@ -37,7 +37,7 @@ export default function JournalPage() {
               </p>
             </div>
 
-            <div className="grid gap-px overflow-hidden border border-hairline bg-hairline sm:grid-cols-3">
+            <div className="grid gap-px overflow-hidden rounded-2xl border border-hairline bg-hairline sm:grid-cols-3">
               {[
                 { n: "01", title: "Ürün gerçek mi?", text: "Kutu kodunu doğru yerde kontrol edin.", href: "/journal/zphc-orijinal-mi-nasil-anlarim" },
                 { n: "02", title: "Reta nedir?", text: "Üçlü mekanizmayı sade biçimde okuyun.", href: "/journal/retatrutide-nedir" },

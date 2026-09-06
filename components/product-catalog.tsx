@@ -66,7 +66,7 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
 
   return (
     <>
-      <div className="border-l-4 border-gold bg-surface p-4 sm:p-5">
+      <div className="rounded-2xl border border-hairline bg-surface p-4 sm:p-5">
         <p className="text-sm font-bold text-foreground">2 · Ürün formunu seçin</p>
         <div className="scrollbar-none mt-3 flex gap-2 overflow-x-auto pb-1">
           {FORM_OPTIONS.map((option) => (
@@ -75,7 +75,7 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
               type="button"
               onClick={() => setForm(option)}
               aria-pressed={form === option}
-              className={`shrink-0 border px-3 py-2 text-xs font-semibold transition-colors ${
+              className={`shrink-0 rounded-full border px-3 py-2 text-xs font-semibold transition-colors ${
                 form === option
                   ? "border-gold bg-gold text-white"
                   : "border-hairline bg-background text-muted-foreground hover:border-gold/50 hover:text-gold"
@@ -96,7 +96,7 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Örn. BPC-157, Reta veya GHK-Cu"
-            className="w-full border border-input bg-background py-2.5 pl-10 pr-4 text-sm text-foreground outline-none transition-colors focus:border-gold"
+            className="w-full rounded-full border border-input bg-background py-2.5 pl-10 pr-4 text-sm text-foreground outline-none transition-colors focus:border-gold"
           />
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground">
             <circle cx="11" cy="11" r="7" />

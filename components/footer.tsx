@@ -26,12 +26,19 @@ const LANGUAGES = [
 ]
 
 function FooterLinks({ title, links }: { title: string; links: { href: string; label: string }[] }) {
-  return <nav aria-label={title}>
-    <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-sky-300">{title}</p>
-    <ul className="mt-4 grid gap-3">
-      {links.map((link) => <li key={link.href}><Link href={link.href} className="group inline-flex items-center gap-2 text-sm text-white/65 transition hover:text-white"><span className="h-px w-0 bg-sky-300 transition-all group-hover:w-3" />{link.label}</Link></li>)}
-    </ul>
-  </nav>
+  const list = <ul className="mt-4 grid gap-3">
+    {links.map((link) => <li key={link.href}><Link href={link.href} className="group inline-flex items-center gap-2 text-sm text-white/65 transition hover:text-white"><span className="h-px w-0 bg-sky-300 transition-all group-hover:w-3" />{link.label}</Link></li>)}
+  </ul>
+  return <>
+    <nav aria-label={title} className="hidden sm:block">
+      <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-sky-300">{title}</p>
+      {list}
+    </nav>
+    <details className="group rounded-xl border border-white/10 bg-white/[0.03] sm:hidden">
+      <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between px-4 text-xs font-bold uppercase tracking-[0.16em] text-sky-200"><span>{title}</span><span aria-hidden="true" className="text-lg transition group-open:rotate-45">+</span></summary>
+      <nav aria-label={`${title} bağlantıları`} className="border-t border-white/10 px-4 pb-4">{list}</nav>
+    </details>
+  </>
 }
 
 export function Footer() {
@@ -53,11 +60,11 @@ export function Footer() {
       </div>
     </section>
 
-    <div className="relative mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.35fr_.75fr_.75fr_.9fr] lg:gap-12">
+    <div className="relative mx-auto max-w-6xl px-6 py-9 md:px-10 md:py-16">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-10 lg:grid-cols-[1.35fr_.75fr_.75fr_.9fr] lg:gap-12">
         <div>
           <Image src="/brand/zphc-logo.png" alt={siteName} width={250} height={42} className="h-8 w-auto brightness-0 invert" />
-          <p className="mt-5 max-w-sm text-base font-semibold leading-7 text-white">Türkiye&apos;de ZPHC için tek adres, açık doğrulama ve doğrudan destek.</p>
+          <p className="mt-4 max-w-sm text-sm font-semibold leading-6 text-white">Türkiye stoğu, açık doğrulama ve doğrudan destek.</p>
           <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-sky-300/20 bg-sky-300/5 px-3 py-2 text-xs font-bold text-sky-200"><span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,.12)]" /> zphctr.com · Resmî Türkiye alan adı</div>
         </div>
 
@@ -66,7 +73,7 @@ export function Footer() {
 
         <div>
           <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-sky-300">Resmî kanallar</p>
-          <div className="mt-4 grid gap-2">
+          <div className="mt-4 grid grid-cols-2 gap-2">
             <TrackedOutboundLink href={instagramUrl} eventName="Instagram Click" properties={{ source: "footer" }} ariaLabel="Instagram hesabımızı aç" className="flex min-h-11 items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-white/75 transition hover:border-sky-300/30 hover:text-white"><span>Instagram</span><ArrowIcon /></TrackedOutboundLink>
             <TrackedOutboundLink href={whatsappLink()} eventName="WhatsApp Click" properties={{ source: "footer" }} ariaLabel="WhatsApp hattımızı aç" className="flex min-h-11 items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-4 text-sm font-semibold text-white/75 transition hover:border-[#25D366]/50 hover:text-white"><span>WhatsApp</span><ArrowIcon /></TrackedOutboundLink>
           </div>
@@ -74,7 +81,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-5 border-t border-white/10 pt-7 text-[0.68rem] leading-5 text-white/40 lg:grid-cols-[1fr_auto] lg:items-end">
+      <div className="mt-8 grid gap-5 border-t border-white/10 pt-6 text-[0.68rem] leading-5 text-white/40 sm:mt-12 lg:grid-cols-[1fr_auto] lg:items-end">
         <p className="max-w-3xl">Ürünler laboratuvar ve araştırma materyali olarak sunulur; insan kullanımı için tasarlanmamıştır. İçerik bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez.</p>
         <nav aria-label="Yasal bağlantılar" className="flex flex-wrap gap-x-4 gap-y-2"><Link href="/hakkimizda" className="hover:text-white">Hakkımızda</Link><Link href="/metodoloji" className="hover:text-white">Metodoloji</Link><Link href="/kosullar" className="hover:text-white">Koşullar</Link><Link href="/gizlilik" className="hover:text-white">KVKK</Link></nav>
       </div>

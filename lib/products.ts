@@ -244,8 +244,8 @@ export const products: Product[] = [
   },
   {
     slug: "glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc",
-    name: "Glow Pro Mix 60mg ZPHC - (BPC-157 + TB-500 + GHK-Cu)",
-    sku: "GLOWMIX-60-ZPHC",
+    name: "Glow Pro Mix 70mg ZPHC - (BPC-157 + TB-500 + GHK-Cu)",
+    sku: "GLOWMIX-70-ZPHC",
     category: "peptid",
     peptideSlug: "bpc-157",
     image: "/products/glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc.webp",
@@ -253,7 +253,7 @@ export const products: Product[] = [
     goals: ["Toparlanma & Doku Onarımı", "Cilt & Yaşlanma Karşıtı"],
     inStock: true,
     specs: [
-      { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize peptid karışımı + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
+      { label: "Kit İçeriği", value: "1 flakon 70 mg liyofilize peptid karışımı + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "BPC-157, TB-500 (Timozin Beta-4 fragmanı) ve GHK-Cu (bakır peptidi) kombinasyonu.", kind: "spec" },
       { label: "Rekonstitüsyon", value: "Steril koşullarda, ürünle verilen bakteriyostatik suyu ekleyin; tamamen çözünene dek hafifçe çevirin.", kind: "spec" },
       { label: "Araştırma Alanları", value: "Doku onarımı çalışmaları, kolajen sentezi modelleri, cilt rejenerasyonu yolakları, toparlanma ve anjiyogenez araştırmaları.", kind: "claim" },
@@ -261,7 +261,7 @@ export const products: Product[] = [
       { label: "Kalite Kontrolü", value: "Hermetik kapalı steril flakon, parti bazında doğrulanmış ve orijinallik kontrollü; yalnızca araştırma amaçlıdır.", kind: "spec" },
     ],
     notes: [
-      "Glow Pro Mix 60 mg; ileri peptid karışımı",
+      "Glow Pro Mix 70 mg; ileri peptid karışımı",
       "BPC-157 + TB-500 + GHK-Cu",
     ],
   },

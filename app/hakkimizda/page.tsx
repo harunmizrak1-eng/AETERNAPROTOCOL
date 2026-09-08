@@ -7,7 +7,7 @@ import { products } from "@/lib/catalog"
 import { peptides } from "@/lib/peptides"
 
 const description =
-  "ZPHC (Zhengzhou Pharmaceutical) peptid ve insan büyüme hormonu hattının resmi Türkiye distribütörü. Ne satıyoruz, ne satmıyoruz ve orijinalliği nasıl doğrulayabilirsiniz."
+  "ZPHC Türkiye ürün kataloğu: ürün bilgileri, araştırma çerçevesi ve orijinallik doğrulama yöntemi."
 
 export const metadata: Metadata = {
   title: "Hakkımızda",
@@ -32,9 +32,9 @@ export default function HakkimizdaPage() {
               ZPHC Türkiye
             </h1>
             <p className="mt-6 text-base leading-relaxed text-foreground/85">
-              Zhengzhou Pharmaceutical (ZPHC) markasının peptid ve büyüme
-              hormonu ürünlerini Türkiye&apos;ye biz getiriyoruz. Siparişler
-              doğrudan bizim depomuzdan çıkıyor, arada başka bir satıcı yok.
+              ZPHC ürünlerini ve araştırma materyallerini Türkiye kataloğumuzda
+              listeliyoruz. Ürün bilgileri, doğrulama ve sipariş desteği tek
+              bir yerde açıkça sunuluyor.
             </p>
           </div>
         </section>

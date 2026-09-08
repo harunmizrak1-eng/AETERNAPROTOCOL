@@ -8,7 +8,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "ZPHC Türkiye nedir?",
     answer:
-      "Zhengzhou Pharmaceutical (ZPHC) markasının peptid ve büyüme hormonu ürünlerini Türkiye'ye getiren resmi distribütörüz. Klinik değiliz, danışmanlık da vermiyoruz; sadece ürün satıyoruz.",
+      "ZPHC ürünlerini ve ürün bilgilerini Türkiye kataloğumuzda listeliyoruz. Klinik değiliz ve tıbbi danışmanlık vermiyoruz; ürün siparişi için resmi kanallarımızı kullanabilirsiniz.",
   },
   {
     question: "Ürünler ne amaçla sunuluyor?",

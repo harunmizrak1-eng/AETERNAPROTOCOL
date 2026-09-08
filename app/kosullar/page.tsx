@@ -49,7 +49,7 @@ const SECTIONS = [
   },
   {
     h: "Sipariş ve iletişim",
-    p: "Sitede sepet veya çevrim içi ödeme bulunmuyor. Tüm siparişler WhatsApp üzerinden, karşılıklı teyitle ilerler. Resmi hattımız dışında bir numaradan gelen 'ZPHC Türkiye' mesajlarına itibar etmeyin.",
+    p: "Sitede sepet veya çevrim içi ödeme bulunmuyor. Tüm siparişler WhatsApp üzerinden, karşılıklı teyitle ilerler. Resmi hattımız dışında bir numaradan gelen mesajlara itibar etmeyin.",
   },
   {
     h: "Sorumluluk",

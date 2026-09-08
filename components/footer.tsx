@@ -85,7 +85,7 @@ export function Footer() {
         <p className="max-w-3xl">Ürünler laboratuvar ve araştırma materyali olarak sunulur; insan kullanımı için tasarlanmamıştır. İçerik bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez.</p>
         <nav aria-label="Yasal bağlantılar" className="flex flex-wrap gap-x-4 gap-y-2"><Link href="/hakkimizda" className="hover:text-white">Hakkımızda</Link><Link href="/metodoloji" className="hover:text-white">Metodoloji</Link><Link href="/kosullar" className="hover:text-white">Koşullar</Link><Link href="/gizlilik" className="hover:text-white">KVKK</Link></nav>
       </div>
-      <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-5 text-[0.68rem] font-semibold text-white/45 sm:flex-row sm:items-center sm:justify-between"><p>© {year} {siteName}</p><p>Zhengzhou Pharmaceutical · Türkiye distribütörü</p></div>
+      <div className="mt-5 flex flex-col gap-2 border-t border-white/10 pt-5 text-[0.68rem] font-semibold text-white/45 sm:flex-row sm:items-center sm:justify-between"><p>© {year} {siteName}</p><p>ZPHC Türkiye ürün kataloğu</p></div>
     </div>
   </footer>
 }

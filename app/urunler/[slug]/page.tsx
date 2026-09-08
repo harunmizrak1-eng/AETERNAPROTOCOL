@@ -58,7 +58,7 @@ export async function generateMetadata({
         0,
         300,
       )
-    : `${product.name}. ZPHC resmi distribütöründen. Ertesi gün kargo, kargo ücreti yok.`
+    : `${product.name}. ZPHC Türkiye ürün kataloğundan. Ertesi gün kargo, kargo ücreti yok.`
 
   return {
     title: fullName,

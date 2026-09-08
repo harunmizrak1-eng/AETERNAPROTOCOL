@@ -6,10 +6,10 @@ export const siteUrl =
 
 export const siteName = "ZPHC Türkiye"
 
-export const siteTagline = "ZPHC Türkiye Resmi Distribütörü"
+export const siteTagline = "ZPHC Türkiye Ürün Kataloğu"
 
 export const siteDescription =
-  "ZPHC Türkiye; ZPHC Pharma (Zhengzhou Pharmaceutical) peptid ve insan büyüme hormonu ürünlerinin resmi distribütörüdür. Orijinallik doğrulaması, güncel ürün kataloğu ve literatür referanslı bileşik kütüphanesi."
+  "ZPHC Türkiye ürün kataloğu; peptid ve araştırma ürünleri için güncel ürün bilgileri, orijinallik doğrulaması ve literatür referanslı bileşik kütüphanesi sunar."
 
 // Editorial review date for the site's evidence-classification claims.
 // Update by hand when the literature review is actually redone; never

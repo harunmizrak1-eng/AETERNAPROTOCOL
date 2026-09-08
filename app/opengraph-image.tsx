@@ -64,7 +64,7 @@ export default function OpengraphImage() {
             color: "#0d1b2a",
           }}
         >
-          Resmi Distribütör
+          ZPHC Türkiye
         </div>
 
         <div

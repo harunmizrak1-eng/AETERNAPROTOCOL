@@ -145,7 +145,7 @@ export default function MethodologyPage() {
                 Çıkar çatışması beyanı
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-ZPHC Türkiye bir distribütördür: bu sayfada sınıflandırdığımız
+ZPHC Türkiye ürün kataloğudur: bu sayfada sınıflandırdığımız
                 bileşiklerin bir kısmını aynı zamanda satıyoruz. Bu doğrudan
                 bir çıkar çatışmasıdır ve gizlemek yerine açıkça
                 belirtiyoruz. Kanıt sınıflandırması bu ticari ilişkiden

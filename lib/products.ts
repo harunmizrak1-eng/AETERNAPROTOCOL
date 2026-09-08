@@ -402,8 +402,8 @@ export const products: Product[] = [
   },
   {
     slug: "mots-c-20mg-with-bacteriostatic-water-zphc",
-    name: "MOTS-c 20mg Kit ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
-    sku: "MOTSC-20-ZPHC",
+    name: "MOTS-c 40mg Kit ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
+    sku: "MOTSC-40-ZPHC",
     category: "peptid",
     peptideSlug: "mots-c",
     image: "/products/mots-c-20mg-with-bacteriostatic-water-zphc.webp",
@@ -411,7 +411,7 @@ export const products: Product[] = [
     goals: ["Uzun Yaşam"],
     inStock: true,
     specs: [
-      { label: "Kit İçeriği", value: "1 flakon 20 mg liyofilize MOTS-c peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
+      { label: "Kit İçeriği", value: "1 flakon 40 mg liyofilize MOTS-c peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
       { label: "Peptid Profili", value: "MOTS-c (12S rRNA mitokondriyal açık okuma çerçevesi), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
       { label: "Rekonstitüsyon", value: "Steril koşullarda, ürünle verilen bakteriyostatik suyu ekleyin; tamamen çözünene dek hafifçe çevirin.", kind: "spec" },
       { label: "Araştırma Alanları", value: "Metabolik düzenleme çalışmaları, mitokondriyal fonksiyon araştırmaları, glukoz metabolizması modelleri, hücresel enerji yolağı analizleri.", kind: "claim" },
@@ -419,7 +419,7 @@ export const products: Product[] = [
       { label: "Kalite Kontrolü", value: "Hermetik kapalı steril cam flakon, parti bazında doğrulanmış ve orijinallik kontrollü; yalnızca araştırma amaçlıdır.", kind: "spec" },
     ],
     notes: [
-      "MOTS-c 20 mg; mitokondri kaynaklı peptid",
+      "MOTS-c 40 mg; mitokondri kaynaklı peptid",
       "Liyofilize toz + bakteriyostatik su",
     ],
   },
@@ -652,7 +652,7 @@ export const products: Product[] = [
   },
   {
     slug: "super-slim-mix-55mg-5x11mg-zphc",
-    name: "Super Slim Mix ZPHC 55 mg (5 flakon × 11 mg)",
+    name: "Super Slim Mix ZPHC 27.5 mg",
     sku: "SUP55-ZPHC",
     category: "peptid",
     image: "/products/super-slim-mix-55mg-5x11mg-zphc.webp",
@@ -668,7 +668,7 @@ export const products: Product[] = [
     ],
     notes: [
       "Super Slim Mix; üç yolaklı yağ kaybı karışımı",
-      "5 liyofilize flakon × 11 mg (toplam 55 mg)",
+      "Super Slim Mix toplam 27.5 mg",
       "Kurcalamaya karşı korumalı ambalaj · kurcalamaya karşı korumalı flakon · gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
     ],
   },

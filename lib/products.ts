@@ -653,17 +653,17 @@ export const products: Product[] = [
   {
     slug: "super-slim-mix-55mg-5x11mg-zphc",
     name: "Super Slim Mix ZPHC 27.5 mg",
-    sku: "SUP55-ZPHC",
+    sku: "SUP27.5-ZPHC",
     category: "peptid",
     image: "/products/super-slim-mix-55mg-5x11mg-zphc.webp",
     sourcePriceUsd: 199.0,
     goals: ["Kilo Kaybı"],
     inStock: true,
     specs: [
-      { label: "Flakon Başına Formül", value: "AOD 9604 5 mg · FRAG 176-191 5 mg · Adipotide 1 mg.", kind: "spec" },
+      { label: "Formül", value: "AOD 9604 · FRAG 176-191 · Adipotide.", kind: "spec" },
       { label: "Sinerjik etki", value: "AOD ve FRAG lipolizi hızlandırır; Adipotide yağ hücresi damarlanmasını seçici olarak azaltır.", kind: "claim" },
-      { label: "Rekonstitüsyon", value: "2 ml bakteriyostatik su ekleyin → 5,5 mg/ml. Hafifçe çevirin; 2–8 °C'de buzdolabında saklayın.", kind: "spec" },
-      { label: "Örnek Araştırma Dozu", value: "4–6 hafta boyunca günde bir, deri altı 0,25 ml (≈ 1,4 mg) – 0,5 ml (≈ 2,8 mg).", kind: "claim" },
+      { label: "Ürün bilgisi", value: "Toplam içerik: 27.5 mg. Uygulama ve saklama bilgileri için ürün etiketini esas alın.", kind: "spec" },
+      { label: "Kullanım", value: "Yalnızca araştırma materyalidir; tıbbi kullanım veya doz önerisi sunulmaz.", kind: "claim" },
       { label: "Farma Sınıfı Kalite Kontrolü", value: "≥%99 saflık, endotoksin < 0,03 EU/mg; her kutuda doğrulama kodu.", kind: "spec" },
     ],
     notes: [

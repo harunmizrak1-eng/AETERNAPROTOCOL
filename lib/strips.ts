@@ -26,7 +26,6 @@ export const bestSellers: Strip = {
     "ghk-cu-60mg-with-bacteriostatic-water-zphc",
     "ghk-cu-200mg-zphc",
     "zptrop-hgh-100iu-aq-vial-zphc",
-    "tirzepatide-30mg-aq-pen-zphc",
     "retatrutide-30mg-aq-pen-zphc",
   ],
 }
@@ -36,7 +35,6 @@ export const bestSellingHgh: Strip = {
   title: "Çok satan büyüme hormonu",
   slugs: [
     "zptrop-hgh-100iu-aq-vial-zphc",
-    "ipamorelin-25mg-5x5mg-zphc",
     "wellness-mix-25mg-5x5mg-zphc",
     "mega-mass-mix-10mg-5x10mg-zphc",
     "ghrp-6-25mg-5x5mg-zphc",
@@ -50,13 +48,11 @@ export const bestSellingFatLoss: Strip = {
   title: "Çok satan kilo kaybı ürünleri",
   slugs: [
     "retatrutide-60mg-5x12mg-zphc",
-    "tirzepatide-30mg-aq-pen-zphc",
     "retatrutide-30mg-aq-pen-zphc",
     "retatrutide-20mg-5x4mg-zphc",
     "reta-zphc-120-mg-5-vials-x-24-mg",
     "super-slim-mix-55mg-5x11mg-zphc",
     "retatrutide-40mg-5x8mg-zphc",
-    "cagrilintide-25mg-zphc",
   ],
   href: "/urunler?kategori=Kilo%20Kayb%C4%B1",
   linkLabel: "Tüm kilo kaybı ürünleri",
@@ -76,7 +72,6 @@ export const readyMixes: Strip = {
     "glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc",
     "wellness-mix-25mg-5x5mg-zphc",
     "super-slim-mix-55mg-5x11mg-zphc",
-    "double-burn-mix-5mg-5x5mg-zphc",
     "mega-mass-mix-10mg-5x10mg-zphc",
   ],
   linkLabel: "Tüm ürünler",

@@ -11,7 +11,7 @@ const COVER: Record<string, string> = {
   "Büyüme Hormonu": "zptrop-hgh-100iu-aq-vial-zphc",
   "Cilt & Yaşlanma Karşıtı": "ghk-cu-60mg-with-bacteriostatic-water-zphc",
   "Uzun Yaşam": "nad-plus-2500mg-zphc",
-  Diğer: "melanotan-2-30mg-aq-pen-zphc",
+  Diğer: "epithalon-50mg-with-bacteriostatic-water-zphc",
 }
 
 const PRODUCT_FAMILY_LINKS = [
@@ -19,9 +19,7 @@ const PRODUCT_FAMILY_LINKS = [
   { href: "/zphc-bpc-157", label: "ZPHC BPC-157" },
   { href: "/zphc-ghk-cu", label: "ZPHC GHK-Cu" },
   { href: "/zphc-zptrop", label: "ZPHC ZPtrop" },
-  { href: "/zphc-tirze", label: "ZPHC Tirze" },
   { href: "/zphc-peptid-karisimlari", label: "ZPHC Karışımlar" },
-  { href: "/peptidler/ipamorelin", label: "ZPHC Ipamorelin" },
   { href: "/peptidler/tesamorelin", label: "ZPHC Tesamorelin" },
 ]
 

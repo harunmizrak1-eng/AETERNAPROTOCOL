@@ -7,7 +7,6 @@ export const productPrices: Record<string, number> = {
   "bpc157-25mg-5x5mg-zphc": 9_000,
   "ghk-cu-60mg-with-bacteriostatic-water-zphc": 5_000,
   "ghk-cu-200mg-zphc": 9_000,
-  "double-burn-mix-5mg-5x5mg-zphc": 9_000,
   "ghrp-6-25mg-5x5mg-zphc": 9_000,
   "glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc": 7_500,
   "ultra-rehab-mix-50mg-5x10mg-zphc": 10_000,

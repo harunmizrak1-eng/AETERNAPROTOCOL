@@ -14,7 +14,7 @@ export default function ZphcBlendsPage() {
     eyebrow="ZPHC Karışımlar Türkiye"
     title="ZPHC hazır karışımlarını formülüne göre ayırın"
     intro="Karışımlar aynı ürünün farklı boyları değildir. Glow Pro, Ultra Rehab, Double Burn, Super Slim, Wellness ve Mega Mass farklı bileşim ve toplam içeriklerle listelenir."
-    slugs={["double-burn-mix-5mg-5x5mg-zphc", "glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc", "ultra-rehab-mix-50mg-5x10mg-zphc", "super-slim-mix-55mg-5x11mg-zphc", "wellness-mix-25mg-5x5mg-zphc", "mega-mass-mix-10mg-5x10mg-zphc"]}
+    slugs={["glow-pro-mix-60mg-bpc157-tb500-ghkcu-zphc", "ultra-rehab-mix-50mg-5x10mg-zphc", "super-slim-mix-55mg-5x11mg-zphc", "wellness-mix-25mg-5x5mg-zphc", "mega-mass-mix-10mg-5x10mg-zphc"]}
     libraryHref="/peptidler"
     libraryLabel="Bileşik kütüphanesi"
     bullets={["Bileşim karşılaştırması", "Güncel fiyat", "Türkiye stoğu"]}

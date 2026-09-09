@@ -4,7 +4,7 @@
 //
 /** Kullanıcının verdiği Türkiye numarası. wa.me için başına 90 eklenir;
  * baştaki 0 ve + işareti WhatsApp bağlantısında kullanılmaz. */
-export const whatsappLocalNumber = "5365799647"
+export const whatsappLocalNumber = "5822050187"
 export const whatsappNumber = `90${whatsappLocalNumber}`
 export const instagramHandle = "@zphc.tr"
 export const instagramUrl = "https://www.instagram.com/zphc.tr/"

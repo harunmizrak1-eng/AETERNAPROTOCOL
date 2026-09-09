@@ -4,7 +4,6 @@ import { useMemo, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import { products } from "@/lib/catalog"
 import { ProductCard, getProductForm } from "@/components/product-card"
-import { featuredProductSlugs } from "@/lib/product-prices"
 
 const ALL = "Tümü"
 const PARAM = "kategori"
@@ -36,7 +35,6 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
   // yerel state yönetir.
   const [query, setQuery] = useState(params.get(QUERY_PARAM) ?? "")
   const [form, setForm] = useState(ALL)
-  const [showAll, setShowAll] = useState(false)
 
   const shown = useMemo(() => {
     const byGoal =
@@ -58,11 +56,7 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
     )
   }, [active, query, form])
 
-  const guided = active !== ALL || query.trim().length > 0 || form !== ALL
-  const featured = featuredProductSlugs
-    .map((slug) => products.find((product) => product.slug === slug))
-    .filter((product): product is NonNullable<typeof product> => Boolean(product))
-  const visible = guided || showAll ? shown : featured
+  const visible = shown
 
   return (
     <>
@@ -108,16 +102,11 @@ export function ProductCatalog({ initialGoal }: { initialGoal?: string }) {
       <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
         <p className="text-base text-muted-foreground">
           <span className="font-semibold text-foreground">{visible.length}</span>{" "}
-          {guided || showAll ? "ürün" : "öne çıkan ürün"}
+          ürün
           {active !== ALL && ` · ${active}`}
           {query.trim() && ` · “${query.trim()}” araması`}
         </p>
 
-        {!guided && !showAll && (
-          <button type="button" onClick={() => setShowAll(true)} className="text-sm font-bold text-gold hover:underline">
-            Tüm {products.length} ürünü göster →
-          </button>
-        )}
       </div>
 
       {visible.length === 0 ? (

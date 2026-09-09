@@ -6,8 +6,6 @@
  * baştaki 0 ve + işareti WhatsApp bağlantısında kullanılmaz. */
 export const whatsappLocalNumber = "5822050187"
 export const whatsappNumber = `90${whatsappLocalNumber}`
-export const instagramHandle = "@zphc.tr"
-export const instagramUrl = "https://www.instagram.com/zphc.tr/"
 
 /** Build a wa.me link with an optional pre-filled message. */
 export function whatsappLink(message?: string) {

@@ -4,7 +4,7 @@ import { products } from "@/lib/catalog"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
-/* WhatsApp, Instagram veya arama sonuçlarında link paylaşıldığında görünen
+/* WhatsApp veya arama sonuçlarında link paylaşıldığında görünen
  * kart görseli. Önceki hâli kapatılan ÆTERNA markasından kalmıştı: siyah
  * zemin, Cormorant italik ve "Özel Longevity Enstitüsü" alt başlığı — yani
  * paylaşılan her linkte yanlış marka görünüyordu. Sitenin kendi kimliğine

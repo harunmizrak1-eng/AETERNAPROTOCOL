@@ -7,7 +7,6 @@ export function GET() {
     "ZPHCTR CONTENT ORIGIN RECORD",
     `Canonical site: ${siteUrl}`,
     `Publisher: ${siteName}`,
-    "Official Instagram: https://www.instagram.com/zphc.tr/",
     "First publication record: Timestamped publication archive maintained by the publisher.",
     "Content reuse is not authorized without written permission.",
   ].join("\n")

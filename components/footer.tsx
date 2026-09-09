@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { instagramUrl, whatsappLink } from "@/lib/contact"
+import { whatsappLink } from "@/lib/contact"
 import { siteName } from "@/lib/site"
 import { TrackedOutboundLink } from "@/components/tracked-outbound-link"
 
@@ -56,10 +56,7 @@ export function Footer() {
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_.8fr_.8fr_1fr] lg:gap-12">
         <div>
           <p className="max-w-xs text-sm leading-6 text-white/70">Ürün adı, stok ve fiyat bilgisi için doğrudan ekibimize yazın. Kutu üzerindeki kodu üreticinin doğrulama ekranında kontrol edin.</p>
-          <div className="mt-5 flex gap-2">
-            <TrackedOutboundLink href={instagramUrl} eventName="Instagram Click" properties={{ source: "footer" }} ariaLabel="Instagram hesabımızı aç" className="inline-flex min-h-10 items-center rounded-md border border-white/15 px-3 text-sm font-semibold text-white/75 transition hover:border-sky-300/50 hover:text-white">Instagram</TrackedOutboundLink>
-            <TrackedOutboundLink href={whatsappLink()} eventName="WhatsApp Click" properties={{ source: "footer" }} ariaLabel="WhatsApp hattımızı aç" className="inline-flex min-h-10 items-center rounded-md border border-white/15 px-3 text-sm font-semibold text-white/75 transition hover:border-[#25D366]/60 hover:text-white">WhatsApp</TrackedOutboundLink>
-          </div>
+          <div className="mt-5"><TrackedOutboundLink href={whatsappLink()} eventName="WhatsApp Click" properties={{ source: "footer" }} ariaLabel="WhatsApp hattımızı aç" className="inline-flex min-h-10 items-center rounded-md border border-[#25D366]/60 px-3 text-sm font-semibold text-white/75 transition hover:bg-[#25D366] hover:text-white">WhatsApp</TrackedOutboundLink></div>
         </div>
 
         <FooterLinks title="Mağaza" links={STORE_LINKS} />

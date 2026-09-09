@@ -6,7 +6,7 @@ import { useMemo, useState } from "react"
 import { products } from "@/lib/catalog"
 import { localeUi, localizedProductForm, type SeoLocale } from "@/lib/international-seo"
 import { formatProductPrice, getProductPrice } from "@/lib/product-prices"
-import { instagramHandle, instagramUrl, whatsappLink } from "@/lib/contact"
+import { whatsappLink } from "@/lib/contact"
 
 export function LocalizedCatalog({ locale }: { locale: SeoLocale }) {
   const ui = localeUi[locale]
@@ -22,10 +22,7 @@ export function LocalizedCatalog({ locale }: { locale: SeoLocale }) {
       <header className="sticky top-0 z-40 border-b border-hairline bg-white/95 px-6 py-4 backdrop-blur md:px-10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4">
           <Link href="/"><Image src="/brand/zphc-logo.png" alt="ZPHC" width={250} height={42} className="h-8 w-auto" priority /></Link>
-          <div className="flex items-center gap-3 text-xs font-bold">
-            <Link href={`/${locale}`}>{ui.languageName}</Link>
-            <a href={instagramUrl} target="_blank" rel="noopener noreferrer">{instagramHandle}</a>
-          </div>
+          <div className="text-xs font-bold"><Link href={`/${locale}`}>{ui.languageName}</Link></div>
         </div>
       </header>
       <main id="main-content">
@@ -59,7 +56,7 @@ export function LocalizedCatalog({ locale }: { locale: SeoLocale }) {
       </main>
       <footer className="border-t border-hairline bg-surface px-6 py-8 text-center text-xs leading-6 text-muted-foreground">
         <p>{ui.officialDomain}</p>
-        <p><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp</a> · <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram {instagramHandle}</a></p>
+        <p><a href={whatsappLink()} target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
         <p className="mt-2">{ui.researchOnly}</p>
       </footer>
     </div>

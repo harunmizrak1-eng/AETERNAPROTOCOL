@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
-import { WhatsappFloat } from '@/components/whatsapp-float'
 import { ProductCompareProvider } from '@/components/product-compare'
 import { homeLanguageAlternates } from '@/lib/international-seo'
 import { whatsappLink } from '@/lib/contact'
@@ -79,7 +78,7 @@ export default function RootLayout({
                   contactPoint: {
                     '@type': 'ContactPoint',
                     contactType: 'sales',
-                    telephone: '+90-536-579-96-47',
+                    telephone: '+90-582-205-01-87',
                     availableLanguage: ['Turkish', 'English', 'Spanish', 'Arabic'],
                   },
                 },
@@ -105,7 +104,6 @@ export default function RootLayout({
         <StoreCartProvider>
           <ProductCompareProvider>
             {children}
-            <WhatsappFloat />
           </ProductCompareProvider>
         </StoreCartProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}

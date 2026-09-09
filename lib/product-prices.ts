@@ -45,7 +45,11 @@ const priceFormatter = new Intl.NumberFormat("tr-TR", {
 })
 
 export function getProductPrice(slug: string) {
-  return productPrices[slug]
+  // Prices are intentionally not published on the storefront. Keep the
+  // catalogue map for internal administration, but route every customer
+  // surface to the WhatsApp price inquiry flow.
+  void slug
+  return undefined
 }
 
 export function formatProductPrice(price: number) {

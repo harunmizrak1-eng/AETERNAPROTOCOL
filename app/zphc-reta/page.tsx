@@ -3,12 +3,12 @@ import { SeoProductLanding } from "@/components/seo-product-landing"
 import { topicLanguageAlternates } from "@/lib/international-seo"
 
 export const metadata: Metadata = {
-  title: "ZPHC Reta Türkiye | Retatrutide Ürünleri ve Fiyatları",
-  description: "ZPHC Reta ürünlerini 20 mg, 40 mg, 60 mg, 120 mg ve 30 mg hazır kalem seçenekleriyle karşılaştırın. Türkiye stoğu, üretici doğrulama kodu ve güncel fiyatlar.",
+  title: "ZPHC Reta Türkiye | Retatrutide Ürünleri",
+  description: "ZPHC Reta ürünlerini 20 mg, 40 mg, 60 mg, 120 mg ve 30 mg hazır kalem seçenekleriyle karşılaştırın. Türkiye stoğunu görün; fiyat ve stok bilgisini doğrudan sorun.",
   alternates: { canonical: "/zphc-reta", languages: topicLanguageAlternates("retatrutide") },
   openGraph: {
     title: "ZPHC Reta Türkiye | Retatrutide Ürünleri",
-    description: "ZPHC Reta ürünleri, güncel fiyatlar, stok bilgisi ve ürün formatları.",
+    description: "ZPHC Reta ürünleri, stok bilgisi, ürün formatları ve üretici koduyla doğrulama.",
     url: "/zphc-reta",
   },
 }
@@ -28,6 +28,7 @@ export default function ZphcRetaPage() {
       eyebrow="ZPHC Reta Türkiye"
       title="ZPHC Reta ürünleri arasındaki farkı görün"
       intro="Reta adıyla listelenen ZPHC retatrutide ürünleri; toplam miktar, flakon seti, hazır kalem ve çift hazneli kartuş seçenekleriyle birbirinden ayrılır. Bu sayfa mevcut ürünleri tek yerde karşılaştırmanız için hazırlanmıştır."
+      canonicalPath="/zphc-reta"
       slugs={RETA_PRODUCTS}
       libraryHref="/peptidler/retatrutide"
       libraryLabel="Retatrutide bilgi kaydı"

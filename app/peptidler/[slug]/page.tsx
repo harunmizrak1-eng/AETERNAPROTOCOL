@@ -17,6 +17,7 @@ import {
 } from "@/lib/peptides"
 import { getArticle } from "@/lib/articles"
 import { citations } from "@/lib/citations"
+import { getPeptideFamilyLink } from "@/lib/seo-links"
 
 /** Extracts a display unit from a dose step's amount string (e.g. "2mg" ->
  * "mg", "%0.5" -> "%") so the calculator's input field can be labeled
@@ -73,6 +74,7 @@ export default async function PeptideDetailPage({
     ? getArticle(peptide.relatedArticleSlug)
     : undefined
   const citationList = citations[peptide.slug]
+  const productFamilyLink = getPeptideFamilyLink(peptide.slug)
 
   const halfLifeHours = peptide.molecular?.halfLifeHours
   const lastDoseStep = peptide.dosing?.[peptide.dosing.length - 1]
@@ -520,6 +522,14 @@ export default async function PeptideDetailPage({
                   className="mt-4 inline-block text-lg italic text-foreground/90 transition-colors hover:text-gold"
                 >
                   {relatedArticle.title} →
+                </Link>
+              </div>
+            )}
+
+            {productFamilyLink && (
+              <div className="mt-10 border-t border-hairline pt-8">
+                <Link href={productFamilyLink.href} className="text-sm font-semibold text-gold hover:underline">
+                  {productFamilyLink.label} →
                 </Link>
               </div>
             )}

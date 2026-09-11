@@ -3,11 +3,13 @@ import { Footer } from "@/components/footer"
 import { Nav } from "@/components/nav"
 import { ProductCard } from "@/components/product-card"
 import { products } from "@/lib/catalog"
+import { siteName, siteUrl } from "@/lib/site"
 
 export function SeoProductLanding({
   eyebrow,
   title,
   intro,
+  canonicalPath,
   slugs,
   libraryHref,
   libraryLabel,
@@ -17,6 +19,7 @@ export function SeoProductLanding({
   eyebrow: string
   title: string
   intro: string
+  canonicalPath: string
   slugs: string[]
   libraryHref: string
   libraryLabel: string
@@ -31,9 +34,50 @@ export function SeoProductLanding({
   const shown = slugs
     .map((slug) => products.find((product) => product.slug === slug))
     .filter((product): product is NonNullable<typeof product> => Boolean(product))
+  const pageUrl = `${siteUrl}${canonicalPath}`
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${pageUrl}#collection`,
+        name: title,
+        description: intro,
+        url: pageUrl,
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        publisher: { "@id": `${siteUrl}/#organization` },
+        mainEntity: { "@id": `${pageUrl}#products` },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${pageUrl}#products`,
+        numberOfItems: shown.length,
+        itemListElement: shown.map((product, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: product.name,
+          url: `${siteUrl}/urunler/${product.slug}`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: siteName, item: siteUrl },
+          { "@type": "ListItem", position: 2, name: "Ürünler", item: `${siteUrl}/urunler` },
+          { "@type": "ListItem", position: 3, name: title, item: pageUrl },
+        ],
+      },
+    ],
+  }
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Nav />
       <main id="main-content" className="bg-background">
         <section className="border-b border-hairline bg-surface px-6 py-10 md:px-10 md:py-14">

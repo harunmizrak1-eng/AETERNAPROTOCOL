@@ -20,6 +20,7 @@ import { ProductGallery } from "@/components/product-gallery"
 import { ProductVariantSelector } from "@/components/product-variant-selector"
 import { ProductBuyActions } from "@/components/store-cart"
 import { RecentlyViewed } from "@/components/recently-viewed"
+import { getProductFamilyLinks } from "@/lib/seo-links"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -107,10 +108,11 @@ export default async function UrunPage({
   const averageRating = reviews.length
     ? reviews.reduce((total, review) => total + review.rating, 0) / reviews.length
     : 0
+  const familyLinks = getProductFamilyLinks(product)
 
   // schema.org Product: arama sonuçlarında görsel, stok ve marka görünsün.
-  // Fiyat yayımlanmadığı için offers yalnızca stok durumu taşır; uydurma
-  // fiyat vermek yerine alanı hiç eklemiyoruz.
+  // Google Product sonuçlarında fiyat olmadan Offer yayımlamak geçersiz
+  // işaretleme ürettiği için offers yalnızca fiyat gerçekten tanımlıysa eklenir.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -119,15 +121,17 @@ export default async function UrunPage({
     brand: { "@type": "Brand", name: "ZPHC" },
     image: product.image ? [`${siteUrl}${product.image}`] : undefined,
     description: peptide?.short ?? product.name,
-    offers: {
-      "@type": "Offer",
-      url: `${siteUrl}/urunler/${product.slug}`,
-      availability: product.inStock
-        ? "https://schema.org/InStock"
-        : "https://schema.org/OutOfStock",
-      priceCurrency: "TRY",
-      price: productPrice,
-    },
+    offers: productPrice
+      ? {
+          "@type": "Offer",
+          url: `${siteUrl}/urunler/${product.slug}`,
+          availability: product.inStock
+            ? "https://schema.org/InStock"
+            : "https://schema.org/OutOfStock",
+          priceCurrency: "TRY",
+          price: productPrice,
+        }
+      : undefined,
     aggregateRating: reviews.length
       ? {
           "@type": "AggregateRating",
@@ -213,6 +217,15 @@ export default async function UrunPage({
 
                 <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#eef8f2] px-4 py-3 text-sm text-foreground"><span aria-hidden="true" className="text-lg text-tier-proven">✓</span><p><strong>Ücretsiz, ertesi gün kargo.</strong> Yurtiçi Kargo ile gönderilir. <Link href="/kargo" className="font-semibold text-gold hover:underline">Koşulları görün</Link></p></div>
                 {product.sku && <p className="mt-4 font-mono text-[0.7rem] text-muted-foreground">Ürün kodu: {product.sku}</p>}
+                {familyLinks.length > 0 && (
+                  <nav aria-label="İlgili ürün grupları" className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                    {familyLinks.map((link) => (
+                      <Link key={link.href} href={link.href} className="font-semibold text-gold hover:underline">
+                        {link.label} →
+                      </Link>
+                    ))}
+                  </nav>
+                )}
               </div>
             </div>
 

@@ -3,14 +3,14 @@ import { readdir, readFile, writeFile } from "node:fs/promises"
 import { relative, resolve } from "node:path"
 
 const root = process.cwd()
-const includedRoots = ["app", "components", "lib"]
+const includedRoots = ["app", "components", "lib", "public/products"]
 const files = []
 
 async function walk(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const path = resolve(directory, entry.name)
     if (entry.isDirectory()) await walk(path)
-    else if (/\.(ts|tsx|css|md)$/.test(entry.name)) files.push(path)
+    else if (/\.(ts|tsx|css|md|webp|png)$/.test(entry.name)) files.push(path)
   }
 }
 

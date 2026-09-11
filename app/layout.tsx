@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from 'next'
 import { siteUrl, siteName, siteDescription } from '@/lib/site'
 import { ProductCompareProvider } from '@/components/product-compare'
 import { homeLanguageAlternates } from '@/lib/international-seo'
-import { whatsappLink } from '@/lib/contact'
 import { OriginGuard } from '@/components/origin-guard'
 import { StoreCartProvider } from '@/components/store-cart'
 import './globals.css'
@@ -70,7 +69,6 @@ export default function RootLayout({
                   url: siteUrl,
                   logo: `${siteUrl}/brand/zphc-logo.png`,
                   areaServed: 'TR',
-                  sameAs: [whatsappLink()],
                   identifier: `${siteUrl}/.well-known/zphctr-origin`,
                   foundingDate: '2026-08-21',
                   copyrightHolder: { '@id': `${siteUrl}/#organization` },

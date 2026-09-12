@@ -71,12 +71,7 @@ export function Footer() {
       </div>
 
       <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-5 text-xs leading-5 text-white/45 lg:flex-row lg:items-center lg:justify-between">
-        {/* Yaş sınırı bilerek burada, yasal metnin içinde duruyor. Site
-            1 Eylül 2026'da BTK Güvenli İnternet'in Aile ve Çocuk
-            profillerine kapatıldı; kendini sınırladığını gösteren açık bir
-            ifade, yanlış kategori itirazında inceleyen kişinin aradığı
-            şey. İfade gerçeği yansıtıyor: 18 yaş altına satış yapılmıyor. */}
-        <p className="max-w-2xl">Ürünler laboratuvar ve araştırma materyali olarak sunulur; insan kullanımı için tasarlanmamıştır. 18 yaşından küçüklere satış yapılmaz. Sitede çevrim içi ödeme alınmaz; sipariş ve stok teyidi resmî WhatsApp hattı üzerinden yürütülür.</p>
+        <p className="max-w-2xl">Ürünler laboratuvar ve araştırma materyali olarak sunulur; insan kullanımı için tasarlanmamıştır.</p>
         <nav aria-label="Yasal bağlantılar" className="flex flex-wrap gap-x-4 gap-y-2"><Link href="/hakkimizda" className="hover:text-white">Hakkımızda</Link><Link href="/metodoloji" className="hover:text-white">Metodoloji</Link><Link href="/kosullar" className="hover:text-white">Koşullar</Link><Link href="/gizlilik" className="hover:text-white">KVKK</Link></nav>
       </div>
       <div className="mt-4 flex flex-col gap-1 border-t border-white/10 pt-4 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between"><p>© {year} {siteName}</p><p>zphctr.com</p></div>

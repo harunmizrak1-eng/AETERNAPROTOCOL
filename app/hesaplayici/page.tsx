@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
-import { DoseCalculator, CalculablePeptideLinks } from "@/components/dose-calculator"
+import { DoseCalculator } from "@/components/dose-calculator"
 
 export const metadata: Metadata = {
   title: "Doz ve Sulandırma Hesaplayıcı",
@@ -91,20 +91,10 @@ export default function HesaplayiciPage() {
 
         <section className="px-6 pb-20 md:px-10">
           <div className="mx-auto max-w-3xl border border-hairline bg-muted/30 p-8 sm:p-10">
-            <h2 className="text-xl font-bold tracking-tight text-foreground">
-              Dozlama basamağı olan bileşikler
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-foreground/85">
-              Aşağıdaki bileşiklerin kütüphane sayfasında literatür kaynaklı
-              dozlama basamakları var; hesaplayıcıdaki açılır listeden
-              seçtiğinizde bu basamaklar hızlı doldurma çipi olarak çıkar.
-            </p>
-            <div className="mt-6">
-              <CalculablePeptideLinks />
-            </div>
-            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
+            <p className="text-xs leading-relaxed text-muted-foreground">
               Bu araç yalnızca matematiksel bir dönüşüm yapar, tıbbi tavsiye
-              vermez. Kişisel doz seçimi bir klinisyenle belirlenmelidir.
+              vermez. Flakon içeriğini ürün etiketinden doğrulayın; kişisel doz
+              seçimi bir klinisyenle belirlenmelidir.
             </p>
           </div>
         </section>

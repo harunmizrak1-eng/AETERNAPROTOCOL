@@ -1,12 +1,10 @@
 "use client"
 
 import { useMemo, useState } from "react"
-import Link from "next/link"
 import {
   peptides,
   tierDosingDisclaimer,
   tierLabel,
-  type DoseStep,
 } from "@/lib/peptides"
 
 type UnitSystem = "mg" | "IU"
@@ -44,17 +42,21 @@ const CALCULABLE_PEPTIDES = peptides.filter((p) => p.dosing && p.dosing.length >
 
 const WATER_PRESETS_ML = [1, 2, 3, 5]
 
-/* Şırınga çiziminin yatay yerleşimi, kapsayıcı genişliğinin yüzdesi olarak.
+/* Şırınga çizimi SVG kullanıcı birimiyle ölçülür; viewBox 620x104. Telefonda
+ * çizim küçüldüğü için skala rakamları okunmaz hale geliyor, bu yüzden kesin
+ * değerler her zaman çizimin altındaki sayı şeridinde de yazıyor.
+ *
  * Gerçekte piston tamamen çekildiğinde kol bir gövde boyu dışarı çıkar; o
- * kadar yer ayırmak gövdeyi yarı yarıya küçültüp skalayı okunmaz hale
- * getiriyordu. Kol hareketi PLUNGER_TRAVEL ile kısaltıldı: yüksek dozda kol
- * olması gerekenden kısa görünür, buna karşılık skala her dozda okunur
- * kalıyor. Ölçüm gövdeden okunduğu için bu kısaltma sonucu etkilemiyor. */
-const NEEDLE_END = 6
-const HUB_END = 10
-const BARREL_LEFT = 10
-const BARREL_WIDTH = 52
-const PLUNGER_TRAVEL = 0.5
+ * kadar yer ayırmak gövdeyi yarıya düşürüp skalayı okunmaz yapıyordu. Kol
+ * hareketi PLUNGER_TRAVEL ile kısaltıldı. Ölçüm gövdeden okunduğu için bu
+ * kısaltma sonucu etkilemiyor. */
+const VB_W = 620
+const VB_H = 104
+const BARREL_X = 92
+const BARREL_W = 340
+const BARREL_Y = 30
+const BARREL_H = 52
+const PLUNGER_TRAVEL = 0.48
 
 function parseNum(value: string): number | null {
   const n = Number(value.replace(",", "."))
@@ -66,6 +68,231 @@ function fmt(n: number, digits = 2): string {
     minimumFractionDigits: 0,
     maximumFractionDigits: digits,
   })
+}
+
+interface Tick {
+  at: number
+  major: boolean
+  label?: number
+}
+
+/** İnsülin şırıngasının ölçekli çizimi: çelik iğne ve eğik uç, konik göbek,
+ * saydam gövde, kauçuk tıkaç, piston kolu ve başparmak desteği. Sıvı ile
+ * tıkaç doza göre hareket eder, çekilecek yer gövdenin üstünde işaretlenir. */
+function SyringeDrawing({
+  fillPct,
+  ticks,
+  badge,
+}: {
+  fillPct: number
+  ticks: Tick[]
+  badge: string | null
+}) {
+  const barrelRight = BARREL_X + BARREL_W
+  const stopperX = BARREL_X + fillPct * BARREL_W
+  const thumbX = barrelRight + 12 + fillPct * BARREL_W * PLUNGER_TRAVEL
+  const midY = BARREL_Y + BARREL_H / 2
+  const badgeW = badge ? Math.max(64, badge.length * 6.2 + 18) : 0
+  const badgeX = Math.min(
+    VB_W - badgeW / 2 - 2,
+    Math.max(badgeW / 2 + 2, stopperX),
+  )
+  const ease = "cubic-bezier(0.22, 0.61, 0.36, 1)"
+
+  return (
+    <svg
+      viewBox={`0 0 ${VB_W} ${VB_H}`}
+      className="mt-8 w-full"
+      role="img"
+      aria-label={badge ? `Şırıngada ${badge} işaretli` : "Boş insülin şırıngası"}
+    >
+      <defs>
+        <linearGradient id="dc-steel" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#dbe4ee" />
+          <stop offset="45%" stopColor="#93a5b8" />
+          <stop offset="100%" stopColor="#4e5d6e" />
+        </linearGradient>
+        <linearGradient id="dc-liquid" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#4aa6e0" />
+          <stop offset="55%" stopColor="#0072bc" />
+          <stop offset="100%" stopColor="#005a96" />
+        </linearGradient>
+        <linearGradient id="dc-stopper" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#5b6a7c" />
+          <stop offset="50%" stopColor="#2b3846" />
+          <stop offset="100%" stopColor="#18222d" />
+        </linearGradient>
+        <clipPath id="dc-barrel-clip">
+          <rect
+            x={BARREL_X}
+            y={BARREL_Y}
+            width={BARREL_W}
+            height={BARREL_H}
+            rx="3"
+          />
+        </clipPath>
+      </defs>
+
+      {/* İğne: eğik uç ve çelik gövde */}
+      <path d="M4 45.4 L16 43.6 L16 48.4 L4 48.4 Z" fill="url(#dc-steel)" />
+      <rect x="14" y="44.2" width="58" height="4" fill="url(#dc-steel)" />
+      {/* Göbek: iğneden gövdeye açılan koni */}
+      <path
+        d="M70 39 L88 33 L88 59 L70 53 Z"
+        fill="rgba(255,255,255,0.22)"
+        stroke="rgba(255,255,255,0.3)"
+        strokeWidth="0.8"
+      />
+      <rect x="86" y="34" width="8" height="24" rx="1.5" fill="rgba(255,255,255,0.28)" />
+
+      {/* Gövde */}
+      <rect
+        x={BARREL_X}
+        y={BARREL_Y}
+        width={BARREL_W}
+        height={BARREL_H}
+        rx="3"
+        fill="rgba(255,255,255,0.05)"
+        stroke="rgba(255,255,255,0.28)"
+        strokeWidth="1"
+      />
+
+      <g clipPath="url(#dc-barrel-clip)">
+        {/* Sıvı */}
+        <rect
+          x={BARREL_X}
+          y={BARREL_Y}
+          height={BARREL_H}
+          fill="url(#dc-liquid)"
+          style={{ width: fillPct * BARREL_W, transition: `width 650ms ${ease}` }}
+        />
+        {/* Cam parlaması */}
+        <rect
+          x={BARREL_X}
+          y={BARREL_Y + 4}
+          width={BARREL_W}
+          height="7"
+          fill="rgba(255,255,255,0.13)"
+        />
+        {/* Skala çizgileri */}
+        {ticks.map((t) => (
+          <line
+            key={t.at}
+            x1={BARREL_X + t.at * BARREL_W}
+            x2={BARREL_X + t.at * BARREL_W}
+            y1={BARREL_Y}
+            y2={BARREL_Y + (t.major ? 11 : 6)}
+            stroke={t.major ? "rgba(255,255,255,0.62)" : "rgba(255,255,255,0.3)"}
+            strokeWidth="1"
+          />
+        ))}
+      </g>
+
+      {/* Arka tutamak kanatları */}
+      <rect
+        x={barrelRight}
+        y={BARREL_Y - 9}
+        width="7"
+        height={BARREL_H + 18}
+        rx="2"
+        fill="rgba(255,255,255,0.26)"
+      />
+
+      {/* Piston kolu ve başparmak desteği */}
+      <g style={{ transition: `transform 650ms ${ease}` }}>
+        <rect
+          x={stopperX}
+          y={midY - 4}
+          width={Math.max(0, thumbX - stopperX)}
+          height="8"
+          fill="rgba(255,255,255,0.2)"
+          style={{ transition: `x 650ms ${ease}, width 650ms ${ease}` }}
+        />
+        <rect
+          x={stopperX}
+          y={midY - 0.7}
+          width={Math.max(0, thumbX - stopperX)}
+          height="1.4"
+          fill="rgba(255,255,255,0.3)"
+          style={{ transition: `x 650ms ${ease}, width 650ms ${ease}` }}
+        />
+        <rect
+          x={thumbX}
+          y={BARREL_Y - 12}
+          width="7"
+          height={BARREL_H + 24}
+          rx="2.5"
+          fill="rgba(255,255,255,0.34)"
+          style={{ transition: `x 650ms ${ease}` }}
+        />
+      </g>
+
+      {/* Kauçuk tıkaç. Konik ucu iğne tarafına bakar ve ucun bittiği nokta
+          doz çizgisiyle aynı yerdedir: sıvı tam orada biter, okunacak değer
+          de orasıdır. */}
+      <g clipPath="url(#dc-barrel-clip)">
+        <path
+          d={`M${stopperX} ${midY} L${stopperX + 5} ${BARREL_Y + 1} L${stopperX + 15} ${BARREL_Y + 1} L${stopperX + 15} ${BARREL_Y + BARREL_H - 1} L${stopperX + 5} ${BARREL_Y + BARREL_H - 1} Z`}
+          fill="url(#dc-stopper)"
+          stroke="rgba(255,255,255,0.4)"
+          strokeWidth="0.8"
+          style={{ transition: `d 650ms ${ease}` }}
+        />
+      </g>
+
+      {/* Skala rakamları */}
+      {ticks
+        .filter((t) => t.label !== undefined)
+        .map((t) => (
+          <text
+            key={`n${t.at}`}
+            x={BARREL_X + t.at * BARREL_W}
+            y={BARREL_Y + BARREL_H + 14}
+            textAnchor="middle"
+            fontSize="9.5"
+            fontWeight="500"
+            fill="rgba(255,255,255,0.5)"
+          >
+            {t.label}
+          </text>
+        ))}
+
+      {/* Çekilecek yerin işareti */}
+      {badge && (
+        <g style={{ transition: `transform 650ms ${ease}` }}>
+          <line
+            x1={stopperX}
+            x2={stopperX}
+            y1="18"
+            y2={BARREL_Y}
+            stroke="#0072bc"
+            strokeWidth="1.2"
+            style={{ transition: `x1 650ms ${ease}, x2 650ms ${ease}` }}
+          />
+          <rect
+            x={badgeX - badgeW / 2}
+            y="2"
+            width={badgeW}
+            height="17"
+            rx="8.5"
+            fill="#0072bc"
+            style={{ transition: `x 650ms ${ease}` }}
+          />
+          <text
+            x={badgeX}
+            y="14.2"
+            textAnchor="middle"
+            fontSize="10"
+            fontWeight="700"
+            fill="#ffffff"
+            style={{ transition: `x 650ms ${ease}` }}
+          >
+            {badge}
+          </text>
+        </g>
+      )}
+    </svg>
+  )
 }
 
 let entryCounter = 0
@@ -145,11 +372,6 @@ export function DoseCalculator() {
     if (referenceId === id) setReferenceId("")
   }
 
-  function fillFromStep(step: DoseStep) {
-    setUnitSystem("mg")
-    setDoseUnit("mg")
-    setDoseAmount(String(step.amountValue))
-  }
 
   async function handleCopy() {
     if (units === null || drawMl === null) return
@@ -195,87 +417,11 @@ export function DoseCalculator() {
             )}
           </div>
 
-          <div className="relative mt-12 h-28 w-full">
-            {/* İğne */}
-            <div
-              className="absolute top-1/2 h-[3px] -translate-y-1/2 rounded-full bg-gradient-to-r from-white/25 to-white/50"
-              style={{ left: 0, width: `${NEEDLE_END}%` }}
-            />
-            {/* Göbek */}
-            <div
-              className="absolute top-1/2 h-7 -translate-y-1/2 rounded-[3px] bg-white/25"
-              style={{ left: `${NEEDLE_END}%`, width: `${HUB_END - NEEDLE_END}%` }}
-            />
-
-            {/* Piston kolu, tıkacın arkasına bağlı olarak kayar */}
-            <div
-              className="absolute top-1/2 h-3 -translate-y-1/2 rounded-r-[3px] bg-white/20 transition-[left] duration-700 ease-out"
-              style={{
-                left: `${BARREL_LEFT + fillPct * BARREL_WIDTH * PLUNGER_TRAVEL}%`,
-                width: `${BARREL_WIDTH}%`,
-              }}
-            />
-            {/* Başparmak desteği */}
-            <div
-              className="absolute top-1/2 h-16 w-2 -translate-y-1/2 rounded-[3px] bg-white/30 transition-[left] duration-700 ease-out"
-              style={{
-                left: `${BARREL_LEFT + BARREL_WIDTH + fillPct * BARREL_WIDTH * PLUNGER_TRAVEL}%`,
-              }}
-            />
-
-            {/* Gövde */}
-            <div
-              className="absolute top-1/2 h-16 -translate-y-1/2 overflow-hidden rounded-[4px] border border-white/20 bg-white/[0.06]"
-              style={{ left: `${BARREL_LEFT}%`, width: `${BARREL_WIDTH}%` }}
-            >
-              {/* Sıvı */}
-              <div
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-gold/70 to-gold transition-[width] duration-700 ease-out"
-                style={{ width: `${fillPct * 100}%` }}
-              />
-              {/* Skala çizgileri */}
-              {ticks.map((t) => (
-                <div
-                  key={t.at}
-                  aria-hidden="true"
-                  className={`absolute top-0 w-px ${t.major ? "h-4 bg-white/55" : "h-2 bg-white/25"}`}
-                  style={{ left: `${t.at * 100}%` }}
-                />
-              ))}
-              {/* Tıkaç */}
-              <div
-                className="absolute inset-y-0 w-1.5 -translate-x-1/2 bg-white/85 transition-[left] duration-700 ease-out"
-                style={{ left: `${fillPct * 100}%` }}
-              />
-            </div>
-
-            {/* Skala rakamları */}
-            {ticks
-              .filter((t) => t.label !== undefined)
-              .map((t) => (
-                <span
-                  key={`l${t.at}`}
-                  aria-hidden="true"
-                  className="absolute top-[calc(50%+2.4rem)] -translate-x-1/2 text-[9px] font-medium tabular-nums text-white/40 sm:text-[10px]"
-                  style={{ left: `${BARREL_LEFT + t.at * BARREL_WIDTH}%` }}
-                >
-                  {t.label}
-                </span>
-              ))}
-
-            {/* Çekilecek yerin işareti */}
-            {units !== null && (
-              <div
-                className="absolute bottom-[calc(50%+2rem)] top-0 transition-[left] duration-700 ease-out"
-                style={{ left: `${BARREL_LEFT + fillPct * BARREL_WIDTH}%` }}
-              >
-                <div className="absolute bottom-0 left-0 top-6 w-px -translate-x-1/2 bg-gold/70" />
-                <div className="absolute left-0 top-0 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-2.5 py-1 text-[11px] font-bold tabular-nums text-white shadow-lg">
-                  {fmt(units, 2)} ünite
-                </div>
-              </div>
-            )}
-          </div>
+          <SyringeDrawing
+            fillPct={fillPct}
+            ticks={ticks}
+            badge={units !== null ? `${fmt(units, 2)} ünite` : null}
+          />
 
           {overflow && (
             <p className="mt-6 rounded-sm border border-amber-400/40 bg-amber-400/10 px-4 py-2.5 text-xs leading-relaxed text-amber-200">
@@ -440,26 +586,6 @@ export function DoseCalculator() {
             )}
           </div>
 
-          {referencePeptide?.dosing && (
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {referencePeptide.name} için kütüphanedeki basamaklar
-              </p>
-              <div className="mt-2.5 flex flex-wrap gap-2">
-                {referencePeptide.dosing.map((step) => (
-                  <button
-                    key={step.label}
-                    type="button"
-                    onClick={() => fillFromStep(step)}
-                    className="rounded-full border border-hairline px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-gold hover:text-gold"
-                  >
-                    {step.label}: {step.amount}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -544,6 +670,13 @@ export function DoseCalculator() {
                 </button>
               ))}
             </div>
+            <p className="mt-2.5 text-[11px] leading-relaxed text-muted-foreground">
+              0,3 · 0,5 · 1 mL şırıngaların üçü de U-100'dür, yani her birinde
+              1 mL 100 üniteye bölünmüştür. Aralarında geçiş yapınca ünite sayısı
+              değişmez, yalnızca skala değişir ve çizgi farklı yere denk gelir.
+              Küçük dozu okumak için küçük şırınga seçin. Ünite sayısı yalnızca
+              U-40'a geçince değişir, çünkü onda 1 mL 40 üniteye bölünür.
+            </p>
           </div>
         </div>
 
@@ -620,19 +753,3 @@ export function DoseCalculator() {
   )
 }
 
-export function CalculablePeptideLinks() {
-  if (CALCULABLE_PEPTIDES.length === 0) return null
-  return (
-    <div className="flex flex-wrap gap-2">
-      {CALCULABLE_PEPTIDES.map((p) => (
-        <Link
-          key={p.slug}
-          href={`/peptidler/${p.slug}`}
-          className="rounded-full border border-hairline px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-gold hover:text-gold"
-        >
-          {p.name}
-        </Link>
-      ))}
-    </div>
-  )
-}

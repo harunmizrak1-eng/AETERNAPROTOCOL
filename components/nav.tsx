@@ -22,6 +22,7 @@ const TICKER_MESSAGES = [
 const LINKS = [
   { href: "/urunler", label: "Ürünler" },
   { href: "/peptidler", label: "Kütüphane" },
+  { href: "/hesaplayici", label: "Hesaplayıcı" },
   { href: "/dogrulama", label: "Doğrulama" },
   { href: "/journal", label: "Bilgi Merkezi" },
   { href: "/metodoloji", label: "Metodoloji" },

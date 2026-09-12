@@ -15,6 +15,7 @@ export function SeoProductLanding({
   libraryLabel,
   bullets,
   resources,
+  faq,
 }: {
   eyebrow: string
   title: string
@@ -30,6 +31,11 @@ export function SeoProductLanding({
     title: string
     description: string
   }>
+  /** Satın alma niyetli sorular: format/kutu/doğrulama gibi bileşik
+   * kütüphanesindeki bilimsel kayıtta yer almayan, alıcının gerçekten
+   * sorduğu şeyler. Kütüphane sayfasıyla aynı cümleleri tekrar etmemeye
+   * özellikle dikkat edilir. */
+  faq?: Array<{ q: string; a: string }>
 }) {
   const shown = slugs
     .map((slug) => products.find((product) => product.slug === slug))
@@ -67,6 +73,19 @@ export function SeoProductLanding({
           { "@type": "ListItem", position: 3, name: title, item: pageUrl },
         ],
       },
+      ...(faq && faq.length > 0
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${pageUrl}#faq`,
+              mainEntity: faq.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: { "@type": "Answer", text: item.a },
+              })),
+            },
+          ]
+        : []),
     ],
   }
 
@@ -140,6 +159,25 @@ export function SeoProductLanding({
             </div>
           </div>
         </section>
+
+        {faq && faq.length > 0 && (
+          <section className="border-t border-hairline px-6 py-12 md:px-10 md:py-16">
+            <div className="mx-auto max-w-3xl">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Sık sorulan</p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground">
+                Satın almadan önce
+              </h2>
+              <dl className="mt-8 space-y-8">
+                {faq.map((item) => (
+                  <div key={item.q}>
+                    <dt className="text-lg font-bold text-foreground">{item.q}</dt>
+                    <dd className="mt-2 text-sm leading-7 text-muted-foreground">{item.a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </>

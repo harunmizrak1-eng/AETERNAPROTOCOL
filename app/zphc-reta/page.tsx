@@ -33,6 +33,28 @@ export default function ZphcRetaPage() {
       libraryHref="/peptidler/retatrutide"
       libraryLabel="Retatrutide bilgi kaydı"
       bullets={["Türkiye stoğu", "Üretici doğrulama kodu", "Ücretsiz kargo"]}
+      faq={[
+        {
+          q: "Reta ile retatrutide aynı şey mi?",
+          a: "Evet. Reta, kutunun üzerindeki kısa isim; retatrutide ise bileşiğin asıl adı. İki adı da arama motorunda görebilirsiniz, ikisi de aynı ürünü işaret eder.",
+        },
+        {
+          q: "20 mg, 40 mg, 60 mg ve 120 mg arasındaki fark nedir?",
+          a: "Fark yalnızca kutudaki toplam miktar ve flakon sayısıdır; içerik aynı bileşiktir. Hangi toplam miktarın size uygun olduğuna dair bir öneri vermiyoruz, bu seçim kullanım sıklığınıza bağlıdır.",
+        },
+        {
+          q: "Flakon seti mi, hazır kalem mi, çift hazneli kartuş mu almalıyım?",
+          a: "Flakon seti liyofilize haldedir ve kullanmadan önce sulandırma gerektirir. Hazır kalem ve çift hazneli kartuş ise önceden karıştırılmış gelir, ek işlem istemez. Tercih tamamen kullanım kolaylığı meselesidir.",
+        },
+        {
+          q: "Elimdeki kutunun orijinal olduğunu nasıl anlarım?",
+          a: "Kutunun arkasındaki gümüş bandı kazıyıp çıkan kodu validation.zphc.com adresine girin. Sorgu doğrudan üreticinin sisteminde yapılır, sonucu biz üretmeyiz.",
+        },
+        {
+          q: "Stokta olmayan bir toplam miktar ne zaman gelir?",
+          a: "Stok durumu ürün kartında görünür. Aradığınız toplam miktar o an listede yoksa WhatsApp'tan sorabilirsiniz, yeni parti geldiğinde ilk size haber veririz.",
+        },
+      ]}
       resources={[
         {
           href: "/peptidler/retatrutide",

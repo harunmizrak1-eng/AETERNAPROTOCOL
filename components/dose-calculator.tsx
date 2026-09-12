@@ -102,7 +102,7 @@ function SyringeDrawing({
   return (
     <svg
       viewBox={`0 0 ${VB_W} ${VB_H}`}
-      className="mt-8 w-full"
+      className="mt-6 w-full sm:mt-8"
       role="img"
       aria-label={badge ? `Şırıngada ${badge} işaretli` : "Boş insülin şırıngası"}
     >
@@ -404,17 +404,15 @@ export function DoseCalculator() {
       <div className="h-1 w-full bg-gradient-to-r from-gold via-gold/60 to-transparent" />
 
       {/* Şırınga paneli */}
-      <div className="bg-[#0d1b2a] px-5 py-8 sm:px-10 sm:py-10">
+      <div className="bg-[#0d1b2a] px-4 py-6 sm:px-10 sm:py-9">
         <div className="mx-auto max-w-3xl">
-          <div className="flex flex-wrap items-baseline justify-between gap-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/45">
-              {syringe.label} insülin şırıngası · {syringe.unitsPerMl} ünite/mL
+          <div className="flex items-baseline justify-between gap-3">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/45 sm:text-[11px] sm:tracking-[0.18em]">
+              {syringe.label} · U-{syringe.unitsPerMl} insülin şırıngası
             </p>
-            {units !== null && (
-              <p className="text-[11px] font-medium text-white/45">
-                skala sonu {syringe.maxUnits} ünite
-              </p>
-            )}
+            <p className="shrink-0 text-[10px] font-medium tabular-nums text-white/45 sm:text-[11px]">
+              skala 0–{syringe.maxUnits}
+            </p>
           </div>
 
           <SyringeDrawing
@@ -440,13 +438,30 @@ export function DoseCalculator() {
         </div>
       </div>
 
-      {/* Sonuç şeridi */}
-      <div className="grid grid-cols-2 divide-x divide-hairline border-b border-hairline bg-surface sm:grid-cols-4">
+      {/* Sonuç şeridi. Ana sayı burada duruyor, aşağıda tekrar edilmiyor. */}
+      {/* Birincil hücre iki sütun kapladığı için ızgara altıya bölündü:
+          masaüstünde 2+1+1+1+1 tek satıra tam oturuyor, mobilde ise
+          birincil tam satır, kalan dördü 2x2 oluyor. Dörde bölündüğünde
+          ikinci satırda boş bir hücre kalıyordu. */}
+      <div className="grid grid-cols-2 gap-px border-b border-hairline bg-hairline sm:grid-cols-6">
+        <div className="col-span-2 bg-surface px-5 py-5">
+          <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+            Çekilecek miktar
+          </p>
+          <p className="mt-1 text-3xl font-bold tabular-nums tracking-tight text-foreground sm:text-4xl">
+            {units !== null ? fmt(units, 2) : "—"}
+            <span className="ml-2 text-sm font-semibold text-muted-foreground sm:text-base">
+              ünite
+            </span>
+          </p>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {drawMl !== null
+              ? `${fmt(drawMl, 3)} mL · ${syringe.label} şırıngada`
+              : "Değerleri aşağıya girin"}
+          </p>
+        </div>
+
         {[
-          {
-            k: "Çekilecek hacim",
-            v: drawMl !== null ? `${fmt(drawMl, 3)} mL` : "—",
-          },
           {
             k: "Konsantrasyon",
             v: refConcentration !== null ? `${fmt(refConcentration, 3)} ${unitLabel}/mL` : "—",
@@ -456,299 +471,332 @@ export function DoseCalculator() {
             v:
               perUnitAmount !== null
                 ? unitSystem === "mg"
-                  ? `${fmt(perUnitAmount, 4)} mg · ${fmt(perUnitAmount * 1000, 1)} mcg`
+                  ? `${fmt(perUnitAmount, 4)} mg`
                   : `${fmt(perUnitAmount, 3)} IU`
                 : "—",
+            alt:
+              perUnitAmount !== null && unitSystem === "mg"
+                ? `${fmt(perUnitAmount * 1000, 1)} mcg`
+                : null,
           },
           {
-            k: "Flakon başına doz",
+            k: "Flakon başına",
             v: dosesPerVial ? `≈ ${Math.floor(dosesPerVial)} doz` : "—",
           },
+          {
+            k: "Şırınga",
+            v: `${syringe.label}`,
+            alt: `${syringe.unitsPerMl} ü/mL`,
+          },
         ].map((cell) => (
-          <div key={cell.k} className="px-4 py-4 sm:px-5 sm:py-5">
+          <div key={cell.k} className="bg-surface px-4 py-4 sm:px-5">
             <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
               {cell.k}
             </p>
-            <p className="mt-1.5 text-sm font-bold tabular-nums text-foreground sm:text-base">
+            <p className="mt-1.5 text-sm font-bold tabular-nums text-foreground">
               {cell.v}
             </p>
+            {cell.alt && (
+              <p className="text-[11px] tabular-nums text-muted-foreground">{cell.alt}</p>
+            )}
           </div>
         ))}
       </div>
 
-      {/* Girişler */}
-      <div className="grid gap-8 p-5 sm:p-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-        <div className="space-y-7">
-          <div>
-            <div className="flex items-baseline justify-between">
-              <label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Flakondaki peptidler
-              </label>
-              <div className="inline-flex rounded-sm border border-hairline p-0.5">
-                {(["mg", "IU"] as UnitSystem[]).map((u) => (
-                  <button
-                    key={u}
-                    type="button"
-                    onClick={() => setUnitSystem(u)}
-                    className={`rounded-sm px-2.5 py-1 text-[11px] font-semibold transition-colors ${
-                      unitSystem === u
-                        ? "bg-gold text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {u === "mg" ? "mg" : "IU"}
-                  </button>
-                ))}
-              </div>
+      {/* Girişler. Tek sütun: mobilde iki sütun sıkışıyordu ve açılır liste
+          kendi en uzun seçeneği kadar yer isteyip kartı taşırıyordu. */}
+      <div className="space-y-8 p-5 sm:p-8">
+        {/* Flakon içeriği */}
+        <section className="min-w-0">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Flakondaki peptid
+            </h3>
+            <div className="inline-flex rounded-md border border-hairline p-0.5">
+              {(["mg", "IU"] as UnitSystem[]).map((u) => (
+                <button
+                  key={u}
+                  type="button"
+                  onClick={() => setUnitSystem(u)}
+                  className={`rounded px-3 py-1.5 text-xs font-semibold transition-colors ${
+                    unitSystem === u
+                      ? "bg-gold text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {u === "mg" ? "Peptid · mg" : "HGH · IU"}
+                </button>
+              ))}
             </div>
+          </div>
 
-            <div className="mt-3 space-y-2.5">
-              {entries.map((entry) => {
-                const isRef = entry.id === reference.id
-                return (
-                  <div
-                    key={entry.id}
-                    className={`rounded-sm border p-3 transition-colors ${
-                      isRef && entries.length > 1
-                        ? "border-gold/50 bg-gold/[0.04]"
-                        : "border-hairline"
-                    }`}
+          <div className="mt-3 space-y-3">
+            {entries.map((entry, i) => {
+              const isRef = entry.id === reference.id
+              const showRef = entries.length > 1
+              return (
+                <div
+                  key={entry.id}
+                  className={`min-w-0 rounded-lg border p-3.5 transition-colors ${
+                    isRef && showRef ? "border-gold/60 bg-gold/[0.04]" : "border-hairline"
+                  }`}
+                >
+                  {showRef && (
+                    <div className="mb-2.5 flex items-center justify-between gap-2">
+                      <span className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                        {i + 1}. bileşik
+                      </span>
+                      {isRef ? (
+                        <span className="rounded-full bg-gold/12 px-2.5 py-1 text-[11px] font-bold text-gold">
+                          Hedef doz buna göre
+                        </span>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => setReferenceId(entry.id)}
+                          className="text-[11px] font-medium text-muted-foreground underline-offset-2 transition-colors hover:text-gold hover:underline"
+                        >
+                          Hedefi buna çevir
+                        </button>
+                      )}
+                    </div>
+                  )}
+
+                  <select
+                    value={entry.slug}
+                    onChange={(e) => {
+                      const found = CALCULABLE_PEPTIDES.find((x) => x.slug === e.target.value)
+                      updateEntry(entry.id, {
+                        slug: e.target.value,
+                        name: found ? found.name : entry.name,
+                      })
+                    }}
+                    aria-label="Bileşik"
+                    className="min-h-12 w-full rounded-md border border-hairline bg-background px-3.5 text-sm text-foreground outline-none transition-colors focus:border-gold"
                   >
-                    <div className="flex gap-2">
-                      <select
-                        value={entry.slug}
-                        onChange={(e) => {
-                          const p = CALCULABLE_PEPTIDES.find((x) => x.slug === e.target.value)
-                          updateEntry(entry.id, {
-                            slug: e.target.value,
-                            name: p ? p.name : entry.name,
-                          })
-                        }}
-                        className="min-w-0 flex-1 rounded-sm border border-hairline bg-background px-3 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-gold"
-                      >
-                        <option value="">Bileşik seçin</option>
-                        {CALCULABLE_PEPTIDES.map((p) => (
-                          <option key={p.slug} value={p.slug}>
-                            {p.name}
-                          </option>
-                        ))}
-                      </select>
+                    <option value="">Bileşik seçin</option>
+                    {CALCULABLE_PEPTIDES.map((pp) => (
+                      <option key={pp.slug} value={pp.slug}>
+                        {pp.name}
+                      </option>
+                    ))}
+                  </select>
+
+                  <div className="mt-2.5 flex items-stretch gap-2">
+                    <div className="relative flex min-w-0 flex-1">
                       <input
                         type="text"
                         inputMode="decimal"
                         value={entry.amount}
                         onChange={(e) => updateEntry(entry.id, { amount: e.target.value })}
-                        placeholder={unitSystem === "mg" ? "mg" : "IU"}
+                        placeholder="Flakondaki miktar"
                         aria-label={`Miktar (${unitLabel})`}
-                        className="w-20 shrink-0 rounded-sm border border-hairline bg-background px-3 py-2.5 text-sm tabular-nums text-foreground outline-none transition-colors focus:border-gold"
+                        className="min-h-12 w-full min-w-0 rounded-md border border-hairline bg-background pl-3.5 pr-12 text-sm tabular-nums text-foreground outline-none transition-colors focus:border-gold"
                       />
-                      {entries.length > 1 && (
-                        <button
-                          type="button"
-                          onClick={() => removeEntry(entry.id)}
-                          aria-label="Bu bileşiği kaldır"
-                          className="shrink-0 rounded-sm border border-hairline px-2.5 text-sm text-muted-foreground transition-colors hover:border-gold hover:text-gold"
-                        >
-                          ×
-                        </button>
-                      )}
+                      <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-muted-foreground">
+                        {unitLabel}
+                      </span>
                     </div>
-
                     {entries.length > 1 && (
                       <button
                         type="button"
-                        onClick={() => setReferenceId(entry.id)}
-                        className={`mt-2 text-[11px] font-medium transition-colors ${
-                          isRef ? "text-gold" : "text-muted-foreground hover:text-foreground"
-                        }`}
+                        onClick={() => removeEntry(entry.id)}
+                        aria-label="Bu bileşiği kaldır"
+                        className="min-h-12 shrink-0 rounded-md border border-hairline px-4 text-sm text-muted-foreground transition-colors hover:border-gold hover:text-gold"
                       >
-                        {isRef ? "Hedef doz buna göre hesaplanıyor" : "Hedefi buna çevir"}
+                        Kaldır
                       </button>
                     )}
                   </div>
-                )
-              })}
-            </div>
-
-            <button
-              type="button"
-              onClick={addEntry}
-              className="mt-3 inline-flex items-center gap-1.5 rounded-sm border border-dashed border-hairline px-3.5 py-2 text-xs font-semibold text-muted-foreground transition-colors hover:border-gold hover:text-gold"
-            >
-              <span aria-hidden="true">+</span> Peptid ekle
-            </button>
-            {entries.length > 1 && (
-              <p className="mt-2.5 text-[11px] leading-relaxed text-muted-foreground">
-                Karışım flakonu: toplam {fmt(totalAmount, 3)} {unitLabel}. Hesap,
-                işaretli bileşiğin konsantrasyonuna göre yapılır; aynı hacimde
-                diğerlerinden ne geldiği aşağıda listelenir.
-              </p>
-            )}
+                </div>
+              )
+            })}
           </div>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Sulandırma suyu (mL)
-              </label>
-              <input
-                type="text"
-                inputMode="decimal"
-                value={waterMl}
-                onChange={(e) => setWaterMl(e.target.value)}
-                placeholder="örn. 3"
-                className="mt-2 w-full rounded-sm border border-hairline bg-background px-4 py-3 text-sm tabular-nums text-foreground outline-none transition-colors focus:border-gold"
-              />
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {WATER_PRESETS_ML.map((v) => (
-                  <button
-                    key={v}
-                    type="button"
-                    onClick={() => setWaterMl(String(v))}
-                    className="rounded-full border border-hairline px-2.5 py-1 text-[11px] text-muted-foreground transition-colors hover:border-gold hover:text-gold"
-                  >
-                    {v} mL
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Hedef doz
-                {entries.length > 1 && reference.name ? ` · ${reference.name}` : ""}
-              </label>
-              <div className="mt-2 flex gap-2">
-                <input
-                  type="text"
-                  inputMode="decimal"
-                  value={doseAmount}
-                  onChange={(e) => setDoseAmount(e.target.value)}
-                  placeholder={unitSystem === "mg" ? "örn. 0,5" : "örn. 4"}
-                  className="w-full min-w-0 rounded-sm border border-hairline bg-background px-4 py-3 text-sm tabular-nums text-foreground outline-none transition-colors focus:border-gold"
-                />
-                {unitSystem === "mg" && (
-                  <div className="inline-flex shrink-0 rounded-sm border border-hairline p-1">
-                    {(["mg", "mcg"] as DoseUnit[]).map((u) => (
-                      <button
-                        key={u}
-                        type="button"
-                        onClick={() => setDoseUnit(u)}
-                        className={`rounded-sm px-2.5 py-1.5 text-xs font-semibold transition-colors ${
-                          doseUnit === u
-                            ? "bg-gold text-primary-foreground"
-                            : "text-muted-foreground hover:text-foreground"
-                        }`}
-                      >
-                        {u}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <label className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Şırınga
-            </label>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {SYRINGES.map((s) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  onClick={() => setSyringeId(s.id)}
-                  className={`rounded-sm border px-3.5 py-2 text-xs font-semibold transition-colors ${
-                    s.id === syringeId
-                      ? "border-gold bg-gold text-primary-foreground"
-                      : "border-hairline text-muted-foreground hover:border-gold hover:text-gold"
-                  }`}
-                >
-                  {s.label}
-                  <span className="ml-1.5 font-normal opacity-70">{s.maxUnits} ü</span>
-                </button>
-              ))}
-            </div>
-            <p className="mt-2.5 text-[11px] leading-relaxed text-muted-foreground">
-              0,3 · 0,5 · 1 mL şırıngaların üçü de U-100'dür, yani her birinde
-              1 mL 100 üniteye bölünmüştür. Aralarında geçiş yapınca ünite sayısı
-              değişmez, yalnızca skala değişir ve çizgi farklı yere denk gelir.
-              Küçük dozu okumak için küçük şırınga seçin. Ünite sayısı yalnızca
-              U-40'a geçince değişir, çünkü onda 1 mL 40 üniteye bölünür.
-            </p>
-          </div>
-        </div>
-
-        {/* Özet sütunu */}
-        <div className="space-y-5 rounded-xl border border-hairline bg-surface p-5 sm:p-6">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-              Çekilecek miktar
-            </p>
-            <p className="mt-1 text-4xl font-bold tabular-nums tracking-tight text-foreground">
-              {units !== null ? fmt(units, 2) : "—"}
-              <span className="ml-2 text-base font-semibold text-muted-foreground">
-                ünite
-              </span>
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {drawMl !== null
-                ? `${fmt(drawMl, 3)} mL · ${syringe.label} şırıngada`
-                : "Değerleri girin"}
-            </p>
-          </div>
-
-          {entries.length > 1 && drawMl !== null && (
-            <div className="border-t border-hairline pt-5">
-              <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-                Bu hacimde ne var
-              </p>
-              <ul className="mt-2.5 space-y-1.5">
-                {entries.map((e) => {
-                  const amt = parseNum(e.amount)
-                  if (amt === null || water === null) return null
-                  const inDraw = (amt / water) * drawMl
-                  return (
-                    <li key={e.id} className="flex justify-between gap-3 text-xs">
-                      <span className="min-w-0 truncate text-muted-foreground">
-                        {e.name || "Bileşik"}
-                      </span>
-                      <span className="shrink-0 font-semibold tabular-nums text-foreground">
-                        {unitSystem === "mg"
-                          ? `${fmt(inDraw, 3)} mg`
-                          : `${fmt(inDraw, 2)} IU`}
-                      </span>
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          )}
 
           <button
             type="button"
-            onClick={handleCopy}
-            disabled={units === null}
-            className="w-full rounded-sm border border-hairline bg-background py-2.5 text-xs font-semibold text-foreground transition-colors hover:border-gold hover:text-gold disabled:cursor-not-allowed disabled:opacity-40"
+            onClick={addEntry}
+            className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-md border border-dashed border-hairline px-4 text-xs font-semibold text-muted-foreground transition-colors hover:border-gold hover:text-gold"
           >
-            {copied ? "Kopyalandı" : "Sonucu kopyala"}
+            <span aria-hidden="true">+</span> Peptid ekle
           </button>
 
-          <p className="border-t border-hairline pt-5 text-[11px] leading-relaxed text-muted-foreground">
-            {referencePeptide ? (
-              <>
-                <span className="font-semibold text-foreground">
-                  {tierLabel[referencePeptide.tier]}:
-                </span>{" "}
-                {tierDosingDisclaimer[referencePeptide.tier]}
-              </>
+          {entries.length > 1 && (
+            <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground">
+              Karışım flakonu, toplam {fmt(totalAmount, 3)} {unitLabel}. Hesap
+              işaretli bileşiğe göre yapılır; aynı hacimde diğerlerinden ne
+              geldiğini aşağıda görürsünüz.
+            </p>
+          )}
+        </section>
+
+        {/* Sulandırma suyu */}
+        <section className="min-w-0">
+          <label
+            htmlFor="dc-water"
+            className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+          >
+            Sulandırma suyu
+          </label>
+          <div className="relative mt-3 flex">
+            <input
+              id="dc-water"
+              type="text"
+              inputMode="decimal"
+              value={waterMl}
+              onChange={(e) => setWaterMl(e.target.value)}
+              placeholder="Flakona eklenen su"
+              className="min-h-12 w-full min-w-0 rounded-md border border-hairline bg-background pl-3.5 pr-12 text-sm tabular-nums text-foreground outline-none transition-colors focus:border-gold"
+            />
+            <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-muted-foreground">
+              mL
+            </span>
+          </div>
+          <div className="mt-2.5 grid grid-cols-4 gap-2">
+            {WATER_PRESETS_ML.map((v) => (
+              <button
+                key={v}
+                type="button"
+                onClick={() => setWaterMl(String(v))}
+                className={`min-h-10 rounded-md border text-xs font-semibold transition-colors ${
+                  waterMl === String(v)
+                    ? "border-gold bg-gold/10 text-gold"
+                    : "border-hairline text-muted-foreground hover:border-gold hover:text-gold"
+                }`}
+              >
+                {v} mL
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* Hedef doz */}
+        <section className="min-w-0">
+          <label
+            htmlFor="dc-dose"
+            className="text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+          >
+            Hedef doz
+            {entries.length > 1 && reference.name ? ` · ${reference.name}` : ""}
+          </label>
+          <div className="mt-3 flex items-stretch gap-2">
+            <input
+              id="dc-dose"
+              type="text"
+              inputMode="decimal"
+              value={doseAmount}
+              onChange={(e) => setDoseAmount(e.target.value)}
+              placeholder="Çekmek istediğiniz doz"
+              className="min-h-12 w-full min-w-0 flex-1 rounded-md border border-hairline bg-background px-3.5 text-sm tabular-nums text-foreground outline-none transition-colors focus:border-gold"
+            />
+            {unitSystem === "mg" ? (
+              <div className="inline-flex shrink-0 rounded-md border border-hairline p-0.5">
+                {(["mg", "mcg"] as DoseUnit[]).map((u) => (
+                  <button
+                    key={u}
+                    type="button"
+                    onClick={() => setDoseUnit(u)}
+                    className={`min-h-11 rounded px-3.5 text-xs font-semibold transition-colors ${
+                      doseUnit === u
+                        ? "bg-gold text-primary-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {u}
+                  </button>
+                ))}
+              </div>
             ) : (
-              "Bu hesaplama yalnızca matematiksel bir sulandırma dönüşümüdür, tıbbi tavsiye değildir. Flakon içeriğini her zaman ürün etiketinden doğrulayın."
+              <span className="inline-flex min-h-12 shrink-0 items-center rounded-md border border-hairline px-4 text-xs font-semibold text-muted-foreground">
+                IU
+              </span>
             )}
+          </div>
+        </section>
+
+        {/* Şırınga */}
+        <section className="min-w-0">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Şırınga
+          </h3>
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {SYRINGES.map((s) => (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => setSyringeId(s.id)}
+                className={`min-h-14 rounded-md border px-2 text-center transition-colors ${
+                  s.id === syringeId
+                    ? "border-gold bg-gold text-primary-foreground"
+                    : "border-hairline text-muted-foreground hover:border-gold hover:text-gold"
+                }`}
+              >
+                <span className="block text-xs font-bold">{s.label}</span>
+                <span className="mt-0.5 block text-[11px] opacity-75">
+                  {s.maxUnits} ünite
+                </span>
+              </button>
+            ))}
+          </div>
+          <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground">
+            0,3 · 0,5 · 1 mL şırıngaların üçü de U-100, yani her birinde 1 mL
+            100 üniteye bölünmüştür. Aralarında geçiş yapınca ünite sayısı
+            değişmez, yalnızca skala değişir ve çizgi farklı yere denk gelir.
+            Küçük dozu rahat okumak için küçük şırınga seçin. Ünite sayısı
+            yalnızca U-40'a geçince değişir, çünkü onda 1 mL 40 üniteye
+            bölünür.
           </p>
-        </div>
+        </section>
+
+        {/* Karışım dökümü */}
+        {entries.length > 1 && drawMl !== null && water !== null && (
+          <section className="min-w-0 rounded-lg border border-hairline bg-surface p-4 sm:p-5">
+            <h3 className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+              Bu hacimde ne var
+            </h3>
+            <ul className="mt-3 divide-y divide-hairline">
+              {entries.map((e) => {
+                const amt = parseNum(e.amount)
+                if (amt === null) return null
+                const inDraw = (amt / water) * drawMl
+                return (
+                  <li key={e.id} className="flex justify-between gap-3 py-2 text-sm">
+                    <span className="min-w-0 truncate text-muted-foreground">
+                      {e.name || "Bileşik"}
+                    </span>
+                    <span className="shrink-0 font-bold tabular-nums text-foreground">
+                      {unitSystem === "mg" ? `${fmt(inDraw, 3)} mg` : `${fmt(inDraw, 2)} IU`}
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
+          </section>
+        )}
+
+        <button
+          type="button"
+          onClick={handleCopy}
+          disabled={units === null}
+          className="min-h-12 w-full rounded-md border border-hairline bg-background text-sm font-semibold text-foreground transition-colors hover:border-gold hover:text-gold disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          {copied ? "Kopyalandı" : "Sonucu kopyala"}
+        </button>
+
+        <p className="border-t border-hairline pt-6 text-[11px] leading-relaxed text-muted-foreground">
+          {referencePeptide ? (
+            <>
+              <span className="font-semibold text-foreground">
+                {tierLabel[referencePeptide.tier]}:
+              </span>{" "}
+              {tierDosingDisclaimer[referencePeptide.tier]}
+            </>
+          ) : (
+            "Bu hesaplama yalnızca matematiksel bir sulandırma dönüşümüdür, tıbbi tavsiye değildir. Flakon içeriğini her zaman ürün etiketinden doğrulayın."
+          )}
+        </p>
       </div>
+
     </div>
   )
 }

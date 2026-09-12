@@ -56,7 +56,7 @@ export default function HesaplayiciPage() {
         </section>
 
         <section className="px-6 pb-16 md:px-10">
-          <div className="mx-auto max-w-5xl border-t border-hairline pt-10">
+          <div className="mx-auto max-w-3xl border-t border-hairline pt-10">
             <DoseCalculator />
           </div>
         </section>

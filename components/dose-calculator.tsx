@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import {
   peptides,
   tierDosingDisclaimer,
@@ -28,13 +28,16 @@ interface Syringe {
   labelStep: number
   /** Küçük çizgi aralığı. */
   minorStep: number
+  /** Piston sürüklenirken yuvarlanacak ünite adımı. Büyük şırıngada yarım
+   * ünite okunamadığı için orada tam üniteye yuvarlanır. */
+  snapStep: number
 }
 
 const SYRINGES: Syringe[] = [
-  { id: "u100-03", label: "0,3 mL", maxUnits: 30, unitsPerMl: 100, labelStep: 5, minorStep: 1 },
-  { id: "u100-05", label: "0,5 mL", maxUnits: 50, unitsPerMl: 100, labelStep: 10, minorStep: 2 },
-  { id: "u100-10", label: "1 mL", maxUnits: 100, unitsPerMl: 100, labelStep: 20, minorStep: 5 },
-  { id: "u40-10", label: "1 mL · U-40", maxUnits: 40, unitsPerMl: 40, labelStep: 10, minorStep: 2 },
+  { id: "u100-03", label: "0,3 mL", maxUnits: 30, unitsPerMl: 100, labelStep: 5, minorStep: 1, snapStep: 0.5 },
+  { id: "u100-05", label: "0,5 mL", maxUnits: 50, unitsPerMl: 100, labelStep: 10, minorStep: 2, snapStep: 0.5 },
+  { id: "u100-10", label: "1 mL", maxUnits: 100, unitsPerMl: 100, labelStep: 20, minorStep: 5, snapStep: 1 },
+  { id: "u40-10", label: "1 mL · U-40", maxUnits: 40, unitsPerMl: 40, labelStep: 10, minorStep: 2, snapStep: 0.5 },
 ]
 
 const CALCULABLE_PEPTIDES = peptides.filter((p) => p.dosing && p.dosing.length > 0)
@@ -82,11 +85,24 @@ function SyringeDrawing({
   fillPct,
   ticks,
   badge,
+  maxUnits,
+  snapStep,
+  onScrub,
 }: {
   fillPct: number
   ticks: Tick[]
   badge: string | null
+  maxUnits: number
+  snapStep: number
+  /** Verildiğinde gövde sürüklenebilir olur ve bırakılan üniteyi bildirir. */
+  onScrub?: (units: number) => void
 }) {
+  const svgRef = useRef<SVGSVGElement>(null)
+  /* Sürükleme bayrağı hem ref hem durum olarak tutulur. Ref senkron
+   * güncellendiği için pointerdown ile aynı tik içinde gelen pointermove
+   * olayları kaçmaz; durum yalnızca imleç ve geçiş süresi için gerekli. */
+  const draggingRef = useRef(false)
+  const [dragging, setDragging] = useState(false)
   const barrelRight = BARREL_X + BARREL_W
   const stopperX = BARREL_X + fillPct * BARREL_W
   const thumbX = barrelRight + 12 + fillPct * BARREL_W * PLUNGER_TRAVEL
@@ -96,10 +112,29 @@ function SyringeDrawing({
     VB_W - badgeW / 2 - 2,
     Math.max(badgeW / 2 + 2, stopperX),
   )
-  const ease = "cubic-bezier(0.22, 0.61, 0.36, 1)"
+  /* Sürükleme sırasında geçiş kapatılır: her pointermove olayında yeniden
+   * başlayan 650ms'lik animasyon parmağın gerisinde kalıyordu. */
+  const ease = dragging ? "0ms" : "650ms cubic-bezier(0.22, 0.61, 0.36, 1)"
+
+  function unitsAt(clientX: number): number | null {
+    const svg = svgRef.current
+    if (!svg) return null
+    const r = svg.getBoundingClientRect()
+    if (r.width === 0) return null
+    const x = ((clientX - r.left) / r.width) * VB_W
+    const frac = Math.max(0, Math.min(1, (x - BARREL_X) / BARREL_W))
+    return Math.round((frac * maxUnits) / snapStep) * snapStep
+  }
+
+  function emit(clientX: number) {
+    if (!onScrub) return
+    const u = unitsAt(clientX)
+    if (u !== null) onScrub(u)
+  }
 
   return (
     <svg
+      ref={svgRef}
       viewBox={`0 0 ${VB_W} ${VB_H}`}
       className="mt-6 w-full sm:mt-8"
       role="img"
@@ -163,7 +198,7 @@ function SyringeDrawing({
           y={BARREL_Y}
           height={BARREL_H}
           fill="url(#dc-liquid)"
-          style={{ width: fillPct * BARREL_W, transition: `width 650ms ${ease}` }}
+          style={{ width: fillPct * BARREL_W, transition: `width ${ease}` }}
         />
         {/* Cam parlaması */}
         <rect
@@ -198,14 +233,14 @@ function SyringeDrawing({
       />
 
       {/* Piston kolu ve başparmak desteği */}
-      <g style={{ transition: `transform 650ms ${ease}` }}>
+      <g style={{ transition: `transform ${ease}` }}>
         <rect
           x={stopperX}
           y={midY - 4}
           width={Math.max(0, thumbX - stopperX)}
           height="8"
           fill="rgba(255,255,255,0.2)"
-          style={{ transition: `x 650ms ${ease}, width 650ms ${ease}` }}
+          style={{ transition: `x ${ease}, width ${ease}` }}
         />
         <rect
           x={stopperX}
@@ -213,7 +248,7 @@ function SyringeDrawing({
           width={Math.max(0, thumbX - stopperX)}
           height="1.4"
           fill="rgba(255,255,255,0.3)"
-          style={{ transition: `x 650ms ${ease}, width 650ms ${ease}` }}
+          style={{ transition: `x ${ease}, width ${ease}` }}
         />
         <rect
           x={thumbX}
@@ -222,7 +257,7 @@ function SyringeDrawing({
           height={BARREL_H + 24}
           rx="2.5"
           fill="rgba(255,255,255,0.34)"
-          style={{ transition: `x 650ms ${ease}` }}
+          style={{ transition: `x ${ease}` }}
         />
       </g>
 
@@ -235,7 +270,7 @@ function SyringeDrawing({
           fill="url(#dc-stopper)"
           stroke="rgba(255,255,255,0.4)"
           strokeWidth="0.8"
-          style={{ transition: `d 650ms ${ease}` }}
+          style={{ transition: `d ${ease}` }}
         />
       </g>
 
@@ -256,9 +291,53 @@ function SyringeDrawing({
           </text>
         ))}
 
+      {/* Sürükleme katmanı. Görünmez, gövdenin tamamını kaplar ve en üstte
+          durur; parmak ya da fare gövdenin herhangi bir yerine bastığında
+          o noktanın ünite karşılığı yukarı bildirilir. touchAction none
+          olmasa sürüklerken sayfa kayıyor. */}
+      {onScrub && (
+        <rect
+          x={BARREL_X}
+          y={BARREL_Y - 14}
+          width={BARREL_W}
+          height={BARREL_H + 28}
+          fill="transparent"
+          style={{ touchAction: "none", cursor: dragging ? "grabbing" : "grab" }}
+          onPointerDown={(e) => {
+            /* Değer önce yazılır: setPointerCapture bazı durumlarda
+             * InvalidPointerId atıyor ve sonrası hiç çalışmıyordu. */
+            emit(e.clientX)
+            draggingRef.current = true
+            setDragging(true)
+            try {
+              e.currentTarget.setPointerCapture(e.pointerId)
+            } catch {
+              /* Yakalama olmadan da sürükleme çalışır, yalnızca parmak
+               * gövdenin dışına çıkarsa olay akışı kesilir. */
+            }
+          }}
+          onPointerMove={(e) => {
+            if (draggingRef.current) emit(e.clientX)
+          }}
+          onPointerUp={(e) => {
+            draggingRef.current = false
+            setDragging(false)
+            try {
+              e.currentTarget.releasePointerCapture(e.pointerId)
+            } catch {
+              /* Yakalanmamışsa bırakılacak bir şey de yok. */
+            }
+          }}
+          onPointerCancel={() => {
+            draggingRef.current = false
+            setDragging(false)
+          }}
+        />
+      )}
+
       {/* Çekilecek yerin işareti */}
       {badge && (
-        <g style={{ transition: `transform 650ms ${ease}` }}>
+        <g style={{ transition: `transform ${ease}` }}>
           <line
             x1={stopperX}
             x2={stopperX}
@@ -266,7 +345,7 @@ function SyringeDrawing({
             y2={BARREL_Y}
             stroke="#0072bc"
             strokeWidth="1.2"
-            style={{ transition: `x1 650ms ${ease}, x2 650ms ${ease}` }}
+            style={{ transition: `x1 ${ease}, x2 ${ease}` }}
           />
           <rect
             x={badgeX - badgeW / 2}
@@ -275,7 +354,7 @@ function SyringeDrawing({
             height="17"
             rx="8.5"
             fill="#0072bc"
-            style={{ transition: `x 650ms ${ease}` }}
+            style={{ transition: `x ${ease}` }}
           />
           <text
             x={badgeX}
@@ -284,7 +363,7 @@ function SyringeDrawing({
             fontSize="10"
             fontWeight="700"
             fill="#ffffff"
-            style={{ transition: `x 650ms ${ease}` }}
+            style={{ transition: `x ${ease}` }}
           >
             {badge}
           </text>
@@ -357,7 +436,8 @@ export function DoseCalculator() {
   const [doseAmount, setDoseAmount] = useState("")
   const [doseUnit, setDoseUnit] = useState<DoseUnit>("mg")
   const [syringeId, setSyringeId] = useState(SYRINGES[2].id)
-  const [copied, setCopied] = useState(false)
+  /* Sürükleme keşfedilebilir değil, bir kez kullanılana kadar ipucu durur. */
+  const [scrubbed, setScrubbed] = useState(false)
 
   const syringe = SYRINGES.find((s) => s.id === syringeId) ?? SYRINGES[2]
   const unitLabel = unitSystem === "mg" ? "mg" : "IU"
@@ -427,36 +507,26 @@ export function DoseCalculator() {
     setEntries((prev) => prev.map((e) => (e.id === id ? { ...e, ...patch } : e)))
   }
 
+  /** Şırınga sürüklendiğinde ters yönde çalışır: bırakılan ünite, mevcut
+   * konsantrasyondan hedef doza çevrilip doz alanına yazılır. Konsantrasyon
+   * bilinmiyorsa (flakon ya da su girilmemişse) sürükleme bir şey yapmaz. */
+  function handleScrub(u: number) {
+    if (refConcentration === null || refConcentration <= 0) return
+    setScrubbed(true)
+    const inBase = (u / syringe.unitsPerMl) * refConcentration
+    const shown = unitSystem === "mg" && doseUnit === "mcg" ? inBase * 1000 : inBase
+    const rounded =
+      unitSystem === "mg" && doseUnit === "mg"
+        ? Number(shown.toPrecision(4))
+        : Number(shown.toFixed(1))
+    setDoseAmount(String(rounded))
+  }
+
   function removeEntry(id: string) {
     setEntries((prev) => (prev.length === 1 ? prev : prev.filter((e) => e.id !== id)))
     if (referenceId === id) setReferenceId("")
   }
 
-  async function handleCopy() {
-    if (units === null || drawMl === null) return
-    const lines = [
-      "ZPHC Türkiye sulandırma hesabı",
-      ...entries
-        .filter((e) => parseNum(e.amount) !== null)
-        .map(
-          (e) =>
-            `${e.name || "Bileşik"}: ${fmt(parseNum(e.amount) ?? 0, 3)} ${unitLabel}` +
-            (e.id === reference?.id ? " (hedef)" : ""),
-        ),
-      `Sulandırma suyu: ${fmt(water ?? 0, 2)} mL`,
-      `Konsantrasyon: ${fmt(refConcentration ?? 0, 3)} ${unitLabel}/mL`,
-      `Hedef doz: ${doseAmount} ${unitSystem === "mg" ? doseUnit : "IU"}`,
-      `Çekilecek: ${fmt(units, 2)} ünite (${fmt(drawMl, 3)} mL)`,
-      `Şırınga: ${syringe.label}, U-${syringe.unitsPerMl}`,
-    ]
-    try {
-      await navigator.clipboard.writeText(lines.join("\n"))
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      /* Pano erişimi engellenmişse sessizce geç; sonuç ekranda duruyor. */
-    }
-  }
 
   const dosePresets = unitSystem === "IU" ? [2, 4, 6, 8] : doseUnit === "mcg" ? DOSE_PRESETS_MCG : DOSE_PRESETS_MG
 
@@ -480,6 +550,9 @@ export function DoseCalculator() {
             fillPct={fillPct}
             ticks={ticks}
             badge={units !== null ? `${fmt(units, 2)} ünite` : null}
+            maxUnits={syringe.maxUnits}
+            snapStep={syringe.snapStep}
+            onScrub={refConcentration !== null ? handleScrub : undefined}
           />
 
           <div className="mt-7 text-center">
@@ -497,6 +570,11 @@ export function DoseCalculator() {
                 ? `${fmt(dose, 4)} ${unitLabel} doz için · ${fmt(drawMl, 3)} mL`
                 : "Aşağıdaki üç değeri seçin"}
             </p>
+            {refConcentration !== null && !scrubbed && (
+              <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-medium text-white/70">
+                <span aria-hidden="true">↔</span> Pistonu sürükleyin
+              </p>
+            )}
           </div>
 
           {overflow && (
@@ -567,14 +645,11 @@ export function DoseCalculator() {
               >
                 <span className="block text-sm font-bold">{s.label}</span>
                 <span className="mt-0.5 block text-[11px] opacity-70">
-                  {s.maxUnits} ünite
+                  {s.maxUnits} ü · U-{s.unitsPerMl}
                 </span>
               </button>
             ))}
           </div>
-          <p className="mt-2 text-[11px] text-muted-foreground">
-            İlk üçü U-100, ünite sayısı aynı kalır, yalnızca skala değişir.
-          </p>
         </Field>
 
         <Field label={unitSystem === "mg" ? "Flakondaki peptid" : "Flakondaki HGH"}>
@@ -822,15 +897,6 @@ export function DoseCalculator() {
             </p>
           </div>
         )}
-
-        <button
-          type="button"
-          onClick={handleCopy}
-          disabled={units === null}
-          className="min-h-12 w-full rounded-lg border border-hairline bg-background text-sm font-semibold text-foreground transition-colors hover:border-gold hover:text-gold disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          {copied ? "Kopyalandı" : "Sonucu kopyala"}
-        </button>
 
         <p className="text-[11px] leading-relaxed text-muted-foreground">
           {referencePeptide

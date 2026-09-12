@@ -26,10 +26,7 @@ export default function HesaplayiciPage() {
             <h1 className="text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
               Peptid doz hesaplayıcı
             </h1>
-            <p className="mt-2.5 text-sm text-muted-foreground">
-              Flakon, su ve doz seçin; şırıngada çekeceğiniz yeri gösterir.
-            </p>
-            <div className="mt-7">
+            <div className="mt-6">
               <DoseCalculator />
             </div>
           </div>

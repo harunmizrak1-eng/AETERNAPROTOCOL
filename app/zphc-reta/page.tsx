@@ -35,6 +35,10 @@ export default function ZphcRetaPage() {
       bullets={["Türkiye stoğu", "Üretici doğrulama kodu", "Ücretsiz kargo"]}
       faq={[
         {
+          q: "ZPHC Reta fiyatı ne kadar?",
+          a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp'tan birkaç dakika içinde teyit ediyoruz. Ürünün adını yazmanız yeterli, mesajınız hazır gelir.",
+        },
+        {
           q: "Reta ile retatrutide aynı şey mi?",
           a: "Evet. Reta, kutunun üzerindeki kısa isim; retatrutide ise bileşiğin asıl adı. İki adı da arama motorunda görebilirsiniz, ikisi de aynı ürünü işaret eder.",
         },

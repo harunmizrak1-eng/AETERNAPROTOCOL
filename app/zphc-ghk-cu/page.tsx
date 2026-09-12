@@ -21,6 +21,10 @@ export default function ZphcGhkCuPage() {
     bullets={["Fiyat için iletişim", "Türkiye stoğu", "Üretici koduyla doğrulama"]}
     faq={[
       {
+        q: "ZPHC GHK-Cu fiyatı ne kadar?",
+        a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp'tan birkaç dakika içinde teyit ediyoruz. Ürünün adını yazmanız yeterli, mesajınız hazır gelir.",
+      },
+      {
         q: "60 mg kit ile 200 mg flakon arasındaki fark nedir?",
         a: "60 mg kit, sulandırma için bakteriyostatik su flakonunu da içerir. 200 mg ise tek bir flakondur, su ayrıca temin edilir. İçerik aynı bileşiktir, fark yalnızca kutu içeriği ve toplam miktardır.",
       },

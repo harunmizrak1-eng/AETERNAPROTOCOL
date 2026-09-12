@@ -21,6 +21,10 @@ export default function ZphcZptropPage() {
     bullets={["100 IU", "Fiyat için iletişim", "Üretici koduyla doğrulama"]}
     faq={[
       {
+        q: "ZPHC ZPtrop fiyatı ne kadar?",
+        a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp'tan birkaç dakika içinde teyit ediyoruz. Ürünün adını yazmanız yeterli, mesajınız hazır gelir.",
+      },
+      {
         q: "Neden tek bir ZPtrop ürünü listeleniyor?",
         a: "Katalogda daha önce satılan bazı ZPtrop formatları artık stoklanmıyor. Eski bir formatı görüp güncel stoğu yanlış yorumlamayasınız diye yalnızca aktif ürün burada gösterilir.",
       },

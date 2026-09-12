@@ -21,6 +21,10 @@ export default function ZphcBlendsPage() {
     bullets={["Bileşim karşılaştırması", "Fiyat için iletişim", "Türkiye stoğu"]}
     faq={[
       {
+        q: "ZPHC karışımlarının fiyatı ne kadar?",
+        a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp'tan birkaç dakika içinde teyit ediyoruz. Hangi karışımı sorduğunuzu yazmanız yeterli, mesajınız hazır gelir.",
+      },
+      {
         q: "Karışımlardaki bileşenler ayrı ayrı da satılıyor mu?",
         a: "Evet, çoğu bileşen tek başına da kataloğumuzda var. Karışımı almadan önce her bileşiğin kendi bilgi kaydını okumak isterseniz kütüphaneden ayrı ayrı inceleyebilirsiniz.",
       },

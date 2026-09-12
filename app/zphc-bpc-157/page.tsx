@@ -32,6 +32,10 @@ export default function ZphcBpcPage() {
       bullets={["Fiyat için iletişim", "Türkiye stoğu", "Üretici koduyla doğrulama"]}
       faq={[
         {
+          q: "ZPHC BPC-157 fiyatı ne kadar?",
+          a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp'tan birkaç dakika içinde teyit ediyoruz. Ürünün adını yazmanız yeterli, mesajınız hazır gelir.",
+        },
+        {
           q: "BPC-157 25 mg ile Ultra Rehab Mix veya Glow Pro Mix arasındaki fark ne?",
           a: "BPC-157 25 mg setinde tek bileşen vardır. Ultra Rehab Mix aynı miktarda TB-500 de içerir, Glow Pro Mix ise buna GHK-Cu ekler. Üçü farklı bileşim, farklı toplam içeriktir; birbirinin yerine geçmez.",
         },

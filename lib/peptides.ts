@@ -149,90 +149,30 @@ export const peptides: Peptide[] = [
       sequence: "HUEGTFTSDVSSYLEGQAAKEFIAWLVRGRGPSSGAPPPS",
     },
     short:
-      "GLP-1, GIP ve glukagon reseptörlerine aynı anda etki eden üçlü agonist. Faz 3 çalışmalarında en yüksek kilo kaybı sonuçlarını veren metabolik molekül.",
+      "GIP, GLP-1 ve glukagon reseptörlerini hedefleyen deneysel üçlü agonist. Faz 2 sonuçları yayımlandı; Faz 3 programından sonuçlar açıklanmaya başladı, ancak molekül hâlâ araştırma aşamasında.",
     mechanism:
-      "GLP-1, GIP ve glukagon reseptörlerine eş zamanlı agonist etki; iştah baskılanması, enerji harcamasında artış ve karaciğer yağlanmasında azalmayı aynı anda hedefler.",
+      "GIP, GLP-1 ve glukagon reseptörlerinde agonist olarak araştırılıyor. Üç yolun birlikte hedeflenmesinin enerji alımı, glukoz metabolizması ve enerji harcaması üzerindeki etkileri klinik çalışmalarda değerlendiriliyor.",
     primaryOutcomes: [
       "Vücut ağırlığında klinik olarak anlamlı azalma",
       "HbA1c ve açlık kan şekerinde iyileşme",
       "Karaciğer yağ oranında azalma",
     ],
-    clinicalStatus: "Faz 3 çalışmaları tamamlandı",
+    clinicalStatus: "Faz 3 programı sürüyor; araştırma aşamasında",
     relatedArticleSlug: "retatrutide-nedir",
     evidenceMatrix: [{ outcome: "Vücut Ağırlığı", tier: "proven" }],
-    dosingNote:
-      "Haftalık subkutan enjeksiyon; karın, uyluk veya üst kol bölgesine, enjeksiyon yeri rotasyonuyla uygulanır.",
-    reconstitutionSteps: [
-      "Flakonu oda sıcaklığına gelene kadar bekletin (15-20 dakika)",
-      "Flakon kapağını alkollü mendille temizleyin ve tamamen kurumasını bekleyin",
-      "Hesaplanan bakteriyostatik suyu flakon kenarından yavaşça ekleyin",
-      "Dairesel hareketlerle nazikçe çalkalayın, sert sallamaktan kaçının",
-      "Tam çözünmeyi bekleyin (2-3 dakika); çözelti berrak ve renksiz olmalı",
-      "Sulandırılmış çözeltiyi 2-8°C'de buzdolabında en fazla 28 gün saklayın",
-      "Subkutan enjekte edin; bölgeleri haftalık rotasyonla değiştirin",
-    ],
-    dosing: [
-      { label: "Başlangıç (1-4. hafta)", amount: "0.5mg", amountValue: 0.5, frequency: "Haftada bir", route: "Subkutan" },
-      { label: "Düşük İdame (4-8. hafta)", amount: "1mg", amountValue: 1, frequency: "Haftada bir", route: "Subkutan" },
-      { label: "Yükseltme (8-12. hafta)", amount: "2mg", amountValue: 2, frequency: "Haftada bir", route: "Subkutan" },
-      { label: "Orta Düzey (12-16. hafta)", amount: "4mg", amountValue: 4, frequency: "Haftada bir", route: "Subkutan" },
-      { label: "İleri Düzey (16-20. hafta)", amount: "8mg", amountValue: 8, frequency: "Haftada bir", route: "Subkutan" },
-      { label: "Maksimum Etki (20+. hafta)", amount: "12mg", amountValue: 12, frequency: "Haftada bir", route: "Subkutan" },
-    ],
+    dosing: [],
+    reconstitutionSteps: [],
     warnings: [
-      "Kişisel veya ailede medüller tiroid kanseri öyküsü",
-      "MEN2 sendromu",
-      "Ciddi böbrek yetmezliği",
-      "Yeterli beslenmeyi engelleyen şiddetli ve süreğen bulantı/kusma",
-      "Pankreatit belirtileri: sırta yayılan şiddetli karın ağrısı",
-      "Şiddetli hipoglisemi belirtileri: konfüzyon, baş dönmesi, terleme",
-      "Aşırı kilo kaybı (haftada sürekli >1,4 kg veya toplam vücut ağırlığının >%25'i)",
-      "Safra kesesi sorunları: sağ üst karında şiddetli ağrı",
+      "Retatrutide hâlâ araştırma aşamasındadır; onaylı kullanım bilgisi ve tamamlanmış ürün etiketi yoktur.",
+      "Faz 2 çalışmasında gastrointestinal istenmeyen etkiler ve kalp hızında doza bağlı artış bildirilmiştir.",
     ],
     sideEffects: [
       "Gastrointestinal etkiler (bulantı, kusma, ishal), genellikle hafif-orta düzeyde",
       "Kalp atış hızında artış, özellikle ilk 24 haftada yaygın",
-      "İştah baskılanması",
-      "Hafif dehidrasyon",
+      "İştah azalması",
     ],
-    interactions: [
-      {
-        compound: "Tirzepatide",
-        note: "Başka çift/üçlü agonistlerle birleştirilmemelidir, şiddetli hipoglisemi ve aşırı gastrointestinal etki riski.",
-      },
-      {
-        compound: "Semaglutide",
-        note: "Birleştirilmemelidir, örtüşen GLP-1 agonist mekanizmaları şiddetli hipoglisemi riskini artırır.",
-      },
-      {
-        compound: "BPC-157",
-        note: "Güvenli kombinasyon; BPC-157 retatrutid kullanımı sırasında gastrointestinal koruyucu fayda sağlayabilir.",
-      },
-      {
-        compound: "İnsülin",
-        note: "İnsülin ihtiyacını belirgin şekilde azaltabilir. Kan şekeri izlenmeli ve doz buna göre ayarlanmalıdır.",
-      },
-      {
-        compound: "Metformin",
-        note: "Klinik çalışmalarda güvenli kombinasyon olarak test edildi; farklı mekanizmalar glukoz kontrolünde tamamlayıcı çalışır.",
-      },
-      {
-        compound: "SGLT2 İnhibitörleri",
-        note: "Klinik çalışmalarda güvenlik sorunu bildirilmeden birlikte kullanıldı.",
-      },
-      {
-        compound: "Oral Kontraseptifler",
-        note: "Gecikmiş mide boşalması nedeniyle retatrutidden 1 saat önce alınmalıdır.",
-      },
-    ],
-    expectedTimeline: [
-      { period: "1-2. Hafta", result: "Üçlü hormon aktivasyonuna vücut uyum sağlarken başlangıç iştah baskılanması ve hafif gastrointestinal etkiler" },
-      { period: "2-4. Hafta", result: "Belirgin yeme isteği azalması ve porsiyon küçülmesi; erken kilo kaybı (%2-5)" },
-      { period: "4-8. Hafta", result: "Belirgin iştah kontrolü ve düzenli kilo kaybı (%5-10); kan şekeri kontrolünde iyileşme" },
-      { period: "8-16. Hafta", result: "Önemli kilo azalması (%10-18) ve artan enerji harcaması" },
-      { period: "16-24. Hafta", result: "Majör kilo kaybı eşiği (%15-22), kardiyovasküler fayda ve karaciğer yağında azalma" },
-      { period: "24-48. Hafta", result: "Maksimum klinik etkinlik (%20-24,2) ile kapsamlı metabolik iyileşmeler" },
-    ],
+    interactions: [],
+    expectedTimeline: [],
     qualityIndicators: {
       good: [
         "Eczacılık kalitesinde, homojen dokulu beyaz toz",

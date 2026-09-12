@@ -44,7 +44,7 @@ export const caseStudies: CaseStudy[] = [
     goal:
       "Metabolik direnci kırmak, karaciğer yağlanmasını azaltmak ve kardiyometabolik risk profilini iyileştirmek.",
     tier: "proven",
-    evidenceNote: "Faz 3 çalışmaları tamamlandı",
+    evidenceNote: "Faz 3 programı sürüyor; ilk sonuçlar açıklandı",
     papersReviewed: 47,
     biomarkers: [
       { label: "Kilo", baseline: "94 kg", final: "83 kg", change: "↓ 11 kg", direction: "down" },

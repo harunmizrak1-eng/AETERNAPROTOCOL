@@ -49,6 +49,17 @@ export default function PeptidlerPage() {
           </div>
         </section>
 
+        <section className="border-b border-hairline px-6 py-8 md:px-10">
+          <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-[1fr_auto] md:items-center">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.14em] text-gold">Güncel dosya · Retatrutide</p>
+              <h2 className="mt-2 text-2xl font-bold text-foreground">Faz 2 yayını, Faz 3 kaydı ve ZPHC Reta kutuları tek merkezde</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">Araştırma verisiyle ürün sunumunu birbirine karıştırmadan okuyun.</p>
+            </div>
+            <div className="flex flex-wrap gap-2"><Link href="/peptidler/retatrutide" className="inline-flex min-h-11 items-center rounded-lg border border-gold/30 px-4 text-sm font-bold text-gold">Kütüphane kaydı</Link><Link href="/zphc-reta" className="inline-flex min-h-11 items-center rounded-lg bg-gold px-4 text-sm font-bold text-white">Reta merkezi →</Link></div>
+          </div>
+        </section>
+
         <PeptideLibrary />
 
         {/* Buradaki bölüm eski danışmanlık dönemine aitti: "Hangi bileşiğin

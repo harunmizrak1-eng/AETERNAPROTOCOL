@@ -8,6 +8,7 @@ export interface Article {
   /** paragraphs, kept simple, no CMS yet */
   body: string[]
   relatedLinks?: { href: string; label: string }[]
+  sources?: { label: string; href: string }[]
 }
 
 export const articles: Article[] = [
@@ -96,17 +97,66 @@ export const articles: Article[] = [
   },
   {
     slug: "retatrutide-nedir",
-    title: "Retatrutide neden farklı bir nesil?",
+    title: "Retatrutide nedir? Bugünkü araştırma durumu",
     category: "Metabolik",
     excerpt:
-      "Üçlü reseptör mekanizması, kilo kaybının ötesinde ne anlama geliyor ve neden önceki GLP-1 moleküllerinden ayrışıyor.",
-    readMinutes: 4,
-    date: "2026-06-20",
+      "Üçlü reseptör mekanizması, yayımlanmış Faz 2 verisi ve devam eden Faz 3 programı hakkında net bir durum özeti.",
+    readMinutes: 5,
+    date: "2026-09-12",
     body: [
-      "Retatrutide, tek bir molekülle üç ayrı reseptöre etki eden ilk metabolik bileşiklerden biri. GLP-1, GIP ve glukagon yollarını aynı anda hedefliyor. Bu, iştah kontrolünün ötesinde bir şey anlamına geliyor.",
-      "Önceki nesil moleküller tek ya da çift reseptör üzerinden çalışıyordu. Glukagon yolunun devreye girmesi, yağ metabolizmasını ve enerji harcamasını doğrudan etkiliyor. Faz 3 çalışmalarında görülen sonuçların yüksekliği buradan geliyor.",
-      "Ancak bir molekülün güçlü olması, herkes için doğru olduğu anlamına gelmez. Doz, süre ve bireysel metabolik profil belirleyici. Bu yüzden protokol her zaman kişiye özel kurulur, referans bir tablodan alınmaz.",
-      "Kanıt seviyesi net: retatrutide klinik veriyle desteklenen bir molekül. Bu, kütüphanemizde onu spekülatif bileşiklerden ayıran şey.",
+      "Retatrutide, GIP, GLP-1 ve glukagon reseptörlerini aynı molekülde hedefleyen deneysel bir üçlü agonist. Onu semaglutide ve tirzepatide gibi daha tanınmış isimlerden ayıran temel nokta bu üçüncü, glukagon bileşeni. Mekanizma ilgi çekici; asıl önemli olan ise hangi verinin yayımlandığı ve hangisinin henüz yalnızca şirket açıklaması düzeyinde kaldığı.",
+      "Hakemli en önemli yayın 2023 tarihli Faz 2 çalışması. Çalışmaya obezitesi veya fazla kilosuna eşlik eden bir sağlık sorunu bulunan, diyabeti olmayan 338 yetişkin katıldı. Kırk sekiz haftalık sonuçlarda vücut ağırlığındaki değişim doz gruplarına göre farklılaştı. En sık bildirilen istenmeyen etkiler gastrointestinaldi ve kalp hızında doza bağlı artış görüldü.",
+      "Faz 3 tarafında TRIUMPH-1 kaydı Nisan 2026'da tamamlandı. Lilly Mayıs 2026'da olumlu üst düzey sonuçlar açıkladı. Bu açıklama önemli, fakat bir basın duyurusu hakemli tam makalenin yerini tutmaz. Ayrıca retatrutide geliştirme programındaki başka çalışmalar devam ediyor.",
+      "Bu yüzden en doğru ifade şu: retatrutide insan çalışmalarında güçlü sonuçlar üretmiş, Faz 3 verileri açıklanmaya başlamış, ancak hâlâ araştırma aşamasında olan bir molekül. Onaylı bir ürün veya kesinleşmiş bir tedavi gibi anlatmak doğru değil.",
+      "ZPHC kataloğundaki 20, 30, 40, 60 ve 120 mg ifadeleri klinik doz basamakları değildir. Bunlar kutudaki toplam içeriği ve ambalaj biçimini anlatır. Ürün karşılaştırırken toplam miktar, flakon başına miktar ve kalem ya da kartuş formu ayrı ayrı okunmalıdır.",
+    ],
+    relatedLinks: [
+      { href: "/zphc-reta", label: "ZPHC Reta ürün ve kutu karşılaştırması" },
+      { href: "/peptidler/retatrutide", label: "Retatrutide kütüphane kaydı" },
+      { href: "/journal/reta-kutu-uzerindeki-mg-ne-demek", label: "Reta kutusundaki mg ifadeleri" },
+    ],
+    sources: [
+      { label: "NEJM / PubMed — Faz 2 çalışması (PMID 37366315)", href: "https://pubmed.ncbi.nlm.nih.gov/37366315/" },
+      { label: "ClinicalTrials.gov — TRIUMPH-1 (NCT05929066)", href: "https://clinicaltrials.gov/study/NCT05929066" },
+      { label: "Eli Lilly — TRIUMPH-1 üst düzey sonuçları, 21 Mayıs 2026", href: "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss" },
+    ],
+  },
+  {
+    slug: "reta-kutu-uzerindeki-mg-ne-demek",
+    title: "Reta kutusundaki 20, 40, 60 ve 120 mg neyi gösterir?",
+    category: "Ürün Rehberi",
+    excerpt: "Toplam kutu içeriği ile flakon başına miktar aynı şey değil. ZPHC Reta adlarını doğru okumak için kısa rehber.",
+    readMinutes: 3,
+    date: "2026-09-12",
+    body: [
+      "Bir Reta kutusunda iki ayrı sayı görebilirsiniz. Örneğin “20 mg” kutunun toplam içeriğini, “5 flakon × 4 mg” ise bu toplamın kutuya nasıl dağıldığını anlatır. İki ifade aynı ürüne aittir; biri toplamı, diğeri sunumu söyler.",
+      "Aynı mantık 40, 60 ve 120 mg flakon setlerinde de geçerli. Büyük sayı tek bir flakondaki miktar anlamına gelmeyebilir. Ürün adındaki parantezi okumadan yalnızca ön yüzdeki toplam sayıya bakmak bu yüzden yanıltıcıdır.",
+      "30 mg hazır kalem ve 60 mg çift hazneli kartuş ise farklı ambalaj biçimleridir. Bunları flakon setleriyle yalnızca toplam mg üzerinden kıyaslamak doğru bir karşılaştırma vermez. Ambalaj türü, hazırlanma biçimi ve kutu kaydı birlikte görülmelidir.",
+      "Sitemizdeki mg değerleri bir kullanım önerisi değildir. Katalog sayfasının görevi kutuları birbirinden ayırmak; hangi miktarın kullanılacağını belirlemek değil. Hesaplayıcı da aynı nedenle hazır miktar önermiyor, yalnızca kullanıcının girdiği değeri matematiksel olarak çeviriyor.",
+    ],
+    relatedLinks: [
+      { href: "/zphc-reta", label: "Tüm ZPHC Reta kutularını karşılaştırın" },
+      { href: "/hesaplayici", label: "Flakon hesaplayıcı" },
+      { href: "/dogrulama", label: "Kutu kodu nasıl doğrulanır?" },
+    ],
+  },
+  {
+    slug: "reta-pen-flakon-cift-hazne-farki",
+    title: "Reta pen, flakon ve çift hazneli kartuş arasındaki fark",
+    category: "Ürün Rehberi",
+    excerpt: "Üç ambalaj biçiminin adları birbirine benziyor; kutuyu karşılaştırırken bakılması gereken noktalar farklı.",
+    readMinutes: 3,
+    date: "2026-09-12",
+    body: [
+      "Flakon setinde ürün, kutu üzerindeki sunum bilgisiyle birlikte listelenir: toplam içerik, flakon sayısı ve flakon başına miktar. Bu üç bilgi katalog kaydında aynı satırda görünmelidir.",
+      "Hazır kalem ayrı bir ürün formudur. Adındaki toplam mg değeri, flakon sayısına bölünen bir kutu gibi okunmaz. Çift hazneli kartuş da kendi ambalaj yapısına sahiptir; yalnızca “kalem” kelimesine bakarak hazır kalemle aynı sayılmamalıdır.",
+      "Karşılaştırmanın en güvenli yolu ürün adını, görselini ve kutu üzerindeki güvenlik kodunu birlikte kontrol etmektir. Güvenlik kodu validation.zphc.com üzerinde sorgulanır; sonuç satıcının değil üreticinin sisteminden gelir.",
+      "Ambalaj farkı kullanım kararı değildir. Bu sayfa teknik kutu ayrımını açıklar. Sağlıkla ilgili kararlar ve miktar belirleme bir internet kataloğundan alınmamalıdır.",
+    ],
+    relatedLinks: [
+      { href: "/zphc-reta", label: "Reta ürün karşılaştırması" },
+      { href: "/journal/zphc-orijinal-mi-nasil-anlarim", label: "ZPHC kutusu nasıl doğrulanır?" },
+      { href: "/urunler", label: "Aktif ürün kataloğu" },
     ],
   },
   {

@@ -33,7 +33,7 @@ export default function ZphcBpcPage() {
       faq={[
         {
           q: "ZPHC BPC-157 fiyatı ne kadar?",
-          a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp'tan birkaç dakika içinde teyit ediyoruz. Ürünün adını yazmanız yeterli, mesajınız hazır gelir.",
+          a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp hattımızdan teyit edebilirsiniz. Ürünün adını seçtiğinizde mesaj otomatik hazırlanır.",
         },
         {
           q: "BPC-157 25 mg ile Ultra Rehab Mix veya Glow Pro Mix arasındaki fark ne?",

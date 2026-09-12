@@ -23,7 +23,7 @@ export const plainSummaries: Record<string, string> = {
     "Vücutta doğal olarak bulunan timosin beta-4 proteininin sentetik hali. Doku onarımı ve iltihap üzerine çalışılıyor. BPC-157 ile aynı başlıkta anılır, insan verisi ikisinde de sınırlı.",
 
   retatrutide:
-    "Kilo kaybı üzerine geliştirilen yeni nesil bir molekül. Vücuttaki üç ayrı reseptöre (GLP-1, GIP, glukagon) aynı anda etki ediyor. Faz 3 çalışmalarında bu sınıfın en yüksek kilo kaybı sonuçlarını verdi.",
+    "GIP, GLP-1 ve glukagon reseptörlerini hedefleyen deneysel üçlü agonist. Faz 3 programından sonuçlar açıklanmaya başladı; retatrutide hâlâ araştırma aşamasındadır.",
 
   semaglutide:
     "Ozempic ve Wegovy'nin etken maddesi. İştahı baskılayarak ve mide boşalmasını yavaşlatarak kilo kaybı sağlıyor. Geniş klinik çalışmalarla desteklenen, dünyada onaylı bir molekül.",

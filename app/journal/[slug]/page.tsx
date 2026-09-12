@@ -70,6 +70,7 @@ export default async function ArticlePage({
               name: siteName,
             },
             mainEntityOfPage: `${siteUrl}/journal/${article.slug}`,
+            citation: article.sources?.map((source) => source.href),
           }),
         }}
       />
@@ -123,6 +124,20 @@ export default async function ArticlePage({
                     </Link>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {article.sources && article.sources.length > 0 && (
+              <div className="mt-10 border-t border-hairline pt-8">
+                <p className="text-xs font-bold uppercase tracking-[.14em] text-gold">Kaynaklar</p>
+                <ol className="mt-4 space-y-3">
+                  {article.sources.map((source, index) => (
+                    <li key={source.href} className="flex gap-3 text-sm leading-6">
+                      <span className="font-mono text-xs text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
+                      <a href={source.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-gold hover:underline">{source.label} →</a>
+                    </li>
+                  ))}
+                </ol>
               </div>
             )}
 

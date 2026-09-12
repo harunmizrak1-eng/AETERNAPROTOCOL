@@ -22,7 +22,7 @@ export default function ZphcBlendsPage() {
     faq={[
       {
         q: "ZPHC karışımlarının fiyatı ne kadar?",
-        a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp'tan birkaç dakika içinde teyit ediyoruz. Hangi karışımı sorduğunuzu yazmanız yeterli, mesajınız hazır gelir.",
+        a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp hattımızdan teyit edebilirsiniz. Karışımı seçtiğinizde mesaj otomatik hazırlanır.",
       },
       {
         q: "Karışımlardaki bileşenler ayrı ayrı da satılıyor mu?",

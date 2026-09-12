@@ -1,4 +1,5 @@
 import Link from "next/link"
+import type { ReactNode } from "react"
 import { Footer } from "@/components/footer"
 import { Nav } from "@/components/nav"
 import { ProductCard } from "@/components/product-card"
@@ -16,6 +17,7 @@ export function SeoProductLanding({
   bullets,
   resources,
   faq,
+  children,
 }: {
   eyebrow: string
   title: string
@@ -36,6 +38,7 @@ export function SeoProductLanding({
    * sorduğu şeyler. Kütüphane sayfasıyla aynı cümleleri tekrar etmemeye
    * özellikle dikkat edilir. */
   faq?: Array<{ q: string; a: string }>
+  children?: ReactNode
 }) {
   const shown = slugs
     .map((slug) => products.find((product) => product.slug === slug))
@@ -128,6 +131,8 @@ export function SeoProductLanding({
             </ul>
           </div>
         </section>
+
+        {children}
 
         <section className="border-t border-hairline bg-surface px-6 py-12 md:px-10 md:py-16">
           <div className="mx-auto max-w-7xl">

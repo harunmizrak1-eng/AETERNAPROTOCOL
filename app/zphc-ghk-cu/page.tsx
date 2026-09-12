@@ -22,7 +22,7 @@ export default function ZphcGhkCuPage() {
     faq={[
       {
         q: "ZPHC GHK-Cu fiyatı ne kadar?",
-        a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp'tan birkaç dakika içinde teyit ediyoruz. Ürünün adını yazmanız yeterli, mesajınız hazır gelir.",
+        a: "Sitede fiyat listelemiyoruz; güncel fiyat ve stok bilgisini WhatsApp hattımızdan teyit edebilirsiniz. Ürünün adını seçtiğinizde mesaj otomatik hazırlanır.",
       },
       {
         q: "60 mg kit ile 200 mg flakon arasındaki fark nedir?",

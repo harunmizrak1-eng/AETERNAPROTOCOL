@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     languages: homeLanguageAlternates(),
+    types: { 'application/rss+xml': `${siteUrl}/feed.xml` },
   },
   openGraph: {
     type: 'website',

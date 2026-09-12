@@ -18,7 +18,7 @@ export const categoryInfo: Record<
 > = {
   "Kilo Kaybı": {
     title: "Kilo kaybı ürünleri",
-    body: "Bu başlıktaki moleküller iştah ve tokluk hissini düzenleyen hormon yolakları üzerinden çalışıyor. Semaglutide ve tirzepatide dünyada onaylı ilaçların etken maddeleri; retatrutide ise üç reseptöre birden etki eden daha yeni bir molekül ve faz 3 çalışmalarında bu grubun en yüksek sonuçlarını verdi. Aynı bileşiğin farklı miligramlı kutuları var; ürün sayfalarındaki boyut tablosundan karşılaştırabilirsiniz.",
+    body: "Bu başlıktaki moleküller iştah ve toklukla ilişkili hormon yolakları üzerinden araştırılıyor. Semaglutide ve tirzepatide onaylı ilaçlarda kullanılan etken maddeler; retatrutide ise GIP, GLP-1 ve glukagon reseptörlerini hedefleyen, Faz 3 programı devam eden deneysel bir molekül. Aynı bileşiğin farklı toplam içerikli kutularını ürün sayfalarında karşılaştırabilirsiniz.",
   },
   "Toparlanma & Doku Onarımı": {
     title: "Toparlanma ve doku onarımı",

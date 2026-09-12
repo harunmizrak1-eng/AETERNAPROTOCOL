@@ -21,6 +21,7 @@ import { ProductVariantSelector } from "@/components/product-variant-selector"
 import { ProductBuyActions } from "@/components/store-cart"
 import { RecentlyViewed } from "@/components/recently-viewed"
 import { getProductFamilyLinks } from "@/lib/seo-links"
+import { toCalculatorProduct } from "@/lib/calculator-products"
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
@@ -109,6 +110,7 @@ export default async function UrunPage({
     ? reviews.reduce((total, review) => total + review.rating, 0) / reviews.length
     : 0
   const familyLinks = getProductFamilyLinks(product)
+  const calculatorProduct = toCalculatorProduct(product)
 
   // schema.org Product: arama sonuçlarında görsel, stok ve marka görünsün.
   // Google Product sonuçlarında fiyat olmadan Offer yayımlamak geçersiz
@@ -225,6 +227,14 @@ export default async function UrunPage({
                       </Link>
                     ))}
                   </nav>
+                )}
+                {calculatorProduct && (
+                  <Link
+                    href={`/hesaplayici#urun=${encodeURIComponent(product.slug)}`}
+                    className="mt-5 inline-flex min-h-11 items-center rounded-lg border border-gold/30 bg-gold/[0.05] px-4 text-sm font-bold text-gold transition-colors hover:bg-gold/10"
+                  >
+                    Bu ürünle hesapla →
+                  </Link>
                 )}
               </div>
             </div>

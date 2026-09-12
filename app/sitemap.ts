@@ -9,8 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // lastModified bir dağıtım zamanı değildir. Her build'de `new Date()`
   // kullanmak değişmeyen 140 URL'yi Google'a sürekli güncellenmiş gibi
   // gösterirdi. İçerik gerçekten değiştiğinde bu tarih elle ilerletilir.
-  const storefrontUpdatedAt = new Date("2026-09-11T00:00:00+03:00")
-  const libraryUpdatedAt = new Date("2026-08-28T00:00:00+03:00")
+  const storefrontUpdatedAt = new Date("2026-09-12T00:00:00+03:00")
+  const libraryUpdatedAt = new Date("2026-09-12T00:00:00+03:00")
 
   const staticRoutes = [
     "",
@@ -49,7 +49,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  const peptideRoutes = peptides.map((p) => ({
+  // The previous sitemap promoted every encyclopedia stub equally and left
+  // Google with far more URLs than the active shop could support. Prioritize
+  // compounds that are actually connected to the current catalogue.
+  const activePeptideSlugs = new Set(products.flatMap((product) => product.peptideSlug ? [product.peptideSlug] : []))
+  const peptideRoutes = peptides.filter((p) => activePeptideSlugs.has(p.slug)).map((p) => ({
     url: `${siteUrl}/peptidler/${p.slug}`,
     lastModified: libraryUpdatedAt,
     changeFrequency: "monthly" as const,

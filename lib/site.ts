@@ -14,4 +14,4 @@ export const siteDescription =
 // Editorial review date for the site's evidence-classification claims.
 // Update by hand when the literature review is actually redone; never
 // derive this from the current date.
-export const lastContentReview = "Ağustos 2026"
+export const lastContentReview = "Eylül 2026"

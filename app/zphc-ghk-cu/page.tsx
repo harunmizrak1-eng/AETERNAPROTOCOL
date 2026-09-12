@@ -19,6 +19,24 @@ export default function ZphcGhkCuPage() {
     libraryHref="/peptidler/ghk-cu"
     libraryLabel="GHK-Cu bilgi kaydı"
     bullets={["Fiyat için iletişim", "Türkiye stoğu", "Üretici koduyla doğrulama"]}
+    faq={[
+      {
+        q: "60 mg kit ile 200 mg flakon arasındaki fark nedir?",
+        a: "60 mg kit, sulandırma için bakteriyostatik su flakonunu da içerir. 200 mg ise tek bir flakondur, su ayrıca temin edilir. İçerik aynı bileşiktir, fark yalnızca kutu içeriği ve toplam miktardır.",
+      },
+      {
+        q: "Glow Pro Mix ile tek bileşenli GHK-Cu farkı ne?",
+        a: "Tek bileşenli üründe yalnızca GHK-Cu vardır. Glow Pro Mix ise aynı flakonda BPC-157 ve TB-500'ü de barındıran ayrı bir karışımdır, birbirinin yerine geçmez.",
+      },
+      {
+        q: "Elimdeki kutunun orijinal olduğunu nasıl anlarım?",
+        a: "Kutunun arkasındaki gümüş bandı kazıyıp çıkan kodu validation.zphc.com adresine girin. Sorgu doğrudan üreticinin sisteminde yapılır, sonucu biz üretmeyiz.",
+      },
+      {
+        q: "Kargo ve stok bilgisini nasıl öğrenirim?",
+        a: "Stok durumu ürün kartında görünür. Sipariş ve fiyat bilgisi için WhatsApp'tan yazabilirsiniz, aynı gün kargoya veriyoruz.",
+      },
+    ]}
     resources={[
       { href: "/peptidler/ghk-cu", eyebrow: "Bileşik kütüphanesi", title: "GHK-Cu bilgi kaydı", description: "Bileşiğin araştırma çerçevesini, kanıt seviyesini ve kaynaklarını inceleyin." },
       { href: "/journal/cilt-icin-icten-yaklasim", eyebrow: "Journal", title: "Cilt araştırmalarında içten yaklaşım", description: "Cilt ve yaşlanma araştırmalarındaki temel kavramları sade biçimde okuyun." },

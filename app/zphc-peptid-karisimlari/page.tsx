@@ -19,6 +19,24 @@ export default function ZphcBlendsPage() {
     libraryHref="/peptidler"
     libraryLabel="Bileşik kütüphanesi"
     bullets={["Bileşim karşılaştırması", "Fiyat için iletişim", "Türkiye stoğu"]}
+    faq={[
+      {
+        q: "Karışımlardaki bileşenler ayrı ayrı da satılıyor mu?",
+        a: "Evet, çoğu bileşen tek başına da kataloğumuzda var. Karışımı almadan önce her bileşiğin kendi bilgi kaydını okumak isterseniz kütüphaneden ayrı ayrı inceleyebilirsiniz.",
+      },
+      {
+        q: "Beş karışım hangi amaç grubuna ayrılıyor?",
+        a: "Glow Pro ve Ultra Rehab toparlanma kategorisinde, Super Slim kilo kaybı kategorisinde, Wellness ve Mega Mass büyüme hormonu destekleyici kategorisindedir. Bu bir kullanım önerisi değil, ürünlerin sitedeki kategori sınıflandırmasıdır.",
+      },
+      {
+        q: "Karışımı kendim mi hazırlıyorum, hazır mı geliyor?",
+        a: "Karışımlar liyofilize toz halinde gelir ve kullanmadan önce bakteriyostatik suyla sulandırılması gerekir. Hazır kalem formatında satılan karışım bu sayfada yoktur.",
+      },
+      {
+        q: "Elimdeki kutunun orijinal olduğunu nasıl anlarım?",
+        a: "Kutunun arkasındaki gümüş bandı kazıyıp çıkan kodu validation.zphc.com adresine girin. Sorgu doğrudan üreticinin sisteminde yapılır, sonucu biz üretmeyiz.",
+      },
+    ]}
     resources={[
       { href: "/peptidler", eyebrow: "Bileşik kütüphanesi", title: "İçerikleri ayrı ayrı inceleyin", description: "Karışım adından önce her bileşiğin bağımsız bilgi kaydını ve kaynaklarını okuyun." },
       { href: "/journal/doku-onarimi-bpc157-tb500", eyebrow: "Journal", title: "BPC-157 ve TB-500 karşılaştırması", description: "Sık birlikte anılan iki bileşiğin araştırma ayrımını inceleyin." },

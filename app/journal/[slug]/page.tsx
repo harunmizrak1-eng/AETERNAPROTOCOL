@@ -74,16 +74,31 @@ export default async function ArticlePage({
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Ana Sayfa", item: siteUrl },
+              { "@type": "ListItem", position: 2, name: "Journal", item: `${siteUrl}/journal` },
+              { "@type": "ListItem", position: 3, name: article.title, item: `${siteUrl}/journal/${article.slug}` },
+            ],
+          }),
+        }}
+      />
       <Nav />
       <main id="main-content" className="relative z-10 bg-background">
         <article className="px-6 pb-24 md:px-10">
           <div className="mx-auto max-w-3xl">
-            <Link
-              href="/journal"
-              className="text-xs tracking-normal text-muted-foreground transition-colors hover:text-foreground font-medium"
-            >
-              ← Bilgi Merkezi
-            </Link>
+            <nav aria-label="İçerik yolu" className="flex flex-wrap items-center gap-2 text-xs font-medium text-muted-foreground">
+              <Link href="/" className="transition-colors hover:text-foreground">Ana Sayfa</Link>
+              <span aria-hidden="true">/</span>
+              <Link href="/journal" className="transition-colors hover:text-foreground">Journal</Link>
+              <span aria-hidden="true">/</span>
+              <span className="max-w-[65vw] truncate text-foreground" aria-current="page">{article.title}</span>
+            </nav>
 
             <div className="mt-8 flex flex-wrap items-center gap-2 text-xs font-semibold">
               <span className="rounded-full bg-[#eef7fc] px-3 py-1.5 text-gold">{article.category}</span>

@@ -9,6 +9,7 @@ import { getPeptide, tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 import { citations } from "@/lib/citations"
 import { siteUrl } from "@/lib/site"
 import { RelatedProducts } from "@/components/related-products"
+import { productFaq } from "@/lib/product-faq"
 import { comparableSizes } from "@/lib/product-size"
 import { StockBadge } from "@/components/product-card"
 import { getPlainSummary } from "@/lib/plain-summaries"
@@ -111,6 +112,7 @@ export default async function UrunPage({
     : 0
   const familyLinks = getProductFamilyLinks(product)
   const calculatorProduct = toCalculatorProduct(product)
+  const faq = productFaq(product)
 
   // schema.org Product: arama sonuçlarında görsel, stok ve marka görünsün.
   // Google Product sonuçlarında fiyat olmadan Offer yayımlamak geçersiz
@@ -142,6 +144,18 @@ export default async function UrunPage({
         }
       : undefined,
   }
+  /* Sorular ürün verisinden üretiliyor; aynı listeyi hem sayfada hem
+   * işaretlemede kullanmak ikisinin ayrışmasını engelliyor. */
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteUrl}/urunler/${product.slug}#faq`,
+    mainEntity: faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  }
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -161,6 +175,10 @@ export default async function UrunPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Nav />
       <main id="main-content" className="bg-background">
@@ -349,6 +367,22 @@ export default async function UrunPage({
                 compact
               />
             )}
+
+            <section className="mt-12 border-t border-hairline pt-10">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
+                Bu ürün hakkında sık sorulanlar
+              </h2>
+              <dl className="mt-6 divide-y divide-hairline">
+                {faq.map((item) => (
+                  <div key={item.q} className="py-5 first:pt-0">
+                    <dt className="text-base font-bold text-foreground">{item.q}</dt>
+                    <dd className="mt-2 text-sm leading-7 text-muted-foreground">
+                      {item.a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
 
             <RecentlyViewed product={{ slug: product.slug, name: product.name, image: product.image, price: productPrice }} />
 

@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/dogrulama",
     "/peptidler",
     "/hesaplayici",
+    "/sulandirma-rehberi",
     "/journal",
     "/metodoloji",
     "/sss",

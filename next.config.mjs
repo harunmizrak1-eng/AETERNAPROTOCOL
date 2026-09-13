@@ -43,6 +43,13 @@ const nextConfig = {
       { key: 'Link', value: '<https://zphctr.com/orijin>; rel="author"' },
       { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
       { key: 'Content-Security-Policy', value: "frame-ancestors 'self'" },
+      // MIME türü tahmini kapalı: tarayıcı sunucunun söylediği türe uyar,
+      // yüklenen bir dosyanın script gibi çalıştırılmasını engeller.
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      // Dış sitelere yalnızca alan adımız gider, tam adres gitmez.
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      // Kullanmadığımız donanım izinleri kapalı.
+      { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
     ] }]
   },
   typescript: {

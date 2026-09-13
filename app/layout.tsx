@@ -98,6 +98,16 @@ export default function RootLayout({
                   url: siteUrl,
                   inLanguage: 'tr-TR',
                   publisher: { '@id': `${siteUrl}/#organization` },
+                  // Site içi arama gerçekten bu adrese gidiyor
+                  // (components/header-search.tsx), uydurma bir uç nokta değil.
+                  potentialAction: {
+                    '@type': 'SearchAction',
+                    target: {
+                      '@type': 'EntryPoint',
+                      urlTemplate: `${siteUrl}/urunler?q={search_term_string}`,
+                    },
+                    'query-input': 'required name=search_term_string',
+                  },
                 },
               ],
             }),

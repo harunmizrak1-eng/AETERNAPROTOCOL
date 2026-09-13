@@ -31,8 +31,9 @@ const COPIER_AGENTS = [
   "pagegrabber",
   "webwhacker",
   "extractorpro",
-  "superbot",
-  "ninja",
+  /* "ninja" ve "superbot" gibi çok genel kalıplar listeden çıkarıldı:
+   * meşru SEO denetim araçlarının adında geçebiliyor ve yanlışlıkla
+   * engellenen bir denetçi siteyi "içerik yok" diye raporluyor. */
 ]
 
 /* Bilinen kopya alan adları. Buradan gelen her istek reddedilir: kopya

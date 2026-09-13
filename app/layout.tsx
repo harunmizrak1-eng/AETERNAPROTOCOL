@@ -39,6 +39,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  /* Görünmez köken izi. Sayfada hiçbir şey göstermez, tasarımı etkilemez,
+   * ama HTML'i kopyalayan her araç bunu da kopyalar. Kopyalanmış bir
+   * sayfanın kaynağında bu satırın durması, içeriğin nereden alındığını
+   * teknik olarak gösterir ve şikâyet dosyasında kanıt olarak kullanılır.
+   * Değeri değiştirmeyin: eski kopyalarda eski değer aranıyor. */
+  other: {
+    "x-content-origin": `${siteUrl}/.well-known/zphctr-origin`,
+    "x-content-owner": siteName,
+  },
 }
 
 export const viewport: Viewport = {

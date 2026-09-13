@@ -4,14 +4,6 @@ import { parseSize } from "@/lib/product-size"
 
 export type DoseUnit = "mg" | "mcg"
 
-export interface VialEntry {
-  id: string
-  /** Kütüphaneden seçilmişse slug, elle yazılmışsa boş. */
-  slug: string
-  name: string
-  amount: string
-}
-
 export interface Syringe {
   id: string
   label: string
@@ -114,10 +106,4 @@ export function fmt(n: number, digits = 2): string {
     minimumFractionDigits: 0,
     maximumFractionDigits: digits,
   })
-}
-
-let entryCounter = 0
-export function newEntry(): VialEntry {
-  entryCounter += 1
-  return { id: `e${entryCounter}`, slug: "", name: "", amount: "" }
 }

@@ -95,7 +95,7 @@ export function PeptidePicker({
 }: {
   options: Peptide[]
   value: string
-  onSelect: (slug: string, name: string) => void
+  onSelect: (slug: string) => void
 }) {
   return (
     <div>
@@ -107,7 +107,7 @@ export function PeptidePicker({
               key={peptide.slug}
               type="button"
               aria-pressed={active}
-              onClick={() => onSelect(peptide.slug, peptide.name)}
+              onClick={() => onSelect(peptide.slug)}
               className={`group relative min-h-[60px] rounded-xl border px-3 py-2.5 text-left transition-all duration-150 ${
                 active
                   ? "border-gold bg-gold/[0.07] ring-1 ring-gold"
@@ -141,7 +141,7 @@ export function PeptidePicker({
 
       <button
         type="button"
-        onClick={() => onSelect("", "")}
+        onClick={() => onSelect("")}
         className={`mt-2 min-h-10 w-full rounded-lg border border-dashed px-3 text-xs font-semibold transition-colors ${
           value === ""
             ? "border-gold/60 text-gold"

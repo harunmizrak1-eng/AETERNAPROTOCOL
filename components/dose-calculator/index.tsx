@@ -15,10 +15,8 @@ import {
   WATER_CANDIDATES,
   WATER_PRESETS_ML,
   fmt,
-  newEntry,
   parseNum,
   type DoseUnit,
-  type VialEntry,
 } from "./data"
 
 /** Bileşik seçiliyse gerçekten sattığımız flakon boyları, değilse genel liste. */
@@ -28,8 +26,8 @@ function vialOptions(slug: string): number[] {
 }
 
 export function DoseCalculator() {
-  const [entries, setEntries] = useState<VialEntry[]>([newEntry()])
-  const [referenceId, setReferenceId] = useState("")
+  const [slug, setSlug] = useState("")
+  const [amount, setAmount] = useState("")
   const [waterMl, setWaterMl] = useState("")
   const [doseAmount, setDoseAmount] = useState("")
   const [doseUnit, setDoseUnit] = useState<DoseUnit>("mg")
@@ -38,29 +36,23 @@ export function DoseCalculator() {
   const [scrubbed, setScrubbed] = useState(false)
 
   const syringe = SYRINGES.find((s) => s.id === syringeId) ?? SYRINGES[2]
-  const reference = entries.find((e) => e.id === referenceId) ?? entries[0]
+  const options = vialOptions(slug)
 
   const water = parseNum(waterMl)
   const doseRaw = parseNum(doseAmount)
   const dose = doseRaw !== null && doseUnit === "mcg" ? doseRaw / 1000 : doseRaw
+  const vialAmount = parseNum(amount)
 
-  const referenceAmount = parseNum(reference?.amount ?? "")
-  const totalAmount = entries.reduce((sum, e) => sum + (parseNum(e.amount) ?? 0), 0)
-
-  /* Hesap her zaman işaretli bileşiğin konsantrasyonundan yürür. Karışımda
-   * toplam miligram üzerinden doz almak yanlış olurdu. */
-  const refConcentration =
-    referenceAmount !== null && water !== null ? referenceAmount / water : null
+  const concentration =
+    vialAmount !== null && water !== null ? vialAmount / water : null
   const drawMl =
-    refConcentration !== null && refConcentration > 0 && dose !== null
-      ? dose / refConcentration
+    concentration !== null && concentration > 0 && dose !== null
+      ? dose / concentration
       : null
   const units = drawMl !== null ? drawMl * UNITS_PER_ML : null
   const dosesPerVial =
-    referenceAmount !== null && dose !== null && dose > 0
-      ? referenceAmount / dose
-      : null
-  const perUnitAmount = refConcentration !== null ? refConcentration / UNITS_PER_ML : null
+    vialAmount !== null && dose !== null && dose > 0 ? vialAmount / dose : null
+  const perUnitAmount = concentration !== null ? concentration / UNITS_PER_ML : null
 
   const fillPct =
     units !== null ? Math.max(0, Math.min(1, units / syringe.maxUnits)) : 0
@@ -70,17 +62,17 @@ export function DoseCalculator() {
 
   /** Dozu tam sayı üniteye getiren bir sulandırma hacmi var mı? */
   const waterHint = useMemo(() => {
-    if (referenceAmount === null || dose === null || dose <= 0) return null
+    if (vialAmount === null || dose === null || dose <= 0) return null
     const isClean = (u: number) => Math.abs(u - Math.round(u)) < 0.02 && u >= 5
     if (units !== null && isClean(units)) return null
-    const options = WATER_CANDIDATES.map((w) => ({
+    const candidates = WATER_CANDIDATES.map((w) => ({
       w,
-      u: (dose / (referenceAmount / w)) * UNITS_PER_ML,
+      u: (dose / (vialAmount / w)) * UNITS_PER_ML,
     })).filter((o) => isClean(o.u) && o.u <= syringe.maxUnits)
-    if (options.length === 0) return null
-    options.sort((a, b) => Math.abs(a.u - 20) - Math.abs(b.u - 20))
-    return options[0]
-  }, [referenceAmount, dose, units, syringe])
+    if (candidates.length === 0) return null
+    candidates.sort((a, b) => Math.abs(a.u - 20) - Math.abs(b.u - 20))
+    return candidates[0]
+  }, [vialAmount, dose, units, syringe])
 
   const ticks = useMemo(() => {
     const out: Tick[] = []
@@ -91,37 +83,23 @@ export function DoseCalculator() {
     return out
   }, [syringe])
 
-  function updateEntry(id: string, patch: Partial<VialEntry>) {
-    setEntries((prev) => prev.map((e) => (e.id === id ? { ...e, ...patch } : e)))
-  }
-
   /** Bileşik değişince eldeki miktar çoğu zaman artık geçersizdir (60 mg Reta
    * seçiliyken BPC-157'ye geçilirse 60 mg diye bir kutu yok). Yeni bileşiğin
    * boyları arasında değilse temizlenir, tek boy varsa doğrudan yazılır. */
-  function selectPeptide(id: string, slug: string, name: string) {
-    const entry = entries.find((e) => e.id === id)
-    const options = vialOptions(slug)
-    const current = parseNum(entry?.amount ?? "")
-    const amount =
-      options.length === 1
-        ? String(options[0])
-        : current !== null && options.includes(current)
-          ? (entry?.amount ?? "")
-          : ""
-    updateEntry(id, { slug, name, amount })
-  }
-
-  function removeEntry(id: string) {
-    setEntries((prev) => (prev.length === 1 ? prev : prev.filter((e) => e.id !== id)))
-    if (referenceId === id) setReferenceId("")
+  function selectPeptide(nextSlug: string) {
+    const next = vialOptions(nextSlug)
+    const current = parseNum(amount)
+    setSlug(nextSlug)
+    if (next.length === 1) setAmount(String(next[0]))
+    else if (current === null || !next.includes(current)) setAmount("")
   }
 
   /** Şırınga sürüklendiğinde ters yönde çalışır: bırakılan ünite, mevcut
    * konsantrasyondan hedef doza çevrilip doz alanına yazılır. */
   function handleScrub(u: number) {
-    if (refConcentration === null || refConcentration <= 0) return
+    if (concentration === null || concentration <= 0) return
     setScrubbed(true)
-    const inMg = (u / UNITS_PER_ML) * refConcentration
+    const inMg = (u / UNITS_PER_ML) * concentration
     const shown = doseUnit === "mcg" ? inMg * 1000 : inMg
     setDoseAmount(
       String(doseUnit === "mg" ? Number(shown.toPrecision(4)) : Number(shown.toFixed(1))),
@@ -136,97 +114,35 @@ export function DoseCalculator() {
   return (
     <div className="rounded-2xl border border-hairline bg-background shadow-[0_1px_2px_rgba(13,27,42,0.04),0_16px_48px_-16px_rgba(13,27,42,0.12)]">
       <div className="space-y-8 rounded-t-2xl bg-background p-5 sm:p-8">
-        <Field
-          label="Bileşik"
-          hint={`${CALCULABLE_PEPTIDES.length} bileşik`}
-        >
-          <div className="space-y-3">
-            {entries.map((entry, i) => {
-              const isRef = entry.id === reference?.id
-              const many = entries.length > 1
-              const options = vialOptions(entry.slug)
-              return (
-                <div
-                  key={entry.id}
-                  className={`min-w-0 rounded-xl border p-3.5 transition-colors ${
-                    isRef && many ? "border-gold/60 bg-gold/[0.04]" : "border-hairline"
-                  }`}
-                >
-                  {many && (
-                    <div className="mb-3 flex items-center justify-between gap-2">
-                      <span className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
-                        {i + 1}. bileşik
-                      </span>
-                      {isRef ? (
-                        <span className="rounded-full bg-gold/12 px-2.5 py-1 text-[11px] font-bold text-gold">
-                          Doz buna göre
-                        </span>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={() => setReferenceId(entry.id)}
-                          className="text-[11px] font-medium text-muted-foreground underline-offset-2 transition-colors hover:text-gold hover:underline"
-                        >
-                          Hedefi buna çevir
-                        </button>
-                      )}
-                    </div>
-                  )}
+        <Field label="Bileşik" hint={`${CALCULABLE_PEPTIDES.length} bileşik`}>
+          <PeptidePicker
+            options={CALCULABLE_PEPTIDES}
+            value={slug}
+            onSelect={selectPeptide}
+          />
+        </Field>
 
-                  <PeptidePicker
-                    options={CALCULABLE_PEPTIDES}
-                    value={entry.slug}
-                    onSelect={(slug, name) => selectPeptide(entry.id, slug, name)}
-                  />
-
-                  <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                    {entry.slug ? "Satılan flakon boyları" : "Flakondaki miktar"}
-                  </p>
-                  <div className="mt-2 grid grid-cols-3 gap-2 sm:grid-cols-6">
-                    {options.map((v) => (
-                      <Chip
-                        key={v}
-                        active={entry.amount === String(v)}
-                        onClick={() => updateEntry(entry.id, { amount: String(v) })}
-                      >
-                        {fmt(v, 2)}
-                      </Chip>
-                    ))}
-                  </div>
-
-                  <div className="mt-2 flex items-stretch gap-2">
-                    <div className="min-w-0 flex-1">
-                      <UnitInput
-                        value={entry.amount}
-                        onChange={(v) => updateEntry(entry.id, { amount: v })}
-                        placeholder="Diğer"
-                        ariaLabel="Flakondaki miktar (mg)"
-                        unit="mg"
-                      />
-                    </div>
-                    {many && (
-                      <button
-                        type="button"
-                        onClick={() => removeEntry(entry.id)}
-                        aria-label="Bu bileşiği kaldır"
-                        className="min-h-12 shrink-0 rounded-lg border border-hairline px-4 text-sm text-muted-foreground transition-colors hover:border-gold hover:text-gold"
-                      >
-                        Kaldır
-                      </button>
-                    )}
-                  </div>
-                </div>
-              )
-            })}
+        <Field label={slug ? "Satılan flakon boyları" : "Flakondaki miktar"}>
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-6">
+            {options.map((v) => (
+              <Chip
+                key={v}
+                active={amount === String(v)}
+                onClick={() => setAmount(String(v))}
+              >
+                {fmt(v, 2)}
+              </Chip>
+            ))}
           </div>
-
-          <button
-            type="button"
-            onClick={() => setEntries((prev) => [...prev, newEntry()])}
-            className="mt-3 inline-flex min-h-10 items-center gap-1.5 rounded-lg border border-dashed border-hairline px-4 text-xs font-semibold text-muted-foreground transition-colors hover:border-gold hover:text-gold"
-          >
-            <span aria-hidden="true">+</span> Karışım için peptit ekle
-          </button>
+          <div className="mt-2">
+            <UnitInput
+              value={amount}
+              onChange={setAmount}
+              placeholder="Diğer"
+              ariaLabel="Flakondaki miktar (mg)"
+              unit="mg"
+            />
+          </div>
         </Field>
 
         <Field label="Bakteriyostatik su">
@@ -252,13 +168,7 @@ export function DoseCalculator() {
           </div>
         </Field>
 
-        <Field
-          label={
-            entries.length > 1 && reference?.name
-              ? `Hedef doz · ${reference.name}`
-              : "Hedef doz"
-          }
-        >
+        <Field label="Hedef doz">
           <div className="mb-2.5 inline-flex rounded-lg border border-hairline p-0.5">
             {(["mg", "mcg"] as DoseUnit[]).map((u) => (
               <button
@@ -335,40 +245,12 @@ export function DoseCalculator() {
           </button>
         )}
 
-        {entries.length > 1 && drawMl !== null && water !== null && (
-          <div className="rounded-xl border border-hairline bg-surface p-4">
-            <h3 className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-              Bu hacimde ne var
-            </h3>
-            <ul className="mt-2 divide-y divide-hairline">
-              {entries.map((e) => {
-                const amt = parseNum(e.amount)
-                if (amt === null) return null
-                const inDraw = (amt / water) * drawMl
-                return (
-                  <li key={e.id} className="flex justify-between gap-3 py-2 text-sm">
-                    <span className="min-w-0 truncate text-muted-foreground">
-                      {e.name || "Bileşik"}
-                    </span>
-                    <span className="shrink-0 font-bold tabular-nums text-foreground">
-                      {fmt(inDraw, 3)} mg
-                    </span>
-                  </li>
-                )
-              })}
-            </ul>
-            <p className="mt-2 text-[11px] text-muted-foreground">
-              Flakonda toplam {fmt(totalAmount, 3)} mg var.
-            </p>
-          </div>
-        )}
-
         {/* Yan değerler. Sonuç değil, sonucu doğrulamaya yarayan sayılar. */}
         <div className="grid grid-cols-3 gap-px overflow-hidden rounded-xl border border-hairline bg-hairline">
           {[
             {
               k: "Konsantrasyon",
-              v: refConcentration !== null ? fmt(refConcentration, 3) : "—",
+              v: concentration !== null ? fmt(concentration, 3) : "—",
               u: "mg/mL",
             },
             {
@@ -448,7 +330,7 @@ export function DoseCalculator() {
               badge={units !== null ? `${fmt(units, 2)} ünite` : null}
               maxUnits={syringe.maxUnits}
               snapStep={syringe.snapStep}
-              onScrub={refConcentration !== null ? handleScrub : undefined}
+              onScrub={concentration !== null ? handleScrub : undefined}
             />
           </div>
 
@@ -462,7 +344,7 @@ export function DoseCalculator() {
               {fmt(units ?? 0, 2)} ünite, skalada okunamayacak kadar küçük. Daha
               fazla su ekleyerek çizgiyi büyütebilirsiniz.
             </p>
-          ) : refConcentration !== null && !scrubbed ? (
+          ) : concentration !== null && !scrubbed ? (
             <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-gold/10 px-3 py-1.5 text-[11px] font-semibold text-gold">
               <span aria-hidden="true">↔</span> Pistonu sürükleyerek de ayarlayın
             </p>

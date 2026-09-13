@@ -29,10 +29,40 @@ const bulkCollectors = [
   "Scrapy",
 ]
 
+/* Yukarıdaki listeyle karıştırılmaması gereken robotlar. İkisi de yapay
+ * zekâ şirketlerine ait ama işleri farklı:
+ *
+ *  - Arama robotları (OAI-SearchBot, PerplexityBot, Claude-SearchBot),
+ *    cevabın altında kaynak bağlantısı gösterip siteye ziyaretçi yollar.
+ *  - Kullanıcı tetiklemeli getiriciler (ChatGPT-User, Claude-User,
+ *    Perplexity-User), bir insan "şu adrese bak" dediğinde çalışır.
+ *
+ * Bunların engellenmesinin somut bir zararı görüldü: siteyi bir yapay
+ * zekâ aracına inceleten biri, getirici robots.txt yüzünden sayfayı
+ * alamadığı için "sitede ürün listelenmiyor, içerik JavaScript ile
+ * yükleniyor, blog yok" gibi tamamen yanlış raporlar aldı. Oysa üçü de
+ * sunucuda üretilen ham HTML'de duruyor.
+ *
+ * Bu yüzden açıkça izin veriliyor. Genel "*" kuralı zaten izin veriyor
+ * ama bazı getiriciler kendi adlarına özel bir kural arıyor; adı geçmeyen
+ * durumlarda temkinli davranıp çekilebiliyorlar. */
+const assistantFetchers = [
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "Claude-SearchBot",
+  "Claude-User",
+  "PerplexityBot",
+  "Perplexity-User",
+  "Applebot",
+  "Bingbot",
+  "Googlebot",
+]
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       { userAgent: "*", allow: "/" },
+      ...assistantFetchers.map((userAgent) => ({ userAgent, allow: "/" })),
       ...bulkCollectors.map((userAgent) => ({ userAgent, disallow: "/" })),
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

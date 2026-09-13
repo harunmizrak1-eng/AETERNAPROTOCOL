@@ -795,16 +795,83 @@ export const peptides: Peptide[] = [
     slug: "cjc-1295-ipamorelin",
     name: "CJC-1295 + Ipamorelin",
     category: "Büyüme / GH",
+    /* Bu kayıt tek bir moleküle değil, iki molekülün birlikte kullanımına
+     * aittir. Tek bir moleküler ağırlık yazmak yanıltıcı olurdu; bu yüzden
+     * ağırlık alanı boş bırakıldı ve zincir uzunlukları ile yarı ömürler
+     * ayrı ayrı belirtildi. Yarı ömür alanındaki asıl bilgi DAC ayrımı:
+     * aynı ad altında satılan iki farklı molekül var ve aralarındaki fark
+     * saatler ile günler kadar. */
+    molecular: {
+      halfLife: "CJC-1295 DAC'li ~6-8 gün, DAC'siz ~30 dakika; Ipamorelin ~2 saat",
+      chain: "CJC-1295 29-30 aminoasit, Ipamorelin 5 aminoasit",
+    },
     tier: "theoretical",
     short:
-      "GHRH ve ghrelin yollarını birlikte uyararak doğal büyüme hormonu salınımını tetikleyen kombinasyon. Mekanizma iyi tanımlı.",
+      "GHRH ve ghrelin yollarını birlikte uyararak hipofizin kendi büyüme hormonu salınımını tetiklemeyi amaçlayan kombinasyon. İki molekülün mekanizması ayrı ayrı iyi tanımlı; birlikte kullanımın kendisi ise ayrı bir iddia ve kontrollü insan verisiyle gösterilmiş değil.",
     mechanism:
-      "CJC-1295 (GHRH analoğu) ve Ipamorelin (ghrelin reseptör agonisti) birlikte, hipofizden büyüme hormonu salınımını fizyolojik atım paterniyle uyarır.",
+      "CJC-1295 bir GHRH analoğudur ve hipofize salınım için hazırlık sinyali verir. Ipamorelin ghrelin reseptörü üzerinden çalışır ve tetikleyici sinyali sağlar. İki ayrı yolu aynı anda uyarmanın gerekçesi, tek bir yolu uyarmaya göre fizyolojik atım paternine daha yakın bir salınım oluşturma beklentisidir. Salınım hipofizin kendi üretiminden geldiği için geri bildirim mekanizmaları devrede kalır; somatostatin yükseldiğinde salınım frenlenir. Bu, dışarıdan büyüme hormonu vermekten farkıdır ve aynı zamanda bir tavan koyar: hipofizin üretebileceğinden fazlası üretilmez.",
     primaryOutcomes: [
       "Büyüme hormonu ve IGF-1 düzeylerinde artış",
       "Toparlanma ve vücut kompozisyonunda öznel iyileşme bildirimleri",
+      "Klinik sonlanım noktalarıyla ölçülmüş kontrollü insan verisi yok",
     ],
-    clinicalStatus: "Mekanizma iyi tanımlı, uzun dönem RCT verisi sınırlı",
+    clinicalStatus: "Mekanizma iyi tanımlı, kombinasyonun uzun dönem kontrollü insan verisi yok",
+    relatedArticleSlug: "gh-salgilaticilar-ipamorelin-sermorelin",
+    /* Doz basamağı bilerek yazılmadı: kombinasyon için kontrollü insan
+     * verisi yok, dolayısıyla referans alınacak bir merdiven de yok. */
+    dosing: [],
+    warnings: [
+      "CJC-1295 adı iki farklı molekül için kullanılıyor. DAC'li olan albümine bağlanır ve günlerle ölçülen bir yarı ömre sahiptir; DAC'siz olan (Modifiye GRF 1-29) dakikalarla ölçülür. Kutuda hangisinin bulunduğu ürün etiketinden doğrulanmalıdır, ikisi birbirinin yerine geçmez.",
+      "Kombinasyonun kendisi ayrı bir iddiadır. İki molekülün ayrı ayrı verisi, birlikte kullanımlarının verisi yerine geçmez.",
+      "Büyüme hormonu eksenini uyaran bileşikler, aktif kanser veya kanser öyküsü bulunan durumlarda değerlendirilmesi gereken bir başlıktır.",
+      "Gebelik ve emzirme döneminde insan güvenlilik verisi yoktur.",
+      "Ciddi böbrek veya karaciğer hastalığı varlığında değerlendirme gerektirir.",
+      "Ghrelin yolunu uyaran başka bir bileşikle birlikte kullanım gereksiz tekrar oluşturur ve reseptör yanıtının azalmasına yol açabilir.",
+    ],
+    sideEffects: [
+      "Enjeksiyon bölgesinde kızarıklık, kaşıntı veya geçici şişlik",
+      "Su tutulumu ve buna bağlı geçici ödem hissi",
+      "El ve parmaklarda uyuşma veya karıncalanma; büyüme hormonu ekseniyle ilişkili klasik bildirimlerden biri",
+      "Eklemlerde ağrı veya sertlik",
+      "Ipamorelin kaynaklı geçici açlık hissi artışı",
+      "Baş ağrısı, yüzde kızarma, alınma zamanına bağlı uyku hali",
+    ],
+    interactions: [
+      {
+        compound: "Sermorelin",
+        note: "Aynı GHRH yolunu uyarır. CJC-1295 ile birlikte kullanmak tekrar oluşturur, ek fayda beklenmez.",
+      },
+      {
+        compound: "Tesamorelin",
+        note: "Bu da bir GHRH analoğudur. CJC-1295 ile aynı yolu hedeflediği için gereksiz tekrar oluşur.",
+      },
+      {
+        compound: "GHRP-2",
+        note: "Ipamorelin ile aynı ghrelin reseptörünü uyarır. İkisini birlikte kullanmak yanıtı artırmaz, azalmasına yol açabilir.",
+      },
+      {
+        compound: "GHRP-6",
+        note: "Aynı ghrelin yolu, daha belirgin açlık etkisiyle. Ipamorelin ile birlikte gereksiz.",
+      },
+      {
+        compound: "İnsan büyüme hormonu (HGH)",
+        note: "Dışarıdan verilen hormon, hipofizin kendi salınımını baskılar. Salgılatıcıların çalışma mantığıyla çelişir.",
+      },
+    ],
+    qualityIndicators: {
+      good: [
+        "Her iki bileşik de beyaz, ince ve topaklanmamış liyofilize toz olmalı",
+        "Sulandırma sonrası berrak, renksiz ve parçacıksız çözelti",
+        "Kutuda CJC-1295'in DAC'li mi DAC'siz mi olduğunun açıkça yazması",
+        "Sulandırılmamış toz için kuru ve serin saklama, sulandırma sonrası 2-8 santigrat derece",
+      ],
+      bad: [
+        "Sararmış, topaklanmış veya nemlenmiş toz",
+        "Sulandırma sonrası bulanıklık, çökelti veya renk değişimi",
+        "DAC bilgisinin etikette hiç bulunmaması",
+        "Beklenenden hızlı azalan yanıt; reseptör yanıtının düştüğüne ya da ürünün beklenen içeriği taşımadığına işaret edebilir",
+      ],
+    },
   },
   {
     slug: "nad-nmn",

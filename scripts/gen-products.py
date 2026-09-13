@@ -44,7 +44,7 @@ LABELS = {
     "Side Effects": "Yan Etkiler",
     "Kit includes": "Kit İçeriği",
     "Handling": "Taşıma ve Muhafaza",
-    "Peptide profile": "Peptid Profili",
+    "Peptide profile": "Peptit Profili",
     "Dosing guide": "Doz Rehberi",
     "Research-grade QC": "Araştırma Sınıfı Kalite Kontrolü",
     "Pharma-grade QC": "Farma Sınıfı Kalite Kontrolü",
@@ -87,7 +87,7 @@ SPEC_LABELS = {
     "Solvent", "Diluent",
 }
 
-# Kullanım hedefi. Kataloğu "peptid / HGH" ayrımının yanında amaca göre de
+# Kullanım hedefi. Kataloğu "peptit / HGH" ayrımının yanında amaca göre de
 # gezilebilir yapar: ziyaretçi bileşik adını bilmeden "kilo kaybı" veya
 # "toparlanma" diye arıyor.
 #
@@ -172,7 +172,7 @@ def strip_tags(s: str) -> str:
 # (BPC-157, ZPHC, ZPtrop, Reta) dokunulmaz; yalnızca "5 vials × 5 mg" gibi
 # ambalaj tarifleri Türkçeleştirilir. Sıra önemli: uzun kalıplar önce.
 NAME_PHRASES = [
-    ("Lyophilized Peptide + Bacteriostatic Water", "Liyofilize Peptid + Bakteriyostatik Su"),
+    ("Lyophilized Peptide + Bacteriostatic Water", "Liyofilize Peptit + Bakteriyostatik Su"),
     ("Lyophilized Powder + Bacteriostatic Water", "Liyofilize Toz + Bakteriyostatik Su"),
     ("Dual-Chamber Cartridge + Sterile Water", "Çift Hazneli Kartuş + Steril Su"),
     ("Two-Chamber Cartridges", "Çift Hazneli Kartuş"),
@@ -371,7 +371,7 @@ def main():
         'export type ProductCategory = "peptid" | "hgh" | "aksesuar"',
         "",
         "export const categoryLabels: Record<ProductCategory, string> = {",
-        '  peptid: "Peptidler",',
+        '  peptid: "Peptitler",',
         '  hgh: "İnsan Büyüme Hormonu",',
         '  aksesuar: "Aksesuar",',
         "}",

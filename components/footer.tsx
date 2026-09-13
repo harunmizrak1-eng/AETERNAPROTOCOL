@@ -8,7 +8,7 @@ const STORE_LINKS = [
   { href: "/urunler", label: "Tüm ürünler" },
   { href: "/urunler?kategori=Kilo%20Kayb%C4%B1", label: "Kilo kaybı" },
   { href: "/urunler?kategori=Toparlanma%20%26%20Doku%20Onar%C4%B1m%C4%B1", label: "Toparlanma" },
-  { href: "/peptidler", label: "Peptid kütüphanesi" },
+  { href: "/peptidler", label: "Peptit kütüphanesi" },
 ]
 
 const SUPPORT_LINKS = [

@@ -1,7 +1,7 @@
 /** Bileşiklerin sade dille açıklaması.
  *
  * Kütüphanedeki `short` alanı bilimsel dille yazılmış ("gastrik mukozadan
- * izole pentadekapeptid, anjiyogenez..."). Kataloğa ilk kez bakan biri
+ * izole pentadekapeptit, anjiyogenez..."). Kataloğa ilk kez bakan biri
  * bundan bir şey anlamıyor ve "hangisi bana lazım" sorusuna cevap
  * bulamıyor. Buradaki metinler aynı bilgiyi günlük Türkçeyle veriyor.
  *
@@ -17,7 +17,7 @@
  */
 export const plainSummaries: Record<string, string> = {
   "bpc-157":
-    "Mide salgısından elde edilen bir peptid. Tendon, bağ ve kas dokusunun onarımı üzerine araştırılıyor. Hayvan çalışmalarında olumlu sonuçlar alındı, geniş insan çalışması henüz yapılmadı.",
+    "Mide salgısından elde edilen bir peptit. Tendon, bağ ve kas dokusunun onarımı üzerine araştırılıyor. Hayvan çalışmalarında olumlu sonuçlar alındı, geniş insan çalışması henüz yapılmadı.",
 
   "tb-500":
     "Vücutta doğal olarak bulunan timosin beta-4 proteininin sentetik hali. Doku onarımı ve iltihap üzerine çalışılıyor. BPC-157 ile aynı başlıkta anılır, insan verisi ikisinde de sınırlı.",
@@ -37,31 +37,31 @@ export const plainSummaries: Record<string, string> = {
   hgh: "İnsan büyüme hormonu. Vücudun kendi ürettiği hormonun laboratuvarda üretilmiş hali. Kas kütlesi, yağ oranı ve toparlanma üzerindeki etkileri uzun süredir çalışılıyor. Belirli tıbbi durumlar için onaylı, bunun dışındaki kullanımı tartışmalı.",
 
   ipamorelin:
-    "Vücudun kendi büyüme hormonu salgısını artırmak üzere geliştirilmiş bir peptid. Doğrudan hormon vermek yerine salgıyı tetikliyor. İnsan verisi sınırlı.",
+    "Vücudun kendi büyüme hormonu salgısını artırmak üzere geliştirilmiş bir peptit. Doğrudan hormon vermek yerine salgıyı tetikliyor. İnsan verisi sınırlı.",
 
   "aod-9604":
     "Büyüme hormonunun yağ metabolizmasıyla ilgili parçası. Hormonun diğer etkileri olmadan yağ yakımını hedeflemek üzere geliştirildi. İnsan çalışmalarında sonuçlar beklenenin altında kaldı.",
 
   "ghk-cu":
-    "Bakır taşıyan küçük bir peptid. Kolajen üretimi ve cilt yenilenmesi üzerine çalışılıyor. Kozmetik ürünlerde de yaygın olarak kullanılıyor.",
+    "Bakır taşıyan küçük bir peptit. Kolajen üretimi ve cilt yenilenmesi üzerine çalışılıyor. Kozmetik ürünlerde de yaygın olarak kullanılıyor.",
 
   "nad-nmn":
     "Hücrelerin enerji üretiminde rol oynayan bir molekül. Yaşlanma ve metabolizma araştırmalarında sık geçiyor. İnsan çalışmaları henüz erken aşamada.",
 
   epithalon:
-    "Rusya kaynaklı araştırmalarda yaşlanma üzerine çalışılmış bir peptid. Mevcut veri büyük ölçüde eski Rus çalışmalarına dayanıyor, bağımsız doğrulama sınırlı.",
+    "Rusya kaynaklı araştırmalarda yaşlanma üzerine çalışılmış bir peptit. Mevcut veri büyük ölçüde eski Rus çalışmalarına dayanıyor, bağımsız doğrulama sınırlı.",
 
   "igf-1-lr3":
     "İnsülin benzeri büyüme faktörünün uzun etkili bir versiyonu. Kas dokusu ve hücre büyümesi üzerine çalışılıyor. Güçlü bir molekül, güvenlik verisi sınırlı.",
 
   "ghrp-2":
-    "Büyüme hormonu salgısını uyaran bir peptid. Ipamorelin ile benzer başlıkta anılır, iştah üzerinde de etkisi olduğu bildiriliyor.",
+    "Büyüme hormonu salgısını uyaran bir peptit. Ipamorelin ile benzer başlıkta anılır, iştah üzerinde de etkisi olduğu bildiriliyor.",
 
   "ghrp-6":
-    "Büyüme hormonu salgısını uyaran bir peptid. GHRP-2'ye kıyasla iştah artırıcı etkisi daha belirgin.",
+    "Büyüme hormonu salgısını uyaran bir peptit. GHRP-2'ye kıyasla iştah artırıcı etkisi daha belirgin.",
 
   "mots-c":
-    "Mitokondri kaynaklı bir peptid. Metabolizma ve egzersiz kapasitesi üzerine çalışılıyor. Araştırmalar erken aşamada.",
+    "Mitokondri kaynaklı bir peptit. Metabolizma ve egzersiz kapasitesi üzerine çalışılıyor. Araştırmalar erken aşamada.",
 
   glutathione:
     "Vücudun kendi ürettiği antioksidan. Karaciğer fonksiyonu ve cilt tonu üzerine çalışılıyor. Ağızdan alındığında emilimi düşük olduğu için enjeksiyon formu tercih ediliyor.",

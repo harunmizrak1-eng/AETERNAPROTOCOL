@@ -10,7 +10,7 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'ZPHC Türkiye · Peptid ve Araştırma Ürünleri',
+    default: 'ZPHC Türkiye · Peptit ve Araştırma Ürünleri',
     template: '%s · ZPHC Türkiye',
   },
   description: siteDescription,
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'tr_TR',
     siteName,
-    title: 'ZPHC Türkiye · Peptid ve Araştırma Ürünleri',
+    title: 'ZPHC Türkiye · Peptit ve Araştırma Ürünleri',
     description: siteDescription,
     url: siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZPHC Türkiye · Peptid ve Araştırma Ürünleri',
+    title: 'ZPHC Türkiye · Peptit ve Araştırma Ürünleri',
     description: siteDescription,
   },
   robots: {

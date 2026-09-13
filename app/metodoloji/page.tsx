@@ -99,7 +99,7 @@ export default function MethodologyPage() {
                   href="/peptidler"
                   className="text-gold underline-offset-4 hover:underline"
                 >
-                  Peptid Kütüphanesi
+                  Peptit Kütüphanesi
                 </Link>
                 'ndeki "Klinik Kanıt" bileşiklerinin sayfalarında bu kaynaklar
                 görünür durumdadır. Bulamadığımız yerde kaynak uydurmayız;

@@ -6,16 +6,16 @@ import { PeptideLibrary } from "@/components/peptide-library"
 import { peptides, tierLabel, tierColorVar, tierDots } from "@/lib/peptides"
 
 export const metadata: Metadata = {
-  title: "Peptid Kütüphanesi",
+  title: "Peptit Kütüphanesi",
   description:
-    "Peptidler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
+    "Peptitler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
   alternates: {
     canonical: "/peptidler",
   },
   openGraph: {
-    title: "Peptid Kütüphanesi",
+    title: "Peptit Kütüphanesi",
     description:
-      "Peptidler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
+      "Peptitler hakkında kısa, kanıt seviyesine göre sınıflandırılmış bilgi. Metabolik, doku onarımı, longevity ve kognitif bileşikler.",
     url: "/peptidler",
   },
 }
@@ -28,7 +28,7 @@ export default function PeptidlerPage() {
         <section className="border-b border-hairline bg-[linear-gradient(135deg,#ffffff_0%,#eef7fc_100%)] px-6 py-10 md:px-10 md:py-14">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Peptid Kütüphanesi</p>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-gold">Peptit Kütüphanesi</p>
               <h1 className="mt-3 max-w-2xl text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
                 İsmi değil, kanıtı okuyun.
               </h1>

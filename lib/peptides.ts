@@ -504,9 +504,9 @@ export const peptides: Peptide[] = [
       sequence: "GHK",
     },
     short:
-      "Bakır iyonu taşıyan tripeptid. Kolajen ve elastaz aktivitesi üzerindeki etkileri hücre ve hayvan modellerinde iyi tanımlı; bağımsız insan RCT verisi sınırlı.",
+      "Bakır iyonu taşıyan tripeptit. Kolajen ve elastaz aktivitesi üzerindeki etkileri hücre ve hayvan modellerinde iyi tanımlı; bağımsız insan RCT verisi sınırlı.",
     mechanism:
-      "Bakır iyonu taşıyan tripeptid; kolajen ve elastin sentezini uyardığı, antioksidan ve anti-inflamatuar yollarla doku yenilenmesini desteklediği hücre kültürü ve hayvan modellerinde gösterilmiştir.",
+      "Bakır iyonu taşıyan tripeptit; kolajen ve elastin sentezini uyardığı, antioksidan ve anti-inflamatuar yollarla doku yenilenmesini desteklediği hücre kültürü ve hayvan modellerinde gösterilmiştir.",
     primaryOutcomes: [
       "Hücre kültüründe elastaz inhibisyonu ve kolajen sentezinde artış",
       "Hayvan modellerinde yara iyileşme hızında artış",
@@ -608,10 +608,10 @@ export const peptides: Peptide[] = [
     molecular: {
       halfLife: "~2 saat",
       halfLifeHours: 2,
-      chain: "4 aminoasit (aromatik-katyonik tetrapeptid)",
+      chain: "4 aminoasit (aromatik-katyonik tetrapeptit)",
     },
     short:
-      "Mitokondriyal membran koruyucu tetrapeptid. FDA'nın onayladığı ilk mitokondri ilacı. Mitokondriyal işlev bozukluklarında klinik olarak test edildi.",
+      "Mitokondriyal membran koruyucu tetrapeptit. FDA'nın onayladığı ilk mitokondri ilacı. Mitokondriyal işlev bozukluklarında klinik olarak test edildi.",
     mechanism:
       "Mitokondri iç membranında kardiyolipin ile etkileşerek elektron transport zincirinin verimliliğini korur; oksidatif stresi azaltır.",
     primaryOutcomes: [
@@ -624,7 +624,7 @@ export const peptides: Peptide[] = [
       "Işığa duyarlıdır, ışıktan korunmalıdır. Subkutan veya intravenöz uygulanır; klinik protokoller ile araştırma/performans amaçlı dozlar arasında büyük fark vardır.",
     reconstitutionSteps: [
       "Flakonu alkollü mendille temizleyin",
-      "Her 10mg peptid için 1-2mL bakteriyostatik su ekleyin",
+      "Her 10mg peptit için 1-2mL bakteriyostatik su ekleyin",
       "Çözünene kadar nazikçe çalkalayın (kolayca çözünür)",
       "Berrak, renksiz çözelti olduğunu doğrulayın",
       "İsteğe bağlı: IV kullanım için steril filtrasyon",
@@ -638,7 +638,7 @@ export const peptides: Peptide[] = [
       { label: "Klinik Protokol", amount: "40mg", amountValue: 40, frequency: "Günde 1 kez", route: "Subkutan veya IV" },
     ],
     warnings: [
-      "Bilinen peptid aşırı duyarlılığı",
+      "Bilinen peptit aşırı duyarlılığı",
       "Gebelik veya emzirme dönemi (sınırlı veri)",
       "Şiddetli enjeksiyon bölgesi reaksiyonları",
       "Alerjik reaksiyon belirtileri (döküntü, nefes darlığı)",
@@ -652,7 +652,7 @@ export const peptides: Peptide[] = [
     interactions: [
       {
         compound: "MOTS-c",
-        note: "Her ikisi de mitokondriyal peptiddir, tamamlayıcı mekanizmalarla çalışır.",
+        note: "Her ikisi de mitokondriyal peptittir, tamamlayıcı mekanizmalarla çalışır.",
       },
       {
         compound: "Humanin",
@@ -705,11 +705,11 @@ export const peptides: Peptide[] = [
       weight: "1,419.53 Da",
       halfLife: "<30 dakika",
       halfLifeHours: 0.4,
-      chain: "15 aminoasit (pentadekapeptid)",
+      chain: "15 aminoasit (pentadekapeptit)",
       sequence: "GKPPPGKPADDAGLV",
     },
     short:
-      "Gastrik mukozadan izole pentadekapeptid. Anjiyogenez ve doku onarımını desteklediği düşünülüyor. Mekanizması güçlü, geniş insan çalışması yok.",
+      "Gastrik mukozadan izole pentadekapeptit. Anjiyogenez ve doku onarımını desteklediği düşünülüyor. Mekanizması güçlü, geniş insan çalışması yok.",
     mechanism:
       "Anjiyogenezi (yeni damar oluşumu) ve büyüme faktörü sinyalini desteklediği düşünülüyor; tendon-kemik iyileşmesinde rol oynadığı öne sürülüyor.",
     primaryOutcomes: [
@@ -814,7 +814,7 @@ export const peptides: Peptide[] = [
       weight: "663.43 Da (NAD+)",
       halfLife: "1-4 saat (hücre içi)",
       halfLifeHours: 2.5,
-      chain: "Koenzim (C21H27N7O14P2, peptid değil)",
+      chain: "Koenzim (C21H27N7O14P2, peptit değil)",
     },
     tier: "theoretical",
     short:
@@ -916,7 +916,7 @@ export const peptides: Peptide[] = [
     ],
     warnings: [
       "Gebelik veya emzirme dönemi",
-      "Bilinen peptid alerjileri",
+      "Bilinen peptit alerjileri",
       "Tıbbi gözetim olmadan 4 haftadan uzun sürekli kullanım önerilmez",
       "Şiddetli burun tahrişi, kanama veya süregelen tıkanıklık",
       "Olağandışı anksiyete, ajitasyon veya uyku bozukluğu",
@@ -983,7 +983,7 @@ export const peptides: Peptide[] = [
     short:
       "Tuftsin analogu anksiyolitik. Sedasyon ve bağımlılık olmadan sakinleştirici etki tanımlanıyor. Kontrollü klinik veri sınırlı.",
     mechanism:
-      "Tuftsin analoğu; anksiyolitik etkiyi sedasyon yapmadan, immün ve nöropeptid sinyalini modüle ederek sağladığı öne sürülüyor.",
+      "Tuftsin analoğu; anksiyolitik etkiyi sedasyon yapmadan, immün ve nöropeptit sinyalini modüle ederek sağladığı öne sürülüyor.",
     primaryOutcomes: [
       "Anksiyete skorlarında azalma bildirimleri",
       "Sınırlı veride bağımlılık potansiyeli gözlenmedi",
@@ -998,7 +998,7 @@ export const peptides: Peptide[] = [
       { label: "Yoğun Anksiyete Desteği", amount: "500mcg", amountValue: 500, frequency: "Günde 1 kez (bölünmüş doz)", route: "Subkutan" },
     ],
     warnings: [
-      "Bilinen peptid alerjileri",
+      "Bilinen peptit alerjileri",
       "Gebelik veya emzirme dönemi",
       "Birden fazla psikiyatrik ilaç kullanımında hekime danışılmalı",
       "Şiddetli alerjik reaksiyon (döküntü, nefes darlığı, şişlik)",
@@ -1156,9 +1156,9 @@ export const peptides: Peptide[] = [
       sequence: "MRWQEMGYIFYPRKLR",
     },
     short:
-      "Mitokondriyal DNA kaynaklı peptid. AMPK yolağını aktive ederek egzersiz etkisini taklit ettiği öne sürülüyor. İnsan RCT verisi yok.",
+      "Mitokondriyal DNA kaynaklı peptit. AMPK yolağını aktive ederek egzersiz etkisini taklit ettiği öne sürülüyor. İnsan RCT verisi yok.",
     mechanism:
-      "Mitokondriyal DNA kaynaklı mikropeptid; AMPK yolağını aktive ederek egzersizin metabolik etkilerini taklit ettiği öne sürülüyor.",
+      "Mitokondriyal DNA kaynaklı mikropeptit; AMPK yolağını aktive ederek egzersizin metabolik etkilerini taklit ettiği öne sürülüyor.",
     primaryOutcomes: [
       "Hayvan modellerinde insülin duyarlılığında artış",
       "İnsan RCT verisi yok",
@@ -1230,14 +1230,14 @@ export const peptides: Peptide[] = [
     tier: "preclinical",
     molecular: {
       weight: "390.35 Da",
-      halfLife: "Belirlenmemiş (kısa peptid)",
-      chain: "4 aminoasit (tetrapeptid)",
+      halfLife: "Belirlenmemiş (kısa peptit)",
+      chain: "4 aminoasit (tetrapeptit)",
       sequence: "AEDG",
     },
     short:
-      "Pineal bez kaynaklı tetrapeptid. Telomeraz aktivasyonu ve sirkadiyen ritim etkileri araştırılıyor. Bağımsız modern RCT bulunmuyor.",
+      "Pineal bez kaynaklı tetrapeptit. Telomeraz aktivasyonu ve sirkadiyen ritim etkileri araştırılıyor. Bağımsız modern RCT bulunmuyor.",
     mechanism:
-      "Pineal bez kaynaklı tetrapeptid; telomeraz aktivasyonu ve sirkadiyen ritim düzenlenmesi üzerinden etki ettiği öne sürülüyor.",
+      "Pineal bez kaynaklı tetrapeptit; telomeraz aktivasyonu ve sirkadiyen ritim düzenlenmesi üzerinden etki ettiği öne sürülüyor.",
     primaryOutcomes: [
       "Eski hayvan çalışmalarında ömür uzaması bildirimleri",
       "Bağımsız modern RCT bulunmuyor",
@@ -1316,7 +1316,7 @@ export const peptides: Peptide[] = [
       weight: "338.21 Da",
       halfLife: "~2-3 saat",
       halfLifeHours: 2.5,
-      chain: "Nükleosit analoğu (peptid değil)",
+      chain: "Nükleosit analoğu (peptit değil)",
     },
     short:
       "AMPK aktivatörü, egzersiz taklit edici. Hayvan çalışmalarında dayanıklılık artışı gösterdi. İnsan performans verisi yok, deneysel seviyede.",
@@ -1469,13 +1469,13 @@ export const peptides: Peptide[] = [
       weight: "3,108 Da",
       halfLife: "~2 saat",
       halfLifeHours: 2,
-      chain: "28 aminoasit (asetile polipeptid)",
+      chain: "28 aminoasit (asetile polipeptit)",
       sequence: "SDAAVDTSSEITTKDLKEKKEVVEEAEN",
     },
     short:
-      "Timüs kaynaklı immün modülatör peptid. Bazı ülkelerde hepatit ve bağışıklık desteği amacıyla onaylı; ABD'de FDA onayı yok.",
+      "Timüs kaynaklı immün modülatör peptit. Bazı ülkelerde hepatit ve bağışıklık desteği amacıyla onaylı; ABD'de FDA onayı yok.",
     mechanism:
-      "T hücre olgunlaşmasını ve immün yanıtı düzenlediği düşünülen timik peptid; doğal bağışıklık ve adaptif bağışıklık arayüzünde rol oynar.",
+      "T hücre olgunlaşmasını ve immün yanıtı düzenlediği düşünülen timik peptit; doğal bağışıklık ve adaptif bağışıklık arayüzünde rol oynar.",
     primaryOutcomes: [
       "Bazı ülkelerde hepatit B/C ve immün destek endikasyonlarında onaylı kullanım",
       "ABD ve AB'de geniş RCT verisi sınırlı",
@@ -1637,10 +1637,10 @@ export const peptides: Peptide[] = [
       weight: "817.9 Da",
       halfLife: "~30 dakika",
       halfLifeHours: 0.5,
-      chain: "6 aminoasit (sentetik hekzapeptid)",
+      chain: "6 aminoasit (sentetik hekzapeptit)",
     },
     short:
-      "Ghrelin reseptör agonisti büyüme hormonu salgılatıcı peptid. Mekanizma iyi tanımlı, uzun dönem insan verisi sınırlı.",
+      "Ghrelin reseptör agonisti büyüme hormonu salgılatıcı peptit. Mekanizma iyi tanımlı, uzun dönem insan verisi sınırlı.",
     mechanism:
       "Ghrelin reseptörü üzerinden hipofizden büyüme hormonu salınımını uyarır; iştah artışına da yol açabilir.",
     primaryOutcomes: [
@@ -1715,7 +1715,7 @@ export const peptides: Peptide[] = [
       weight: "887 Da",
       halfLife: "1-2 saat",
       halfLifeHours: 1.5,
-      chain: "6 aminoasit (sentetik hekzapeptid)",
+      chain: "6 aminoasit (sentetik hekzapeptit)",
     },
     short:
       "Güçlü bir ghrelin reseptör agonisti. Hayvan çalışmalarında kardiyoprotektif etkiler gösterdi; insan verisi sınırlı.",
@@ -1883,13 +1883,13 @@ export const peptides: Peptide[] = [
     category: "Longevity",
     molecular: {
       halfLife: "Belirlenmemiş (karışım); etkiler haftalarca sürer",
-      chain: "Kısa peptid karışımı (KE, EW, EDP)",
+      chain: "Kısa peptit karışımı (KE, EW, EDP)",
     },
     tier: "preclinical",
     short:
-      "Rusya kaynaklı timik bioregülatör peptid karışımı. Epithalon ile aynı araştırma geleneğinden; bağımsız modern RCT bulunmuyor.",
+      "Rusya kaynaklı timik bioregülatör peptit karışımı. Epithalon ile aynı araştırma geleneğinden; bağımsız modern RCT bulunmuyor.",
     mechanism:
-      "Timüs dokusundan izole edilmiş peptid karışımı; immün fonksiyon ve hücresel yaşlanma belirteçleri üzerinde düzenleyici etki öne sürülüyor.",
+      "Timüs dokusundan izole edilmiş peptit karışımı; immün fonksiyon ve hücresel yaşlanma belirteçleri üzerinde düzenleyici etki öne sürülüyor.",
     primaryOutcomes: [
       "Eski Rusya kaynaklı çalışmalarda immün fonksiyonda iyileşme bildirimleri",
       "Bağımsız modern RCT bulunmuyor",
@@ -1952,14 +1952,14 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "2,687 Da",
       halfLife: "~30 dakika (fare); >4 saat (sıçan)",
-      chain: "24 aminoasit (mitokondri kaynaklı peptid)",
+      chain: "24 aminoasit (mitokondri kaynaklı peptit)",
       sequence: "MAPRGFSCLLLLTSEIDLPVKRRA",
     },
     tier: "preclinical",
     short:
       "Mitokondriyal DNA kaynaklı sinyal peptidi. Akademik longevity araştırmalarında ilgi görüyor; insan RCT verisi yok.",
     mechanism:
-      "Mitokondriyal DNA'dan kodlanan, hücre koruyucu (sitoprotektif) sinyal yolaklarını aktive ettiği düşünülen bir mikropeptid.",
+      "Mitokondriyal DNA'dan kodlanan, hücre koruyucu (sitoprotektif) sinyal yolaklarını aktive ettiği düşünülen bir mikropeptit.",
     primaryOutcomes: [
       "Hücre kültürü ve hayvan modellerinde koruyucu etki bildirimleri",
       "İnsan RCT verisi yok",
@@ -1974,7 +1974,7 @@ export const peptides: Peptide[] = [
     warnings: [
       "Aktif kanser (anti-apoptotik etkilerle teorik endişe)",
       "Gebelik veya emzirme dönemi",
-      "Peptid bileşenlerine aşırı duyarlılık",
+      "Peptit bileşenlerine aşırı duyarlılık",
     ],
     sideEffects: [
       "Enjeksiyon bölgesi reaksiyonları",
@@ -1996,7 +1996,7 @@ export const peptides: Peptide[] = [
       },
     ],
     expectedTimeline: [
-      { period: "1-2. Hafta", result: "Peptid hücresel düzeyde çalışmaya başlar" },
+      { period: "1-2. Hafta", result: "Peptit hücresel düzeyde çalışmaya başlar" },
       { period: "2-4. Hafta", result: "Gelişmiş enerji ve azalan yorgunluk başlayabilir" },
       { period: "4-8. Hafta", result: "Güçlendirilmiş hücresel direnç ve stres yanıtı" },
       { period: "8-12. Hafta", result: "Mitokondriyal fonksiyon ve sağlık ömrü belirteçlerinde birikimli fayda" },
@@ -2022,7 +2022,7 @@ export const peptides: Peptide[] = [
       weight: "504.7 Da",
       halfLife: "8-12 gün",
       halfLifeHours: 240,
-      chain: "Modifiye oligopeptid (5 aminoasit pozisyonu)",
+      chain: "Modifiye oligopeptit (5 aminoasit pozisyonu)",
     },
     tier: "preclinical",
     short:
@@ -2110,13 +2110,13 @@ export const peptides: Peptide[] = [
     category: "Kognitif",
     molecular: {
       halfLife: "Dakikalar (bileşene bağlı, örn. BDNF ~10 dk)",
-      chain: "Çoklu peptid karışımı (domuz beyni proteinlerinden)",
+      chain: "Çoklu peptit karışımı (domuz beyni proteinlerinden)",
     },
     tier: "theoretical",
     short:
-      "Domuz beyninden elde edilen nöropeptid karışımı. Bazı ülkelerde inme ve demans desteğinde kullanılıyor; sonuçlar çalışmalar arasında tutarsız.",
+      "Domuz beyninden elde edilen nöropeptit karışımı. Bazı ülkelerde inme ve demans desteğinde kullanılıyor; sonuçlar çalışmalar arasında tutarsız.",
     mechanism:
-      "Nörotrofik faktörlere benzer etkiyle nöroplastisiteyi desteklediği düşünülen, çoklu peptid fraksiyonundan oluşan bir karışım.",
+      "Nörotrofik faktörlere benzer etkiyle nöroplastisiteyi desteklediği düşünülen, çoklu peptit fraksiyonundan oluşan bir karışım.",
     primaryOutcomes: [
       "Bazı RCT'lerde bilişsel skorlarda iyileşme",
       "Çalışmalar arasında sonuçlar tutarsız, ABD/AB onayı yok",
@@ -2201,7 +2201,7 @@ export const peptides: Peptide[] = [
     },
     tier: "theoretical",
     short:
-      "Seçici ghrelin reseptör agonisti. Kortizol ve prolaktini belirgin etkilemeden büyüme hormonu salınımını uyardığı öne sürülen, iyi tanımlı bir peptid.",
+      "Seçici ghrelin reseptör agonisti. Kortizol ve prolaktini belirgin etkilemeden büyüme hormonu salınımını uyardığı öne sürülen, iyi tanımlı bir peptit.",
     mechanism:
       "Ghrelin reseptörü üzerinden hipofizden büyüme hormonu salınımını seçici olarak uyarır; CJC-1295 gibi GHRH analoglarıyla sıklıkla birlikte kullanılır.",
     primaryOutcomes: [
@@ -2350,7 +2350,7 @@ export const peptides: Peptide[] = [
     qualityIndicators: {
       good: [
         "Parçacık, bulanıklık veya çökelti olmadan tamamen berrak ve renksiz çözelti",
-        "USP standartlarına göre %98'den yüksek peptid saflığı",
+        "USP standartlarına göre %98'den yüksek peptit saflığı",
         "Steril, pirojenik olmayan liyofilize toz",
         "FDA kayıtlı tesislerde cGMP'ye uygun üretim",
       ],
@@ -2373,7 +2373,7 @@ export const peptides: Peptide[] = [
     short:
       "Hücre iskeleti düzenleyici bir protein. TB-500'ün türetildiği ana molekül; doku rejenerasyonundaki rolü büyük ölçüde hayvan modellerinde araştırılıyor.",
     mechanism:
-      "Aktin bağlayarak hücre göçünü ve doku onarımını desteklediği düşünülen, doğal olarak bulunan bir peptid. TB-500, bunun sentetik bir fragmanıdır.",
+      "Aktin bağlayarak hücre göçünü ve doku onarımını desteklediği düşünülen, doğal olarak bulunan bir peptit. TB-500, bunun sentetik bir fragmanıdır.",
     primaryOutcomes: [
       "Hayvan modellerinde kardiyak ve dermal doku onarımı bildirimleri",
       "İnsan RCT verisi yok",
@@ -2384,7 +2384,7 @@ export const peptides: Peptide[] = [
       "Dozaj hedefe göre büyük farklılık gösterir (akut yara iyileşmesi, kardiyak koruma, nörolojik toparlanma farklı doz/yol gerektirir); tek bir doz merdiveni yerine hedefe özgü protokol uygulanır, tamamı insan RCT verisinden değil hayvan modellerinden türetilmiştir.",
     warnings: [
       "Aktif kemoterapi tedavisi",
-      "Peptidlere karşı şiddetli sistemik alerji",
+      "Peptitlere karşı şiddetli sistemik alerji",
       "Şiddetli enjeksiyon bölgesi reaksiyonu veya süregelen inflamasyon",
       "Sistemik alerjik reaksiyon belirtileri (döküntü, nefes darlığı)",
     ],
@@ -2395,7 +2395,7 @@ export const peptides: Peptide[] = [
     interactions: [
       {
         compound: "TB-500",
-        note: "TB-500, Thymosin Beta-4'ün biyoaktif fragmanıdır. Birlikte kullanım tam uzunluklu peptid faydalarını yoğunlaştırılmış biyoaktif etkiyle birleştirir.",
+        note: "TB-500, Thymosin Beta-4'ün biyoaktif fragmanıdır. Birlikte kullanım tam uzunluklu peptit faydalarını yoğunlaştırılmış biyoaktif etkiyle birleştirir.",
       },
       {
         compound: "Antikoagülanlar",
@@ -2439,14 +2439,14 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "848.81 Da",
       halfLife: "~15 dakika (in vitro)",
-      chain: "9 aminoasit (nonapeptid)",
+      chain: "9 aminoasit (nonapeptit)",
       sequence: "WAGGDASGE",
     },
     tier: "preclinical",
     short:
-      "Delta uyku indükleyici peptid. Uyku mimarisi ve stres yanıtı üzerindeki etkileri onlarca yıldır araştırılıyor ama insan verisi hâlâ sınırlı ve tutarsız.",
+      "Delta uyku indükleyici peptit. Uyku mimarisi ve stres yanıtı üzerindeki etkileri onlarca yıldır araştırılıyor ama insan verisi hâlâ sınırlı ve tutarsız.",
     mechanism:
-      "Merkezi sinir sisteminde uyku düzenlenmesi ve nöroendokrin modülasyonla ilişkilendirilen bir nöropeptid; kesin mekanizması tam aydınlatılmamıştır.",
+      "Merkezi sinir sisteminde uyku düzenlenmesi ve nöroendokrin modülasyonla ilişkilendirilen bir nöropeptit; kesin mekanizması tam aydınlatılmamıştır.",
     primaryOutcomes: [
       "Eski çalışmalarda uyku ve stres belirteçleri üzerinde etki bildirimleri",
       "Modern kontrollü insan verisi sınırlı ve tutarsız",
@@ -2498,7 +2498,7 @@ export const peptides: Peptide[] = [
         note: "Opioid reseptörlerini modüle edebilir; profesyonel gözetim gerektirir.",
       },
       {
-        compound: "Büyüme Hormonu Peptidleri",
+        compound: "Büyüme Hormonu Peptitleri",
         note: "Doğrudan etkileşim yok; DSIP uyku sırasında doğal GH salınımını destekleyebilir.",
       },
     ],
@@ -2529,7 +2529,7 @@ export const peptides: Peptide[] = [
     molecular: {
       halfLife: "4-7 saat (IV 3.8sa, oral 6.9sa)",
       halfLifeHours: 5.5,
-      chain: "Küçük molekül NNMT enzim inhibitörü (peptid değil)",
+      chain: "Küçük molekül NNMT enzim inhibitörü (peptit değil)",
     },
     tier: "preclinical",
     short:
@@ -2611,7 +2611,7 @@ export const peptides: Peptide[] = [
       weight: "22,124 Da",
       halfLife: "3-4 saat (SubQ), 20-30 dakika (IV)",
       halfLifeHours: 3.5,
-      chain: "191 aminoasit (iki disülfit köprülü tek zincirli polipeptid)",
+      chain: "191 aminoasit (iki disülfit köprülü tek zincirli polipeptit)",
     },
     tier: "proven",
     short:
@@ -2811,7 +2811,7 @@ export const peptides: Peptide[] = [
       weight: "873 Da",
       halfLife: "15-60 dakika",
       halfLifeHours: 0.625,
-      chain: "6 aminoasit (sentetik hekzapeptid)",
+      chain: "6 aminoasit (sentetik hekzapeptit)",
     },
     tier: "theoretical",
     short:
@@ -2973,11 +2973,11 @@ export const peptides: Peptide[] = [
     molecular: {
       halfLife: "1-2 saat",
       halfLifeHours: 1.5,
-      chain: "3 aminoasit (tripeptid)",
+      chain: "3 aminoasit (tripeptit)",
     },
     tier: "theoretical",
     short:
-      "Alfa-MSH'ın anti-inflamatuar tripeptid fragmanı. Steroidlerin bağışıklık baskılama etkisi olmadan iltihabı azalttığı düşünülüyor.",
+      "Alfa-MSH'ın anti-inflamatuar tripeptit fragmanı. Steroidlerin bağışıklık baskılama etkisi olmadan iltihabı azalttığı düşünülüyor.",
     mechanism:
       "Hücre içine girerek nükleer düzeyde NF-κB sinyalini baskılar; TNF-α ve IL-6 gibi pro-inflamatuar sitokinleri immünosupresyon oluşturmadan azalttığı öne sürülüyor.",
     primaryOutcomes: [
@@ -2994,7 +2994,7 @@ export const peptides: Peptide[] = [
       { label: "Otoimmün Destek", amount: "500mcg", amountValue: 500, frequency: "Günde 1 kez", route: "Subkutan" },
     ],
     warnings: [
-      "Bilinen peptid alerjileri",
+      "Bilinen peptit alerjileri",
       "Aktif şiddetli enfeksiyonlar (teorik)",
       "Gebelik veya emzirme dönemi (sınırlı veri)",
       "Enfeksiyon belirtileri (ateş, titreme), çok nadir",
@@ -3038,7 +3038,7 @@ export const peptides: Peptide[] = [
       good: [
         "Yüksek saflık (>%98)",
         "Sulandırma sonrası berrak, renksiz çözelti",
-        "Kararlı küçük peptid yapısı",
+        "Kararlı küçük peptit yapısı",
         "Analiz sertifikası mevcut",
       ],
       bad: [
@@ -3055,11 +3055,11 @@ export const peptides: Peptide[] = [
       weight: "1,257 Da",
       halfLife: "~20 dakika (SubQ), ~2 dakika (IV)",
       halfLifeHours: 0.33,
-      chain: "11 aminoasit (mühendislik ürünü peptid)",
+      chain: "11 aminoasit (mühendislik ürünü peptit)",
     },
     tier: "theoretical",
     short:
-      "Eritropoietin türevi, eritropoietik etkisi olmayan doku-koruyucu bir peptid. Sinir onarımı odaklı Faz 2 insan çalışmalarında test edildi.",
+      "Eritropoietin türevi, eritropoietik etkisi olmayan doku-koruyucu bir peptit. Sinir onarımı odaklı Faz 2 insan çalışmalarında test edildi.",
     mechanism:
       "EPOR/β-ortak reseptör kompleksi üzerinden 'innate repair receptor' (IRR) yolunu aktive eder; kırmızı kan hücresi üretimini artırmadan doku koruyucu sinyal iletir.",
     primaryOutcomes: [
@@ -3120,7 +3120,7 @@ export const peptides: Peptide[] = [
     qualityIndicators: {
       good: [
         "GMP koşullarında eczacılık kalitesinde üretim",
-        "Doğru peptid dizisi doğrulaması (N-terminal pirogluatamatlı 11-aminoasit dizisi)",
+        "Doğru peptit dizisi doğrulaması (N-terminal pirogluatamatlı 11-aminoasit dizisi)",
         "Uygun dondurarak kurutmayla steril liyofilize toz",
         "Saflık >%95, endotoksin <1 EU/mg, sterilite doğrulanmış",
       ],
@@ -3136,7 +3136,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "154.17 Da",
       halfLife: "Uzun kararlılık (doğrusal GPE öncülünden daha stabil)",
-      chain: "2 aminoasit (siklik dipeptid)",
+      chain: "2 aminoasit (siklik dipeptit)",
     },
     tier: "theoretical",
     short:
@@ -3208,7 +3208,7 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "~4,000 Da",
       halfLife: "İyi karakterize edilmemiş",
-      chain: "Tek zincirli peptid (relaksin-2 B-zinciri analoğu)",
+      chain: "Tek zincirli peptit (relaksin-2 B-zinciri analoğu)",
     },
     tier: "preclinical",
     short:
@@ -3273,7 +3273,7 @@ export const peptides: Peptide[] = [
       weight: "319.85 Da",
       halfLife: "~5-6 saat",
       halfLifeHours: 5.5,
-      chain: "Fenotiazin boya bileşiği (peptid değil, C16H18ClN3S)",
+      chain: "Fenotiazin boya bileşiği (peptit değil, C16H18ClN3S)",
     },
     tier: "proven",
     short:
@@ -3438,11 +3438,11 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "~4,800 Da",
       halfLife: "Belirlenmemiş",
-      chain: "~45 aminoasit (D-retro-inverso peptid)",
+      chain: "~45 aminoasit (D-retro-inverso peptit)",
     },
     tier: "preclinical",
     short:
-      "Senesan (yaşlanmış) hücreleri seçici olarak temizlemeyi hedefleyen deneysel bir senolitik peptid. Fare çalışmalarında doku gençleşmesi gösterildi; insan verisi yok.",
+      "Senesan (yaşlanmış) hücreleri seçici olarak temizlemeyi hedefleyen deneysel bir senolitik peptit. Fare çalışmalarında doku gençleşmesi gösterildi; insan verisi yok.",
     mechanism:
       "FOXO4'ün p53 ile bağlanmasını rekabetçi şekilde engeller; bu, senesan hücrelerde p53'ün çekirdek dışına çıkmasına ve programlı hücre ölümüne yol açarken, FOXO4 sağlıklı dokuda düşük eksprese olduğu için işlevsel hücreler büyük ölçüde etkilenmiyor.",
     primaryOutcomes: [
@@ -3507,13 +3507,13 @@ export const peptides: Peptide[] = [
     category: "Longevity",
     molecular: {
       weight: "416 Da",
-      halfLife: "Dakikalar (kısa peptid); etkiler epigenetik değişimlerle sürer",
-      chain: "4 aminoasit (tetrapeptid biyoregülatör)",
+      halfLife: "Dakikalar (kısa peptit); etkiler epigenetik değişimlerle sürer",
+      chain: "4 aminoasit (tetrapeptit biyoregülatör)",
       sequence: "AEDP",
     },
     tier: "theoretical",
     short:
-      "Rus jerontoloji literatüründen (Khavinson ekibi) beyin dokusuna özgü kısa peptid biyoregülatör. Bulgular esas olarak tek bir araştırma grubundan gelmektedir.",
+      "Rus jerontoloji literatüründen (Khavinson ekibi) beyin dokusuna özgü kısa peptit biyoregülatör. Bulgular esas olarak tek bir araştırma grubundan gelmektedir.",
     mechanism:
       "Hücre çekirdeğine girerek gen ekspresyonunu epigenetik düzeyde modüle ettiği; sinir sisteminde inflamatuar yanıtı ve oksidatif-antioksidan dengeyi etkilediği öne sürülüyor.",
     primaryOutcomes: [
@@ -3582,13 +3582,13 @@ export const peptides: Peptide[] = [
     category: "Longevity",
     molecular: {
       weight: "460 Da",
-      halfLife: "Dakikalar (kısa peptid); etkiler epigenetik değişimlerle sürer",
-      chain: "4 aminoasit (tetrapeptid biyoregülatör)",
+      halfLife: "Dakikalar (kısa peptit); etkiler epigenetik değişimlerle sürer",
+      chain: "4 aminoasit (tetrapeptit biyoregülatör)",
       sequence: "AEDR",
     },
     tier: "theoretical",
     short:
-      "Kalp dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Kardiyak doku onarımı ve gen ekspresyonu üzerindeki etkileri esas olarak tek bir araştırma grubunca bildirilmiştir.",
+      "Kalp dokusuna özgü kısa peptit biyoregülatör (Khavinson ekibi). Kardiyak doku onarımı ve gen ekspresyonu üzerindeki etkileri esas olarak tek bir araştırma grubunca bildirilmiştir.",
     mechanism:
       "Hücre çekirdeğine girip DNA bölgeleri, histonlar ve nükleozomlarla etkileşerek DNA dizisini değiştirmeden gen aktivasyonunu düzenlediği öne sürülüyor; bu yolla kardiyak doku onarımını desteklediği iddia ediliyor.",
     primaryOutcomes: [
@@ -3658,12 +3658,12 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "432 Da",
       halfLife: "Belirlenmemiş",
-      chain: "4 aminoasit (tetrapeptid biyoregülatör)",
+      chain: "4 aminoasit (tetrapeptit biyoregülatör)",
       sequence: "KEDA",
     },
     tier: "theoretical",
     short:
-      "Karaciğer dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Hepatoprotektif etkileri esas olarak tek bir araştırma grubunca bildirilmiştir.",
+      "Karaciğer dokusuna özgü kısa peptit biyoregülatör (Khavinson ekibi). Hepatoprotektif etkileri esas olarak tek bir araştırma grubunca bildirilmiştir.",
     mechanism:
       "Kromatin yapısını gevşeterek belirli genlerin ekspresyonunu artırdığı; karaciğer dokusunda bağışıklık ve antioksidan durumunu normalize ederek hepatoprotektif etki gösterdiği öne sürülüyor.",
     primaryOutcomes: [
@@ -3733,12 +3733,12 @@ export const peptides: Peptide[] = [
     molecular: {
       weight: "275 Da",
       halfLife: "Belirlenmemiş",
-      chain: "2 aminoasit (dipeptid biyoregülatör)",
+      chain: "2 aminoasit (dipeptit biyoregülatör)",
       sequence: "KE",
     },
     tier: "preclinical",
     short:
-      "Timüs dokusuna özgü kısa peptid biyoregülatör (Khavinson ekibi). Yaşlanan bağışıklık sisteminin gençleştirilmesi üzerine araştırma konusu, tamamen preklinik.",
+      "Timüs dokusuna özgü kısa peptit biyoregülatör (Khavinson ekibi). Yaşlanan bağışıklık sisteminin gençleştirilmesi üzerine araştırma konusu, tamamen preklinik.",
     mechanism:
       "Bağışıklık hücrelerinde kromatin yapısını ve gen ekspresyonunu etkileyerek timosit çoğalmasını ve T-yardımcı hücre aktivasyonunu artırdığı gösterilmiştir.",
     primaryOutcomes: [
@@ -3778,7 +3778,7 @@ export const peptides: Peptide[] = [
       },
       {
         compound: "Thymogen",
-        note: "İlişkili bağışıklık peptidleri; kapsamlı protokollerde kullanılabilir.",
+        note: "İlişkili bağışıklık peptitleri; kapsamlı protokollerde kullanılabilir.",
       },
     ],
     expectedTimeline: [
@@ -3809,7 +3809,7 @@ export const peptides: Peptide[] = [
       weight: "326.28 Da",
       halfLife: "~1.7 saat",
       halfLifeHours: 1.7,
-      chain: "Küçük molekül (C16H10F2N6O, peptid değil)",
+      chain: "Küçük molekül (C16H10F2N6O, peptit değil)",
     },
     tier: "preclinical",
     short:
@@ -3887,7 +3887,7 @@ export const peptides: Peptide[] = [
     },
     tier: "theoretical",
     short:
-      "Beyaz yağ dokusu endotelini hedefleyen, apoptoz tetikleyen bir peptid-konjugat. Faz 1 insan çalışmasında etkili bulundu ancak geri dönüşümlü böbrek toksisitesi nedeniyle geliştirilmesi durduruldu.",
+      "Beyaz yağ dokusu endotelini hedefleyen, apoptoz tetikleyen bir peptit-konjugat. Faz 1 insan çalışmasında etkili bulundu ancak geri dönüşümlü böbrek toksisitesi nedeniyle geliştirilmesi durduruldu.",
     mechanism:
       "Bağlayıcı kısım beyaz yağ endotelindeki prohibitin/anneksin A2'yi hedefler; bağlı pro-apoptotik kısım hücre içine girince mitokondriyal zarı bozarak lokalize endotel apoptozu ve yağ hücresi kaybı tetikler.",
     primaryOutcomes: [
@@ -3969,7 +3969,7 @@ export const peptides: Peptide[] = [
     },
     tier: "preclinical",
     short:
-      "GDNF ailesinden farklı bir mekanizmayla dopaminerjik nöronları koruyan deneysel bir peptid fragmanı. Motivasyon ve ruh hali ile ilişkili tamamen preklinik bir araştırma konusu.",
+      "GDNF ailesinden farklı bir mekanizmayla dopaminerjik nöronları koruyan deneysel bir peptit fragmanı. Motivasyon ve ruh hali ile ilişkili tamamen preklinik bir araştırma konusu.",
     mechanism:
       "Klasik GFRalpha1/RET reseptör kompleksini kullanmadan dopaminerjik nöron sağkalımını desteklediği; tirozin hidroksilaz ekspresyonunu artırarak dopamin sentezini ve mitokondriyal fonksiyonu desteklediği gösterilmiştir.",
     primaryOutcomes: [
@@ -3985,7 +3985,7 @@ export const peptides: Peptide[] = [
     ],
     warnings: [
       "Gebelik veya emzirme dönemi",
-      "Bilinen peptid alerjileri",
+      "Bilinen peptit alerjileri",
       "Çok sınırlı insan güvenlik verisi; kendi sorumluluğunuzda kullanılır",
       "Dopaminerjik ilaçlarla birleştirmeden önce hekime danışılmalı",
       "Şiddetli veya süregelen burun tahrişi veya kanaması",

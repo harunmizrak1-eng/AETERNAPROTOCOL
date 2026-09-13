@@ -14,7 +14,7 @@ import { Footer } from "@/components/footer"
  *
  * Danışmanlık dönemine ait bölümler (Offerings, Process, Idea, Trust) ve
  * eski Categories bileşeni ana sayfadan çıkarıldı; sonuncusu tıklanamayan,
- * yalnızca peptid adı listeleyen bir metin bloğuydu ve kataloğa
+ * yalnızca peptit adı listeleyen bir metin bloğuydu ve kataloğa
  * bağlanmıyordu. Yerini ProductCategories aldı.
  *
  * Telafi dolgusu (pt-*) yok: Nav artık position:fixed değil, normal akışta

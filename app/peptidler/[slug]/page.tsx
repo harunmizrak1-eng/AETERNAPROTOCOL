@@ -34,9 +34,9 @@ export function generateStaticParams() {
 }
 
 const searchTitleOverrides: Record<string, string> = {
-  ipamorelin: "ZPHC Ipamorelin Türkiye | Peptid Bilgi Kaydı",
+  ipamorelin: "ZPHC Ipamorelin Türkiye | Peptit Bilgi Kaydı",
   tesamorelin: "ZPHC Tesamorelin Türkiye | Araştırma ve Kaynaklar",
-  semaglutide: "ZPHC Semaglutide Türkiye | Peptid Bilgi Kaydı",
+  semaglutide: "ZPHC Semaglutide Türkiye | Peptit Bilgi Kaydı",
   hgh: "ZPHC HGH Türkiye | Büyüme Hormonu Bilgi Kaydı",
 }
 
@@ -47,7 +47,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const peptide = getPeptide(slug)
-  if (!peptide) return { title: "Peptid kütüphanesi" }
+  if (!peptide) return { title: "Peptit kütüphanesi" }
   const title = searchTitleOverrides[peptide.slug] ?? peptide.name
   return {
     title,
@@ -96,7 +96,7 @@ export default async function PeptideDetailPage({
               href="/peptidler"
               className="text-xs tracking-normal text-muted-foreground transition-colors hover:text-foreground font-medium"
             >
-              ← Peptid kütüphanesi
+              ← Peptit kütüphanesi
             </Link>
 
             <p className="mt-10 text-xs tracking-normal text-muted-foreground font-medium">

@@ -21,7 +21,7 @@ export const articles: Article[] = [
     readMinutes: 4,
     date: "2026-08-21",
     body: [
-      "Liyofilize peptidler toz halinde gelir ve kullanılabilmesi için sıvıyla buluşturulması gerekir. Bu iş için normal içme suyu ya da musluk suyu kullanılmaz. Standart çözücü bakteriyostatik sudur.",
+      "Liyofilize peptitler toz halinde gelir ve kullanılabilmesi için sıvıyla buluşturulması gerekir. Bu iş için normal içme suyu ya da musluk suyu kullanılmaz. Standart çözücü bakteriyostatik sudur.",
       "Bakteriyostatik su, içine yüzde 0,9 oranında benzil alkol eklenmiş steril sudur. Benzil alkolün görevi bakteri üremesini engellemektir. Bu sayede flakona birden fazla kez iğne girse bile içerik kısa sürede kontamine olmaz.",
       "Steril su ile arasındaki fark tam olarak budur. Steril su da temizdir ama koruyucu içermez; bir kez iğne girdikten sonra içine bakteri karışma ihtimali başlar. Bakteriyostatik suyun koruyucusu, flakonun günler boyunca kullanılabilmesini sağlar.",
       "Sık sorulan 28 gün meselesi de buradan geliyor. Benzil alkolün koruyucu etkisi sınırsız değil. Üreticiler, flakona ilk iğne girdikten sonra yaklaşık 28 günlük bir kullanım penceresi bildirir. Bu süre bir garanti değil, koruyucunun makul şekilde iş gördüğü aralıktır.",
@@ -38,13 +38,13 @@ export const articles: Article[] = [
     title: "Liyofilize ne demek, ürün neden toz halinde geliyor?",
     category: "Kullanım",
     excerpt:
-      "Dondurarak kurutma nedir, peptidler neden bu şekilde saklanıyor ve kargoda bozulup bozulmadığı sorusunun cevabı.",
+      "Dondurarak kurutma nedir, peptitler neden bu şekilde saklanıyor ve kargoda bozulup bozulmadığı sorusunun cevabı.",
     readMinutes: 3,
     date: "2026-08-20",
     body: [
       "Kutuyu açtığınızda flakonun içinde sıvı değil, beyaz bir toz veya ince bir tabaka görürsünüz. Bu liyofilizasyon, yani dondurarak kurutma işleminin sonucudur.",
-      "İşlem şöyle çalışır: madde önce dondurulur, sonra vakum altında içindeki su buza dönüşmeden doğrudan buhara geçirilir. Geriye susuz, kuru bir yapı kalır. Peptidler suyun içinde zamanla bozulur; suyu almak onları çok daha uzun süre stabil tutar.",
-      "Pratikte en çok sorulan soru bununla ilgili: kargoda bozulur mu? Toz halindeyken peptid oda sıcaklığında taşınmaya dayanıklıdır. Soğuk zincir ihtiyacı sulandırdıktan sonra başlar. Biz de bu yüzden ürünleri normal kargoyla gönderiyoruz ve ertesi gün teslim ediyoruz.",
+      "İşlem şöyle çalışır: madde önce dondurulur, sonra vakum altında içindeki su buza dönüşmeden doğrudan buhara geçirilir. Geriye susuz, kuru bir yapı kalır. Peptitler suyun içinde zamanla bozulur; suyu almak onları çok daha uzun süre stabil tutar.",
+      "Pratikte en çok sorulan soru bununla ilgili: kargoda bozulur mu? Toz halindeyken peptit oda sıcaklığında taşınmaya dayanıklıdır. Soğuk zincir ihtiyacı sulandırdıktan sonra başlar. Biz de bu yüzden ürünleri normal kargoyla gönderiyoruz ve ertesi gün teslim ediyoruz.",
       "Kutuyu aldığınızda, sulandırana kadar oda sıcaklığında ve güneş görmeyen bir yerde tutmanız yeterlidir. Buzdolabına koymanız gereken an, suyla buluşturduğunuz andır.",
       "Tozun görüntüsü ürüne göre değişebilir. Bazı flakonlarda düzgün beyaz bir tabaka, bazılarında dağılmış ince toz görürsünüz. İkisi de normaldir. Anormal olan, tozun sararmış veya topaklanmış görünmesidir.",
     ],
@@ -62,7 +62,7 @@ export const articles: Article[] = [
     readMinutes: 4,
     date: "2026-08-19",
     body: [
-      "Peptidler miligram (mg) ile ölçülür ama büyüme hormonunda IU denen bir birim görürsünüz. IU, uluslararası ünite anlamına gelir ve maddenin ağırlığını değil biyolojik etkinliğini ifade eder. Bu yüzden büyüme hormonu kutularını mg ile değil IU ile karşılaştırmak gerekir.",
+      "Peptitler miligram (mg) ile ölçülür ama büyüme hormonunda IU denen bir birim görürsünüz. IU, uluslararası ünite anlamına gelir ve maddenin ağırlığını değil biyolojik etkinliğini ifade eder. Bu yüzden büyüme hormonu kutularını mg ile değil IU ile karşılaştırmak gerekir.",
       "Katalogda 16 IU'dan 320 IU'ya kadar farklı kutular var. Aradaki fark toplam üniteden ibaret. Yani 200 IU'luk bir kutu, 100 IU'luk kutunun iki katı içerik taşır. Ürün sayfalarındaki boyut karşılaştırma tablosu aynı ürünün tüm kutularını üniteye göre sıralar, oradan bakabilirsiniz.",
       "İkinci fark sunum biçiminde. Üç tür var. Liyofilize flakon, toz halinde gelir ve kullanmadan önce sulandırmanız gerekir. Hazır karışım flakon, sulandırılmış olarak gelir. Kalem kartuşu ise doz ayarlı bir kalemin içine takılan hazır kartuştur.",
       "Bu üçü arasındaki seçim etkinlikle değil kullanım kolaylığıyla ilgilidir. Liyofilize flakon en uzun raf ömrüne sahiptir çünkü henüz suyla buluşmamıştır. Hazır karışım ve kalem daha pratiktir ama sulandırılmış olduğu için soğuk saklama gerektirir.",
@@ -168,7 +168,7 @@ export const articles: Article[] = [
     readMinutes: 3,
     date: "2026-06-12",
     body: [
-      "Peptid dünyasının en büyük sorunu, popülerlik ile kanıtın karıştırılması. Bir bileşik sosyal medyada ne kadar konuşulursa konuşulsun, arkasındaki veri seviyesi değişmez.",
+      "Peptit dünyasının en büyük sorunu, popülerlik ile kanıtın karıştırılması. Bir bileşik sosyal medyada ne kadar konuşulursa konuşulsun, arkasındaki veri seviyesi değişmez.",
       "Üç kademe kullanıyoruz. Klinik kanıt: insan çalışmalarıyla desteklenen moleküller. Mekanistik: mekanizması iyi tanımlı ama geniş insan verisi olmayan bileşikler. Preklinik: kanıtı büyük ölçüde hayvan çalışmalarına dayanan, deneysel seviyedekiler.",
       "Bu ayrımı asla bulandırmayız. Preklinik bir bileşiği klinik kanıtlıymış gibi sunmak, en yaygın ve en tehlikeli yanıltma. Bizim işimiz tam tersini yapmak.",
       "Şeffaflık burada bir pazarlama sözü değil. Hangi bileşiğin nerede durduğunu bilmek, doğru kararın ilk şartı.",
@@ -212,7 +212,7 @@ export const articles: Article[] = [
     readMinutes: 3,
     date: "2026-06-25",
     body: [
-      "Semax ve Selank, ACTH ve tuftsin türevi iki nöropeptid. İkisi de Rusya'da resmi klinik kullanımda; batıda ise büyük ölçüde araştırma aşamasında kalmış moleküller.",
+      "Semax ve Selank, ACTH ve tuftsin türevi iki nöropeptit. İkisi de Rusya'da resmi klinik kullanımda; batıda ise büyük ölçüde araştırma aşamasında kalmış moleküller.",
       "Semax'ın BDNF ve dopaminerjik sinyali desteklediği, Selank'ın ise sedasyon yaratmadan anksiyolitik etki gösterdiği düşünülüyor. Mekanizmaları makul ve tutarlı, ancak kontrollü randomize çalışmaların çoğu Rusça literatürde ve batı standartlarında tekrarlanmamış.",
       "Bu, molekülleri geçersiz kılmaz. Yalnızca kanıt seviyelerini 'Mekanistik / Teorik' kademesinde tutar. Kognitif protokollerde bu şeffaflık, özellikle yüksek performans beklentisi olan bireyler için kritik: beklenti gerçek kanıt seviyesiyle uyumlu olmalı.",
     ],
@@ -242,7 +242,7 @@ export const articles: Article[] = [
     date: "2026-05-02",
     body: [
       "Cilt bakımının çoğu, yüzeyde kalan bir müdahale. Nemlendirme, koruma, düzeltme. Hepsi gerekli ama hücresel yenilenme hızını değiştirmiyor.",
-      "GHK-Cu gibi bakır bağlı peptidler, kolajen ve elastin sentezini doğrudan uyararak farklı bir katmanda çalışıyor. RCT'lerle desteklenen az sayıda estetik molekülden biri olması, onu kütüphanemizde 'Klinik Kanıt' kademesine taşıyor.",
+      "GHK-Cu gibi bakır bağlı peptitler, kolajen ve elastin sentezini doğrudan uyararak farklı bir katmanda çalışıyor. RCT'lerle desteklenen az sayıda estetik molekülden biri olması, onu kütüphanemizde 'Klinik Kanıt' kademesine taşıyor.",
       "Ancak tek başına bir molekül, bir protokol değildir. Doz, uygulama şekli (topikal veya enjekte edilebilir) ve bireyin başlangıç noktası, sonucu belirleyen asıl değişkenler.",
       "Anti-aging'i bir ürün seçimi değil, sürdürülebilir bir sistem olarak kurmak. Yaklaşımımızın temel farkı burada.",
     ],

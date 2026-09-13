@@ -75,7 +75,7 @@ export default function OpengraphImage() {
             textAlign: "center",
           }}
         >
-          {`Peptid ve insan büyüme hormonu · ${products.length} ürün`}
+          {`Peptit ve insan büyüme hormonu · ${products.length} ürün`}
         </div>
 
         <div

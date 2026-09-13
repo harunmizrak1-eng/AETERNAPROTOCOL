@@ -16,7 +16,7 @@
 export type ProductCategory = "peptid" | "hgh" | "aksesuar"
 
 export const categoryLabels: Record<ProductCategory, string> = {
-  peptid: "Peptidler",
+  peptid: "Peptitler",
   hgh: "HGH",
   aksesuar: "Aksesuar",
 }
@@ -94,7 +94,7 @@ export const products: Product[] = [
   },
   {
     slug: "epithalon-50mg-with-bacteriostatic-water-zphc",
-    name: "Epithalon 50mg ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
+    name: "Epithalon 50mg ZPHC (Liyofilize Peptit + Bakteriyostatik Su)",
     sku: "EPITH50-ZPHC",
     category: "peptid",
     peptideSlug: "epithalon",
@@ -104,20 +104,20 @@ export const products: Product[] = [
     inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 50 mg liyofilize Epithalon + rekonstitüsyon için 1 flakon steril çözücü.", kind: "spec" },
-      { label: "Peptid Profili", value: "Epithalon (Epitalon), sentetik tetrapeptid (Ala-Glu-Asp-Gly), laboratuvar sınıfı materyal.", kind: "spec" },
+      { label: "Peptit Profili", value: "Epithalon (Epitalon), sentetik tetrapeptit (Ala-Glu-Asp-Gly), laboratuvar sınıfı materyal.", kind: "spec" },
       { label: "Rekonstitüsyon", value: "Steril koşullarda, ürünle verilen çözücüyü ekleyin; tamamen çözünene dek hafifçe çevirin.", kind: "spec" },
       { label: "Araştırma Alanları", value: "Telomeraz aktivitesi çalışmaları, hücresel yaşlanma modelleri, sirkadiyen ritim araştırmaları, antioksidan yolak analizleri.", kind: "claim" },
       { label: "Taşıma ve Muhafaza", value: "Liyofilize tozu serin ve kuru bir yerde saklayın; sulandırılmış çözeltiyi 2–8 °C'de buzdolabında muhafaza edin; ışıktan koruyun.", kind: "spec" },
       { label: "Kalite Kontrolü", value: "Hermetik kapalı steril flakon, parti bazında izlenir ve orijinalliği doğrulanır; yalnızca araştırma amaçlıdır.", kind: "spec" },
     ],
     notes: [
-      "Epithalon 50 mg; sentetik tetrapeptid",
+      "Epithalon 50 mg; sentetik tetrapeptit",
       "Liyofilize toz + steril çözücü",
     ],
   },
   {
     slug: "ghk-cu-60mg-with-bacteriostatic-water-zphc",
-    name: "GHK-Cu 60mg Kit ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
+    name: "GHK-Cu 60mg Kit ZPHC (Liyofilize Peptit + Bakteriyostatik Su)",
     sku: "GHKCU60-ZPHC",
     category: "peptid",
     peptideSlug: "ghk-cu",
@@ -127,7 +127,7 @@ export const products: Product[] = [
     inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 60 mg liyofilize GHK-Cu (bakır peptidi) + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
-      { label: "Peptid Profili", value: "GHK-Cu (glisil-L-histidil-L-lizin bakır kompleksi), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
+      { label: "Peptit Profili", value: "GHK-Cu (glisil-L-histidil-L-lizin bakır kompleksi), laboratuvar sınıfı sentetik peptit.", kind: "spec" },
       { label: "Rekonstitüsyon", value: "Steril koşullarda, ürünle verilen bakteriyostatik suyu ekleyin; tamamen çözünene dek hafifçe çevirin.", kind: "spec" },
       { label: "Araştırma Alanları", value: "Kolajen sentezi modelleri, doku rejenerasyonu çalışmaları, cilt onarım yolakları, antiinflamatuvar araştırmalar.", kind: "claim" },
       { label: "Taşıma ve Muhafaza", value: "Liyofilize tozu serin ve kuru bir yerde saklayın; sulandırılmış çözeltiyi 2–8 °C'de buzdolabında muhafaza edin; ışıktan koruyun.", kind: "spec" },
@@ -184,15 +184,15 @@ export const products: Product[] = [
     goals: ["Toparlanma & Doku Onarımı", "Cilt & Yaşlanma Karşıtı"],
     inStock: true,
     specs: [
-      { label: "Kit İçeriği", value: "1 flakon 70 mg liyofilize peptid karışımı + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
-      { label: "Peptid Profili", value: "BPC-157, TB-500 (Timozin Beta-4 fragmanı) ve GHK-Cu (bakır peptidi) kombinasyonu.", kind: "spec" },
+      { label: "Kit İçeriği", value: "1 flakon 70 mg liyofilize peptit karışımı + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
+      { label: "Peptit Profili", value: "BPC-157, TB-500 (Timozin Beta-4 fragmanı) ve GHK-Cu (bakır peptidi) kombinasyonu.", kind: "spec" },
       { label: "Rekonstitüsyon", value: "Steril koşullarda, ürünle verilen bakteriyostatik suyu ekleyin; tamamen çözünene dek hafifçe çevirin.", kind: "spec" },
       { label: "Araştırma Alanları", value: "Doku onarımı çalışmaları, kolajen sentezi modelleri, cilt rejenerasyonu yolakları, toparlanma ve anjiyogenez araştırmaları.", kind: "claim" },
       { label: "Taşıma ve Muhafaza", value: "Liyofilize tozu serin ve kuru bir yerde saklayın; sulandırılmış çözeltiyi 2–8 °C'de buzdolabında muhafaza edin; dondurmayın.", kind: "spec" },
       { label: "Kalite Kontrolü", value: "Hermetik kapalı steril flakon, parti bazında doğrulanmış ve orijinallik kontrollü; yalnızca araştırma amaçlıdır.", kind: "spec" },
     ],
     notes: [
-      "Glow Pro Mix 70 mg; ileri peptid karışımı",
+      "Glow Pro Mix 70 mg; ileri peptit karışımı",
       "BPC-157 + TB-500 + GHK-Cu",
     ],
   },
@@ -212,7 +212,7 @@ export const products: Product[] = [
       { label: "Örnek Araştırma Dozu", value: "4–6 hafta boyunca, kardiyodan 30 dk önce, günde 1–3 kez deri altı 250–500 µg.", kind: "claim" },
     ],
     notes: [
-      "HGH Fragment 176-191; hedefli lipolitik peptid",
+      "HGH Fragment 176-191; hedefli lipolitik peptit",
       "5 liyofilize flakon × 10 mg (toplam 50 mg)",
       "Kalite kontrolü: ≥%99 saflık (HPLC); endotoksin < 0,03 EU/mg; her kutuda doğrulama kodu.",
       "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı flakonlar • gizlilik esaslı, takip edilebilir dünya çapında teslimat.",
@@ -285,7 +285,7 @@ export const products: Product[] = [
       { label: "Profi-Line Kalite Kontrolü", value: "Sertifikalı Referans Materyal (CRM), ≥%99 saflık (HPLC), sterilite ve endotoksin onaylı, doğrulama kodu.", kind: "claim" },
     ],
     notes: [
-      "L-Glutatyon (indirgenmiş); farma sınıfı antioksidan tripeptid",
+      "L-Glutatyon (indirgenmiş); farma sınıfı antioksidan tripeptit",
       "5 × 600 mg liyofilize flakon + 1 × steril çözücü • toplam 3000 mg",
       "Kurcalamaya karşı korumalı ambalaj • kurcalamaya karşı korumalı kapaklar • yalnızca ihracata yönelik çok flakonlu sunum.",
     ],
@@ -301,7 +301,7 @@ export const products: Product[] = [
     inStock: true,
     specs: [
       { label: "Konak savunma peptidi", value: "LL-37'nin araştırma ortamlarında bağışıklık modellemesi, bariyer bütünlüğü ve antimikrobiyal yanıt çalışmalarında kullanıldığı belirtilir.", kind: "claim" },
-      { label: "Liyofilize Saflık", value: "5 mg dondurularak kurutulmuş flakonlar, hassas peptid dozlaması için kontrollü rekonstitüsyon sağlar.", kind: "spec" },
+      { label: "Liyofilize Saflık", value: "5 mg dondurularak kurutulmuş flakonlar, hassas peptit dozlaması için kontrollü rekonstitüsyon sağlar.", kind: "spec" },
       { label: "Stabilite güvencesi", value: "Azot dolgulu borosilikat flakonlar • eşleştirilmiş steril çözücü • CRM sınıfı sentez.", kind: "claim" },
     ],
     notes: [
@@ -312,7 +312,7 @@ export const products: Product[] = [
   },
   {
     slug: "mots-c-20mg-with-bacteriostatic-water-zphc",
-    name: "MOTS-c 40mg Kit ZPHC (Liyofilize Peptid + Bakteriyostatik Su)",
+    name: "MOTS-c 40mg Kit ZPHC (Liyofilize Peptit + Bakteriyostatik Su)",
     sku: "MOTSC-40-ZPHC",
     category: "peptid",
     peptideSlug: "mots-c",
@@ -322,14 +322,14 @@ export const products: Product[] = [
     inStock: true,
     specs: [
       { label: "Kit İçeriği", value: "1 flakon 40 mg liyofilize MOTS-c peptidi + rekonstitüsyon için 1 flakon bakteriyostatik su.", kind: "spec" },
-      { label: "Peptid Profili", value: "MOTS-c (12S rRNA mitokondriyal açık okuma çerçevesi), laboratuvar sınıfı sentetik peptid.", kind: "spec" },
+      { label: "Peptit Profili", value: "MOTS-c (12S rRNA mitokondriyal açık okuma çerçevesi), laboratuvar sınıfı sentetik peptit.", kind: "spec" },
       { label: "Rekonstitüsyon", value: "Steril koşullarda, ürünle verilen bakteriyostatik suyu ekleyin; tamamen çözünene dek hafifçe çevirin.", kind: "spec" },
       { label: "Araştırma Alanları", value: "Metabolik düzenleme çalışmaları, mitokondriyal fonksiyon araştırmaları, glukoz metabolizması modelleri, hücresel enerji yolağı analizleri.", kind: "claim" },
       { label: "Taşıma ve Muhafaza", value: "Liyofilize tozu serin ve kuru bir yerde saklayın; sulandırılmış çözeltiyi 2–8 °C'de buzdolabında muhafaza edin; dondurmayın.", kind: "spec" },
       { label: "Kalite Kontrolü", value: "Hermetik kapalı steril cam flakon, parti bazında doğrulanmış ve orijinallik kontrollü; yalnızca araştırma amaçlıdır.", kind: "spec" },
     ],
     notes: [
-      "MOTS-c 40 mg; mitokondri kaynaklı peptid",
+      "MOTS-c 40 mg; mitokondri kaynaklı peptit",
       "Liyofilize toz + bakteriyostatik su",
     ],
   },
@@ -347,7 +347,7 @@ export const products: Product[] = [
       { label: "Çift etki", value: "GHRP-6 grelin reseptörlerini tetikleyerek keskin bir GH pulsu ve açlık artışı oluşturur; CJC-1295 ise GHRH sinyalini uzatarak GH salınımını sürdürür.", kind: "claim" },
       { label: "Rekonstitüsyon", value: "1 ml bakteriyostatik su ekleyin → 10 mg/ml; hafifçe çevirin, çalkalamayın.", kind: "spec" },
       { label: "Saklama", value: "Karıştırdıktan sonra 2–8 °C'de buzdolabında saklayın; dondurularak kurutulmuş toz gönderim sırasında oda sıcaklığında stabildir.", kind: "spec" },
-      { label: "Örnek Araştırma Dozu", value: "4–6 hafta boyunca, öğün veya antrenman öncesi günde 3 kez, her peptidden deri altı 100–200 µg (0,02–0,04 ml).", kind: "claim" },
+      { label: "Örnek Araştırma Dozu", value: "4–6 hafta boyunca, öğün veya antrenman öncesi günde 3 kez, her peptitten deri altı 100–200 µg (0,02–0,04 ml).", kind: "claim" },
     ],
     notes: [
       "Mega Mass Mix; büyüme hormonu ve iştah güçlendirici",
@@ -504,7 +504,7 @@ export const products: Product[] = [
     goals: ["Kilo Kaybı"],
     inStock: true,
     specs: [
-      { label: "Karıştırma gerektirmez", value: "Tamamen çözünmüş peptid; dozu ayarlayıp deri altına uygulamanız yeterlidir.", kind: "claim" },
+      { label: "Karıştırma gerektirmez", value: "Tamamen çözünmüş peptit; dozu ayarlayıp deri altına uygulamanız yeterlidir.", kind: "claim" },
       { label: "Metabolik etki", value: "Mide boşalmasını yavaşlattığı, iştahı baskıladığı ve insülin duyarlılığını iyileştirdiği belirtilir.", kind: "claim" },
       { label: "Ayarlanabilir doz hassasiyeti", value: "Her tık 0,25 mg verir; kalem 24 tık sağlar (toplam 6 mg).", kind: "claim" },
       { label: "Önerilen araştırma titrasyonu", value: "Haftada 0,25 mg → tolere edildikçe her 4 haftada bir 0,25 mg artırılarak 1 mg'a kadar.", kind: "claim" },
@@ -571,12 +571,12 @@ export const products: Product[] = [
     goals: ["Toparlanma & Doku Onarımı"],
     inStock: true,
     specs: [
-      { label: "Liyofilize Saflık", value: "Her 10 mg flakonu 2 ml bakteriyostatik su ile sulandırarak toplam 5 mg/ml peptid elde edin (ml başına 2,5 mg BPC + 2,5 mg TB).", kind: "spec" },
+      { label: "Liyofilize Saflık", value: "Her 10 mg flakonu 2 ml bakteriyostatik su ile sulandırarak toplam 5 mg/ml peptit elde edin (ml başına 2,5 mg BPC + 2,5 mg TB).", kind: "spec" },
       { label: "Doz Rehberi", value: "4–6 hafta boyunca haftada 2–5 mg (1–2 ml), 2–3 deri altı enjeksiyona bölünerek; ardından idame için 10–14 günde bir 2 mg.", kind: "claim" },
       { label: "Araştırma Sınıfı Kalite Kontrolü", value: "ZPHC partileri: ≥%99 saflık, endotoksinsiz; doğrulama kodu doğrulamalı, kurcalamaya karşı korumalı kutu.", kind: "spec" },
     ],
     notes: [
-      "Ultra Rehab Mix; çift peptidli iyileşme kombinasyonu (5 flakon × 10 mg, toplam 50 mg)",
+      "Ultra Rehab Mix; çift peptitli iyileşme kombinasyonu (5 flakon × 10 mg, toplam 50 mg)",
       "Her flakonda BPC-157 5 mg + TB-500 5 mg; tendon, bağ ve kas onarımını hızlandırmayı amaçlayan sinerjik kombinasyon.",
       "Antiinflamatuvar ve koruyucu: şişliği azaltmaya yardımcı olur, kolajen birikimini ve yaralı dokuya kan akışını artırır.",
       "Yalıtımlı dünya çapında gönderim • gizlilik esaslı ambalaj • çok dilli destek.",
@@ -599,7 +599,7 @@ export const products: Product[] = [
       { label: "Doz Rehberi", value: "Sulandırılmış 1 flakon = 5 mg; 6–8 hafta boyunca günde 300–500 mcg uygulanır.", kind: "claim" },
     ],
     notes: [
-      "Wellness Mix; sinerjik peptid kombinasyonu (5 flakon × 5 mg)",
+      "Wellness Mix; sinerjik peptit kombinasyonu (5 flakon × 5 mg)",
       "Kurcalamaya karşı korumalı kutuda mühürlü flakonlar • doğrulama kodu • takip edilebilir dünya çapında gönderim.",
     ],
   },
@@ -616,7 +616,7 @@ export const products: Product[] = [
     specs: [
       { label: "Format", value: "2 adet hermetik kapalı çift hazneli cam kartuş.", kind: "spec" },
       { label: "Kartuş başına içerik", value: "72 IU (24 mg) somatropin 191aa (rDNA kaynaklı).", kind: "claim" },
-      { label: "Çift hazneli sistem", value: "Liyofilize peptid ve steril çözücü, aktivasyon ve karıştırma anına kadar ayrı kalır.", kind: "claim" },
+      { label: "Çift hazneli sistem", value: "Liyofilize peptit ve steril çözücü, aktivasyon ve karıştırma anına kadar ayrı kalır.", kind: "claim" },
       { label: "Toplam kit", value: "144 IU.", kind: "claim" },
       { label: "Uyumluluk", value: "Uyumlu çok kullanımlık kalem cihazlarıyla kullanım için tasarlanmıştır.", kind: "spec" },
       { label: "Kalite Kontrolü", value: "Sertifikalı referans materyal (CRM), parti bazında doğrulanmış ve orijinalliği korunmuş.", kind: "spec" },

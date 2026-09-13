@@ -8,14 +8,14 @@ import { articles } from "@/lib/articles"
 export const metadata: Metadata = {
   title: "ZPHC Bilgi Merkezi",
   description:
-    "ZPHC ürün doğrulama, peptid araştırmaları, ürün formatları ve laboratuvar saklama koşulları üzerine kaynaklı Türkçe rehberler.",
+    "ZPHC ürün doğrulama, peptit araştırmaları, ürün formatları ve laboratuvar saklama koşulları üzerine kaynaklı Türkçe rehberler.",
   alternates: {
     canonical: "/journal",
   },
   openGraph: {
     title: "ZPHC Bilgi Merkezi",
     description:
-      "ZPHC ürün doğrulama, peptid araştırmaları, ürün formatları ve laboratuvar saklama koşulları üzerine kaynaklı Türkçe rehberler.",
+      "ZPHC ürün doğrulama, peptit araştırmaları, ürün formatları ve laboratuvar saklama koşulları üzerine kaynaklı Türkçe rehberler.",
     url: "/journal",
   },
 }

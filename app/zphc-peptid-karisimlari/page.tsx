@@ -3,10 +3,10 @@ import { SeoProductLanding } from "@/components/seo-product-landing"
 import { topicLanguageAlternates } from "@/lib/international-seo"
 
 export const metadata: Metadata = {
-  title: "ZPHC Peptid Karışımları Türkiye | Ürün Karşılaştırma",
+  title: "ZPHC Peptit Karışımları Türkiye | Ürün Karşılaştırma",
   description: "Glow Pro, Ultra Rehab, Super Slim, Wellness ve Mega Mass ZPHC karışımlarını bileşim ve toplam içerik açısından karşılaştırın.",
   alternates: { canonical: "/zphc-peptid-karisimlari", languages: topicLanguageAlternates("blends") },
-  openGraph: { title: "ZPHC Peptid Karışımları Türkiye", description: "Aktif ZPHC karışımlarını bileşim ve toplam içeriğe göre ayırın.", url: "/zphc-peptid-karisimlari" },
+  openGraph: { title: "ZPHC Peptit Karışımları Türkiye", description: "Aktif ZPHC karışımlarını bileşim ve toplam içeriğe göre ayırın.", url: "/zphc-peptid-karisimlari" },
 }
 
 export default function ZphcBlendsPage() {

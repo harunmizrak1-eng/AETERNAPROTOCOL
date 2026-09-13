@@ -22,7 +22,7 @@ export const categoryInfo: Record<
   },
   "Toparlanma & Doku Onarımı": {
     title: "Toparlanma ve doku onarımı",
-    body: "Tendon, bağ ve kas dokusunun onarımı üzerine araştırılan peptidler. BPC-157 ve TB-500 bu başlığın en bilinen iki bileşiği; ikisi de hayvan çalışmalarında olumlu sonuçlar verdi, geniş insan çalışması henüz yok. Katalogda ikisini bir arada içeren karışım ürünler de bulunuyor.",
+    body: "Tendon, bağ ve kas dokusunun onarımı üzerine araştırılan peptitler. BPC-157 ve TB-500 bu başlığın en bilinen iki bileşiği; ikisi de hayvan çalışmalarında olumlu sonuçlar verdi, geniş insan çalışması henüz yok. Katalogda ikisini bir arada içeren karışım ürünler de bulunuyor.",
   },
   "Büyüme Hormonu": {
     title: "İnsan büyüme hormonu",
@@ -38,7 +38,7 @@ export const categoryInfo: Record<
   },
   Bilişsel: {
     title: "Bilişsel ürünler",
-    body: "Odaklanma, hafıza ve zihinsel performans üzerine çalışılan peptidler. Bu başlıktaki bileşiklerin önemli bir kısmı Rusya kaynaklı araştırmalara dayanıyor ve bağımsız doğrulaması sınırlı. Kanıt kademelerini olduğu gibi gösteriyoruz.",
+    body: "Odaklanma, hafıza ve zihinsel performans üzerine çalışılan peptitler. Bu başlıktaki bileşiklerin önemli bir kısmı Rusya kaynaklı araştırmalara dayanıyor ve bağımsız doğrulaması sınırlı. Kanıt kademelerini olduğu gibi gösteriyoruz.",
   },
   Diğer: {
     title: "Diğer ürünler",

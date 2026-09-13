@@ -12,14 +12,14 @@ import { siteUrl } from "@/lib/site"
 export const metadata: Metadata = {
   title: "Ürünler",
   description:
-    "ZPHC peptid ve büyüme hormonu ürünleri. Kilo kaybı, toparlanma, büyüme hormonu ve cilt başlıklarına göre filtreleyin.",
+    "ZPHC peptit ve büyüme hormonu ürünleri. Kilo kaybı, toparlanma, büyüme hormonu ve cilt başlıklarına göre filtreleyin.",
   alternates: {
     canonical: "/urunler",
   },
   openGraph: {
     title: "Ürünler",
     description:
-      "ZPHC peptid ve büyüme hormonu ürünleri. Kilo kaybı, toparlanma, büyüme hormonu ve cilt başlıklarına göre filtreleyin.",
+      "ZPHC peptit ve büyüme hormonu ürünleri. Kilo kaybı, toparlanma, büyüme hormonu ve cilt başlıklarına göre filtreleyin.",
     url: "/urunler",
   },
 }

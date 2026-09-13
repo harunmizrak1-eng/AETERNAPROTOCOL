@@ -46,7 +46,7 @@ export default function HakkimizdaPage() {
                 Ne satıyoruz
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Katalogda {products.length} ürün var, hepsi ZPHC&apos;nin peptid
+                Katalogda {products.length} ürün var, hepsi ZPHC&apos;nin peptit
                 ve büyüme hormonu ürünleri. Her ürünün sayfasından{" "}
                 {peptides.length} bileşiklik kütüphanemize geçebilirsiniz;
                 orada bileşiğin ne işe yaradığı, kanıt seviyesi ve varsa
@@ -60,7 +60,7 @@ export default function HakkimizdaPage() {
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 ZPHC anabolik steroid de üretiyor. Biz o ürünleri satmıyoruz,
-                katalogda da yer vermiyoruz. Sadece peptid ve büyüme hormonu
+                katalogda da yer vermiyoruz. Sadece peptit ve büyüme hormonu
                 satıyoruz.
               </p>
             </div>

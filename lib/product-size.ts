@@ -2,7 +2,7 @@ import type { Product } from "@/lib/products"
 
 /** Ürün adından toplam miktarı ve birimini okur.
  *
- * Katalogdaki adlar iki birim taşıyor: peptidler mg ("Reta ZPHC 20 mg
+ * Katalogdaki adlar iki birim taşıyor: peptitler mg ("Reta ZPHC 20 mg
  * (5 flakon × 4 mg)"), büyüme hormonu ise IU ("ZPtrop HGH ZPHC 100 IU").
  * İlk geçen sayı her zaman toplam miktardır; parantez içindeki ikinci sayı
  * flakon başına düşen miktardır.

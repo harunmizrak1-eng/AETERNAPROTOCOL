@@ -29,8 +29,9 @@ export const articles: Article[] = [
       "Bir uyarı: çözelti bulanıklaştıysa, içinde parçacık göründüyse veya rengi değiştiyse kullanılmaz. Süre dolmamış olsa bile bu geçerlidir.",
     ],
     relatedLinks: [
+      { href: "/sulandirma-rehberi", label: "Sulandırma rehberi" },
+      { href: "/hesaplayici", label: "Doz hesaplayıcı" },
       { href: "/urunler", label: "Ürün kataloğu" },
-      { href: "/sss", label: "Sık sorulan sorular" },
     ],
   },
   {

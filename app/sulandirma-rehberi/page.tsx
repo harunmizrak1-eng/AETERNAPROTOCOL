@@ -25,16 +25,8 @@ export const metadata: Metadata = {
 
 const faq = [
   {
-    q: "Bakteriyostatik su ile steril su arasındaki fark nedir?",
-    a: "İkisi de enjeksiyonluk sudur; fark içindeki koruyucudadır. Bakteriyostatik suda ağırlıkça yaklaşık yüzde 0,9 benzil alkol bulunur ve bu koruyucu, tıpadan her giriş yapıldığında içeri kaçabilecek bakterinin çoğalmasını engeller. Steril suda koruyucu yoktur; açıldığı anda tek kullanımlıktır. Bir flakondan birden fazla kez çekilecekse bakteriyostatik su kullanılır, tek seferde bitecekse steril su da iş görür.",
-  },
-  {
     q: "Flakona kaç mL su eklemeliyim?",
     a: "Tek bir doğru miktar yoktur. Su miktarı flakondaki toplam maddeyi değiştirmez, yalnızca çözeltinin yoğunluğunu belirler: az su koyarsanız aynı doz için şırıngada daha küçük, çok su koyarsanız daha büyük bir çizgiye denk gelirsiniz. Pratikte skalada rahat okunan bir çizgiye denk gelen hacim seçilir. Çok küçük çekimler okuma hatasına, flakonu taşıracak kadar çok su ise ikinci flakona geçmeye yol açar.",
-  },
-  {
-    q: "Sulandırdıktan sonra çözelti ne kadar dayanır?",
-    a: "Bakteriyostatik su ile sulandırılmış çözeltiler için yerleşik pratik, buzdolabında 2-8 santigrat derecede saklamak ve yaklaşık dört hafta içinde tüketmektir. Bu bir kural değil yaygın kabuldür; kutunun kendi etiketinde bir süre yazıyorsa esas olan odur. Bulanıklaşan, içinde parçacık beliren veya rengi değişen bir çözelti süresi dolmamış olsa da kullanılmaz.",
   },
   {
     q: "Liyofilize toz buzdolabında mı saklanır?",
@@ -165,22 +157,30 @@ export default function SulandirmaRehberiPage() {
 
         <section className="px-6 py-10 md:px-10 md:py-14">
           <div className="mx-auto max-w-3xl">
+            {/* Bakteriyostatik suyun ne olduğu, benzil alkol ve 28 gün konusu
+                /journal/bakteriyostatik-su-nedir yazısında zaten anlatılıyor.
+                Burada tekrar etmek iki sayfayı aynı soru için yarıştırırdı;
+                bu bölüm yalnızca seçimi söyleyip oraya yönlendiriyor. */}
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               Hangi su kullanılır
             </h2>
             <p className="mt-4 text-base leading-7 text-muted-foreground">
-              İki seçenek vardır ve aralarındaki fark tek bir maddedir.
-              Bakteriyostatik su, içinde ağırlıkça yaklaşık yüzde 0,9 benzil
-              alkol bulunan enjeksiyonluk sudur. Bu koruyucu, tıpadan her iğne
-              girişinde içeri kaçabilecek bakterinin çoğalmasını durdurur, yani
-              flakonun birden fazla kez kullanılmasına izin verir. Steril suda
-              koruyucu yoktur; açıldığı anda tek kullanımlık sayılır.
+              Bir flakon tek seferde bitmeyecekse bakteriyostatik su kullanılır;
+              içindeki koruyucu, tıpadan her iğne girişinde içeri kaçabilecek
+              bakterinin çoğalmasını durdurur. Tek seferde bitecekse koruyucusuz
+              steril su da iş görür. Musluk suyu, içme suyu, kontakt lens
+              solüsyonu ya da serum fizyolojik bu işin çözücüsü değildir;
+              hiçbiri enjeksiyonluk kalitede üretilmez.
             </p>
             <p className="mt-4 text-base leading-7 text-muted-foreground">
-              Bir flakon tek seferde bitmeyecekse bakteriyostatik su tercih
-              edilir. Musluk suyu, içme suyu, kontakt lens solüsyonu ya da
-              serum fizyolojik bu işin çözücüsü değildir; hiçbiri enjeksiyonluk
-              kalitede üretilmez.
+              İkisinin farkı, benzil alkolün ne yaptığı ve sık sorulan 28 gün
+              meselesi ayrı bir yazıda anlatılıyor:{" "}
+              <Link
+                href="/journal/bakteriyostatik-su-nedir"
+                className="font-semibold text-gold hover:underline"
+              >
+                Bakteriyostatik su nedir, neden normal su olmuyor?
+              </Link>
             </p>
 
             <h2 className="mt-12 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">

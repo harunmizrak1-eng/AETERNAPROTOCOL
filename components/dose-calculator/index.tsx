@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { SyringeDrawing, type Tick } from "./syringe-drawing"
 import { Chip, Field, PeptidePicker, UnitInput } from "./ui"
 import {
@@ -8,6 +8,7 @@ import {
   DEFAULT_SYRINGE_ID,
   DOSE_PRESETS_MCG,
   DOSE_PRESETS_MG,
+  PRESET_BY_PRODUCT_SLUG,
   SYRINGES,
   UNITS_PER_ML,
   VIAL_AMOUNTS_BY_PEPTIDE,
@@ -37,6 +38,26 @@ export function DoseCalculator() {
 
   const syringe = SYRINGES.find((s) => s.id === syringeId) ?? SYRINGES[2]
   const options = vialOptions(slug)
+
+  /* Ürün sayfasından "Bu ürünle hesapla" ile gelindiğinde adres
+   * /hesaplayici#urun=<ürün-slug> oluyor ve o bağlantı flakon miktarının
+   * hazır geleceğini söylüyor. Adres çubuğu sunucuda okunamadığı için
+   * doldurma istemcide, ilk boyamadan sonra yapılır. Bileşik kütüphanede
+   * listelenmiyorsa (HGH) yalnızca miktar yazılır, seçim boş kalır. */
+  useEffect(() => {
+    function applyHash() {
+      const match = window.location.hash.match(/urun=([^&]+)/)
+      if (!match) return
+      const preset = PRESET_BY_PRODUCT_SLUG[decodeURIComponent(match[1])]
+      if (!preset) return
+      const listed = CALCULABLE_PEPTIDES.some((p) => p.slug === preset.peptideSlug)
+      setSlug(listed ? preset.peptideSlug : "")
+      setAmount(String(preset.mg))
+    }
+    applyHash()
+    window.addEventListener("hashchange", applyHash)
+    return () => window.removeEventListener("hashchange", applyHash)
+  }, [])
 
   const water = parseNum(waterMl)
   const doseRaw = parseNum(doseAmount)

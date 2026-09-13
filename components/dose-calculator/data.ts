@@ -88,6 +88,23 @@ export const VIAL_AMOUNTS_BY_PEPTIDE: Record<string, number[]> = (() => {
   return out
 })()
 
+/** Ürün sayfasındaki "Bu ürünle hesapla" bağlantısı /hesaplayici#urun=<slug>
+ * adresine gidiyor ve flakon miktarının hazır gelmesini vaat ediyor. Bu tablo
+ * o slug'ı hesaplayıcının anladığı iki değere çevirir. */
+export const PRESET_BY_PRODUCT_SLUG: Record<
+  string,
+  { peptideSlug: string; mg: number }
+> = (() => {
+  const out: Record<string, { peptideSlug: string; mg: number }> = {}
+  for (const product of products) {
+    if (!product.peptideSlug) continue
+    const mg = vialMg(product.name)
+    if (mg === null) continue
+    out[product.slug] = { peptideSlug: product.peptideSlug, mg }
+  }
+  return out
+})()
+
 /** Bileşik seçilmediğinde gösterilen genel boylar. */
 export const VIAL_PRESETS = [5, 10, 20, 30, 50, 60]
 export const WATER_PRESETS_ML = [1, 2, 3, 5]

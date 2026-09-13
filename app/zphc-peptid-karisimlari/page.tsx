@@ -19,6 +19,11 @@ export default function ZphcBlendsPage() {
     libraryHref="/peptidler"
     libraryLabel="Bileşik kütüphanesi"
     bullets={["Bileşim karşılaştırması", "Fiyat için iletişim", "Türkiye stoğu"]}
+    calculator={{
+      href: "/hesaplayici",
+      description:
+        "Karışım flakonunda tek bir bileşik yok; \"listede yok\" seçeneğiyle flakonun toplam miligramını girin, şırıngada kaç ünite çekeceğinizi gösterelim.",
+    }}
     faq={[
       {
         q: "ZPHC karışımlarının fiyatı ne kadar?",

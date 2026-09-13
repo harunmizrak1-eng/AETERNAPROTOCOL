@@ -7,6 +7,7 @@ import { WhatsappCta } from "@/components/whatsapp-cta"
 import { RelatedProducts } from "@/components/related-products"
 import { DoseLadderChart } from "@/components/dose-ladder-chart"
 import { AccumulationCalculator } from "@/components/accumulation-calculator"
+import { CalculatorCta } from "@/components/calculator-cta"
 import {
   peptides,
   getPeptide,
@@ -18,6 +19,7 @@ import {
 import { getArticle } from "@/lib/articles"
 import { citations } from "@/lib/citations"
 import { getPeptideFamilyLink } from "@/lib/seo-links"
+import { products } from "@/lib/catalog"
 
 /** Extracts a display unit from a dose step's amount string (e.g. "2mg" ->
  * "mg", "%0.5" -> "%") so the calculator's input field can be labeled
@@ -75,6 +77,11 @@ export default async function PeptideDetailPage({
     : undefined
   const citationList = citations[peptide.slug]
   const productFamilyLink = getPeptideFamilyLink(peptide.slug)
+  /* Büyüme hormonu IU ile dozlanıyor ve hesaplayıcı mg üzerinden çalışıyor;
+   * bu yüzden hesaplayıcının bileşik listesinde yok, bağlantısı da olmamalı. */
+  const isSold =
+    peptide.slug !== "hgh" &&
+    products.some((product) => product.peptideSlug === peptide.slug)
 
   const halfLifeHours = peptide.molecular?.halfLifeHours
   const lastDoseStep = peptide.dosing?.[peptide.dosing.length - 1]
@@ -263,6 +270,19 @@ export default async function PeptideDetailPage({
                     </li>
                   ))}
                 </ol>
+              </div>
+            )}
+
+            {/* Hesaplayıcı bağlantısı yalnızca satılan bileşiklerde: listede
+                olmayan bir bileşikle hesaplayıcıya gitmek boş ekran demek. */}
+            {isSold && (
+              <div className="mt-10 border-t border-hairline pt-10">
+                <CalculatorCta
+                  href={`/hesaplayici#bilesik=${peptide.slug}`}
+                  title="Flakonu sulandıracak mısınız?"
+                  description={`${peptide.name} seçili gelsin; flakon miktarını ve suyu girin, şırıngada kaç ünite çekeceğinizi gösterelim.`}
+                  cta="Hesaplayıcıyı aç"
+                />
               </div>
             )}
 

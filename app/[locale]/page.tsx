@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { InternationalSeoPage } from "@/components/international-seo-page"
-import { homeLanguageAlternates, isSeoLocale, localeUi, seoLocales } from "@/lib/international-seo"
+import { homeLanguageAlternates, isSeoLocale, localeUi, noIndexFollow, seoLocales } from "@/lib/international-seo"
 
 export function generateStaticParams() {
   return seoLocales.map((locale) => ({ locale }))
@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: ui.hubTitle,
     description: ui.hubDescription,
     alternates: { canonical: `/${locale}`, languages: homeLanguageAlternates() },
+    robots: noIndexFollow,
     openGraph: { title: ui.hubTitle, description: ui.hubDescription, url: `/${locale}` },
   }
 }

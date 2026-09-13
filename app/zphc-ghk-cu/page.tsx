@@ -19,6 +19,11 @@ export default function ZphcGhkCuPage() {
     libraryHref="/peptidler/ghk-cu"
     libraryLabel="GHK-Cu bilgi kaydı"
     bullets={["Fiyat için iletişim", "Türkiye stoğu", "Üretici koduyla doğrulama"]}
+    calculator={{
+      href: "/hesaplayici#bilesik=ghk-cu",
+      description:
+        "GHK-Cu seçili gelsin; flakon miktarını ve suyu girin, şırıngada kaç ünite çekeceğinizi gösterelim.",
+    }}
     faq={[
       {
         q: "ZPHC GHK-Cu fiyatı ne kadar?",

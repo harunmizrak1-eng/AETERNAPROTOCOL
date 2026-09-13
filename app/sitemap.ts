@@ -3,7 +3,6 @@ import { siteUrl } from "@/lib/site"
 import { articles } from "@/lib/articles"
 import { peptides } from "@/lib/peptides"
 import { products } from "@/lib/catalog"
-import { localizedTopicPath, seoLocales, seoTopicIds } from "@/lib/international-seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // lastModified bir dağıtım zamanı değildir. Her build'de `new Date()`
@@ -32,9 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/zphc-ghk-cu",
     "/zphc-zptrop",
     "/zphc-peptid-karisimlari",
-    ...seoLocales.map((locale) => `/${locale}`),
-    ...seoLocales.map((locale) => `/${locale}/products`),
-    ...seoLocales.flatMap((locale) => seoTopicIds.map((topicId) => localizedTopicPath(locale, topicId))),
+    // İngilizce/İspanyolca/Arapça sayfalar noindex olduğu için site
+    // haritasından çıkarıldı: dizine girmeyecek adresleri bildirmek tarama
+    // bütçesini boşa harcar ve çelişkili sinyal verir.
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: storefrontUpdatedAt,

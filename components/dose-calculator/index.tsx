@@ -46,13 +46,24 @@ export function DoseCalculator() {
    * listelenmiyorsa (HGH) yalnızca miktar yazılır, seçim boş kalır. */
   useEffect(() => {
     function applyHash() {
-      const match = window.location.hash.match(/urun=([^&]+)/)
-      if (!match) return
-      const preset = PRESET_BY_PRODUCT_SLUG[decodeURIComponent(match[1])]
-      if (!preset) return
-      const listed = CALCULABLE_PEPTIDES.some((p) => p.slug === preset.peptideSlug)
-      setSlug(listed ? preset.peptideSlug : "")
-      setAmount(String(preset.mg))
+      const hash = window.location.hash
+      const product = hash.match(/urun=([^&]+)/)
+      if (product) {
+        const preset = PRESET_BY_PRODUCT_SLUG[decodeURIComponent(product[1])]
+        if (preset) {
+          const listed = CALCULABLE_PEPTIDES.some((p) => p.slug === preset.peptideSlug)
+          setSlug(listed ? preset.peptideSlug : "")
+          setAmount(String(preset.mg))
+          return
+        }
+      }
+      /* Kütüphane ve konu sayfaları tek bir ürüne değil bileşiğe bağlanır;
+       * orada flakon boyu belli olmadığı için yalnızca seçim yapılır. */
+      const compound = hash.match(/bilesik=([^&]+)/)
+      if (compound) {
+        const wanted = decodeURIComponent(compound[1])
+        if (CALCULABLE_PEPTIDES.some((p) => p.slug === wanted)) setSlug(wanted)
+      }
     }
     applyHash()
     window.addEventListener("hashchange", applyHash)

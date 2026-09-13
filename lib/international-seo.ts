@@ -185,19 +185,30 @@ export function localizedTopicPath(locale: SeoLocale, topicId: SeoTopicId) {
   return `/${locale}/${topicTranslations[locale][topicId].slug}`
 }
 
+/* İngilizce, İspanyolca ve Arapça sayfalar noindex'e alındı: aynı şablondan
+ * üretilmiş, özgün metni olmayan ince sayfalar Google'ın "kapı sayfası"
+ * tanımına giriyor ve yaptırımı tek tek sayfaları değil tüm alan adını
+ * etkiliyor. Sayfalar erişilebilir kalıyor (var olan bağlantılar 404
+ * vermesin), yalnızca dizine girmiyorlar.
+ *
+ * Dizine girmeyen bir adrese hreflang vermek çelişkili bir sinyal olduğu
+ * için alternatif dil listeleri de Türkçeye indirildi. Sayfalara gerçek,
+ * elle yazılmış içerik eklenirse bu iki fonksiyon ve sayfalardaki robots
+ * alanı geri alınır. */
 export function topicLanguageAlternates(topicId: SeoTopicId) {
   return {
     "tr-TR": turkishTopicPaths[topicId],
-    en: localizedTopicPath("en", topicId),
-    es: localizedTopicPath("es", topicId),
-    ar: localizedTopicPath("ar", topicId),
     "x-default": turkishTopicPaths[topicId],
   }
 }
 
 export function homeLanguageAlternates() {
-  return { "tr-TR": "/", en: "/en", es: "/es", ar: "/ar", "x-default": "/" }
+  return { "tr-TR": "/", "x-default": "/" }
 }
+
+/** Dizine alınmayan uluslararası sayfaların ortak robots ayarı. Bağlantılar
+ * izlensin ki Türkçe sayfalara akan link değeri kesilmesin. */
+export const noIndexFollow = { index: false, follow: true } as const
 
 const productFormLabels: Record<SeoLocale, { accessory: string; pen: string; cartridge: string; vial: string }> = {
   en: { accessory: "Accessory", pen: "Premixed pen", cartridge: "Dual chamber / cartridge", vial: "Vial set" },

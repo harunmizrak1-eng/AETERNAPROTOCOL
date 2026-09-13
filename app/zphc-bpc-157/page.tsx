@@ -30,6 +30,11 @@ export default function ZphcBpcPage() {
       libraryHref="/peptidler/bpc-157"
       libraryLabel="BPC-157 bilgi kaydı"
       bullets={["Fiyat için iletişim", "Türkiye stoğu", "Üretici koduyla doğrulama"]}
+      calculator={{
+        href: "/hesaplayici#bilesik=bpc-157",
+        description:
+          "BPC-157 seçili gelsin; flakon miktarını ve suyu girin, şırıngada kaç ünite çekeceğinizi gösterelim.",
+      }}
       faq={[
         {
           q: "ZPHC BPC-157 fiyatı ne kadar?",

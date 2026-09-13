@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { LocalizedCatalog } from "@/components/localized-catalog"
-import { isSeoLocale, localeUi, seoLocales } from "@/lib/international-seo"
+import { isSeoLocale, localeUi, noIndexFollow, seoLocales } from "@/lib/international-seo"
 
 export function generateStaticParams() {
   return seoLocales.map((locale) => ({ locale }))
@@ -16,8 +16,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: ui.catalogueDescription,
     alternates: {
       canonical: `/${locale}/products`,
-      languages: { en: "/en/products", es: "/es/products", ar: "/ar/products", "tr-TR": "/urunler", "x-default": "/urunler" },
+      languages: { "tr-TR": "/urunler", "x-default": "/urunler" },
     },
+    robots: noIndexFollow,
     openGraph: { title: ui.catalogueTitle, description: ui.catalogueDescription, url: `/${locale}/products` },
   }
 }

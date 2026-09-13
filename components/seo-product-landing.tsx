@@ -3,6 +3,7 @@ import type { ReactNode } from "react"
 import { Footer } from "@/components/footer"
 import { Nav } from "@/components/nav"
 import { ProductCard } from "@/components/product-card"
+import { CalculatorCta } from "@/components/calculator-cta"
 import { products } from "@/lib/catalog"
 import { siteName, siteUrl } from "@/lib/site"
 
@@ -17,6 +18,7 @@ export function SeoProductLanding({
   bullets,
   resources,
   faq,
+  calculator,
   children,
 }: {
   eyebrow: string
@@ -38,6 +40,10 @@ export function SeoProductLanding({
    * sorduğu şeyler. Kütüphane sayfasıyla aynı cümleleri tekrar etmemeye
    * özellikle dikkat edilir. */
   faq?: Array<{ q: string; a: string }>
+  /** Hesaplayıcıya götüren kutu. href konuya göre değişir: tek bileşikli
+   * sayfalar "#bilesik=<slug>" ile seçimi hazır getirir, karışım sayfası
+   * bileşik seçmeden yalnızca flakon toplamıyla çalışır. */
+  calculator?: { href: string; description: string }
   children?: ReactNode
 }) {
   const shown = slugs
@@ -131,6 +137,19 @@ export function SeoProductLanding({
             </ul>
           </div>
         </section>
+
+        {calculator && (
+          <section className="px-6 pb-2 md:px-10">
+            <div className="mx-auto max-w-7xl">
+              <CalculatorCta
+                href={calculator.href}
+                title="Flakonu sulandıracak mısınız?"
+                description={calculator.description}
+                cta="Hesaplayıcıyı aç"
+              />
+            </div>
+          </section>
+        )}
 
         {children}
 

@@ -5,6 +5,7 @@ import {
   getLocalizedTopic,
   isSeoLocale,
   localizedTopicPath,
+  noIndexFollow,
   seoLocales,
   seoTopicIds,
   topicLanguageAlternates,
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: item.title,
     description: item.description,
     alternates: { canonical: path, languages: topicLanguageAlternates(item.id) },
+    robots: noIndexFollow,
     openGraph: { title: item.title, description: item.description, url: path },
   }
 }

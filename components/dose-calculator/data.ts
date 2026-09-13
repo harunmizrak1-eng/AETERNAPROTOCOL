@@ -1,9 +1,8 @@
 import { peptides, type Peptide } from "@/lib/peptides"
 import { products } from "@/lib/catalog"
+import { parseSize } from "@/lib/product-size"
 
-export type UnitSystem = "mg" | "IU"
 export type DoseUnit = "mg" | "mcg"
-export type SyringeKind = "U100" | "U40"
 
 export interface VialEntry {
   id: string
@@ -16,11 +15,8 @@ export interface VialEntry {
 export interface Syringe {
   id: string
   label: string
-  kind: SyringeKind
   /** Şırınga gövdesindeki toplam ünite (skala sonu). */
   maxUnits: number
-  /** 1 mL kaç üniteye bölünmüş: U-100 için 100, U-40 için 40. */
-  unitsPerMl: number
   /** Skalada rakam yazılacak aralık. */
   labelStep: number
   /** Küçük çizgi aralığı. */
@@ -29,15 +25,16 @@ export interface Syringe {
   snapStep: number
 }
 
-/* Boy (0,3/0,5/1 mL) ve tip (U-100/U-40) iki ayrı seçimdir, tek düğme
- * sırasında birleştirilince ("1 mL", "1 mL · U-40" yan yana) hangi
- * boyutun hangi tipe ait olduğu karışıyordu. Arayüzde önce tip seçilir,
- * yalnızca U-100 seçiliyken boy sorulur; U-40 pratikte tek boyda satılır. */
+/* Hesaplayıcı yalnızca U-100 üzerinden çalışır: Türkiye'de eczanede satılan
+ * insülin şırıngalarının tamamı U-100'dür ve peptit sulandırma tarifleri de
+ * bu skalaya göre yazılır. U-40 seçeneği tek kazancı olmadan yanlış skalada
+ * okuma riski getiriyordu. */
+export const UNITS_PER_ML = 100
+
 export const SYRINGES: Syringe[] = [
-  { id: "u100-03", label: "0,3 mL", kind: "U100", maxUnits: 30, unitsPerMl: 100, labelStep: 5, minorStep: 1, snapStep: 0.5 },
-  { id: "u100-05", label: "0,5 mL", kind: "U100", maxUnits: 50, unitsPerMl: 100, labelStep: 10, minorStep: 2, snapStep: 0.5 },
-  { id: "u100-10", label: "1 mL", kind: "U100", maxUnits: 100, unitsPerMl: 100, labelStep: 20, minorStep: 5, snapStep: 1 },
-  { id: "u40-10", label: "1 mL", kind: "U40", maxUnits: 40, unitsPerMl: 40, labelStep: 10, minorStep: 2, snapStep: 0.5 },
+  { id: "u100-03", label: "0,3 mL", maxUnits: 30, labelStep: 5, minorStep: 1, snapStep: 0.5 },
+  { id: "u100-05", label: "0,5 mL", maxUnits: 50, labelStep: 10, minorStep: 2, snapStep: 0.5 },
+  { id: "u100-10", label: "1 mL", maxUnits: 100, labelStep: 20, minorStep: 5, snapStep: 1 },
 ]
 
 export const DEFAULT_SYRINGE_ID = "u100-10"
@@ -57,15 +54,53 @@ const soldPeptideSlugs = new Set(
   products.map((p) => p.peptideSlug).filter((s): s is string => Boolean(s)),
 )
 
-export const CALCULABLE_PEPTIDES: Peptide[] = peptides.filter((p) =>
-  soldPeptideSlugs.has(p.slug),
+/* Büyüme hormonu IU ile dozlanır, mg ile değil; ayrıca kendi kartuş ve
+ * kalemleriyle gelir, sulandırma mantığı peptit flakonuyla aynı değil. Aynı
+ * ekranda iki birim sistemi tutmak kullanıcıyı yanlış skalaya itiyordu. */
+const HIDDEN_PEPTIDE_SLUGS = new Set(["hgh"])
+
+export const CALCULABLE_PEPTIDES: Peptide[] = peptides.filter(
+  (p) => soldPeptideSlugs.has(p.slug) && !HIDDEN_PEPTIDE_SLUGS.has(p.slug),
 )
 
+/** Ürün adından flakon başına düşen mg değerini okur.
+ *
+ * Ad iki sayı taşıyabilir: "Reta ZPHC 120 mg (5 flakon × 24 mg)" — 120 kutunun
+ * tamamı, 24 tek flakon. Sulandırma tek flakona yapıldığı için parantez içi
+ * öncelikli; yoksa addaki tek miktar zaten flakonun kendisidir. */
+function vialMg(name: string): number | null {
+  const perVial = name.match(/[×x]\s*(\d+(?:[.,]\d+)?)\s*mg/i)
+  if (perVial) {
+    const n = Number(perVial[1].replace(",", "."))
+    return Number.isFinite(n) && n > 0 ? n : null
+  }
+  const size = parseSize(name)
+  return size && size.unit === "mg" ? size.amount : null
+}
+
+/** Bileşik seçilince hazır miktar düğmeleri gerçekten sattığımız flakon
+ * boylarına dönüşür. Genel bir 5/10/20 listesi kullanıcıyı elindeki kutuda
+ * bulunmayan bir sayıya yönlendiriyordu. */
+export const VIAL_AMOUNTS_BY_PEPTIDE: Record<string, number[]> = (() => {
+  const out: Record<string, number[]> = {}
+  for (const product of products) {
+    if (!product.peptideSlug) continue
+    const mg = vialMg(product.name)
+    if (mg === null) continue
+    const list = out[product.peptideSlug] ?? (out[product.peptideSlug] = [])
+    if (!list.includes(mg)) list.push(mg)
+  }
+  for (const slug of Object.keys(out)) {
+    out[slug] = out[slug].sort((a, b) => a - b).slice(0, 6)
+  }
+  return out
+})()
+
+/** Bileşik seçilmediğinde gösterilen genel boylar. */
+export const VIAL_PRESETS = [5, 10, 20, 30, 50, 60]
 export const WATER_PRESETS_ML = [1, 2, 3, 5]
-export const VIAL_PRESETS = [5, 10, 12, 20, 50, 60]
 export const DOSE_PRESETS_MG = [0.25, 0.5, 1, 2, 4, 8]
 export const DOSE_PRESETS_MCG = [100, 250, 500, 1000]
-export const DOSE_PRESETS_IU = [2, 4, 6, 8]
 /** Sulandırma ipucunu ararken denenen hacimler. */
 export const WATER_CANDIDATES = [0.5, 1, 1.5, 2, 2.5, 3, 4, 5]
 

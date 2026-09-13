@@ -42,18 +42,23 @@ export const SYRINGES: Syringe[] = [
 
 export const DEFAULT_SYRINGE_ID = "u100-10"
 
-/* Kütüphanede dozlama basamağı olan 43 bileşiğin ~28'i şu an satılan hiçbir
- * ürüne karşılık gelmiyor (Tesamorelin, Semax, PT-141 gibi — kütüphanede var,
- * kataloğumuzda satılmıyor). Onları listelemek hem seçim listesini şişiriyor
- * hem "aldığım ürün bu değil" hatasına açık kapı bırakıyor. Süzme katalogdan
- * canlı türetiliyor, elle güncellenen bir liste değil; katalog değiştikçe bu
- * liste de otomatik değişir. */
+/* Kütüphanedeki 43 bileşiğin çoğu şu an satılan hiçbir ürüne karşılık
+ * gelmiyor (Tesamorelin, Semax, PT-141 gibi — kütüphanede var, kataloğumuzda
+ * satılmıyor). Onları listelemek hem seçim listesini şişiriyor hem "aldığım
+ * ürün bu değil" hatasına açık kapı bırakıyor. Süzme katalogdan canlı
+ * türetiliyor, elle güncellenen bir liste değil; katalog değiştikçe bu liste
+ * de otomatik değişir.
+ *
+ * Ölçüt yalnızca "satılıyor mu" — kütüphanede doz merdiveni bulunması
+ * aranmaz. Retatrutide gibi araştırma aşamasındaki moleküllerde merdiveni
+ * bilerek yayımlamıyoruz; hesaplayıcı da doz önermiyor, kullanıcının yazdığı
+ * dozu hacme çeviriyor. Merdiveni şart koşmak ana ürünü listeden düşürüyordu. */
 const soldPeptideSlugs = new Set(
   products.map((p) => p.peptideSlug).filter((s): s is string => Boolean(s)),
 )
 
-export const CALCULABLE_PEPTIDES: Peptide[] = peptides.filter(
-  (p) => p.dosing && p.dosing.length > 0 && soldPeptideSlugs.has(p.slug),
+export const CALCULABLE_PEPTIDES: Peptide[] = peptides.filter((p) =>
+  soldPeptideSlugs.has(p.slug),
 )
 
 export const WATER_PRESETS_ML = [1, 2, 3, 5]

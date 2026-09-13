@@ -133,9 +133,9 @@ export const articles: Article[] = [
       { href: "/journal/reta-kutu-uzerindeki-mg-ne-demek", label: "Reta kutusundaki mg ifadeleri" },
     ],
     sources: [
-      { label: "NEJM / PubMed — Faz 2 çalışması (PMID 37366315)", href: "https://pubmed.ncbi.nlm.nih.gov/37366315/" },
-      { label: "ClinicalTrials.gov — TRIUMPH-1 (NCT05929066)", href: "https://clinicaltrials.gov/study/NCT05929066" },
-      { label: "Eli Lilly — TRIUMPH-1 üst düzey sonuçları, 21 Mayıs 2026", href: "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss" },
+      { label: "NEJM / PubMed, Faz 2 çalışması (PMID 37366315)", href: "https://pubmed.ncbi.nlm.nih.gov/37366315/" },
+      { label: "ClinicalTrials.gov, TRIUMPH-1 (NCT05929066)", href: "https://clinicaltrials.gov/study/NCT05929066" },
+      { label: "Eli Lilly, TRIUMPH-1 üst düzey sonuçları, 21 Mayıs 2026", href: "https://investor.lilly.com/news-releases/news-release-details/lillys-triple-agonist-retatrutide-delivered-powerful-weight-loss" },
     ],
   },
   {
@@ -190,13 +190,21 @@ export const articles: Article[] = [
     category: "Yaklaşım",
     excerpt:
       "Bir peptidin popüler olması, işe yaradığı anlamına gelmez. Kanıtlanmış, teorik ve preklinik ayrımı neden bu kadar önemli.",
-    readMinutes: 3,
-    date: "2026-06-12",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Peptit dünyasının en büyük sorunu, popülerlik ile kanıtın karıştırılması. Bir bileşik sosyal medyada ne kadar konuşulursa konuşulsun, arkasındaki veri seviyesi değişmez.",
       "Üç kademe kullanıyoruz. Klinik kanıt: insan çalışmalarıyla desteklenen moleküller. Mekanistik: mekanizması iyi tanımlı ama geniş insan verisi olmayan bileşikler. Preklinik: kanıtı büyük ölçüde hayvan çalışmalarına dayanan, deneysel seviyedekiler.",
       "Bu ayrımı asla bulandırmayız. Preklinik bir bileşiği klinik kanıtlıymış gibi sunmak, en yaygın ve en tehlikeli yanıltma. Bizim işimiz tam tersini yapmak.",
+      "Üç kademe arasındaki mesafe sanıldığından büyük. Hayvan modelinde çalışan bir molekülün insanda da çalışma olasılığı, sektörde konuşulduğu kadar yüksek değil. İlaç geliştirmede prekliniği geçen adayların çoğu insan çalışmalarında beklentiyi karşılayamaz. Bu bir başarısızlık hikâyesi değil, sürecin nasıl işlediğinin tanımı: preklinik aşama zaten elemek için vardır.",
+      "Neden bu kadar sık yanlış anlaşılıyor? Çünkü kanıtın dili ile pazarlamanın dili birbirine çok benziyor. Bir hayvan çalışmasında görülen etki, cümlenin başına uygun bir sıfat eklendiğinde insanda kanıtlanmış gibi okunabiliyor. Sık kullanılan iki kalıp var: bir molekülün hangi mekanizmayla çalıştığını anlatmak ile o mekanizmanın insanda işe yaradığını göstermek. Birincisi kolaydır ve genellikle doğrudur; ikincisi pahalıdır ve çoğu zaman yapılmamıştır.",
+      "Okurken işe yarayan birkaç soru var. Çalışma insanda mı yapılmış, hayvanda mı? Karşılaştırma grubu var mı, yoksa yalnızca kullananların sonuçları mı bildirilmiş? Katılımcı sayısı kaç? Sonuç hakemli bir dergide mi yayımlanmış, yoksa bir ürün sayfasında mı duruyor? Bu dört sorunun cevabı, bir iddianın hangi kademede olduğunu neredeyse her zaman belli eder.",
+      "Kütüphanedeki her bileşiğin kaydında bu kademe açıkça yazılıdır ve kademe, ürünün satılıp satılmadığından bağımsızdır. Kataloğumuzda bulunan bir bileşiğin preklinik olarak etiketlenmesi bir çelişki değil, bilerek yapılan bir tercihtir: satışa sunulan şeyin ne olduğunu ve ne olmadığını aynı yerde yazmak.",
       "Şeffaflık burada bir pazarlama sözü değil. Hangi bileşiğin nerede durduğunu bilmek, doğru kararın ilk şartı.",
+    ],    relatedLinks: [
+      { href: "/metodoloji", label: "Metodoloji: kanıt nasıl değerlendiriliyor" },
+      { href: "/peptidler", label: "Bileşik kütüphanesi" },
+      { href: "/journal/preklinik-ne-anlama-gelir", label: "Preklinik ne anlama gelir?" },
     ],
   },
   {
@@ -205,12 +213,19 @@ export const articles: Article[] = [
     category: "Uzun Yaşam",
     excerpt:
       "Uzun yaşamanın asıl ölçüsü kaç yıl yaşadığınız değil, kaç yılı sağlıkla geçirdiğiniz. Bunun neden daha önemli olduğu.",
-    readMinutes: 3,
-    date: "2026-06-04",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Uzun yaşam denince akla ömür uzunluğu geliyor. Oysa asıl mesele bu değil. Ortalama insan, ömrünün son yıllarının önemli bir kısmını düşük sağlıkla geçiriyor.",
       "Healthspan, kişinin güçlü, fonksiyonel ve bağımsız kaldığı süre. Amaç, toplam yaşı büyütmek değil, bu sağlıklı pencereyi olabildiğince uzatmak.",
-      "Bu bakış her şeyi değiştirir. Hedef 90 yaşına ulaşmak değil, o yaşa dinç ulaşmak. Protokoller de bu mantıkla kurulur: bugünü değil, on yıl sonrasını düşünerek.",
+      "Aradaki fark rakamlarla bakıldığında daha somut hale geliyor. Ortalama yaşam süresi son yüzyılda belirgin biçimde uzadı, ama bu uzamanın tamamı sağlıklı yıllara eklenmedi. Kazanılan yılların bir kısmı, kronik hastalıkla ve azalan bağımsızlıkla geçen yıllar oldu. Sağlık politikası literatüründe bu farka sağlıklı yaşam açığı deniyor.",
+      "Healthspan kavramı bu açığı kapatmayı hedefler. Ölçüsü de farklıdır: kaç yıl yaşadığınız değil, kaç yıl boyunca merdiven çıkabildiğiniz, kendi alışverişinizi yapabildiğiniz, bir ilaç listesine bağlı olmadan gününüzü geçirebildiğiniz. Fonksiyon, burada ömürden daha bilgilendirici bir ölçüt.",
+      "Bu bakış öncelikleri değiştirir. Tek bir molekülün ya da takviyenin ömrü uzatıp uzatmadığı sorusu, insanda test edilmesi neredeyse imkânsız bir sorudur; bir yaşam boyu sürmesi gerekir. Buna karşılık kas kütlesi, kavrama gücü, yürüme hızı, uyku yapısı ve metabolik belirteçler kısa sürede ölçülebilir ve fonksiyonel yaşlanmayla ilişkileri iyi çalışılmıştır. Ölçülebilir olan, ölçülemeyenden daha kullanışlıdır.",
+      "Bu alandaki en yaygın satış cümlesi de tam buradan besleniyor: ömrü uzattığı söylenen bir molekülün böyle bir iddiayı insanda kanıtlaması pratikte mümkün olmadığı için, iddia hiçbir zaman yanlışlanamaz. Yanlışlanamayan bir iddia güçlü değil, boş bir iddiadır.",
+      "Bu bakış her şeyi değiştirir. Hedef 90 yaşına ulaşmak değil, o yaşa dinç ulaşmak. Bu da uzun vadeli ve ölçülebilir bir mesele; tek bir ürünün çözeceği bir şey değil.",
+    ],    relatedLinks: [
+      { href: "/journal/hucresel-saglik-uzun-vade", label: "Hücresel sağlık, uzun vadeli bir konu" },
+      { href: "/peptidler", label: "Bileşik kütüphanesi" },
     ],
   },
   {
@@ -219,13 +234,21 @@ export const articles: Article[] = [
     category: "Doku Onarımı",
     excerpt:
       "BPC-157 ve TB-500 farklı mekanizmalarla aynı hedefe gidiyor: doku rejenerasyonu. İkisini birlikte kullanmanın mantığı nedir?",
-    readMinutes: 4,
-    date: "2026-07-01",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "BPC-157 anjiyogenezi, yani yeni damar oluşumunu desteklediği düşünülen bir molekül. TB-500 ise hücre göçünü kolaylaştırarak dokunun kendini onarma hızını artırdığı öne sürülen bir fragman.",
       "İki molekülün farklı mekanizmalarla aynı sürece katkı sağlaması, birlikte kullanımın arkasındaki mantık. Biri damarlanmayı, diğeri hücresel göçü destekliyor. Teorik olarak tamamlayıcı bir çift.",
       "Ancak burada dürüst olmak gerekiyor: bu kombinasyonun insan verisi büyük ölçüde anekdotal. Mekanizma güçlü, kontrollü klinik çalışma yok. Kütüphanemizde bu ikili 'Mekanistik / Teorik' kademesinde sınıflandırılıyor, 'Klinik Kanıt' değil.",
-      "Bu ayrımı bulanıklaştırmadan sunmak, sporcu ve aktif bireylerle çalışırken en çok önem verdiğimiz nokta. Doğru beklenti, doğru sonucun ilk şartı.",
+      "Kanıtın nereden geldiğine yakından bakmak gerekiyor. BPC-157 üzerine yayımlanmış literatürün büyük kısmı sıçan modellerinde yapılmış çalışmalardan oluşuyor: tendon, kas, bağırsak ve sinir dokusunda iyileşme hızına dair tekrarlanabilir sonuçlar var. Bu sonuçlar gerçek ve tek bir laboratuvarla sınırlı değil. Eksik olan, insanda yapılmış kontrollü çalışma.",
+      "TB-500 tarafında durum daha da erken. Molekül, timosin beta-4 adlı doğal proteinin bir fragmanı olarak tanımlanıyor ve hücre göçüyle ilişkilendirilen bölgeyi taşıdığı öne sürülüyor. Kütüphanede TB-500 preklinik kademesinde duruyor; yani insan verisi neredeyse hiç yok.",
+      "İkisini birlikte kullanma fikrinin kaynağı da bu mekanizma tamamlayıcılığı. Ancak burada bir mantık atlaması var ve fark edilmesi gerekiyor: iki molekülün ayrı ayrı makul mekanizmalara sahip olması, birlikte kullanıldıklarında toplamdan fazlasını verecekleri anlamına gelmez. Kombinasyonun kendisi ayrı bir iddiadır ve ayrıca test edilmesi gerekir. Bu test yapılmamıştır.",
+      "Kütüphanede BPC-157 mekanistik, TB-500 preklinik kademesinde sınıflandırılıyor; ikisi de klinik kanıt kademesinde değil. Karışım ürünlerinin katalogda bulunması bu tabloyu değiştirmez. Bir ürünün satılıyor olması, arkasındaki kanıt seviyesini yükseltmez.",
+      "Bu ayrımı bulanıklaştırmadan sunmak, bu alanda yazılan metinlerin çoğunda atlanan kısım. Doğru beklenti, doğru kararın ilk şartı.",
+    ],    relatedLinks: [
+      { href: "/zphc-bpc-157", label: "ZPHC BPC-157 ürünleri" },
+      { href: "/peptidler/bpc-157", label: "BPC-157 bileşik kaydı" },
+      { href: "/peptidler/tb-500", label: "TB-500 bileşik kaydı" },
     ],
   },
   {
@@ -234,12 +257,19 @@ export const articles: Article[] = [
     category: "Bilişsel",
     excerpt:
       "Semax ve Selank, Rusya'da onlarca yıldır klinik kullanımda ama batı literatüründe hâlâ az tanınıyor. Aradaki fark neden önemli?",
-    readMinutes: 3,
-    date: "2026-06-25",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Semax ve Selank, ACTH ve tuftsin türevi iki nöropeptit. İkisi de Rusya'da resmi klinik kullanımda; batıda ise büyük ölçüde araştırma aşamasında kalmış moleküller.",
       "Semax'ın BDNF ve dopaminerjik sinyali desteklediği, Selank'ın ise sedasyon yaratmadan anksiyolitik etki gösterdiği düşünülüyor. Mekanizmaları makul ve tutarlı, ancak kontrollü randomize çalışmaların çoğu Rusça literatürde ve batı standartlarında tekrarlanmamış.",
-      "Bu, molekülleri geçersiz kılmaz. Yalnızca kanıt seviyelerini 'Mekanistik / Teorik' kademesinde tutar. Kognitif protokollerde bu şeffaflık, özellikle yüksek performans beklentisi olan bireyler için kritik: beklenti gerçek kanıt seviyesiyle uyumlu olmalı.",
+      "Buradaki asıl mesele, iki farklı düzenleyici geleneğin aynı molekül hakkında farklı sonuçlara varmış olması. Rusya'da bir molekülün ruhsatlanmış olması, o ülkenin kendi değerlendirme sürecinden geçtiği anlamına gelir. Bunu yok saymak da, batı onayıyla eşitlemek de yanlış olur. Aradaki fark genellikle metodolojik: çalışma büyüklükleri, körleme yöntemi, sonlanım noktalarının tanımı ve verinin bağımsız erişime açık olup olmaması.",
+      "Pratikte bu şu anlama geliyor: mevcut çalışmaların çoğu Rusça yayımlanmış, batı literatüründe bağımsız olarak tekrarlanmamış ve uluslararası meta-analizlere girecek biçimde raporlanmamış durumda. Dil engeli tek başına bir kusur değil, ama dışarıdan doğrulanamayan bir veri kümesi, doğrulanmış sayılamaz.",
+      "İkinci bir nokta da uygulama biçimi. Her iki molekül de Rusya'da burun spreyi olarak kullanılıyor. İnternette dolaşan kullanım anlatılarının bir kısmı farklı uygulama yollarına dayanıyor ve farklı bir uygulama yolu, farklı bir emilim ve farklı bir etki profili demek. Bir molekül hakkında yapılmış çalışmanın sonuçları, o çalışmadaki uygulama biçimi için geçerlidir.",
+      "Bu, molekülleri geçersiz kılmaz. Yalnızca kütüphanedeki kanıt kademelerini mekanistik seviyede tutar: mekanizma tanımlı, bağımsız insan verisi sınırlı. Bilişsel etki beklentisi olan biri için bu ayrım özellikle önemli, çünkü bu alandaki öznel değerlendirme plaseboya en açık alanlardan biridir.",
+    ],    relatedLinks: [
+      { href: "/peptidler/semax", label: "Semax bileşik kaydı" },
+      { href: "/peptidler/selank", label: "Selank bileşik kaydı" },
+      { href: "/metodoloji", label: "Kanıt nasıl değerlendiriliyor" },
     ],
   },
   {
@@ -248,13 +278,20 @@ export const articles: Article[] = [
     category: "Metabolik",
     excerpt:
       "Tek bir molekül değil, birbirini tamamlayan bir sistem: iştah, enerji harcaması ve karaciğer yağlanması neden birlikte ele alınmalı.",
-    readMinutes: 4,
-    date: "2026-05-15",
+    readMinutes: 7,
+    date: "2026-09-13",
     body: [
       "Yağ kaybı protokolleri genellikle tek bir molekülün etrafında kurulur. Oysa metabolik direnç, tek bir yolun değil, birkaç sistemin birlikte bozulmasının sonucu.",
       "GLP-1, GIP ve glukagon reseptörlerini hedef alan yeni nesil moleküller, iştah baskılanmasının ötesinde enerji harcamasını ve karaciğer yağlanmasını da etkiliyor. Bu, neden bazı protokollerin daha kalıcı sonuç verdiğini açıklıyor.",
-      "Ancak molekül seçimi işin yarısı. Doz titrasyonu, biyobelirteç takibi ve bireysel metabolik profil, sonucu molekül kadar belirliyor.",
-      "Bu yüzden bir protokolü 'iyi' yapan şey, hangi molekülü kullandığı değil, o molekülün doğru kişide doğru şekilde uygulanıp uygulanmadığıdır.",
+      "Üç yolun ne yaptığını ayırmak, neden farklı moleküllerin farklı sonuç verdiğini de açıklıyor. GLP-1 tarafı tokluk sinyalini ve mide boşalma hızını etkiler; alınan kaloriyi azaltır. GIP tarafı insülin yanıtı ve yağ dokusu metabolizmasıyla ilişkilendirilir. Glukagon tarafı ise denklemin diğer ucuna, yani harcanan enerjiye ve karaciğerdeki yağ metabolizmasına dokunur. Yalnızca iştahı baskılayan bir yaklaşımın, harcama tarafına hiç dokunmadığını görmek işin özeti.",
+      "Bu noktada sıkça atlanan bir gerçek var: kilo kaybının bir kısmı her zaman yağsız dokudan gelir. Kalori açığı büyüdükçe bu pay artar. Bu yüzden tartıdaki sayı tek başına iyi bir başarı ölçüsü değildir; aynı kilo kaybı, korunan kas kütlesiyle birlikte geldiğinde bambaşka bir sonuçtur. Vücut kompozisyonu, tartıdan daha bilgilendiricidir.",
+      "Bir diğer sık atlanan konu, bırakma sonrası. Bu moleküllerin çalışma verilerinde tekrar eden bir bulgu var: molekül bırakıldığında kaybedilen kilonun önemli bir kısmı geri geliyor. Bu, molekülün işe yaramadığı anlamına gelmez; etkinin kullanım süresine bağlı olduğu anlamına gelir. Kalıcı sonucun, moleküle eşlik eden beslenme ve hareket alışkanlığıyla ilişkili olması bu yüzden sürekli tekrarlanıyor.",
+      "İstenmeyen etkiler de tablonun parçası. Bu sınıfta en sık bildirilen etkiler gastrointestinal: bulantı, kusma, ishal. Çoğu hafif ve orta düzeyde bildiriliyor ama çalışmayı bırakma nedenlerinin başında da bunlar geliyor. Bir molekülü değerlendirirken yalnızca etki büyüklüğüne bakmak, denklemin yarısını görmektir.",
+      "Bu sayfa bir kullanım planı önermiyor ve öneremez. Amacı, bu moleküller hakkında okurken hangi soruların sorulması gerektiğini göstermek: etki nereden geliyor, ne kadar sürüyor, bedeli ne, bırakıldığında ne oluyor.",
+    ],    relatedLinks: [
+      { href: "/zphc-reta", label: "ZPHC Reta ürünleri" },
+      { href: "/peptidler/retatrutide", label: "Retatrutide bileşik kaydı" },
+      { href: "/journal/apob-ldl-den-neden-daha-iyi", label: "ApoB neden daha iyi bir gösterge?" },
     ],
   },
   {
@@ -263,13 +300,19 @@ export const articles: Article[] = [
     category: "Cilt & Yaşlanma",
     excerpt:
       "Topikal ürünlerin sınırı cildin yüzeyinde biter. GHK-Cu gibi moleküller, yenilenmeyi hücresel düzeyde tetiklemeyi hedefliyor.",
-    readMinutes: 3,
-    date: "2026-05-02",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Cilt bakımının çoğu, yüzeyde kalan bir müdahale. Nemlendirme, koruma, düzeltme. Hepsi gerekli ama hücresel yenilenme hızını değiştirmiyor.",
-      "GHK-Cu gibi bakır bağlı peptitler, kolajen ve elastin sentezini doğrudan uyararak farklı bir katmanda çalışıyor. RCT'lerle desteklenen az sayıda estetik molekülden biri olması, onu kütüphanemizde 'Klinik Kanıt' kademesine taşıyor.",
-      "Ancak tek başına bir molekül, bir protokol değildir. Doz, uygulama şekli (topikal veya enjekte edilebilir) ve bireyin başlangıç noktası, sonucu belirleyen asıl değişkenler.",
-      "Anti-aging'i bir ürün seçimi değil, sürdürülebilir bir sistem olarak kurmak. Yaklaşımımızın temel farkı burada.",
+      "GHK-Cu gibi bakır bağlı peptitler farklı bir katmanı hedefler. GHK, insan plazmasında doğal olarak bulunan üç aminoasitlik bir dizidir ve bakır iyonunu bağlama özelliğiyle tanımlanır. Kandaki düzeyinin yaşla birlikte azaldığı bildirilmiştir. Laboratuvar çalışmalarında kolajen sentezi ve doku yeniden yapılanmasıyla ilişkili yolakları etkilediği gösterilmiştir.",
+      "Burada dürüst olmak gerekiyor ve bu sayfa daha önce bu konuda fazla iddialı bir cümle taşıyordu. GHK-Cu kütüphanede klinik kanıt kademesinde değil, mekanistik kademede duruyor. Nedeni açık: mevcut literatürün ağırlığı hücre kültürü çalışmaları ve derlemelerden oluşuyor, bağımsız ve yeterli büyüklükte randomize insan çalışması bulunamadı. Molekülün sınıflandırması aradığımızı bulamadığımız için düşürüldü, bu karar kaynak politikası yazısında ayrıca anlatılıyor.",
+      "Cilt konusunda beklentiyi doğru kurmanın ikinci şartı, sonucun ölçülebilir olması. Bu alanda öznel değerlendirme yanıltıcıdır: ışık, açı, nem ve ruh hali, aynı cildi bir haftada bambaşka gösterebilir. Aynı koşullarda, aynı mesafeden, aynı ışıkta çekilmiş fotoğraf, bu alandaki en ucuz ve en dürüst ölçüm aracıdır.",
+      "Uygulama biçimi de sonucu belirleyen bir değişken. Topikal ve enjekte edilebilir formlar aynı molekülü taşısa da emilim ve dokuya ulaşım açısından aynı şey değildir; bir formda yapılmış çalışmanın sonuçları diğerine doğrudan aktarılamaz.",
+      "Özetle: mekanizma ilgi çekici, laboratuvar verisi tutarlı, insan verisi ise iddiayı taşıyacak kadar güçlü değil. Bu üç cümlenin üçünü birden söylemek, yalnızca ilkini söylemekten daha faydalı.",
+    ],    relatedLinks: [
+      { href: "/zphc-ghk-cu", label: "ZPHC GHK-Cu ürünleri" },
+      { href: "/peptidler/ghk-cu", label: "GHK-Cu bileşik kaydı" },
+      { href: "/journal/kaynak-politikamiz-neden-onemli", label: "GHK-Cu neden kademe düşürüldü?" },
     ],
   },
   {
@@ -278,13 +321,19 @@ export const articles: Article[] = [
     category: "Performans",
     excerpt:
       "Antrenman adaptasyonunun çoğu, antrenman sırasında değil toparlanma penceresinde gerçekleşir. Protokoller bu pencereyi nasıl hedefler?",
-    readMinutes: 3,
-    date: "2026-04-18",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Performans konuşulduğunda akla genelde antrenman şiddeti gelir. Oysa adaptasyonun büyük kısmı, antrenman sonrası toparlanma penceresinde gerçekleşir.",
       "CJC-1295 ve Ipamorelin gibi kombinasyonlar, büyüme hormonu salınımını fizyolojik atım paternine yakın bir şekilde uyararak bu pencereyi desteklediği düşünülüyor. Mekanizma iyi tanımlı, ama uzun dönem randomize veri sınırlı. Bu yüzden 'Mekanistik / Teorik' kademesinde yer alıyor.",
-      "Toparlanma odaklı bir protokol kurarken asıl soru molekül değil: uyku kalitesi, yük yönetimi ve biyobelirteç takibi olmadan hiçbir molekül tek başına yeterli değil.",
-      "Performans protokollerimiz bu yüzden her zaman çok boyutlu kurulur, tek değişkenli değil.",
+      "Toparlanma penceresinde ne olduğuna bakmak, neden bu kadar belirleyici olduğunu da açıklıyor. Antrenman sırasında kas dokusunda mikro hasar oluşur ve enerji depoları boşalır; asıl onarım, protein sentezinin arttığı sonraki saatlerde ve günlerde gerçekleşir. Bu sürecin üç girdisi var ve hiçbiri molekül değil: yeterli protein alımı, yeterli toplam kalori ve yeterli uyku. Bu üçü eksikken eklenen hiçbir şey farkı kapatmaz.",
+      "Uyku burada özel bir yer tutuyor, çünkü büyüme hormonu salınımının en belirgin atımları derin uyku evresinde gerçekleşir. Uykunun kısaldığı veya bölündüğü bir dönemde, hormonal toparlanmanın en verimli penceresi zaten kaçırılmış olur.",
+      "Bu sınıftaki moleküller, hipofizin kendi salınımını uyarmayı hedefledikleri için genellikle fizyolojik atım paternini taklit etme iddiası taşır. Mekanizma tanımlı; ancak kütüphanedeki kanıt kademeleri mekanistik seviyede kalıyor, çünkü uzun dönemli ve geniş katılımlı kontrollü insan verisi sınırlı.",
+      "Aşırı yüklenmenin de kendine ait bir tablosu var ve moleküllerle çözülmez: dinlenme nabzının yükselmesi, kalp hızı değişkenliğinin düşmesi, uykunun bozulması, isteksizlik ve performansın gerilemesi. Bu tablo göründüğünde ihtiyaç duyulan şey bir bileşik değil, azaltılmış yük ve uyku.",
+      "Toparlanma konusunda okurken sorulacak soru şu: bu molekülün etkisi, aynı dönemde düzelen uykudan ve artan protein alımından ayrıştırılabilmiş mi? Ayrıştırılamadığı durumda, gözlenen iyileşmeyi moleküle yazmak için bir gerekçe yok demektir.",
+    ],    relatedLinks: [
+      { href: "/peptidler/ipamorelin", label: "Ipamorelin bileşik kaydı" },
+      { href: "/journal/uyku-mimarisi-ve-toparlanma", label: "Uyku mimarisi ve toparlanma" },
     ],
   },
   {
@@ -293,13 +342,21 @@ export const articles: Article[] = [
     category: "Uzun Yaşam",
     excerpt:
       "Bu alandaki moleküller hızlı sonuç vaat etmiyor. Mitokondriyal fonksiyon ve hücresel enerji üzerine kurulu, sabır isteyen bir yaklaşım.",
-    readMinutes: 4,
-    date: "2026-04-05",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Uzun yaşam alanındaki moleküllerin çoğu hızlı ve görünür bir etki vaat etmiyor. Hedef aldıkları şey, yani mitokondriyal fonksiyon ve hücresel enerji metabolizması, yıllar içinde birikimli olarak fark yaratan bir katman.",
       "SS-31 gibi mitokondri koruyucu moleküller klinik olarak test edilirken, NAD+ öncülleri ve MOTS-c gibi bileşikler hâlâ insan verisinin olgunlaştığı bir aşamada. Kanıt seviyesi bu yüzden molekülden moleküle büyük farklılık gösteriyor.",
       "Bu alanda en büyük risk, sabırsızlık. Preklinik bir bileşiği klinik kanıtlıymış gibi sunmak, longevity pazarlamasının en yaygın hatası. Biz bu ayrımı hiç bulandırmıyoruz.",
-      "Uzun vadeli bir stratejide, bugünün küçük ve doğrulanabilir kazanımları, yarının büyük iddialarından daha değerlidir.",
+      "Bu alandaki iddiaların neden bu kadar zor doğrulandığını anlamak için ölçüm sorununa bakmak gerekiyor. Bir molekülün yaşlanma hızını değiştirdiğini insanda göstermek, onlarca yıl sürecek bir çalışma gerektirir ve böyle bir çalışma pratikte kurulmaz. Bu yüzden araştırmalar vekil ölçütlerle yürür: mitokondriyal fonksiyon göstergeleri, hücresel enerji üretimi, çeşitli kan belirteçleri. Vekil bir ölçütte iyileşme görmek, uzun vadede fayda olacağının garantisi değildir; yalnızca umut vericidir.",
+      "Kanıt seviyesi bu alanda molekülden moleküle çok değişiyor ve aynı cümlede anılmaları yanıltıcı oluyor. Kütüphanede NAD+ öncülleri mekanistik kademede, MOTS-c ve Epithalon ise preklinik kademede duruyor. Preklinik, insan verisinin neredeyse hiç olmadığı anlamına geliyor; bu, molekülün değersiz olduğunu değil, hakkında konuşurken kullanılacak dilin farklı olması gerektiğini söylüyor.",
+      "İkinci bir karışıklık kaynağı, hücre kültüründe ve kısa ömürlü canlılarda elde edilen sonuçların insana taşınması. Bir bileşiğin bir solucanın ömrünü uzatması gerçek bir bulgudur ve genellikle tekrarlanabilir. Ama bu canlıların biyolojisi ile insanınki arasındaki mesafe, sonucun doğrudan aktarılmasına izin vermez. Bu alanda satılan iddiaların önemli bir kısmı tam olarak bu mesafenin görmezden gelinmesiyle üretiliyor.",
+      "Bu alanda en büyük risk sabırsızlık. Preklinik bir bileşiği klinik kanıtlıymış gibi sunmak, bu pazarlamanın en yaygın hatası ve kütüphanede bu ayrım bilerek hiç bulandırılmıyor.",
+      "Uzun vadeli bir yaklaşımda, bugünün küçük ve doğrulanabilir kazanımları, yarının büyük iddialarından daha değerlidir.",
+    ],    relatedLinks: [
+      { href: "/peptidler/nad-nmn", label: "NAD+ / NMN bileşik kaydı" },
+      { href: "/peptidler/mots-c", label: "MOTS-c bileşik kaydı" },
+      { href: "/peptidler/epithalon", label: "Epithalon bileşik kaydı" },
     ],
   },
   {
@@ -308,13 +365,17 @@ export const articles: Article[] = [
     category: "Yaklaşım",
     excerpt:
       "Kütüphanemizdeki her PMID gerçek ve doğrulanabilir. Bir bileşiğin kaynağı yoksa, bu, aramadığımız değil, bulamadığımız anlamına gelir.",
-    readMinutes: 3,
-    date: "2026-07-08",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Kısa süre önce GHK-Cu'yu kütüphanemizde 'Klinik Kanıt' kademesinden 'Mekanistik / Teorik' kademesine indirdik. Neden? Çünkü bağımsız bir insan RCT'si aradık ve bulamadık. Mekanizma hücre kültürü ve hayvan modellerinde iyi tanımlı ama bu, klinik kanıtla aynı şey değil.",
       "Kaynak eklerken PMID ve DOI numaralarını gerçek veritabanlarından çekiyoruz. Bir bileşik için doğrulanabilir bir kaynak yoksa, sayfasında kaynak bölümü hiç görünmez. Uydurma bir referans eklenmez.",
       "Bu bazı okuyucular için garip görünebilir: neden Retatrutide'nin sayfasında PMID ve DOI var da BPC-157'de yok? Cevap basit: biri randomize kontrollü bir insan çalışmasıyla test edildi, diğeri henüz edilmedi. İkisi de değerli olabilir; ama ikisi aynı cümleyle anlatılamaz.",
-      "Bu sürecin tamamını metodoloji sayfamızda açıkladık. Amacımız güven telkin etmek değil, güvenin nereden geldiğini göstermek.",
+      "Peki neyi arıyoruz? Sırayla şunlar: insanda yapılmış, karşılaştırma grubu olan, sonlanım noktası önceden tanımlanmış, hakemli bir dergide yayımlanmış ve PMID veya DOI ile doğrulanabilir bir çalışma. Bunların hepsi bulunduğunda kaynak eklenir. Biri bile eksikse, o bileşik için kaynak bölümü hiç görünmez.",
+      "Aramanın dışında bıraktığımız şeyler de var ve bunlar bilinçli. Ürün satan sitelerin kendi sayfaları kaynak sayılmaz. Yayımlanmamış konferans özetleri tek başına yeterli sayılmaz. Bir şirketin basın açıklaması, hakemli makale yerine geçmez; sayı verse bile yöntemi göstermez. Bunlar bir bileşiğin işe yaramadığını göstermez, yalnızca elimizde gösterebileceğimiz bir kanıt olmadığını gösterir.",
+      "Bunun görünür bir maliyeti var: kataloğumuzda sattığımız bazı ürünlerin bileşik sayfasında hiç kaynak bölümü yoktur. Satış açısından bakıldığında bu bir eksik gibi durur. Alternatif, o boşluğu zayıf bir referansla doldurmaktı ve bu yolu seçmedik. Bir kaynağın varlığı güven verir; yanlış yerleştirilmiş bir kaynak, verdiği güveni hak etmez.",
+      "Kademeler tek yönlü de değil. GHK-Cu örneğinde olduğu gibi, bir bileşik yeni bir arama sonucunda aşağı inebilir. Aynı şekilde, yeni ve sağlam bir çalışma yayımlanırsa yukarı çıkabilir. Kademeler bir markanın duruşunu değil, o gün elde bulunan kanıtı yansıtır.",
+      "Bu sürecin tamamı metodoloji sayfasında anlatılıyor. Amaç güven telkin etmek değil, güvenin nereden geldiğini göstermek; okuyanın aynı sorguyu kendi başına yapabilmesi.",
     ],
     relatedLinks: [
       { href: "/metodoloji", label: "Metodoloji: Kanıtı nasıl değerlendiriyoruz" },
@@ -327,13 +388,15 @@ export const articles: Article[] = [
     category: "Biyobelirteç",
     excerpt:
       "Standart lipit paneli aterojenik parçacık sayısını kaçırabilir. ApoB'nin metabolik protokollerde neden ayrı bir belirteç olarak izlendiği.",
-    readMinutes: 3,
-    date: "2026-07-01",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "LDL-kolesterol, aslında kandaki LDL parçacıklarının içindeki kolesterol miktarını ölçer, parçacık sayısını değil. Bazı bireylerde LDL-kolesterol normal görünürken parçacık sayısı yüksek olabilir; bu duruma bazen 'gizli risk' deniyor.",
       "ApoB, her aterojenik parçacığın yüzeyinde tam olarak bir kopya bulunan bir protein olduğu için, parçacık sayısını doğrudan verir. Bu yüzden kardiyovasküler risk değerlendirmesinde LDL-kolesterole göre daha isabetli kabul ediliyor.",
-      "Metabolik protokollerimizde ApoB'yi bu yüzden ayrı bir belirteç olarak izliyoruz; özellikle Retatrutide, Semaglutide ve Tirzepatide gibi molekülleri kullanan danışanlarda, kilo kaybının ötesinde kardiyometabolik riskin nasıl değiştiğini görmek için.",
-      "Biyobelirteç sözlüğümüzde ApoB'yi bu bağlamda detaylandırdık.",
+      "Farkın nereden çıktığını bir benzetmeyle görmek kolay. LDL parçacıklarını kolesterol taşıyan kamyonlar gibi düşünün. LDL-kolesterol ölçümü, yoldaki toplam yükü söyler. ApoB ise kaç kamyon olduğunu söyler. Aynı toplam yük, az sayıda dolu kamyonla da taşınabilir, çok sayıda yarı boş kamyonla da. Damar duvarına giren ve orada birikenin parçacığın kendisi olduğu düşünüldüğü için, sayı yükten daha bilgilendirici hale geliyor.",
+      "Bu ayrışmanın en sık görüldüğü durum, insülin direnci ve yüksek trigliserit tablosu. Bu profilde parçacıklar küçülür ve sayıları artar; LDL-kolesterol değeri normal görünürken ApoB yüksek çıkabilir. Standart bir lipit paneline bakan biri bu durumda risk görmez.",
+      "Pratikte ApoB'nin iki avantajı daha var. Açlık gerektirmez, çünkü ölçtüğü şey parçacık üzerindeki proteindir ve öğünle belirgin biçimde dalgalanmaz. İkincisi, hesaplanan değil doğrudan ölçülen bir değerdir; LDL-kolesterol ise birçok laboratuvarda hâlâ bir formülle hesaplanır ve trigliserit yüksekken bu formül sapar.",
+      "Bu neden bu sitede anlatılıyor? Çünkü metabolik moleküllerin etkisi tartıdaki sayıyla sınırlı değil ve kilo kaybının kardiyometabolik belirteçlere yansıması ayrı bir konu. Hangi tetkikin neyi ölçtüğünü bilmek, sonuçları okurken işe yarıyor. Bu sayfa bir tetkik önerisi ya da yorumu değildir; tetkiklerin nasıl istendiği ve sonucun ne anlama geldiği hekiminize ait bir karardır.",
     ],
     relatedLinks: [
       { href: "/peptidler/retatrutide", label: "Retatrutide bileşik sayfası" },
@@ -345,13 +408,16 @@ export const articles: Article[] = [
     category: "Büyüme Hormonu",
     excerpt:
       "Beş randomize kontrollü çalışmanın meta-analizi, tesamorelinin vücut kompozisyonu üzerindeki etkilerini net şekilde ortaya koyuyor.",
-    readMinutes: 3,
-    date: "2026-06-15",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "HIV ilişkili lipodistrofi endikasyonunda FDA onaylı olan tesamorelin, büyüme hormonu ekseni içindeki en sağlam insan verisine sahip moleküllerden biri.",
       "Yakın zamanda yayınlanan bir meta-analiz, beş randomize kontrollü çalışmayı bir araya getirerek viseral yağ dokusu, karaciğer yağ oranı ve yağsız vücut kütlesi üzerindeki etkileri özetliyor.",
       "Sonuçlar tutarlı: viseral yağ dokusunda ve karaciğer yağ oranında anlamlı azalma, yağsız kütlede artış, üstelik glikoz metabolizmasını bozmadan.",
-      "Bu, kütüphanemizde tesamorelini 'Klinik Kanıt' kademesine yerleştirmemizin nedeni. Sonuç bazlı kanıt matrisini bileşik sayfasında görebilirsiniz.",
+      "Meta-analizin neden ayrı bir ağırlığı olduğunu açmak gerekiyor. Tekil bir çalışma, o çalışmanın katılımcı grubuna, süresine ve ölçüm yöntemine bağlıdır; şans eseri olumlu ya da olumsuz çıkabilir. Meta-analiz, aynı soruyu soran birden fazla randomize çalışmayı birleştirerek etkinin tutarlı olup olmadığını gösterir. Farklı çalışmalar aynı yöne işaret ediyorsa, bulgunun rastlantı olma ihtimali düşer.",
+      "Viseral yağın neden ayrı bir hedef olduğu da önemli. Cilt altı yağdan farklı olarak organların arasında biriken viseral yağ, metabolik ve kardiyovasküler risk göstergeleriyle daha güçlü ilişkilendirilir. Bu yüzden vücut kompozisyonu çalışmalarında toplam kilo kaybı yerine viseral yağ alanı ayrı bir sonlanım noktası olarak ölçülür.",
+      "Sonuçların kapsamı konusunda net olmak gerekiyor. Tesamorelinin onaylı endikasyonu HIV ilişkili lipodistrofidir ve meta-analize giren çalışmalar bu popülasyonda yapılmıştır. Belirli bir hasta grubunda gösterilen bir etkiyi, genel popülasyona ya da estetik amaçlı kullanıma doğrudan taşımak kanıtın izin verdiği bir çıkarım değildir. Bu, en sık yapılan genelleme hatalarından biri.",
+      "Buna rağmen tesamorelin, büyüme hormonu ekseninde çalışan moleküller arasında en sağlam insan verisine sahip olanlardan biri olmayı sürdürüyor ve kütüphanede klinik kanıt kademesinde bulunmasının nedeni bu. Sonuç bazlı kanıt matrisini bileşik sayfasında görebilirsiniz.",
     ],
     relatedLinks: [
       { href: "/peptidler/tesamorelin", label: "Tesamorelin bileşik sayfası" },
@@ -363,13 +429,16 @@ export const articles: Article[] = [
     category: "Büyüme Hormonu",
     excerpt:
       "İkisi de doğal büyüme hormonu salınımını uyarır ama farklı reseptörler üzerinden. Aradaki mekanik fark neden önemli?",
-    readMinutes: 3,
-    date: "2026-07-15",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Büyüme hormonu ekseniyle çalışan iki farklı yaklaşım var: GHRH analogları ve ghrelin reseptör agonistleri. Sermorelin birincisine, Ipamorelin ikincisine örnek.",
       "Sermorelin, GHRH'nin aktif fragmanı olarak hipofizin kendi salınım ritmini korur. Ipamorelin ise ghrelin reseptörü üzerinden çalışır ve seçiciliğiyle öne çıkar. Kortizol ve prolaktini belirgin etkilemeden büyüme hormonu salınımını uyardığı öne sürülür.",
       "Bu iki yol tamamlayıcı olduğu için, pratikte bir GHRH analoğu ile bir ghrelin agonistinin birlikte kullanımı sık görülür (ör. CJC-1295 + Ipamorelin). Amaç, iki farklı sinyali aynı anda vererek daha fizyolojik bir salınım paterni oluşturmak.",
-      "Her ikisi de kütüphanemizde 'Mekanistik / Teorik' kademesinde: mekanizma iyi tanımlı, ancak uzun dönem geniş kontrollü insan verisi sınırlı. Bu ayrımı, beklentiyi doğru kurmak için net tutuyoruz.",
+      "Bu yaklaşımın dışarıdan büyüme hormonu vermekten farkı da burada. Salgılatıcılar hipofizin kendi üretimini uyarır, yani vücudun geri bildirim mekanizmaları devrede kalır; somatostatin yükseldiğinde salınım frenlenir. Dışarıdan verilen hormonda böyle bir fren yoktur. Salgılatıcıların daha fizyolojik olduğu iddiası bu farka dayanır. Ancak aynı özellik bir tavan da koyar: hipofizin üretebileceğinden fazlasını üretmesi sağlanamaz.",
+      "Seçicilik meselesi de sık geçen ama yanlış anlaşılan bir başlık. Ghrelin reseptörü üzerinden çalışan bazı bileşiklerin büyüme hormonu salınımının yanında kortizol ve prolaktini de etkilediği bildirilmiştir. Ipamorelin'in öne çıkma gerekçesi, bu iki hormonu belirgin biçimde etkilemeden çalıştığının öne sürülmesidir. Öne sürülmesi ile geniş insan verisiyle gösterilmiş olması arasındaki fark, bu cümlenin tamamını belirliyor.",
+      "İki mekanizmanın birlikte kullanımının yaygınlaşmasının nedeni de teorik: bir GHRH analoğu salınım için hazırlık sinyali verirken, bir ghrelin agonisti tetikleyici sinyali sağlar. Buradaki mantık makul, ama kombinasyonun kendisi ayrı bir iddiadır ve iki molekülün ayrı ayrı verisi, birlikte kullanımlarının verisi yerine geçmez.",
+      "Her ikisi de kütüphanede mekanistik kademede: mekanizma iyi tanımlı, uzun dönemli ve geniş kontrollü insan verisi sınırlı. Bu ayrım, beklentiyi doğru kurmak için net tutuluyor.",
     ],
     relatedLinks: [
       { href: "/peptidler/ipamorelin", label: "Ipamorelin bileşik sayfası" },
@@ -382,13 +451,17 @@ export const articles: Article[] = [
     category: "Yaklaşım",
     excerpt:
       "Thymosin Beta-4 gibi moleküller hayvan modellerinde umut verici. Ama 'preklinik' etiketi, tam olarak neyi söyler ve neyi söylemez?",
-    readMinutes: 3,
-    date: "2026-07-22",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Bir bileşiği 'preklinik' olarak etiketlediğimizde, kanıtın büyük ölçüde hücre kültürü ve hayvan çalışmalarına dayandığını, kontrollü insan verisinin ya hiç olmadığını ya da neredeyse hiç olmadığını kastediyoruz.",
       "Bu, molekülün 'işe yaramadığı' anlamına gelmez. Thymosin Beta-4'ün hayvan modellerinde doku onarımı üzerindeki etkileri gerçek ve tekrarlanabilir. Ama hayvan modelinden insana geçiş, biyolojinin en zorlu adımlarından biridir. Birçok umut verici molekül bu geçişte beklentiyi karşılayamaz.",
       "Bu yüzden preklinik bileşikleri, klinik kanıtlı olanlarla aynı cümlede sunmayız. İkisi de değerli olabilir; ama biri 'insanda gösterildi', diğeri 'henüz gösterilmedi' der. Bu farkı bulanıklaştırmak, sektörün en yaygın yanıltmasıdır.",
-      "Kütüphanemizdeki her etiketin arkasındaki mantığı metodoloji sayfamızda ayrıntılandırdık.",
+      "Bu geçişin neden bu kadar zor olduğunu anlamak için hayvan modellerinin nasıl kurulduğuna bakmak gerekiyor. Deneyler genellikle genetik olarak birbirine çok benzeyen, aynı yaşta, aynı ortamda ve aynı beslenmeyle tutulan hayvanlarda yapılır. Bu, gürültüyü azaltıp etkiyi görünür kılar; laboratuvar için doğru bir tercihtir. İnsan popülasyonunda ise yaş, genetik, eşlik eden hastalıklar ve kullanılan diğer ilaçlar devreye girer. Laboratuvarda net görünen bir etki, bu değişkenliğin içinde kaybolabilir.",
+      "Doz ölçeği de doğrudan aktarılamaz. Hayvan çalışmalarında kullanılan miktarlar, kiloya oranlandığında bile insanda doğrudan karşılık bulmaz; metabolizma hızı ve ilacın vücutta kalma süresi türler arasında belirgin biçimde farklıdır. Bir sıçan çalışmasındaki sayıyı kilo oranıyla çarpıp insan miktarı hesaplamak, internette sık görülen ama dayanaksız bir işlemdir.",
+      "Uygulama yolu üçüncü bir kırılma noktası. Bir molekülün karın içine enjeksiyonla verildiği bir çalışmanın sonuçları, aynı molekülün ağızdan ya da deri altından verildiği bir kullanımın sonuçlarını göstermez. Emilim, ilk geçiş metabolizması ve hedef dokuya ulaşan miktar değişir.",
+      "Bütün bunlar preklinik verinin değersiz olduğu anlamına gelmiyor. Tam tersine, klinik araştırmaya giden yol buradan geçer ve bugün kullanılan her ilaç bu aşamadan geçmiştir. Söylediği tek şey şu: preklinik, yolculuğun başlangıcıdır, sonucu değil.",
+      "Kütüphanedeki her etiketin arkasındaki mantık metodoloji sayfasında ayrıntılandırılmıştır.",
     ],
     relatedLinks: [
       { href: "/metodoloji", label: "Metodoloji: Kanıtı nasıl değerlendiriyoruz" },
@@ -401,13 +474,16 @@ export const articles: Article[] = [
     category: "Uzun Yaşam",
     excerpt:
       "Derin uyku ve REM oranları, toparlanmanın ham süreden daha belirleyici bileşenleri. Neden uyku 'süresi' tek başına yeterli bir ölçüt değil?",
-    readMinutes: 3,
-    date: "2026-07-29",
+    readMinutes: 6,
+    date: "2026-09-13",
     body: [
       "Uyku çoğu zaman tek bir sayıyla konuşulur: kaç saat. Oysa toparlanma açısından asıl belirleyici olan, o saatlerin nasıl dağıldığı: derin (yavaş dalga) uyku ve REM oranları.",
       "Derin uyku, fiziksel toparlanma ve hormonal düzenlenmeyle; REM ise bilişsel konsolidasyon ve duygusal işlemlemeyle ilişkilendirilir. İkisinin de baskılandığı bir gece, süre olarak 'yeterli' görünse bile fonksiyonel olarak yetersiz olabilir.",
-      "Bu yüzden takip ettiğimiz belirteçler arasında toplam süre kadar uyku mimarisi ve HRV gibi otonom toparlanma sinyalleri de yer alır. DSIP gibi uykuyla ilişkilendirilen bileşiklerse hâlâ erken araştırma aşamasında. Mekanizma ilgi çekici ama insan verisi sınırlı ve tutarsız.",
-      "Toparlanmayı bir sayıya değil, bir yapıya bakarak değerlendirmek. Yaklaşımımızın temel farklarından biri bu.",
+      "Uykunun yapısını biraz açmak gerekiyor. Gece boyunca yaklaşık doksan dakikalık döngüler tekrarlanır ve bu döngülerin içeriği sabit değildir. Derin uyku gecenin ilk yarısında yoğunlaşır; REM ise sabaha doğru uzar. Bunun pratik bir sonucu var: geç yatıp normal saatte kalkan biri ağırlıklı olarak derin uykudan, erken yatıp erken kalkan biri ise ağırlıklı olarak REM'den kaybeder. İkisi aynı eksik değildir.",
+      "Derin uyku fiziksel toparlanma ve hormonal düzenlenmeyle ilişkilendirilir; büyüme hormonu salınımının en belirgin atımları bu evrede gerçekleşir. REM ise bilişsel konsolidasyon ve duygusal işlemlemeyle ilişkilendirilir. İkisinin de baskılandığı bir gece, süre olarak yeterli görünse bile fonksiyonel olarak yetersiz olabilir.",
+      "Uyku yapısını bozan etkenlerin çoğu da bilinir ve molekülle ilgisi yoktur. Alkol uykuya dalmayı hızlandırır ama gecenin ikinci yarısında REM'i baskılar ve uykuyu böler. Kafeinin vücuttaki yarı ömrü birkaç saattir, yani öğleden sonra içilen bir kahve gece hâlâ etkisini sürdürebilir. Düzensiz yatış saati, iç saatin referansını kaybettirir. Bir bileşik aramadan önce bu üç başlığa bakmak, çoğu durumda daha büyük fark yaratır.",
+      "Uykuyla ilişkilendirilen bileşiklere gelince, kütüphanede DSIP preklinik kademesinde duruyor: mekanizma ilgi çekici, insan verisi sınırlı ve tutarsız. Bu alanda ölçüm de zordur, çünkü uyku kalitesine dair öznel değerlendirme ile ölçülen uyku yapısı çoğu zaman birbirini tutmaz.",
+      "Toparlanmayı bir sayıya değil bir yapıya bakarak değerlendirmek, bu konudaki en kullanışlı alışkanlık.",
     ],
     relatedLinks: [
       { href: "/peptidler/dsip", label: "DSIP bileşik sayfası" },

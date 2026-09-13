@@ -3,13 +3,13 @@ import { siteUrl } from "@/lib/site"
 import { articles } from "@/lib/articles"
 import { peptides } from "@/lib/peptides"
 import { products } from "@/lib/catalog"
+import { libraryUpdatedAt as libraryDate, storefrontUpdatedAt as storefrontDate } from "@/lib/content-dates"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // lastModified bir dağıtım zamanı değildir. Her build'de `new Date()`
-  // kullanmak değişmeyen 140 URL'yi Google'a sürekli güncellenmiş gibi
-  // gösterirdi. İçerik gerçekten değiştiğinde bu tarih elle ilerletilir.
-  const storefrontUpdatedAt = new Date("2026-09-12T00:00:00+03:00")
-  const libraryUpdatedAt = new Date("2026-09-12T00:00:00+03:00")
+  // Tarihler lib/content-dates.ts'ten gelir; sayfalardaki dateModified de
+  // aynı kaynağı okur, ikisi ayrışmasın diye.
+  const storefrontUpdatedAt = new Date(`${storefrontDate}T00:00:00+03:00`)
+  const libraryUpdatedAt = new Date(`${libraryDate}T00:00:00+03:00`)
 
   const staticRoutes = [
     "",

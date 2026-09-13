@@ -20,6 +20,8 @@ import { getArticle } from "@/lib/articles"
 import { citations } from "@/lib/citations"
 import { getPeptideFamilyLink } from "@/lib/seo-links"
 import { products } from "@/lib/catalog"
+import { libraryUpdatedAt, webPageNode } from "@/lib/content-dates"
+import { siteName, siteUrl } from "@/lib/site"
 
 /** Extracts a display unit from a dose step's amount string (e.g. "2mg" ->
  * "mg", "%0.5" -> "%") so the calculator's input field can be labeled
@@ -86,8 +88,39 @@ export default async function PeptideDetailPage({
   const halfLifeHours = peptide.molecular?.halfLifeHours
   const lastDoseStep = peptide.dosing?.[peptide.dosing.length - 1]
 
+  /* Kütüphane sayfalarının hiç yapısal verisi yoktu: ne sayfa kimliği ne
+   * kırıntı yolu. İkisi de eklendi; tarih lib/content-dates.ts'ten gelir
+   * ve site haritasındaki değerle aynıdır. */
+  const pageUrl = `${siteUrl}/peptidler/${peptide.slug}`
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      webPageNode({
+        url: pageUrl,
+        name: peptide.name,
+        description: peptide.short,
+        siteUrl,
+        modified: libraryUpdatedAt,
+      }),
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: siteName, item: siteUrl },
+          { "@type": "ListItem", position: 2, name: "Bileşik kütüphanesi", item: `${siteUrl}/peptidler` },
+          { "@type": "ListItem", position: 3, name: peptide.name, item: pageUrl },
+        ],
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Nav />
       <main id="main-content" className="relative z-10 bg-background">
         <article className="px-6 pb-20 md:px-10">

@@ -111,10 +111,14 @@ Türkiye operatörlerinde `ERR_QUIC_PROTOCOL_ERROR` hatasına yol açıyor.
 | Toplu toplayıcı robotlar | `app/robots.ts` | Eğitim amaçlı kazıyıcılara kapalı; ziyaretçi gönderen yapay zekâ arama robotları açık bırakıldı. |
 | Görünmez köken izi | `app/layout.tsx` | Her sayfanın başlığında `x-content-origin` ve `x-content-owner` etiketleri. Sayfada görünmez, kopyalayan aracın kopyaladığı kaynakta durur. |
 | Köken kaydı | `/.well-known/zphctr-origin` | Sitenin kendi yayın kaydı. |
+| Kopya alan adı engeli | `proxy.ts` | Referer başlığı bilinen bir kopya alan adını gösteriyorsa istek 403 döner. Kopya site bizim sunucumuzdan görsel veya sayfa çekemez. Yeni kopya bulununca alan adı `CLONE_HOSTS` listesine eklenir. |
+| Tarih damgası | `lib/content-dates.ts` | Sayfalardaki `dateModified` ile site haritasındaki `lastModified` tek kaynaktan okur, ayrışmaz. |
 
-Köken uyarısı kasıtlı olarak **yönlendirme yapmaz**, yalnızca uyarır.
-Ziyaretçiyi zorla kendi sitemize taşımak istenirse bir satırla açılabilir;
-istenirse söylenmesi yeterli.
+Köken uyarısı, altı saniyelik bir geri sayımdan sonra ziyaretçiyi resmî
+siteye yönlendirir. Sessiz değil: ne olduğu yazıyor ve "Bu sayfada kal"
+düğmesiyle iptal edilebiliyor. Geri sayımı kaldırıp yalnızca uyarıya
+dönmek ya da süreyi değiştirmek `components/origin-guard.tsx` içindeki
+`REDIRECT_SECONDS` ile yapılır.
 
 ## 3. Kopyayı işe yaramaz kılan şey
 
@@ -150,7 +154,26 @@ Teknik engelden daha etkilisi, kopyalanan şeyin eskimesi:
 Sıra: önce barındırıcıya DMCA, sonra Google kaldırma talebi, sonra alan
 adı sağlayıcısına bildirim.
 
-## 6. Uğraşmaya değmeyenler
+## 6. Sık önerilen ama bu kurulumda işe yaramayanlar
+
+- **.htaccess veya nginx.conf ile hotlink engeli**: site Vercel üzerinde
+  çalışıyor, Apache ya da Nginx yapılandırma dosyası yok. Aynı iş
+  `proxy.ts` içindeki Referer denetimiyle yapıldı.
+- **Açılış kartı adresini değiştirmek (`?v=2`)**: `/opengraph-image`
+  adresindeki karma değeri sorgu dizesidir ve Next onu yok sayar. Eski
+  bağlantı 404 vermez, aynı görseli döndürür. Denendi ve doğrulandı.
+- **Açılış kartını kopyaya kapatmak**: sosyal medya önizleme robotları
+  Referer göndermez, bu yüzden hiçbir hotlink kuralı onları
+  ayıramaz. Zaten kapatmak istemeyiz: kart beyaz zeminde büyük mavi
+  harflerle **zphctr.com** yazıyor. Kopyanın linki WhatsApp'ta
+  paylaşıldığında bizim adımızı gösteriyor, yani onların paylaşımı bize
+  reklam oluyor. Kırmak bu avantajı yok eder.
+- **Ziyaretçiyi sunucu tarafında yönlendirmek**: kopya sitenin
+  ziyaretçileri bizim sunucumuza hiç uğramaz, `proxy.ts` onları hiç
+  görmez. Yönlendirmenin tek yolu kopyalanan HTML'in içinde giden satır
+  içi script'tir; o da yapıldı.
+
+## 7. Uğraşmaya değmeyenler
 
 - **Sağ tık engelleme, metin seçimini kapatma**: kopyalayanı durdurmaz,
   gerçek ziyaretçiyi rahatsız eder ve erişilebilirliği bozar.

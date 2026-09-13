@@ -4,6 +4,7 @@ import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { CalculatorCta } from "@/components/calculator-cta"
 import { siteName, siteUrl } from "@/lib/site"
+import { sitePublishedAt, storefrontUpdatedAt } from "@/lib/content-dates"
 
 export const metadata: Metadata = {
   title: "Liyofilize Peptit Sulandırma Rehberi",
@@ -90,6 +91,8 @@ export default function SulandirmaRehberiPage() {
           "Bakteriyostatik su, sulandırma hacmi, adım adım yöntem ve saklama koşulları.",
         url: pageUrl,
         inLanguage: "tr-TR",
+        datePublished: sitePublishedAt,
+        dateModified: storefrontUpdatedAt,
         isPartOf: { "@id": `${siteUrl}/#website` },
         publisher: { "@id": `${siteUrl}/#organization` },
       },

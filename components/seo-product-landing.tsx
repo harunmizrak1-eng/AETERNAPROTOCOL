@@ -6,6 +6,7 @@ import { ProductCard } from "@/components/product-card"
 import { CalculatorCta } from "@/components/calculator-cta"
 import { products } from "@/lib/catalog"
 import { siteName, siteUrl } from "@/lib/site"
+import { storefrontUpdatedAt, sitePublishedAt } from "@/lib/content-dates"
 
 export function SeoProductLanding({
   eyebrow,
@@ -59,6 +60,9 @@ export function SeoProductLanding({
         name: title,
         description: intro,
         url: pageUrl,
+        inLanguage: "tr-TR",
+        datePublished: sitePublishedAt,
+        dateModified: storefrontUpdatedAt,
         isPartOf: { "@id": `${siteUrl}/#website` },
         publisher: { "@id": `${siteUrl}/#organization` },
         mainEntity: { "@id": `${pageUrl}#products` },

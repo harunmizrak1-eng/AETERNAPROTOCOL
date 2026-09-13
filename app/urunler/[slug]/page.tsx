@@ -10,6 +10,7 @@ import { citations } from "@/lib/citations"
 import { siteUrl } from "@/lib/site"
 import { RelatedProducts } from "@/components/related-products"
 import { productFaq } from "@/lib/product-faq"
+import { storefrontUpdatedAt, webPageNode } from "@/lib/content-dates"
 import { comparableSizes } from "@/lib/product-size"
 import { StockBadge } from "@/components/product-card"
 import { getPlainSummary } from "@/lib/plain-summaries"
@@ -156,6 +157,18 @@ export default async function UrunPage({
       acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
   }
+  /* Sayfanın kendi kimliği ve tarihi. Kopyalanan sayfada da durur ve
+   * içindeki url bizim adresimizi gösterir. */
+  const webPageJsonLd = {
+    "@context": "https://schema.org",
+    ...webPageNode({
+      url: `${siteUrl}/urunler/${product.slug}`,
+      name: product.name,
+      description: peptide?.short ?? product.name,
+      siteUrl,
+      modified: storefrontUpdatedAt,
+    }),
+  }
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -179,6 +192,10 @@ export default async function UrunPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Nav />
       <main id="main-content" className="bg-background">

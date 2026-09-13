@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Müşteri Yorumu Bırak",
   description: "ZPHC Türkiye alışveriş deneyiminizi, yayın izninizle birlikte güvenli biçimde gönderin.",
   alternates: { canonical: "/yorum" },
+  openGraph: { url: "/yorum" },
   robots: { index: false, follow: true },
 }
 

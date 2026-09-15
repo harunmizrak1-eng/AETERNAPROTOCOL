@@ -33,8 +33,11 @@ h1,h2,h3,h4,.serif{font-family:'Source Serif 4',Georgia,serif;}
 .cover-bottom{margin-top:auto;}
 
 /* ---------- structure ---------- */
-section{page-break-before:always;}
+section{page-break-before:auto;margin-top:9mm;page-break-inside:auto;}
+section:first-of-type{margin-top:0;}
 section.cont{page-break-before:auto;}
+h2{page-break-after:avoid;page-break-inside:avoid;}
+h3,h4{page-break-inside:avoid;}
 h2{font-size:17pt;line-height:1.22;margin:0 0 4mm;color:var(--blue-deep);font-weight:700;letter-spacing:-.01em;
    padding-bottom:3mm;border-bottom:2px solid var(--blue);}
 h2 .num{display:block;font-family:'Inter',sans-serif;font-size:7.4pt;letter-spacing:.18em;color:var(--blue);font-weight:700;margin-bottom:2.5mm;text-transform:uppercase;}
@@ -90,8 +93,8 @@ caption b{color:var(--blue-dark);}
 .quote{font-family:'Source Serif 4',serif;font-size:10pt;line-height:1.5;font-style:italic;color:var(--blue-deep);border-left:2px solid var(--blue);padding-left:4mm;margin:4mm 0;page-break-inside:avoid;}
 .quote cite{display:block;font-style:normal;font-family:'Inter',sans-serif;font-size:7.6pt;color:var(--muted);margin-top:2mm;font-weight:500;}
 
-ol.refs{padding-left:0;list-style:none;counter-reset:r;font-size:7.9pt;line-height:1.5;}
-ol.refs li{counter-increment:r;padding-left:9mm;position:relative;margin-bottom:2.1mm;text-align:left;}
+ol.refs{padding-left:0;list-style:none;counter-reset:r;font-size:7.6pt;line-height:1.45;}
+ol.refs li{counter-increment:r;padding-left:9mm;position:relative;margin-bottom:1.7mm;text-align:left;}
 ol.refs li::before{content:"[" counter(r) "]";position:absolute;left:0;font-weight:700;color:var(--blue);font-size:7.4pt;}
 .reftag{font-size:7pt;color:var(--muted);}
 

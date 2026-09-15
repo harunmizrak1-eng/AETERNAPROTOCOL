@@ -1,15 +1,19 @@
 # PEP-2026-01 — BPC-157 ve TB-500 Kanıt Durumu Raporu
 
 Çıktı: [`../BPC-157_TB-500_Kanit_Durumu_Raporu.pdf`](../BPC-157_TB-500_Kanit_Durumu_Raporu.pdf)
-(A4, 22 sayfa, 48 referans, veri kesim tarihi 15 Eylül 2026)
+(A4, 11 sayfa, 31 referans, sürüm 2.0, veri kesim tarihi 15 Eylül 2026)
 
 ## Ne içerir
 
-Doku onarımı peptitlerinin akademik kanıt tabanının, düzenleyici durumunun ve
-çevrimiçi kullanıcı topluluklarında bildirilen deneyimlerin karşılaştırmalı
-derlemesi. Bölümler: moleküler kimlik, BPC-157 preklinik/klinik dosyası,
-timosin β4 ve TB-500 ayrımı, güvenlik, FDA/WADA durumu, topluluk bildirimleri,
-kanıt–iddia matrisi.
+`lib/peptides.ts`'teki BPC-157 ve TB-500 kayıtlarının ve
+`doku-onarimi-bpc157-tb500` makalesinin arkasındaki kanıtın derlemesi.
+Bölümler: iki molekülün kimliği ve kütüphane kayıtları, BPC-157'nin
+preklinik/klinik dosyası, timosin β4 ile TB-500 fragmanının ayrımı,
+FDA/WADA durumu, kullanıcı topluluklarında bildirilen kullanım alanları.
+
+Sitedeki kayıt metinleri (tanım, klinik durum, uygulama basamakları,
+temkinli olunacak durumlar, beklenen seyir) ve makaleden alıntılar belgeye
+doğrudan taşınmıştır.
 
 ## Kaynak disiplini
 

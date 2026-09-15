@@ -14,3 +14,5 @@ node_modules
 .next/
 .DS_Store
 *.tsbuildinfo
+# üretilmiş font gömme dosyası (bkz. docs/reports/bpc157-tb500/build-fonts.py)
+docs/reports/bpc157-tb500/fonts.css

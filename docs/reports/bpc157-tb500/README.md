@@ -1,7 +1,13 @@
 # PEP-2026-01 — BPC-157 ve TB-500 Kanıt Durumu Raporu
 
-Çıktı: [`../BPC-157_TB-500_Kanit_Durumu_Raporu.pdf`](../BPC-157_TB-500_Kanit_Durumu_Raporu.pdf)
-(A4, 11 sayfa, 31 referans, sürüm 2.0, veri kesim tarihi 15 Eylül 2026)
+İki çıktı, aynı içerik:
+
+| Dosya | Biçim |
+| --- | --- |
+| [`../BPC-157_TB-500_Sunum.pptx`](../BPC-157_TB-500_Sunum.pptx) | 16:9 sunum, 17 slayt, konuşmacı notlu |
+| [`../BPC-157_TB-500_Kanit_Durumu_Raporu.pdf`](../BPC-157_TB-500_Kanit_Durumu_Raporu.pdf) | A4 rapor, 11 sayfa, 31 referans |
+
+Veri kesim tarihi 15 Eylül 2026.
 
 ## Ne içerir
 
@@ -27,6 +33,15 @@ doğrudan taşınmıştır.
 
 ## Yeniden üretme
 
+Sunum:
+
+```bash
+npm install pptxgenjs     # ortamda yoksa
+node deck.mjs             # -> ../BPC-157_TB-500_Sunum.pptx
+```
+
+Rapor:
+
 ```bash
 python3 build-fonts.py                       # fonts.css üretir (bir kez)
 node render.mjs report.html ../BPC-157_TB-500_Kanit_Durumu_Raporu.pdf
@@ -35,6 +50,10 @@ node render.mjs report.html ../BPC-157_TB-500_Kanit_Durumu_Raporu.pdf
 `render.mjs`, depoda hazır bulunan Chromium'u (`/opt/pw-browsers/...`) CDP
 üzerinden sürer ve `Page.printToPDF` ile sayfa numaralı başlık/altbilgi basar.
 Chromium yolu farklıysa betiğin başındaki `CHROME` sabitini güncelleyin.
+
+`deck.mjs` çıktısı `pptx` skill'indeki `scripts/office/validate.py` ile
+doğrulanmıştır. Görsel kontrol için LibreOffice Impress gerekir
+(`libreoffice-core` tek başına `.pptx` yükleyemez).
 
 ## Bilinen kütüphane düzeltmeleri
 
